@@ -14,7 +14,7 @@ const CTASection = () => {
   return (
     <section id='cta' className='relative z-1 pt-16 pb-16 sm:pt-32 sm:pb-16 lg:pt-48 lg:pb-24'>
       <div className='bg-background mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
-        <Card className='dark:bg-muted bg-primary relative overflow-hidden rounded-3xl border-none pt-20 pb-32 text-center shadow-2xl max-sm:pt-10 max-sm:pb-15'>
+        <Card className='relative overflow-hidden rounded-3xl border-none bg-[#EEE8D7] pt-20 pb-32 text-center shadow-2xl max-sm:pt-10 max-sm:pb-15'>
           <CardContent className='px-6'>
             <MotionPreset
               fade
@@ -24,17 +24,17 @@ const CTASection = () => {
               transition={{ duration: 0.5 }}
               className='flex flex-col items-center justify-center gap-4'
             >
-              <h2 className='dark:text-foreground text-2xl font-semibold text-white md:text-3xl lg:text-4xl'>
+              <h2 className='text-2xl font-semibold text-zinc-900 md:text-3xl lg:text-4xl'>
                 Take Control of Your Sales Pipeline
               </h2>
 
-              <p className='dark:text-muted-foreground w-full text-xl text-white/80 lg:max-w-2xl'>
+              <p className='w-full text-xl text-zinc-700 lg:max-w-2xl'>
                 Join Meridian and get a complete overview of your users, sales, and performance - all from one powerful
                 dashboard.
               </p>
             </MotionPreset>
             <MotionPreset
-              className='absolute bottom-0 left-0 text-[#F4F4F5]/10'
+              className='absolute bottom-0 left-0 opacity-100'
               fade
               slide
               transition={{ duration: 0.5 }}
@@ -43,7 +43,7 @@ const CTASection = () => {
             </MotionPreset>
 
             <MotionPreset
-              className='absolute right-0 bottom-0 text-[#F4F4F5]/10'
+              className='absolute right-0 bottom-0 opacity-100'
               fade
               slide={{ direction: 'right' }}
               transition={{ duration: 0.5 }}

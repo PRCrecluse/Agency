@@ -14,7 +14,19 @@ export type FAQs = {
   answer: string
 }[]
 
-const FAQ = ({ faqItems }: { faqItems: FAQs }) => {
+type FAQProps = {
+  faqItems: FAQs
+  eyebrow?: string
+  title?: string
+  description?: string
+}
+
+const FAQ = ({
+  faqItems,
+  eyebrow = 'FAQ',
+  title = 'Frequently asked questions',
+  description = 'A few quick answers about how we approach SEO, Reddit, and AI-discovery growth work.'
+}: FAQProps) => {
   const [activeItem, setActiveItem] = useState<string>('item-1')
   const [rotationKey, setRotationKey] = useState(0)
 
@@ -34,13 +46,11 @@ const FAQ = ({ faqItems }: { faqItems: FAQs }) => {
           transition={{ duration: 0.5 }}
           className='mb-12 space-y-4 text-center sm:mb-16 lg:mb-24'
         >
-          <p className='text-primary text-sm font-medium uppercase'>FAQ</p>
+          <p className='text-primary text-sm font-medium uppercase'>{eyebrow}</p>
 
-          <h2 className='text-2xl font-semibold md:text-3xl lg:text-4xl'>Frequently asked questions</h2>
+          <h2 className='text-2xl font-semibold md:text-3xl lg:text-4xl'>{title}</h2>
 
-          <p className='text-muted-foreground mx-auto max-w-2xl text-xl'>
-            A few quick answers about how we approach SEO, Reddit, and AI-discovery growth work.
-          </p>
+          <p className='text-muted-foreground mx-auto max-w-2xl text-xl'>{description}</p>
         </MotionPreset>
 
         <div className='grid grid-cols-1 gap-8 lg:grid-cols-2'>
@@ -48,18 +58,18 @@ const FAQ = ({ faqItems }: { faqItems: FAQs }) => {
             {faqItems.map((item, index) => (
               <AccordionItem key={index} value={`item-${index + 1}`}>
                 <AccordionTrigger className='py-5 text-base'>{item.question}</AccordionTrigger>
-                <AccordionContent className='text-muted-foreground pb-5 text-base'>{item.answer}</AccordionContent>
+                <AccordionContent className='text-muted-foreground whitespace-pre-line pb-5 text-base'>{item.answer}</AccordionContent>
               </AccordionItem>
             ))}
           </Accordion>
 
-            {/* Right content */}
-            <div className='group bg-muted relative mx-auto flex h-full max-h-116 w-full max-w-148 items-center justify-center overflow-hidden rounded-xl border p-4 sm:p-6 lg:max-xl:max-h-95'>
+          {/* Right content */}
+          <div className='group bg-muted relative mx-auto flex min-h-[28rem] w-full max-w-[40rem] items-center justify-center overflow-hidden rounded-xl border p-3 sm:min-h-[32rem] sm:p-4 lg:min-h-[36rem] lg:p-5'>
             <img
               src='/attachphotos/mrr%20cost.png'
               alt='MRR cost dashboard overview'
               loading='lazy'
-              className='h-full w-full origin-center object-contain shadow-md transition-transform duration-500 group-hover:scale-[1.02]'
+              className='h-full w-[112%] max-w-none origin-center object-contain shadow-md transition-transform duration-500 group-hover:scale-[1.04]'
             />
 
             {['top-4.5 left-4.5', 'top-4.5 right-4.5', 'bottom-4.5 left-4.5', 'bottom-4.5 right-4.5'].map(

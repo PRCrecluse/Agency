@@ -26,12 +26,17 @@ import {
   BreadcrumbSeparator
 } from '@/components/ui/breadcrumb'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import FAQ from '@/components/blocks/faq/faq'
 import { PrimaryFlowButton, SecondaryFlowButton } from '@/components/ui/flow-button'
 import SectionSeparator from '@/components/section-separator'
-import { getServiceBySlug, serviceSlugs } from '@/content/services'
+import { getServiceBySlug, resolveLocalizedText, servicePageCopy, serviceSlugs, type ServiceLang } from '@/content/services'
 import { cn } from '@/lib/utils'
 
 const baseUrl = process.env.NEXT_PUBLIC_APP_URL ?? 'http://localhost:3000'
+
+const getLang = (value?: string): ServiceLang => (value === 'zh' ? 'zh' : 'en')
+
+const withLang = (path: string, lang: ServiceLang, hash?: string) => `${path}?lang=${lang}${hash ? `#${hash}` : ''}`
 
 const getSectionIcon = (sectionId: string) => {
   const key = sectionId.toLowerCase()
@@ -80,9 +85,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   }
 
   return {
-    title: service.title,
-    description: service.description,
-    keywords: service.keywords,
+    title: `${service.title.en} | ${service.title.zh}`,
+    description: `${service.description.en} / ${service.description.zh}`,
+    keywords: [...service.keywords.map(keyword => keyword.en), ...service.keywords.map(keyword => keyword.zh)],
     alternates: {
       canonical: `${baseUrl}/services/${service.slug}`
     }
@@ -91,8 +96,17 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 export const dynamicParams = false
 
-const ServiceDetailPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
+const ServiceDetailPage = async ({
+  params,
+  searchParams
+}: {
+  params: Promise<{ slug: string }>
+  searchParams?: Promise<{ lang?: string }>
+}) => {
   const { slug } = await params
+  const resolvedSearchParams = await searchParams
+  const lang = getLang(resolvedSearchParams?.lang)
+  const copy = servicePageCopy[lang]
   const service = getServiceBySlug(slug)
 
   if (!service) {
@@ -100,18 +114,21 @@ const ServiceDetailPage = async ({ params }: { params: Promise<{ slug: string }>
   }
 
   const totalBulletCount = service.sections.reduce((count, section) => count + section.bullets.length, 0)
+  const hasCustomIncludes = Boolean(service.serviceIncludes?.length)
+  const hasFaqSection = Boolean(service.faqItems?.length)
+  const renderOutcomes = !service.hideOutcomes
   const statItems = [
     {
-      label: 'Workstreams',
+      label: copy.workstreams,
       value: String(service.sections.length).padStart(2, '0')
     },
     {
-      label: 'Deliverables',
+      label: copy.deliverables,
       value: String(totalBulletCount).padStart(2, '0')
     },
     {
-      label: 'Outcome targets',
-      value: String(service.outcomes.length).padStart(2, '0')
+      label: renderOutcomes ? copy.outcomeTargets : hasFaqSection ? copy.faqTopics : copy.outcomeTargets,
+      value: String(renderOutcomes ? service.outcomes.length : service.faqItems?.length ?? service.outcomes.length).padStart(2, '0')
     }
   ]
 
@@ -121,9 +138,9 @@ const ServiceDetailPage = async ({ params }: { params: Promise<{ slug: string }>
       {
         '@type': 'WebPage',
         '@id': `${baseUrl}/services/${service.slug}#webpage`,
-        name: service.title,
-        description: service.description,
-        url: `${baseUrl}/services/${service.slug}`
+        name: resolveLocalizedText(service.title, lang),
+        description: resolveLocalizedText(service.description, lang),
+        url: `${baseUrl}/services/${service.slug}?lang=${lang}`
       },
       {
         '@type': 'BreadcrumbList',
@@ -131,29 +148,29 @@ const ServiceDetailPage = async ({ params }: { params: Promise<{ slug: string }>
           {
             '@type': 'ListItem',
             position: 1,
-            name: 'Home',
+            name: copy.home,
             item: `${baseUrl}`
           },
           {
             '@type': 'ListItem',
             position: 2,
-            name: 'Services',
-            item: `${baseUrl}/services`
+            name: copy.services,
+            item: `${baseUrl}/services?lang=${lang}`
           },
           {
             '@type': 'ListItem',
             position: 3,
-            name: service.title,
-            item: `${baseUrl}/services/${service.slug}`
+            name: resolveLocalizedText(service.title, lang),
+            item: `${baseUrl}/services/${service.slug}?lang=${lang}`
           }
         ]
       },
       {
         '@type': 'Service',
-        name: service.title,
-        description: service.description,
-        serviceType: service.category,
-        url: `${baseUrl}/services/${service.slug}`,
+        name: resolveLocalizedText(service.title, lang),
+        description: resolveLocalizedText(service.description, lang),
+        serviceType: resolveLocalizedText(service.category, lang),
+        url: `${baseUrl}/services/${service.slug}?lang=${lang}`,
         areaServed: 'Global'
       }
     ]
@@ -166,25 +183,44 @@ const ServiceDetailPage = async ({ params }: { params: Promise<{ slug: string }>
         <div className='bg-secondary/12 absolute right-0 top-24 size-64 rounded-full blur-3xl' />
 
         <div className='mx-auto flex w-full max-w-7xl flex-col gap-8'>
-          <Breadcrumb>
-            <BreadcrumbList>
-              <BreadcrumbItem>
-                <BreadcrumbLink asChild>
-                  <Link href='/'>Home</Link>
-                </BreadcrumbLink>
-              </BreadcrumbItem>
-              <BreadcrumbSeparator />
-              <BreadcrumbItem>
-                <BreadcrumbLink asChild>
-                  <Link href='/services'>Services</Link>
-                </BreadcrumbLink>
-              </BreadcrumbItem>
-              <BreadcrumbSeparator />
-              <BreadcrumbItem>
-                <BreadcrumbPage>{service.title}</BreadcrumbPage>
-              </BreadcrumbItem>
-            </BreadcrumbList>
-          </Breadcrumb>
+          <div className='flex justify-end'>
+            <div className='flex items-center gap-1 rounded-full border bg-background/80 p-1 text-sm'>
+              <Link
+                href={withLang(`/services/${service.slug}`, 'en')}
+                className={`rounded-full px-3 py-1.5 transition-colors ${lang === 'en' ? 'bg-primary text-primary-foreground' : 'text-muted-foreground hover:text-foreground'}`}
+              >
+                {copy.english}
+              </Link>
+              <Link
+                href={withLang(`/services/${service.slug}`, 'zh')}
+                className={`rounded-full px-3 py-1.5 transition-colors ${lang === 'zh' ? 'bg-primary text-primary-foreground' : 'text-muted-foreground hover:text-foreground'}`}
+              >
+                {copy.chinese}
+              </Link>
+            </div>
+          </div>
+
+          {!service.hideBreadcrumb ? (
+            <Breadcrumb>
+              <BreadcrumbList>
+                <BreadcrumbItem>
+                  <BreadcrumbLink asChild>
+                    <Link href='/'>{copy.home}</Link>
+                  </BreadcrumbLink>
+                </BreadcrumbItem>
+                <BreadcrumbSeparator />
+                <BreadcrumbItem>
+                  <BreadcrumbLink asChild>
+                    <Link href={withLang('/services', lang)}>{copy.services}</Link>
+                  </BreadcrumbLink>
+                </BreadcrumbItem>
+                <BreadcrumbSeparator />
+                <BreadcrumbItem>
+                  <BreadcrumbPage>{resolveLocalizedText(service.title, lang)}</BreadcrumbPage>
+                </BreadcrumbItem>
+              </BreadcrumbList>
+            </Breadcrumb>
+          ) : null}
 
           <div className='grid gap-6 lg:grid-cols-[minmax(0,1.15fr)_minmax(320px,0.85fr)] lg:items-start'>
             <div className='relative overflow-hidden rounded-[28px] border bg-card/80 p-6 backdrop-blur-sm sm:p-8 lg:p-10'>
@@ -192,24 +228,24 @@ const ServiceDetailPage = async ({ params }: { params: Promise<{ slug: string }>
               <div className='relative space-y-8'>
                 <div className='space-y-5'>
                   <Badge variant='outline' className='bg-background/70 h-auto px-3 py-1 text-sm font-normal backdrop-blur-sm'>
-                    {service.category}
+                    {resolveLocalizedText(service.category, lang)}
                   </Badge>
 
                   <div className='space-y-4'>
-                    <h1 className='max-w-4xl text-4xl font-semibold tracking-tight sm:text-5xl lg:text-6xl'>{service.title}</h1>
-                    <p className='text-muted-foreground max-w-3xl text-base leading-7 sm:text-lg'>{service.description}</p>
-                    <p className='max-w-3xl text-base leading-7 sm:text-lg'>{service.intro}</p>
+                    <h1 className='max-w-4xl text-4xl font-semibold tracking-tight sm:text-5xl lg:text-6xl'>{resolveLocalizedText(service.title, lang)}</h1>
+                    <p className='text-muted-foreground max-w-3xl text-base leading-7 sm:text-lg'>{resolveLocalizedText(service.description, lang)}</p>
+                    <p className='max-w-3xl text-base leading-7 sm:text-lg'>{resolveLocalizedText(service.intro, lang)}</p>
                   </div>
                 </div>
 
                 <div className='flex flex-wrap gap-2.5'>
                   {service.keywords.map(keyword => (
                     <Badge
-                      key={keyword}
+                      key={keyword.en}
                       variant='outline'
                       className='bg-background/65 h-auto rounded-full px-3 py-1 text-xs font-normal backdrop-blur-sm'
                     >
-                      {keyword}
+                      {resolveLocalizedText(keyword, lang)}
                     </Badge>
                   ))}
                 </div>
@@ -229,12 +265,12 @@ const ServiceDetailPage = async ({ params }: { params: Promise<{ slug: string }>
                 <div className='flex flex-wrap gap-4'>
                   <PrimaryFlowButton asChild>
                     <Link href='https://cal.com/team/meridian-growth' target='_blank' rel='noreferrer'>
-                      Book a call
+                      {copy.bookCall}
                       <ArrowRightIcon />
                     </Link>
                   </PrimaryFlowButton>
                   <SecondaryFlowButton asChild>
-                    <Link href='/services'>All services</Link>
+                    <Link href={withLang('/services', lang)}>{copy.allServices}</Link>
                   </SecondaryFlowButton>
                 </div>
               </div>
@@ -242,24 +278,24 @@ const ServiceDetailPage = async ({ params }: { params: Promise<{ slug: string }>
 
             <Card className='border bg-card/85 gap-5 backdrop-blur-sm lg:sticky lg:top-24'>
               <CardHeader>
-                <CardTitle>Program snapshot</CardTitle>
-                <CardDescription>Jump into the exact workstream you want to review first.</CardDescription>
+                <CardTitle>{copy.programSnapshot}</CardTitle>
+                <CardDescription>{copy.programSnapshotDescription}</CardDescription>
               </CardHeader>
 
               <CardContent className='space-y-6'>
                 <div className='grid gap-3 sm:grid-cols-3 lg:grid-cols-1'>
                   {service.highlights.map(highlight => (
-                    <div key={highlight} className='rounded-2xl border bg-background/65 p-4'>
+                    <div key={highlight.en} className='rounded-2xl border bg-background/65 p-4'>
                       <div className='flex items-start gap-3'>
                         <CheckCircle2Icon className='text-primary mt-0.5 size-4 shrink-0' />
-                        <p className='text-sm leading-6'>{highlight}</p>
+                        <p className='text-sm leading-6'>{resolveLocalizedText(highlight, lang)}</p>
                       </div>
                     </div>
                   ))}
                 </div>
 
                 <div className='space-y-3'>
-                  <p className='text-muted-foreground text-xs font-medium uppercase tracking-[0.24em]'>On this page</p>
+                  <p className='text-muted-foreground text-xs font-medium uppercase tracking-[0.24em]'>{copy.onThisPage}</p>
                   <ul className='space-y-2.5'>
                     {service.sections.map((section, index) => {
                       const SectionIcon = getSectionIcon(section.id)
@@ -267,15 +303,15 @@ const ServiceDetailPage = async ({ params }: { params: Promise<{ slug: string }>
                       return (
                         <li key={section.id}>
                           <Link
-                            href={`#${section.id}`}
+                            href={withLang(`/services/${service.slug}`, lang, section.id)}
                             className='hover:border-primary/40 hover:bg-primary/5 flex items-center gap-3 rounded-2xl border bg-background/65 px-4 py-3 transition-colors duration-200'
                           >
                             <div className='bg-primary/10 text-primary flex size-10 shrink-0 items-center justify-center rounded-xl'>
                               <SectionIcon className='size-4' />
                             </div>
                             <div className='min-w-0 flex-1'>
-                              <p className='text-[11px] uppercase tracking-[0.24em] text-muted-foreground'>Step {index + 1}</p>
-                              <p className='truncate text-sm font-medium'>{section.title}</p>
+                              <p className='text-[11px] uppercase tracking-[0.24em] text-muted-foreground'>{copy.step} {index + 1}</p>
+                              <p className='truncate text-sm font-medium'>{resolveLocalizedText(section.title, lang)}</p>
                             </div>
                             <ChevronRightIcon className='text-muted-foreground size-4 shrink-0' />
                           </Link>
@@ -293,151 +329,245 @@ const ServiceDetailPage = async ({ params }: { params: Promise<{ slug: string }>
       <SectionSeparator />
 
       <section className='px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20'>
-        <div className='mx-auto grid w-full max-w-7xl gap-6 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)]'>
-          <div className='space-y-4'>
-            <Badge variant='outline' className='h-auto px-3 py-1 text-sm font-normal'>
-              Why this service works
-            </Badge>
-            <h2 className='text-3xl font-semibold tracking-tight sm:text-4xl'>Built to feel like a real program, not a list of tactics</h2>
-            <p className='text-muted-foreground text-base leading-7 sm:text-lg'>
-              We package the delivery into clear workstreams so teams can see what gets prioritized first, how execution moves,
-              and which outcomes the engagement is meant to unlock.
-            </p>
-          </div>
+        <div
+          className={cn(
+            'mx-auto w-full max-w-7xl gap-6',
+            hasCustomIncludes ? 'flex flex-col' : 'grid lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)]'
+          )}
+        >
+          {hasCustomIncludes ? (
+            <>
+              <div className='mx-auto max-w-3xl space-y-4 text-center'>
+                <h2 className='text-3xl font-semibold tracking-tight sm:text-4xl'>{copy.whatThisServiceIncludes}</h2>
+              </div>
 
-          <div className='grid gap-4 md:grid-cols-3'>
-            {service.highlights.map((highlight, index) => (
-              <Card key={highlight} className='border bg-card/80'>
-                <CardContent className='flex h-full flex-col gap-6 pt-6'>
-                  <div className='flex items-center justify-between'>
-                    <div className='bg-primary/10 text-primary flex size-11 items-center justify-center rounded-2xl'>
-                      <SparklesIcon className='size-5' />
-                    </div>
-                    <span className='text-muted-foreground text-xs font-medium uppercase tracking-[0.24em]'>
-                      0{index + 1}
-                    </span>
-                  </div>
-                  <p className='text-sm leading-6'>{highlight}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <SectionSeparator />
-
-      <section className='px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20'>
-        <div className='mx-auto flex w-full max-w-7xl flex-col gap-6'>
-          <div className='max-w-3xl space-y-3'>
-            <Badge variant='outline' className='h-auto px-3 py-1 text-sm font-normal'>
-              Delivery
-            </Badge>
-            <h2 className='text-3xl font-semibold tracking-tight sm:text-4xl'>Service breakdown</h2>
-            <p className='text-muted-foreground text-base leading-7 sm:text-lg'>
-              Each block below shows how we scope the work, where we focus first, and what gets improved along the way.
-            </p>
-          </div>
-
-          <div className='grid gap-6'>
-            {service.sections.map((section, index) => {
-              const SectionIcon = getSectionIcon(section.id)
-
-              return (
-                <Card
-                  key={section.id}
-                  id={section.id}
-                  className={cn(
-                    'scroll-mt-28 border bg-card/85 backdrop-blur-sm',
-                    index % 2 === 0 ? 'lg:mr-10' : 'lg:ml-10'
-                  )}
-                >
-                  <CardHeader className='space-y-4'>
-                    <div className='flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between'>
-                      <div className='flex items-start gap-4'>
-                        <div className='bg-primary/10 text-primary flex size-12 shrink-0 items-center justify-center rounded-2xl'>
-                          <SectionIcon className='size-5' />
+              <div className='grid gap-4 sm:grid-cols-2 xl:grid-cols-5'>
+                {service.serviceIncludes?.map((item, index) => (
+                  <Card key={item.en} className='border bg-card/80'>
+                    <CardContent className='flex h-full flex-col gap-5 pt-6'>
+                      <div className='flex items-center justify-between'>
+                        <div className='bg-primary/10 text-primary flex size-11 items-center justify-center rounded-2xl'>
+                          <SparklesIcon className='size-5' />
                         </div>
-                        <div className='space-y-3'>
-                          <Badge variant='outline' className='h-auto px-3 py-1 text-xs font-normal'>
-                            Step {index + 1} · {section.id}
-                          </Badge>
-                          <div className='space-y-2'>
-                            <CardTitle className='text-2xl sm:text-[1.75rem]'>{section.title}</CardTitle>
-                            <CardDescription className='max-w-3xl text-sm leading-6 sm:text-base'>{section.description}</CardDescription>
-                          </div>
-                        </div>
+                        <span className='text-muted-foreground text-xs font-medium uppercase tracking-[0.24em]'>
+                          {String(index + 1).padStart(2, '0')}
+                        </span>
                       </div>
-                    </div>
-                  </CardHeader>
-
-                  <CardContent className='grid gap-3 md:grid-cols-3'>
-                    {section.bullets.map(bullet => (
-                      <div
-                        key={bullet}
-                        className='bg-background/75 flex min-h-32 items-start gap-3 rounded-2xl border p-4'
-                      >
-                        <CheckCircle2Icon className='text-primary mt-0.5 size-4 shrink-0' />
-                        <p className='text-sm leading-6'>{bullet}</p>
-                      </div>
-                    ))}
-                  </CardContent>
-                </Card>
-              )
-            })}
-          </div>
-        </div>
-      </section>
-
-      <SectionSeparator />
-
-      <section className='px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20'>
-        <div className='mx-auto flex w-full max-w-7xl flex-col gap-6'>
-          <div className='max-w-3xl space-y-3'>
-            <Badge variant='outline' className='h-auto px-3 py-1 text-sm font-normal'>
-              Outcomes
-            </Badge>
-            <h2 className='text-3xl font-semibold tracking-tight sm:text-4xl'>What clients should expect</h2>
-          </div>
-
-          <div className='grid gap-6 lg:grid-cols-3'>
-            {service.outcomes.map((outcome, index) => (
-              <Card key={outcome} className='border bg-card/80'>
-                <CardContent className='flex h-full flex-col gap-5 pt-6'>
-                  <div className='flex items-center justify-between'>
-                    <div className='bg-primary/10 text-primary flex size-11 items-center justify-center rounded-2xl'>
-                      <TargetIcon className='size-5' />
-                    </div>
-                    <span className='text-muted-foreground text-xs font-medium uppercase tracking-[0.24em]'>
-                      0{index + 1}
-                    </span>
-                  </div>
-                  <p className='text-sm leading-6'>{outcome}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-
-          <div className='from-primary/10 via-background to-secondary/10 rounded-[28px] border bg-gradient-to-r p-6 sm:p-8'>
-            <div className='flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between'>
-              <div className='max-w-2xl space-y-2'>
-                <p className='text-muted-foreground text-xs font-medium uppercase tracking-[0.24em]'>Next step</p>
-                <h3 className='text-2xl font-semibold tracking-tight sm:text-3xl'>Want the same structure tailored to your acquisition goals?</h3>
-                <p className='text-muted-foreground text-sm leading-6 sm:text-base'>
-                  We can map the priority channels, recommend the first workstream, and show how the engagement would be scoped around your growth motion.
+                      <p className='text-base font-medium leading-6'>{resolveLocalizedText(item, lang)}</p>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </>
+          ) : (
+            <>
+              <div className='space-y-4'>
+                <Badge variant='outline' className='h-auto px-3 py-1 text-sm font-normal'>
+                  {copy.whyThisServiceWorks}
+                </Badge>
+                <h2 className='text-3xl font-semibold tracking-tight sm:text-4xl'>{copy.whyThisServiceWorksTitle}</h2>
+                <p className='text-muted-foreground text-base leading-7 sm:text-lg'>
+                  {copy.whyThisServiceWorksDescription}
                 </p>
               </div>
 
-              <PrimaryFlowButton asChild>
-                <Link href='https://cal.com/team/meridian-growth' target='_blank' rel='noreferrer'>
-                  Book a strategy call
-                  <ArrowRightIcon />
-                </Link>
-              </PrimaryFlowButton>
-            </div>
-          </div>
+              <div className='grid gap-4 md:grid-cols-3'>
+                {service.highlights.map((highlight, index) => (
+                  <Card key={highlight.en} className='border bg-card/80'>
+                    <CardContent className='flex h-full flex-col gap-6 pt-6'>
+                      <div className='flex items-center justify-between'>
+                        <div className='bg-primary/10 text-primary flex size-11 items-center justify-center rounded-2xl'>
+                          <SparklesIcon className='size-5' />
+                        </div>
+                        <span className='text-muted-foreground text-xs font-medium uppercase tracking-[0.24em]'>
+                          0{index + 1}
+                        </span>
+                      </div>
+                      <p className='text-sm leading-6'>{resolveLocalizedText(highlight, lang)}</p>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </>
+          )}
         </div>
       </section>
+
+      <SectionSeparator />
+
+      <section className='px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20'>
+        <div className='mx-auto flex w-full max-w-7xl flex-col gap-6'>
+          <div className='max-w-3xl space-y-3'>
+            <Badge variant='outline' className='h-auto px-3 py-1 text-sm font-normal'>
+              {copy.delivery}
+            </Badge>
+            <h2 className='text-3xl font-semibold tracking-tight sm:text-4xl'>{copy.serviceBreakdown}</h2>
+            <p className='text-muted-foreground text-base leading-7 sm:text-lg'>
+              {service.deliveryDescription ? resolveLocalizedText(service.deliveryDescription, lang) : copy.whyThisServiceWorksDescription}
+            </p>
+          </div>
+
+          {service.deliveryPresentation === 'table' ? (
+            <div className='overflow-hidden rounded-[28px] border bg-card/85 backdrop-blur-sm'>
+              <div className='overflow-x-auto'>
+                <table className='w-full min-w-[860px] border-collapse'>
+                  <thead>
+                    <tr className='bg-background/80 text-left'>
+                      <th className='px-6 py-4 text-xs font-medium uppercase tracking-[0.24em] text-muted-foreground'>{copy.tableStep}</th>
+                      <th className='px-6 py-4 text-xs font-medium uppercase tracking-[0.24em] text-muted-foreground'>{copy.tableWorkstream}</th>
+                      <th className='px-6 py-4 text-xs font-medium uppercase tracking-[0.24em] text-muted-foreground'>{copy.tableFocus}</th>
+                      <th className='px-6 py-4 text-xs font-medium uppercase tracking-[0.24em] text-muted-foreground'>{copy.tableDeliverables}</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {service.sections.map((section, index) => (
+                      <tr key={section.id} className='border-t align-top'>
+                        <td className='px-6 py-5 text-sm font-medium text-muted-foreground'>{String(index + 1).padStart(2, '0')}</td>
+                        <td className='px-6 py-5'>
+                          <div id={section.id} className='scroll-mt-28 space-y-2'>
+                            <p className='text-base font-semibold'>{resolveLocalizedText(section.title, lang)}</p>
+                            <Badge variant='outline' className='h-auto px-3 py-1 text-xs font-normal'>
+                              {section.id}
+                            </Badge>
+                          </div>
+                        </td>
+                        <td className='px-6 py-5 text-sm leading-6 text-muted-foreground'>{resolveLocalizedText(section.description, lang)}</td>
+                        <td className='px-6 py-5'>
+                          <ul className='space-y-3'>
+                            {section.bullets.map(bullet => (
+                              <li key={bullet.en} className='flex items-start gap-3 text-sm leading-6'>
+                                <CheckCircle2Icon className='text-primary mt-1 size-4 shrink-0' />
+                                <span>{resolveLocalizedText(bullet, lang)}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          ) : (
+            <div className='grid gap-6'>
+              {service.sections.map((section, index) => {
+                const SectionIcon = getSectionIcon(section.id)
+
+                return (
+                  <Card
+                    key={section.id}
+                    id={section.id}
+                    className={cn(
+                      'scroll-mt-28 border bg-card/85 backdrop-blur-sm',
+                      index % 2 === 0 ? 'lg:mr-10' : 'lg:ml-10'
+                    )}
+                  >
+                    <CardHeader className='space-y-4'>
+                      <div className='flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between'>
+                        <div className='flex items-start gap-4'>
+                          <div className='bg-primary/10 text-primary flex size-12 shrink-0 items-center justify-center rounded-2xl'>
+                            <SectionIcon className='size-5' />
+                          </div>
+                          <div className='space-y-3'>
+                            <Badge variant='outline' className='h-auto px-3 py-1 text-xs font-normal'>
+                              {copy.step} {index + 1} · {section.id}
+                            </Badge>
+                            <div className='space-y-2'>
+                              <CardTitle className='text-2xl sm:text-[1.75rem]'>{resolveLocalizedText(section.title, lang)}</CardTitle>
+                              <CardDescription className='max-w-3xl text-sm leading-6 sm:text-base'>{resolveLocalizedText(section.description, lang)}</CardDescription>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </CardHeader>
+
+                    <CardContent className='grid gap-3 md:grid-cols-3'>
+                      {section.bullets.map(bullet => (
+                        <div
+                          key={bullet.en}
+                          className='bg-background/75 flex min-h-32 items-start gap-3 rounded-2xl border p-4'
+                        >
+                          <CheckCircle2Icon className='text-primary mt-0.5 size-4 shrink-0' />
+                          <p className='text-sm leading-6'>{resolveLocalizedText(bullet, lang)}</p>
+                        </div>
+                      ))}
+                    </CardContent>
+                  </Card>
+                )
+              })}
+            </div>
+          )}
+        </div>
+      </section>
+
+      {renderOutcomes ? (
+        <>
+          <SectionSeparator />
+
+          <section className='px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20'>
+            <div className='mx-auto flex w-full max-w-7xl flex-col gap-6'>
+              <div className='max-w-3xl space-y-3'>
+                <Badge variant='outline' className='h-auto px-3 py-1 text-sm font-normal'>
+                  {copy.outcomes}
+                </Badge>
+                <h2 className='text-3xl font-semibold tracking-tight sm:text-4xl'>{copy.whatClientsShouldExpect}</h2>
+              </div>
+
+              <div className='grid gap-6 lg:grid-cols-3'>
+                {service.outcomes.map((outcome, index) => (
+                  <Card key={outcome.en} className='border bg-card/80'>
+                    <CardContent className='flex h-full flex-col gap-5 pt-6'>
+                      <div className='flex items-center justify-between'>
+                        <div className='bg-primary/10 text-primary flex size-11 items-center justify-center rounded-2xl'>
+                          <TargetIcon className='size-5' />
+                        </div>
+                        <span className='text-muted-foreground text-xs font-medium uppercase tracking-[0.24em]'>
+                          0{index + 1}
+                        </span>
+                      </div>
+                      <p className='text-sm leading-6'>{resolveLocalizedText(outcome, lang)}</p>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+
+              <div className='from-primary/10 via-background to-secondary/10 rounded-[28px] border bg-gradient-to-r p-6 sm:p-8'>
+                <div className='flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between'>
+                  <div className='max-w-2xl space-y-2'>
+                    <p className='text-muted-foreground text-xs font-medium uppercase tracking-[0.24em]'>{copy.nextStep}</p>
+                    <h3 className='text-2xl font-semibold tracking-tight sm:text-3xl'>{copy.nextStepTitle}</h3>
+                    <p className='text-muted-foreground text-sm leading-6 sm:text-base'>
+                      {copy.nextStepDescription}
+                    </p>
+                  </div>
+
+                  <PrimaryFlowButton asChild>
+                    <Link href='https://cal.com/team/meridian-growth' target='_blank' rel='noreferrer'>
+                      {copy.bookStrategyCall}
+                      <ArrowRightIcon />
+                    </Link>
+                  </PrimaryFlowButton>
+                </div>
+              </div>
+            </div>
+          </section>
+        </>
+      ) : null}
+
+      {hasFaqSection ? (
+        <>
+          <SectionSeparator />
+          <FAQ
+            faqItems={(service.faqItems ?? []).map(item => ({
+              question: resolveLocalizedText(item.question, lang),
+              answer: resolveLocalizedText(item.answer, lang)
+            }))}
+            eyebrow={copy.faqEyebrow}
+            title={copy.faqTitle}
+            description={copy.faqDescription}
+          />
+        </>
+      ) : null}
 
       <script
         type='application/ld+json'

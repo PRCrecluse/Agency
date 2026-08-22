@@ -22,7 +22,7 @@ const TrustedBrands = ({ brandLogos }: { brandLogos: brandLogos[] }) => {
                 <img
                   src={logo.image}
                   alt={logo.name}
-                  className='h-10 w-auto max-w-36 object-contain opacity-75 grayscale transition-opacity duration-300 hover:opacity-100 sm:h-12 sm:max-w-40 dark:invert'
+                  className='h-10 w-auto max-w-36 object-contain opacity-95 transition-transform duration-300 hover:scale-[1.03] sm:h-12 sm:max-w-40'
                 />
               </div>
             ))}

@@ -5,67 +5,90 @@ import { ArrowRightIcon, CheckCircle2Icon } from 'lucide-react'
 
 import { Badge } from '@/components/ui/badge'
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
-import { PrimaryFlowButton, SecondaryFlowButton } from '@/components/ui/flow-button'
+import { PrimaryFlowButton } from '@/components/ui/flow-button'
 import SectionSeparator from '@/components/section-separator'
-import { servicePages } from '@/content/services'
+import { resolveLocalizedText, servicePageCopy, servicePages, type ServiceLang } from '@/content/services'
 
 const baseUrl = process.env.NEXT_PUBLIC_APP_URL ?? 'http://localhost:3000'
 
 export const metadata: Metadata = {
   title: 'Services',
-  description: 'Explore Meridian service pages for SEO services, Reddit services, and GEO strategy.',
+  description: 'Explore Meridian service pages in English and Chinese for SEO services, Reddit services, and GEO strategy.',
   keywords: ['services', 'seo services', 'reddit services', 'geo services', 'meridian'],
   alternates: {
     canonical: `${baseUrl}/services`
   }
 }
 
-const jsonLd = {
-  '@context': 'https://schema.org',
-  '@graph': [
-    {
-      '@type': 'WebPage',
-      '@id': `${baseUrl}/services#webpage`,
-      name: 'Services',
-      description: 'Explore Meridian service pages for SEO services, Reddit services, and GEO strategy.',
-      url: `${baseUrl}/services`
-    },
-    {
-      '@type': 'ItemList',
-      itemListElement: servicePages.map((service, index) => ({
-        '@type': 'ListItem',
-        position: index + 1,
-        name: service.title,
-        url: `${baseUrl}/services/${service.slug}`
-      }))
-    }
-  ]
-}
+const getLang = (value?: string): ServiceLang => (value === 'zh' ? 'zh' : 'en')
 
-const ServicesPage = () => {
+const withLang = (path: string, lang: ServiceLang) => `${path}?lang=${lang}`
+
+const ServicesPage = async ({
+  searchParams
+}: {
+  searchParams?: Promise<{ lang?: string }>
+}) => {
+  const resolvedSearchParams = await searchParams
+  const lang = getLang(resolvedSearchParams?.lang)
+  const copy = servicePageCopy[lang]
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'WebPage',
+        '@id': `${baseUrl}/services#webpage`,
+        name: copy.servicesBadge,
+        description: copy.servicesDescription,
+        url: `${baseUrl}/services`
+      },
+      {
+        '@type': 'ItemList',
+        itemListElement: servicePages.map((service, index) => ({
+          '@type': 'ListItem',
+          position: index + 1,
+          name: resolveLocalizedText(service.title, lang),
+          url: `${baseUrl}/services/${service.slug}?lang=${lang}`
+        }))
+      }
+    ]
+  }
+
   return (
     <>
       <section className='px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20'>
         <div className='mx-auto flex w-full max-w-7xl flex-col gap-8'>
           <div className='max-w-3xl space-y-4'>
-            <Badge variant='outline'>Services</Badge>
-            <h1 className='text-4xl font-semibold tracking-tight sm:text-5xl'>Growth services built around how buyers discover you</h1>
+            <div className='flex flex-wrap items-center gap-3'>
+              <Badge variant='outline'>{copy.servicesBadge}</Badge>
+              <div className='flex items-center gap-1 rounded-full border bg-background/80 p-1 text-sm'>
+                <Link
+                  href={withLang('/services', 'en')}
+                  className={`rounded-full px-3 py-1.5 transition-colors ${lang === 'en' ? 'bg-primary text-primary-foreground' : 'text-muted-foreground hover:text-foreground'}`}
+                >
+                  {copy.english}
+                </Link>
+                <Link
+                  href={withLang('/services', 'zh')}
+                  className={`rounded-full px-3 py-1.5 transition-colors ${lang === 'zh' ? 'bg-primary text-primary-foreground' : 'text-muted-foreground hover:text-foreground'}`}
+                >
+                  {copy.chinese}
+                </Link>
+              </div>
+            </div>
+            <h1 className='text-4xl font-semibold tracking-tight sm:text-5xl'>{copy.servicesTitle}</h1>
             <p className='text-muted-foreground text-base leading-7 sm:text-lg'>
-              Choose the lane that matters most right now: search visibility on your site, trust and demand from Reddit,
-              or discoverability inside AI-generated answers.
+              {copy.servicesDescription}
             </p>
           </div>
 
           <div className='flex flex-wrap gap-4'>
             <PrimaryFlowButton asChild>
               <Link href='https://cal.com/team/meridian-growth' target='_blank' rel='noreferrer'>
-                Book a call
+                {copy.bookCall}
                 <ArrowRightIcon />
               </Link>
             </PrimaryFlowButton>
-            <SecondaryFlowButton asChild>
-              <Link href='/blog'>Read the blog</Link>
-            </SecondaryFlowButton>
           </div>
         </div>
       </section>
@@ -77,25 +100,25 @@ const ServicesPage = () => {
           {servicePages.map(service => (
             <Card key={service.slug} className='border'>
               <CardHeader className='space-y-3'>
-                <Badge variant='outline'>{service.category}</Badge>
-                <CardTitle className='text-2xl'>{service.title}</CardTitle>
-                <CardDescription className='text-sm leading-6'>{service.description}</CardDescription>
+                <Badge variant='outline'>{resolveLocalizedText(service.category, lang)}</Badge>
+                <CardTitle className='text-2xl'>{resolveLocalizedText(service.title, lang)}</CardTitle>
+                <CardDescription className='text-sm leading-6'>{resolveLocalizedText(service.description, lang)}</CardDescription>
               </CardHeader>
               <CardContent className='space-y-4'>
-                <p className='text-sm leading-6'>{service.intro}</p>
+                <p className='text-sm leading-6'>{resolveLocalizedText(service.intro, lang)}</p>
                 <ul className='space-y-2'>
                   {service.sections.map(section => (
                     <li key={section.id} className='flex items-start gap-2 text-sm leading-6'>
                       <CheckCircle2Icon className='text-primary mt-0.5 size-4 shrink-0' />
-                      <span>{section.title}</span>
+                      <span>{resolveLocalizedText(section.title, lang)}</span>
                     </li>
                   ))}
                 </ul>
               </CardContent>
               <CardFooter>
                 <PrimaryFlowButton asChild>
-                  <Link href={`/services/${service.slug}`}>
-                    View page
+                  <Link href={withLang(`/services/${service.slug}`, lang)}>
+                    {copy.viewPage}
                     <ArrowRightIcon />
                   </Link>
                 </PrimaryFlowButton>
