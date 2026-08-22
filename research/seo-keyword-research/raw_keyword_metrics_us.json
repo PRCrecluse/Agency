@@ -1,0 +1,1451 @@
+{
+  "source": "RapidAPI SEO API - keyword-metrics",
+  "host": "seo-api-dr-rd-rank-keywords-backlinks1.p.rapidapi.com",
+  "country": "us",
+  "records": [
+    {
+      "cluster_id": "core-seo-services",
+      "keyword": "seo services",
+      "intent": "commercial",
+      "target": "/services/seo-services",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "seo services",
+          "searchVolume": 60000,
+          "clicks": 46762,
+          "cpc": 8,
+          "difficulty": 0,
+          "globalSearchVolume": 129000,
+          "trafficPotential": 40000
+        }
+      }
+    },
+    {
+      "cluster_id": "core-seo-services",
+      "keyword": "seo agency",
+      "intent": "commercial",
+      "target": "/services/seo-services",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "seo agency",
+          "searchVolume": 51000,
+          "clicks": 54105,
+          "cpc": 10,
+          "difficulty": 1,
+          "globalSearchVolume": 133000,
+          "trafficPotential": 17000
+        }
+      }
+    },
+    {
+      "cluster_id": "core-seo-services",
+      "keyword": "seo consultant",
+      "intent": "commercial",
+      "target": "/services/seo-services",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "seo consultant",
+          "searchVolume": 13000,
+          "clicks": 6053,
+          "cpc": 7,
+          "difficulty": 6,
+          "globalSearchVolume": 32000,
+          "trafficPotential": 27000
+        }
+      }
+    },
+    {
+      "cluster_id": "core-seo-services",
+      "keyword": "b2b seo agency",
+      "intent": "commercial",
+      "target": "/services/seo-services",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "b2b seo agency",
+          "searchVolume": 4200,
+          "clicks": 0,
+          "cpc": 17,
+          "difficulty": 10,
+          "globalSearchVolume": 11000,
+          "trafficPotential": 1900
+        }
+      }
+    },
+    {
+      "cluster_id": "core-seo-services",
+      "keyword": "saas seo agency",
+      "intent": "commercial",
+      "target": "/services/seo-services",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "saas seo agency",
+          "searchVolume": 3600,
+          "clicks": 0,
+          "cpc": 9,
+          "difficulty": 10,
+          "globalSearchVolume": 6600,
+          "trafficPotential": 2100
+        }
+      }
+    },
+    {
+      "cluster_id": "core-seo-services",
+      "keyword": "saas seo consultant",
+      "intent": "commercial",
+      "target": "/services/seo-services",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "saas seo consultant",
+          "searchVolume": 900,
+          "clicks": 0,
+          "cpc": 25,
+          "difficulty": 2,
+          "globalSearchVolume": 2100,
+          "trafficPotential": 350
+        }
+      }
+    },
+    {
+      "cluster_id": "core-seo-services",
+      "keyword": "enterprise seo services",
+      "intent": "commercial",
+      "target": "/services/seo-services",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "enterprise seo services",
+          "searchVolume": 3100,
+          "clicks": 0,
+          "cpc": 0.3,
+          "difficulty": 13,
+          "globalSearchVolume": 7700,
+          "trafficPotential": 4600
+        }
+      }
+    },
+    {
+      "cluster_id": "core-seo-services",
+      "keyword": "organic growth agency",
+      "intent": "commercial",
+      "target": "/services/seo-services",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "organic growth agency",
+          "searchVolume": 60,
+          "clicks": 0,
+          "cpc": 7,
+          "difficulty": null,
+          "globalSearchVolume": 200,
+          "trafficPotential": null
+        }
+      }
+    },
+    {
+      "cluster_id": "core-seo-services",
+      "keyword": "seo strategy services",
+      "intent": "commercial",
+      "target": "/services/seo-services",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "seo strategy services",
+          "searchVolume": 800,
+          "clicks": 0,
+          "cpc": 8,
+          "difficulty": 0,
+          "globalSearchVolume": 1800,
+          "trafficPotential": 21000
+        }
+      }
+    },
+    {
+      "cluster_id": "core-seo-services",
+      "keyword": "seo growth coaching",
+      "intent": "commercial",
+      "target": "/services/seo-services",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "seo growth coaching",
+          "searchVolume": 0,
+          "clicks": 0,
+          "cpc": null,
+          "difficulty": null,
+          "globalSearchVolume": null,
+          "trafficPotential": null
+        }
+      }
+    },
+    {
+      "cluster_id": "on-page-seo",
+      "keyword": "on page seo services",
+      "intent": "commercial",
+      "target": "New /services/on-page-seo",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "on page seo services",
+          "searchVolume": 3300,
+          "clicks": 0,
+          "cpc": 5,
+          "difficulty": 6,
+          "globalSearchVolume": 6900,
+          "trafficPotential": 2500
+        }
+      }
+    },
+    {
+      "cluster_id": "on-page-seo",
+      "keyword": "on page seo audit",
+      "intent": "commercial",
+      "target": "New /services/on-page-seo",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "on page seo audit",
+          "searchVolume": 1100,
+          "clicks": 0,
+          "cpc": 9,
+          "difficulty": 82,
+          "globalSearchVolume": 3900,
+          "trafficPotential": 284000
+        }
+      }
+    },
+    {
+      "cluster_id": "on-page-seo",
+      "keyword": "on page seo consultant",
+      "intent": "commercial",
+      "target": "New /services/on-page-seo",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "on page seo consultant",
+          "searchVolume": 80,
+          "clicks": 0,
+          "cpc": 70,
+          "difficulty": null,
+          "globalSearchVolume": 150,
+          "trafficPotential": null
+        }
+      }
+    },
+    {
+      "cluster_id": "on-page-seo",
+      "keyword": "content optimization services",
+      "intent": "commercial",
+      "target": "New /services/on-page-seo",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "content optimization services",
+          "searchVolume": 400,
+          "clicks": 0,
+          "cpc": 0.35,
+          "difficulty": 6,
+          "globalSearchVolume": 800,
+          "trafficPotential": 900
+        }
+      }
+    },
+    {
+      "cluster_id": "on-page-seo",
+      "keyword": "internal linking service",
+      "intent": "commercial",
+      "target": "New /services/on-page-seo",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "internal linking service",
+          "searchVolume": 80,
+          "clicks": 0,
+          "cpc": null,
+          "difficulty": 22,
+          "globalSearchVolume": 80,
+          "trafficPotential": 12000
+        }
+      }
+    },
+    {
+      "cluster_id": "on-page-seo",
+      "keyword": "internal linking strategy",
+      "intent": "informational",
+      "target": "New guide: /blog/internal-linking-strategy",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "internal linking strategy",
+          "searchVolume": 700,
+          "clicks": 0,
+          "cpc": 2,
+          "difficulty": 67,
+          "globalSearchVolume": 1500,
+          "trafficPotential": 11000
+        }
+      }
+    },
+    {
+      "cluster_id": "on-page-seo",
+      "keyword": "seo content optimization",
+      "intent": "commercial",
+      "target": "New /services/on-page-seo",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "seo content optimization",
+          "searchVolume": 600,
+          "clicks": 0,
+          "cpc": 1.6,
+          "difficulty": 74,
+          "globalSearchVolume": 1300,
+          "trafficPotential": 442000
+        }
+      }
+    },
+    {
+      "cluster_id": "on-page-seo",
+      "keyword": "landing page seo",
+      "intent": "commercial",
+      "target": "New /services/on-page-seo",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "landing page seo",
+          "searchVolume": 1100,
+          "clicks": 0,
+          "cpc": 4,
+          "difficulty": 12,
+          "globalSearchVolume": 2300,
+          "trafficPotential": 3100
+        }
+      }
+    },
+    {
+      "cluster_id": "on-page-seo",
+      "keyword": "product page seo",
+      "intent": "commercial",
+      "target": "New /services/on-page-seo",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "product page seo",
+          "searchVolume": 700,
+          "clicks": 0,
+          "cpc": 0.45,
+          "difficulty": 15,
+          "globalSearchVolume": 1400,
+          "trafficPotential": 1700
+        }
+      }
+    },
+    {
+      "cluster_id": "on-page-seo",
+      "keyword": "on page seo checklist",
+      "intent": "informational",
+      "target": "New guide: /blog/on-page-seo-checklist",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "on page seo checklist",
+          "searchVolume": 1500,
+          "clicks": 2027,
+          "cpc": 1.6,
+          "difficulty": 40,
+          "globalSearchVolume": 3500,
+          "trafficPotential": 3300
+        }
+      }
+    },
+    {
+      "cluster_id": "technical-seo",
+      "keyword": "technical seo services",
+      "intent": "commercial",
+      "target": "/services/technical-seo",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "technical seo services",
+          "searchVolume": 11000,
+          "clicks": 0,
+          "cpc": 4.5,
+          "difficulty": 19,
+          "globalSearchVolume": 16000,
+          "trafficPotential": 7900
+        }
+      }
+    },
+    {
+      "cluster_id": "technical-seo",
+      "keyword": "technical seo audit",
+      "intent": "commercial",
+      "target": "/services/technical-seo",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "technical seo audit",
+          "searchVolume": 3800,
+          "clicks": 0,
+          "cpc": 6,
+          "difficulty": 77,
+          "globalSearchVolume": 7600,
+          "trafficPotential": 11000
+        }
+      }
+    },
+    {
+      "cluster_id": "technical-seo",
+      "keyword": "technical seo consultant",
+      "intent": "commercial",
+      "target": "/services/technical-seo",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "technical seo consultant",
+          "searchVolume": 1500,
+          "clicks": 0,
+          "cpc": 0.4,
+          "difficulty": 24,
+          "globalSearchVolume": 3700,
+          "trafficPotential": 800
+        }
+      }
+    },
+    {
+      "cluster_id": "technical-seo",
+      "keyword": "saas technical seo",
+      "intent": "commercial",
+      "target": "/services/technical-seo",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "saas technical seo",
+          "searchVolume": 400,
+          "clicks": 0,
+          "cpc": 8,
+          "difficulty": 3,
+          "globalSearchVolume": 700,
+          "trafficPotential": 100
+        }
+      }
+    },
+    {
+      "cluster_id": "technical-seo",
+      "keyword": "javascript seo",
+      "intent": "commercial",
+      "target": "/services/technical-seo",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "javascript seo",
+          "searchVolume": 2700,
+          "clicks": 0,
+          "cpc": 0.15,
+          "difficulty": 18,
+          "globalSearchVolume": 5200,
+          "trafficPotential": 3900
+        }
+      }
+    },
+    {
+      "cluster_id": "technical-seo",
+      "keyword": "javascript seo audit",
+      "intent": "commercial",
+      "target": "/services/technical-seo",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "javascript seo audit",
+          "searchVolume": 200,
+          "clicks": 0,
+          "cpc": 11,
+          "difficulty": 12,
+          "globalSearchVolume": 200,
+          "trafficPotential": 400
+        }
+      }
+    },
+    {
+      "cluster_id": "technical-seo",
+      "keyword": "core web vitals audit",
+      "intent": "commercial",
+      "target": "/services/technical-seo",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "core web vitals audit",
+          "searchVolume": 40,
+          "clicks": 0,
+          "cpc": 5,
+          "difficulty": 54,
+          "globalSearchVolume": 250,
+          "trafficPotential": 90
+        }
+      }
+    },
+    {
+      "cluster_id": "technical-seo",
+      "keyword": "website migration seo",
+      "intent": "commercial",
+      "target": "/services/technical-seo",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "website migration seo",
+          "searchVolume": 800,
+          "clicks": 0,
+          "cpc": 10,
+          "difficulty": 12,
+          "globalSearchVolume": 1700,
+          "trafficPotential": 4600
+        }
+      }
+    },
+    {
+      "cluster_id": "technical-seo",
+      "keyword": "seo migration service",
+      "intent": "commercial",
+      "target": "/services/technical-seo",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "seo migration service",
+          "searchVolume": 700,
+          "clicks": 0,
+          "cpc": 10,
+          "difficulty": 6,
+          "globalSearchVolume": 1400,
+          "trafficPotential": 1200
+        }
+      }
+    },
+    {
+      "cluster_id": "technical-seo",
+      "keyword": "international seo services",
+      "intent": "commercial",
+      "target": "/services/technical-seo",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "international seo services",
+          "searchVolume": 2500,
+          "clicks": 0,
+          "cpc": 1.1,
+          "difficulty": 6,
+          "globalSearchVolume": 7300,
+          "trafficPotential": 4100
+        }
+      }
+    },
+    {
+      "cluster_id": "technical-seo",
+      "keyword": "hreflang audit",
+      "intent": "commercial",
+      "target": "/services/technical-seo",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "hreflang audit",
+          "searchVolume": 10,
+          "clicks": 0,
+          "cpc": null,
+          "difficulty": null,
+          "globalSearchVolume": 20,
+          "trafficPotential": null
+        }
+      }
+    },
+    {
+      "cluster_id": "technical-seo",
+      "keyword": "schema markup service",
+      "intent": "commercial",
+      "target": "/services/technical-seo",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "schema markup service",
+          "searchVolume": 200,
+          "clicks": 0,
+          "cpc": 0.15,
+          "difficulty": 2,
+          "globalSearchVolume": 400,
+          "trafficPotential": 200
+        }
+      }
+    },
+    {
+      "cluster_id": "technical-seo",
+      "keyword": "crawl budget optimization",
+      "intent": "informational",
+      "target": "New guide: /blog/crawl-budget-optimization",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "crawl budget optimization",
+          "searchVolume": 100,
+          "clicks": 0,
+          "cpc": null,
+          "difficulty": 41,
+          "globalSearchVolume": 500,
+          "trafficPotential": 1200
+        }
+      }
+    },
+    {
+      "cluster_id": "technical-seo",
+      "keyword": "indexation audit",
+      "intent": "commercial",
+      "target": "/services/technical-seo",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "indexation audit",
+          "searchVolume": 0,
+          "clicks": 0,
+          "cpc": null,
+          "difficulty": null,
+          "globalSearchVolume": null,
+          "trafficPotential": null
+        }
+      }
+    },
+    {
+      "cluster_id": "programmatic-seo",
+      "keyword": "programmatic seo",
+      "intent": "commercial",
+      "target": "New /services/programmatic-seo",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "programmatic seo",
+          "searchVolume": 2300,
+          "clicks": 0,
+          "cpc": 2,
+          "difficulty": 0,
+          "globalSearchVolume": 6900,
+          "trafficPotential": 900
+        }
+      }
+    },
+    {
+      "cluster_id": "programmatic-seo",
+      "keyword": "programmatic seo agency",
+      "intent": "commercial",
+      "target": "New /services/programmatic-seo",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "programmatic seo agency",
+          "searchVolume": 200,
+          "clicks": 0,
+          "cpc": 10,
+          "difficulty": null,
+          "globalSearchVolume": 300,
+          "trafficPotential": null
+        }
+      }
+    },
+    {
+      "cluster_id": "programmatic-seo",
+      "keyword": "programmatic seo services",
+      "intent": "commercial",
+      "target": "New /services/programmatic-seo",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "programmatic seo services",
+          "searchVolume": 200,
+          "clicks": 0,
+          "cpc": null,
+          "difficulty": null,
+          "globalSearchVolume": 200,
+          "trafficPotential": null
+        }
+      }
+    },
+    {
+      "cluster_id": "programmatic-seo",
+      "keyword": "programmatic seo strategy",
+      "intent": "commercial",
+      "target": "New /services/programmatic-seo",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "programmatic seo strategy",
+          "searchVolume": 100,
+          "clicks": 0,
+          "cpc": null,
+          "difficulty": null,
+          "globalSearchVolume": 100,
+          "trafficPotential": null
+        }
+      }
+    },
+    {
+      "cluster_id": "programmatic-seo",
+      "keyword": "programmatic seo consultant",
+      "intent": "commercial",
+      "target": "New /services/programmatic-seo",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "programmatic seo consultant",
+          "searchVolume": 10,
+          "clicks": 0,
+          "cpc": null,
+          "difficulty": null,
+          "globalSearchVolume": 10,
+          "trafficPotential": null
+        }
+      }
+    },
+    {
+      "cluster_id": "programmatic-seo",
+      "keyword": "programmatic seo examples",
+      "intent": "informational",
+      "target": "New guide: /blog/programmatic-seo-examples",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "programmatic seo examples",
+          "searchVolume": 100,
+          "clicks": 0,
+          "cpc": null,
+          "difficulty": 8,
+          "globalSearchVolume": 250,
+          "trafficPotential": 60
+        }
+      }
+    },
+    {
+      "cluster_id": "programmatic-seo",
+      "keyword": "scalable seo pages",
+      "intent": "commercial",
+      "target": "New /services/programmatic-seo",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "scalable seo pages",
+          "searchVolume": 0,
+          "clicks": 0,
+          "cpc": null,
+          "difficulty": null,
+          "globalSearchVolume": null,
+          "trafficPotential": null
+        }
+      }
+    },
+    {
+      "cluster_id": "programmatic-seo",
+      "keyword": "template seo",
+      "intent": "informational",
+      "target": "New guide: /blog/template-seo",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "template seo",
+          "searchVolume": 60,
+          "clicks": 0,
+          "cpc": 3.5,
+          "difficulty": 2,
+          "globalSearchVolume": 150,
+          "trafficPotential": 1200
+        }
+      }
+    },
+    {
+      "cluster_id": "programmatic-seo",
+      "keyword": "directory seo strategy",
+      "intent": "informational",
+      "target": "New guide: /blog/directory-seo-strategy",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "directory seo strategy",
+          "searchVolume": 0,
+          "clicks": 0,
+          "cpc": null,
+          "difficulty": null,
+          "globalSearchVolume": null,
+          "trafficPotential": null
+        }
+      }
+    },
+    {
+      "cluster_id": "programmatic-seo",
+      "keyword": "integration pages seo",
+      "intent": "commercial",
+      "target": "New /services/programmatic-seo",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "integration pages seo",
+          "searchVolume": 0,
+          "clicks": 0,
+          "cpc": null,
+          "difficulty": null,
+          "globalSearchVolume": null,
+          "trafficPotential": null
+        }
+      }
+    },
+    {
+      "cluster_id": "content-and-keyword-strategy",
+      "keyword": "keyword research services",
+      "intent": "commercial",
+      "target": "New /services/keyword-research",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "keyword research services",
+          "searchVolume": 1700,
+          "clicks": 0,
+          "cpc": 7,
+          "difficulty": 83,
+          "globalSearchVolume": 3400,
+          "trafficPotential": 800
+        }
+      }
+    },
+    {
+      "cluster_id": "content-and-keyword-strategy",
+      "keyword": "keyword strategy",
+      "intent": "commercial",
+      "target": "New /services/keyword-research",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "keyword strategy",
+          "searchVolume": 1200,
+          "clicks": 1111,
+          "cpc": 4,
+          "difficulty": 11,
+          "globalSearchVolume": 2200,
+          "trafficPotential": 1100
+        }
+      }
+    },
+    {
+      "cluster_id": "content-and-keyword-strategy",
+      "keyword": "seo content strategy",
+      "intent": "commercial",
+      "target": "New /services/seo-content-strategy",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "seo content strategy",
+          "searchVolume": 3200,
+          "clicks": 4311,
+          "cpc": 2.5,
+          "difficulty": 20,
+          "globalSearchVolume": 7300,
+          "trafficPotential": 12000
+        }
+      }
+    },
+    {
+      "cluster_id": "content-and-keyword-strategy",
+      "keyword": "seo content services",
+      "intent": "commercial",
+      "target": "New /services/seo-content-strategy",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "seo content services",
+          "searchVolume": 1100,
+          "clicks": 0,
+          "cpc": 4.5,
+          "difficulty": 8,
+          "globalSearchVolume": 3100,
+          "trafficPotential": 200
+        }
+      }
+    },
+    {
+      "cluster_id": "content-and-keyword-strategy",
+      "keyword": "seo content audit",
+      "intent": "commercial",
+      "target": "New /services/seo-content-strategy",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "seo content audit",
+          "searchVolume": 1400,
+          "clicks": 0,
+          "cpc": 3.5,
+          "difficulty": 30,
+          "globalSearchVolume": 3000,
+          "trafficPotential": 1600
+        }
+      }
+    },
+    {
+      "cluster_id": "content-and-keyword-strategy",
+      "keyword": "content brief service",
+      "intent": "commercial",
+      "target": "New /services/seo-content-strategy",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "content brief service",
+          "searchVolume": 0,
+          "clicks": 0,
+          "cpc": null,
+          "difficulty": null,
+          "globalSearchVolume": null,
+          "trafficPotential": null
+        }
+      }
+    },
+    {
+      "cluster_id": "content-and-keyword-strategy",
+      "keyword": "seo content briefs",
+      "intent": "commercial",
+      "target": "New /services/seo-content-strategy",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "seo content briefs",
+          "searchVolume": 90,
+          "clicks": 0,
+          "cpc": 3.5,
+          "difficulty": 3,
+          "globalSearchVolume": 100,
+          "trafficPotential": 350
+        }
+      }
+    },
+    {
+      "cluster_id": "content-and-keyword-strategy",
+      "keyword": "saas content strategy",
+      "intent": "commercial",
+      "target": "New /services/seo-content-strategy",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "saas content strategy",
+          "searchVolume": 250,
+          "clicks": 0,
+          "cpc": 4.5,
+          "difficulty": 0,
+          "globalSearchVolume": 500,
+          "trafficPotential": 150
+        }
+      }
+    },
+    {
+      "cluster_id": "content-and-keyword-strategy",
+      "keyword": "b2b seo content",
+      "intent": "commercial",
+      "target": "New /services/seo-content-strategy",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "b2b seo content",
+          "searchVolume": 100,
+          "clicks": 0,
+          "cpc": null,
+          "difficulty": null,
+          "globalSearchVolume": 150,
+          "trafficPotential": null
+        }
+      }
+    },
+    {
+      "cluster_id": "content-and-keyword-strategy",
+      "keyword": "topical authority seo",
+      "intent": "informational",
+      "target": "New guide: /blog/topical-authority-seo",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "topical authority seo",
+          "searchVolume": 450,
+          "clicks": 0,
+          "cpc": 2.5,
+          "difficulty": 34,
+          "globalSearchVolume": 900,
+          "trafficPotential": 350
+        }
+      }
+    },
+    {
+      "cluster_id": "content-and-keyword-strategy",
+      "keyword": "commercial content strategy",
+      "intent": "commercial",
+      "target": "New /services/seo-content-strategy",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "commercial content strategy",
+          "searchVolume": 0,
+          "clicks": 0,
+          "cpc": null,
+          "difficulty": null,
+          "globalSearchVolume": 40,
+          "trafficPotential": null
+        }
+      }
+    },
+    {
+      "cluster_id": "authority-building",
+      "keyword": "link building services",
+      "intent": "commercial",
+      "target": "New /services/link-building",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "link building services",
+          "searchVolume": 9200,
+          "clicks": 14870,
+          "cpc": 5,
+          "difficulty": 27,
+          "globalSearchVolume": 19000,
+          "trafficPotential": 16000
+        }
+      }
+    },
+    {
+      "cluster_id": "authority-building",
+      "keyword": "link building agency",
+      "intent": "commercial",
+      "target": "New /services/link-building",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "link building agency",
+          "searchVolume": 4700,
+          "clicks": 0,
+          "cpc": 9,
+          "difficulty": 50,
+          "globalSearchVolume": 10000,
+          "trafficPotential": 15000
+        }
+      }
+    },
+    {
+      "cluster_id": "authority-building",
+      "keyword": "saas link building",
+      "intent": "commercial",
+      "target": "New /services/link-building",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "saas link building",
+          "searchVolume": 800,
+          "clicks": 0,
+          "cpc": 7,
+          "difficulty": 4,
+          "globalSearchVolume": 1400,
+          "trafficPotential": 900
+        }
+      }
+    },
+    {
+      "cluster_id": "authority-building",
+      "keyword": "b2b link building",
+      "intent": "commercial",
+      "target": "New /services/link-building",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "b2b link building",
+          "searchVolume": 300,
+          "clicks": 0,
+          "cpc": 1.5,
+          "difficulty": 1,
+          "globalSearchVolume": 600,
+          "trafficPotential": 0
+        }
+      }
+    },
+    {
+      "cluster_id": "authority-building",
+      "keyword": "b2b saas link building",
+      "intent": "commercial",
+      "target": "New /services/link-building",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "b2b saas link building",
+          "searchVolume": 80,
+          "clicks": 0,
+          "cpc": null,
+          "difficulty": null,
+          "globalSearchVolume": 100,
+          "trafficPotential": null
+        }
+      }
+    },
+    {
+      "cluster_id": "authority-building",
+      "keyword": "digital pr services",
+      "intent": "commercial",
+      "target": "New /services/link-building",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "digital pr services",
+          "searchVolume": 1600,
+          "clicks": 0,
+          "cpc": 12,
+          "difficulty": 17,
+          "globalSearchVolume": 4100,
+          "trafficPotential": 700
+        }
+      }
+    },
+    {
+      "cluster_id": "authority-building",
+      "keyword": "digital pr agency",
+      "intent": "commercial",
+      "target": "New /services/link-building",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "digital pr agency",
+          "searchVolume": 2500,
+          "clicks": 0,
+          "cpc": 13,
+          "difficulty": 26,
+          "globalSearchVolume": 6200,
+          "trafficPotential": 1900
+        }
+      }
+    },
+    {
+      "cluster_id": "authority-building",
+      "keyword": "backlink strategy",
+      "intent": "commercial",
+      "target": "New /services/link-building",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "backlink strategy",
+          "searchVolume": 900,
+          "clicks": 0,
+          "cpc": 4.5,
+          "difficulty": 36,
+          "globalSearchVolume": 1700,
+          "trafficPotential": 6300
+        }
+      }
+    },
+    {
+      "cluster_id": "authority-building",
+      "keyword": "white hat link building",
+      "intent": "commercial",
+      "target": "New /services/link-building",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "white hat link building",
+          "searchVolume": 1200,
+          "clicks": 0,
+          "cpc": 4,
+          "difficulty": 16,
+          "globalSearchVolume": 2400,
+          "trafficPotential": 1000
+        }
+      }
+    },
+    {
+      "cluster_id": "authority-building",
+      "keyword": "link building consultant",
+      "intent": "commercial",
+      "target": "New /services/link-building",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "link building consultant",
+          "searchVolume": 200,
+          "clicks": 0,
+          "cpc": 0.6,
+          "difficulty": 1,
+          "globalSearchVolume": 600,
+          "trafficPotential": 150
+        }
+      }
+    },
+    {
+      "cluster_id": "ai-search-and-geo",
+      "keyword": "ai seo services",
+      "intent": "commercial",
+      "target": "/services/geo-services",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "ai seo services",
+          "searchVolume": 4500,
+          "clicks": 0,
+          "cpc": 1.1,
+          "difficulty": 6,
+          "globalSearchVolume": 10000,
+          "trafficPotential": 2100
+        }
+      }
+    },
+    {
+      "cluster_id": "ai-search-and-geo",
+      "keyword": "ai seo agency",
+      "intent": "commercial",
+      "target": "/services/geo-services",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "ai seo agency",
+          "searchVolume": 3600,
+          "clicks": 0,
+          "cpc": 9,
+          "difficulty": 10,
+          "globalSearchVolume": 10000,
+          "trafficPotential": 1900
+        }
+      }
+    },
+    {
+      "cluster_id": "ai-search-and-geo",
+      "keyword": "generative engine optimization",
+      "intent": "commercial",
+      "target": "/services/geo-services",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "generative engine optimization",
+          "searchVolume": 8000,
+          "clicks": 0,
+          "cpc": 11,
+          "difficulty": 65,
+          "globalSearchVolume": 27000,
+          "trafficPotential": 2000
+        }
+      }
+    },
+    {
+      "cluster_id": "ai-search-and-geo",
+      "keyword": "geo services",
+      "intent": "commercial",
+      "target": "/services/geo-services",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "geo services",
+          "searchVolume": 700,
+          "clicks": 381,
+          "cpc": 6,
+          "difficulty": 54,
+          "globalSearchVolume": 1900,
+          "trafficPotential": 9000
+        }
+      }
+    },
+    {
+      "cluster_id": "ai-search-and-geo",
+      "keyword": "ai search optimization",
+      "intent": "commercial",
+      "target": "/services/geo-services",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "ai search optimization",
+          "searchVolume": 3500,
+          "clicks": 0,
+          "cpc": 0.9,
+          "difficulty": 53,
+          "globalSearchVolume": 6700,
+          "trafficPotential": 13000
+        }
+      }
+    },
+    {
+      "cluster_id": "ai-search-and-geo",
+      "keyword": "llm seo",
+      "intent": "commercial",
+      "target": "/services/geo-services",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "llm seo",
+          "searchVolume": 1400,
+          "clicks": 0,
+          "cpc": 5,
+          "difficulty": 0,
+          "globalSearchVolume": 5200,
+          "trafficPotential": 500
+        }
+      }
+    },
+    {
+      "cluster_id": "ai-search-and-geo",
+      "keyword": "llm optimization",
+      "intent": "commercial",
+      "target": "/services/geo-services",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "llm optimization",
+          "searchVolume": 1600,
+          "clicks": 0,
+          "cpc": 8,
+          "difficulty": 14,
+          "globalSearchVolume": 6100,
+          "trafficPotential": 600
+        }
+      }
+    },
+    {
+      "cluster_id": "ai-search-and-geo",
+      "keyword": "chatgpt seo",
+      "intent": "commercial",
+      "target": "/services/geo-services",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "chatgpt seo",
+          "searchVolume": 800,
+          "clicks": 0,
+          "cpc": 6,
+          "difficulty": 13,
+          "globalSearchVolume": 3800,
+          "trafficPotential": 80
+        }
+      }
+    },
+    {
+      "cluster_id": "ai-search-and-geo",
+      "keyword": "perplexity seo",
+      "intent": "commercial",
+      "target": "/services/geo-services",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "perplexity seo",
+          "searchVolume": 350,
+          "clicks": 0,
+          "cpc": 7,
+          "difficulty": null,
+          "globalSearchVolume": 1400,
+          "trafficPotential": null
+        }
+      }
+    },
+    {
+      "cluster_id": "ai-search-and-geo",
+      "keyword": "ai search visibility",
+      "intent": "commercial",
+      "target": "/services/geo-services",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "ai search visibility",
+          "searchVolume": 1400,
+          "clicks": 0,
+          "cpc": 12,
+          "difficulty": 59,
+          "globalSearchVolume": 2800,
+          "trafficPotential": 900
+        }
+      }
+    },
+    {
+      "cluster_id": "ai-search-and-geo",
+      "keyword": "answer engine optimization",
+      "intent": "commercial",
+      "target": "/services/geo-services",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "answer engine optimization",
+          "searchVolume": 5000,
+          "clicks": 0,
+          "cpc": 6,
+          "difficulty": 40,
+          "globalSearchVolume": 12000,
+          "trafficPotential": 1100
+        }
+      }
+    }
+  ]
+}
