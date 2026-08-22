@@ -32,6 +32,7 @@ const ServicesPage = async ({
   const resolvedSearchParams = await searchParams
   const lang = getLang(resolvedSearchParams?.lang)
   const copy = servicePageCopy[lang]
+
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [

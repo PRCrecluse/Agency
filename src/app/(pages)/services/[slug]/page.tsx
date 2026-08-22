@@ -29,7 +29,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import FAQ from '@/components/blocks/faq/faq'
 import { PrimaryFlowButton, SecondaryFlowButton } from '@/components/ui/flow-button'
 import SectionSeparator from '@/components/section-separator'
-import { getServiceBySlug, resolveLocalizedText, servicePageCopy, serviceSlugs, type ServiceLang } from '@/content/services'
+import { getServiceBySlug, resolveLocalizedText, servicePageCopy, serviceSlugs, type ServiceLang, type ServiceSection } from '@/content/services'
 import { cn } from '@/lib/utils'
 
 const baseUrl = process.env.NEXT_PUBLIC_APP_URL ?? 'http://localhost:3000'
@@ -72,6 +72,57 @@ const getSectionIcon = (sectionId: string) => {
   return SearchIcon
 }
 
+const DeliveryTable = ({
+  sections,
+  lang,
+  copy
+}: {
+  sections: ServiceSection[]
+  lang: ServiceLang
+  copy: (typeof servicePageCopy)[ServiceLang]
+}) => (
+  <div className='overflow-hidden rounded-[24px] border bg-background/60'>
+    <div className='overflow-x-auto'>
+      <table className='w-full min-w-[860px] border-collapse'>
+        <thead>
+          <tr className='bg-background/80 text-left'>
+            <th className='px-6 py-4 text-xs font-medium uppercase tracking-[0.24em] text-muted-foreground'>{copy.tableStep}</th>
+            <th className='px-6 py-4 text-xs font-medium uppercase tracking-[0.24em] text-muted-foreground'>{copy.tableWorkstream}</th>
+            <th className='px-6 py-4 text-xs font-medium uppercase tracking-[0.24em] text-muted-foreground'>{copy.tableFocus}</th>
+            <th className='px-6 py-4 text-xs font-medium uppercase tracking-[0.24em] text-muted-foreground'>{copy.tableDeliverables}</th>
+          </tr>
+        </thead>
+        <tbody>
+          {sections.map((section, index) => (
+            <tr key={section.id} className='border-t align-top'>
+              <td className='px-6 py-5 text-sm font-medium text-muted-foreground'>{String(index + 1).padStart(2, '0')}</td>
+              <td className='px-6 py-5'>
+                <div id={section.id} className='scroll-mt-28 space-y-2'>
+                  <p className='text-base font-semibold'>{resolveLocalizedText(section.title, lang)}</p>
+                  <Badge variant='outline' className='h-auto px-3 py-1 text-xs font-normal'>
+                    {section.id}
+                  </Badge>
+                </div>
+              </td>
+              <td className='px-6 py-5 text-sm leading-6 text-muted-foreground'>{resolveLocalizedText(section.description, lang)}</td>
+              <td className='px-6 py-5'>
+                <ul className='space-y-3'>
+                  {section.bullets.map(bullet => (
+                    <li key={bullet.en} className='flex items-start gap-3 text-sm leading-6'>
+                      <CheckCircle2Icon className='text-primary mt-1 size-4 shrink-0' />
+                      <span>{resolveLocalizedText(bullet, lang)}</span>
+                    </li>
+                  ))}
+                </ul>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </div>
+)
+
 export async function generateStaticParams() {
   return serviceSlugs.map(slug => ({ slug }))
 }
@@ -113,24 +164,42 @@ const ServiceDetailPage = async ({
     notFound()
   }
 
-  const totalBulletCount = service.sections.reduce((count, section) => count + section.bullets.length, 0)
+  const hasPackages = Boolean(service.packages?.length)
+  const displaySections = hasPackages ? service.packages?.flatMap(servicePackage => servicePackage.sections) ?? [] : service.sections
+  const totalBulletCount = displaySections.reduce((count, section) => count + section.bullets.length, 0)
   const hasCustomIncludes = Boolean(service.serviceIncludes?.length)
   const hasFaqSection = Boolean(service.faqItems?.length)
   const renderOutcomes = !service.hideOutcomes
-  const statItems = [
-    {
-      label: copy.workstreams,
-      value: String(service.sections.length).padStart(2, '0')
-    },
-    {
-      label: copy.deliverables,
-      value: String(totalBulletCount).padStart(2, '0')
-    },
-    {
-      label: renderOutcomes ? copy.outcomeTargets : hasFaqSection ? copy.faqTopics : copy.outcomeTargets,
-      value: String(renderOutcomes ? service.outcomes.length : service.faqItems?.length ?? service.outcomes.length).padStart(2, '0')
-    }
-  ]
+
+  const statItems = hasPackages
+    ? [
+        {
+          label: copy.servicePackages,
+          value: String(service.packages?.length ?? 0).padStart(2, '0')
+        },
+        {
+          label: copy.workstreams,
+          value: String(displaySections.length).padStart(2, '0')
+        },
+        {
+          label: copy.deliverables,
+          value: String(totalBulletCount).padStart(2, '0')
+        }
+      ]
+    : [
+        {
+          label: copy.workstreams,
+          value: String(displaySections.length).padStart(2, '0')
+        },
+        {
+          label: copy.deliverables,
+          value: String(totalBulletCount).padStart(2, '0')
+        },
+        {
+          label: renderOutcomes ? copy.outcomeTargets : hasFaqSection ? copy.faqTopics : copy.outcomeTargets,
+          value: String(renderOutcomes ? service.outcomes.length : service.faqItems?.length ?? service.outcomes.length).padStart(2, '0')
+        }
+      ]
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -297,7 +366,7 @@ const ServiceDetailPage = async ({
                 <div className='space-y-3'>
                   <p className='text-muted-foreground text-xs font-medium uppercase tracking-[0.24em]'>{copy.onThisPage}</p>
                   <ul className='space-y-2.5'>
-                    {service.sections.map((section, index) => {
+                    {displaySections.map((section, index) => {
                       const SectionIcon = getSectionIcon(section.id)
 
                       return (
@@ -401,56 +470,45 @@ const ServiceDetailPage = async ({
             <Badge variant='outline' className='h-auto px-3 py-1 text-sm font-normal'>
               {copy.delivery}
             </Badge>
-            <h2 className='text-3xl font-semibold tracking-tight sm:text-4xl'>{copy.serviceBreakdown}</h2>
+            <h2 className='text-3xl font-semibold tracking-tight sm:text-4xl'>{hasPackages ? copy.deliveryPackages : copy.serviceBreakdown}</h2>
             <p className='text-muted-foreground text-base leading-7 sm:text-lg'>
               {service.deliveryDescription ? resolveLocalizedText(service.deliveryDescription, lang) : copy.whyThisServiceWorksDescription}
             </p>
           </div>
 
-          {service.deliveryPresentation === 'table' ? (
+          {hasPackages ? (
+            <div className='grid gap-8'>
+              {service.packages?.map((servicePackage, packageIndex) => (
+                <Card key={servicePackage.id} className='overflow-hidden border bg-card/85 backdrop-blur-sm'>
+                  <CardHeader className='space-y-4 border-b bg-background/45 p-6 sm:p-8'>
+                    <Badge variant='outline' className='h-auto w-fit px-3 py-1 text-xs font-normal'>
+                      {copy.package} {String(packageIndex + 1).padStart(2, '0')}
+                    </Badge>
+                    <div className='space-y-3'>
+                      <CardTitle className='text-2xl sm:text-3xl'>{resolveLocalizedText(servicePackage.title, lang)}</CardTitle>
+                      <CardDescription className='max-w-4xl text-sm leading-6 sm:text-base'>
+                        {resolveLocalizedText(servicePackage.description, lang)}
+                      </CardDescription>
+                      {servicePackage.deliveryNote ? (
+                        <p className='rounded-2xl border bg-primary/5 px-4 py-3 text-sm leading-6'>
+                          {resolveLocalizedText(servicePackage.deliveryNote, lang)}
+                        </p>
+                      ) : null}
+                    </div>
+                  </CardHeader>
+                  <CardContent className='p-0'>
+                    <DeliveryTable sections={servicePackage.sections} lang={lang} copy={copy} />
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          ) : service.deliveryPresentation === 'table' ? (
             <div className='overflow-hidden rounded-[28px] border bg-card/85 backdrop-blur-sm'>
-              <div className='overflow-x-auto'>
-                <table className='w-full min-w-[860px] border-collapse'>
-                  <thead>
-                    <tr className='bg-background/80 text-left'>
-                      <th className='px-6 py-4 text-xs font-medium uppercase tracking-[0.24em] text-muted-foreground'>{copy.tableStep}</th>
-                      <th className='px-6 py-4 text-xs font-medium uppercase tracking-[0.24em] text-muted-foreground'>{copy.tableWorkstream}</th>
-                      <th className='px-6 py-4 text-xs font-medium uppercase tracking-[0.24em] text-muted-foreground'>{copy.tableFocus}</th>
-                      <th className='px-6 py-4 text-xs font-medium uppercase tracking-[0.24em] text-muted-foreground'>{copy.tableDeliverables}</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {service.sections.map((section, index) => (
-                      <tr key={section.id} className='border-t align-top'>
-                        <td className='px-6 py-5 text-sm font-medium text-muted-foreground'>{String(index + 1).padStart(2, '0')}</td>
-                        <td className='px-6 py-5'>
-                          <div id={section.id} className='scroll-mt-28 space-y-2'>
-                            <p className='text-base font-semibold'>{resolveLocalizedText(section.title, lang)}</p>
-                            <Badge variant='outline' className='h-auto px-3 py-1 text-xs font-normal'>
-                              {section.id}
-                            </Badge>
-                          </div>
-                        </td>
-                        <td className='px-6 py-5 text-sm leading-6 text-muted-foreground'>{resolveLocalizedText(section.description, lang)}</td>
-                        <td className='px-6 py-5'>
-                          <ul className='space-y-3'>
-                            {section.bullets.map(bullet => (
-                              <li key={bullet.en} className='flex items-start gap-3 text-sm leading-6'>
-                                <CheckCircle2Icon className='text-primary mt-1 size-4 shrink-0' />
-                                <span>{resolveLocalizedText(bullet, lang)}</span>
-                              </li>
-                            ))}
-                          </ul>
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
+              <DeliveryTable sections={displaySections} lang={lang} copy={copy} />
             </div>
           ) : (
             <div className='grid gap-6'>
-              {service.sections.map((section, index) => {
+              {displaySections.map((section, index) => {
                 const SectionIcon = getSectionIcon(section.id)
 
                 return (

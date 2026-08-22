@@ -17,6 +17,14 @@ export type ServiceSection = {
   bullets: LocalizedText[]
 }
 
+export type ServicePackage = {
+  id: string
+  title: LocalizedText
+  description: LocalizedText
+  deliveryNote?: LocalizedText
+  sections: ServiceSection[]
+}
+
 export type ServicePage = {
   slug: string
   category: LocalizedText
@@ -26,6 +34,7 @@ export type ServicePage = {
   keywords: LocalizedText[]
   highlights: LocalizedText[]
   serviceIncludes?: LocalizedText[]
+  packages?: ServicePackage[]
   sections: ServiceSection[]
   outcomes: LocalizedText[]
   deliveryDescription?: LocalizedText
@@ -47,10 +56,13 @@ export const servicePageCopy = {
     bookCall: 'Book a call',
     allServices: 'All services',
     programSnapshot: 'Program snapshot',
-    programSnapshotDescription: 'Jump into the exact workstream you want to review first.',
+    programSnapshotDescription: 'Review the delivery model and the workstreams that matter most to your growth goals.',
     onThisPage: 'On this page',
     step: 'Step',
-    whatThisServiceIncludes: 'What this service includes?',
+    package: 'Package',
+    servicePackages: 'Service packages',
+    deliveryPackages: 'Delivery packages',
+    whatThisServiceIncludes: 'What this service includes',
     whyThisServiceWorks: 'Why this service works',
     whyThisServiceWorksTitle: 'Built to feel like a real program, not a list of tactics',
     whyThisServiceWorksDescription:
@@ -90,10 +102,13 @@ export const servicePageCopy = {
     bookCall: '预约通话',
     allServices: '全部服务',
     programSnapshot: '服务概览',
-    programSnapshotDescription: '先查看你最想了解的工作模块。',
+    programSnapshotDescription: '查看最适合你增长目标的交付模式与重点工作模块。',
     onThisPage: '本页内容',
     step: '步骤',
-    whatThisServiceIncludes: 'What this service includes?',
+    package: '方案',
+    servicePackages: '服务方案',
+    deliveryPackages: '交付方案',
+    whatThisServiceIncludes: '服务包含什么',
     whyThisServiceWorks: '为什么这个服务有效',
     whyThisServiceWorksTitle: '它更像一套真实可执行的增长方案，而不是零散战术清单',
     whyThisServiceWorksDescription:
@@ -131,210 +146,200 @@ export const servicePages: ServicePage[] = [
     category: { en: 'SEO Services', zh: 'SEO 服务' },
     title: { en: 'SEO Services', zh: 'SEO 服务' },
     description: {
-      en: 'Build a stronger organic growth engine with aligned on-page SEO, technical SEO, and programmatic SEO systems.',
-      zh: '通过页面 SEO、技术 SEO 与程序化 SEO 的协同，建立更稳固的自然增长引擎。'
+      en: 'Choose a hands-on SEO growth coaching program or a managed SEO delivery program, with a clear scope for strategy, content, on-page work, technical guidance, authority building, and reporting.',
+      zh: '根据团队执行能力选择 SEO 增长陪跑或 SEO 全包交付；两种方案均明确覆盖策略、内容、页面优化、技术建议、权威建设与复盘。'
     },
     intro: {
-      en: 'This page covers the full structure behind our SEO delivery. We start with page-level priorities, support them with technical fixes, and scale winning patterns with programmatic systems where they make sense.',
-      zh: '这一页展示了我们 SEO 服务的完整结构。我们会先明确页面层级的优先事项，再用技术修复做支撑，并在合适的场景下用程序化系统放大已经验证有效的模式。'
+      en: 'Our SEO service has two clearly scoped delivery models. Growth Coaching gives your internal team strategy, review, training, and execution accountability. Managed Delivery adds a larger monthly production scope and delivered backlink assets, while both models keep the implementation responsibilities transparent.',
+      zh: 'SEO 服务分为两种清晰的交付模式：增长陪跑为内部团队提供策略、审核、培训和执行推进；全包交付则增加更大规模的月度内容、页面优化和外链资产。两种模式都会明确双方的实际执行责任。'
     },
     keywords: [
+      { en: 'seo growth coaching', zh: 'SEO 增长陪跑' },
+      { en: 'managed seo delivery', zh: 'SEO 全包交付' },
       { en: 'on-page seo', zh: '页面 SEO' },
       { en: 'technical seo', zh: '技术 SEO' },
-      { en: 'programmatic seo', zh: '程序化 SEO' },
-      { en: 'seo services', zh: 'SEO 服务' },
-      { en: 'internal linking', zh: '内链优化' }
+      { en: 'programmatic seo', zh: '程序化 SEO' }
     ],
     highlights: [
       {
-        en: 'Turn important landing pages into clearer ranking targets',
-        zh: '让关键落地页拥有更清晰的排名目标'
+        en: 'Growth Coaching: your team executes with our strategy, review, training, and weekly accountability',
+        zh: '增长陪跑：你的团队执行，我们提供策略、审核、培训与每周推进'
       },
       {
-        en: 'Support content work with crawl, indexation, and performance fixes',
-        zh: '用抓取、收录与性能修复为内容增长提供基础支撑'
+        en: 'Managed Delivery: a larger monthly scope for content briefs, page optimization, and backlink delivery',
+        zh: '全包交付：以更大规模完成内容 Brief、页面优化与外链资产交付'
       },
       {
-        en: 'Scale repeatable page templates without sacrificing search intent',
-        zh: '在不牺牲搜索意图匹配的前提下，放大可复制页面模板'
+        en: 'One connected growth system across keyword strategy, technical priorities, content, pages, and authority',
+        zh: '围绕关键词策略、技术优先级、内容、页面与权威建设形成一套连贯增长系统'
       }
     ],
-    serviceIncludes: [
-      { en: 'SEO strategy', zh: 'SEO 策略' },
-      { en: 'On-page SEO', zh: '页面 SEO' },
-      { en: 'Technical SEO', zh: '技术 SEO' },
-      { en: 'Programmatic SEO', zh: '程序化 SEO' },
-      { en: 'Local SEO', zh: '本地 SEO' }
-    ],
-    sections: [
+    packages: [
       {
-        id: 'seo-strategy',
-        title: { en: 'SEO strategy', zh: 'SEO 策略' },
+        id: 'seo-growth-coaching',
+        title: { en: 'SEO Growth Coaching', zh: 'SEO 增长陪跑版' },
         description: {
-          en: 'We define the SEO priorities first so the workstream follows the right acquisition goals, search intent clusters, and business opportunities.',
-          zh: '我们会先明确 SEO 优先级，让执行路径围绕正确的获客目标、搜索意图簇和业务机会展开。'
+          en: 'A three-month minimum engagement for teams that have internal execution capacity and need an expert partner to set priorities, review work, remove blockers, and build repeatable SEO capability.',
+          zh: '适合已有网站基础或内部执行团队的企业。服务周期 3 个月起，由我们提供策略、诊断、审核、答疑、培训与复盘，客户团队负责实际落地。'
         },
-        bullets: [
+        deliveryNote: {
+          en: 'Client team implements content production, page publishing, and technical fixes. We provide the strategy, review standards, execution guidance, and acceptance criteria.',
+          zh: '客户团队负责内容生产、页面上线与技术修复；我们负责策略、审核标准、执行建议与验收口径。'
+        },
+        sections: [
           {
-            en: 'Keyword and search intent mapping aligned with product priorities',
-            zh: '结合产品优先级梳理关键词与搜索意图'
+            id: 'coaching-strategy-foundation',
+            title: { en: 'Strategy, diagnosis, and growth foundation', zh: '策略、诊断与增长基础' },
+            description: {
+              en: 'Build the priorities, measurement baseline, and information architecture that guide the first three months of work.',
+              zh: '建立目标、复盘口径与信息架构，为前三个月执行确定优先级。'
+            },
+            bullets: [
+              { en: 'One complete SEO audit in month one, then monthly issue follow-up across crawlability, indexing, content relevance, structure, internal linking, and conversion paths', zh: '首月交付 1 份完整 SEO 诊断，后续按月跟进抓取、收录、内容相关性、结构、内链与转化路径问题' },
+              { en: 'One keyword strategy with monthly priority updates, including core, long-tail, commercial, and content terms with intent and page recommendations', zh: '交付 1 套关键词策略并按月更新重点，覆盖核心词、长尾词、商业词、内容词、搜索意图与页面承接建议' },
+              { en: 'One site architecture and content-cluster plan, plus a light programmatic SEO assessment where scalable pages are relevant', zh: '交付 1 套网站目录与内容集群规划；如适用，提供轻量程序化 SEO 可行性与页面规则建议' },
+              { en: 'One competitor growth analysis in month one, with monthly updates on the most relevant competitive changes', zh: '首月交付 1 份竞品增长分析，并按月更新最重要的竞品变化与可借鉴动作' }
+            ]
           },
           {
-            en: 'Opportunity sizing across landing pages, content clusters, and conversion paths',
-            zh: '评估落地页、内容主题簇与转化路径中的机会规模'
+            id: 'coaching-content-pages',
+            title: { en: 'Content and page optimization guidance', zh: '内容与页面优化指导' },
+            description: {
+              en: 'Give the internal team an execution-ready queue for content creation and the pages with the greatest ranking potential.',
+              zh: '为内部团队提供可直接执行的内容队列，以及最有排名潜力页面的优化清单。'
+            },
+            bullets: [
+              { en: '10 content briefs or topic directions per month, 30 in total, covering target keyword, intent, title, structure, FAQ, internal links, and CTA', zh: '每月 10 篇内容 Brief 或选题建议，共 30 篇，覆盖目标词、意图、标题、结构、FAQ、内链与 CTA' },
+              { en: 'On-page recommendations for 5 priority pages per month, 15 in total, covering title, meta, headings, relevance, internal links, and conversion path', zh: '每月优化建议 5 个重点页面，共 15 个，覆盖标题、Meta、H 标签、相关性、内链与转化路径' },
+              { en: 'GEO and AI-search coordination in content, entities, FAQs, structured expression, and citable answer formats', zh: '在内容、实体信息、FAQ、结构化表达与可引用答案中同步覆盖 GEO 与 AI 搜索协同建议' }
+            ]
           },
           {
-            en: 'Execution roadmap that sequences quick wins and longer-term bets',
-            zh: '制定兼顾短期收益与长期布局的执行路线图'
+            id: 'coaching-technical-authority',
+            title: { en: 'Technical and authority-building guidance', zh: '技术与权威建设指导' },
+            description: {
+              en: 'Keep foundational technical risks and off-site authority opportunities visible without disguising advisory work as execution.',
+              zh: '持续跟进技术风险和站外权威建设机会，同时明确本模块以策略、建议和审核为主。'
+            },
+            bullets: [
+              { en: 'Monthly technical SEO follow-up covering sitemap, robots, performance, structured data, duplicate content, canonical, hreflang, and prioritized repair guidance', zh: '每月跟进技术 SEO，包括 sitemap、robots、性能、结构化数据、重复内容、canonical、hreflang 与修复优先级' },
+              { en: '5 backlink opportunity directions or resource suggestions per month, 15 in total, with target-page, anchor-text, quality, and risk guidance', zh: '每月提供 5 个外链机会方向或资源建议，共 15 个，包含目标页、锚文本、质量与风险建议' },
+              { en: 'One light PR and community strategy for brand mentions, resource pages, partnerships, and natural-link opportunities', zh: '提供 1 套轻量 PR 与社区策略，规划品牌提及、资源页、合作内容与自然外链机会' }
+            ]
+          },
+          {
+            id: 'coaching-enablement-review',
+            title: { en: 'Coaching, enablement, and review', zh: '陪跑、能力建设与复盘' },
+            description: {
+              en: 'Create an operating rhythm that helps the client team ship work, resolve questions, and continue after the engagement ends.',
+              zh: '建立持续推进的协作节奏，帮助客户团队完成上线、解决问题，并在服务结束后继续执行。'
+            },
+            bullets: [
+              { en: 'One weekly SEO coaching call, approximately 12 sessions across three months, with progress, blockers, next priorities, and meeting notes', zh: '每周 1 次 SEO 陪跑会，3 个月约 12 次，覆盖进度、问题、下周优先级与会议纪要' },
+              { en: 'Ongoing execution Q&A and one practical SEO training session per month, 3 sessions in total', zh: '服务期内持续执行答疑，并每月提供 1 次 SEO 实操培训，共 3 次' },
+              { en: 'Three monthly reviews plus one reusable SOP and template pack for keyword tracking, content briefs, on-page checks, backlink opportunities, and reporting', zh: '交付 3 份月度复盘，以及 1 套可复用的关键词、内容 Brief、页面检查、外链机会与复盘 SOP 模板包' }
+            ]
           }
         ]
       },
       {
-        id: 'on-page-seo',
-        title: { en: 'On-page SEO foundations', zh: '页面 SEO 基础优化' },
+        id: 'managed-seo-delivery',
+        title: { en: 'Managed SEO Delivery', zh: 'SEO 全包交付版' },
         description: {
-          en: 'We tighten page-level signals so search engines and users immediately understand what each page is meant to rank for.',
-          zh: '我们会强化页面层级信号，让搜索引擎和用户都能更快理解每个页面应该匹配什么搜索需求。'
+          en: 'A three-month minimum program for brands that need a broader, managed monthly scope. We own the strategy, deliverable production, backlink delivery records, and reporting; the client supplies access, business inputs, approval, publishing, and necessary technical support.',
+          zh: '适合需要更大规模交付的品牌。服务周期 3 个月起，我们负责策略、文档与交付资产、外链记录和复盘；客户提供权限、业务资料、审核、上线与必要技术支持。'
         },
-        bullets: [
-          {
-            en: 'Search intent mapping for primary and secondary keywords',
-            zh: '围绕主关键词与次关键词匹配搜索意图'
-          },
-          {
-            en: 'Title, meta description, heading, and body copy refinement',
-            zh: '优化标题、描述、标题层级与正文文案'
-          },
-          {
-            en: 'Internal linking updates to strengthen topic clusters',
-            zh: '调整内链结构，强化主题簇之间的关联'
-          }
-        ]
-      },
-      {
-        id: 'technical-seo',
-        title: { en: 'Technical SEO support', zh: '技术 SEO 支持' },
-        description: {
-          en: 'We remove the technical blockers that quietly suppress discovery, crawling, rendering, and indexation.',
-          zh: '我们会移除那些悄悄压制发现、抓取、渲染与收录的技术性阻碍。'
+        deliveryNote: {
+          en: 'This program delivers briefs, optimization recommendations, and backlink assets. Website development, code changes, and the client’s internal publishing and technical implementation remain outside the delivery scope.',
+          zh: '本方案交付内容 Brief、页面优化建议和外链资产；网站开发、代码改造、客户内部发布与技术实施不在交付范围内。'
         },
-        bullets: [
+        sections: [
           {
-            en: 'Crawl path, sitemap, and indexation issue review',
-            zh: '检查抓取路径、站点地图与收录问题'
+            id: 'managed-seo-strategy',
+            title: { en: 'Diagnosis and search strategy', zh: '诊断与搜索策略' },
+            description: {
+              en: 'Create the foundation for a managed SEO program, including the strategy and prioritization needed to move from research to production.',
+              zh: '完成全包 SEO 项目的策略与优先级基础，将研究成果转化为持续生产计划。'
+            },
+            bullets: [
+              { en: 'One SEO audit per month, 3 in total, covering indexing, crawlability, structure, content relevance, internal links, conversion paths, issues, and priorities', zh: '每月 1 份 SEO 诊断，共 3 份，覆盖收录、抓取、结构、内容相关性、内链、转化路径、问题与优先级' },
+              { en: 'One complete keyword strategy including industry, competitor, long-tail, intent, priority, and page-matching recommendations', zh: '交付 1 套完整关键词策略，覆盖行业词、竞品词、长尾词、搜索意图、优先级与页面承接建议' },
+              { en: 'One site architecture plan, one programmatic SEO plan where applicable, and 3 monthly competitor growth analyses', zh: '交付 1 套网站结构规划、如适用的 1 套程序化 SEO 规划，以及每月 1 份竞品增长分析，共 3 份' }
+            ]
           },
           {
-            en: 'Performance and Core Web Vitals recommendations tied to SEO impact',
-            zh: '给出与 SEO 结果相关的性能和 Core Web Vitals 优化建议'
+            id: 'managed-seo-content-pages',
+            title: { en: 'Content and on-page delivery', zh: '内容与页面优化交付' },
+            description: {
+              en: 'Supply a larger monthly production queue for content and high-potential existing pages, designed for approval and publishing by the client team.',
+              zh: '为客户团队提供更大规模的内容与页面优化队列，便于审核、上线与持续迭代。'
+            },
+            bullets: [
+              { en: '20 execution-ready content briefs per month, 60 in total, for landing pages, blogs, resource pages, or tool pages; each includes keyword, intent, title, structure, writing points, and SEO requirements', zh: '每月交付 20 篇可执行内容 Brief，共 60 篇，适用于落地页、博客、资源页或工具页；每篇包含关键词、意图、标题、结构、写作要点与 SEO 要点' },
+              { en: 'On-page optimization recommendations for 10 priority pages per month, 30 in total, including title, meta description, headings, content structure, relevance, internal links, CTA, and conversion path', zh: '每月交付 10 个重点页面优化建议，共 30 个，覆盖标题、Meta Description、H 标签、内容结构、相关性、内链、CTA 与转化路径' },
+              { en: 'GEO coordination across content structure, entity information, FAQ, citable expression, and page-topic clarity', zh: '在内容结构、实体信息、FAQ、可引用表达与页面主题清晰度上同步交付 GEO 协同建议' }
+            ]
           },
           {
-            en: 'Structured data, canonical, and page architecture guidance',
-            zh: '提供结构化数据、规范链接与页面架构优化建议'
-          }
-        ]
-      },
-      {
-        id: 'programmatic-seo',
-        title: { en: 'Programmatic SEO systems', zh: '程序化 SEO 系统' },
-        description: {
-          en: 'When repeatable search demand exists, we design scalable landing page patterns that still match user intent.',
-          zh: '当搜索需求存在可重复模式时，我们会设计可规模化的落地页体系，同时保证内容仍然贴合用户意图。'
-        },
-        bullets: [
-          {
-            en: 'Template planning for high-intent page families',
-            zh: '为高意图页面族群规划模板结构'
+            id: 'managed-seo-technical-authority',
+            title: { en: 'Technical guidance and authority delivery', zh: '技术建议与权威资产交付' },
+            description: {
+              en: 'Identify technical priorities and provide transparent, recorded off-site authority delivery tied to target pages.',
+              zh: '明确技术优化优先级，并围绕目标页面交付可记录、可验收的站外权威资产。'
+            },
+            bullets: [
+              { en: 'One technical SEO follow-up per month, 3 in total, with prioritized recommendations for sitemap, robots, indexing, duplicate content, structured data, speed, mobile experience, and internal links', zh: '每月跟进 1 次技术 SEO，共 3 次，针对 sitemap、robots、收录、重复内容、结构化数据、速度、移动端体验与内链提供优先级建议' },
+              { en: '30 relevant, high-quality backlink placements across 3 months, with a delivery record for source URL, target page, anchor text, publish status, and notes', zh: '3 个月共交付 30 条真实、相关的高质量外链，并提供来源 URL、目标页面、锚文本、发布状态与备注的记录表' },
+              { en: 'One PR and community backlink strategy covering channel types, brand mentions, target pages, anchor-text approach, and reuse paths', zh: '交付 1 套 PR 与社区外链策略，覆盖渠道类型、品牌提及、目标页面、锚文本策略与后续复用路径' }
+            ]
           },
           {
-            en: 'Content field and metadata systems for reusable generation',
-            zh: '建立可复用的内容字段与元数据系统'
-          },
-          {
-            en: 'Quality controls to prevent thin, duplicate, or off-target pages',
-            zh: '建立质量控制机制，避免内容薄弱、重复或偏题'
-          }
-        ]
-      },
-      {
-        id: 'local-seo',
-        title: { en: 'Local SEO support', zh: '本地 SEO 支持' },
-        description: {
-          en: 'When local intent matters, we improve the location signals that help your business show up for nearby searches and service-area demand.',
-          zh: '如果本地搜索意图很重要，我们会强化地理位置信号，帮助你的业务更容易出现在附近搜索和服务区域需求中。'
-        },
-        bullets: [
-          {
-            en: 'Local landing page recommendations and location signal cleanup',
-            zh: '优化本地落地页与位置相关信号'
-          },
-          {
-            en: 'Google Business Profile and citation consistency guidance',
-            zh: '提供 Google Business Profile 与本地引用一致性建议'
-          },
-          {
-            en: 'Review, trust, and local relevance opportunities tied to conversion',
-            zh: '围绕评价、信任与本地相关性寻找转化机会'
+            id: 'managed-seo-reporting-handover',
+            title: { en: 'Reporting and project handover', zh: '复盘与项目交接' },
+            description: {
+              en: 'Make monthly progress visible and leave the client with a complete set of SEO assets for continued execution.',
+              zh: '让月度进展透明可见，并在项目结束时沉淀可持续执行的 SEO 资产。'
+            },
+            bullets: [
+              { en: 'One monthly data review, 3 in total, covering rankings, indexing, organic traffic, content and page progress, backlinks, issues, and next actions', zh: '每月交付 1 份数据复盘，共 3 份，覆盖排名、收录、自然流量、内容与页面进度、外链、问题与下一步动作' },
+              { en: 'One final project delivery pack containing the keyword strategy, site structure, content plan, optimization lists, backlink record, monthly reviews, and next-stage recommendations', zh: '服务期末交付 1 套完整项目资料包，汇总关键词策略、网站结构、内容规划、优化清单、外链记录、月度复盘与下一阶段建议' }
+            ]
           }
         ]
       }
     ],
-    outcomes: [
-      { en: 'Sharper page targeting and better topical relevance', zh: '页面目标更清晰，主题相关性更强' },
-      { en: 'Stronger internal authority flow across your important URLs', zh: '重要 URL 之间的内部权重传递更顺畅' },
-      { en: 'A delivery path that connects content, technical fixes, and scale', zh: '内容、技术修复与规模化之间形成连贯的交付路径' }
-    ],
-    deliveryDescription: { en: 'Detailed deliverables table', zh: '具体交付内容表格' },
+    sections: [],
+    outcomes: [],
+    deliveryDescription: { en: 'Compare the two delivery models below. Each workstream states what is delivered, how often it is delivered, and where the client team remains responsible for implementation.', zh: '请在下方对比两种交付模式。每个工作模块均明确列出交付物、交付频率，以及客户团队仍需负责的实际执行环节。' },
     deliveryPresentation: 'table',
     hideOutcomes: true,
     faqItems: [
       {
-        question: {
-          en: 'Should we prioritize social media or SEO first?',
-          zh: '我应该优先做社媒，还是做 SEO？'
-        },
+        question: { en: 'What is the difference between SEO Growth Coaching and Managed SEO Delivery?', zh: 'SEO 增长陪跑和 SEO 全包交付有什么区别？' },
         answer: {
-          en: 'That depends on your product type and growth goals.\n\nIf users are already actively searching on Google for related problems or solutions, and the buying cycle is relatively long, SEO is usually the better long-term acquisition channel.\n\nIf the product relies more on visual presentation, trend-driven distribution, founder influence, or community interaction, social media may be better for early feedback.\n\nIn many cases, this is not an either-or decision. A more effective approach is to validate content directions quickly through social media, then turn the proven themes into sustainable SEO content that can keep earning search traffic. We will recommend the right mix based on your stage.',
-          zh: '这取决于产品类型和增长目标。\n\n如果用户已经在 Google 主动搜索相关问题或解决方案，并且产品决策周期较长，SEO 通常更适合作为长期获客渠道。\n\n如果产品更依赖视觉展示、热点传播、创始人影响力或社区互动，社媒可能更容易获得早期反馈。\n\n很多产品并不需要二选一。更有效的方式通常是：通过社媒快速验证内容方向，再将验证有效的主题沉淀为可持续获得搜索流量的 SEO 内容。我们会根据您的产品阶段给出具体建议。'
+          en: 'Growth Coaching is designed for teams with execution capacity. We diagnose, prioritize, review, train, and keep the work moving, while your team produces content, publishes changes, and completes technical fixes. Managed SEO Delivery adds a larger monthly scope of content briefs, page recommendations, recorded backlink delivery, and project documentation. It still does not include website development or code implementation unless separately agreed.',
+          zh: '增长陪跑适合已有执行能力的团队：我们负责诊断、优先级、审核、培训与推进，客户团队负责内容生产、页面上线和技术修复。全包交付则增加更大规模的内容 Brief、页面优化建议、可记录外链交付和项目资料包；除非另行约定，仍不包含网站开发或代码实施。'
         }
       },
       {
-        question: {
-          en: 'How long does SEO usually take to show results?',
-          zh: 'SEO 一般多久见效？'
-        },
+        question: { en: 'What does the client team need to do in the coaching program?', zh: '选择陪跑版后，客户团队需要负责什么？' },
         answer: {
-          en: 'Long-tail keywords may show early ranking movement within 2-3 months, but stable traffic usually takes 3-6 months, and highly competitive markets can take longer.\n\nThe timeline depends on the site foundation, domain history, content quality, technical condition, and competitive landscape. That is why we usually start with a diagnosis before giving a more realistic expectation.',
-          zh: '长尾关键词可能在 2—3 个月内出现早期排名，但形成稳定流量通常需要 3—6 个月，竞争激烈的市场可能需要更长时间。\n\n网站基础、域名历史、内容质量、技术状况和竞争程度都会影响实际周期。因此，我们会先进行诊断，再给出更符合项目情况的预期。'
+          en: 'The client team is responsible for content production, page edits and publishing, technical fixes, and providing the necessary website and analytics access. We provide the roadmap, briefs, review criteria, recurring guidance, and acceptance standards so those tasks are completed in the right order.',
+          zh: '客户团队负责内容生产、页面修改与上线、技术修复，并提供必要的网站和数据权限。我们提供路线图、内容 Brief、审核标准、持续指导与验收口径，确保这些工作按正确优先级完成。'
         }
       },
       {
-        question: {
-          en: 'If we are unhappy after signing a three-month service, do you support refunds?',
-          zh: '我担心签订三个月服务后没有效果，是否支持退款？'
-        },
+        question: { en: 'Does the managed program include written articles and website development?', zh: '全包交付是否包含文章代写和网站开发？' },
         answer: {
-          en: 'Yes.\n\nIf after one month you are not satisfied with the service, you can stop the engagement at any time. Any remaining work that has not yet started or has not yet been completed can be refunded without additional justification.\n\nCompleted and delivered work such as diagnostics, strategy, content, page optimization, or other execution items will be settled according to the pricing terms in the contract.\n\nWe want to build long-term trust through transparent process and real delivery, not through contract lock-in.',
-          zh: '支持。\n\n如果合作一个月后，您对我们的服务不满意，可以随时终止合作。对于尚未开始、尚未完成的剩余服务，我们支持无理由退款。\n\n已经完成并交付的诊断、策略、内容、页面优化或其他工作，将按照合同中约定的对应费用结算。\n\n我们希望通过透明的工作过程和实际交付建立长期合作，而不是依赖长期合同绑定客户。'
+          en: 'The managed program includes execution-ready content briefs and page optimization recommendations, not final article ghostwriting, website development, or code changes. These items can be scoped separately when needed.',
+          zh: '全包交付包含可执行的内容 Brief 与页面优化建议，不包含文章代写、网站开发或代码改造；如有需要，可另行确定范围。'
         }
       },
       {
-        question: {
-          en: 'Can you guarantee first-page rankings on Google?',
-          zh: '你们能够保证 Google 首页排名吗？'
-        },
+        question: { en: 'Can you guarantee first-page rankings or a fixed traffic increase?', zh: '可以保证 Google 首页排名或固定流量增长吗？' },
         answer: {
-          en: 'No, and no professional team should promise that.\n\nSearch rankings depend on Google’s algorithms, market competition, and the long-term quality of the site. No agency can directly control those outcomes. What we can do is choose better keyword opportunities, improve site and content quality, and keep optimizing toward rankings and conversions with real data.',
-          zh: '不能，也不应该有任何专业团队做出这样的保证。\n\n搜索排名由 Google 的算法、市场竞争和网站长期表现共同决定，任何机构都无法直接控制。我们能够做的是选择更合理的关键词机会、提高网站和内容质量，并持续根据数据优化排名与转化。'
-        }
-      },
-      {
-        question: {
-          en: 'Do you use AI to produce content?',
-          zh: '你们是否使用 AI 生产内容？'
-        },
-        answer: {
-          en: 'Yes, but we do not publish raw AI output as final content without review.\n\nAI can help with research organization, keyword analysis, content outlining, and first-draft support. Final content still goes through human editing, fact checking, brand voice adjustment, and SEO review. The goal is higher production efficiency, not low-quality publishing.',
-          zh: '会使用，但不会把未经审核的 AI 文本直接当作最终内容发布。\n\nAI 会参与资料整理、关键词分析、内容框架和初稿辅助；最终内容需要经过人工编辑、事实检查、品牌语言调整和 SEO 审核。我们的目标是提高生产效率，而不是制造低质量内容。'
+          en: 'No. Search outcomes depend on the site foundation, competition, publishing speed, technical implementation, and search-engine changes. We commit to a transparent scope of work, a clear delivery record, and data-informed priorities—not a ranking guarantee.',
+          zh: '不能。搜索结果受网站基础、竞争程度、内容上线速度、技术实施效率和搜索引擎变化等因素影响。我们承诺透明的工作范围、清晰的交付记录和基于数据的优先级，而不承诺固定排名。'
         }
       }
     ]
@@ -534,192 +539,148 @@ export const servicePages: ServicePage[] = [
     category: { en: 'GEO Services', zh: 'GEO 服务' },
     title: { en: 'GEO Services', zh: 'GEO 服务' },
     description: {
-      en: 'Increase the odds that your brand appears in AI-generated answers by improving source clarity, entity signals, and content structure.',
-      zh: '通过提升来源清晰度、实体信号和内容结构，提高品牌出现在 AI 生成答案中的概率。'
+      en: 'Build durable visibility in AI discovery with a measured GEO program that combines AI visibility diagnosis, LLM-friendly content, community participation, video publishing, technical guidance, and recurring review.',
+      zh: '通过 AI 可见度诊断、LLM 友好内容、社区运营、视频发布、技术建议与持续复盘，建立更稳定的 AI 搜索发现能力。'
     },
     intro: {
-      en: 'Generative Engine Optimization focuses on how your brand gets cited, summarized, and surfaced in AI discovery flows. We strengthen the signals that make your site easier for answer engines to understand and reuse.',
-      zh: 'Generative Engine Optimization 关注的是你的品牌如何在 AI 发现路径中被引用、被总结和被展示。我们会强化那些让回答引擎更容易理解和复用你网站内容的信号。'
+      en: 'This GEO program is designed for brands that want to improve how they are recognized, cited, and recommended in AI search experiences. It starts with a visibility baseline, then runs a high-frequency monthly content, community, and video distribution rhythm with clear client-side approval and implementation responsibilities.',
+      zh: '该 GEO 项目面向希望提升品牌在 AI 搜索中被识别、引用和推荐概率的企业。服务从可见度基线开始，再以高频内容、社区和视频分发节奏持续执行，同时明确客户侧的审核、发布与技术实施责任。'
     },
     keywords: [
       { en: 'geo services', zh: 'GEO 服务' },
       { en: 'generative engine optimization', zh: '生成式引擎优化' },
-      { en: 'ai search', zh: 'AI 搜索' },
-      { en: 'llm visibility', zh: 'LLM 可见性' }
+      { en: 'ai search visibility', zh: 'AI 搜索可见度' },
+      { en: 'llm-friendly content', zh: 'LLM 友好内容' },
+      { en: 'reddit community strategy', zh: 'Reddit 社区策略' }
     ],
     highlights: [
-      {
-        en: 'Make your brand easier for answer engines to recognize and trust',
-        zh: '让回答引擎更容易识别并信任你的品牌'
-      },
-      {
-        en: 'Strengthen source pages that are likely to feed AI discovery journeys',
-        zh: '强化更可能进入 AI 发现链路的来源页面'
-      },
-      {
-        en: 'Align entity, content, and citation signals around authority topics',
-        zh: '围绕权威主题对齐实体、内容和引用信号'
-      }
+      { en: '30 keyword and topic groups per month to guide AI-discovery content', zh: '每月 30 组关键词与话题策略，指导 AI 搜索内容布局' },
+      { en: '30 LLM-friendly articles, 20 Reddit comments, and 10 YouTube video releases per month', zh: '每月 30 篇 LLM 友好文章、20 条 Reddit 评论与 10 条 YouTube 视频发布' },
+      { en: 'A six-month operating rhythm with weekly working sessions and monthly visibility reviews', zh: '以 6 个月为执行节奏，包含每周推进会和月度可见度复盘' }
     ],
     serviceIncludes: [
-      { en: 'GEO strategy', zh: 'GEO 策略' },
-      { en: 'Source-page optimization', zh: '来源页优化' },
-      { en: 'Citation readiness', zh: '引用准备度' },
-      { en: 'Entity signal alignment', zh: '实体信号对齐' },
-      { en: 'Topic expansion roadmap', zh: '主题扩展路线图' }
+      { en: 'AI visibility diagnosis', zh: 'AI 可见度诊断' },
+      { en: '30 topic groups / month', zh: '每月 30 组话题策略' },
+      { en: '30 LLM-friendly articles / month', zh: '每月 30 篇 LLM 友好文章' },
+      { en: '20 Reddit comments / month', zh: '每月 20 条 Reddit 评论' },
+      { en: '10 YouTube releases / month', zh: '每月 10 条 YouTube 视频发布' }
     ],
     sections: [
       {
-        id: 'geo-strategy',
-        title: { en: 'GEO strategy', zh: 'GEO 策略' },
+        id: 'geo-baseline-strategy',
+        title: { en: 'AI visibility baseline and topic strategy', zh: 'AI 可见度基线与话题策略' },
         description: {
-          en: 'We define which topics, source pages, and visibility opportunities matter most so GEO work supports real discovery and demand capture.',
-          zh: '我们会先定义哪些主题、哪些来源页面以及哪些可见性机会最重要，让 GEO 真正服务于发现和需求承接。'
+          en: 'Establish the baseline, research the questions users ask AI systems, and turn the findings into a repeatable content direction.',
+          zh: '建立品牌当前 AI 可见度基线，研究用户向 AI 提问的真实场景，并形成可重复执行的内容方向。'
         },
         bullets: [
-          {
-            en: 'Priority topic mapping across AI discovery, search demand, and conversion paths',
-            zh: '围绕 AI 发现、搜索需求和转化路径梳理优先主题'
-          },
-          {
-            en: 'Source-page selection for the highest-leverage visibility opportunities',
-            zh: '筛选最值得优先优化的来源页面'
-          },
-          {
-            en: 'Roadmap for sequencing structural fixes, content updates, and expansion work',
-            zh: '规划结构修复、内容更新与扩展工作的优先顺序'
-          }
+          { en: 'One complete AI visibility diagnosis in month one, with monthly follow-up across ChatGPT, Claude, Perplexity, Gemini, and relevant real-time search scenarios', zh: '首月交付 1 份完整 AI 可见度诊断，后续按月跟进 ChatGPT、Claude、Perplexity、Gemini 等主流 AI 与相关实时搜索场景' },
+          { en: '30 keyword and topic groups per month, covering core, long-tail, question, comparison, and intent-led AI discovery scenarios', zh: '每月 30 组关键词与话题策略，覆盖核心词、长尾词、问答词、对比词与不同 AI 搜索意图场景' },
+          { en: 'Competitor GEO analysis for 3–5 key competitors, first delivered in month one and refreshed as priorities change', zh: '覆盖 3—5 个主要竞品的 GEO 分析，首月交付并根据优先级持续更新' },
+          { en: 'One evolving prompt library and LLM-friendly writing SOP with structure templates, evidence signals, and citation-oriented guidance', zh: '交付 1 套持续迭代的 Prompt 库与 LLM 友好写作 SOP，包含结构模板、证据与 E-E-A-T 信号、引用导向建议' }
         ]
       },
       {
-        id: 'generative-engine-optimization',
-        title: { en: 'Generative answer visibility', zh: '生成式答案可见性' },
+        id: 'geo-content-production',
+        title: { en: 'LLM-friendly content production and distribution', zh: 'LLM 友好内容生产与分发' },
         description: {
-          en: 'We identify the pages and themes most likely to influence AI-generated answers, then improve how clearly those sources communicate expertise.',
-          zh: '我们会找出最有可能影响 AI 生成答案的页面和主题，并提升这些来源内容表达专业性的清晰度。'
+          en: 'Produce structured, high-information content that gives AI systems clear material to retrieve, summarize, and cite.',
+          zh: '生产结构清晰、信息密度高的内容，为 AI 系统提供更易检索、总结和引用的材料。'
         },
         bullets: [
-          {
-            en: 'Entity and authority mapping for priority topics',
-            zh: '围绕优先主题梳理实体与权威信号'
-          },
-          {
-            en: 'Source-page refinement for answer extraction and summarization',
-            zh: '优化来源页，提升被抽取和总结的可能性'
-          },
-          {
-            en: 'Coverage planning for question patterns common in AI search journeys',
-            zh: '围绕 AI 搜索常见问题模式规划内容覆盖'
-          }
+          { en: '30 LLM-friendly articles per month, typically 800–2,000 words, across blogs, resource centers, FAQs, and comparison pages', zh: '每月产出 30 篇 LLM 友好文章，建议单篇 800—2,000 字，覆盖博客、资源中心、FAQ 与对比页等形式' },
+          { en: 'Each article is built around the selected topic group with information-dense structure, headings, and schema recommendations where appropriate', zh: '每篇内容围绕当月话题策略撰写，具备高信息密度、清晰标题结构，并在适用处给出 Schema 建议' },
+          { en: 'Distribution recommendations across the brand site and selected third-party platforms to diversify retrievable sources', zh: '为品牌官网与选定的第三方平台提供内容分发布局建议，增加可被 AI 检索的来源多样性' }
         ]
       },
       {
-        id: 'citation-readiness',
-        title: { en: 'Citation readiness', zh: '引用准备度' },
+        id: 'geo-community-answers',
+        title: { en: 'Reddit community and answer-scenario participation', zh: 'Reddit 社区与问答场景布局' },
         description: {
-          en: 'We improve the trust signals that help your content qualify as a source worth citing, referencing, or paraphrasing.',
-          zh: '我们会提升内容中的信任信号，让它更有机会成为值得引用、参考或转述的来源。'
+          en: 'Build trustworthy, context-aware participation in the places where users discuss products, workflows, and alternatives.',
+          zh: '在用户讨论产品、工作流和替代方案的场景中，以符合社区语境的方式建立可信参与。'
         },
         bullets: [
-          {
-            en: 'Clear authorship, proof points, and claim support review',
-            zh: '检查作者署名、证据支撑与主张可信度'
-          },
-          {
-            en: 'Structured formatting for easier extraction and reuse',
-            zh: '优化结构化格式，提升被提取和复用的便利性'
-          },
-          {
-            en: 'Cross-channel consistency between site, brand, and topic pages',
-            zh: '对齐网站、品牌页与主题页之间的跨渠道一致性'
-          }
+          { en: '20 original, high-quality Reddit comments per month in relevant subreddits, designed as useful experience sharing rather than hard promotion', zh: '每月在相关 subreddit 发布 20 条原创高质量评论，以有价值的经验分享为主，不采用硬广表达' },
+          { en: 'Question-and-answer scenario coverage on Reddit and other suitable high-authority Q&A platforms, coordinated with target topics', zh: '结合目标话题，在 Reddit 及其他适合的高权重问答平台布局专业回答场景' },
+          { en: 'Community-specific tone, moderation, and posting guidance to reduce avoidable platform and brand risk', zh: '提供符合社区语气、版规与发布规范的建议，降低可避免的平台与品牌风险' }
         ]
       },
       {
-        id: 'topic-expansion',
-        title: { en: 'Topic expansion roadmap', zh: '主题扩展路线图' },
+        id: 'geo-video-distribution',
+        title: { en: 'YouTube video publishing and metadata optimization', zh: 'YouTube 视频发布与元数据优化' },
         description: {
-          en: 'We turn early signals into a repeatable roadmap so your AI search footprint can grow without becoming noisy or unfocused.',
-          zh: '我们会把早期信号转化成可重复执行的路线图，让你的 AI 搜索可见性扩展得更稳，而不是越做越杂。'
+          en: 'Expand the brand’s searchable video footprint with keyword-aligned publishing and a consistent metadata workflow.',
+          zh: '通过关键词对齐的发布与一致的元数据工作流，扩大品牌可检索的视频资产覆盖。'
         },
         bullets: [
-          {
-            en: 'Gap analysis across topic clusters and comparison queries',
-            zh: '分析主题簇与对比型查询中的内容缺口'
-          },
-          {
-            en: 'New page recommendations tied to entity depth and question demand',
-            zh: '根据实体深度和问题需求提出新页面建议'
-          },
-          {
-            en: 'Prioritized roadmap based on likely visibility gains',
-            zh: '按潜在可见性收益排序执行路线'
-          }
+          { en: '10 YouTube video releases per month, including channel publishing, title, description, tags, thumbnail setup, and basic metadata configuration', zh: '每月发布 10 条 YouTube 视频，包含频道发布、标题、描述、标签、封面配置与基础元数据设置' },
+          { en: 'SEO and GEO optimization of video metadata around the selected monthly keywords and content topics', zh: '围绕当月关键词和内容话题，对视频元数据进行 SEO 与 GEO 优化' },
+          { en: 'Client provides channel access, final video files, and thumbnail assets for each release', zh: '客户需提供频道权限、最终视频文件与每条视频所需的封面素材' }
+        ]
+      },
+      {
+        id: 'technical-geo-foundation',
+        title: { en: 'Technical GEO foundation', zh: '技术 GEO 基础优化' },
+        description: {
+          en: 'Identify technical conditions that could limit AI crawlers’ access to content and provide an implementation-ready priority list.',
+          zh: '识别可能限制 AI 爬虫访问与理解内容的技术条件，并提供可执行的优先级清单。'
+        },
+        bullets: [
+          { en: 'One comprehensive technical check in month one, followed by monthly progress checks across schema, robots.txt, loading performance, internal links, and page accessibility', zh: '首月进行 1 次全面技术检查，后续按月跟进 Schema、robots.txt、页面加载、内链与页面可访问性' },
+          { en: 'Implementation recommendations and acceptance criteria for the client’s technical team; code changes and website development are not included', zh: '向客户技术团队提供实施建议与验收口径；本服务不包含代码改造和网站开发' }
+        ]
+      },
+      {
+        id: 'geo-working-rhythm-reporting',
+        title: { en: 'Working rhythm, review, and handover', zh: '推进节奏、复盘与交接' },
+        description: {
+          en: 'Operate the program through a visible weekly rhythm and turn the six-month work into a reusable GEO capability.',
+          zh: '以透明的每周推进节奏运营项目，并将 6 个月的实践沉淀为可复用的 GEO 能力。'
+        },
+        bullets: [
+          { en: 'One weekly working session, approximately 24 across a six-month cadence, covering delivery status, publishing, AI visibility changes, blockers, and next priorities', zh: '每周 1 次推进会，按 6 个月节奏约 24 次，覆盖交付状态、内容上线、AI 可见度变化、问题与下周优先级' },
+          { en: 'Ongoing execution Q&A plus one monthly written review covering visibility, content production, Reddit activity, keyword coverage, and next-month direction', zh: '服务期内持续答疑，并每月交付 1 份书面复盘，覆盖 AI 可见度、内容产出、Reddit 运营、关键词覆盖与下月方向' },
+          { en: 'One reusable template pack and a final six-month growth summary with recommendations for the next six months', zh: '交付 1 套可复用模板包，并在服务期末提供 6 个月增长总结与下一阶段 6 个月路线建议' }
         ]
       }
     ],
-    outcomes: [
-      { en: 'Stronger source pages for AI answer generation and brand discovery', zh: '更强的来源页面，支撑 AI 回答生成和品牌发现' },
-      { en: 'Cleaner topic and entity signals across your content ecosystem', zh: '更清晰的主题与实体信号贯穿整个内容体系' },
-      { en: 'A roadmap for expanding visibility in emerging search interfaces', zh: '更清楚的路线图，用于扩展新型搜索界面的可见性' }
-    ],
-    deliveryDescription: { en: 'Detailed deliverables table', zh: '具体交付内容表格' },
+    outcomes: [],
+    deliveryDescription: { en: 'The GEO program combines strategy, content, community, video, technical guidance, and a clear review cadence. Monthly volume and the six-month operating rhythm are shown directly in each workstream.', zh: 'GEO 项目同时覆盖策略、内容、社区、视频、技术建议与明确的复盘节奏。每个工作模块均直接列出月度数量与 6 个月执行节奏。' },
     deliveryPresentation: 'table',
-    hideBreadcrumb: true,
     hideOutcomes: true,
     faqItems: [
       {
-        question: {
-          en: 'What is the difference between GEO and SEO?',
-          zh: 'GEO 和 SEO 的区别是什么？'
-        },
+        question: { en: 'What is the difference between GEO and SEO?', zh: 'GEO 和 SEO 的区别是什么？' },
         answer: {
-          en: 'SEO is primarily about improving visibility in traditional search results, while GEO focuses on increasing the likelihood that your brand appears in AI-generated answers and discovery flows.\n\nThey overlap, but they are not identical. GEO usually requires stronger source clarity, better entity signals, and content formatting that answer engines can interpret and reuse more easily.',
-          zh: 'SEO 主要关注传统搜索结果中的可见性，而 GEO 更关注品牌在 AI 生成答案和 AI 发现路径中被看到的概率。\n\n两者有交集，但并不相同。GEO 通常更依赖清晰的来源表达、更强的实体信号，以及更容易被回答引擎理解和复用的内容结构。'
+          en: 'SEO focuses on improving visibility in traditional search results. GEO focuses on increasing the chance that a brand is recognized, retrieved, cited, and recommended within AI-generated answers. The strongest programs connect both disciplines rather than treating them as substitutes.',
+          zh: 'SEO 主要提升传统搜索结果中的可见性；GEO 更关注品牌在 AI 生成答案中被识别、检索、引用和推荐的概率。效果更好的项目会让两者协同，而不是把它们当成互相替代的服务。'
         }
       },
       {
-        question: {
-          en: 'Does GEO replace SEO?',
-          zh: 'GEO 会取代 SEO 吗？'
-        },
+        question: { en: 'What does the monthly GEO delivery include?', zh: 'GEO 每月的核心交付包含什么？' },
         answer: {
-          en: 'No.\n\nIn most cases, GEO should build on top of solid SEO rather than replace it. The strongest results usually come from a site that already has clear information architecture, credible content, and technically accessible source pages.',
-          zh: '不会。\n\n大多数情况下，GEO 应该建立在扎实的 SEO 基础之上，而不是替代它。最好的结果通常来自信息架构清晰、内容可信、来源页面技术可访问性良好的网站。'
+          en: 'The monthly production rhythm includes 30 keyword and topic groups, 30 LLM-friendly articles, 20 high-quality Reddit comments, 10 YouTube video releases, technical follow-up, a weekly working session, and a monthly review. The first month also establishes the AI visibility baseline, competitor analysis, prompt library, and technical priorities.',
+          zh: '月度生产节奏包含 30 组关键词与话题策略、30 篇 LLM 友好文章、20 条高质量 Reddit 评论、10 条 YouTube 视频发布、技术跟进、每周推进会和月度复盘。首月还会完成 AI 可见度基线、竞品分析、Prompt 库与技术优先级。'
         }
       },
       {
-        question: {
-          en: 'How do you measure GEO progress if rankings are less direct?',
-          zh: '如果没有传统排名那样直接的指标，GEO 进展怎么衡量？'
-        },
+        question: { en: 'What does the client need to provide?', zh: '客户需要配合提供什么？' },
         answer: {
-          en: 'We look at a combination of signals, including source-page quality, citation readiness, topic coverage, referral patterns, branded search behavior, and whether your content is positioned to be reused in answer-generation contexts.\n\nThe measurement model is broader than standard keyword ranking, because visibility in AI interfaces is less linear and often distributed across multiple touchpoints.',
-          zh: '我们会综合多个信号来衡量，包括来源页质量、引用准备度、主题覆盖、引荐流量模式、品牌搜索行为，以及内容是否更适合在答案生成场景中被复用。\n\n相比传统关键词排名，GEO 的衡量模型会更宽，因为 AI 界面中的可见性通常不是线性的，也分散在多个接触点上。'
+          en: 'The client provides brand and product information, target-market and competitor context, relevant website and data access, content approval, website publishing, technical implementation, YouTube channel access, final video files, and thumbnail assets. We make these responsibilities explicit so production is not blocked.',
+          zh: '客户需要提供品牌与产品资料、目标市场和竞品信息、相关网站与数据权限、内容审核、网站发布、技术实施，以及 YouTube 频道权限、最终视频文件和封面素材。我们会明确这些职责，避免生产与发布被阻塞。'
         }
       },
       {
-        question: {
-          en: 'Do we need to publish a lot more content to improve GEO?',
-          zh: '要提升 GEO，是不是必须发更多内容？'
-        },
+        question: { en: 'Can you guarantee citations or recommendations from AI systems?', zh: '可以保证被 AI 系统引用或推荐吗？' },
         answer: {
-          en: 'Not always.\n\nMany teams first need better source pages, clearer expertise signals, and tighter topic structure before they need more volume. Expansion works best after the foundation is strong enough for answer engines to understand what the brand should be cited for.',
-          zh: '不一定。\n\n很多团队在增加内容量之前，更需要先把来源页做好、把专业信号表达清楚，并理顺主题结构。只有当基础足够清晰，回答引擎才能更准确理解这个品牌应该因为什么被引用。'
-        }
-      },
-      {
-        question: {
-          en: 'How quickly can GEO work influence visibility?',
-          zh: 'GEO 多久会开始影响可见性？'
-        },
-        answer: {
-          en: 'Some structural improvements can help relatively early, but broader visibility gains usually depend on how strong the current site foundation is and how competitive the topic space has become.\n\nThat is why we typically begin with diagnosis, then prioritize the highest-leverage fixes before expanding coverage.',
-          zh: '有些结构性优化可能较早带来帮助，但更明显的可见性提升通常仍取决于网站当前基础强弱，以及所在主题赛道的竞争程度。\n\n所以我们通常会先做诊断，再优先处理杠杆最大的修复项，最后再逐步扩展覆盖。'
+          en: 'No. AI systems and their retrieval sources change continuously, and no provider can control their answers. We commit to transparent deliverables that improve the clarity, coverage, credibility, and distribution of the materials most likely to influence AI discovery.',
+          zh: '不能。AI 系统及其检索来源持续变化，任何服务方都无法控制其答案。我们承诺以透明的交付提升品牌内容的清晰度、覆盖度、可信度和分发质量，从而提高影响 AI 发现路径的可能性。'
         }
       }
     ]
   }
+
 ]
 
 export const serviceSlugs = servicePages.map(service => service.slug)
