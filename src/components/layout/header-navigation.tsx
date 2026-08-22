@@ -239,7 +239,7 @@ const HeaderNavigation = ({
               >
                 {navItem.title}
               </NavigationMenuTrigger>
-              <NavigationMenuContent className='absolute left-1/2 w-auto -translate-x-1/2 shadow-lg!'>
+              <NavigationMenuContent className='absolute left-1/2 w-auto max-w-[calc(100vw-2rem)] -translate-x-1/2 shadow-lg!'>
                 {navItem.splitItems ? (
                   <div className={cn('grid grid-cols-1 gap-2', navItem.contentClassName)}>
                     {navItem.items.map((section, sectionIndex) => (

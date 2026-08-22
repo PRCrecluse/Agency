@@ -16,7 +16,7 @@ import type { Navigation } from '@/components/layout/header-navigation'
 const navigationData: Navigation[] = [
   {
     title: 'Services',
-    contentClassName: '!w-[58rem] grid-cols-2',
+    contentClassName: '!w-[66rem] max-w-[calc(100vw-2rem)] grid-cols-3',
     splitItems: true,
     items: [
       {
@@ -51,34 +51,31 @@ const navigationData: Navigation[] = [
       },
       {
         type: 'section',
-        subSections: [
+        title: 'Reddit services',
+        items: [
           {
-            title: 'Reddit services',
-            items: [
-              {
-                title: 'Reddit Community Management',
-                href: '/services/reddit-services/community-management',
-                description: 'Build trust, manage discussions, and grow brand presence in relevant subreddits.',
-                icon: <ChartPieIcon className='size-4' />
-              },
-              {
-                title: 'Reddit Campaigns',
-                href: '/services/reddit-services/reddit-campaigns',
-                description: 'Launch targeted Reddit campaigns to drive awareness, traffic, and conversions.',
-                icon: <GitPullRequestIcon className='size-4' />
-              }
-            ]
+            title: 'Reddit Community Management',
+            href: '/services/reddit-services/community-management',
+            description: 'Build trust, manage discussions, and grow brand presence in relevant subreddits.',
+            icon: <ChartPieIcon className='size-4' />
           },
           {
-            title: 'GEO services',
-            items: [
-              {
-                title: 'Generative Engine Optimization',
-                href: '/services/geo-services',
-                description: 'Position your brand to appear more often in AI-generated answers and discovery flows.',
-                icon: <SparklesIcon className='size-4' />
-              }
-            ]
+            title: 'Reddit Campaigns',
+            href: '/services/reddit-services/reddit-campaigns',
+            description: 'Launch targeted Reddit campaigns to drive awareness, traffic, and conversions.',
+            icon: <GitPullRequestIcon className='size-4' />
+          }
+        ]
+      },
+      {
+        type: 'section',
+        title: 'GEO services',
+        items: [
+          {
+            title: 'Generative Engine Optimization',
+            href: '/services/geo-services',
+            description: 'Position your brand to appear more often in AI-generated answers and discovery flows.',
+            icon: <SparklesIcon className='size-4' />
           }
         ]
       }
