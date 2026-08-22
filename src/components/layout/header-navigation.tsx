@@ -38,6 +38,7 @@ type NavigationItem = {
   icon?: ReactNode
   badge?: ReactNode
   description?: string
+  activeMatch?: 'exact' | 'prefix'
 }
 
 type Navigation = {
@@ -58,36 +59,51 @@ type Navigation = {
       items?: never
       splitItems?: never
       href: string
+      activeMatch?: 'exact' | 'prefix'
     }
 )
 
 const getSectionIdFromHref = (href: string) => {
   if (href.startsWith('/#')) return href.slice(2)
   if (href.startsWith('#')) return href.slice(1)
+  if (href.includes('#')) return href.split('#')[1] ?? ''
 
   return ''
 }
 
-const getBasePathFromHref = (href: string) => href.split('#')[0]
+const getBasePathFromHref = (href: string) => href.split('#')[0]?.split('?')[0] ?? ''
 
 const isHrefActive = ({
   href,
   activeSection,
-  pathname
+  pathname,
+  activeMatch = 'exact'
 }: {
   href: string
   activeSection?: string
   pathname?: string | null
+  activeMatch?: 'exact' | 'prefix'
 }) => {
   const sectionId = getSectionIdFromHref(href)
-
-  if (sectionId) {
-    return activeSection === sectionId
-  }
-
   const basePath = getBasePathFromHref(href)
 
-  return Boolean(basePath && pathname?.startsWith(basePath))
+  if (sectionId) {
+    if (basePath && pathname !== basePath) {
+      return false
+    }
+
+    return activeSection === sectionId || pathname === basePath
+  }
+
+  if (!basePath || !pathname) {
+    return false
+  }
+
+  if (activeMatch === 'prefix') {
+    return pathname === basePath || pathname.startsWith(`${basePath}/`)
+  }
+
+  return pathname === basePath
 }
 
 const ListItem = (props: {
@@ -99,11 +115,12 @@ const ListItem = (props: {
   splitItems?: boolean
   activeSection?: string
   pathname?: string
+  activeMatch?: NavigationItem['activeMatch']
   lang: 'en' | 'zh'
 }) => {
-  const { title, href, icon, badge, description, splitItems, activeSection, pathname, lang } = props
+  const { title, href, icon, badge, description, splitItems, activeSection, pathname, activeMatch, lang } = props
 
-  const isActive = isHrefActive({ href, activeSection, pathname })
+  const isActive = isHrefActive({ href, activeSection, pathname, activeMatch })
   const localizedHref = withQueryLang(href, lang)
 
   return (
@@ -248,7 +265,7 @@ const HeaderNavigation = ({
       <ul className='flex h-fit flex-wrap items-center gap-6'>
         {navigationData.map(navItem => {
           if (navItem.href) {
-            const isActive = isHrefActive({ href: navItem.href, activeSection, pathname })
+            const isActive = isHrefActive({ href: navItem.href, activeSection, pathname, activeMatch: navItem.activeMatch })
             const localizedHref = withQueryLang(navItem.href, lang)
 
             return (
@@ -345,6 +362,7 @@ const HeaderNavigation = ({
                                           splitItems={navItem.splitItems}
                                           activeSection={activeSection}
                                           pathname={pathname}
+                                          activeMatch={item.activeMatch}
                                           lang={lang}
                                         />
                                       ))}
@@ -369,6 +387,7 @@ const HeaderNavigation = ({
                                     splitItems={navItem.splitItems}
                                     activeSection={activeSection}
                                     pathname={pathname}
+                                    activeMatch={item.activeMatch}
                                     lang={lang}
                                   />
                                 ))}
@@ -489,7 +508,7 @@ const HeaderNavigationSmallScreen = ({
         <div className='space-y-0.5 overflow-y-auto p-2'>
           {navigationData.map((navItem, index) => {
             if (navItem.href) {
-              const isActive = isHrefActive({ href: navItem.href, activeSection, pathname })
+              const isActive = isHrefActive({ href: navItem.href, activeSection, pathname, activeMatch: navItem.activeMatch })
 
               return (
                 <Link
@@ -510,10 +529,14 @@ const HeaderNavigationSmallScreen = ({
             if (navItem.items) {
               if (navItem.splitItems) {
                 hasActiveChild = navItem.items.some(section =>
-                  getSectionItems(section).some(item => isHrefActive({ href: item.href, activeSection, pathname }))
+                  getSectionItems(section).some(item =>
+                    isHrefActive({ href: item.href, activeSection, pathname, activeMatch: item.activeMatch })
+                  )
                 )
               } else {
-                hasActiveChild = navItem.items.some(item => isHrefActive({ href: item.href, activeSection, pathname }))
+                hasActiveChild = navItem.items.some(item =>
+                  isHrefActive({ href: item.href, activeSection, pathname, activeMatch: item.activeMatch })
+                )
               }
             }
 
@@ -539,7 +562,12 @@ const HeaderNavigationSmallScreen = ({
                                 <div className='text-muted-foreground mb-1 pl-4.5 text-xs font-medium'>{section.title}</div>
                               ) : null}
                               {section.items.map((subItem, j) => {
-                                const isActive = isHrefActive({ href: subItem.href, activeSection, pathname })
+                                const isActive = isHrefActive({
+                                  href: subItem.href,
+                                  activeSection,
+                                  pathname,
+                                  activeMatch: subItem.activeMatch
+                                })
 
                                 return (
                                   <Link
@@ -559,7 +587,12 @@ const HeaderNavigationSmallScreen = ({
                         </div>
                       ))
                     : navItem.items?.map(item => {
-                        const isActive = isHrefActive({ href: item.href, activeSection, pathname })
+                        const isActive = isHrefActive({
+                          href: item.href,
+                          activeSection,
+                          pathname,
+                          activeMatch: item.activeMatch
+                        })
 
                         return (
                           <Link

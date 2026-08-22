@@ -93,7 +93,8 @@ const navigationData: Navigation[] = [
   },
   {
     title: 'Blog',
-    href: '/blog'
+    href: '/blog',
+    activeMatch: 'prefix'
   }
 ]
 
