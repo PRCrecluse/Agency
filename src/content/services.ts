@@ -232,7 +232,7 @@ export const servicePages: ServicePage[] = [
         },
         deliveryNote: {
           en: 'This program delivers briefs, optimization recommendations, and backlink assets. Website development, code changes, and the client’s internal publishing and technical implementation remain outside the delivery scope.',
-          zh: '本方案交付内容 Brief、页面优化建议和外链资产；网站开发、代码改造、客户内部发布与技术实施不在交付范围内。'
+          zh: 'Blog、代码改造交付内容视情况而定。'
         },
         sections: [
           {
