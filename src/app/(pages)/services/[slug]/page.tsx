@@ -115,6 +115,7 @@ const ServiceDetailPage = async ({
   const hasFaqSection = Boolean(service.faqItems?.length)
   const renderOutcomes = !service.hideOutcomes
   const showTrustedBrandsSection = service.slug === 'seo-services'
+  const showOverviewSection = showTrustedBrandsSection || hasCustomIncludes || hasHighlights
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -186,80 +187,84 @@ const ServiceDetailPage = async ({
         </div>
       </section>
 
-      <SectionSeparator />
+      {showOverviewSection ? (
+        <>
+          <SectionSeparator />
 
-      {showTrustedBrandsSection ? (
-        <TrustedBrands brandLogos={logos} />
-      ) : (
-        <section className='px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20'>
-          <div
-            className={cn(
-              'mx-auto w-full max-w-7xl gap-6',
-              hasCustomIncludes ? 'flex flex-col' : 'grid lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)]'
-            )}
-          >
-            {hasCustomIncludes ? (
-              <>
-                <div className='mx-auto max-w-3xl space-y-4 text-center'>
-                  <h2 className='text-3xl font-semibold tracking-tight sm:text-4xl'>{copy.whatThisServiceIncludes}</h2>
-                </div>
+          {showTrustedBrandsSection ? (
+            <TrustedBrands brandLogos={logos} />
+          ) : (
+            <section className='px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20'>
+              <div
+                className={cn(
+                  'mx-auto w-full max-w-7xl gap-6',
+                  hasCustomIncludes ? 'flex flex-col' : 'grid lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)]'
+                )}
+              >
+                {hasCustomIncludes ? (
+                  <>
+                    <div className='mx-auto max-w-3xl space-y-4 text-center'>
+                      <h2 className='text-3xl font-semibold tracking-tight sm:text-4xl'>{copy.whatThisServiceIncludes}</h2>
+                    </div>
 
-                <div className='grid gap-4 sm:grid-cols-2 xl:grid-cols-5'>
-                  {service.serviceIncludes?.map((item, index) => (
-                    <Card key={item.en} className='border bg-card/80'>
-                      <CardContent className='flex h-full flex-col gap-5 pt-6'>
-                        <div className='flex items-center justify-between'>
-                          <div className='bg-primary/10 text-primary flex size-11 items-center justify-center rounded-2xl'>
-                            <SparklesIcon className='size-5' />
-                          </div>
-                          <span className='text-muted-foreground text-xs font-medium uppercase tracking-[0.24em]'>
-                            {String(index + 1).padStart(2, '0')}
-                          </span>
-                        </div>
-                        <p className='text-base font-medium leading-6'>{resolveLocalizedText(item, lang)}</p>
-                      </CardContent>
-                    </Card>
-                  ))}
-                </div>
-              </>
-            ) : (
-              <>
-                <div className='space-y-4'>
-                  <Badge variant='outline' className='h-auto px-3 py-1 text-sm font-normal'>
-                    {copy.whyThisServiceWorks}
-                  </Badge>
-                  <h2 className='text-3xl font-semibold tracking-tight sm:text-4xl'>{copy.whyThisServiceWorksTitle}</h2>
-                  <p className='text-muted-foreground text-base leading-7 sm:text-lg'>
-                    {copy.whyThisServiceWorksDescription}
-                  </p>
-                </div>
-
-                {hasHighlights ? (
-                  <div className='grid gap-4 md:grid-cols-3'>
-                    {service.highlights.map((highlight, index) => (
-                      <Card key={highlight.en} className='border bg-card/80'>
-                        <CardContent className='flex h-full flex-col gap-6 pt-6'>
-                          <div className='flex items-center justify-between'>
-                            <div className='bg-primary/10 text-primary flex size-11 items-center justify-center rounded-2xl'>
-                              <SparklesIcon className='size-5' />
+                    <div className='grid gap-4 sm:grid-cols-2 xl:grid-cols-5'>
+                      {service.serviceIncludes?.map((item, index) => (
+                        <Card key={item.en} className='border bg-card/80'>
+                          <CardContent className='flex h-full flex-col gap-5 pt-6'>
+                            <div className='flex items-center justify-between'>
+                              <div className='bg-primary/10 text-primary flex size-11 items-center justify-center rounded-2xl'>
+                                <SparklesIcon className='size-5' />
+                              </div>
+                              <span className='text-muted-foreground text-xs font-medium uppercase tracking-[0.24em]'>
+                                {String(index + 1).padStart(2, '0')}
+                              </span>
                             </div>
-                            <span className='text-muted-foreground text-xs font-medium uppercase tracking-[0.24em]'>
-                              0{index + 1}
-                            </span>
-                          </div>
-                          <p className='text-sm leading-6'>{resolveLocalizedText(highlight, lang)}</p>
-                        </CardContent>
-                      </Card>
-                    ))}
-                  </div>
-                ) : null}
-              </>
-            )}
-          </div>
-        </section>
-      )}
+                            <p className='text-base font-medium leading-6'>{resolveLocalizedText(item, lang)}</p>
+                          </CardContent>
+                        </Card>
+                      ))}
+                    </div>
+                  </>
+                ) : (
+                  <>
+                    <div className='space-y-4'>
+                      <Badge variant='outline' className='h-auto px-3 py-1 text-sm font-normal'>
+                        {copy.whyThisServiceWorks}
+                      </Badge>
+                      <h2 className='text-3xl font-semibold tracking-tight sm:text-4xl'>{copy.whyThisServiceWorksTitle}</h2>
+                      <p className='text-muted-foreground text-base leading-7 sm:text-lg'>
+                        {copy.whyThisServiceWorksDescription}
+                      </p>
+                    </div>
 
-      <SectionSeparator />
+                    {hasHighlights ? (
+                      <div className='grid gap-4 md:grid-cols-3'>
+                        {service.highlights.map((highlight, index) => (
+                          <Card key={highlight.en} className='border bg-card/80'>
+                            <CardContent className='flex h-full flex-col gap-6 pt-6'>
+                              <div className='flex items-center justify-between'>
+                                <div className='bg-primary/10 text-primary flex size-11 items-center justify-center rounded-2xl'>
+                                  <SparklesIcon className='size-5' />
+                                </div>
+                                <span className='text-muted-foreground text-xs font-medium uppercase tracking-[0.24em]'>
+                                  0{index + 1}
+                                </span>
+                              </div>
+                              <p className='text-sm leading-6'>{resolveLocalizedText(highlight, lang)}</p>
+                            </CardContent>
+                          </Card>
+                        ))}
+                      </div>
+                    ) : null}
+                  </>
+                )}
+              </div>
+            </section>
+          )}
+
+          <SectionSeparator />
+        </>
+      ) : null}
 
       <section className='px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20'>
         <div className='mx-auto flex w-full max-w-7xl flex-col gap-6'>

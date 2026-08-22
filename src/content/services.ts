@@ -344,13 +344,7 @@ export const servicePages: ServicePage[] = [
       { en: 'reddit services', zh: 'Reddit 服务' }
     ],
     highlights: [],
-    serviceIncludes: [
-      { en: 'Reddit strategy', zh: 'Reddit 策略' },
-      { en: 'Community management', zh: '社区运营' },
-      { en: 'Reddit campaigns', zh: 'Reddit 投放' },
-      { en: 'Landing page alignment', zh: '落地页对齐' },
-      { en: 'Measurement & iteration', zh: '数据复盘与迭代' }
-    ],
+    serviceIncludes: [],
     sections: [
       {
         id: 'reddit-strategy',

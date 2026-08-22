@@ -3,16 +3,22 @@ export type brandLogos = {
   name: string
 }
 
-const TrustedBrands = ({ brandLogos }: { brandLogos: brandLogos[] }) => {
+const TrustedBrands = ({
+  brandLogos,
+  title = 'Trusted by startups, enterprises, and industry giants alike.'
+}: {
+  brandLogos: brandLogos[]
+  title?: string
+}) => {
   return (
     <section id='trusted-brands' className='py-4 sm:py-6 lg:py-8'>
       <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
         {/* Header */}
         <div className='mb-4 space-y-4 text-center sm:mb-6 lg:mb-8'>
-          <p className='text-muted-foreground text-xl'>Trusted by startups, enterprises, and industry giants alike.</p>
+          <p className='text-muted-foreground text-xl'>{title}</p>
         </div>
 
-        <div className='overflow-hidden rounded-xl border border-border/60 bg-border/60'>
+        <div className='border-border/60 bg-border/60 overflow-hidden rounded-xl border'>
           <div className='grid grid-cols-2 gap-px sm:grid-cols-3 lg:grid-cols-5'>
             {brandLogos.map((logo, index) => (
               <div

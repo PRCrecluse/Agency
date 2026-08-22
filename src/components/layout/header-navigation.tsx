@@ -156,7 +156,7 @@ const HeaderNavigation = ({
   const pathname = usePathname()
   const lang = currentLang
   const navRef = useRef<HTMLElement>(null)
-  const closeTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null)
+  const closeTimeoutRef = useRef<number | null>(null)
   const [openDropdown, setOpenDropdown] = useState<string | null>(null)
 
   const clearCloseTimeout = () => {
