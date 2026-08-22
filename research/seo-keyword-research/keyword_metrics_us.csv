@@ -1,0 +1,77 @@
+﻿rank,priority_tier,cluster,keyword,intent,recommended_target,search_volume_us,clicks_us,click_through_ratio,cpc_usd,difficulty,global_search_volume,traffic_potential,priority_score
+1,P1 — 优先布局,核心 SEO 服务,seo services,commercial,/services/seo-services,60000,46762,0.78,8.0,0.0,129000.0,40000.0,87.1
+2,P1 — 优先布局,核心 SEO 服务,seo agency,commercial,/services/seo-services,51000,54105,1.06,10.0,1.0,133000.0,17000.0,85.3
+3,P1 — 优先布局,核心 SEO 服务,seo consultant,commercial,/services/seo-services,13000,6053,0.47,7.0,6.0,32000.0,27000.0,78.8
+4,P1 — 优先布局,外链与数字公关,link building services,commercial,New /services/link-building,9200,14870,1.62,5.0,27.0,19000.0,16000.0,73.3
+5,P1 — 优先布局,关键词与内容策略,seo content strategy,commercial,New /services/seo-content-strategy,3200,4311,1.35,2.5,20.0,7300.0,12000.0,67.8
+6,P1 — 优先布局,技术 SEO,technical seo services,commercial,/services/technical-seo,11000,0,0.0,4.5,19.0,16000.0,7900.0,64.2
+7,P1 — 优先布局,核心 SEO 服务,seo strategy services,commercial,/services/seo-services,800,0,0.0,8.0,0.0,1800.0,21000.0,63.9
+8,P1 — 优先布局,核心 SEO 服务,b2b seo agency,commercial,/services/seo-services,4200,0,0.0,17.0,10.0,11000.0,1900.0,63.8
+9,P1 — 优先布局,核心 SEO 服务,saas seo agency,commercial,/services/seo-services,3600,0,0.0,9.0,10.0,6600.0,2100.0,61.6
+10,P1 — 优先布局,AI 搜索与 GEO,ai seo agency,commercial,/services/geo-services,3600,0,0.0,9.0,10.0,10000.0,1900.0,61.4
+11,P1 — 优先布局,外链与数字公关,link building agency,commercial,New /services/link-building,4700,0,0.0,9.0,50.0,10000.0,15000.0,60.9
+12,P1 — 优先布局,关键词与内容策略,keyword strategy,commercial,New /services/keyword-research,1200,1111,0.93,4.0,11.0,2200.0,1100.0,60.9
+13,P1 — 优先布局,站内 SEO,on page seo services,commercial,New /services/on-page-seo,3300,0,0.0,5.0,6.0,6900.0,2500.0,60.6
+14,P1 — 优先布局,技术 SEO,website migration seo,commercial,/services/technical-seo,800,0,0.0,10.0,12.0,1700.0,4600.0,59.3
+15,P1 — 优先布局,外链与数字公关,digital pr agency,commercial,New /services/link-building,2500,0,0.0,13.0,26.0,6200.0,1900.0,59.1
+16,P1 — 优先布局,站内 SEO,on page seo audit,commercial,New /services/on-page-seo,1100,0,0.0,9.0,82.0,3900.0,284000.0,58.9
+17,P1 — 优先布局,核心 SEO 服务,saas seo consultant,commercial,/services/seo-services,900,0,0.0,25.0,2.0,2100.0,350.0,58.2
+18,P1 — 优先布局,AI 搜索与 GEO,geo services,commercial,/services/geo-services,700,381,0.54,6.0,54.0,1900.0,9000.0,58.1
+19,P1 — 优先布局,AI 搜索与 GEO,ai seo services,commercial,/services/geo-services,4500,0,0.0,1.1,6.0,10000.0,2100.0,57.3
+20,P1 — 优先布局,技术 SEO,international seo services,commercial,/services/technical-seo,2500,0,0.0,1.1,6.0,7300.0,4100.0,57.2
+21,P2 — 第二波,技术 SEO,seo migration service,commercial,/services/technical-seo,700,0,0.0,10.0,6.0,1400.0,1200.0,56.8
+22,P2 — 第二波,外链与数字公关,digital pr services,commercial,New /services/link-building,1600,0,0.0,12.0,17.0,4100.0,700.0,56.7
+23,P2 — 第二波,站内 SEO,landing page seo,commercial,New /services/on-page-seo,1100,0,0.0,4.0,12.0,2300.0,3100.0,56.5
+24,P2 — 第二波,AI 搜索与 GEO,generative engine optimization,commercial,/services/geo-services,8000,0,0.0,11.0,65.0,27000.0,2000.0,56.0
+25,P2 — 第二波,程序化 SEO,programmatic seo,commercial,New /services/programmatic-seo,2300,0,0.0,2.0,0.0,6900.0,900.0,55.7
+26,P2 — 第二波,外链与数字公关,saas link building,commercial,New /services/link-building,800,0,0.0,7.0,4.0,1400.0,900.0,55.6
+27,P2 — 第二波,AI 搜索与 GEO,llm optimization,commercial,/services/geo-services,1600,0,0.0,8.0,14.0,6100.0,600.0,55.5
+28,P2 — 第二波,核心 SEO 服务,enterprise seo services,commercial,/services/seo-services,3100,0,0.0,0.3,13.0,7700.0,4600.0,55.4
+29,P2 — 第二波,AI 搜索与 GEO,llm seo,commercial,/services/geo-services,1400,0,0.0,5.0,0.0,5200.0,500.0,55.4
+30,P2 — 第二波,AI 搜索与 GEO,answer engine optimization,commercial,/services/geo-services,5000,0,0.0,6.0,40.0,12000.0,1100.0,55.2
+31,P2 — 第二波,站内 SEO,seo content optimization,commercial,New /services/on-page-seo,600,0,0.0,1.6,74.0,1300.0,442000.0,54.7
+32,P2 — 第二波,技术 SEO,technical seo audit,commercial,/services/technical-seo,3800,0,0.0,6.0,77.0,7600.0,11000.0,54.3
+33,P2 — 第二波,外链与数字公关,backlink strategy,commercial,New /services/link-building,900,0,0.0,4.5,36.0,1700.0,6300.0,54.3
+34,P2 — 第二波,外链与数字公关,white hat link building,commercial,New /services/link-building,1200,0,0.0,4.0,16.0,2400.0,1000.0,53.5
+35,P2 — 第二波,AI 搜索与 GEO,ai search optimization,commercial,/services/geo-services,3500,0,0.0,0.9,53.0,6700.0,13000.0,53.4
+36,P2 — 第二波,技术 SEO,javascript seo,commercial,/services/technical-seo,2700,0,0.0,0.15,18.0,5200.0,3900.0,53.4
+37,P2 — 第二波,关键词与内容策略,seo content audit,commercial,New /services/seo-content-strategy,1400,0,0.0,3.5,30.0,3000.0,1600.0,52.6
+38,P2 — 第二波,关键词与内容策略,seo content services,commercial,New /services/seo-content-strategy,1100,0,0.0,4.5,8.0,3100.0,200.0,51.1
+39,P2 — 第二波,AI 搜索与 GEO,ai search visibility,commercial,/services/geo-services,1400,0,0.0,12.0,59.0,2800.0,900.0,50.6
+40,P2 — 第二波,技术 SEO,javascript seo audit,commercial,/services/technical-seo,200,0,0.0,11.0,12.0,200.0,400.0,50.2
+41,P2 — 第二波,技术 SEO,saas technical seo,commercial,/services/technical-seo,400,0,0.0,8.0,3.0,700.0,100.0,49.3
+42,P2 — 第二波,站内 SEO,product page seo,commercial,New /services/on-page-seo,700,0,0.0,0.45,15.0,1400.0,1700.0,49.1
+43,P2 — 第二波,AI 搜索与 GEO,chatgpt seo,commercial,/services/geo-services,800,0,0.0,6.0,13.0,3800.0,80.0,48.3
+44,P2 — 第二波,技术 SEO,technical seo consultant,commercial,/services/technical-seo,1500,0,0.0,0.4,24.0,3700.0,800.0,48.0
+45,P2 — 第二波,关键词与内容策略,saas content strategy,commercial,New /services/seo-content-strategy,250,0,0.0,4.5,0.0,500.0,150.0,47.6
+46,P2 — 第二波,站内 SEO,content optimization services,commercial,New /services/on-page-seo,400,0,0.0,0.35,6.0,800.0,900.0,47.2
+47,P2 — 第二波,关键词与内容策略,seo content briefs,commercial,New /services/seo-content-strategy,90,0,0.0,3.5,3.0,100.0,350.0,45.7
+48,P2 — 第二波,关键词与内容策略,keyword research services,commercial,New /services/keyword-research,1700,0,0.0,7.0,83.0,3400.0,800.0,45.6
+49,P2 — 第二波,外链与数字公关,link building consultant,commercial,New /services/link-building,200,0,0.0,0.6,1.0,600.0,150.0,42.5
+50,P2 — 第二波,技术 SEO,schema markup service,commercial,/services/technical-seo,200,0,0.0,0.15,2.0,400.0,200.0,41.9
+51,P3 — 储备/验证,站内 SEO,on page seo checklist,informational,New guide: /blog/on-page-seo-checklist,1500,2027,1.35,1.6,40.0,3500.0,3300.0,37.7
+52,P3 — 储备/验证,技术 SEO,core web vitals audit,commercial,/services/technical-seo,40,0,0.0,5.0,54.0,250.0,90.0,33.7
+53,P3 — 储备/验证,外链与数字公关,b2b link building,commercial,New /services/link-building,300,0,0.0,1.5,1.0,600.0,0.0,33.6
+54,P3 — 储备/验证,站内 SEO,internal linking strategy,informational,New guide: /blog/internal-linking-strategy,700,0,0.0,2.0,67.0,1500.0,11000.0,31.3
+55,P3 — 储备/验证,程序化 SEO,template seo,informational,New guide: /blog/template-seo,60,0,0.0,3.5,2.0,150.0,1200.0,30.9
+56,P3 — 储备/验证,关键词与内容策略,topical authority seo,informational,New guide: /blog/topical-authority-seo,450,0,0.0,2.5,34.0,900.0,350.0,28.9
+57,P3 — 储备/验证,AI 搜索与 GEO,perplexity seo,commercial,/services/geo-services,350,0,0.0,7.0,,1400.0,,
+58,P3 — 储备/验证,程序化 SEO,programmatic seo agency,commercial,New /services/programmatic-seo,200,0,0.0,10.0,,300.0,,
+59,P3 — 储备/验证,程序化 SEO,programmatic seo services,commercial,New /services/programmatic-seo,200,0,0.0,,,200.0,,
+60,P3 — 储备/验证,技术 SEO,crawl budget optimization,informational,New guide: /blog/crawl-budget-optimization,100,0,0.0,,41.0,500.0,1200.0,
+61,P3 — 储备/验证,程序化 SEO,programmatic seo examples,informational,New guide: /blog/programmatic-seo-examples,100,0,0.0,,8.0,250.0,60.0,
+62,P3 — 储备/验证,程序化 SEO,programmatic seo strategy,commercial,New /services/programmatic-seo,100,0,0.0,,,100.0,,
+63,P3 — 储备/验证,关键词与内容策略,b2b seo content,commercial,New /services/seo-content-strategy,100,0,0.0,,,150.0,,
+64,P3 — 储备/验证,站内 SEO,internal linking service,commercial,New /services/on-page-seo,80,0,0.0,,22.0,80.0,12000.0,
+65,P3 — 储备/验证,站内 SEO,on page seo consultant,commercial,New /services/on-page-seo,80,0,0.0,70.0,,150.0,,
+66,P3 — 储备/验证,外链与数字公关,b2b saas link building,commercial,New /services/link-building,80,0,0.0,,,100.0,,
+67,P3 — 储备/验证,核心 SEO 服务,organic growth agency,commercial,/services/seo-services,60,0,0.0,7.0,,200.0,,
+68,P3 — 储备/验证,技术 SEO,hreflang audit,commercial,/services/technical-seo,10,0,0.0,,,20.0,,
+69,P3 — 储备/验证,程序化 SEO,programmatic seo consultant,commercial,New /services/programmatic-seo,10,0,0.0,,,10.0,,
+70,P3 — 储备/验证,核心 SEO 服务,seo growth coaching,commercial,/services/seo-services,0,0,0.0,,,,,
+71,P3 — 储备/验证,技术 SEO,indexation audit,commercial,/services/technical-seo,0,0,0.0,,,,,
+72,P3 — 储备/验证,程序化 SEO,scalable seo pages,commercial,New /services/programmatic-seo,0,0,0.0,,,,,
+73,P3 — 储备/验证,程序化 SEO,directory seo strategy,informational,New guide: /blog/directory-seo-strategy,0,0,0.0,,,,,
+74,P3 — 储备/验证,程序化 SEO,integration pages seo,commercial,New /services/programmatic-seo,0,0,0.0,,,,,
+75,P3 — 储备/验证,关键词与内容策略,content brief service,commercial,New /services/seo-content-strategy,0,0,0.0,,,,,
+76,P3 — 储备/验证,关键词与内容策略,commercial content strategy,commercial,New /services/seo-content-strategy,0,0,0.0,,,40.0,,

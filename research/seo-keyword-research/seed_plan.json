@@ -1,0 +1,57 @@
+{
+  "market": {
+    "country": "us",
+    "language": "en",
+    "audience": "B2B SaaS, AI and developer-tool companies seeking an SEO agency or specialist service"
+  },
+  "selection_rules": {
+    "prioritize": [
+      "commercial investigation and service-intent queries",
+      "SaaS, AI and developer-tool modifiers where demand is present",
+      "terms that map to a distinct service page, section or content cluster",
+      "achievable long-tail terms with clear buyer intent"
+    ],
+    "deprioritize": [
+      "generic educational queries with no viable conversion or internal-link path",
+      "local SEO and e-commerce terms unless a separate service is intentionally launched",
+      "unrelated tools, templates or certifications"
+    ]
+  },
+  "clusters": [
+    {
+      "id": "core-seo-services",
+      "page_type": "commercial service page",
+      "seeds": ["seo services", "seo agency", "seo consultant", "b2b seo agency", "saas seo agency"]
+    },
+    {
+      "id": "on-page-seo",
+      "page_type": "commercial service page and supporting guides",
+      "seeds": ["on page seo services", "on page seo audit", "content optimization services", "internal linking service"]
+    },
+    {
+      "id": "technical-seo",
+      "page_type": "commercial service page and supporting guides",
+      "seeds": ["technical seo services", "technical seo audit", "javascript seo", "core web vitals audit", "website migration seo", "international seo services", "schema markup service"]
+    },
+    {
+      "id": "programmatic-seo",
+      "page_type": "commercial service page and supporting guides",
+      "seeds": ["programmatic seo", "programmatic seo agency", "programmatic seo services", "programmatic seo strategy"]
+    },
+    {
+      "id": "content-and-keyword-strategy",
+      "page_type": "commercial service page and supporting guides",
+      "seeds": ["keyword research services", "seo content strategy", "seo content services", "content brief service"]
+    },
+    {
+      "id": "authority-building",
+      "page_type": "commercial service page and supporting guides",
+      "seeds": ["link building services", "saas link building", "b2b link building", "digital pr services"]
+    },
+    {
+      "id": "ai-search-and-geo",
+      "page_type": "commercial service page and supporting guides",
+      "seeds": ["ai seo services", "generative engine optimization", "geo services", "ai search optimization"]
+    }
+  ]
+}
