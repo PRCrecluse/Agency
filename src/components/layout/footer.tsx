@@ -13,6 +13,15 @@ import YoutubeIcon from '@/assets/svg/youtube-icon'
 import { PrimaryFlowButton } from '@/components/ui/flow-button'
 import SectionSeparator from '@/components/section-separator'
 
+const footerBrandLogos = [
+  { src: '/images/brand-logos/amazon.webp', alt: 'Amazon' },
+  { src: '/images/brand-logos/microsoft.webp', alt: 'Microsoft' },
+  { src: '/images/brand-logos/hubspot.webp', alt: 'HubSpot' },
+  { src: '/images/brand-logos/deloitte.webp', alt: 'Deloitte' },
+  { src: '/images/brand-logos/evernote.webp', alt: 'Evernote' },
+  { src: '/images/brand-logos/fedex.webp', alt: 'FedEx' }
+]
+
 const Footer = () => {
   return (
     <footer>
@@ -103,13 +112,16 @@ const Footer = () => {
             </div>
             <Separator />
 
-            <div className='flex flex-wrap justify-center gap-4'>
-              <img src='/images/brand-logos/bestofjs-logo-bw.webp' alt='bestofjs' className='h-5 dark:invert' />
-              <img src='/images/brand-logos/product-hunt-logo-bw.webp' alt='producthunt' className='h-5 dark:invert' />
-              <img src='/images/brand-logos/reddit-logo-bw.webp' alt='reddit' className='h-5 dark:invert' />
-              <img src='/images/brand-logos/medium-logo-bw.webp' alt='medium' className='h-5 dark:invert' />
-              <img src='/images/brand-logos/ycombinator-logo-bw.webp' alt='ycombinator' className='h-5 dark:invert' />
-              <img src='/images/brand-logos/launchtory-logo-bw.webp' alt='launchtory' className='h-5 dark:invert' />
+            <div className='flex flex-wrap items-center justify-center gap-x-5 gap-y-3'>
+              {footerBrandLogos.map(logo => (
+                <img
+                  key={logo.src}
+                  src={logo.src}
+                  alt={logo.alt}
+                  className='h-6 w-auto max-w-24 object-contain opacity-95'
+                  loading='lazy'
+                />
+              ))}
             </div>
           </div>
         </div>

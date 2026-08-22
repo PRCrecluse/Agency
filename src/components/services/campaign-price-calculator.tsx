@@ -57,7 +57,7 @@ const CampaignPriceCalculator = () => {
             <NumberTicker value={postCount * PRICE_PER_POST} className='text-4xl font-semibold tracking-tight sm:text-5xl' />
             <span className='text-muted-foreground text-sm font-medium'>USD</span>
           </div>
-          <p className='text-muted-foreground mt-3 text-sm leading-6'>20 条帖子对应 $2,500 USD。附加的链接、浏览量承诺或高级保障将单独计费。</p>
+          <p className='text-muted-foreground mt-3 text-sm leading-6'>20 条帖子批次起步价为 $2,500 USD。附加的链接、浏览量承诺或高级保障将单独计费。</p>
         </div>
       </CardContent>
     </Card>

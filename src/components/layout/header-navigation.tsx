@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState, type ReactNode } from 'react'
+import { useEffect, useRef, useState, type ReactNode } from 'react'
 
 import { usePathname } from 'next/navigation'
 
@@ -12,15 +12,7 @@ import { ChevronRightIcon, CircleSmallIcon, MenuIcon } from 'lucide-react'
 import { useActiveSection } from '@/hooks/use-active-section'
 
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible'
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-  navigationMenuTriggerStyle
-} from '@/components/ui/navigation-menu'
+import { navigationMenuTriggerStyle } from '@/components/ui/navigation-menu'
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetDescription, SheetTrigger } from '@/components/ui/sheet'
 import { SecondaryFlowButton } from '@/components/ui/flow-button'
 
@@ -116,34 +108,36 @@ const ListItem = (props: {
 
   return (
     <li className={cn({ 'min-h-19.5': description && splitItems })}>
-      <NavigationMenuLink
+      <Link
         href={localizedHref}
         data-active={isActive}
-        className={cn({ 'flex flex-row items-start gap-2': icon })}
-        asChild
+        className={cn(
+          'hover:bg-muted focus:bg-muted focus-visible:ring-ring/50 data-[active=true]:bg-muted/50 data-[active=true]:hover:bg-muted data-[active=true]:focus:bg-muted flex items-center gap-1.5 rounded-sm p-2 text-sm transition-all outline-none focus-visible:ring-3 focus-visible:outline-1',
+          {
+            'flex flex-row items-start gap-2': icon
+          }
+        )}
       >
-        <Link href={localizedHref}>
-          {icon && (
-            <span className='bg-popover [&>svg]:text-popover-foreground! flex aspect-square size-7 shrink-0 items-center justify-center rounded-sm border [&>svg]:size-4'>
-              {icon}
-            </span>
-          )}
-          {description ? (
-            <div className='space-y-0.5'>
-              <div className={cn('font-medium', { 'flex items-center gap-1.5': badge })}>
-                {title}
-                {badge}
-              </div>
-              <p className='text-muted-foreground text-pretty'>{description}</p>
-            </div>
-          ) : (
+        {icon && (
+          <span className='bg-popover [&>svg]:text-popover-foreground! flex aspect-square size-7 shrink-0 items-center justify-center rounded-sm border [&>svg]:size-4'>
+            {icon}
+          </span>
+        )}
+        {description ? (
+          <div className='space-y-0.5'>
             <div className={cn('font-medium', { 'flex items-center gap-1.5': badge })}>
               {title}
               {badge}
             </div>
-          )}
-        </Link>
-      </NavigationMenuLink>
+            <p className='text-muted-foreground text-pretty'>{description}</p>
+          </div>
+        ) : (
+          <div className={cn('font-medium', { 'flex items-center gap-1.5': badge })}>
+            {title}
+            {badge}
+          </div>
+        )}
+      </Link>
     </li>
   )
 }
@@ -161,6 +155,28 @@ const HeaderNavigation = ({
 }) => {
   const pathname = usePathname()
   const lang = currentLang
+  const navRef = useRef<HTMLElement>(null)
+  const closeTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null)
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null)
+
+  const clearCloseTimeout = () => {
+    if (closeTimeoutRef.current) {
+      window.clearTimeout(closeTimeoutRef.current)
+      closeTimeoutRef.current = null
+    }
+  }
+
+  const openDropdownMenu = (title: string) => {
+    clearCloseTimeout()
+    setOpenDropdown(title)
+  }
+
+  const closeDropdownMenu = (title: string) => {
+    clearCloseTimeout()
+    closeTimeoutRef.current = window.setTimeout(() => {
+      setOpenDropdown(current => (current === title ? null : current))
+    }, 120)
+  }
 
   // Extract all section IDs from navigation data
   const sectionIds = navigationData.flatMap(navItem => {
@@ -193,27 +209,61 @@ const HeaderNavigation = ({
 
   const activeSection = useActiveSection(sectionIds)
 
+  useEffect(() => {
+    setOpenDropdown(null)
+  }, [pathname, lang])
+
+  useEffect(() => {
+    return () => {
+      clearCloseTimeout()
+    }
+  }, [])
+
+  useEffect(() => {
+    if (!openDropdown) return
+
+    const handlePointerDown = (event: MouseEvent) => {
+      if (!navRef.current?.contains(event.target as Node)) {
+        setOpenDropdown(null)
+      }
+    }
+
+    const handleEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setOpenDropdown(null)
+      }
+    }
+
+    document.addEventListener('mousedown', handlePointerDown)
+    window.addEventListener('keydown', handleEscape)
+
+    return () => {
+      document.removeEventListener('mousedown', handlePointerDown)
+      window.removeEventListener('keydown', handleEscape)
+    }
+  }, [openDropdown])
+
   return (
-    <NavigationMenu viewport={false} className={cn('hidden lg:block', navigationClassName)}>
-      <NavigationMenuList className='h-fit flex-wrap gap-6!'>
+    <nav ref={navRef} aria-label='Main' className={cn('relative hidden lg:block', navigationClassName)}>
+      <ul className='flex h-fit flex-wrap items-center gap-6'>
         {navigationData.map(navItem => {
           if (navItem.href) {
             const isActive = isHrefActive({ href: navItem.href, activeSection, pathname })
             const localizedHref = withQueryLang(navItem.href, lang)
 
             return (
-              <NavigationMenuItem key={navItem.title}>
-                <NavigationMenuLink
+              <li key={navItem.title}>
+                <Link
                   href={localizedHref}
                   data-active={isActive}
                   className={cn(
                     navigationMenuTriggerStyle(),
-                    'text-muted-foreground! hover:text-foreground! data-[active=true]:text-foreground! bg-transparent! p-0! text-base'
+                    'text-muted-foreground! hover:text-foreground! data-[active=true]:text-foreground! bg-transparent! p-0! text-base shadow-none hover:bg-transparent focus:bg-transparent data-[active=true]:bg-transparent'
                   )}
                 >
                   {navItem.title}
-                </NavigationMenuLink>
-              </NavigationMenuItem>
+                </Link>
+              </li>
             )
           }
 
@@ -231,105 +281,133 @@ const HeaderNavigation = ({
             }
           }
 
+          const isOpen = openDropdown === navItem.title
+
           return (
-            <NavigationMenuItem key={navItem.title}>
-              <NavigationMenuTrigger
-                data-active={hasActiveChild}
-                className='text-muted-foreground! data-[active=true]:text-foreground! bg-transparent! p-0! text-base [&_svg]:size-4'
+            <li key={navItem.title} className='relative'>
+              <div
+                onMouseEnter={() => openDropdownMenu(navItem.title)}
+                onMouseLeave={() => closeDropdownMenu(navItem.title)}
+                onFocusCapture={() => openDropdownMenu(navItem.title)}
+                onBlurCapture={event => {
+                  if (!event.currentTarget.contains(event.relatedTarget as Node | null)) {
+                    closeDropdownMenu(navItem.title)
+                  }
+                }}
               >
-                {navItem.title}
-              </NavigationMenuTrigger>
-              <NavigationMenuContent className='w-[min(82rem,calc(100vw-2rem))] max-w-[calc(100vw-2rem)] shadow-lg! md:fixed md:left-1/2 md:top-[4.375rem] md:-translate-x-1/2'>
-                {navItem.splitItems ? (
-                  <div className={cn('grid grid-cols-1 gap-2', navItem.contentClassName)}>
-                    {navItem.items.map((section, sectionIndex) => (
-                      <div
-                        key={section.title ?? `section-${sectionIndex}`}
-                        className={cn('grid grid-cols-1 gap-3', {
-                          'border-border/70 border-l pl-6': sectionIndex > 0
-                        })}
-                      >
-                        {section.title ? <div className='text-muted-foreground px-2 text-sm'>{section.title}</div> : null}
-                        {section.subSections ? (
-                          <div className='grid grid-cols-1 gap-3'>
-                            {section.subSections.map(subSection => (
-                              <div key={subSection.title} className='grid grid-cols-1 gap-2'>
-                                <div className='text-muted-foreground px-2 text-sm'>{subSection.title}</div>
-                                <ul
-                                  className={cn('grid grid-cols-1 gap-0.5', {
-                                    'gap-2': subSection.items.find(item => item.description)
-                                  })}
-                                >
-                                  {subSection.items.map((item, index) => (
-                                    <ListItem
-                                      key={index}
-                                      icon={item.icon}
-                                      title={item.title}
-                                      description={item.description}
-                                      href={item.href}
-                                      badge={item.badge}
-                                      splitItems={navItem.splitItems}
-                                      activeSection={activeSection}
-                                      lang={lang}
-                                    />
-                                  ))}
-                                </ul>
-                              </div>
-                            ))}
-                          </div>
-                        ) : (
-                          <ul
-                            className={cn('grid grid-cols-1 gap-0.5', {
-                              'gap-2': section.items?.find(item => item.description)
+                <button
+                  type='button'
+                  data-active={hasActiveChild}
+                  aria-expanded={isOpen}
+                  aria-haspopup='true'
+                  className={cn(
+                    navigationMenuTriggerStyle(),
+                    'text-muted-foreground! data-[active=true]:text-foreground! bg-transparent! p-0! text-base shadow-none hover:bg-transparent focus:bg-transparent data-[active=true]:bg-transparent [&_svg]:size-4'
+                  )}
+                  onClick={() => {
+                    clearCloseTimeout()
+                    setOpenDropdown(current => (current === navItem.title ? null : navItem.title))
+                  }}
+                >
+                  {navItem.title}
+                </button>
+
+                {isOpen ? (
+                  <div className='bg-popover text-popover-foreground ring-foreground/10 fixed top-16 left-1/2 z-50 w-[min(82rem,calc(100vw-2rem))] max-w-[calc(100vw-2rem)] -translate-x-1/2 overflow-hidden rounded-md p-2 pr-2.5 shadow-lg ring-1'>
+                    {navItem.splitItems ? (
+                      <div className={cn('grid grid-cols-1 gap-2', navItem.contentClassName)}>
+                        {navItem.items.map((section, sectionIndex) => (
+                          <div
+                            key={section.title ?? `section-${sectionIndex}`}
+                            className={cn('grid grid-cols-1 gap-3', {
+                              'border-border/70 border-l pl-6': sectionIndex > 0
                             })}
                           >
-                            {section.items?.map((item, index) => (
-                              <ListItem
-                                key={index}
-                                icon={item.icon}
-                                title={item.title}
-                                description={item.description}
-                                href={item.href}
-                                badge={item.badge}
-                                splitItems={navItem.splitItems}
-                                activeSection={activeSection}
-                                lang={lang}
-                              />
-                            ))}
-                          </ul>
-                        )}
+                            {section.title ? <div className='text-muted-foreground px-2 text-sm'>{section.title}</div> : null}
+                            {section.subSections ? (
+                              <div className='grid grid-cols-1 gap-3'>
+                                {section.subSections.map(subSection => (
+                                  <div key={subSection.title} className='grid grid-cols-1 gap-2'>
+                                    <div className='text-muted-foreground px-2 text-sm'>{subSection.title}</div>
+                                    <ul
+                                      className={cn('grid grid-cols-1 gap-0.5', {
+                                        'gap-2': subSection.items.find(item => item.description)
+                                      })}
+                                    >
+                                      {subSection.items.map((item, index) => (
+                                        <ListItem
+                                          key={index}
+                                          icon={item.icon}
+                                          title={item.title}
+                                          description={item.description}
+                                          href={item.href}
+                                          badge={item.badge}
+                                          splitItems={navItem.splitItems}
+                                          activeSection={activeSection}
+                                          pathname={pathname}
+                                          lang={lang}
+                                        />
+                                      ))}
+                                    </ul>
+                                  </div>
+                                ))}
+                              </div>
+                            ) : (
+                              <ul
+                                className={cn('grid grid-cols-1 gap-0.5', {
+                                  'gap-2': section.items?.find(item => item.description)
+                                })}
+                              >
+                                {section.items?.map((item, index) => (
+                                  <ListItem
+                                    key={index}
+                                    icon={item.icon}
+                                    title={item.title}
+                                    description={item.description}
+                                    href={item.href}
+                                    badge={item.badge}
+                                    splitItems={navItem.splitItems}
+                                    activeSection={activeSection}
+                                    pathname={pathname}
+                                    lang={lang}
+                                  />
+                                ))}
+                              </ul>
+                            )}
+                          </div>
+                        ))}
                       </div>
-                    ))}
-                  </div>
-                ) : (
-                  <ul
-                    className={cn(
-                      'grid grid-cols-1 gap-0.5',
-                      { 'gap-2': navItem.items?.find(item => item.description) },
-                      navItem.contentClassName
+                    ) : (
+                      <ul
+                        className={cn(
+                          'grid grid-cols-1 gap-0.5',
+                          { 'gap-2': navItem.items?.find(item => item.description) },
+                          navItem.contentClassName
+                        )}
+                      >
+                        {navItem.items?.map((item, index) => (
+                          <ListItem
+                            key={index}
+                            icon={item.icon}
+                            title={item.title}
+                            description={item.description}
+                            href={item.href}
+                            badge={item.badge}
+                            activeSection={activeSection}
+                            pathname={pathname}
+                            lang={lang}
+                          />
+                        ))}
+                      </ul>
                     )}
-                  >
-                    {navItem.items?.map((item, index) => (
-                      <ListItem
-                        key={index}
-                        icon={item.icon}
-                        title={item.title}
-                        description={item.description}
-                        href={item.href}
-                        badge={item.badge}
-                        activeSection={activeSection}
-                        pathname={pathname}
-                        lang={lang}
-                      />
-                    ))}
-                  </ul>
-                )}
-              </NavigationMenuContent>
-            </NavigationMenuItem>
+                  </div>
+                ) : null}
+              </div>
+            </li>
           )
         })}
-      </NavigationMenuList>
-    </NavigationMenu>
+      </ul>
+    </nav>
   )
 }
 

@@ -25,7 +25,7 @@ const servicePackages = [
   {
     level: 'A',
     name: '精准评论',
-    price: '$1,500',
+    price: '$1,500 起',
     description: '以真实讨论语境覆盖目标受众与高意图问题场景。',
     items: ['40 条精准评论', '围绕目标产品、痛点与真实问答场景策划', '适合长期 SEO 与 GEO 内容信号积累'],
     impact: 'Reddit 流量：低 · SEO：高 · GEO：高（训练后）'
@@ -33,7 +33,7 @@ const servicePackages = [
   {
     level: 'B',
     name: '品牌社区代运营',
-    price: '$1,000',
+    price: '$1,000 起',
     description: '建立并运营品牌自有 subreddit，沉淀长期可持续的社区讨论与内容资产。',
     items: ['品牌专属 subreddit 创建与基础配置', '社区规则、版主机制与内容框架设计', '每周帖子与评论运营，持续积累品牌话题与 GEO 信号'],
     impact: 'Reddit 流量：中 · SEO：中 · GEO：高'
@@ -41,7 +41,7 @@ const servicePackages = [
   {
     level: 'C',
     name: 'Campaign 事件营销',
-    price: '$2,500',
+    price: '$2,500 起',
     description: '面向目标 subreddit 的批次化内容投放与执行，适合活动、节点传播与集中曝光。',
     items: ['20 条帖子 / 批次', '客户提供初稿后，我们负责 Reddit 风格润色、排期与发布', '发布后 3 个自然日内未达量可免费补发'],
     impact: 'Reddit 流量：高 · SEO：中 · GEO：中'
@@ -50,9 +50,9 @@ const servicePackages = [
 
 const guaranteeChecklist = [
   {
-    title: '交付范围说明',
+    title: '3 天存活记录说明',
     description:
-      '我们的保障针对已审核并交付的 Reddit 内容，包括帖子、评论、点赞与互动。历史数据或下游转化，如浏览量、点赞、注册、付费、GitHub Star、安装和预约，仅用于帮助理解过往表现，不构成结果承诺。'
+      '单篇帖子在线满 3 天才会计入数据。'
   },
   {
     title: '交付总量保障',
@@ -60,30 +60,17 @@ const guaranteeChecklist = [
       '我们保障的是合同约定的有效交付总量，而不是某一篇内容必然留在某个指定版块。若内容在 7 天窗口内被删除，不计入交付，并会免费重写、调整角度或更换合适社区补发，直至约定的存活数量达标。'
   },
   {
-    title: '7 天存活计入交付',
-    description:
-      '一篇内容在 Reddit 上可见并在线满 7 天，才会计入该套餐的交付总量。7 天后视为交付完成，后续因版主清理或平台批量处理而发生的变化不再回溯。Campaign 批次另提供发布后 3 个自然日内的免费补发保障。'
-  },
-  {
     title: '透明审核与状态追踪',
     description:
       '社区运营内容与 Campaign 帖子会在发布前进入审核；评论按约定节奏执行。Dashboard 会记录发布状态、链接、删除情况与补发记录，让每一项交付都可追踪、可核对。'
   },
   {
-    title: '事实准确性保障',
-    description: '如已交付内容出现事实性错误，我们将免费修正或重新创建，确保品牌、产品与关键信息表达准确。'
-  },
-  {
-    title: '内容交付边界',
-    description: '评论、社区运营内容与 Campaign 帖子的历史点赞、浏览量和互动数据仅作为观测值，受产品、版块和发布时间影响，不作为结果保证。'
+    title: '完整的 Proposal 和交付结案报告',
+    description: '每个项目都会提供完整的 proposal，并在交付完成后提供结案报告，方便复盘与归档。'
   },
   {
     title: '链接与图片规则',
     description: '帖子类内容是否包含图片与链接，需由社区规则、内容语境与合作范围共同决定。正文链接属于付费加购项；评论链接是否可用也以实际社区规则为准。'
-  },
-  {
-    title: '社区选择原则',
-    description: '若某社区连续两次拒绝内容，我们将更换条件相近的版块，而非持续冲击同一社区或消耗账号。保障的是有效数量，不是指定版块。'
   }
 ]
 
@@ -217,7 +204,7 @@ const RedditServicesPage = () => {
               <Badge variant='outline' className='h-auto px-3 py-1 text-sm font-normal'>
                 Campaign 投放服务
               </Badge>
-              <h2 className='text-3xl font-semibold tracking-tight sm:text-4xl'>20 条帖子 / 批次，$2,500 USD。</h2>
+              <h2 className='text-3xl font-semibold tracking-tight sm:text-4xl'>20 条帖子 / 批次，$2,500 起。</h2>
               <p className='text-muted-foreground text-base leading-7 sm:text-lg'>
                 Campaign 适合已有内容初稿、需要集中在目标社区完成沟通、润色、排期和发布执行的团队。客户提供初稿，我们完成 Reddit 风格的内容优化与全流程发布跟进。
               </p>
@@ -269,7 +256,7 @@ const RedditServicesPage = () => {
                     </div>
                     <div className='space-y-1.5'>
                       <h3 className='text-base font-semibold sm:text-lg'>{item.title}</h3>
-                      <p className='text-muted-foreground text-sm leading-6 sm:text-[15px]'>{item.description}</p>
+                      <p className='text-muted-foreground whitespace-pre-line text-sm leading-6 sm:text-[15px]'>{item.description}</p>
                     </div>
                   </li>
                 ))}

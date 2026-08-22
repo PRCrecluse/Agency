@@ -97,14 +97,14 @@ const Features = () => {
           ))}
         </div>
 
-        <SectionSeparator className='mt-16 sm:mt-20 lg:mt-24' />
+        <SectionSeparator className='mt-10 sm:mt-12 lg:mt-14' />
 
         <MotionPreset
           fade
           slide={{ direction: 'down', offset: 50 }}
           blur
           transition={{ duration: 0.5 }}
-          className='mt-12 space-y-4 text-center sm:mt-16'
+          className='mt-8 space-y-4 text-center sm:mt-10 lg:mt-12'
         >
           <p className='text-primary text-sm font-medium uppercase'>AI Systems</p>
 

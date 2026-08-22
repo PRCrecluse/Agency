@@ -5,11 +5,9 @@ import {
   BracesIcon,
   CheckCircle2Icon,
   CircleDotDashedIcon,
-  Code2Icon,
   FileSearchIcon,
   GaugeIcon,
   Globe2Icon,
-  Layers3Icon,
   ListChecksIcon,
   MonitorCheckIcon,
   SearchIcon,
@@ -45,8 +43,6 @@ export const metadata: Metadata = {
     canonical: `${baseUrl}/services/seo-services/technical-seo`
   }
 }
-
-const trustPoints = ['Clear priorities', 'Developer-ready tickets', 'Implementation support', 'Measurable progress']
 
 const painPoints = [
   'Pages are crawled but not indexed',
@@ -153,37 +149,6 @@ const implementationRows = [
     priority: 'High',
     owner: 'SEO / Content',
     recommendation: 'Add contextual category and integration links from relevant hubs'
-  }
-]
-
-const processSteps = [
-  {
-    title: 'Discovery and Benchmarking',
-    description: 'We learn your product, architecture, target markets, previous migrations, and organic growth goals.',
-    output: 'Product interview · access checklist · benchmark data · early risk view'
-  },
-  {
-    title: 'Technical Audit',
-    description:
-      'We crawl and inspect the site, review Search Console data, test page rendering, and isolate performance barriers.',
-    output: 'Crawl findings · rendering review · issue inventory · business impact'
-  },
-  {
-    title: 'Prioritized Roadmap',
-    description: 'Every issue is prioritized by potential impact, implementation effort, and business importance.',
-    output: 'Prioritized backlog · owners · technical recommendations · acceptance criteria'
-  },
-  {
-    title: 'Implementation Support',
-    description:
-      'We work with product and engineering teams through tickets, documentation, weekly meetings, and implementation reviews.',
-    output: 'Developer-ready tickets · working sessions · staging reviews · unblockers'
-  },
-  {
-    title: 'Validation and Monitoring',
-    description:
-      'After release, we validate each fix and monitor crawling, indexation, performance, rankings, and organic conversions.',
-    output: 'Post-release QA · validation log · monitoring view · next actions'
   }
 ]
 
@@ -316,17 +281,6 @@ const TechnicalSEOPage = () => {
             <SecondaryFlowButton asChild>
               <Link href='#included'>See What&apos;s Included</Link>
             </SecondaryFlowButton>
-          </div>
-          <div className='mt-10 grid w-full max-w-4xl gap-3 sm:grid-cols-2 lg:grid-cols-4'>
-            {trustPoints.map(point => (
-              <div
-                key={point}
-                className='bg-background/75 flex items-center justify-center gap-2 rounded-2xl border px-4 py-3 text-sm font-medium'
-              >
-                <CheckCircle2Icon className='text-primary size-4 shrink-0' />
-                {point}
-              </div>
-            ))}
           </div>
         </div>
       </section>
@@ -530,160 +484,6 @@ const TechnicalSEOPage = () => {
                     ))}
                   </tbody>
                 </table>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
-
-      <SectionSeparator />
-
-      <section className='px-4 py-14 sm:px-6 sm:py-20 lg:px-8'>
-        <div className='mx-auto w-full max-w-7xl'>
-          <div className='mx-auto max-w-3xl space-y-4 text-center'>
-            <Badge variant='outline' className='h-auto px-3 py-1 text-sm font-normal'>
-              Search discovery flow
-            </Badge>
-            <h2 className='text-3xl font-semibold tracking-tight sm:text-4xl'>
-              See Where the Crawl-to-Conversion Path Breaks
-            </h2>
-            <p className='text-muted-foreground text-base leading-7 sm:text-lg'>
-              We trace the path from discovery through rendering and indexation, then connect technical changes to the
-              pages that support qualified demand.
-            </p>
-          </div>
-
-          <div className='relative mt-10 grid gap-4 md:grid-cols-4'>
-            {[
-              { title: 'Discover', description: 'Crawlers find the URLs that matter.', icon: SearchIcon },
-              { title: 'Render', description: 'Critical content is available to search engines.', icon: Code2Icon },
-              { title: 'Index', description: 'The right pages are eligible to rank.', icon: Layers3Icon },
-              { title: 'Convert', description: 'Search visitors reach useful product paths.', icon: MonitorCheckIcon }
-            ].map((stage, index) => {
-              const Icon = stage.icon
-              return (
-                <Card key={stage.title} className='bg-card/85 relative border'>
-                  {index < 3 ? (
-                    <div className='bg-primary/35 absolute top-1/2 -right-3 z-10 hidden h-px w-6 md:block' />
-                  ) : null}
-                  <CardContent className='flex min-h-48 flex-col gap-5 pt-6'>
-                    <div className='flex items-center justify-between'>
-                      <div className='bg-primary/10 text-primary flex size-11 items-center justify-center rounded-2xl'>
-                        <Icon className='size-5' />
-                      </div>
-                      <span className='text-muted-foreground text-xs font-medium tracking-[0.24em]'>0{index + 1}</span>
-                    </div>
-                    <div>
-                      <h3 className='text-xl font-semibold'>{stage.title}</h3>
-                      <p className='text-muted-foreground mt-2 text-sm leading-6'>{stage.description}</p>
-                    </div>
-                  </CardContent>
-                </Card>
-              )
-            })}
-          </div>
-        </div>
-      </section>
-
-      <SectionSeparator />
-
-      <section className='px-4 py-14 sm:px-6 sm:py-20 lg:px-8'>
-        <div className='mx-auto w-full max-w-7xl'>
-          <div className='max-w-3xl space-y-4'>
-            <Badge variant='outline' className='h-auto px-3 py-1 text-sm font-normal'>
-              The operating model
-            </Badge>
-            <h2 className='text-3xl font-semibold tracking-tight sm:text-4xl'>How Our Technical SEO Process Works</h2>
-            <p className='text-muted-foreground text-base leading-7 sm:text-lg'>
-              A straightforward system for moving from site diagnosis to a verified release without losing the why
-              behind each fix.
-            </p>
-          </div>
-
-          <div className='mt-10 grid gap-5 lg:grid-cols-5'>
-            {processSteps.map((step, index) => (
-              <Card key={step.title} className='bg-card/85 border'>
-                <CardContent className='flex h-full flex-col gap-5 pt-6'>
-                  <div className='flex items-center justify-between'>
-                    <div className='bg-primary/10 text-primary flex size-11 items-center justify-center rounded-2xl text-sm font-semibold'>
-                      {String(index + 1).padStart(2, '0')}
-                    </div>
-                    <div className='bg-muted text-muted-foreground flex size-8 items-center justify-center rounded-full'>
-                      <ArrowRightIcon className='size-4' />
-                    </div>
-                  </div>
-                  <div className='space-y-3'>
-                    <h3 className='text-lg leading-6 font-semibold'>{step.title}</h3>
-                    <p className='text-muted-foreground text-sm leading-6'>{step.description}</p>
-                  </div>
-                  <p className='text-muted-foreground mt-auto border-t pt-4 text-xs leading-5 font-medium'>
-                    {step.output}
-                  </p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-
-          <Card className='bg-card/85 mt-8 overflow-hidden border'>
-            <CardHeader className='bg-muted/30 border-b'>
-              <div className='flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between'>
-                <div>
-                  <p className='text-primary text-xs font-medium tracking-[0.2em] uppercase'>
-                    Prioritization framework
-                  </p>
-                  <CardTitle className='mt-2 text-xl'>Technical SEO Priority Matrix</CardTitle>
-                </div>
-                <CardDescription className='max-w-sm text-sm leading-6'>
-                  We sequence fixes by expected impact and implementation effort, not by the length of an audit
-                  spreadsheet.
-                </CardDescription>
-              </div>
-            </CardHeader>
-            <CardContent className='p-5 sm:p-7'>
-              <div className='grid gap-3 sm:grid-cols-[auto_minmax(0,1fr)]'>
-                <div className='text-muted-foreground flex items-center justify-center text-xs font-medium tracking-[0.18em] uppercase sm:rotate-180 sm:[writing-mode:vertical-rl]'>
-                  Expected impact
-                </div>
-                <div>
-                  <div className='grid grid-cols-2 gap-3'>
-                    {[
-                      [
-                        'Fix first',
-                        'High impact · Low effort',
-                        'Resolve blocking crawl, canonical, or indexation issues quickly.',
-                        'bg-primary/12'
-                      ],
-                      [
-                        'Plan with engineering',
-                        'High impact · High effort',
-                        'Schedule rendering, architecture, and platform changes with owners.',
-                        'bg-secondary/30'
-                      ],
-                      [
-                        'Batch fixes',
-                        'Low impact · Low effort',
-                        'Group hygiene improvements into predictable maintenance releases.',
-                        'bg-muted/75'
-                      ],
-                      [
-                        'Deprioritize',
-                        'Low impact · High effort',
-                        'Avoid spending engineering capacity before higher-leverage work ships.',
-                        'bg-muted/45'
-                      ]
-                    ].map(([title, label, description, color]) => (
-                      <div key={title} className={`min-h-40 rounded-2xl border p-4 sm:p-5 ${color}`}>
-                        <p className='text-sm font-semibold'>{title}</p>
-                        <p className='text-primary mt-1 text-xs font-medium'>{label}</p>
-                        <p className='text-muted-foreground mt-3 text-sm leading-6'>{description}</p>
-                      </div>
-                    ))}
-                  </div>
-                  <div className='text-muted-foreground mt-3 flex justify-between px-1 text-xs font-medium tracking-[0.18em] uppercase'>
-                    <span>Low effort</span>
-                    <span>High effort</span>
-                  </div>
-                </div>
               </div>
             </CardContent>
           </Card>
