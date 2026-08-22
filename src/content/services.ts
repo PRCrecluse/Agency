@@ -330,12 +330,12 @@ export const servicePages: ServicePage[] = [
     category: { en: 'Reddit Services', zh: 'Reddit 服务' },
     title: { en: 'Reddit Services', zh: 'Reddit 服务' },
     description: {
-      en: 'Build a credible Reddit presence with structured community participation, campaign execution, and reporting that respects platform context.',
-      zh: '通过有结构的社区参与、广告投放与复盘机制，建立更可信的 Reddit 品牌存在感。'
+      en: 'Compare Reddit marketing packages, campaign execution, delivery standards, and service guarantees in one clear program overview.',
+      zh: '在同一页清晰查看 Reddit 营销套餐、Campaign 执行、交付标准与服务保障。'
     },
     intro: {
-      en: 'Reddit works when brands show up like informed contributors, not generic advertisers. We combine community management with campaign strategy so organic trust and paid distribution reinforce each other.',
-      zh: '在 Reddit 上，品牌要像真正了解社区的参与者，而不是泛化广告主，效果才会出来。我们把社区运营与广告策略结合起来，让自然信任和付费分发相互强化。'
+      en: 'This overview helps teams choose the right Reddit service mix—from targeted comments and list posts to dedicated posts, brand communities, and 20-post campaigns—while making delivery rules, replacement standards, add-ons, and responsibilities transparent.',
+      zh: '本页帮助团队在精准评论、清单帖、专属帖、品牌社区与 20 条帖子 Campaign 中选择合适组合，并清楚说明交付规则、补发标准、加购项与双方责任。'
     },
     keywords: [
       { en: 'reddit marketing', zh: 'Reddit 营销' },
@@ -354,7 +354,7 @@ export const servicePages: ServicePage[] = [
     sections: [
       {
         id: 'reddit-strategy',
-        title: { en: 'Reddit strategy', zh: 'Reddit 策略' },
+        title: { en: 'Package overview', zh: '服务套餐总览' },
         description: {
           en: 'We define where your brand should participate, what narratives should lead, and how Reddit fits into your broader acquisition motion.',
           zh: '我们会先确定品牌应该进入哪些社区、用什么叙事切入，以及 Reddit 在整体获客体系中应该扮演什么角色。'
@@ -376,7 +376,7 @@ export const servicePages: ServicePage[] = [
       },
       {
         id: 'community-management',
-        title: { en: 'Community management', zh: '社区运营' },
+        title: { en: 'Campaign execution', zh: 'Campaign 执行' },
         description: {
           en: 'We help your brand participate in the right conversations with a tone, cadence, and value exchange that fits each subreddit.',
           zh: '我们帮助品牌以适合各个 subreddit 的语气、频率和价值交换方式参与正确的讨论。'
@@ -398,7 +398,7 @@ export const servicePages: ServicePage[] = [
       },
       {
         id: 'reddit-campaigns',
-        title: { en: 'Reddit campaigns', zh: 'Reddit 广告投放' },
+        title: { en: 'Service guarantees', zh: '服务承诺与保障' },
         description: {
           en: 'We plan and launch campaigns that align creative, targeting, offer design, and landing page intent around Reddit-native behavior.',
           zh: '我们会围绕 Reddit 用户行为习惯，规划并启动与创意、定向、报价设计和落地页意图相匹配的广告投放。'
@@ -420,7 +420,7 @@ export const servicePages: ServicePage[] = [
       },
       {
         id: 'measurement',
-        title: { en: 'Measurement and iteration', zh: '数据复盘与迭代' },
+        title: { en: 'Add-ons and payment', zh: '加购与付款方式' },
         description: {
           en: 'We connect platform activity back to business impact so the program can improve with evidence instead of guesswork.',
           zh: '我们把平台上的行为数据回连到业务结果，让后续优化建立在证据之上，而不是靠猜测。'
@@ -651,7 +651,7 @@ export const servicePages: ServicePage[] = [
 
 ]
 
-export const serviceSlugs = servicePages.map(service => service.slug)
+export const serviceSlugs = servicePages.filter(service => service.slug !== 'reddit-services').map(service => service.slug)
 
 export const getServiceBySlug = (slug: string) => servicePages.find(service => service.slug === slug)
 
