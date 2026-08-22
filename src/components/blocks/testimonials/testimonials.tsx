@@ -1,15 +1,12 @@
 'use client'
 
-import { ExternalLinkIcon, StarIcon } from 'lucide-react'
-
-import Link from 'next/link'
+import { StarIcon } from 'lucide-react'
 
 import TestimonialCard from '@/components/blocks/testimonials/testimonial-card'
 import type { TestimonialItem } from '@/components/blocks/testimonials/testimonial-card'
 
 import { Marquee } from '@/components/ui/marquee'
 import { MotionPreset } from '@/components/ui/motion-preset'
-import { PrimaryFlowButton } from '@/components/ui/flow-button'
 
 const Testimonials = ({ testimonials }: { testimonials: TestimonialItem[] }) => {
   return (
@@ -27,7 +24,7 @@ const Testimonials = ({ testimonials }: { testimonials: TestimonialItem[] }) => 
         <h2 className='text-2xl font-semibold md:text-3xl lg:text-4xl'>Trusted by People Who Sell Smarter</h2>
 
         <p className='text-muted-foreground text-xl'>
-          Real stories from users who simplified their sales process and grew their revenue with Flow.
+          Social proof from founders and operators seeing real traction from the work.
         </p>
       </MotionPreset>
 
@@ -49,12 +46,6 @@ const Testimonials = ({ testimonials }: { testimonials: TestimonialItem[] }) => 
             </div>
             <p className='text-muted-foreground text-sm font-medium'>Stars out of 5</p>
           </div>
-          <PrimaryFlowButton asChild>
-            <Link href='#'>
-              View all testimonials
-              <ExternalLinkIcon />
-            </Link>
-          </PrimaryFlowButton>
         </div>
       </div>
     </section>

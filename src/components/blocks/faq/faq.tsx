@@ -39,7 +39,7 @@ const FAQ = ({ faqItems }: { faqItems: FAQs }) => {
           <h2 className='text-2xl font-semibold md:text-3xl lg:text-4xl'>Frequently asked questions</h2>
 
           <p className='text-muted-foreground mx-auto max-w-2xl text-xl'>
-            Here are some quick answers to help you understand how Flow powers your product success.
+            A few quick answers about how we approach SEO, Reddit, and AI-discovery growth work.
           </p>
         </MotionPreset>
 
@@ -53,19 +53,13 @@ const FAQ = ({ faqItems }: { faqItems: FAQs }) => {
             ))}
           </Accordion>
 
-          {/* Right content */}
-          <div className='group bg-muted relative mx-auto flex h-full max-h-116 w-full max-w-148 items-end justify-center overflow-hidden rounded-xl border lg:max-xl:max-h-95'>
+            {/* Right content */}
+            <div className='group bg-muted relative mx-auto flex h-full max-h-116 w-full max-w-148 items-center justify-center overflow-hidden rounded-xl border p-4 sm:p-6 lg:max-xl:max-h-95'>
             <img
-              src='/images/dashboard.webp'
-              alt='Dashboard'
+              src='/attachphotos/mrr%20cost.png'
+              alt='MRR cost dashboard overview'
               loading='lazy'
-              className='h-full w-full origin-bottom scale-90 rounded-t-md shadow-md transition-transform duration-500 group-hover:scale-100 dark:hidden'
-            />
-            <img
-              src='/images/dashboard-dark.webp'
-              alt='Dashboard'
-              loading='lazy'
-              className='hidden h-full w-full origin-bottom scale-90 rounded-t-md shadow-md transition-transform duration-400 group-hover:scale-100 dark:inline-block'
+              className='h-full w-full origin-center object-contain shadow-md transition-transform duration-500 group-hover:scale-[1.02]'
             />
 
             {['top-4.5 left-4.5', 'top-4.5 right-4.5', 'bottom-4.5 left-4.5', 'bottom-4.5 right-4.5'].map(

@@ -22,8 +22,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    template: 'Demo: %s - Flow | Shadcn Studio',
-    default: 'Demo: Flow - SaaS Landing page | Shadcn Studio'
+    template: 'Demo: %s - Meridian | Shadcn Studio',
+    default: 'Demo: Meridian - SaaS Landing page | Shadcn Studio'
   },
   description:
     'Grow your product faster with an all-in-one sales and analytics platform. Track performance, automate follow-ups, and make smarter decisions easily.',
@@ -79,13 +79,13 @@ export const metadata: Metadata = {
   metadataBase: new URL(`${process.env.NEXT_PUBLIC_APP_URL ?? 'http://localhost:3000'}`),
   openGraph: {
     title: {
-      template: 'Demo: %s - Flow | Shadcn Studio',
-      default: 'Demo: Flow - SaaS Landing page | Shadcn Studio'
+      template: 'Demo: %s - Meridian | Shadcn Studio',
+      default: 'Demo: Meridian - SaaS Landing page | Shadcn Studio'
     },
     description:
       'Grow your product faster with an all-in-one sales and analytics platform. Track performance, automate follow-ups, and make smarter decisions easily.',
     type: 'website',
-    siteName: 'Flow',
+    siteName: 'Meridian',
     url: `${process.env.NEXT_PUBLIC_APP_URL ?? 'http://localhost:3000'}`,
     images: [
       {
@@ -93,15 +93,15 @@ export const metadata: Metadata = {
         type: 'image/png',
         width: 1200,
         height: 630,
-        alt: 'Flow - SaaS Landing page'
+        alt: 'Meridian - SaaS Landing page'
       }
     ]
   },
   twitter: {
     card: 'summary_large_image',
     title: {
-      template: 'Demo: %s - Flow | Shadcn Studio',
-      default: 'Demo: Flow - SaaS Landing page | Shadcn Studio'
+      template: 'Demo: %s - Meridian | Shadcn Studio',
+      default: 'Demo: Meridian - SaaS Landing page | Shadcn Studio'
     },
     description:
       'Grow your product faster with an all-in-one sales and analytics platform. Track performance, automate follow-ups, and make smarter decisions easily.'

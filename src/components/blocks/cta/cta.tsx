@@ -1,11 +1,10 @@
 'use client'
 
-import { SendIcon } from 'lucide-react'
+import Link from 'next/link'
 
-import { Input } from '@/components/ui/input'
 import { Card, CardContent } from '@/components/ui/card'
 
-import { PrimaryFlowButton } from '@/components/ui/flow-button'
+import { Button } from '@/components/ui/button'
 import { MotionPreset } from '@/components/ui/motion-preset'
 
 import LogoVector from '@/assets/svg/logo-vector'
@@ -30,7 +29,7 @@ const CTASection = () => {
               </h2>
 
               <p className='dark:text-muted-foreground w-full text-xl text-white/80 lg:max-w-2xl'>
-                Join Flow and get a complete overview of your users, sales, and performance - all from one powerful
+                Join Meridian and get a complete overview of your users, sales, and performance - all from one powerful
                 dashboard.
               </p>
             </MotionPreset>
@@ -55,21 +54,16 @@ const CTASection = () => {
         </Card>
 
         <MotionPreset fade blur zoom={{ initialScale: 0.95 }} delay={0.6} transition={{ duration: 0.4 }}>
-          <form onSubmit={e => e.preventDefault()}>
-            <div className='border-primary dark:border-primary/70 bg-background relative mx-auto -mt-9.25 flex size-fit w-full max-w-lg gap-2.5 rounded-xl border-2 p-2'>
-              <Input
-                type='email'
-                name='cta-email'
-                placeholder='Your email address'
-                className='h-10 border-none shadow-none focus-visible:ring-transparent dark:bg-transparent'
-                required
-              />
-              <PrimaryFlowButton className='hidden shrink-0 sm:inline-flex'>Get started</PrimaryFlowButton>
-              <PrimaryFlowButton className='hidden shrink-0 max-sm:inline-flex' type='submit'>
-                <SendIcon />
-              </PrimaryFlowButton>
-            </div>
-          </form>
+          <div className='border-primary dark:border-primary/70 bg-background relative mx-auto -mt-9.25 flex size-fit w-full max-w-lg justify-center rounded-xl border-2 p-2'>
+            <Button
+              className='rounded-lg border border-zinc-300/80 bg-zinc-700 px-6 text-base font-medium text-white shadow-none hover:bg-zinc-600 dark:border-zinc-700 dark:bg-zinc-200 dark:text-zinc-900 dark:hover:bg-zinc-300'
+              asChild
+            >
+              <Link href='https://cal.com/team/meridian-growth' target='_blank' rel='noreferrer'>
+                Book a call
+              </Link>
+            </Button>
+          </div>
         </MotionPreset>
       </div>
 

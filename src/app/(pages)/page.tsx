@@ -1,17 +1,13 @@
 import Hero from '@/components/blocks/hero-section/hero-section'
 import TrustedBrands from '@/components/blocks/trusted-brands/trusted-brands'
 import Features from '@/components/blocks/features/features'
-import Benefits from '@/components/blocks/benefits/benefits'
 import Testimonials from '@/components/blocks/testimonials/testimonials'
-import Pricing from '@/components/blocks/pricing/pricing'
 import FAQ from '@/components/blocks/faq/faq'
 import CTA from '@/components/blocks/cta/cta'
 
 import { logos } from '@/assets/data/trusted-brands'
-import { plans } from '@/assets/data/pricing'
 import { testimonials } from '@/assets/data/testimonials'
 import { faqItems } from '@/assets/data/faqs'
-import { benefits } from '@/assets/data/benefits'
 
 import SectionSeparator from '@/components/section-separator'
 
@@ -22,7 +18,7 @@ const jsonLd = {
       '@context': 'https://schema.org',
       '@type': 'WebSite',
       '@id': `${process.env.NEXT_PUBLIC_APP_URL}#website`,
-      name: 'Flow',
+      name: 'Meridian',
       description:
         'Grow your product faster with an all-in-one sales and analytics platform. Track performance, automate follow-ups, and make smarter decisions easily.',
       url: `${process.env.NEXT_PUBLIC_APP_URL}`,
@@ -46,15 +42,7 @@ const Home = () => {
 
       <SectionSeparator />
 
-      <Benefits featuresList={benefits} />
-
-      <SectionSeparator />
-
       <Testimonials testimonials={testimonials} />
-
-      <SectionSeparator />
-
-      <Pricing plans={plans} />
 
       <SectionSeparator />
 

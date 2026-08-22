@@ -14,7 +14,7 @@ const Register = () => {
       </Link>
 
       <div>
-        <h1 className='mb-2 text-2xl font-semibold'>Sign Up to Flow</h1>
+        <h1 className='mb-2 text-2xl font-semibold'>Sign Up to Meridian</h1>
         <p className='text-muted-foreground'>Ship Faster and Focus on Growth.</p>
       </div>
 

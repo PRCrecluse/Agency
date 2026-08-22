@@ -4,6 +4,7 @@ import { useState } from 'react'
 
 import { EyeIcon, EyeOffIcon } from 'lucide-react'
 
+import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 
 import { Button } from '@/components/ui/button'
@@ -92,12 +93,19 @@ const RegisterForm = () => {
         <Field orientation='horizontal' className='flex items-center gap-2'>
           <Checkbox id='rememberMe' />
           <FieldLabel htmlFor='rememberMe'>
-            <span className='text-muted-foreground'>I agree to</span> <a href='#'>privacy policy & terms</a>
+            <span className='text-muted-foreground'>I agree to</span>{' '}
+            <Link href='/privacy-policy' className='hover:underline'>
+              privacy policy
+            </Link>{' '}
+            &{' '}
+            <Link href='/terms-conditions' className='hover:underline'>
+              terms
+            </Link>
           </FieldLabel>
         </Field>
         <Field>
           <PrimaryFlowButton className='w-full *:w-full [&>button]:after:-inset-55' type='submit'>
-            Sign up to flow
+            Sign up to Meridian
           </PrimaryFlowButton>
         </Field>
       </FieldGroup>

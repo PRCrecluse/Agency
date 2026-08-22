@@ -2,12 +2,12 @@
 
 import { useEffect, useState } from 'react'
 
-import { ExternalLinkIcon, LogInIcon } from 'lucide-react'
+import { ExternalLinkIcon } from 'lucide-react'
 
 import Link from 'next/link'
 
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip'
-import { PrimaryFlowButton, SecondaryFlowButton } from '@/components/ui/flow-button'
+import { Button } from '@/components/ui/button'
 import { ModeToggle } from '@/components/layout/mode-toggle'
 
 import { HeaderNavigation, HeaderNavigationSmallScreen, type Navigation } from '@/components/layout/header-navigation'
@@ -37,6 +37,9 @@ const Header = ({ navigationData, className }: HeaderProps) => {
     }
   }, [])
 
+  const bookCallButtonClassName =
+    'rounded-lg border border-zinc-300/80 bg-zinc-700 px-6 text-base font-medium text-white shadow-none hover:bg-zinc-600 dark:border-zinc-700 dark:bg-zinc-200 dark:text-zinc-900 dark:hover:bg-zinc-300'
+
   return (
     <header
       className={cn(
@@ -52,7 +55,7 @@ const Header = ({ navigationData, className }: HeaderProps) => {
         <Link href='/#home'>
           <div className='flex items-center gap-3'>
             <FlowLogo className='size-8' />
-            <span className='text-xl font-semibold max-[430px]:hidden'>Flow</span>
+            <span className='text-xl font-semibold max-[430px]:hidden'>Meridian</span>
           </div>
         </Link>
 
@@ -66,36 +69,22 @@ const Header = ({ navigationData, className }: HeaderProps) => {
         <div className='flex gap-4 sm:gap-6'>
           <ModeToggle />
 
-          <SecondaryFlowButton className='max-sm:hidden' asChild>
-            <Link href='/login'>Login</Link>
-          </SecondaryFlowButton>
-
-          <PrimaryFlowButton className='max-sm:hidden' asChild>
-            <Link href='#'>Try demo</Link>
-          </PrimaryFlowButton>
+          <Button className={cn('max-sm:hidden', bookCallButtonClassName)} asChild>
+            <Link href='https://cal.com/team/meridian-growth' target='_blank' rel='noreferrer'>
+              Book a call
+            </Link>
+          </Button>
 
           <Tooltip>
             <TooltipTrigger asChild>
-              <SecondaryFlowButton className='sm:hidden [&>a]:size-10 [&>a]:px-0' asChild>
-                <Link href='/login'>
-                  <LogInIcon />
-                  <span className='sr-only'>Login</span>
-                </Link>
-              </SecondaryFlowButton>
-            </TooltipTrigger>
-            <TooltipContent>Login</TooltipContent>
-          </Tooltip>
-
-          <Tooltip>
-            <TooltipTrigger asChild>
-              <PrimaryFlowButton className='sm:hidden [&>a]:size-10 [&>a]:px-0' asChild>
-                <Link href='#'>
+              <Button className={cn('size-10 rounded-lg px-0 sm:hidden', bookCallButtonClassName)} asChild>
+                <Link href='https://cal.com/team/meridian-growth' target='_blank' rel='noreferrer'>
                   <ExternalLinkIcon />
-                  <span className='sr-only'>Try Demo</span>
+                  <span className='sr-only'>Book a call</span>
                 </Link>
-              </PrimaryFlowButton>
+              </Button>
             </TooltipTrigger>
-            <TooltipContent>Try Demo</TooltipContent>
+            <TooltipContent>Book a call</TooltipContent>
           </Tooltip>
 
           <HeaderNavigationSmallScreen

@@ -30,8 +30,12 @@ import { cn } from '@/lib/utils'
 
 type NavigationSection = {
   type: 'section'
-  title: string
-  items: NavigationItem[]
+  title?: string
+  items?: NavigationItem[]
+  subSections?: {
+    title: string
+    items: NavigationItem[]
+  }[]
 }
 
 type NavigationItem = {
@@ -63,6 +67,35 @@ type Navigation = {
     }
 )
 
+const getSectionIdFromHref = (href: string) => {
+  if (href.startsWith('/#')) return href.slice(2)
+  if (href.startsWith('#')) return href.slice(1)
+
+  return ''
+}
+
+const getBasePathFromHref = (href: string) => href.split('#')[0]
+
+const isHrefActive = ({
+  href,
+  activeSection,
+  pathname
+}: {
+  href: string
+  activeSection?: string
+  pathname?: string | null
+}) => {
+  const sectionId = getSectionIdFromHref(href)
+
+  if (sectionId) {
+    return activeSection === sectionId
+  }
+
+  const basePath = getBasePathFromHref(href)
+
+  return Boolean(basePath && pathname?.startsWith(basePath))
+}
+
 const ListItem = (props: {
   title: NavigationItem['title']
   href: NavigationItem['href']
@@ -75,9 +108,7 @@ const ListItem = (props: {
 }) => {
   const { title, href, icon, badge, description, splitItems, activeSection, pathname } = props
 
-  // Extract section id from href (e.g., '#home' -> 'home')
-  const sectionId = href.startsWith('/#') ? href.slice(2) : href.startsWith('#') ? href.slice(1) : ''
-  const isActive = sectionId ? activeSection === sectionId : pathname?.startsWith(href)
+  const isActive = isHrefActive({ href, activeSection, pathname })
 
   return (
     <li className={cn({ 'h-19.5': description && splitItems })}>
@@ -113,6 +144,8 @@ const ListItem = (props: {
   )
 }
 
+const getSectionItems = (section: NavigationSection) => section.items ?? section.subSections?.flatMap(subSection => subSection.items) ?? []
+
 const HeaderNavigation = ({
   navigationData,
   navigationClassName
@@ -125,11 +158,7 @@ const HeaderNavigation = ({
   // Extract all section IDs from navigation data
   const sectionIds = navigationData.flatMap(navItem => {
     if (navItem.href) {
-      const id = navItem.href.startsWith('/#')
-        ? navItem.href.slice(2)
-        : navItem.href.startsWith('#')
-          ? navItem.href.slice(1)
-          : ''
+      const id = getSectionIdFromHref(navItem.href)
 
       return id ? [id] : []
     }
@@ -137,15 +166,9 @@ const HeaderNavigation = ({
     if (navItem.items) {
       if (navItem.splitItems) {
         return navItem.items.flatMap(section =>
-          section.items
+          getSectionItems(section)
             .map(item => {
-              const id = item.href.startsWith('/#')
-                ? item.href.slice(2)
-                : item.href.startsWith('#')
-                  ? item.href.slice(1)
-                  : ''
-
-              return id
+              return getSectionIdFromHref(item.href)
             })
             .filter(Boolean)
         )
@@ -153,13 +176,7 @@ const HeaderNavigation = ({
 
       return navItem.items
         .map(item => {
-          const id = item.href.startsWith('/#')
-            ? item.href.slice(2)
-            : item.href.startsWith('#')
-              ? item.href.slice(1)
-              : ''
-
-          return id
+          return getSectionIdFromHref(item.href)
         })
         .filter(Boolean)
     }
@@ -174,14 +191,7 @@ const HeaderNavigation = ({
       <NavigationMenuList className='h-fit flex-wrap gap-6!'>
         {navigationData.map(navItem => {
           if (navItem.href) {
-            // Root link item
-            const sectionId = navItem.href.startsWith('/#')
-              ? navItem.href.slice(2)
-              : navItem.href.startsWith('#')
-                ? navItem.href.slice(1)
-                : ''
-
-            const isActive = sectionId ? activeSection === sectionId : pathname?.startsWith(navItem.href)
+            const isActive = isHrefActive({ href: navItem.href, activeSection, pathname })
 
             return (
               <NavigationMenuItem key={navItem.title}>
@@ -206,26 +216,10 @@ const HeaderNavigation = ({
           if (navItem.items) {
             if (navItem.splitItems) {
               hasActiveChild = navItem.items.some(section =>
-                section.items.some(item => {
-                  const id = item.href.startsWith('/#')
-                    ? item.href.slice(2)
-                    : item.href.startsWith('#')
-                      ? item.href.slice(1)
-                      : ''
-
-                  return id && activeSection === id
-                })
+                getSectionItems(section).some(item => isHrefActive({ href: item.href, activeSection, pathname }))
               )
             } else {
-              hasActiveChild = navItem.items.some(item => {
-                const id = item.href.startsWith('/#')
-                  ? item.href.slice(2)
-                  : item.href.startsWith('#')
-                    ? item.href.slice(1)
-                    : ''
-
-                return id && activeSection === id
-              })
+              hasActiveChild = navItem.items.some(item => isHrefActive({ href: item.href, activeSection, pathname }))
             }
           }
 
@@ -240,27 +234,55 @@ const HeaderNavigation = ({
               <NavigationMenuContent className='absolute left-1/2 w-auto -translate-x-1/2 shadow-lg!'>
                 {navItem.splitItems ? (
                   <div className={cn('grid grid-cols-1 gap-2', navItem.contentClassName)}>
-                    {navItem.items.map(section => (
-                      <div key={section.title} className='grid grid-cols-1 gap-2'>
-                        <div className='text-muted-foreground px-2 text-sm'>{section.title}</div>
-                        <ul
-                          className={cn('grid grid-cols-1 gap-0.5', {
-                            'gap-2': section.items.find(item => item.description)
-                          })}
-                        >
-                          {section.items.map((item, index) => (
-                            <ListItem
-                              key={index}
-                              icon={item.icon}
-                              title={item.title}
-                              description={item.description}
-                              href={item.href}
-                              badge={item.badge}
-                              splitItems={navItem.splitItems}
-                              activeSection={activeSection}
-                            />
-                          ))}
-                        </ul>
+                    {navItem.items.map((section, sectionIndex) => (
+                      <div key={section.title ?? `section-${sectionIndex}`} className='grid grid-cols-1 gap-2'>
+                        {section.title ? <div className='text-muted-foreground px-2 text-sm'>{section.title}</div> : null}
+                        {section.subSections ? (
+                          <div className='grid grid-cols-1 gap-3'>
+                            {section.subSections.map(subSection => (
+                              <div key={subSection.title} className='grid grid-cols-1 gap-2'>
+                                <div className='text-muted-foreground px-2 text-sm'>{subSection.title}</div>
+                                <ul
+                                  className={cn('grid grid-cols-1 gap-0.5', {
+                                    'gap-2': subSection.items.find(item => item.description)
+                                  })}
+                                >
+                                  {subSection.items.map((item, index) => (
+                                    <ListItem
+                                      key={index}
+                                      icon={item.icon}
+                                      title={item.title}
+                                      description={item.description}
+                                      href={item.href}
+                                      badge={item.badge}
+                                      splitItems={navItem.splitItems}
+                                      activeSection={activeSection}
+                                    />
+                                  ))}
+                                </ul>
+                              </div>
+                            ))}
+                          </div>
+                        ) : (
+                          <ul
+                            className={cn('grid grid-cols-1 gap-0.5', {
+                              'gap-2': section.items?.find(item => item.description)
+                            })}
+                          >
+                            {section.items?.map((item, index) => (
+                              <ListItem
+                                key={index}
+                                icon={item.icon}
+                                title={item.title}
+                                description={item.description}
+                                href={item.href}
+                                badge={item.badge}
+                                splitItems={navItem.splitItems}
+                                activeSection={activeSection}
+                              />
+                            ))}
+                          </ul>
+                        )}
                       </div>
                     ))}
                   </div>
@@ -312,11 +334,7 @@ const HeaderNavigationSmallScreen = ({
   // Extract all section IDs from navigation data
   const sectionIds = navigationData.flatMap(navItem => {
     if (navItem.href) {
-      const id = navItem.href.startsWith('/#')
-        ? navItem.href.slice(2)
-        : navItem.href.startsWith('#')
-          ? navItem.href.slice(1)
-          : ''
+      const id = getSectionIdFromHref(navItem.href)
 
       return id ? [id] : []
     }
@@ -324,15 +342,9 @@ const HeaderNavigationSmallScreen = ({
     if (navItem.items) {
       if (navItem.splitItems) {
         return navItem.items.flatMap(section =>
-          section.items
+          getSectionItems(section)
             .map(item => {
-              const id = item.href.startsWith('/#')
-                ? item.href.slice(2)
-                : item.href.startsWith('#')
-                  ? item.href.slice(1)
-                  : ''
-
-              return id
+              return getSectionIdFromHref(item.href)
             })
             .filter(Boolean)
         )
@@ -340,13 +352,7 @@ const HeaderNavigationSmallScreen = ({
 
       return navItem.items
         .map(item => {
-          const id = item.href.startsWith('/#')
-            ? item.href.slice(2)
-            : item.href.startsWith('#')
-              ? item.href.slice(1)
-              : ''
-
-          return id
+          return getSectionIdFromHref(item.href)
         })
         .filter(Boolean)
     }
@@ -386,13 +392,7 @@ const HeaderNavigationSmallScreen = ({
         <div className='space-y-0.5 overflow-y-auto p-2'>
           {navigationData.map((navItem, index) => {
             if (navItem.href) {
-              const sectionId = navItem.href.startsWith('/#')
-                ? navItem.href.slice(2)
-                : navItem.href.startsWith('#')
-                  ? navItem.href.slice(1)
-                  : ''
-
-              const isActive = sectionId ? activeSection === sectionId : pathname?.startsWith(navItem.href)
+              const isActive = isHrefActive({ href: navItem.href, activeSection, pathname })
 
               return (
                 <Link
@@ -413,26 +413,10 @@ const HeaderNavigationSmallScreen = ({
             if (navItem.items) {
               if (navItem.splitItems) {
                 hasActiveChild = navItem.items.some(section =>
-                  section.items.some(item => {
-                    const id = item.href.startsWith('/#')
-                      ? item.href.slice(2)
-                      : item.href.startsWith('#')
-                        ? item.href.slice(1)
-                        : ''
-
-                    return id && activeSection === id
-                  })
+                  getSectionItems(section).some(item => isHrefActive({ href: item.href, activeSection, pathname }))
                 )
               } else {
-                hasActiveChild = navItem.items.some(item => {
-                  const id = item.href.startsWith('/#')
-                    ? item.href.slice(2)
-                    : item.href.startsWith('#')
-                      ? item.href.slice(1)
-                      : ''
-
-                  return id && activeSection === id
-                })
+                hasActiveChild = navItem.items.some(item => isHrefActive({ href: item.href, activeSection, pathname }))
               }
             }
 
@@ -449,41 +433,36 @@ const HeaderNavigationSmallScreen = ({
                   {navItem.splitItems
                     ? navItem.items.map((item, i) => (
                         <div key={i} className='mt-1.5'>
-                          <div className='text-muted-foreground mb-1 pl-4.5 text-xs font-medium'>{item.title}</div>
-                          {item.items.map((subItem, j) => {
-                            const sectionId = subItem.href.startsWith('/#')
-                              ? subItem.href.slice(2)
-                              : subItem.href.startsWith('#')
-                                ? subItem.href.slice(1)
-                                : ''
+                          {item.title ? (
+                            <div className='text-muted-foreground mb-1 pl-4.5 text-xs font-medium'>{item.title}</div>
+                          ) : null}
+                          {(item.subSections ?? [{ title: item.title ?? '', items: item.items ?? [] }]).map((section, k) => (
+                            <div key={`${section.title}-${k}`} className={k > 0 ? 'mt-2' : ''}>
+                              {item.subSections ? (
+                                <div className='text-muted-foreground mb-1 pl-4.5 text-xs font-medium'>{section.title}</div>
+                              ) : null}
+                              {section.items.map((subItem, j) => {
+                                const isActive = isHrefActive({ href: subItem.href, activeSection, pathname })
 
-                            const isActive = sectionId
-                              ? activeSection === sectionId
-                              : pathname?.startsWith(subItem.href)
-
-                            return (
-                              <Link
-                                key={j}
-                                href={subItem.href}
-                                data-active={isActive}
-                                className='hover:bg-accent data-[active=true]:text-primary ml-4.5 flex items-center gap-2 rounded-sm px-3 py-2 text-sm data-[active=true]:font-medium'
-                                onClick={handleLinkClick}
-                              >
-                                {subItem.icon ? subItem.icon : <CircleSmallIcon className='size-4' />}
-                                {subItem.title}
-                              </Link>
-                            )
-                          })}
+                                return (
+                                  <Link
+                                    key={j}
+                                    href={subItem.href}
+                                    data-active={isActive}
+                                    className='hover:bg-accent data-[active=true]:text-primary ml-4.5 flex items-center gap-2 rounded-sm px-3 py-2 text-sm data-[active=true]:font-medium'
+                                    onClick={handleLinkClick}
+                                  >
+                                    {subItem.icon ? subItem.icon : <CircleSmallIcon className='size-4' />}
+                                    {subItem.title}
+                                  </Link>
+                                )
+                              })}
+                            </div>
+                          ))}
                         </div>
                       ))
                     : navItem.items?.map(item => {
-                        const sectionId = item.href.startsWith('/#')
-                          ? item.href.slice(2)
-                          : item.href.startsWith('#')
-                            ? item.href.slice(1)
-                            : ''
-
-                        const isActive = sectionId ? activeSection === sectionId : pathname?.startsWith(item.href)
+                        const isActive = isHrefActive({ href: item.href, activeSection, pathname })
 
                         return (
                           <Link

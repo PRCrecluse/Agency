@@ -2,6 +2,18 @@ import type { TestimonialItem } from '@/components/blocks/testimonials/testimoni
 
 export const testimonials: TestimonialItem[] = [
   {
+    name: 'Sly',
+    username: 'lead@allscale_africa |cm@allscaleio',
+    rating: 5,
+    href: 'https://x.com/sly_0100/status/2047985270780248230?s=20',
+    content: (
+      <>
+        I just started using <span className='bg-primary/5 text-primary'>Volumn.ai</span> and it&apos;s basically a
+        cheat code for growth.
+      </>
+    )
+  },
+  {
     name: 'Emily Watson',
     username: '@emilywatson',
     avatar: '/images/avatar/avatar-7.webp',

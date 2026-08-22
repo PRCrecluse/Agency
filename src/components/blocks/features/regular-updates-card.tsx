@@ -16,41 +16,37 @@ import Logo from '@/assets/svg/flow-logo'
 
 export type NotificationCard = {
   id: string
-  productName: string
-  productImage: string
-  productAlt: string
+  workflowName: string
+  initials: string
   percentageChange: number
   stats: {
-    reach: number
-    users: number
-    queries: number
+    partners: number
+    tools: number
+    syncs: number
   }
 }
 
 const notificationsList: NotificationCard[] = [
   {
     id: '1',
-    productName: 'Headset 22R',
-    productImage: '/images/products/headset.webp',
-    productAlt: 'headset',
-    percentageChange: -2.5,
-    stats: { reach: 2432, users: 142, queries: 36 }
+    workflowName: 'OpenAI Workflow',
+    initials: 'OA',
+    percentageChange: 12.5,
+    stats: { partners: 18, tools: 26, syncs: 41 }
   },
   {
     id: '2',
-    productName: 'Dell Vision 7',
-    productImage: '/images/products/laptop.webp',
-    productAlt: 'laptop',
-    percentageChange: 5.6,
-    stats: { reach: 1235, users: 138, queries: 28 }
+    workflowName: 'Anthropic Sync',
+    initials: 'AN',
+    percentageChange: 8.6,
+    stats: { partners: 20, tools: 29, syncs: 46 }
   },
   {
     id: '3',
-    productName: 'Playstation 5',
-    productImage: '/images/products/play-station.webp',
-    productAlt: 'play-station',
-    percentageChange: 10,
-    stats: { reach: 2696, users: 169, queries: 18 }
+    workflowName: 'Brand Ops Layer',
+    initials: 'BO',
+    percentageChange: 15,
+    stats: { partners: 24, tools: 34, syncs: 52 }
   }
 ]
 
@@ -89,9 +85,9 @@ const RegularUpdatesCard = () => {
             </div>
             <div className='space-y-1'>
               <h5 className='text-base font-medium'>
-                <NumberTicker value={activeIndex.stats.reach} />
+                <NumberTicker value={activeIndex.stats.partners} />
               </h5>
-              <p className='text-muted-foreground text-xs'>Product Reach</p>
+              <p className='text-muted-foreground text-xs'>Live partners</p>
             </div>
           </div>
           <div className='bg-card flex w-27 flex-col items-start gap-2.5 rounded-xl border p-3 shadow-lg'>
@@ -100,9 +96,9 @@ const RegularUpdatesCard = () => {
             </div>
             <div className='space-y-1'>
               <h5 className='text-base font-medium'>
-                <NumberTicker value={activeIndex.stats.users} />
+                <NumberTicker value={activeIndex.stats.tools} />
               </h5>
-              <p className='text-muted-foreground text-xs'>New users</p>
+              <p className='text-muted-foreground text-xs'>Connected tools</p>
             </div>
           </div>
           <div className='bg-card flex w-27 flex-col items-start gap-2.5 rounded-xl border p-3 shadow-lg'>
@@ -111,9 +107,9 @@ const RegularUpdatesCard = () => {
             </div>
             <div className='space-y-1'>
               <h5 className='text-base font-medium'>
-                <NumberTicker value={activeIndex.stats.queries} />
+                <NumberTicker value={activeIndex.stats.syncs} />
               </h5>
-              <p className='text-muted-foreground text-xs'>User queries</p>
+              <p className='text-muted-foreground text-xs'>Weekly syncs</p>
             </div>
           </div>
         </div>
@@ -139,14 +135,16 @@ const RegularUpdatesCard = () => {
             }}
           >
             <div className='flex flex-col gap-1'>
-              <h5 className='text-xl font-semibold'>{notification.productName}</h5>
+              <h5 className='text-xl font-semibold'>{notification.workflowName}</h5>
               <Badge className='bg-primary/10 [a&]:hover:bg-primary/5 focus-visible:ring-primary/20 dark:focus-visible:ring-primary/40 text-primary focus-visible:outline-none'>
                 {notification.percentageChange > 0 ? <TrendingUpIcon /> : <TrendingDownIcon />}
                 {notification.percentageChange}%
               </Badge>
             </div>
 
-            <img src={notification.productImage} alt={notification.productAlt} className='size-13' />
+            <div className='bg-primary/10 text-primary grid size-13 place-content-center rounded-2xl text-sm font-semibold'>
+              {notification.initials}
+            </div>
           </motion.div>
         ))}
       </MotionPreset>
@@ -160,7 +158,7 @@ const RegularUpdatesCard = () => {
           transition={{ duration: 0.5 }}
           className='text-2xl font-semibold'
         >
-          Regular Updates
+          AI-Native by Default
         </MotionPreset>
         <MotionPreset
           component='p'
@@ -170,8 +168,8 @@ const RegularUpdatesCard = () => {
           transition={{ duration: 0.5 }}
           className='text-muted-foreground text-base'
         >
-          Get regular real-time alerts and notifications for orders, payments, and customer activity—so nothing slips
-          through the cracks
+          Our team works inside modern AI workflows and collaborates closely with global AI companies and brands, so
+          strategy, content, and execution stay tightly connected.
         </MotionPreset>
       </CardContent>
     </Card>

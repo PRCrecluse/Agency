@@ -73,7 +73,7 @@ const LoginForm = () => {
 
         <Field>
           <PrimaryFlowButton className='w-full *:w-full [&>button]:after:-inset-55' type='submit'>
-            Login to flow
+            Login to Meridian
           </PrimaryFlowButton>
         </Field>
       </FieldGroup>

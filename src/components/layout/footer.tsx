@@ -8,8 +8,6 @@ import { Input } from '@/components/ui/input'
 import { Separator } from '@/components/ui/separator'
 
 import Logo from '@/components/logo'
-import GithubIcon from '@/assets/svg/github-icon'
-import InstagramIcon from '@/assets/svg/instagram-icon'
 import TwitterIcon from '@/assets/svg/twitter-icon'
 import YoutubeIcon from '@/assets/svg/youtube-icon'
 import { PrimaryFlowButton } from '@/components/ui/flow-button'
@@ -25,21 +23,20 @@ const Footer = () => {
             <Logo />
           </Link>
           <p className='text-muted-foreground'>
-            Flow helps you centralize your product, sales, and user data - all in one simple, real-time dashboard built
+            Meridian helps you centralize your product, sales, and user data - all in one simple, real-time dashboard built
             for growing businesses.
           </p>
           <Separator className='w-35!' />
           <div className='flex items-center gap-4'>
-            <Link href='#' aria-label='Github Link'>
-              <GithubIcon className='text-muted-foreground hover:text-foreground size-5' />
-            </Link>
-            <Link href='#' aria-label='Instagram Link'>
-              <InstagramIcon className='text-muted-foreground hover:text-foreground size-5' />
-            </Link>
-            <Link href='#' aria-label='Twitter Link'>
+            <Link href='https://x.com/Yiwei_growth' target='_blank' rel='noreferrer' aria-label='X Link'>
               <TwitterIcon className='text-muted-foreground hover:text-foreground size-5' />
             </Link>
-            <Link href='#' aria-label='Youtube Link'>
+            <Link
+              href='https://www.youtube.com/@Goglobal.to_SaaS'
+              target='_blank'
+              rel='noreferrer'
+              aria-label='YouTube Link'
+            >
               <YoutubeIcon className='text-muted-foreground hover:text-foreground size-5' />
             </Link>
           </div>
@@ -54,18 +51,8 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link href='/#features' className='hover:text-foreground transition-colors duration-300'>
-                  Features
-                </Link>
-              </li>
-              <li>
-                <Link href='/#benefits' className='hover:text-foreground transition-colors duration-300'>
-                  Benefits
-                </Link>
-              </li>
-              <li>
-                <Link href='/pricing' className='hover:text-foreground transition-colors duration-300'>
-                  Pricing
+                <Link href='/services' className='hover:text-foreground transition-colors duration-300'>
+                  Services
                 </Link>
               </li>
               <li>
@@ -80,21 +67,16 @@ const Footer = () => {
             <ul className='text-muted-foreground space-y-3'>
               <li>
                 <Link href='#' className='hover:text-foreground transition-colors duration-300'>
-                  Customer Support
-                </Link>
-              </li>
-              <li>
-                <Link href='#' className='hover:text-foreground transition-colors duration-300'>
                   Delivery Details
                 </Link>
               </li>
               <li>
-                <Link href='#' className='hover:text-foreground transition-colors duration-300'>
+                <Link href='/terms-conditions' className='hover:text-foreground transition-colors duration-300'>
                   Terms & Conditions
                 </Link>
               </li>
               <li>
-                <Link href='#' className='hover:text-foreground transition-colors duration-300'>
+                <Link href='/privacy-policy' className='hover:text-foreground transition-colors duration-300'>
                   Privacy Policy
                 </Link>
               </li>
@@ -134,7 +116,7 @@ const Footer = () => {
         <p className='text-muted-foreground text-center text-balance'>
           {`©${new Date().getFullYear()}`}{' '}
           <Link className='text-foreground font-medium hover:underline' href='/#home'>
-            Flow
+            Meridian
           </Link>{' '}
           All rights reserved | Built to empower product teams worldwide.
         </p>

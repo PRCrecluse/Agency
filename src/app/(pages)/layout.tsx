@@ -6,7 +6,7 @@ import {
   ChartScatterIcon,
   ChartPieIcon,
   GitPullRequestIcon,
-  UsersIcon
+  SparklesIcon
 } from 'lucide-react'
 
 import Header from '@/components/layout/header'
@@ -15,63 +15,68 @@ import type { Navigation } from '@/components/layout/header-navigation'
 
 const navigationData: Navigation[] = [
   {
-    title: 'Features',
-    contentClassName: '!w-141 grid-cols-2',
+    title: 'Services',
+    contentClassName: '!w-[58rem] grid-cols-2',
     splitItems: true,
     items: [
       {
         type: 'section',
-        title: 'Analytics & Insights',
+        title: 'SEO services',
         items: [
           {
-            title: 'Unified Dashboard',
-            href: '/#features',
-            description: 'Get every key business metric in one place.',
+            title: 'SEO Services',
+            href: '/services/seo-services',
+            description: 'Plan on-page, technical, and programmatic SEO inside one structured service page.',
             icon: <LayoutDashboardIcon className='size-4' />
           },
           {
-            title: 'Competitor Tracking',
-            href: '#',
-            description: 'Benchmark performance and market trends.',
+            title: 'Technical SEO',
+            href: '/services/seo-services#technical-seo',
+            description: 'Resolve crawl, indexing, performance, and site architecture issues.',
             icon: <TelescopeIcon className='size-4' />
           },
           {
-            title: 'Sales Analytics',
-            href: '#',
-            description: 'Track revenue growth, conversions & profitability.',
+            title: 'Programmatic SEO',
+            href: '/services/seo-services#programmatic-seo',
+            description: 'Scale high-intent landing pages with structured, reusable templates.',
             icon: <ChartScatterIcon className='size-4' />
           }
         ]
       },
       {
         type: 'section',
-        title: 'Productivity & Optimization',
-        items: [
+        subSections: [
           {
-            title: 'Report & Export',
-            href: '#',
-            description: 'Share insights quickly with automated reporting.',
-            icon: <ChartPieIcon className='size-4' />
+            title: 'Reddit services',
+            items: [
+              {
+                title: 'Reddit Community Management',
+                href: '/services/reddit-services#community-management',
+                description: 'Build trust, manage discussions, and grow brand presence in relevant subreddits.',
+                icon: <ChartPieIcon className='size-4' />
+              },
+              {
+                title: 'Reddit Campaigns',
+                href: '/services/reddit-services#reddit-campaigns',
+                description: 'Launch targeted Reddit campaigns to drive awareness, traffic, and conversions.',
+                icon: <GitPullRequestIcon className='size-4' />
+              }
+            ]
           },
           {
-            title: 'Workflow Scheduling',
-            href: '#',
-            description: 'Plan content & operational tasks seamlessly.',
-            icon: <GitPullRequestIcon className='size-4' />
-          },
-          {
-            title: 'User Management',
-            href: '#',
-            description: 'Manage roles and access with complete control.',
-            icon: <UsersIcon className='size-4' />
+            title: 'GEO services',
+            items: [
+              {
+                title: 'Generative Engine Optimization',
+                href: '/services/geo-services',
+                description: 'Position your brand to appear more often in AI-generated answers and discovery flows.',
+                icon: <SparklesIcon className='size-4' />
+              }
+            ]
           }
         ]
       }
     ]
-  },
-  {
-    title: 'Benefits',
-    href: '/#benefits'
   },
   {
     title: 'Testimonials',

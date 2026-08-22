@@ -1,7 +1,3 @@
-import { Card, CardContent } from '@/components/ui/card'
-
-import { Marquee } from '@/components/ui/marquee'
-
 export type brandLogos = {
   image: string
   name: string
@@ -16,19 +12,20 @@ const TrustedBrands = ({ brandLogos }: { brandLogos: brandLogos[] }) => {
           <p className='text-muted-foreground text-xl'>Trusted by startups, enterprises, and industry giants alike.</p>
         </div>
 
-        <div className='relative'>
-          <div className='from-background pointer-events-none absolute inset-y-0 left-0 z-1 w-35 bg-linear-to-r to-transparent' />
-          <div className='from-background pointer-events-none absolute inset-y-0 right-0 z-1 w-35 bg-linear-to-l to-transparent' />
-          <div className='w-full overflow-hidden'>
-            <Marquee pauseOnHover duration={20} gap={1.5}>
-              {brandLogos.map((logo, index) => (
-                <Card key={index} className='bg-transparent py-9 shadow-none ring-0'>
-                  <CardContent className='flex flex-col items-center px-9'>
-                    <img src={logo.image} alt={logo.name} className='h-6 opacity-75 grayscale dark:invert' />
-                  </CardContent>
-                </Card>
-              ))}
-            </Marquee>
+        <div className='overflow-hidden rounded-xl border border-border/60 bg-border/60'>
+          <div className='grid grid-cols-2 gap-px sm:grid-cols-3 lg:grid-cols-5'>
+            {brandLogos.map((logo, index) => (
+              <div
+                key={index}
+                className='bg-background/90 flex min-h-32 items-center justify-center px-4 py-6 backdrop-blur-xs'
+              >
+                <img
+                  src={logo.image}
+                  alt={logo.name}
+                  className='h-10 w-auto max-w-36 object-contain opacity-75 grayscale transition-opacity duration-300 hover:opacity-100 sm:h-12 sm:max-w-40 dark:invert'
+                />
+              </div>
+            ))}
           </div>
         </div>
       </div>

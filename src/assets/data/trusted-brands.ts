@@ -2,31 +2,43 @@ import type { brandLogos } from '@/components/blocks/trusted-brands/trusted-bran
 
 export const logos: brandLogos[] = [
   {
-    image: '/images/brand-logos/amazon.webp',
-    name: 'Amazon'
+    image: '/casedtudy/alibaba 1.png',
+    name: 'Alibaba'
   },
   {
-    image: '/images/brand-logos/deloitte.webp',
-    name: 'Deloitte'
+    image: '/casedtudy/egolite 1.png',
+    name: 'Egolite'
   },
   {
-    image: '/images/brand-logos/evernote.webp',
-    name: 'Evernote'
+    image: '/casedtudy/expertise.png',
+    name: 'Expertise'
   },
   {
-    image: '/images/brand-logos/fedex.webp',
-    name: 'Fedex'
+    image: '/casedtudy/github 1.png',
+    name: 'GitHub'
   },
   {
-    image: '/images/brand-logos/hubspot.webp',
-    name: 'Hubspot'
+    image: '/casedtudy/image 11.png',
+    name: 'Case Study 11'
   },
   {
-    image: '/images/brand-logos/microsoft.webp',
-    name: 'Microsoft'
+    image: '/casedtudy/image 12.png',
+    name: 'Case Study 12'
   },
   {
-    image: '/images/brand-logos/walmart.webp',
-    name: 'Walmart'
+    image: '/casedtudy/lookie 1.png',
+    name: 'Lookie'
+  },
+  {
+    image: '/casedtudy/miyaip.svg',
+    name: 'Miyaip'
+  },
+  {
+    image: '/casedtudy/nottaai 1.png',
+    name: 'Notta AI'
+  },
+  {
+    image: '/casedtudy/ribbi.png',
+    name: 'Ribbi'
   }
 ]

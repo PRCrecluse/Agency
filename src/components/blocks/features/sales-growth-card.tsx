@@ -12,27 +12,27 @@ import { MotionPreset } from '@/components/ui/motion-preset'
 import StatCard from '@/components/blocks/features//stat-card'
 
 const chartData = [
-  { time: '09:00', uv: 88, pv: 88 },
-  { time: '10:00', uv: 88, pv: 88 },
-  { time: '11:00', uv: 144, pv: 144 },
-  { time: '12:00', uv: 144, pv: 144 },
-  { time: '13:00', uv: 109, pv: 109 },
-  { time: '14:00', uv: 102, pv: 109 },
-  { time: '15:00', uv: 62, pv: 62 },
-  { time: '16:00', uv: 62, pv: 62 },
-  { time: '17:00', uv: 128, pv: 144 },
-  { time: '18:00', uv: 144, pv: 144 },
-  { time: '19:00', uv: 183, pv: 200 },
-  { time: '20:00', uv: 200, pv: 200 }
+  { time: 'W1', uv: 62, pv: 58 },
+  { time: 'W2', uv: 70, pv: 64 },
+  { time: 'W3', uv: 82, pv: 73 },
+  { time: 'W4', uv: 96, pv: 84 },
+  { time: 'W5', uv: 104, pv: 95 },
+  { time: 'W6', uv: 118, pv: 106 },
+  { time: 'W7', uv: 134, pv: 119 },
+  { time: 'W8', uv: 148, pv: 128 },
+  { time: 'W9', uv: 160, pv: 141 },
+  { time: 'W10', uv: 176, pv: 154 },
+  { time: 'W11', uv: 190, pv: 168 },
+  { time: 'W12', uv: 204, pv: 182 }
 ]
 
 const totalEarningChartConfig = {
   uv: {
-    label: 'Online Store',
+    label: 'SEO Growth',
     color: 'color-mix(in oklab, var(--primary) 20%, var(--background))'
   },
   pv: {
-    label: 'Offline Store',
+    label: 'Social Ops',
     color: 'var(--primary)'
   }
 } satisfies ChartConfig
@@ -50,9 +50,9 @@ const SalesGrowthCard = () => {
         >
           <StatCard
             avatarIcon={<TrendingUpIcon className='size-4' />}
-            title='Total sales'
-            statNumber='$2,150.00'
-            percentage={5}
+            title='Paid SaaS conversion'
+            statNumber='20%'
+            percentage={20}
             className='w-full p-6 shadow-lg'
           />
         </MotionPreset>
@@ -69,21 +69,21 @@ const SalesGrowthCard = () => {
               <div className='flex items-center justify-between gap-2 py-2'>
                 <div className='flex items-center gap-2'>
                   <GlobeIcon className='size-4' />
-                  <span>Online store</span>
+                    <span>Launch videos</span>
                 </div>
                 <div className='flex items-center justify-between gap-2'>
-                  <span className='font-medium'>$120k</span>
-                  <span className='text-card-foreground'>+12.6%</span>
+                    <span className='font-medium'>End-to-end</span>
+                    <span className='text-card-foreground'>0 to publish</span>
                 </div>
               </div>
               <div className='flex items-center justify-between gap-2 py-2'>
                 <div className='flex items-center gap-2'>
                   <StoreIcon className='size-4' />
-                  <span>Offline store</span>
+                    <span>SEO & social ops</span>
                 </div>
                 <div className='flex items-center justify-between gap-2'>
-                  <span className='font-medium'>$20k</span>
-                  <span className='text-card-foreground'>-4.2%</span>
+                    <span className='font-medium'>Full-stack</span>
+                    <span className='text-card-foreground'>Compounding</span>
                 </div>
               </div>
             </div>
@@ -121,7 +121,7 @@ const SalesGrowthCard = () => {
           transition={{ duration: 0.5 }}
           className='text-2xl font-semibold'
         >
-          Sales & Growth
+          Technical + Product Depth
         </MotionPreset>
         <MotionPreset
           component='p'
@@ -132,7 +132,8 @@ const SalesGrowthCard = () => {
           transition={{ duration: 0.5 }}
           className='text-muted-foreground text-base'
         >
-          Monitor product performance across stores orders, revenue and average order value in one place.
+          We bring real operator depth from building our own B2B SaaS to a 20% paid conversion rate, with hands-on
+          experience across launch videos, SEO growth, and social media operations.
         </MotionPreset>
       </CardContent>
     </Card>

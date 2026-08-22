@@ -2,33 +2,33 @@ import type { FAQs } from '@/components/blocks/faq/faq'
 
 export const faqItems: FAQs = [
   {
-    question: 'What is Flow?',
+    question: 'What does Meridian help with?',
     answer:
-      'Flow is a SaaS platform that helps you monitor and manage your product performance - including users, purchases, and engagement - from a single dashboard.'
+      'Meridian helps brands improve discoverability and growth through on-page SEO, technical SEO, programmatic SEO, Reddit strategy, and GEO work for AI-driven discovery.'
   },
   {
-    question: 'How does Flow help my business?',
+    question: 'Which types of companies are the best fit?',
     answer:
-      'Flow helps your business by providing clear insights into user behavior, sales performance, and engagement metrics, enabling you to make data-driven decisions and optimize growth.'
+      'We are usually the best fit for teams that already care about positioning, brand presentation, and measurable growth, especially SaaS, consumer tech, premium consumer brands, and modern service businesses.'
   },
   {
-    question: 'Can I track multiple products at once?',
+    question: 'What services can we start with?',
     answer:
-      'Yes, Flow allows you to track multiple products simultaneously, giving you a unified view of performance across all your products.'
+      'You can start with a focused engagement such as on-page SEO, technical SEO support, Reddit community management, Reddit campaigns, or GEO strategy. We can also combine them into one roadmap when the channels overlap.'
   },
   {
-    question: 'Do I need technical knowledge to use it?',
+    question: 'How do engagements usually begin?',
     answer:
-      'No, Flow is designed to be user-friendly and intuitive, so you can easily use it without any technical expertise.'
+      'Most engagements begin with a quick working session to understand your growth goals, current bottlenecks, and priority channels. From there, we define scope, recommend a starting path, and move into execution.'
   },
   {
-    question: 'Is my data safe with Flow?',
+    question: 'Do you work with internal teams or external partners?',
     answer:
-      'Yes, your data is secure with Flow. We use industry-standard security practices to ensure your information is protected and handled safely.'
+      'Yes. We often plug into internal marketing, content, product, and design teams, and we can also coordinate with external partners when execution depends on shared workflows.'
   },
   {
-    question: 'Does Flow offer a free trial?',
+    question: 'How quickly can we get started?',
     answer:
-      'Yes, Flow offers a free trial so you can explore all core features and see how it fits your business before committing to a paid plan.'
+      'That depends on the scope, but most projects can move quickly once goals and priorities are clear. The fastest path is usually a focused starting scope with a clear owner on both sides.'
   }
 ]

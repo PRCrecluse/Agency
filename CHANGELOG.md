@@ -22,9 +22,7 @@ All notable changes to this template will be documented in this file
   - Hero Section
   - Trusted Brands
   - Features
-  - Benefits
   - Testimonials
-  - Pricing
   - FAQ
   - CTA
   - Footer
@@ -32,7 +30,6 @@ All notable changes to this template will be documented in this file
   - Home page
   - Blog page
   - Blog details page
-  - Pricing detail page
   - Auth Pages
     - Login Page
     - Register Page
