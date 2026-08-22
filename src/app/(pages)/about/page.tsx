@@ -195,7 +195,7 @@ const AboutPage = () => {
             </p>
           </div>
 
-          <div className='mt-10 grid gap-6 lg:grid-cols-2'>
+          <div className='mt-10 grid gap-6'>
             {specialists.map(specialist => (
               <article key={specialist.name} className='group bg-card/85 overflow-hidden rounded-[28px] border'>
                 <div className='grid h-full md:grid-cols-[minmax(180px,0.68fr)_minmax(0,1fr)]'>

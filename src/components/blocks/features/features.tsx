@@ -7,22 +7,19 @@ import { MotionPreset } from '@/components/ui/motion-preset'
 const coreReasons = [
   {
     title: 'Brand Taste That Travels',
-    description:
-      'We understand the aesthetic, messaging, and execution standards top international brands expect, then translate them into market-ready growth work.',
+    description: 'Global brand standards translated into market-ready growth execution.',
     image: '/attachphotos/datadrivengrowth.png',
     imageAlt: 'Data-driven growth visual'
   },
   {
     title: 'AI-Native by Default',
-    description:
-      'Our team works inside modern AI workflows and collaborates closely with global AI companies and brands, so strategy, content, and execution stay tightly connected.',
+    description: 'AI-first workflows keep strategy, content, and execution tightly aligned.',
     image: '/attachphotos/ainativegrowth.png',
     imageAlt: 'AI-native growth workflow visual'
   },
   {
     title: 'Technical + Product Depth',
-    description:
-      'We bring real operator depth from building our own B2B SaaS to a 20% paid conversion rate, with hands-on experience across launch videos, SEO growth, and social media operations.',
+    description: 'Operator-led execution across SaaS, SEO, launch content, and social growth.',
     image: '/attachphotos/fastdeliver.png',
     imageAlt: 'Fast delivery operations visual'
   }
@@ -93,7 +90,7 @@ const Features = () => {
 
                 <CardContent className='flex flex-1 flex-col gap-4 pt-6'>
                   <h5 className='text-2xl font-semibold'>{item.title}</h5>
-                  <p className='text-muted-foreground text-base'>{item.description}</p>
+                  <p className='text-muted-foreground line-clamp-1 text-base'>{item.description}</p>
                 </CardContent>
               </Card>
             </MotionPreset>

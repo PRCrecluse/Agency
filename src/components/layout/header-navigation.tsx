@@ -115,7 +115,7 @@ const ListItem = (props: {
   const localizedHref = withQueryLang(href, lang)
 
   return (
-    <li className={cn({ 'h-19.5': description && splitItems })}>
+    <li className={cn({ 'min-h-19.5': description && splitItems })}>
       <NavigationMenuLink
         href={localizedHref}
         data-active={isActive}
@@ -134,7 +134,7 @@ const ListItem = (props: {
                 {title}
                 {badge}
               </div>
-              <p className='text-muted-foreground line-clamp-2'>{description}</p>
+              <p className='text-muted-foreground text-pretty'>{description}</p>
             </div>
           ) : (
             <div className={cn('font-medium', { 'flex items-center gap-1.5': badge })}>
@@ -239,11 +239,16 @@ const HeaderNavigation = ({
               >
                 {navItem.title}
               </NavigationMenuTrigger>
-              <NavigationMenuContent className='absolute left-1/2 w-auto max-w-[calc(100vw-2rem)] -translate-x-1/2 shadow-lg!'>
+              <NavigationMenuContent className='w-[min(82rem,calc(100vw-2rem))] max-w-[calc(100vw-2rem)] shadow-lg! md:fixed md:left-1/2 md:top-[4.375rem] md:-translate-x-1/2'>
                 {navItem.splitItems ? (
                   <div className={cn('grid grid-cols-1 gap-2', navItem.contentClassName)}>
                     {navItem.items.map((section, sectionIndex) => (
-                      <div key={section.title ?? `section-${sectionIndex}`} className='grid grid-cols-1 gap-2'>
+                      <div
+                        key={section.title ?? `section-${sectionIndex}`}
+                        className={cn('grid grid-cols-1 gap-3', {
+                          'border-border/70 border-l pl-6': sectionIndex > 0
+                        })}
+                      >
                         {section.title ? <div className='text-muted-foreground px-2 text-sm'>{section.title}</div> : null}
                         {section.subSections ? (
                           <div className='grid grid-cols-1 gap-3'>

@@ -52,7 +52,7 @@ const FAQ = ({
 
           <h2 className='text-2xl font-semibold md:text-3xl lg:text-4xl'>{title}</h2>
 
-          <p className='text-muted-foreground mx-auto max-w-2xl text-xl'>{description}</p>
+          {description ? <p className='text-muted-foreground mx-auto max-w-2xl text-xl'>{description}</p> : null}
         </MotionPreset>
 
         <div className='grid grid-cols-1 gap-8 lg:grid-cols-2'>

@@ -16,7 +16,7 @@ import type { Navigation } from '@/components/layout/header-navigation'
 const navigationData: Navigation[] = [
   {
     title: 'Services',
-    contentClassName: '!w-[66rem] max-w-[calc(100vw-2rem)] grid-cols-3',
+    contentClassName: 'w-full grid-cols-[minmax(0,1.05fr)_minmax(0,1.05fr)_minmax(20rem,0.9fr)] gap-x-10 xl:gap-x-14',
     splitItems: true,
     items: [
       {
