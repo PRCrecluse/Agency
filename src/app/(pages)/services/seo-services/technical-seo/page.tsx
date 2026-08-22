@@ -3,11 +3,13 @@ import Link from 'next/link'
 import {
   ArrowRightIcon,
   BracesIcon,
+  Code2Icon,
   CheckCircle2Icon,
   CircleDotDashedIcon,
   FileSearchIcon,
   GaugeIcon,
   Globe2Icon,
+  Layers3Icon,
   ListChecksIcon,
   MonitorCheckIcon,
   SearchIcon,
@@ -46,179 +48,6 @@ export async function generateMetadata({
   }
 }
 
-<<<<<<< HEAD
-const painPoints = [
-  'Pages are crawled but not indexed',
-  'Organic traffic dropped after a migration',
-  'Google cannot render important content',
-  'Multiple URLs compete for the same intent',
-  'Sitemaps contain low-value or broken pages',
-  'Core Web Vitals are underperforming',
-  'International pages target the wrong market',
-  'New pages take too long to be discovered'
-]
-
-const serviceModules = [
-  {
-    title: 'Technical SEO Audit',
-    description:
-      'A practical review of architecture, crawlability, indexation, rendering, performance, structured data, and international setup.',
-    icon: FileSearchIcon,
-    points: [
-      'Crawl and indexation',
-      'Status codes and redirects',
-      'Canonicals and duplicate pages',
-      'Sitemaps, robots, and internal linking'
-    ]
-  },
-  {
-    title: 'Crawling and Indexation',
-    description:
-      'Help search engines discover the right pages while duplicate, filtered, and low-value URLs stay out of the index.',
-    icon: SearchIcon,
-    points: [
-      'Search Console analysis',
-      'Index bloat and orphan pages',
-      'Noindex and canonical logic',
-      'Parameter URL and sitemap quality'
-    ]
-  },
-  {
-    title: 'Core Web Vitals',
-    description:
-      'Diagnose page-experience issues and give your development team a clear, prioritized remediation plan.',
-    icon: GaugeIcon,
-    points: [
-      'LCP, INP, and CLS',
-      'Image and font loading',
-      'JavaScript load and rendering work',
-      'Render-blocking resources'
-    ]
-  },
-  {
-    title: 'Website Migration',
-    description: 'Protect organic visibility across domain, platform, design, and URL migrations.',
-    icon: WrenchIcon,
-    points: [
-      'Migration plan and redirect map',
-      'Pre-launch benchmark',
-      'Staging audit',
-      'Launch monitoring and validation'
-    ]
-  },
-  {
-    title: 'International SEO',
-    description: 'Serve the right language and regional pages to the right search audience across global markets.',
-    icon: Globe2Icon,
-    points: [
-      'Hreflang and language URLs',
-      'Canonical alignment',
-      'Country and language targeting',
-      'International sitemap review'
-    ]
-  },
-  {
-    title: 'Structured Data',
-    description:
-      'Review and implement relevant schema so search engines better understand your company, products, content, and site structure.',
-    icon: BracesIcon,
-    points: [
-      'Entity and organization markup',
-      'Product and content schema',
-      'Validation and error review',
-      'No promises of rich-result eligibility'
-    ]
-  }
-]
-
-const implementationRows = [
-  {
-    issue: 'Product pages are not rendered in initial HTML',
-    impact: 'Important content may not be indexed reliably',
-    priority: 'Critical',
-    owner: 'Engineering',
-    recommendation: 'Implement server-side rendering for indexable product content'
-  },
-  {
-    issue: 'Broken canonical URLs',
-    impact: 'Ranking signals may be split across duplicate URLs',
-    priority: 'High',
-    owner: 'Engineering',
-    recommendation: 'Generate self-referencing canonical tags and validate templates'
-  },
-  {
-    issue: 'Orphan integration pages',
-    impact: 'High-value pages are difficult for users and crawlers to discover',
-    priority: 'High',
-    owner: 'SEO / Content',
-    recommendation: 'Add contextual category and integration links from relevant hubs'
-  }
-]
-
-const deliverables = [
-  'Complete Technical SEO audit',
-  'Prioritized issue backlog',
-  'Developer-ready implementation tickets',
-  'Crawl and indexation analysis',
-  'Site architecture and internal-linking recommendations',
-  'JavaScript rendering review',
-  'Core Web Vitals analysis',
-  'Schema recommendations',
-  'Measurement dashboard',
-  'Weekly project meetings',
-  'QA and validation after changes',
-  'Phased progress reporting'
-]
-
-const bestFor = [
-  'SaaS products and AI tools',
-  'Developer tools and JavaScript-heavy websites',
-  'Multilingual global sites',
-  'Sites with extensive integration pages',
-  'Teams preparing a redesign or migration',
-  'Publishers with substantial content but weak indexation'
-]
-
-const faqItems = [
-  {
-    question: 'What is included in a technical SEO audit?',
-    answer:
-      'Our audit covers crawling, indexing, rendering, site architecture, internal linking, status codes, canonical tags, sitemaps, robots directives, structured data, Core Web Vitals, and international SEO where relevant.'
-  },
-  {
-    question: 'How long does a technical SEO audit take?',
-    answer:
-      'Most audits take two to four weeks. Larger websites, JavaScript applications, and international websites may require more time.'
-  },
-  {
-    question: 'Do you implement the recommendations?',
-    answer:
-      'We provide developer-ready recommendations and support your engineering team during implementation. Direct implementation can also be scoped separately depending on your technology stack.'
-  },
-  {
-    question: 'When will we see results?',
-    answer:
-      'Technical fixes can improve crawling and indexation within weeks, but ranking and organic conversion improvements usually take longer. The timeline depends on the issue, implementation speed, competition, and website authority.'
-  },
-  {
-    question: 'Can you work with our developers?',
-    answer:
-      'Yes. We can create implementation tickets, join technical meetings, review pull requests or staging changes, and validate fixes after release.'
-  },
-  {
-    question: 'Do you guarantee rankings?',
-    answer:
-      'No responsible SEO agency can guarantee rankings. We focus on removing technical barriers, improving website quality, and measuring the impact of implemented changes.'
-  },
-  {
-    question: 'Do we need an ongoing engagement?',
-    answer:
-      'Not always. You can begin with a one-time audit or choose ongoing technical SEO support for implementation, monitoring, migrations, and continuous optimization.'
-  }
-]
-
-const TechnicalSEOPage = () => {
-=======
 const TechnicalSEOPage = async ({ searchParams }: { searchParams?: Promise<{ lang?: string }> }) => {
   const resolvedSearchParams = await searchParams
   const lang = getTechnicalSEOLang(resolvedSearchParams?.lang)
@@ -228,8 +57,6 @@ const TechnicalSEOPage = async ({ searchParams }: { searchParams?: Promise<{ lan
   const discoveryIcons = [SearchIcon, Code2Icon, Layers3Icon, MonitorCheckIcon]
   const dashboardStatusColors = ['bg-emerald-400', 'bg-amber-300', 'bg-sky-300']
   const matrixColors = ['bg-primary/12', 'bg-secondary/30', 'bg-muted/75', 'bg-muted/45']
-
->>>>>>> dd2ac43bd269610e8943d9fb9f8e5bec92f1f3f4
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
@@ -290,8 +117,6 @@ const TechnicalSEOPage = async ({ searchParams }: { searchParams?: Promise<{ lan
               <Link href='#included'>{copy.hero.secondaryCta}</Link>
             </SecondaryFlowButton>
           </div>
-<<<<<<< HEAD
-=======
           <div className='mt-10 grid w-full max-w-4xl gap-3 sm:grid-cols-2 lg:grid-cols-4'>
             {copy.hero.trustPoints.map(point => (
               <div
@@ -303,7 +128,6 @@ const TechnicalSEOPage = async ({ searchParams }: { searchParams?: Promise<{ lan
               </div>
             ))}
           </div>
->>>>>>> dd2ac43bd269610e8943d9fb9f8e5bec92f1f3f4
         </div>
       </section>
 
@@ -481,8 +305,6 @@ const TechnicalSEOPage = async ({ searchParams }: { searchParams?: Promise<{ lan
       <SectionSeparator />
 
       <section className='px-4 py-14 sm:px-6 sm:py-20 lg:px-8'>
-<<<<<<< HEAD
-=======
         <div className='mx-auto w-full max-w-7xl'>
           <div className='mx-auto max-w-3xl space-y-4 text-center'>
             <Badge variant='outline' className='h-auto px-3 py-1 text-sm font-normal'>
@@ -596,7 +418,6 @@ const TechnicalSEOPage = async ({ searchParams }: { searchParams?: Promise<{ lan
       <SectionSeparator />
 
       <section className='px-4 py-14 sm:px-6 sm:py-20 lg:px-8'>
->>>>>>> dd2ac43bd269610e8943d9fb9f8e5bec92f1f3f4
         <div className='mx-auto grid w-full max-w-7xl gap-8 lg:grid-cols-[minmax(0,1.05fr)_minmax(360px,0.95fr)] lg:items-start'>
           <div>
             <Badge variant='outline' className='h-auto px-3 py-1 text-sm font-normal'>

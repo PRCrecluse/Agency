@@ -60,12 +60,6 @@ const navigationData: Navigation[] = [
             icon: <ChartPieIcon className='size-4' />
           },
           {
-            title: 'Campaign & Guarantees',
-            href: '/services/reddit-services#service-guarantee',
-            description: 'Review campaign execution, delivery standards, replacements, and service safeguards.',
-            icon: <GitPullRequestIcon className='size-4' />
-          },
-          {
             title: 'Reddit Community Management',
             href: '/services/reddit-services/community-management',
             description: 'Build trust, manage discussions, and grow brand presence in relevant subreddits.',
