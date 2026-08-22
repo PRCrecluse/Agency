@@ -60,23 +60,6 @@ const ServicesPage = async ({
       <section className='px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20'>
         <div className='mx-auto flex w-full max-w-7xl flex-col gap-8'>
           <div className='max-w-3xl space-y-4'>
-            <div className='flex flex-wrap items-center gap-3'>
-              <Badge variant='outline'>{copy.servicesBadge}</Badge>
-              <div className='flex items-center gap-1 rounded-full border bg-background/80 p-1 text-sm'>
-                <Link
-                  href={withLang('/services', 'en')}
-                  className={`rounded-full px-3 py-1.5 transition-colors ${lang === 'en' ? 'bg-primary text-primary-foreground' : 'text-muted-foreground hover:text-foreground'}`}
-                >
-                  {copy.english}
-                </Link>
-                <Link
-                  href={withLang('/services', 'zh')}
-                  className={`rounded-full px-3 py-1.5 transition-colors ${lang === 'zh' ? 'bg-primary text-primary-foreground' : 'text-muted-foreground hover:text-foreground'}`}
-                >
-                  {copy.chinese}
-                </Link>
-              </div>
-            </div>
             <h1 className='text-4xl font-semibold tracking-tight sm:text-5xl'>{copy.servicesTitle}</h1>
             <p className='text-muted-foreground text-base leading-7 sm:text-lg'>
               {copy.servicesDescription}

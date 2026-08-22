@@ -4,7 +4,6 @@ import {
   ArrowRightIcon,
   CheckCircle2Icon,
   CircleDollarSignIcon,
-  GaugeIcon,
   HeartHandshakeIcon,
   SparklesIcon,
   ShieldCheckIcon
@@ -135,7 +134,7 @@ const RedditServicesPage = () => {
         <div className='bg-primary/12 absolute -left-24 top-14 size-80 rounded-full blur-3xl' />
         <div className='bg-secondary/18 absolute -right-16 bottom-0 size-72 rounded-full blur-3xl' />
 
-        <div className='relative mx-auto grid w-full max-w-7xl gap-8 lg:grid-cols-[minmax(0,1.2fr)_minmax(320px,0.8fr)] lg:items-end'>
+        <div className='relative mx-auto w-full max-w-7xl'>
           <div className='space-y-7'>
             <Badge variant='outline' className='h-auto px-3 py-1 text-sm font-normal'>
               Reddit Services
@@ -158,32 +157,6 @@ const RedditServicesPage = () => {
               </SecondaryFlowButton>
             </div>
           </div>
-
-          <Card className='border bg-card/85 backdrop-blur-sm'>
-            <CardContent className='grid gap-5 p-6 sm:p-8'>
-              <div className='bg-primary/10 text-primary flex size-12 items-center justify-center rounded-2xl'>
-                <GaugeIcon className='size-5' />
-              </div>
-              <div className='space-y-3'>
-                <p className='text-muted-foreground text-xs font-medium uppercase tracking-[0.24em]'>服务总览</p>
-                <p className='text-xl font-semibold tracking-tight'>把内容、社区与可见性放进同一套 Reddit 增长系统。</p>
-                <div className='grid gap-3 sm:grid-cols-3 lg:grid-cols-1'>
-                  <div className='rounded-2xl border bg-background/65 p-4'>
-                    <p className='text-muted-foreground text-xs'>套餐选择</p>
-                    <p className='mt-1 font-semibold'>评论、社区或 Campaign</p>
-                  </div>
-                  <div className='rounded-2xl border bg-background/65 p-4'>
-                    <p className='text-muted-foreground text-xs'>活动周期</p>
-                    <p className='mt-1 font-semibold'>每个 campaign 1 个月起</p>
-                  </div>
-                  <div className='rounded-2xl border bg-background/65 p-4'>
-                    <p className='text-muted-foreground text-xs'>交付方式</p>
-                    <p className='mt-1 font-semibold'>Dashboard 实时追踪</p>
-                  </div>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </section>
 
@@ -283,7 +256,7 @@ const RedditServicesPage = () => {
             <Badge variant='outline' className='h-auto px-3 py-1 text-sm font-normal'>
               服务承诺与保障
             </Badge>
-            <h2 className='text-3xl font-semibold tracking-tight sm:text-4xl'>用列表把交付边界和保障范围说清楚。</h2>
+            <h2 className='text-3xl font-semibold tracking-tight sm:text-4xl'>我们的服务承诺与保障</h2>
           </div>
 
           <Card className='border bg-card/85'>
