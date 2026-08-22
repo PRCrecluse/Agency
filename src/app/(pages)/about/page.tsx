@@ -37,7 +37,8 @@ const stories = [
       '“GoGlobal.to, our Reddit SaaS, appeared alongside the WaytoAGI project during a Sequoia Accelerator showcase, marking an early milestone for the team.”',
     image: '/images/about/sparklab-founders.jpg',
     alt: 'Yiwei at SparkLab Accelerator with fellow founders',
-    label: 'Early momentum'
+    label: 'Early momentum',
+    href: '/about/stories/goglobal-waytoagi-sequoia'
   },
   {
     date: 'July 5, 2026',
@@ -47,7 +48,8 @@ const stories = [
       '“Yiwei joined SparkLab Accelerator, lived with other founders, and celebrated an unforgettable 20th birthday there.”',
     image: '/images/about/sparklab-birthday.jpg',
     alt: 'Yiwei celebrating a birthday at SparkLab',
-    label: 'Building in public'
+    label: 'Building in public',
+    href: '/about/stories/yiwei-sparklab-birthday'
   }
 ]
 
@@ -259,35 +261,43 @@ const AboutPage = () => {
 
           <div className='grid gap-6 lg:grid-cols-2'>
             {stories.map((story, index) => (
-              <article key={story.title} className='group bg-card/85 relative overflow-hidden rounded-[28px] border'>
-                <div className='bg-muted relative aspect-[16/10] overflow-hidden'>
-                  <img
-                    src={story.image}
-                    alt={story.alt}
-                    className='h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]'
-                  />
-                  <Badge className='bg-background/85 text-foreground hover:bg-background/85 absolute top-5 left-5'>
-                    {story.label}
-                  </Badge>
-                </div>
-                <div className='space-y-5 p-6 sm:p-8'>
-                  <div className='flex items-center gap-3 text-sm'>
-                    <div className='bg-primary/10 text-primary flex size-10 shrink-0 items-center justify-center rounded-xl'>
-                      {index === 0 ? <UsersRoundIcon className='size-4' /> : <SparklesIcon className='size-4' />}
+              <Link key={story.title} href={story.href} className='group block focus-visible:outline-none'>
+                <article className='bg-card/85 group-focus-visible:ring-ring relative h-full overflow-hidden rounded-[28px] border transition-transform duration-300 group-hover:-translate-y-1 group-focus-visible:ring-2'>
+                  <div className='bg-muted relative aspect-[16/10] overflow-hidden'>
+                    <img
+                      src={story.image}
+                      alt={story.alt}
+                      className='h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]'
+                    />
+                    <Badge className='bg-background/85 text-foreground hover:bg-background/85 absolute top-5 left-5'>
+                      {story.label}
+                    </Badge>
+                  </div>
+                  <div className='flex h-full flex-col gap-5 p-6 sm:p-8'>
+                    <div className='flex items-center gap-3 text-sm'>
+                      <div className='bg-primary/10 text-primary flex size-10 shrink-0 items-center justify-center rounded-xl'>
+                        {index === 0 ? <UsersRoundIcon className='size-4' /> : <SparklesIcon className='size-4' />}
+                      </div>
+                      <div>
+                        <p className='font-medium'>Yiwei</p>
+                        <p className='text-muted-foreground text-sm'>{story.eyebrow}</p>
+                      </div>
                     </div>
-                    <div>
-                      <p className='font-medium'>Yiwei</p>
-                      <p className='text-muted-foreground text-sm'>{story.eyebrow}</p>
+                    <h3 className='text-2xl font-semibold tracking-tight'>{story.title}</h3>
+                    <p className='text-muted-foreground text-base leading-7'>{story.quote}</p>
+                    <div className='mt-auto flex flex-wrap items-center justify-between gap-3 text-sm'>
+                      <div className='text-muted-foreground flex items-center gap-2'>
+                        <CalendarDaysIcon className='size-4' />
+                        <time>{story.date}</time>
+                      </div>
+                      <span className='text-primary flex items-center gap-1.5 font-medium'>
+                        Read story
+                        <ArrowRightIcon className='size-4 transition-transform duration-300 group-hover:translate-x-1' />
+                      </span>
                     </div>
                   </div>
-                  <h3 className='text-2xl font-semibold tracking-tight'>{story.title}</h3>
-                  <p className='text-muted-foreground text-base leading-7'>{story.quote}</p>
-                  <div className='text-muted-foreground flex items-center gap-2 text-sm'>
-                    <CalendarDaysIcon className='size-4' />
-                    <time>{story.date}</time>
-                  </div>
-                </div>
-              </article>
+                </article>
+              </Link>
             ))}
           </div>
         </div>
