@@ -19,13 +19,15 @@ type FAQProps = {
   eyebrow?: string
   title?: string
   description?: string
+  visualVariant?: 'default' | 'compact'
 }
 
 const FAQ = ({
   faqItems,
   eyebrow = 'FAQ',
   title = 'Frequently asked questions',
-  description = 'A few quick answers about how we approach SEO, Reddit, and AI-discovery growth work.'
+  description = 'A few quick answers about how we approach SEO, Reddit, and AI-discovery growth work.',
+  visualVariant = 'default'
 }: FAQProps) => {
   const [activeItem, setActiveItem] = useState<string>('item-1')
   const [rotationKey, setRotationKey] = useState(0)
@@ -64,12 +66,22 @@ const FAQ = ({
           </Accordion>
 
           {/* Right content */}
-          <div className='group bg-muted relative mx-auto flex min-h-[30rem] w-full max-w-[44rem] items-center justify-center overflow-hidden rounded-xl border p-2 sm:min-h-[34rem] sm:p-3 lg:min-h-[40rem] lg:p-4'>
+          <div
+            className={cn(
+              'group bg-muted relative mx-auto flex w-full items-center justify-center overflow-hidden rounded-xl border p-2 sm:p-3 lg:p-4',
+              visualVariant === 'compact'
+                ? 'min-h-[24rem] max-w-[38rem] sm:min-h-[28rem] lg:min-h-[32rem]'
+                : 'min-h-[30rem] max-w-[44rem] sm:min-h-[34rem] lg:min-h-[40rem]'
+            )}
+          >
             <img
               src='/attachphotos/mrr%20cost.png'
               alt='MRR cost dashboard overview'
               loading='lazy'
-              className='h-full w-[116%] max-w-none origin-center object-contain shadow-md transition-transform duration-500 group-hover:scale-[1.05]'
+              className={cn(
+                'h-full max-w-none origin-center object-contain shadow-md transition-transform duration-500 group-hover:scale-[1.05]',
+                visualVariant === 'compact' ? 'w-[98%]' : 'w-[116%]'
+              )}
             />
 
             {['top-4.5 left-4.5', 'top-4.5 right-4.5', 'bottom-4.5 left-4.5', 'bottom-4.5 right-4.5'].map(

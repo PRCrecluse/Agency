@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   }
 }
 
-const getLang = (value?: string): ServiceLang => (value === 'zh' ? 'zh' : 'en')
+const getLang = (value?: string): ServiceLang => (value?.toLowerCase().startsWith('zh') ? 'zh' : 'en')
 
 const withLang = (path: string, lang: ServiceLang) => `${path}?lang=${lang}`
 

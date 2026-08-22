@@ -46,7 +46,7 @@ const Home = () => {
 
       <SectionSeparator />
 
-      <FAQ faqItems={faqItems} />
+      <FAQ faqItems={faqItems} visualVariant='compact' />
 
       <CTA />
 

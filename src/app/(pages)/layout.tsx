@@ -85,10 +85,6 @@ const navigationData: Navigation[] = [
     ]
   },
   {
-    title: 'About',
-    href: '/about'
-  },
-  {
     title: 'Testimonials',
     href: '/#testimonials'
   },

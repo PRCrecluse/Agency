@@ -27,7 +27,7 @@ import { cn } from '@/lib/utils'
 
 const baseUrl = process.env.NEXT_PUBLIC_APP_URL ?? 'http://localhost:3000'
 
-const getLang = (value?: string): ServiceLang => (value === 'zh' ? 'zh' : 'en')
+const getLang = (value?: string): ServiceLang => (value?.toLowerCase().startsWith('zh') ? 'zh' : 'en')
 
 const withLang = (path: string, lang: ServiceLang, hash?: string) => `${path}?lang=${lang}${hash ? `#${hash}` : ''}`
 

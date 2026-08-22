@@ -2,7 +2,7 @@ export type QueryLang = 'en' | 'zh'
 
 const externalHrefPattern = /^(?:[a-z][a-z\d+\-.]*:)?\/\//i
 
-export const getQueryLang = (value?: string | null): QueryLang => (value === 'zh' ? 'zh' : 'en')
+export const getQueryLang = (value?: string | null): QueryLang => (value?.toLowerCase().startsWith('zh') ? 'zh' : 'en')
 
 export const withQueryLang = (href: string, lang: QueryLang) => {
   if (!href || href.startsWith('mailto:') || href.startsWith('tel:') || externalHrefPattern.test(href)) {

@@ -18,14 +18,18 @@ import {
 import { Badge } from '@/components/ui/badge'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import FAQ from '@/components/blocks/faq/faq'
+import TrustedBrands from '@/components/blocks/trusted-brands/trusted-brands'
+import DeliveryTable from '@/components/services/delivery-table'
+import PackageSwitcher from '@/components/services/package-switcher'
 import { PrimaryFlowButton, SecondaryFlowButton } from '@/components/ui/flow-button'
 import SectionSeparator from '@/components/section-separator'
-import { getServiceBySlug, resolveLocalizedText, servicePageCopy, serviceSlugs, type ServiceLang, type ServiceSection } from '@/content/services'
+import { logos } from '@/assets/data/trusted-brands'
+import { getServiceBySlug, resolveLocalizedText, servicePageCopy, serviceSlugs, type ServiceLang } from '@/content/services'
 import { cn } from '@/lib/utils'
 
 const baseUrl = process.env.NEXT_PUBLIC_APP_URL ?? 'http://localhost:3000'
 
-const getLang = (value?: string): ServiceLang => (value === 'zh' ? 'zh' : 'en')
+const getLang = (value?: string): ServiceLang => (value?.toLowerCase().startsWith('zh') ? 'zh' : 'en')
 
 const withLang = (path: string, lang: ServiceLang, hash?: string) => `${path}?lang=${lang}${hash ? `#${hash}` : ''}`
 
@@ -62,57 +66,6 @@ const getSectionIcon = (sectionId: string) => {
 
   return SearchIcon
 }
-
-const DeliveryTable = ({
-  sections,
-  lang,
-  copy
-}: {
-  sections: ServiceSection[]
-  lang: ServiceLang
-  copy: (typeof servicePageCopy)[ServiceLang]
-}) => (
-  <div className='overflow-hidden rounded-[24px] border bg-background/60'>
-    <div className='overflow-x-auto'>
-      <table className='w-full min-w-[860px] border-collapse'>
-        <thead>
-          <tr className='bg-background/80 text-left'>
-            <th className='px-6 py-4 text-xs font-medium uppercase tracking-[0.24em] text-muted-foreground'>{copy.tableStep}</th>
-            <th className='px-6 py-4 text-xs font-medium uppercase tracking-[0.24em] text-muted-foreground'>{copy.tableWorkstream}</th>
-            <th className='px-6 py-4 text-xs font-medium uppercase tracking-[0.24em] text-muted-foreground'>{copy.tableFocus}</th>
-            <th className='px-6 py-4 text-xs font-medium uppercase tracking-[0.24em] text-muted-foreground'>{copy.tableDeliverables}</th>
-          </tr>
-        </thead>
-        <tbody>
-          {sections.map((section, index) => (
-            <tr key={section.id} className='border-t align-top'>
-              <td className='px-6 py-5 text-sm font-medium text-muted-foreground'>{String(index + 1).padStart(2, '0')}</td>
-              <td className='px-6 py-5'>
-                <div id={section.id} className='scroll-mt-28 space-y-2'>
-                  <p className='text-base font-semibold'>{resolveLocalizedText(section.title, lang)}</p>
-                  <Badge variant='outline' className='h-auto px-3 py-1 text-xs font-normal'>
-                    {section.id}
-                  </Badge>
-                </div>
-              </td>
-              <td className='px-6 py-5 text-sm leading-6 text-muted-foreground'>{resolveLocalizedText(section.description, lang)}</td>
-              <td className='px-6 py-5'>
-                <ul className='space-y-3'>
-                  {section.bullets.map(bullet => (
-                    <li key={bullet.en} className='flex items-start gap-3 text-sm leading-6'>
-                      <CheckCircle2Icon className='text-primary mt-1 size-4 shrink-0' />
-                      <span>{resolveLocalizedText(bullet, lang)}</span>
-                    </li>
-                  ))}
-                </ul>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
-  </div>
-)
 
 export async function generateStaticParams() {
   return serviceSlugs.map(slug => ({ slug }))
@@ -161,6 +114,7 @@ const ServiceDetailPage = async ({
   const hasHighlights = service.highlights.length > 0
   const hasFaqSection = Boolean(service.faqItems?.length)
   const renderOutcomes = !service.hideOutcomes
+  const showTrustedBrandsSection = service.slug === 'seo-services'
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -234,72 +188,76 @@ const ServiceDetailPage = async ({
 
       <SectionSeparator />
 
-      <section className='px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20'>
-        <div
-          className={cn(
-            'mx-auto w-full max-w-7xl gap-6',
-            hasCustomIncludes ? 'flex flex-col' : 'grid lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)]'
-          )}
-        >
-          {hasCustomIncludes ? (
-            <>
-              <div className='mx-auto max-w-3xl space-y-4 text-center'>
-                <h2 className='text-3xl font-semibold tracking-tight sm:text-4xl'>{copy.whatThisServiceIncludes}</h2>
-              </div>
+      {showTrustedBrandsSection ? (
+        <TrustedBrands brandLogos={logos} />
+      ) : (
+        <section className='px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20'>
+          <div
+            className={cn(
+              'mx-auto w-full max-w-7xl gap-6',
+              hasCustomIncludes ? 'flex flex-col' : 'grid lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)]'
+            )}
+          >
+            {hasCustomIncludes ? (
+              <>
+                <div className='mx-auto max-w-3xl space-y-4 text-center'>
+                  <h2 className='text-3xl font-semibold tracking-tight sm:text-4xl'>{copy.whatThisServiceIncludes}</h2>
+                </div>
 
-              <div className='grid gap-4 sm:grid-cols-2 xl:grid-cols-5'>
-                {service.serviceIncludes?.map((item, index) => (
-                  <Card key={item.en} className='border bg-card/80'>
-                    <CardContent className='flex h-full flex-col gap-5 pt-6'>
-                      <div className='flex items-center justify-between'>
-                        <div className='bg-primary/10 text-primary flex size-11 items-center justify-center rounded-2xl'>
-                          <SparklesIcon className='size-5' />
-                        </div>
-                        <span className='text-muted-foreground text-xs font-medium uppercase tracking-[0.24em]'>
-                          {String(index + 1).padStart(2, '0')}
-                        </span>
-                      </div>
-                      <p className='text-base font-medium leading-6'>{resolveLocalizedText(item, lang)}</p>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
-            </>
-          ) : (
-            <>
-              <div className='space-y-4'>
-                <Badge variant='outline' className='h-auto px-3 py-1 text-sm font-normal'>
-                  {copy.whyThisServiceWorks}
-                </Badge>
-                <h2 className='text-3xl font-semibold tracking-tight sm:text-4xl'>{copy.whyThisServiceWorksTitle}</h2>
-                <p className='text-muted-foreground text-base leading-7 sm:text-lg'>
-                  {copy.whyThisServiceWorksDescription}
-                </p>
-              </div>
-
-              {hasHighlights ? (
-                <div className='grid gap-4 md:grid-cols-3'>
-                  {service.highlights.map((highlight, index) => (
-                    <Card key={highlight.en} className='border bg-card/80'>
-                      <CardContent className='flex h-full flex-col gap-6 pt-6'>
+                <div className='grid gap-4 sm:grid-cols-2 xl:grid-cols-5'>
+                  {service.serviceIncludes?.map((item, index) => (
+                    <Card key={item.en} className='border bg-card/80'>
+                      <CardContent className='flex h-full flex-col gap-5 pt-6'>
                         <div className='flex items-center justify-between'>
                           <div className='bg-primary/10 text-primary flex size-11 items-center justify-center rounded-2xl'>
                             <SparklesIcon className='size-5' />
                           </div>
                           <span className='text-muted-foreground text-xs font-medium uppercase tracking-[0.24em]'>
-                            0{index + 1}
+                            {String(index + 1).padStart(2, '0')}
                           </span>
                         </div>
-                        <p className='text-sm leading-6'>{resolveLocalizedText(highlight, lang)}</p>
+                        <p className='text-base font-medium leading-6'>{resolveLocalizedText(item, lang)}</p>
                       </CardContent>
                     </Card>
                   ))}
                 </div>
-              ) : null}
-            </>
-          )}
-        </div>
-      </section>
+              </>
+            ) : (
+              <>
+                <div className='space-y-4'>
+                  <Badge variant='outline' className='h-auto px-3 py-1 text-sm font-normal'>
+                    {copy.whyThisServiceWorks}
+                  </Badge>
+                  <h2 className='text-3xl font-semibold tracking-tight sm:text-4xl'>{copy.whyThisServiceWorksTitle}</h2>
+                  <p className='text-muted-foreground text-base leading-7 sm:text-lg'>
+                    {copy.whyThisServiceWorksDescription}
+                  </p>
+                </div>
+
+                {hasHighlights ? (
+                  <div className='grid gap-4 md:grid-cols-3'>
+                    {service.highlights.map((highlight, index) => (
+                      <Card key={highlight.en} className='border bg-card/80'>
+                        <CardContent className='flex h-full flex-col gap-6 pt-6'>
+                          <div className='flex items-center justify-between'>
+                            <div className='bg-primary/10 text-primary flex size-11 items-center justify-center rounded-2xl'>
+                              <SparklesIcon className='size-5' />
+                            </div>
+                            <span className='text-muted-foreground text-xs font-medium uppercase tracking-[0.24em]'>
+                              0{index + 1}
+                            </span>
+                          </div>
+                          <p className='text-sm leading-6'>{resolveLocalizedText(highlight, lang)}</p>
+                        </CardContent>
+                      </Card>
+                    ))}
+                  </div>
+                ) : null}
+              </>
+            )}
+          </div>
+        </section>
+      )}
 
       <SectionSeparator />
 
@@ -316,31 +274,7 @@ const ServiceDetailPage = async ({
           </div>
 
           {hasPackages ? (
-            <div className='grid gap-8'>
-              {service.packages?.map((servicePackage, packageIndex) => (
-                <Card key={servicePackage.id} className='overflow-hidden border bg-card/85 backdrop-blur-sm'>
-                  <CardHeader className='space-y-4 border-b bg-background/45 p-6 sm:p-8'>
-                    <Badge variant='outline' className='h-auto w-fit px-3 py-1 text-xs font-normal'>
-                      {copy.package} {String(packageIndex + 1).padStart(2, '0')}
-                    </Badge>
-                    <div className='space-y-3'>
-                      <CardTitle className='text-2xl sm:text-3xl'>{resolveLocalizedText(servicePackage.title, lang)}</CardTitle>
-                      <CardDescription className='max-w-4xl text-sm leading-6 sm:text-base'>
-                        {resolveLocalizedText(servicePackage.description, lang)}
-                      </CardDescription>
-                      {servicePackage.deliveryNote ? (
-                        <p className='rounded-2xl border bg-primary/5 px-4 py-3 text-sm leading-6'>
-                          {resolveLocalizedText(servicePackage.deliveryNote, lang)}
-                        </p>
-                      ) : null}
-                    </div>
-                  </CardHeader>
-                  <CardContent className='p-0'>
-                    <DeliveryTable sections={servicePackage.sections} lang={lang} copy={copy} />
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
+            <PackageSwitcher packages={service.packages ?? []} lang={lang} copy={copy} />
           ) : service.deliveryPresentation === 'table' ? (
             <div className='overflow-hidden rounded-[28px] border bg-card/85 backdrop-blur-sm'>
               <DeliveryTable sections={displaySections} lang={lang} copy={copy} />

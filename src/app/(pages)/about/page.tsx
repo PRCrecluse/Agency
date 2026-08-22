@@ -6,7 +6,6 @@ import {
   CalendarDaysIcon,
   ExternalLinkIcon,
   HeartHandshakeIcon,
-  RocketIcon,
   SparklesIcon,
   UsersRoundIcon
 } from 'lucide-react'
@@ -59,7 +58,7 @@ const AboutPage = () => {
         <div className='bg-primary/12 absolute -left-24 top-12 size-72 rounded-full blur-3xl' />
         <div className='bg-secondary/18 absolute -right-20 bottom-0 size-80 rounded-full blur-3xl' />
 
-        <div className='relative mx-auto grid w-full max-w-7xl gap-8 lg:grid-cols-[minmax(0,1.1fr)_minmax(320px,0.9fr)] lg:items-end'>
+        <div className='relative mx-auto w-full max-w-7xl'>
           <div className='max-w-4xl space-y-7'>
             <Badge variant='outline' className='h-auto px-3 py-1 text-sm font-normal'>
               About Meridian
@@ -68,11 +67,6 @@ const AboutPage = () => {
               <h1 className='max-w-4xl text-4xl font-semibold tracking-tight sm:text-5xl lg:text-6xl'>
                 A growth partner built by people who ship.
               </h1>
-              <p className='text-muted-foreground max-w-3xl text-lg leading-8'>
-                Meridian was created for ambitious teams that want more than a list of marketing tactics. We turn search, AI
-                discovery, and community opportunity into a disciplined growth system that your team can understand, measure,
-                and keep building on.
-              </p>
             </div>
             <div className='flex flex-wrap gap-4'>
               <PrimaryFlowButton asChild>
@@ -86,24 +80,6 @@ const AboutPage = () => {
               </SecondaryFlowButton>
             </div>
           </div>
-
-          <Card className='border bg-card/85 backdrop-blur-sm'>
-            <CardContent className='grid gap-5 p-6 sm:p-8'>
-              <div className='bg-primary/10 text-primary flex size-12 items-center justify-center rounded-2xl'>
-                <RocketIcon className='size-5' />
-              </div>
-              <div className='space-y-3'>
-                <p className='text-muted-foreground text-xs font-medium uppercase tracking-[0.24em]'>Our mission</p>
-                <p className='text-xl font-semibold tracking-tight'>
-                  Make modern growth systems more accessible to builders with real products and real constraints.
-                </p>
-                <p className='text-muted-foreground text-sm leading-6'>
-                  The work is grounded in practical research, useful content, responsible community participation, and clear
-                  ownership—not vanity dashboards or vague promises.
-                </p>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </section>
 
