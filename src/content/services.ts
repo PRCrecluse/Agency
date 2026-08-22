@@ -40,7 +40,6 @@ export type ServicePage = {
   deliveryDescription?: LocalizedText
   deliveryPresentation?: 'cards' | 'table'
   faqItems?: ServiceFaqItem[]
-  hideBreadcrumb?: boolean
   hideOutcomes?: boolean
 }
 
@@ -48,19 +47,14 @@ export const resolveLocalizedText = (value: LocalizedText, lang: ServiceLang) =>
 
 export const servicePageCopy = {
   en: {
-    languageLabel: 'Language',
     english: 'English',
     chinese: '中文',
     home: 'Home',
     services: 'Services',
     bookCall: 'Book a call',
     allServices: 'All services',
-    programSnapshot: 'Program snapshot',
-    programSnapshotDescription: 'Review the delivery model and the workstreams that matter most to your growth goals.',
-    onThisPage: 'On this page',
     step: 'Step',
     package: 'Package',
-    servicePackages: 'Service packages',
     deliveryPackages: 'Delivery packages',
     whatThisServiceIncludes: 'What this service includes',
     whyThisServiceWorks: 'Why this service works',
@@ -76,10 +70,6 @@ export const servicePageCopy = {
     nextStepDescription:
       'We can map the priority channels, recommend the first workstream, and show how the engagement would be scoped around your growth motion.',
     bookStrategyCall: 'Book a strategy call',
-    workstreams: 'Workstreams',
-    deliverables: 'Deliverables',
-    outcomeTargets: 'Outcome targets',
-    faqTopics: 'FAQ topics',
     tableStep: 'Step',
     tableWorkstream: 'Workstream',
     tableFocus: 'Focus',
@@ -94,19 +84,14 @@ export const servicePageCopy = {
     viewPage: 'View page'
   },
   zh: {
-    languageLabel: '语言',
     english: 'English',
     chinese: '中文',
     home: '首页',
     services: '服务',
     bookCall: '预约通话',
     allServices: '全部服务',
-    programSnapshot: '服务概览',
-    programSnapshotDescription: '查看最适合你增长目标的交付模式与重点工作模块。',
-    onThisPage: '本页内容',
     step: '步骤',
     package: '方案',
-    servicePackages: '服务方案',
     deliveryPackages: '交付方案',
     whatThisServiceIncludes: '服务包含什么',
     whyThisServiceWorks: '为什么这个服务有效',
@@ -121,10 +106,6 @@ export const servicePageCopy = {
     nextStepTitle: '想把这套结构映射到你的获客目标上吗？',
     nextStepDescription: '我们可以一起梳理优先渠道，推荐先做哪条工作流，并明确整个合作范围应该如何设计。',
     bookStrategyCall: '预约策略沟通',
-    workstreams: '工作模块',
-    deliverables: '交付项',
-    outcomeTargets: '结果目标',
-    faqTopics: 'FAQ 主题数',
     tableStep: '步骤',
     tableWorkstream: '工作模块',
     tableFocus: '重点内容',
@@ -362,20 +343,7 @@ export const servicePages: ServicePage[] = [
       { en: 'reddit campaigns', zh: 'Reddit 广告投放' },
       { en: 'reddit services', zh: 'Reddit 服务' }
     ],
-    highlights: [
-      {
-        en: 'Build trust inside relevant subreddits before asking for conversion',
-        zh: '先在相关 subreddit 建立信任，再推动转化'
-      },
-      {
-        en: 'Coordinate organic participation and paid campaigns in one workflow',
-        zh: '把自然参与与付费投放放进同一套执行流程'
-      },
-      {
-        en: 'Measure sentiment, traffic quality, and conversion contribution',
-        zh: '衡量情绪反馈、流量质量与转化贡献'
-      }
-    ],
+    highlights: [],
     serviceIncludes: [
       { en: 'Reddit strategy', zh: 'Reddit 策略' },
       { en: 'Community management', zh: '社区运营' },
@@ -686,3 +654,35 @@ export const servicePages: ServicePage[] = [
 export const serviceSlugs = servicePages.map(service => service.slug)
 
 export const getServiceBySlug = (slug: string) => servicePages.find(service => service.slug === slug)
+
+export const getServiceSectionBySlug = (serviceSlug: string, sectionSlug: string) =>
+  getServiceBySlug(serviceSlug)?.sections.find(section => section.id === sectionSlug)
+
+export const getServiceSectionPage = (serviceSlug: string, sectionSlug: string): ServicePage | undefined => {
+  const service = getServiceBySlug(serviceSlug)
+  const section = getServiceSectionBySlug(serviceSlug, sectionSlug)
+
+  if (!service || !section) {
+    return undefined
+  }
+
+  return {
+    ...service,
+    title: section.title,
+    description: section.description,
+    intro: {
+      en: `This page focuses specifically on ${section.title.en.toLowerCase()} inside our ${service.title.en.toLowerCase()} engagement, so you can review the scope, delivery logic, and expected workstream in one place.`,
+      zh: `这一页专门聚焦我们${service.title.zh}中的“${section.title.zh}”模块，方便你单独查看这个子服务的范围、交付逻辑与执行重点。`
+    },
+    highlights: section.bullets,
+    serviceIncludes: [section.title],
+    sections: [section]
+  }
+}
+
+export const serviceSectionParams = servicePages.flatMap(service =>
+  service.sections.map(section => ({
+    slug: service.slug,
+    sectionSlug: section.id
+  }))
+)

@@ -5,7 +5,6 @@ import type { Metadata } from 'next'
 import {
   ArrowRightIcon,
   CheckCircle2Icon,
-  ChevronRightIcon,
   LayoutGridIcon,
   LineChartIcon,
   MegaphoneIcon,
@@ -17,14 +16,6 @@ import {
 } from 'lucide-react'
 
 import { Badge } from '@/components/ui/badge'
-import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbList,
-  BreadcrumbPage,
-  BreadcrumbSeparator
-} from '@/components/ui/breadcrumb'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import FAQ from '@/components/blocks/faq/faq'
 import { PrimaryFlowButton, SecondaryFlowButton } from '@/components/ui/flow-button'
@@ -166,40 +157,10 @@ const ServiceDetailPage = async ({
 
   const hasPackages = Boolean(service.packages?.length)
   const displaySections = hasPackages ? service.packages?.flatMap(servicePackage => servicePackage.sections) ?? [] : service.sections
-  const totalBulletCount = displaySections.reduce((count, section) => count + section.bullets.length, 0)
   const hasCustomIncludes = Boolean(service.serviceIncludes?.length)
+  const hasHighlights = service.highlights.length > 0
   const hasFaqSection = Boolean(service.faqItems?.length)
   const renderOutcomes = !service.hideOutcomes
-
-  const statItems = hasPackages
-    ? [
-        {
-          label: copy.servicePackages,
-          value: String(service.packages?.length ?? 0).padStart(2, '0')
-        },
-        {
-          label: copy.workstreams,
-          value: String(displaySections.length).padStart(2, '0')
-        },
-        {
-          label: copy.deliverables,
-          value: String(totalBulletCount).padStart(2, '0')
-        }
-      ]
-    : [
-        {
-          label: copy.workstreams,
-          value: String(displaySections.length).padStart(2, '0')
-        },
-        {
-          label: copy.deliverables,
-          value: String(totalBulletCount).padStart(2, '0')
-        },
-        {
-          label: renderOutcomes ? copy.outcomeTargets : hasFaqSection ? copy.faqTopics : copy.outcomeTargets,
-          value: String(renderOutcomes ? service.outcomes.length : service.faqItems?.length ?? service.outcomes.length).padStart(2, '0')
-        }
-      ]
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -251,146 +212,22 @@ const ServiceDetailPage = async ({
         <div className='bg-primary/12 absolute inset-x-0 top-0 h-72 blur-3xl' />
         <div className='bg-secondary/12 absolute right-0 top-24 size-64 rounded-full blur-3xl' />
 
-        <div className='mx-auto flex w-full max-w-7xl flex-col gap-8'>
-          <div className='flex justify-end'>
-            <div className='flex items-center gap-1 rounded-full border bg-background/80 p-1 text-sm'>
-              <Link
-                href={withLang(`/services/${service.slug}`, 'en')}
-                className={`rounded-full px-3 py-1.5 transition-colors ${lang === 'en' ? 'bg-primary text-primary-foreground' : 'text-muted-foreground hover:text-foreground'}`}
-              >
-                {copy.english}
-              </Link>
-              <Link
-                href={withLang(`/services/${service.slug}`, 'zh')}
-                className={`rounded-full px-3 py-1.5 transition-colors ${lang === 'zh' ? 'bg-primary text-primary-foreground' : 'text-muted-foreground hover:text-foreground'}`}
-              >
-                {copy.chinese}
-              </Link>
+        <div className='mx-auto flex w-full max-w-7xl justify-center'>
+          <div className='flex max-w-4xl flex-col items-center gap-6 text-center'>
+            <h1 className='text-4xl font-semibold tracking-tight sm:text-5xl lg:text-6xl'>
+              {resolveLocalizedText(service.title, lang)}
+            </h1>
+            <div className='flex flex-wrap gap-4'>
+              <PrimaryFlowButton asChild>
+                <Link href='https://cal.com/team/meridian-growth' target='_blank' rel='noreferrer'>
+                  {copy.bookCall}
+                  <ArrowRightIcon />
+                </Link>
+              </PrimaryFlowButton>
+              <SecondaryFlowButton asChild>
+                <Link href={withLang('/services', lang)}>{copy.allServices}</Link>
+              </SecondaryFlowButton>
             </div>
-          </div>
-
-          {!service.hideBreadcrumb ? (
-            <Breadcrumb>
-              <BreadcrumbList>
-                <BreadcrumbItem>
-                  <BreadcrumbLink asChild>
-                    <Link href='/'>{copy.home}</Link>
-                  </BreadcrumbLink>
-                </BreadcrumbItem>
-                <BreadcrumbSeparator />
-                <BreadcrumbItem>
-                  <BreadcrumbLink asChild>
-                    <Link href={withLang('/services', lang)}>{copy.services}</Link>
-                  </BreadcrumbLink>
-                </BreadcrumbItem>
-                <BreadcrumbSeparator />
-                <BreadcrumbItem>
-                  <BreadcrumbPage>{resolveLocalizedText(service.title, lang)}</BreadcrumbPage>
-                </BreadcrumbItem>
-              </BreadcrumbList>
-            </Breadcrumb>
-          ) : null}
-
-          <div className='grid gap-6 lg:grid-cols-[minmax(0,1.15fr)_minmax(320px,0.85fr)] lg:items-start'>
-            <div className='relative overflow-hidden rounded-[28px] border bg-card/80 p-6 backdrop-blur-sm sm:p-8 lg:p-10'>
-              <div className='from-primary/15 via-primary/5 absolute inset-0 bg-gradient-to-br to-transparent' />
-              <div className='relative space-y-8'>
-                <div className='space-y-5'>
-                  <Badge variant='outline' className='bg-background/70 h-auto px-3 py-1 text-sm font-normal backdrop-blur-sm'>
-                    {resolveLocalizedText(service.category, lang)}
-                  </Badge>
-
-                  <div className='space-y-4'>
-                    <h1 className='max-w-4xl text-4xl font-semibold tracking-tight sm:text-5xl lg:text-6xl'>{resolveLocalizedText(service.title, lang)}</h1>
-                    <p className='text-muted-foreground max-w-3xl text-base leading-7 sm:text-lg'>{resolveLocalizedText(service.description, lang)}</p>
-                    <p className='max-w-3xl text-base leading-7 sm:text-lg'>{resolveLocalizedText(service.intro, lang)}</p>
-                  </div>
-                </div>
-
-                <div className='flex flex-wrap gap-2.5'>
-                  {service.keywords.map(keyword => (
-                    <Badge
-                      key={keyword.en}
-                      variant='outline'
-                      className='bg-background/65 h-auto rounded-full px-3 py-1 text-xs font-normal backdrop-blur-sm'
-                    >
-                      {resolveLocalizedText(keyword, lang)}
-                    </Badge>
-                  ))}
-                </div>
-
-                <div className='grid gap-3 sm:grid-cols-3'>
-                  {statItems.map(item => (
-                    <div
-                      key={item.label}
-                      className='rounded-2xl border bg-background/70 p-4 backdrop-blur-sm'
-                    >
-                      <p className='text-muted-foreground text-xs uppercase tracking-[0.24em]'>{item.label}</p>
-                      <p className='mt-3 text-3xl font-semibold tracking-tight'>{item.value}</p>
-                    </div>
-                  ))}
-                </div>
-
-                <div className='flex flex-wrap gap-4'>
-                  <PrimaryFlowButton asChild>
-                    <Link href='https://cal.com/team/meridian-growth' target='_blank' rel='noreferrer'>
-                      {copy.bookCall}
-                      <ArrowRightIcon />
-                    </Link>
-                  </PrimaryFlowButton>
-                  <SecondaryFlowButton asChild>
-                    <Link href={withLang('/services', lang)}>{copy.allServices}</Link>
-                  </SecondaryFlowButton>
-                </div>
-              </div>
-            </div>
-
-            <Card className='border bg-card/85 gap-5 backdrop-blur-sm lg:sticky lg:top-24'>
-              <CardHeader>
-                <CardTitle>{copy.programSnapshot}</CardTitle>
-                <CardDescription>{copy.programSnapshotDescription}</CardDescription>
-              </CardHeader>
-
-              <CardContent className='space-y-6'>
-                <div className='grid gap-3 sm:grid-cols-3 lg:grid-cols-1'>
-                  {service.highlights.map(highlight => (
-                    <div key={highlight.en} className='rounded-2xl border bg-background/65 p-4'>
-                      <div className='flex items-start gap-3'>
-                        <CheckCircle2Icon className='text-primary mt-0.5 size-4 shrink-0' />
-                        <p className='text-sm leading-6'>{resolveLocalizedText(highlight, lang)}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-
-                <div className='space-y-3'>
-                  <p className='text-muted-foreground text-xs font-medium uppercase tracking-[0.24em]'>{copy.onThisPage}</p>
-                  <ul className='space-y-2.5'>
-                    {displaySections.map((section, index) => {
-                      const SectionIcon = getSectionIcon(section.id)
-
-                      return (
-                        <li key={section.id}>
-                          <Link
-                            href={withLang(`/services/${service.slug}`, lang, section.id)}
-                            className='hover:border-primary/40 hover:bg-primary/5 flex items-center gap-3 rounded-2xl border bg-background/65 px-4 py-3 transition-colors duration-200'
-                          >
-                            <div className='bg-primary/10 text-primary flex size-10 shrink-0 items-center justify-center rounded-xl'>
-                              <SectionIcon className='size-4' />
-                            </div>
-                            <div className='min-w-0 flex-1'>
-                              <p className='text-[11px] uppercase tracking-[0.24em] text-muted-foreground'>{copy.step} {index + 1}</p>
-                              <p className='truncate text-sm font-medium'>{resolveLocalizedText(section.title, lang)}</p>
-                            </div>
-                            <ChevronRightIcon className='text-muted-foreground size-4 shrink-0' />
-                          </Link>
-                        </li>
-                      )
-                    })}
-                  </ul>
-                </div>
-              </CardContent>
-            </Card>
           </div>
         </div>
       </section>
@@ -440,23 +277,25 @@ const ServiceDetailPage = async ({
                 </p>
               </div>
 
-              <div className='grid gap-4 md:grid-cols-3'>
-                {service.highlights.map((highlight, index) => (
-                  <Card key={highlight.en} className='border bg-card/80'>
-                    <CardContent className='flex h-full flex-col gap-6 pt-6'>
-                      <div className='flex items-center justify-between'>
-                        <div className='bg-primary/10 text-primary flex size-11 items-center justify-center rounded-2xl'>
-                          <SparklesIcon className='size-5' />
+              {hasHighlights ? (
+                <div className='grid gap-4 md:grid-cols-3'>
+                  {service.highlights.map((highlight, index) => (
+                    <Card key={highlight.en} className='border bg-card/80'>
+                      <CardContent className='flex h-full flex-col gap-6 pt-6'>
+                        <div className='flex items-center justify-between'>
+                          <div className='bg-primary/10 text-primary flex size-11 items-center justify-center rounded-2xl'>
+                            <SparklesIcon className='size-5' />
+                          </div>
+                          <span className='text-muted-foreground text-xs font-medium uppercase tracking-[0.24em]'>
+                            0{index + 1}
+                          </span>
                         </div>
-                        <span className='text-muted-foreground text-xs font-medium uppercase tracking-[0.24em]'>
-                          0{index + 1}
-                        </span>
-                      </div>
-                      <p className='text-sm leading-6'>{resolveLocalizedText(highlight, lang)}</p>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
+                        <p className='text-sm leading-6'>{resolveLocalizedText(highlight, lang)}</p>
+                      </CardContent>
+                    </Card>
+                  ))}
+                </div>
+              ) : null}
             </>
           )}
         </div>

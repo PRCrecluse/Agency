@@ -1,5 +1,6 @@
 import Image from 'next/image'
 
+import SectionSeparator from '@/components/section-separator'
 import { Card, CardContent } from '@/components/ui/card'
 import { MotionPreset } from '@/components/ui/motion-preset'
 
@@ -99,12 +100,14 @@ const Features = () => {
           ))}
         </div>
 
+        <SectionSeparator className='mt-16 sm:mt-20 lg:mt-24' />
+
         <MotionPreset
           fade
           slide={{ direction: 'down', offset: 50 }}
           blur
           transition={{ duration: 0.5 }}
-          className='mt-16 space-y-4 text-center sm:mt-20 lg:mt-24'
+          className='mt-12 space-y-4 text-center sm:mt-16'
         >
           <p className='text-primary text-sm font-medium uppercase'>AI Systems</p>
 
@@ -129,12 +132,12 @@ const Features = () => {
               className='h-full'
             >
               <Card className='h-full justify-between gap-0 pt-0 shadow-none'>
-                <div className='relative aspect-[16/10] overflow-hidden rounded-t-xl border-b bg-[#f5f5f4] p-4'>
+                <div className='relative aspect-[16/10] overflow-hidden rounded-t-xl border-b bg-[#f5f5f4] p-2 sm:p-3'>
                   <Image
                     src={item.image}
                     alt={item.imageAlt}
                     fill
-                    className='object-contain p-2'
+                    className='scale-[1.08] object-contain p-0 transition-transform duration-500'
                     sizes='(max-width: 1279px) 100vw, 33vw'
                   />
                 </div>

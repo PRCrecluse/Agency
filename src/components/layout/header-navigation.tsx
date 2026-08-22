@@ -26,6 +26,8 @@ import { SecondaryFlowButton } from '@/components/ui/flow-button'
 
 import Logo from '@/components/logo'
 
+import type { QueryLang } from '@/lib/language'
+import { withQueryLang } from '@/lib/language'
 import { cn } from '@/lib/utils'
 
 type NavigationSection = {
@@ -105,20 +107,22 @@ const ListItem = (props: {
   splitItems?: boolean
   activeSection?: string
   pathname?: string
+  lang: 'en' | 'zh'
 }) => {
-  const { title, href, icon, badge, description, splitItems, activeSection, pathname } = props
+  const { title, href, icon, badge, description, splitItems, activeSection, pathname, lang } = props
 
   const isActive = isHrefActive({ href, activeSection, pathname })
+  const localizedHref = withQueryLang(href, lang)
 
   return (
     <li className={cn({ 'h-19.5': description && splitItems })}>
       <NavigationMenuLink
-        href={href}
+        href={localizedHref}
         data-active={isActive}
         className={cn({ 'flex flex-row items-start gap-2': icon })}
         asChild
       >
-        <Link href={href}>
+        <Link href={localizedHref}>
           {icon && (
             <span className='bg-popover [&>svg]:text-popover-foreground! flex aspect-square size-7 shrink-0 items-center justify-center rounded-sm border [&>svg]:size-4'>
               {icon}
@@ -147,13 +151,16 @@ const ListItem = (props: {
 const getSectionItems = (section: NavigationSection) => section.items ?? section.subSections?.flatMap(subSection => subSection.items) ?? []
 
 const HeaderNavigation = ({
+  currentLang,
   navigationData,
   navigationClassName
 }: {
+  currentLang: QueryLang
   navigationData: Navigation[]
   navigationClassName?: string
 }) => {
   const pathname = usePathname()
+  const lang = currentLang
 
   // Extract all section IDs from navigation data
   const sectionIds = navigationData.flatMap(navItem => {
@@ -192,11 +199,12 @@ const HeaderNavigation = ({
         {navigationData.map(navItem => {
           if (navItem.href) {
             const isActive = isHrefActive({ href: navItem.href, activeSection, pathname })
+            const localizedHref = withQueryLang(navItem.href, lang)
 
             return (
               <NavigationMenuItem key={navItem.title}>
                 <NavigationMenuLink
-                  href={navItem.href}
+                  href={localizedHref}
                   data-active={isActive}
                   className={cn(
                     navigationMenuTriggerStyle(),
@@ -257,6 +265,7 @@ const HeaderNavigation = ({
                                       badge={item.badge}
                                       splitItems={navItem.splitItems}
                                       activeSection={activeSection}
+                                      lang={lang}
                                     />
                                   ))}
                                 </ul>
@@ -279,6 +288,7 @@ const HeaderNavigation = ({
                                 badge={item.badge}
                                 splitItems={navItem.splitItems}
                                 activeSection={activeSection}
+                                lang={lang}
                               />
                             ))}
                           </ul>
@@ -304,6 +314,7 @@ const HeaderNavigation = ({
                         badge={item.badge}
                         activeSection={activeSection}
                         pathname={pathname}
+                        lang={lang}
                       />
                     ))}
                   </ul>
@@ -318,10 +329,12 @@ const HeaderNavigation = ({
 }
 
 const HeaderNavigationSmallScreen = ({
+  currentLang,
   navigationData,
   triggerClassName,
   screenSize = 1023
 }: {
+  currentLang: QueryLang
   navigationData: Navigation[]
   triggerClassName?: string
   screenSize?: number
@@ -330,6 +343,7 @@ const HeaderNavigationSmallScreen = ({
   const isMobile = useMedia(`(max-width: ${screenSize}px)`, false)
 
   const pathname = usePathname()
+  const lang = currentLang
 
   // Extract all section IDs from navigation data
   const sectionIds = navigationData.flatMap(navItem => {
@@ -397,7 +411,7 @@ const HeaderNavigationSmallScreen = ({
               return (
                 <Link
                   key={navItem.title}
-                  href={navItem.href}
+                  href={withQueryLang(navItem.href, lang)}
                   data-active={isActive}
                   className='hover:bg-accent data-[active=true]:bg-accent flex items-center gap-2 rounded-sm px-3 py-2 text-sm data-[active=true]:font-medium'
                   onClick={handleLinkClick}
@@ -447,7 +461,7 @@ const HeaderNavigationSmallScreen = ({
                                 return (
                                   <Link
                                     key={j}
-                                    href={subItem.href}
+                                    href={withQueryLang(subItem.href, lang)}
                                     data-active={isActive}
                                     className='hover:bg-accent data-[active=true]:text-primary ml-4.5 flex items-center gap-2 rounded-sm px-3 py-2 text-sm data-[active=true]:font-medium'
                                     onClick={handleLinkClick}
@@ -467,7 +481,7 @@ const HeaderNavigationSmallScreen = ({
                         return (
                           <Link
                             key={item.title}
-                            href={item.href}
+                            href={withQueryLang(item.href, lang)}
                             data-active={isActive}
                             className='hover:bg-accent data-[active=true]:text-primary ml-3 flex items-center gap-2 rounded-sm px-3 py-2 text-sm data-[active=true]:font-medium'
                             onClick={handleLinkClick}

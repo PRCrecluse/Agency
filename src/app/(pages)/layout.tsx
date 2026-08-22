@@ -30,14 +30,20 @@ const navigationData: Navigation[] = [
             icon: <LayoutDashboardIcon className='size-4' />
           },
           {
+            title: 'On-page SEO',
+            href: '/services/seo-services/on-page-seo',
+            description: 'Improve page targeting, content signals, and internal linking for important URLs.',
+            icon: <LayoutDashboardIcon className='size-4' />
+          },
+          {
             title: 'Technical SEO',
-            href: '/services/seo-services#technical-seo',
+            href: '/services/seo-services/technical-seo',
             description: 'Resolve crawl, indexing, performance, and site architecture issues.',
             icon: <TelescopeIcon className='size-4' />
           },
           {
             title: 'Programmatic SEO',
-            href: '/services/seo-services#programmatic-seo',
+            href: '/services/seo-services/programmatic-seo',
             description: 'Scale high-intent landing pages with structured, reusable templates.',
             icon: <ChartScatterIcon className='size-4' />
           }
@@ -51,13 +57,13 @@ const navigationData: Navigation[] = [
             items: [
               {
                 title: 'Reddit Community Management',
-                href: '/services/reddit-services#community-management',
+                href: '/services/reddit-services/community-management',
                 description: 'Build trust, manage discussions, and grow brand presence in relevant subreddits.',
                 icon: <ChartPieIcon className='size-4' />
               },
               {
                 title: 'Reddit Campaigns',
-                href: '/services/reddit-services#reddit-campaigns',
+                href: '/services/reddit-services/reddit-campaigns',
                 description: 'Launch targeted Reddit campaigns to drive awareness, traffic, and conversions.',
                 icon: <GitPullRequestIcon className='size-4' />
               }

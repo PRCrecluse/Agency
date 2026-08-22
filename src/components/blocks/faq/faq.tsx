@@ -64,12 +64,12 @@ const FAQ = ({
           </Accordion>
 
           {/* Right content */}
-          <div className='group bg-muted relative mx-auto flex min-h-[28rem] w-full max-w-[40rem] items-center justify-center overflow-hidden rounded-xl border p-3 sm:min-h-[32rem] sm:p-4 lg:min-h-[36rem] lg:p-5'>
+          <div className='group bg-muted relative mx-auto flex min-h-[30rem] w-full max-w-[44rem] items-center justify-center overflow-hidden rounded-xl border p-2 sm:min-h-[34rem] sm:p-3 lg:min-h-[40rem] lg:p-4'>
             <img
               src='/attachphotos/mrr%20cost.png'
               alt='MRR cost dashboard overview'
               loading='lazy'
-              className='h-full w-[112%] max-w-none origin-center object-contain shadow-md transition-transform duration-500 group-hover:scale-[1.04]'
+              className='h-full w-[116%] max-w-none origin-center object-contain shadow-md transition-transform duration-500 group-hover:scale-[1.05]'
             />
 
             {['top-4.5 left-4.5', 'top-4.5 right-4.5', 'bottom-4.5 left-4.5', 'bottom-4.5 right-4.5'].map(

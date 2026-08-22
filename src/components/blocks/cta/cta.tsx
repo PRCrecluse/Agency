@@ -4,8 +4,8 @@ import Link from 'next/link'
 
 import { Card, CardContent } from '@/components/ui/card'
 
-import { Button } from '@/components/ui/button'
 import { MotionPreset } from '@/components/ui/motion-preset'
+import { PrimaryFlowButton } from '@/components/ui/flow-button'
 
 import LogoVector from '@/assets/svg/logo-vector'
 import DottedSheet from '@/assets/svg/dotted-sheet'
@@ -14,7 +14,7 @@ const CTASection = () => {
   return (
     <section id='cta' className='relative z-1 pt-16 pb-16 sm:pt-32 sm:pb-16 lg:pt-48 lg:pb-24'>
       <div className='bg-background mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
-        <Card className='relative overflow-hidden rounded-3xl border-none bg-[#EEE8D7] pt-20 pb-32 text-center shadow-2xl max-sm:pt-10 max-sm:pb-15'>
+        <Card className='relative overflow-hidden rounded-3xl border-none bg-[#EEE8D7] pt-20 pb-32 text-center shadow-2xl max-sm:pt-10 max-sm:pb-20'>
           <CardContent className='px-6'>
             <MotionPreset
               fade
@@ -32,6 +32,23 @@ const CTASection = () => {
                 Join Meridian and get a complete overview of your users, sales, and performance - all from one powerful
                 dashboard.
               </p>
+            </MotionPreset>
+            <MotionPreset
+              fade
+              blur
+              zoom={{ initialScale: 0.95 }}
+              delay={0.6}
+              transition={{ duration: 0.4 }}
+              className='absolute bottom-8 left-1/2 z-10 -translate-x-1/2'
+            >
+              <PrimaryFlowButton
+                className='shadow-primary/15 ring-primary/50 shadow-xl **:data-[slot=button]:h-12 **:data-[slot=button]:px-7 **:data-[slot=button]:text-base **:data-[slot=button]:font-semibold'
+                asChild
+              >
+                <Link href='https://cal.com/team/meridian-growth' target='_blank' rel='noreferrer'>
+                  Book a call
+                </Link>
+              </PrimaryFlowButton>
             </MotionPreset>
             <MotionPreset
               className='absolute bottom-0 left-0 opacity-100'
@@ -52,19 +69,6 @@ const CTASection = () => {
             </MotionPreset>
           </CardContent>
         </Card>
-
-        <MotionPreset fade blur zoom={{ initialScale: 0.95 }} delay={0.6} transition={{ duration: 0.4 }}>
-          <div className='border-primary dark:border-primary/70 bg-background relative mx-auto -mt-9.25 flex size-fit w-full max-w-lg justify-center rounded-xl border-2 p-2'>
-            <Button
-              className='rounded-lg border border-zinc-300/80 bg-zinc-700 px-6 text-base font-medium text-white shadow-none hover:bg-zinc-600 dark:border-zinc-700 dark:bg-zinc-200 dark:text-zinc-900 dark:hover:bg-zinc-300'
-              asChild
-            >
-              <Link href='https://cal.com/team/meridian-growth' target='_blank' rel='noreferrer'>
-                Book a call
-              </Link>
-            </Button>
-          </div>
-        </MotionPreset>
       </div>
 
       <DottedSheet className='pointer-events-none absolute inset-x-0 -z-1 mx-auto w-full max-w-7xl px-4 max-sm:-top-1/2 sm:bottom-1/4 sm:px-6 lg:px-8' />
