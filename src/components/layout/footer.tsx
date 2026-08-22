@@ -46,6 +46,11 @@ const Footer = () => {
             <div className='text-lg font-medium'>Company</div>
             <ul className='text-muted-foreground space-y-3'>
               <li>
+                <Link href='/about' className='hover:text-foreground transition-colors duration-300'>
+                  About
+                </Link>
+              </li>
+              <li>
                 <Link href='/#testimonials' className='hover:text-foreground transition-colors duration-300'>
                   Testimonials
                 </Link>
