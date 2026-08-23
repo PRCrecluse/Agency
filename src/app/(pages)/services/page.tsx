@@ -8,17 +8,14 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { PrimaryFlowButton } from '@/components/ui/flow-button'
 import SectionSeparator from '@/components/section-separator'
 import { resolveLocalizedText, servicePageCopy, servicePages, type ServiceLang } from '@/content/services'
+import { absoluteUrl, buildMetadata, createWebPageSchema } from '@/lib/seo'
 
-const baseUrl = process.env.NEXT_PUBLIC_APP_URL ?? 'http://localhost:3000'
-
-export const metadata: Metadata = {
-  title: 'Services',
-  description: 'Explore Meridian service pages in English and Chinese for SEO services, Reddit services, and GEO strategy.',
-  keywords: ['services', 'seo services', 'reddit services', 'geo services', 'meridian'],
-  alternates: {
-    canonical: `${baseUrl}/services`
-  }
-}
+export const metadata: Metadata = buildMetadata({
+  title: 'SEO, Reddit & GEO Services | Meridian',
+  description: 'Explore Meridian services across technical SEO, programmatic SEO, Reddit growth, GEO, and AI-native organic demand.',
+  path: '/services',
+  keywords: ['seo services', 'reddit marketing services', 'geo services', 'technical seo agency']
+})
 
 const getLang = (value?: string): ServiceLang => (value?.toLowerCase().startsWith('zh') ? 'zh' : 'en')
 
@@ -37,11 +34,12 @@ const ServicesPage = async ({
     '@context': 'https://schema.org',
     '@graph': [
       {
-        '@type': 'WebPage',
-        '@id': `${baseUrl}/services#webpage`,
-        name: copy.servicesBadge,
-        description: copy.servicesDescription,
-        url: `${baseUrl}/services`
+        ...createWebPageSchema({
+          path: '/services',
+          title: 'SEO, Reddit & GEO Services | Meridian',
+          description: 'Explore Meridian services across technical SEO, programmatic SEO, Reddit growth, GEO, and AI-native organic demand.'
+        }),
+        '@type': 'CollectionPage'
       },
       {
         '@type': 'ItemList',
@@ -49,7 +47,7 @@ const ServicesPage = async ({
           '@type': 'ListItem',
           position: index + 1,
           name: resolveLocalizedText(service.title, lang),
-          url: `${baseUrl}/services/${service.slug}?lang=${lang}`
+          url: absoluteUrl(`/services/${service.slug}`)
         }))
       }
     ]

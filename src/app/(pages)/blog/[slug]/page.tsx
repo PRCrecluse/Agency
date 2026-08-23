@@ -24,6 +24,14 @@ import RelatedBlogSection from '@/components/blog/related-blog-section/related-b
 import SectionSeparator from '@/components/section-separator'
 import CTASection from '@/components/blocks/cta/cta'
 import { SecondaryFlowButton } from '@/components/ui/flow-button'
+import {
+  absoluteUrl,
+  buildMetadata,
+  createBreadcrumbSchema,
+  createOrganizationSchema,
+  createWebPageSchema,
+  createWebsiteSchema
+} from '@/lib/seo'
 
 export async function generateStaticParams() {
   const posts = await getPosts()
@@ -43,11 +51,26 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { metadata } = post
 
   return {
-    title: `Blog: ${metadata.title}`,
-    description: metadata.description,
-    keywords: metadata.keywords,
-    alternates: {
-      canonical: `${process.env.NEXT_PUBLIC_APP_URL}/blog/${metadata.slug}`
+    ...buildMetadata({
+      title: `${metadata.title} | Meridian`,
+      description: metadata.description ?? 'Read the latest Meridian article.',
+      path: `/blog/${metadata.slug}`,
+      keywords: metadata.keywords
+    }),
+    openGraph: {
+      title: `${metadata.title} | Meridian`,
+      description: metadata.description ?? 'Read the latest Meridian article.',
+      url: absoluteUrl(`/blog/${metadata.slug}`),
+      type: 'article',
+      publishedTime: metadata.publishedAt,
+      images: metadata.image
+        ? [
+            {
+              url: absoluteUrl(metadata.image),
+              alt: metadata.title ?? 'Meridian blog article'
+            }
+          ]
+        : undefined
     }
   }
 }
@@ -87,54 +110,36 @@ const BlogDetailsPage = async ({ params }: { params: Promise<{ slug: string }> }
     '@context': 'https://schema.org',
     '@graph': [
       {
-        '@context': 'https://schema.org',
-        '@type': 'WebSite',
-        '@id': `${process.env.NEXT_PUBLIC_APP_URL}#website`,
-        name: 'Meridian',
-        description:
-          'Grow your product faster with an all-in-one sales and analytics platform. Track performance, automate follow-ups, and make smarter decisions easily.',
-        url: `${process.env.NEXT_PUBLIC_APP_URL}`,
-        inLanguage: 'en-US'
-      },
-      {
-        '@context': 'https://schema.org',
-        '@type': 'WebPage',
-        '@id': `${process.env.NEXT_PUBLIC_APP_URL}#webpage`,
-        name: `Blog: ${metadata.title}`,
-        description: metadata.description,
-        url: `${process.env.NEXT_PUBLIC_APP_URL}/blog/${metadata.slug}`,
-        isPartOf: {
-          '@id': `${process.env.NEXT_PUBLIC_APP_URL}#website`
+        ...createWebPageSchema({
+          path: `/blog/${metadata.slug}`,
+          title: `${metadata.title} | Meridian`,
+          description: metadata.description ?? 'Read the latest Meridian article.'
+        }),
+        '@type': 'BlogPosting',
+        headline: metadata.title,
+        image: metadata.image ? [absoluteUrl(metadata.image)] : undefined,
+        datePublished: metadata.publishedAt,
+        dateModified: metadata.publishedAt,
+        author: metadata.author
+          ? {
+              '@type': 'Person',
+              name: metadata.author.name
+            }
+          : undefined,
+        publisher: {
+          '@id': absoluteUrl('/#organization')
         },
-        potentialAction: {
-          '@type': 'ReadAction',
-          target: [`${process.env.NEXT_PUBLIC_APP_URL}/blog/${metadata.slug}`]
+        mainEntityOfPage: {
+          '@id': absoluteUrl(`/blog/${metadata.slug}#webpage`)
         }
       },
-      {
-        '@context': 'https://schema.org',
-        '@type': 'BreadcrumbList',
-        itemListElement: [
-          {
-            '@type': 'ListItem',
-            position: 1,
-            name: 'Home',
-            item: `${process.env.NEXT_PUBLIC_APP_URL}`
-          },
-          {
-            '@type': 'ListItem',
-            position: 2,
-            name: 'Blog',
-            item: `${process.env.NEXT_PUBLIC_APP_URL}/blog`
-          },
-          {
-            '@type': 'ListItem',
-            position: 3,
-            name: metadata.title,
-            item: `${process.env.NEXT_PUBLIC_APP_URL}/blog/${metadata.slug}`
-          }
-        ]
-      }
+      createOrganizationSchema(),
+      createWebsiteSchema(),
+      createBreadcrumbSchema([
+        { name: 'Home', path: '/' },
+        { name: 'Blog', path: '/blog' },
+        { name: metadata.title ?? 'Article', path: `/blog/${metadata.slug}` }
+      ])
     ]
   }
 

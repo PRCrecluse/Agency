@@ -5,44 +5,30 @@ import HeroSection from '@/components/blog/hero-section/hero-section'
 import SectionSeparator from '@/components/section-separator'
 import BlogSection from '@/components/blog/blog-section/blog-section'
 import { getPosts } from '@/lib/posts'
+import { buildMetadata, createOrganizationSchema, createWebPageSchema, createWebsiteSchema } from '@/lib/seo'
 
-export const metadata: Metadata = {
-  title: 'Blog',
-  description: 'Welcome to our blog. Stay updated with the latest news and articles.',
-  keywords: ['blog', 'articles', 'news', 'updates', 'insights'],
-  alternates: {
-    canonical: `${process.env.NEXT_PUBLIC_APP_URL}/blog`
-  }
-}
+export const metadata: Metadata = buildMetadata({
+  title: 'SaaS SEO, Reddit Growth & GEO Insights | Meridian',
+  description:
+    'Read Meridian insights on SaaS SEO, technical SEO, programmatic SEO, Reddit growth, GEO, and AI-native demand generation.',
+  path: '/blog',
+  keywords: ['saas seo blog', 'reddit growth blog', 'geo insights', 'technical seo articles']
+})
 
 const jsonLd = {
   '@context': 'https://schema.org',
   '@graph': [
     {
-      '@context': 'https://schema.org',
-      '@type': 'WebSite',
-      '@id': `${process.env.NEXT_PUBLIC_APP_URL}#website`,
-      name: 'Meridian',
-      description:
-        'Grow your product faster with an all-in-one sales and analytics platform. Track performance, automate follow-ups, and make smarter decisions easily.',
-      url: `${process.env.NEXT_PUBLIC_APP_URL}`,
-      inLanguage: 'en-US'
+      ...createWebPageSchema({
+        path: '/blog',
+        title: 'SaaS SEO, Reddit Growth & GEO Insights | Meridian',
+        description:
+          'Read Meridian insights on SaaS SEO, technical SEO, programmatic SEO, Reddit growth, GEO, and AI-native demand generation.'
+      }),
+      '@type': 'CollectionPage'
     },
-    {
-      '@context': 'https://schema.org',
-      '@type': 'WebPage',
-      '@id': `${process.env.NEXT_PUBLIC_APP_URL}#webpage`,
-      name: 'Blog',
-      description: 'Welcome to our blog. Stay updated with the latest news and articles.',
-      url: `${process.env.NEXT_PUBLIC_APP_URL}/blog`,
-      isPartOf: {
-        '@id': `${process.env.NEXT_PUBLIC_APP_URL}#website`
-      },
-      potentialAction: {
-        '@type': 'ReadAction',
-        target: [`${process.env.NEXT_PUBLIC_APP_URL}/blog`]
-      }
-    }
+    createOrganizationSchema(),
+    createWebsiteSchema()
   ]
 }
 

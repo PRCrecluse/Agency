@@ -2,6 +2,7 @@ import type { ReactNode } from 'react'
 
 import { Geist, Geist_Mono } from 'next/font/google'
 import type { Metadata } from 'next'
+import Script from 'next/script'
 
 import { ThemeProvider } from '@/components/theme-provider'
 import { TooltipProvider } from '@/components/ui/tooltip'
@@ -95,6 +96,12 @@ const RootLayout = ({ children }: Readonly<{ children: ReactNode }>) => {
         <ThemeProvider attribute='class' enableSystem={false} disableTransitionOnChange>
           <TooltipProvider>{children}</TooltipProvider>
         </ThemeProvider>
+        <Script
+          src='https://datafa.st/js/script.js'
+          data-website-id='dfid_8CcvxzPKw0aMUT9d8p8yS'
+          data-domain='withmeridian.org'
+          strategy='afterInteractive'
+        />
       </body>
     </html>
   )

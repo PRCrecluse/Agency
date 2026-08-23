@@ -14,11 +14,14 @@ import { Badge } from '@/components/ui/badge'
 import { Card, CardContent } from '@/components/ui/card'
 import { PrimaryFlowButton, SecondaryFlowButton } from '@/components/ui/flow-button'
 import SectionSeparator from '@/components/section-separator'
+import { absoluteUrl, buildMetadata, createOrganizationSchema, createWebPageSchema } from '@/lib/seo'
 
-export const metadata: Metadata = {
-  title: 'About | Meridian',
-  description: 'Meet the founder and discover the team story behind Meridian, Volumn.ai, and GoGlobal.to.'
-}
+export const metadata: Metadata = buildMetadata({
+  title: 'About Meridian | AI-Native Growth Team',
+  description: 'Meet the founder, specialists, and builder story behind Meridian, GoGlobal.to, and the team’s AI-native growth practice.',
+  path: '/about',
+  keywords: ['about meridian', 'ai growth team', 'seo agency founder', 'reddit growth team']
+})
 
 const founderHighlights = [
   'Founded and shipped 8 products independently',
@@ -82,6 +85,45 @@ const specialists = [
     ]
   }
 ]
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      ...createWebPageSchema({
+        path: '/about',
+        title: 'About Meridian | AI-Native Growth Team',
+        description:
+          'Meet the founder, specialists, and builder story behind Meridian, GoGlobal.to, and the team’s AI-native growth practice.'
+      }),
+      '@type': 'AboutPage'
+    },
+    createOrganizationSchema(),
+    {
+      '@type': 'Person',
+      '@id': absoluteUrl('/about#yiwei'),
+      name: 'Yiwei',
+      alternateName: '怡玮',
+      jobTitle: 'Founder & CEO',
+      worksFor: {
+        '@id': absoluteUrl('/#organization')
+      },
+      sameAs: [
+        'https://x.com/PRCrecluse674',
+        'https://www.xiaohongshu.com/user/profile/5f12e5900000000001000726'
+      ]
+    },
+    ...specialists.map(specialist => ({
+      '@type': 'Person',
+      name: specialist.name,
+      jobTitle: specialist.role,
+      worksFor: {
+        '@id': absoluteUrl('/#organization')
+      },
+      sameAs: specialist.xUrl ? [specialist.xUrl] : undefined
+    }))
+  ]
+}
 
 const AboutPage = () => {
   return (
@@ -328,6 +370,13 @@ const AboutPage = () => {
           </CardContent>
         </Card>
       </section>
+
+      <script
+        type='application/ld+json'
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(jsonLd).replace(/</g, '\\u003c')
+        }}
+      />
     </>
   )
 }

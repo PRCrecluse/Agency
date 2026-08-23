@@ -24,17 +24,19 @@ import PackageSwitcher from '@/components/services/package-switcher'
 import { PrimaryFlowButton, SecondaryFlowButton } from '@/components/ui/flow-button'
 import SectionSeparator from '@/components/section-separator'
 import { logos } from '@/assets/data/trusted-brands'
-import { getServiceBySlug, resolveLocalizedText, servicePageCopy, serviceSlugs, type ServiceLang } from '@/content/services'
-import { cn } from '@/lib/utils'
-
-const baseUrl = process.env.NEXT_PUBLIC_APP_URL ?? 'http://localhost:3000'
+import {
+import { absoluteUrl, createBreadcrumbSchema, createWebPageSchema } from '@/lib/seo'
+  getServiceBySlug,
 const trustedBrandServiceSlugs = new Set(['seo-services', 'geo-services'])
 
 const getLang = (value?: string): ServiceLang => (value?.toLowerCase().startsWith('zh') ? 'zh' : 'en')
 
 const withLang = (path: string, lang: ServiceLang, hash?: string) => `${path}?lang=${lang}${hash ? `#${hash}` : ''}`
+
 const getTrustedBrandsTitle = (lang: ServiceLang) =>
-  lang === 'zh' ? '服务过从初创公司到行业头部企业的团队。' : 'Trusted by startups, enterprises, and category leaders alike.'
+  lang === 'zh'
+    ? '服务过从初创公司到行业头部企业的团队。'
+    : 'Trusted by startups, enterprises, and category leaders alike.'
 
 const getSectionIcon = (sectionId: string) => {
   const key = sectionId.toLowerCase()
@@ -83,11 +85,11 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   }
 
   return {
-    title: `${service.title.en} | ${service.title.zh}`,
-    description: `${service.description.en} / ${service.description.zh}`,
+    title: `${service.title.en} | Meridian`,
+    description: service.description.en,
     keywords: [...service.keywords.map(keyword => keyword.en), ...service.keywords.map(keyword => keyword.zh)],
     alternates: {
-      canonical: `${baseUrl}/services/${service.slug}`
+      canonical: `/services/${service.slug}`
     }
   }
 }
@@ -112,7 +114,11 @@ const ServiceDetailPage = async ({
   }
 
   const hasPackages = Boolean(service.packages?.length)
-  const displaySections = hasPackages ? service.packages?.flatMap(servicePackage => servicePackage.sections) ?? [] : service.sections
+
+  const displaySections = hasPackages
+    ? (service.packages?.flatMap(servicePackage => servicePackage.sections) ?? [])
+    : service.sections
+
   const hasCustomIncludes = Boolean(service.serviceIncludes?.length)
   const hasHighlights = service.highlights.length > 0
   const hasFaqSection = Boolean(service.faqItems?.length)
@@ -124,41 +130,23 @@ const ServiceDetailPage = async ({
     '@context': 'https://schema.org',
     '@graph': [
       {
-        '@type': 'WebPage',
-        '@id': `${baseUrl}/services/${service.slug}#webpage`,
-        name: resolveLocalizedText(service.title, lang),
-        description: resolveLocalizedText(service.description, lang),
-        url: `${baseUrl}/services/${service.slug}?lang=${lang}`
+        ...createWebPageSchema({
+          path: `/services/${service.slug}`,
+          title: `${service.title.en} | Meridian`,
+          description: service.description.en
+        })
       },
-      {
-        '@type': 'BreadcrumbList',
-        itemListElement: [
-          {
-            '@type': 'ListItem',
-            position: 1,
-            name: copy.home,
-            item: `${baseUrl}`
-          },
-          {
-            '@type': 'ListItem',
-            position: 2,
-            name: copy.services,
-            item: `${baseUrl}/services?lang=${lang}`
-          },
-          {
-            '@type': 'ListItem',
-            position: 3,
-            name: resolveLocalizedText(service.title, lang),
-            item: `${baseUrl}/services/${service.slug}?lang=${lang}`
-          }
-        ]
-      },
+      createBreadcrumbSchema([
+        { name: copy.home, path: '/' },
+        { name: copy.services, path: '/services' },
+        { name: resolveLocalizedText(service.title, lang), path: `/services/${service.slug}` }
+      ]),
       {
         '@type': 'Service',
         name: resolveLocalizedText(service.title, lang),
         description: resolveLocalizedText(service.description, lang),
         serviceType: resolveLocalizedText(service.category, lang),
-        url: `${baseUrl}/services/${service.slug}?lang=${lang}`,
+        url: absoluteUrl(`/services/${service.slug}`),
         areaServed: 'Global'
       }
     ]
@@ -168,7 +156,7 @@ const ServiceDetailPage = async ({
     <>
       <section className='relative overflow-hidden px-4 py-10 sm:px-6 sm:py-14 lg:px-8 lg:py-16'>
         <div className='bg-primary/12 absolute inset-x-0 top-0 h-72 blur-3xl' />
-        <div className='bg-secondary/12 absolute right-0 top-24 size-64 rounded-full blur-3xl' />
+        <div className='bg-secondary/12 absolute top-24 right-0 size-64 rounded-full blur-3xl' />
 
         <div className='mx-auto flex w-full max-w-7xl justify-center'>
           <div className='flex max-w-4xl flex-col items-center gap-6 text-center'>
@@ -209,22 +197,24 @@ const ServiceDetailPage = async ({
                 {hasCustomIncludes ? (
                   <>
                     <div className='mx-auto max-w-3xl space-y-4 text-center'>
-                      <h2 className='text-3xl font-semibold tracking-tight sm:text-4xl'>{copy.whatThisServiceIncludes}</h2>
+                      <h2 className='text-3xl font-semibold tracking-tight sm:text-4xl'>
+                        {copy.whatThisServiceIncludes}
+                      </h2>
                     </div>
 
                     <div className='grid gap-4 sm:grid-cols-2 xl:grid-cols-5'>
                       {service.serviceIncludes?.map((item, index) => (
-                        <Card key={item.en} className='border bg-card/80'>
+                        <Card key={item.en} className='bg-card/80 border'>
                           <CardContent className='flex h-full flex-col gap-5 pt-6'>
                             <div className='flex items-center justify-between'>
                               <div className='bg-primary/10 text-primary flex size-11 items-center justify-center rounded-2xl'>
                                 <SparklesIcon className='size-5' />
                               </div>
-                              <span className='text-muted-foreground text-xs font-medium uppercase tracking-[0.24em]'>
+                              <span className='text-muted-foreground text-xs font-medium tracking-[0.24em] uppercase'>
                                 {String(index + 1).padStart(2, '0')}
                               </span>
                             </div>
-                            <p className='text-base font-medium leading-6'>{resolveLocalizedText(item, lang)}</p>
+                            <p className='text-base leading-6 font-medium'>{resolveLocalizedText(item, lang)}</p>
                           </CardContent>
                         </Card>
                       ))}
@@ -236,7 +226,9 @@ const ServiceDetailPage = async ({
                       <Badge variant='outline' className='h-auto px-3 py-1 text-sm font-normal'>
                         {copy.whyThisServiceWorks}
                       </Badge>
-                      <h2 className='text-3xl font-semibold tracking-tight sm:text-4xl'>{copy.whyThisServiceWorksTitle}</h2>
+                      <h2 className='text-3xl font-semibold tracking-tight sm:text-4xl'>
+                        {copy.whyThisServiceWorksTitle}
+                      </h2>
                       <p className='text-muted-foreground text-base leading-7 sm:text-lg'>
                         {copy.whyThisServiceWorksDescription}
                       </p>
@@ -245,13 +237,13 @@ const ServiceDetailPage = async ({
                     {hasHighlights ? (
                       <div className='grid gap-4 md:grid-cols-3'>
                         {service.highlights.map((highlight, index) => (
-                          <Card key={highlight.en} className='border bg-card/80'>
+                          <Card key={highlight.en} className='bg-card/80 border'>
                             <CardContent className='flex h-full flex-col gap-6 pt-6'>
                               <div className='flex items-center justify-between'>
                                 <div className='bg-primary/10 text-primary flex size-11 items-center justify-center rounded-2xl'>
                                   <SparklesIcon className='size-5' />
                                 </div>
-                                <span className='text-muted-foreground text-xs font-medium uppercase tracking-[0.24em]'>
+                                <span className='text-muted-foreground text-xs font-medium tracking-[0.24em] uppercase'>
                                   0{index + 1}
                                 </span>
                               </div>
@@ -277,16 +269,20 @@ const ServiceDetailPage = async ({
             <Badge variant='outline' className='h-auto px-3 py-1 text-sm font-normal'>
               {copy.delivery}
             </Badge>
-            <h2 className='text-3xl font-semibold tracking-tight sm:text-4xl'>{hasPackages ? copy.deliveryPackages : copy.serviceBreakdown}</h2>
+            <h2 className='text-3xl font-semibold tracking-tight sm:text-4xl'>
+              {hasPackages ? copy.deliveryPackages : copy.serviceBreakdown}
+            </h2>
             <p className='text-muted-foreground text-base leading-7 sm:text-lg'>
-              {service.deliveryDescription ? resolveLocalizedText(service.deliveryDescription, lang) : copy.whyThisServiceWorksDescription}
+              {service.deliveryDescription
+                ? resolveLocalizedText(service.deliveryDescription, lang)
+                : copy.whyThisServiceWorksDescription}
             </p>
           </div>
 
           {hasPackages ? (
             <PackageSwitcher packages={service.packages ?? []} lang={lang} copy={copy} />
           ) : service.deliveryPresentation === 'table' ? (
-            <div className='overflow-hidden rounded-[28px] border bg-card/85 backdrop-blur-sm'>
+            <div className='bg-card/85 overflow-hidden rounded-[28px] border backdrop-blur-sm'>
               <DeliveryTable sections={displaySections} lang={lang} copy={copy} />
             </div>
           ) : (
@@ -299,7 +295,7 @@ const ServiceDetailPage = async ({
                     key={section.id}
                     id={section.id}
                     className={cn(
-                      'scroll-mt-28 border bg-card/85 backdrop-blur-sm',
+                      'bg-card/85 scroll-mt-28 border backdrop-blur-sm',
                       index % 2 === 0 ? 'lg:mr-10' : 'lg:ml-10'
                     )}
                   >
@@ -314,8 +310,12 @@ const ServiceDetailPage = async ({
                               {copy.step} {index + 1} · {section.id}
                             </Badge>
                             <div className='space-y-2'>
-                              <CardTitle className='text-2xl sm:text-[1.75rem]'>{resolveLocalizedText(section.title, lang)}</CardTitle>
-                              <CardDescription className='max-w-3xl text-sm leading-6 sm:text-base'>{resolveLocalizedText(section.description, lang)}</CardDescription>
+                              <CardTitle className='text-2xl sm:text-[1.75rem]'>
+                                {resolveLocalizedText(section.title, lang)}
+                              </CardTitle>
+                              <CardDescription className='max-w-3xl text-sm leading-6 sm:text-base'>
+                                {resolveLocalizedText(section.description, lang)}
+                              </CardDescription>
                             </div>
                           </div>
                         </div>
@@ -356,13 +356,13 @@ const ServiceDetailPage = async ({
 
               <div className='grid gap-6 lg:grid-cols-3'>
                 {service.outcomes.map((outcome, index) => (
-                  <Card key={outcome.en} className='border bg-card/80'>
+                  <Card key={outcome.en} className='bg-card/80 border'>
                     <CardContent className='flex h-full flex-col gap-5 pt-6'>
                       <div className='flex items-center justify-between'>
                         <div className='bg-primary/10 text-primary flex size-11 items-center justify-center rounded-2xl'>
                           <TargetIcon className='size-5' />
                         </div>
-                        <span className='text-muted-foreground text-xs font-medium uppercase tracking-[0.24em]'>
+                        <span className='text-muted-foreground text-xs font-medium tracking-[0.24em] uppercase'>
                           0{index + 1}
                         </span>
                       </div>
@@ -375,11 +375,11 @@ const ServiceDetailPage = async ({
               <div className='from-primary/10 via-background to-secondary/10 rounded-[28px] border bg-gradient-to-r p-6 sm:p-8'>
                 <div className='flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between'>
                   <div className='max-w-2xl space-y-2'>
-                    <p className='text-muted-foreground text-xs font-medium uppercase tracking-[0.24em]'>{copy.nextStep}</p>
-                    <h3 className='text-2xl font-semibold tracking-tight sm:text-3xl'>{copy.nextStepTitle}</h3>
-                    <p className='text-muted-foreground text-sm leading-6 sm:text-base'>
-                      {copy.nextStepDescription}
+                    <p className='text-muted-foreground text-xs font-medium tracking-[0.24em] uppercase'>
+                      {copy.nextStep}
                     </p>
+                    <h3 className='text-2xl font-semibold tracking-tight sm:text-3xl'>{copy.nextStepTitle}</h3>
+                    <p className='text-muted-foreground text-sm leading-6 sm:text-base'>{copy.nextStepDescription}</p>
                   </div>
 
                   <PrimaryFlowButton asChild>

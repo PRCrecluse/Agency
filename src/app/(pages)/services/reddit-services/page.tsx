@@ -37,7 +37,11 @@ const servicePackages = [
     name: '品牌社区代运营',
     price: '$1,000 起',
     description: '建立并运营品牌自有 subreddit，沉淀长期可持续的社区讨论与内容资产。',
-    items: ['品牌专属 subreddit 创建与基础配置', '社区规则、版主机制与内容框架设计', '每周帖子与评论运营，持续积累品牌话题与 GEO 信号'],
+    items: [
+      '品牌专属 subreddit 创建与基础配置',
+      '社区规则、版主机制与内容框架设计',
+      '每周帖子与评论运营，持续积累品牌话题与 GEO 信号'
+    ],
     impact: 'Reddit 流量：中 · SEO：中 · GEO：高'
   },
   {
@@ -45,7 +49,11 @@ const servicePackages = [
     name: 'Campaign 事件营销',
     price: '$2,500 起',
     description: '面向目标 subreddit 的批次化内容投放与执行，适合活动、节点传播与集中曝光。',
-    items: ['20 条帖子 / 批次', '客户提供初稿后，我们负责 Reddit 风格润色、排期与发布', '发布后 3 个自然日内未达量可免费补发'],
+    items: [
+      '20 条帖子 / 批次',
+      '客户提供初稿后，我们负责 Reddit 风格润色、排期与发布',
+      '发布后 3 个自然日内未达量可免费补发'
+    ],
     impact: 'Reddit 流量：高 · SEO：中 · GEO：中'
   }
 ]
@@ -53,8 +61,7 @@ const servicePackages = [
 const guaranteeChecklist = [
   {
     title: '3 天存活记录说明',
-    description:
-      '单篇帖子在线满 3 天才会计入数据。'
+    description: '单篇帖子在线满 3 天才会计入数据。'
   },
   {
     title: '交付总量保障',
@@ -72,14 +79,24 @@ const guaranteeChecklist = [
   },
   {
     title: '链接与图片规则',
-    description: '帖子类内容是否包含图片与链接，需由社区规则、内容语境与合作范围共同决定。正文链接属于付费加购项；评论链接是否可用也以实际社区规则为准。'
+    description:
+      '帖子类内容是否包含图片与链接，需由社区规则、内容语境与合作范围共同决定。正文链接属于付费加购项；评论链接是否可用也以实际社区规则为准。'
   }
 ]
 
 const addOns = [
   { title: '浏览量承诺', price: '+20%', description: '如需将浏览量承诺写入 campaign 范围，按对应套餐价格加收 20%。' },
-  { title: '帖内链接', price: '+30%', description: '帖子正文链接并非默认交付。购买加购项后，才会在社区内容或 Campaign 帖子中配置链接，并始终遵循 subreddit 规则。' },
-  { title: '高级存活保障', price: '+30%', description: '在 7 天窗口内提升“有效交付”判定标准：未折叠、账号状态、原帖与评论状态均需满足约定，否则免费补发。' }
+  {
+    title: '帖内链接',
+    price: '+30%',
+    description:
+      '帖子正文链接并非默认交付。购买加购项后，才会在社区内容或 Campaign 帖子中配置链接，并始终遵循 subreddit 规则。'
+  },
+  {
+    title: '高级存活保障',
+    price: '+30%',
+    description: '在 7 天窗口内提升“有效交付”判定标准：未折叠、账号状态、原帖与评论状态均需满足约定，否则免费补发。'
+  }
 ]
 
 const campaignSteps = [
@@ -120,7 +137,7 @@ const RedditServicesPage = () => {
   return (
     <>
       <section className='relative overflow-hidden px-4 py-14 sm:px-6 sm:py-20 lg:px-8 lg:py-24'>
-        <div className='bg-primary/12 absolute -left-24 top-14 size-80 rounded-full blur-3xl' />
+        <div className='bg-primary/12 absolute top-14 -left-24 size-80 rounded-full blur-3xl' />
         <div className='bg-secondary/18 absolute -right-16 bottom-0 size-72 rounded-full blur-3xl' />
 
         <div className='relative mx-auto w-full max-w-7xl'>
@@ -129,9 +146,12 @@ const RedditServicesPage = () => {
               Reddit Services
             </Badge>
             <div className='max-w-4xl space-y-5'>
-              <h1 className='text-4xl font-semibold tracking-tight sm:text-5xl lg:text-6xl'>Reddit 营销服务：套餐、交付与保障</h1>
+              <h1 className='text-4xl font-semibold tracking-tight sm:text-5xl lg:text-6xl'>
+                Reddit 营销服务：套餐、交付与保障
+              </h1>
               <p className='text-muted-foreground max-w-3xl text-lg leading-8'>
-                从精准评论、品牌社区代运营到 Campaign 事件营销，我们将 Reddit 原生内容、社区语境和可追踪交付整合为三种更清晰的服务选择。
+                从精准评论、品牌社区代运营到 Campaign 事件营销，我们将 Reddit
+                原生内容、社区语境和可追踪交付整合为三种更清晰的服务选择。
               </p>
             </div>
             <div className='flex flex-wrap gap-4'>
@@ -163,13 +183,14 @@ const RedditServicesPage = () => {
             </Badge>
             <h2 className='text-3xl font-semibold tracking-tight sm:text-4xl'>按增长目标选择三种核心 Reddit 服务。</h2>
             <p className='text-muted-foreground text-base leading-7 sm:text-lg'>
-              所有价格按单次 campaign 计算，单个 campaign 周期为 1 个月或以上，可根据品牌发布节奏安排为快节奏（约 1 个月）或稳健节奏（2–3 个月）。
+              所有价格按单次 campaign 计算，单个 campaign 周期为 1 个月或以上，可根据品牌发布节奏安排为快节奏（约 1
+              个月）或稳健节奏（2–3 个月）。
             </p>
           </div>
 
           <div className='grid gap-5 md:grid-cols-2 xl:grid-cols-3'>
             {servicePackages.map(servicePackage => (
-              <Card key={servicePackage.name} className='flex h-full flex-col border bg-card/85'>
+              <Card key={servicePackage.name} className='bg-card/85 flex h-full flex-col border'>
                 <CardHeader className='space-y-4'>
                   <div className='flex items-start justify-between gap-4'>
                     <Badge variant='outline' className='h-auto px-3 py-1 text-xs font-medium'>
@@ -191,7 +212,7 @@ const RedditServicesPage = () => {
                       </li>
                     ))}
                   </ul>
-                  <p className='text-muted-foreground mt-auto rounded-xl border bg-background/60 px-3 py-2 text-xs leading-5'>
+                  <p className='text-muted-foreground bg-background/60 mt-auto rounded-xl border px-3 py-2 text-xs leading-5'>
                     {servicePackage.impact}
                   </p>
                 </CardContent>
@@ -212,10 +233,12 @@ const RedditServicesPage = () => {
               </Badge>
               <h2 className='text-3xl font-semibold tracking-tight sm:text-4xl'>20 条帖子 / 批次，$2,500 起。</h2>
               <p className='text-muted-foreground text-base leading-7 sm:text-lg'>
-                Campaign 适合已有内容初稿、需要集中在目标社区完成沟通、润色、排期和发布执行的团队。客户提供初稿，我们完成 Reddit 风格的内容优化与全流程发布跟进。
+                Campaign
+                适合已有内容初稿、需要集中在目标社区完成沟通、润色、排期和发布执行的团队。客户提供初稿，我们完成 Reddit
+                风格的内容优化与全流程发布跟进。
               </p>
               <div className='grid gap-3'>
-                <div className='rounded-2xl border bg-card/80 p-4'>
+                <div className='bg-card/80 rounded-2xl border p-4'>
                   <p className='text-muted-foreground text-xs'>标准批次</p>
                   <p className='mt-1 text-lg font-semibold'>20 条帖子</p>
                 </div>
@@ -224,7 +247,7 @@ const RedditServicesPage = () => {
 
             <div className='grid gap-4'>
               {campaignSteps.map(([title, description], index) => (
-                <div key={title} className='flex gap-4 rounded-2xl border bg-card/80 p-5'>
+                <div key={title} className='bg-card/80 flex gap-4 rounded-2xl border p-5'>
                   <span className='bg-primary/10 text-primary flex size-10 shrink-0 items-center justify-center rounded-xl text-sm font-semibold'>
                     {String(index + 1).padStart(2, '0')}
                   </span>
@@ -252,7 +275,7 @@ const RedditServicesPage = () => {
             <h2 className='text-3xl font-semibold tracking-tight sm:text-4xl'>我们的服务承诺与保障</h2>
           </div>
 
-          <Card className='border bg-card/85'>
+          <Card className='bg-card/85 border'>
             <CardContent className='p-0'>
               <ul className='divide-border divide-y'>
                 {guaranteeChecklist.map(item => (
@@ -262,7 +285,9 @@ const RedditServicesPage = () => {
                     </div>
                     <div className='space-y-1.5'>
                       <h3 className='text-base font-semibold sm:text-lg'>{item.title}</h3>
-                      <p className='text-muted-foreground whitespace-pre-line text-sm leading-6 sm:text-[15px]'>{item.description}</p>
+                      <p className='text-muted-foreground text-sm leading-6 whitespace-pre-line sm:text-[15px]'>
+                        {item.description}
+                      </p>
                     </div>
                   </li>
                 ))}
@@ -280,20 +305,26 @@ const RedditServicesPage = () => {
             <Badge variant='outline' className='h-auto px-3 py-1 text-sm font-normal'>
               加购与付款方式
             </Badge>
-            <h2 className='text-3xl font-semibold tracking-tight sm:text-4xl'>在执行前明确需要的保障等级与协作节奏。</h2>
+            <h2 className='text-3xl font-semibold tracking-tight sm:text-4xl'>
+              在执行前明确需要的保障等级与协作节奏。
+            </h2>
             <p className='text-muted-foreground text-base leading-7'>
-              支持两种里程碑付款：签约支付 70%，campaign 结束验收后支付 30%；或签约支付 50%，交付量达到 50%（以 Dashboard 数据为准）时支付剩余 50%。如当期款项未到账，后续交付可暂停并在恢复后顺延。
+              支持两种里程碑付款：签约支付 70%，campaign 结束验收后支付 30%；或签约支付 50%，交付量达到 50%（以
+              Dashboard 数据为准）时支付剩余 50%。如当期款项未到账，后续交付可暂停并在恢复后顺延。
             </p>
-            <div className='rounded-2xl border bg-card/80 p-5'>
+            <div className='bg-card/80 rounded-2xl border p-5'>
               <div className='flex items-start gap-3'>
                 <CircleDollarSignIcon className='text-primary mt-0.5 size-5 shrink-0' />
-                <p className='text-sm leading-6'>服务价格与加购项均在 campaign 确认前写入合作范围；需要定制内容创作、额外 PR 或更高保障等级时，可在策略沟通中单独确定。</p>
+                <p className='text-sm leading-6'>
+                  服务价格与加购项均在 campaign 确认前写入合作范围；需要定制内容创作、额外 PR
+                  或更高保障等级时，可在策略沟通中单独确定。
+                </p>
               </div>
             </div>
           </div>
           <div className='grid gap-4'>
             {addOns.map(addOn => (
-              <Card key={addOn.title} className='border bg-card/85'>
+              <Card key={addOn.title} className='bg-card/85 border'>
                 <CardContent className='flex gap-4 p-5'>
                   <div className='bg-primary/10 text-primary flex size-10 shrink-0 items-center justify-center rounded-xl'>
                     <SparklesIcon className='size-4' />
@@ -316,27 +347,22 @@ const RedditServicesPage = () => {
 
       <SectionSeparator />
 
-      <FAQ
-        faqItems={redditFaqItems}
-        eyebrow='Reddit FAQ'
-        title='常见问题'
-        description=''
-        visualVariant='compact'
-      />
+      <FAQ faqItems={redditFaqItems} eyebrow='Reddit FAQ' title='常见问题' description='' visualVariant='compact' />
 
       <SectionSeparator />
 
       <section className='px-4 py-14 sm:px-6 sm:py-20 lg:px-8'>
-        <Card className='mx-auto max-w-7xl overflow-hidden border bg-card/85'>
+        <Card className='bg-card/85 mx-auto max-w-7xl overflow-hidden border'>
           <CardContent className='relative grid gap-8 p-8 sm:p-10 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-center lg:p-12'>
-            <div className='bg-primary/10 absolute -right-20 -top-20 size-64 rounded-full blur-3xl' />
+            <div className='bg-primary/10 absolute -top-20 -right-20 size-64 rounded-full blur-3xl' />
             <div className='relative max-w-2xl space-y-4'>
               <div className='bg-primary/10 text-primary flex size-11 items-center justify-center rounded-2xl'>
                 <HeartHandshakeIcon className='size-5' />
               </div>
               <h2 className='text-3xl font-semibold tracking-tight'>想确认哪种 Reddit 组合更适合当前目标？</h2>
               <p className='text-muted-foreground text-base leading-7'>
-                我们可以围绕目标用户、产品成熟度、内容素材与风险偏好，推荐从精准评论、品牌社区代运营或 Campaign 中优先启动的一种。
+                我们可以围绕目标用户、产品成熟度、内容素材与风险偏好，推荐从精准评论、品牌社区代运营或 Campaign
+                中优先启动的一种。
               </p>
             </div>
             <PrimaryFlowButton asChild>
