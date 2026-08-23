@@ -6,7 +6,9 @@ import {
   ChartScatterIcon,
   ChartPieIcon,
   GitPullRequestIcon,
-  SparklesIcon
+  SparklesIcon,
+  LinkIcon,
+  SearchCheckIcon
 } from 'lucide-react'
 
 import Header from '@/components/layout/header'
@@ -46,6 +48,18 @@ const navigationData: Navigation[] = [
             href: '/services/seo-services/programmatic-seo',
             description: 'Scale high-intent landing pages with structured, reusable templates.',
             icon: <ChartScatterIcon className='size-4' />
+          },
+          {
+            title: 'Link Building',
+            href: '/services/seo-services/link-building',
+            description: 'Earn relevant authority through editorial outreach, digital PR, and linkable assets.',
+            icon: <LinkIcon className='size-4' />
+          },
+          {
+            title: 'Keyword Research',
+            href: '/services/seo-services/keyword-research',
+            description: 'Map search intent, topic clusters, and priority keywords to the right pages.',
+            icon: <SearchCheckIcon className='size-4' />
           }
         ]
       },
