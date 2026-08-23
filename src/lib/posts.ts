@@ -2,6 +2,7 @@ import fs from 'fs' // Comment this line if using remote fetching
 import path from 'path' // Comment this line if using remote fetching
 
 import matter from 'gray-matter'
+import { getBlogTopicLabel, normalizeBlogTopic, type BlogTopicId } from '@/lib/blog-topics'
 
 export type Post = {
   metadata: PostMetadata
@@ -12,6 +13,7 @@ export type PostMetadata = {
   slug: string
   title?: string
   description?: string
+  topic?: BlogTopicId
   category?: string
   publishedAt?: string
   author?: {
@@ -48,8 +50,17 @@ export async function getPostBySlug(slug: string, locale: PostLocale = 'en'): Pr
     // const fileContent = await res.text()
 
     const { data, content } = matter(fileContent)
+    const topic = normalizeBlogTopic(data.topic ?? data.category)
 
-    return { metadata: { ...data, slug }, content }
+    return {
+      metadata: {
+        ...data,
+        slug,
+        topic,
+        category: getBlogTopicLabel(topic) ?? data.category
+      },
+      content
+    }
   } catch {
     return null
   }
@@ -105,8 +116,14 @@ export async function getPostMetadata(filepath: string, locale: PostLocale = 'en
     // const fileContent = await res.text()
 
     const { data } = matter(fileContent)
+    const topic = normalizeBlogTopic(data.topic ?? data.category)
 
-    return { ...data, slug }
+    return {
+      ...data,
+      slug,
+      topic,
+      category: getBlogTopicLabel(topic) ?? data.category
+    }
   } catch (error) {
     console.error(`Error fetching metadata for ${filepath}:`, error)
 

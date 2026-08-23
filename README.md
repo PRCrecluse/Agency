@@ -48,6 +48,15 @@
 
 ---
 
+## Meridian Ops
+
+### IndexNow
+
+- Verification key URL: `https://withmeridian.org/b2634002-6456-49b3-87a3-0e81278ee6a9.txt`
+- Submit the whole sitemap: `pnpm indexnow:submit`
+- Submit a single URL: `pnpm indexnow:submit -- --url https://withmeridian.org/blog/your-slug`
+- Preview the payload without sending it: `pnpm indexnow:submit -- --dry-run`
+
 ## Table of Contents 📋
 
 - [Table of Contents 📋](#table-of-contents-)

@@ -116,8 +116,10 @@ const BlogDetailsPage = async ({ params }: { params: Promise<{ slug: string }> }
   const previousPost = currentPostIndex > 0 ? allPosts[currentPostIndex - 1] : null
   const nextPost = currentPostIndex < allPosts.length - 1 ? allPosts[currentPostIndex + 1] : null
 
-  const sameCategoryPosts = allPosts.filter(p => p.category === metadata.category && p.slug !== slug)
-  const otherCategoryPosts = allPosts.filter(p => p.category !== metadata.category && p.slug !== slug)
+  const sameCategoryPosts = metadata.topic
+    ? allPosts.filter(p => p.topic === metadata.topic && p.slug !== slug)
+    : []
+  const otherCategoryPosts = allPosts.filter(p => p.topic !== metadata.topic && p.slug !== slug)
   const relatedPosts = [...sameCategoryPosts, ...otherCategoryPosts].slice(0, 3)
 
   // Extract headings for TOC

@@ -14,6 +14,7 @@ import type { PostMetadata } from '@/lib/posts'
 import { ScrollArea, ScrollBar } from '@/components/ui/scroll-area'
 import { SecondaryFlowButton } from '@/components/ui/flow-button'
 import { MotionPreset } from '@/components/ui/motion-preset'
+import { getOrderedBlogTopicLabels } from '@/lib/blog-topics'
 
 const BlogGrid = ({
   posts,
@@ -99,7 +100,7 @@ const BlogSection = ({
   const [searchQuery, setSearchQuery] = useState('')
 
   const filterCategories = Array.from(new Set(posts.map(post => post.category))).filter(Boolean) as string[]
-  const categories = [allLabel, ...filterCategories]
+  const categories = [allLabel, ...getOrderedBlogTopicLabels(filterCategories)]
 
   const handleTabChange = (tab: string) => {
     setSelectedTab(tab)

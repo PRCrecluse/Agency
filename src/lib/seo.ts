@@ -18,11 +18,17 @@ const resolveSiteUrl = () => {
     return normalizeSiteUrl(`https://${vercelProductionUrl}`)
   }
 
-  if (process.env.NODE_ENV === 'production') {
-    return PRODUCTION_SITE_URL
+  const vercelUrl = process.env.VERCEL_URL
+
+  if (vercelUrl) {
+    return normalizeSiteUrl(`https://${vercelUrl}`)
   }
 
-  return LOCAL_SITE_URL
+  if (process.env.NODE_ENV === 'development') {
+    return LOCAL_SITE_URL
+  }
+
+  return PRODUCTION_SITE_URL
 }
 
 export const siteUrl = resolveSiteUrl()
