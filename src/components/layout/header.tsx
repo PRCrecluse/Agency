@@ -16,8 +16,7 @@ import { HeaderNavigation, HeaderNavigationSmallScreen, type Navigation } from '
 import FlowLogo from '@/assets/svg/flow-logo'
 
 import type { QueryLang } from '@/lib/language'
-import { withQueryLang } from '@/lib/language'
-import { resolveLanguageFromLocation } from '@/lib/service-localization'
+import { getQueryLang, withQueryLang } from '@/lib/language'
 import { cn } from '@/lib/utils'
 
 type HeaderProps = {
@@ -48,10 +47,7 @@ const Header = ({ navigationData, className }: HeaderProps) => {
 
   useEffect(() => {
     const syncCurrentLang = () => {
-      const nextLang = resolveLanguageFromLocation({
-        pathname: window.location.pathname,
-        search: window.location.search
-      })
+      const nextLang = getQueryLang(new URLSearchParams(window.location.search).get('lang'))
 
       setCurrentLang(previousLang => (previousLang === nextLang ? previousLang : nextLang))
     }

@@ -43,6 +43,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params
 
   const post = await getPostBySlug(slug)
+  const translatedPost = await getPostBySlug(slug, 'zh')
 
   if (!post) {
     return {}
@@ -59,6 +60,18 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       path: `/blog/${metadata.slug}`,
       keywords: metadata.keywords
     }),
+    alternates: translatedPost
+      ? {
+          canonical: `/blog/${metadata.slug}`,
+          languages: {
+            'en-US': `/blog/${metadata.slug}`,
+            'zh-CN': `/zh/blog/${metadata.slug}`,
+            'x-default': `/blog/${metadata.slug}`
+          }
+        }
+      : {
+          canonical: `/blog/${metadata.slug}`
+        },
     openGraph: {
       title: `${postTitle} | Meridian`,
       description: postDescription,

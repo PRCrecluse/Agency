@@ -23,7 +23,6 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { PrimaryFlowButton, SecondaryFlowButton } from '@/components/ui/flow-button'
 import type { SpecializedServiceLang, SpecializedServicePageContent } from '@/content/specialized-service-pages'
 import { absoluteUrl, createFAQSchema, createWebPageSchema } from '@/lib/seo'
-import { getLocalizedServicePath } from '@/lib/service-localization'
 
 const moduleIcons = [SearchIcon, Layers3Icon, SparklesIcon, WrenchIcon, FileSearchIcon]
 const processIcons = [TargetIcon, SearchIcon, ListChecksIcon, MessageSquareMoreIcon, SparklesIcon]
@@ -35,18 +34,15 @@ type SpecializedServicePageProps = {
 }
 
 const SpecializedServicePage = ({ lang, path, copy }: SpecializedServicePageProps) => {
-  const currentPath = getLocalizedServicePath(path, lang)
-
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
       {
         ...createWebPageSchema({
-          path: currentPath,
+          path,
           title: copy.metadata.title,
           description: copy.metadata.description
-        }),
-        inLanguage: lang === 'zh' ? 'zh-CN' : 'en-US'
+        })
       },
       {
         '@type': 'Service',
@@ -54,8 +50,7 @@ const SpecializedServicePage = ({ lang, path, copy }: SpecializedServicePageProp
         serviceType: copy.serviceType,
         description: copy.metadata.description,
         areaServed: 'Global',
-        url: absoluteUrl(currentPath),
-        inLanguage: lang === 'zh' ? 'zh-CN' : 'en-US',
+        url: absoluteUrl(path),
         provider: {
           '@type': 'Organization',
           name: 'Meridian'

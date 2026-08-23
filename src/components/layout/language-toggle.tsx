@@ -7,8 +7,7 @@ import { usePathname, useRouter } from 'next/navigation'
 
 import { cn } from '@/lib/utils'
 import type { QueryLang } from '@/lib/language'
-import { withQueryLang } from '@/lib/language'
-import { isLocalizedPath, resolveLanguageFromLocation } from '@/lib/service-localization'
+import { getQueryLang, withQueryLang } from '@/lib/language'
 
 const languageOptions: { value: QueryLang; label: string; shortLabel: string }[] = [
   { value: 'en', label: 'English', shortLabel: 'EN' },
@@ -18,7 +17,6 @@ const languageOptions: { value: QueryLang; label: string; shortLabel: string }[]
 const LanguageToggle = () => {
   const pathname = usePathname()
   const router = useRouter()
-  const isLocalizedPage = isLocalizedPath(pathname)
   const containerRef = useRef<HTMLDivElement>(null)
   const [currentHref, setCurrentHref] = useState(pathname)
   const [currentLang, setCurrentLang] = useState<QueryLang>('en')
@@ -42,10 +40,9 @@ const LanguageToggle = () => {
     const syncLanguageState = () => {
       const search = window.location.search
       const nextHref = `${pathname}${search}${hash}`
-      const nextLang = resolveLanguageFromLocation({
-        pathname: window.location.pathname,
-        search
-      })
+      const nextLang = pathname.startsWith('/zh/')
+        ? 'zh'
+        : getQueryLang(new URLSearchParams(search).get('lang'))
 
       setCurrentHref(previousHref => (previousHref === nextHref ? previousHref : nextHref))
       setCurrentLang(previousLang => (previousLang === nextLang ? previousLang : nextLang))
@@ -108,10 +105,6 @@ const LanguageToggle = () => {
     setCurrentHref(nextHref)
     setCurrentLang(nextLang)
     router.push(nextHref, { scroll: false })
-  }
-
-  if (!isLocalizedPage) {
-    return null
   }
 
   return (

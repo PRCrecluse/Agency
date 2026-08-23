@@ -9,17 +9,17 @@ import { PrimaryFlowButton } from '@/components/ui/flow-button'
 import SectionSeparator from '@/components/section-separator'
 import { resolveLocalizedText, servicePageCopy, servicePages, type ServiceLang } from '@/content/services'
 import { absoluteUrl, buildMetadata, createWebPageSchema } from '@/lib/seo'
-import { buildServiceAlternates, getLocalizedServicePath } from '@/lib/service-localization'
 
 export const metadata: Metadata = buildMetadata({
   title: 'SEO, Reddit & GEO Services | Meridian',
   description: 'Explore Meridian services across technical SEO, programmatic SEO, Reddit growth, GEO, and AI-native organic demand.',
   path: '/services',
-  keywords: ['seo services', 'reddit marketing services', 'geo services', 'technical seo agency'],
-  alternates: buildServiceAlternates('/services')
+  keywords: ['seo services', 'reddit marketing services', 'geo services', 'technical seo agency']
 })
 
 const getLang = (value?: string): ServiceLang => (value?.toLowerCase().startsWith('zh') ? 'zh' : 'en')
+
+const withLang = (path: string, lang: ServiceLang) => `${path}?lang=${lang}`
 
 const ServicesPage = async ({
   searchParams
@@ -29,22 +29,17 @@ const ServicesPage = async ({
   const resolvedSearchParams = await searchParams
   const lang = getLang(resolvedSearchParams?.lang)
   const copy = servicePageCopy[lang]
-  const currentPath = getLocalizedServicePath('/services', lang)
 
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
       {
         ...createWebPageSchema({
-          path: currentPath,
-          title: lang === 'zh' ? 'Meridian 增长服务 | SEO、Reddit 与 GEO' : 'SEO, Reddit & GEO Services | Meridian',
-          description:
-            lang === 'zh'
-              ? '查看 Meridian 的增长服务，包括技术 SEO、程序化 SEO、Reddit 增长、GEO 与 AI 原生自然增长体系。'
-              : 'Explore Meridian services across technical SEO, programmatic SEO, Reddit growth, GEO, and AI-native organic demand.'
+          path: '/services',
+          title: 'SEO, Reddit & GEO Services | Meridian',
+          description: 'Explore Meridian services across technical SEO, programmatic SEO, Reddit growth, GEO, and AI-native organic demand.'
         }),
-        '@type': 'CollectionPage',
-        inLanguage: lang === 'zh' ? 'zh-CN' : 'en-US'
+        '@type': 'CollectionPage'
       },
       {
         '@type': 'ItemList',
@@ -52,7 +47,7 @@ const ServicesPage = async ({
           '@type': 'ListItem',
           position: index + 1,
           name: resolveLocalizedText(service.title, lang),
-          url: absoluteUrl(getLocalizedServicePath(`/services/${service.slug}`, lang))
+          url: absoluteUrl(`/services/${service.slug}`)
         }))
       }
     ]
@@ -104,7 +99,7 @@ const ServicesPage = async ({
               </CardContent>
               <CardFooter>
                 <PrimaryFlowButton asChild>
-                  <Link href={getLocalizedServicePath(`/services/${service.slug}`, lang)}>
+                  <Link href={withLang(`/services/${service.slug}`, lang)}>
                     {copy.viewPage}
                     <ArrowRightIcon />
                   </Link>

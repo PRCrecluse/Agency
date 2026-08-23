@@ -7,13 +7,23 @@ import BlogSection from '@/components/blog/blog-section/blog-section'
 import { getPosts } from '@/lib/posts'
 import { buildMetadata, createOrganizationSchema, createWebPageSchema, createWebsiteSchema } from '@/lib/seo'
 
-export const metadata: Metadata = buildMetadata({
-  title: 'SaaS SEO, Reddit Growth & GEO Insights | Meridian',
-  description:
-    'Read Meridian insights on SaaS SEO, technical SEO, programmatic SEO, Reddit growth, GEO, and AI-native demand generation.',
-  path: '/blog',
-  keywords: ['saas seo blog', 'reddit growth blog', 'geo insights', 'technical seo articles']
-})
+export const metadata: Metadata = {
+  ...buildMetadata({
+    title: 'SaaS SEO, Reddit Growth & GEO Insights | Meridian',
+    description:
+      'Read Meridian insights on SaaS SEO, technical SEO, programmatic SEO, Reddit growth, GEO, and AI-native demand generation.',
+    path: '/blog',
+    keywords: ['saas seo blog', 'reddit growth blog', 'geo insights', 'technical seo articles']
+  }),
+  alternates: {
+    canonical: '/blog',
+    languages: {
+      'en-US': '/blog',
+      'zh-CN': '/zh/blog',
+      'x-default': '/blog'
+    }
+  }
+}
 
 const jsonLd = {
   '@context': 'https://schema.org',

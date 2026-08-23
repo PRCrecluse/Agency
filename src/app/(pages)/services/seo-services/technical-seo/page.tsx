@@ -27,7 +27,6 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { PrimaryFlowButton, SecondaryFlowButton } from '@/components/ui/flow-button'
 import { getTechnicalSEOLang, technicalSEOCopy } from '@/content/technical-seo'
 import { absoluteUrl, createFAQSchema, createWebPageSchema } from '@/lib/seo'
-import { buildServiceAlternates, getLocalizedServicePath } from '@/lib/service-localization'
 
 export async function generateMetadata({
   searchParams
@@ -42,7 +41,9 @@ export async function generateMetadata({
     title: metadata.title,
     description: metadata.description,
     keywords: [...metadata.keywords],
-    alternates: buildServiceAlternates('/services/seo-services/technical-seo')
+    alternates: {
+      canonical: '/services/seo-services/technical-seo'
+    }
   }
 }
 
@@ -55,18 +56,16 @@ const TechnicalSEOPage = async ({ searchParams }: { searchParams?: Promise<{ lan
   const discoveryIcons = [SearchIcon, Code2Icon, Layers3Icon, MonitorCheckIcon]
   const dashboardStatusColors = ['bg-emerald-400', 'bg-amber-300', 'bg-sky-300']
   const matrixColors = ['bg-primary/12', 'bg-secondary/30', 'bg-muted/75', 'bg-muted/45']
-  const currentPath = getLocalizedServicePath('/services/seo-services/technical-seo', lang)
 
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
       {
         ...createWebPageSchema({
-          path: currentPath,
-          title: copy.metadata.title,
-          description: copy.metadata.description
-        }),
-        inLanguage: lang === 'zh' ? 'zh-CN' : 'en-US'
+          path: '/services/seo-services/technical-seo',
+          title: technicalSEOCopy.en.metadata.title,
+          description: technicalSEOCopy.en.metadata.description
+        })
       },
       {
         '@type': 'Service',
@@ -74,8 +73,7 @@ const TechnicalSEOPage = async ({ searchParams }: { searchParams?: Promise<{ lan
         serviceType: 'Technical SEO',
         description: copy.metadata.description,
         areaServed: 'Global',
-        url: absoluteUrl(currentPath),
-        inLanguage: lang === 'zh' ? 'zh-CN' : 'en-US',
+        url: absoluteUrl('/services/seo-services/technical-seo'),
         provider: {
           '@type': 'Organization',
           name: 'Meridian'

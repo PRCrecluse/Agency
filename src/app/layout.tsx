@@ -6,6 +6,7 @@ import Script from 'next/script'
 
 import { ThemeProvider } from '@/components/theme-provider'
 import { TooltipProvider } from '@/components/ui/tooltip'
+import { DATAFAST_DOMAIN, DATAFAST_WEBSITE_ID } from '@/lib/analytics/datafast'
 
 import { defaultOgImage, siteDescription, siteKeywords, siteTitle, siteUrl } from '@/lib/seo'
 import { cn } from '@/lib/utils'
@@ -98,8 +99,8 @@ const RootLayout = ({ children }: Readonly<{ children: ReactNode }>) => {
         </ThemeProvider>
         <Script
           src='https://datafa.st/js/script.js'
-          data-website-id='dfid_8CcvxzPKw0aMUT9d8p8yS'
-          data-domain='withmeridian.org'
+          data-website-id={DATAFAST_WEBSITE_ID}
+          data-domain={DATAFAST_DOMAIN}
           strategy='afterInteractive'
         />
       </body>

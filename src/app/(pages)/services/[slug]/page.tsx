@@ -26,15 +26,13 @@ import SectionSeparator from '@/components/section-separator'
 import { logos } from '@/assets/data/trusted-brands'
 import { getServiceBySlug, resolveLocalizedText, servicePageCopy, serviceSlugs, type ServiceLang } from '@/content/services'
 import { absoluteUrl, createBreadcrumbSchema, createWebPageSchema } from '@/lib/seo'
-import { buildServiceAlternates, getLocalizedServicePath } from '@/lib/service-localization'
 import { cn } from '@/lib/utils'
 
 const trustedBrandServiceSlugs = new Set(['seo-services', 'geo-services'])
 
 const getLang = (value?: string): ServiceLang => (value?.toLowerCase().startsWith('zh') ? 'zh' : 'en')
 
-const withLang = (path: string, lang: ServiceLang, hash?: string) =>
-  `${getLocalizedServicePath(path, lang)}${hash ? `#${hash}` : ''}`
+const withLang = (path: string, lang: ServiceLang, hash?: string) => `${path}?lang=${lang}${hash ? `#${hash}` : ''}`
 
 const getTrustedBrandsTitle = (lang: ServiceLang) =>
   lang === 'zh'
@@ -91,7 +89,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     title: `${service.title.en} | Meridian`,
     description: service.description.en,
     keywords: [...service.keywords.map(keyword => keyword.en), ...service.keywords.map(keyword => keyword.zh)],
-    alternates: buildServiceAlternates(`/services/${service.slug}`)
+    alternates: {
+      canonical: `/services/${service.slug}`
+    }
   }
 }
 
@@ -126,33 +126,29 @@ const ServiceDetailPage = async ({
   const renderOutcomes = !service.hideOutcomes
   const showTrustedBrandsSection = trustedBrandServiceSlugs.has(service.slug)
   const showOverviewSection = hasCustomIncludes || hasHighlights
-  const currentPath = getLocalizedServicePath(`/services/${service.slug}`, lang)
-  const currentServicesPath = getLocalizedServicePath('/services', lang)
 
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
       {
         ...createWebPageSchema({
-          path: currentPath,
-          title: lang === 'zh' ? `${service.title.zh} | Meridian` : `${service.title.en} | Meridian`,
-          description: resolveLocalizedText(service.description, lang)
-        }),
-        inLanguage: lang === 'zh' ? 'zh-CN' : 'en-US'
+          path: `/services/${service.slug}`,
+          title: `${service.title.en} | Meridian`,
+          description: service.description.en
+        })
       },
       createBreadcrumbSchema([
-        { name: copy.home, path: lang === 'zh' ? currentServicesPath : '/' },
-        { name: copy.services, path: currentServicesPath },
-        { name: resolveLocalizedText(service.title, lang), path: currentPath }
+        { name: copy.home, path: '/' },
+        { name: copy.services, path: '/services' },
+        { name: resolveLocalizedText(service.title, lang), path: `/services/${service.slug}` }
       ]),
       {
         '@type': 'Service',
         name: resolveLocalizedText(service.title, lang),
         description: resolveLocalizedText(service.description, lang),
         serviceType: resolveLocalizedText(service.category, lang),
-        url: absoluteUrl(currentPath),
-        areaServed: 'Global',
-        inLanguage: lang === 'zh' ? 'zh-CN' : 'en-US'
+        url: absoluteUrl(`/services/${service.slug}`),
+        areaServed: 'Global'
       }
     ]
   }

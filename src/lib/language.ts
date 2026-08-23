@@ -1,6 +1,7 @@
 export type QueryLang = 'en' | 'zh'
 
 const externalHrefPattern = /^(?:[a-z][a-z\d+\-.]*:)?\/\//i
+const translatedBlogSlugs = new Set(['b2b-ai-saas-b2c-seo-url-strategy'])
 
 export const getQueryLang = (value?: string | null): QueryLang => (value?.toLowerCase().startsWith('zh') ? 'zh' : 'en')
 
@@ -15,19 +16,21 @@ export const withQueryLang = (href: string, lang: QueryLang) => {
 
   searchParams.delete('lang')
 
-  const normalizedPathname =
-    pathname.startsWith('/zh/services') ||
-    pathname.startsWith('/services') ||
-    pathname.startsWith('/zh/blog') ||
-    pathname.startsWith('/blog')
-      ? lang === 'zh'
-        ? pathname.startsWith('/zh/')
-          ? pathname
-          : `/zh${pathname}`
-        : pathname.replace(/^\/zh(?=\/(?:services|blog))/, '')
-      : pathname
+  let localizedPathname = pathname
+
+  if (/^\/(?:zh\/)?(?:services|blog)(?:\/|$)/.test(pathname)) {
+    localizedPathname = lang === 'zh' ? (pathname.startsWith('/zh/') ? pathname : `/zh${pathname}`) : pathname.replace(/^\/zh/, '')
+  }
+
+  if (lang === 'zh' && pathname.startsWith('/blog/')) {
+    const slug = pathname.slice('/blog/'.length).replace(/\/$/, '')
+
+    if (!translatedBlogSlugs.has(slug)) {
+      localizedPathname = '/zh/blog'
+    }
+  }
 
   const serializedQuery = searchParams.toString()
 
-  return `${normalizedPathname}${serializedQuery ? `?${serializedQuery}` : ''}${hash ? `#${hash}` : ''}`
+  return `${localizedPathname}${serializedQuery ? `?${serializedQuery}` : ''}${hash ? `#${hash}` : ''}`
 }

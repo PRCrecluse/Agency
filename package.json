@@ -15,6 +15,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@datafast/ai-crawl": "^1.0.9",
     "class-variance-authority": "0.7.1",
     "clsx": "2.1.1",
     "gray-matter": "4.0.3",

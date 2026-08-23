@@ -7,6 +7,8 @@ import { absoluteUrl } from '@/lib/seo'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const posts = await getPosts()
+  const zhPosts = await getPosts(undefined, 'zh')
+  const zhPostSlugs = new Set(zhPosts.map(post => post.slug))
   const now = new Date()
 
   return [
@@ -26,7 +28,27 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       url: absoluteUrl('/blog'),
       lastModified: now,
       changeFrequency: 'weekly',
-      priority: 0.8
+      priority: 0.8,
+      alternates: {
+        languages: {
+          en: absoluteUrl('/blog'),
+          'zh-CN': absoluteUrl('/zh/blog'),
+          'x-default': absoluteUrl('/blog')
+        }
+      }
+    },
+    {
+      url: absoluteUrl('/zh/blog'),
+      lastModified: now,
+      changeFrequency: 'weekly',
+      priority: 0.8,
+      alternates: {
+        languages: {
+          en: absoluteUrl('/blog'),
+          'zh-CN': absoluteUrl('/zh/blog'),
+          'x-default': absoluteUrl('/blog')
+        }
+      }
     },
     {
       url: absoluteUrl('/services'),
@@ -106,11 +128,38 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: 'monthly' as const,
       priority: 0.6
     })),
-    ...posts.map(post => ({
-      url: absoluteUrl(`/blog/${post.slug}`),
+    ...posts.map(post => {
+      const englishPath = `/blog/${post.slug}`
+      const chinesePath = `/zh/blog/${post.slug}`
+
+      return {
+        url: absoluteUrl(englishPath),
+        lastModified: post.publishedAt ? new Date(post.publishedAt) : now,
+        changeFrequency: 'monthly' as const,
+        priority: 0.7,
+        alternates: zhPostSlugs.has(post.slug)
+          ? {
+              languages: {
+                en: absoluteUrl(englishPath),
+                'zh-CN': absoluteUrl(chinesePath),
+                'x-default': absoluteUrl(englishPath)
+              }
+            }
+          : undefined
+      }
+    }),
+    ...zhPosts.map(post => ({
+      url: absoluteUrl(`/zh/blog/${post.slug}`),
       lastModified: post.publishedAt ? new Date(post.publishedAt) : now,
       changeFrequency: 'monthly' as const,
-      priority: 0.7
+      priority: 0.7,
+      alternates: {
+        languages: {
+          en: absoluteUrl(`/blog/${post.slug}`),
+          'zh-CN': absoluteUrl(`/zh/blog/${post.slug}`),
+          'x-default': absoluteUrl(`/blog/${post.slug}`)
+        }
+      }
     }))
   ]
 }

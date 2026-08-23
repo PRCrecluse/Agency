@@ -12,7 +12,30 @@ import { Card, CardContent, CardDescription, CardTitle } from '@/components/ui/c
 
 import type { PostMetadata } from '@/lib/posts'
 
-const HeroSection = ({ posts }: { posts: PostMetadata[] }) => {
+const HeroSection = ({
+  posts,
+  basePath = '/blog',
+  locale = 'en-US',
+  copy
+}: {
+  posts: PostMetadata[]
+  basePath?: string
+  locale?: string
+  copy?: {
+    badge: string
+    title: string
+    description: string
+    emailPlaceholder: string
+    subscribe: string
+  }
+}) => {
+  const text = copy ?? {
+    badge: 'SEO, Reddit & AI search insights',
+    title: 'Practical Growth Notes for SaaS and AI Teams',
+    description: 'Research, frameworks, and field notes on building organic demand across search, communities, and AI-generated answers.',
+    emailPlaceholder: 'Your email',
+    subscribe: 'Subscribe'
+  }
   return (
     <section id='home' className='relative px-4 py-8 sm:px-6 sm:py-16 lg:px-8 lg:py-24'>
       <BackgroundRippleEffect rows={10} />
@@ -27,7 +50,7 @@ const HeroSection = ({ posts }: { posts: PostMetadata[] }) => {
             className='z-10'
           >
             <Badge variant='outline' className='bg-background h-auto text-sm font-normal'>
-              Trusted by 5,000+ growing businesses
+              {text.badge}
             </Badge>
           </MotionPreset>
 
@@ -40,7 +63,7 @@ const HeroSection = ({ posts }: { posts: PostMetadata[] }) => {
             component='h1'
             className='z-10 max-w-2xl text-center text-3xl font-semibold md:text-4xl lg:text-5xl lg:leading-[1.29167]'
           >
-            Insights That Power Smarter Product Growth
+            {text.title}
           </MotionPreset>
 
           <MotionPreset
@@ -52,8 +75,7 @@ const HeroSection = ({ posts }: { posts: PostMetadata[] }) => {
             component='p'
             className='text-muted-foreground z-10 max-w-4xl text-center text-xl'
           >
-            From product discovery to revenue metrics, explore actionable insights, proven strategies, and real-world
-            frameworks to help you build, measure, and scale successful products with confidence.
+            {text.description}
           </MotionPreset>
 
           <MotionPreset
@@ -66,11 +88,11 @@ const HeroSection = ({ posts }: { posts: PostMetadata[] }) => {
           >
             <Input
               type='email'
-              placeholder='Your email'
+              placeholder={text.emailPlaceholder}
               className='bg-background dark:bg-background h-10 sm:w-72'
               required
             />
-            <PrimaryFlowButton className='shrink-0'>Subscribe</PrimaryFlowButton>
+            <PrimaryFlowButton className='shrink-0'>{text.subscribe}</PrimaryFlowButton>
           </MotionPreset>
         </div>
 
@@ -83,7 +105,7 @@ const HeroSection = ({ posts }: { posts: PostMetadata[] }) => {
           className='relative z-10 grid grid-cols-1 gap-4 lg:grid-cols-2'
         >
           {posts.slice(0, 1).map(post => (
-            <Link key={post.slug} href={`/blog/${post.slug}`}>
+            <Link key={post.slug} href={`${basePath}/${post.slug}`}>
               <Card className='group h-full shadow-none'>
                 <CardContent>
                   <div className='overflow-hidden rounded-md'>
@@ -97,7 +119,7 @@ const HeroSection = ({ posts }: { posts: PostMetadata[] }) => {
                 <CardContent className='flex items-center justify-between'>
                   <div className='text-muted-foreground flex items-center gap-1.5 text-base'>
                     <CalendarDaysIcon className='size-4.5' />
-                    {new Date(post.publishedAt ?? '').toLocaleDateString('en-US', {
+                    {new Date(post.publishedAt ?? '').toLocaleDateString(locale, {
                       year: 'numeric',
                       month: 'long',
                       day: '2-digit'
@@ -118,14 +140,14 @@ const HeroSection = ({ posts }: { posts: PostMetadata[] }) => {
 
           <div className='flex flex-col justify-between gap-4'>
             {posts.slice(1, 4).map(post => (
-              <Link key={post.slug} href={`/blog/${post.slug}`}>
+              <Link key={post.slug} href={`${basePath}/${post.slug}`}>
                 <Card className='group py-5 shadow-none'>
                   <CardContent className='flex justify-between gap-6 max-sm:flex-col-reverse'>
                     <div className='flex flex-1 flex-col justify-center gap-3.5'>
                       <div className='flex justify-between'>
                         <span className='text-muted-foreground flex items-center gap-1.5 text-base'>
                           <CalendarDaysIcon className='size-4.5' />
-                          {new Date(post.publishedAt ?? '').toLocaleDateString('en-US', {
+                          {new Date(post.publishedAt ?? '').toLocaleDateString(locale, {
                             year: 'numeric',
                             month: 'long',
                             day: '2-digit'

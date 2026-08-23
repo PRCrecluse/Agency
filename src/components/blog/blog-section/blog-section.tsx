@@ -17,17 +17,21 @@ import { MotionPreset } from '@/components/ui/motion-preset'
 
 const BlogGrid = ({
   posts,
-  onCategoryClick
+  onCategoryClick,
+  basePath = '/blog',
+  locale = 'en-US'
 }: {
   posts: PostMetadata[]
   onCategoryClick: (category: string) => void
+  basePath?: string
+  locale?: string
 }) => {
   return (
     <div className='grid gap-6 sm:grid-cols-2 lg:grid-cols-3'>
       {posts.map((post, index) => (
         <Card key={index} className='group h-full overflow-hidden shadow-none transition-all duration-300'>
           <CardContent className='flex h-full flex-col gap-3.5'>
-            <Link href={`/blog/${post.slug}`} className='mb-2.5 overflow-hidden rounded-lg'>
+            <Link href={`${basePath}/${post.slug}`} className='mb-2.5 overflow-hidden rounded-lg'>
               <img
                 src={post.image}
                 alt={post.title}
@@ -38,7 +42,7 @@ const BlogGrid = ({
               <div className='text-muted-foreground flex items-center gap-1.5 text-base'>
                 <CalendarDaysIcon className='size-4.5' />
                 <span className='text-muted-foreground'>
-                  {new Date(post.publishedAt ?? '').toLocaleDateString('en-US', {
+                  {new Date(post.publishedAt ?? '').toLocaleDateString(locale, {
                     year: 'numeric',
                     month: 'long',
                     day: '2-digit'
@@ -52,7 +56,7 @@ const BlogGrid = ({
                 {post.category}
               </Badge>
             </div>
-            <Link href={`/blog/${post.slug}`} className='block'>
+            <Link href={`${basePath}/${post.slug}`} className='block'>
               <h3 className='hover:text-primary line-clamp-2 text-lg font-medium transition-colors md:text-xl'>
                 {post.title}
               </h3>
@@ -61,11 +65,11 @@ const BlogGrid = ({
             <p className='text-muted-foreground line-clamp-3 text-base'>{post.description}</p>
 
             <div className='flex flex-1 items-end justify-between'>
-              <Link href={`/blog/${post.slug}`}>
+              <Link href={`${basePath}/${post.slug}`}>
                 <p className='text-sm font-medium'>{post.author?.name}</p>
               </Link>
               <SecondaryFlowButton className='**:data-[slot=button]:size-9 **:data-[slot=button]:px-0' asChild>
-                <Link href={`/blog/${post.slug}`}>
+                <Link href={`${basePath}/${post.slug}`}>
                   <ArrowRightIcon className='size-4 -rotate-45' />
                   <span className='sr-only'>Read more: {post.title}</span>
                 </Link>
@@ -78,12 +82,24 @@ const BlogGrid = ({
   )
 }
 
-const BlogSection = ({ posts }: { posts: PostMetadata[] }) => {
-  const [selectedTab, setSelectedTab] = useState('All')
+const BlogSection = ({
+  posts,
+  basePath = '/blog',
+  locale = 'en-US',
+  searchPlaceholder = 'Search insights',
+  allLabel = 'All'
+}: {
+  posts: PostMetadata[]
+  basePath?: string
+  locale?: string
+  searchPlaceholder?: string
+  allLabel?: string
+}) => {
+  const [selectedTab, setSelectedTab] = useState(allLabel)
   const [searchQuery, setSearchQuery] = useState('')
 
   const filterCategories = Array.from(new Set(posts.map(post => post.category))).filter(Boolean) as string[]
-  const categories = ['All', ...filterCategories]
+  const categories = [allLabel, ...filterCategories]
 
   const handleTabChange = (tab: string) => {
     setSelectedTab(tab)
@@ -91,7 +107,7 @@ const BlogSection = ({ posts }: { posts: PostMetadata[] }) => {
 
   const filteredPosts = posts.filter(post => {
     // Category filter
-    const matchesCategory = selectedTab === 'All' || post.category === selectedTab
+    const matchesCategory = selectedTab === allLabel || post.category === selectedTab
 
     // Search filter
     if (!searchQuery) return matchesCategory
@@ -154,7 +170,7 @@ const BlogSection = ({ posts }: { posts: PostMetadata[] }) => {
                 </div>
                 <Input
                   type='search'
-                  placeholder='Search insights'
+                  placeholder={searchPlaceholder}
                   value={searchQuery}
                   onChange={e => setSearchQuery(e.target.value)}
                   className='peer h-10 ps-9 [&::-webkit-search-cancel-button]:appearance-none [&::-webkit-search-decoration]:appearance-none [&::-webkit-search-results-button]:appearance-none [&::-webkit-search-results-decoration]:appearance-none'
@@ -168,7 +184,12 @@ const BlogSection = ({ posts }: { posts: PostMetadata[] }) => {
             {categories.map((category, index) => (
               <TabsContent key={index} value={category}>
                 {filteredPosts.length > 0 ? (
-                  <BlogGrid posts={filteredPosts} onCategoryClick={handleTabChange} />
+                  <BlogGrid
+                    posts={filteredPosts}
+                    onCategoryClick={handleTabChange}
+                    basePath={basePath}
+                    locale={locale}
+                  />
                 ) : (
                   <div className='text-muted-foreground flex min-h-100 flex-col items-center justify-center space-y-4 rounded-lg border border-dashed p-8 text-center'>
                     <SearchIcon className='size-12 opacity-50' />
