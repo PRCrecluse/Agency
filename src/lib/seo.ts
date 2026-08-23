@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 
-const LOCAL_SITE_URL = 'http://localhost:3000'
 const PRODUCTION_SITE_URL = 'https://withmeridian.org'
 
 const normalizeSiteUrl = (value: string) => value.trim().replace(/\/+$/, '')
@@ -22,10 +21,6 @@ const resolveSiteUrl = () => {
 
   if (vercelUrl) {
     return normalizeSiteUrl(`https://${vercelUrl}`)
-  }
-
-  if (process.env.NODE_ENV === 'development') {
-    return LOCAL_SITE_URL
   }
 
   return PRODUCTION_SITE_URL
