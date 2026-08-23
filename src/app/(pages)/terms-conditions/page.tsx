@@ -1,15 +1,14 @@
 import type { Metadata } from 'next'
 
 import LegalDocument from '@/components/legal/legal-document'
+import { absoluteUrl, buildMetadata } from '@/lib/seo'
 
-export const metadata: Metadata = {
-  title: 'Terms & Conditions',
+export const metadata: Metadata = buildMetadata({
+  title: 'Terms & Conditions | Meridian',
   description: 'Review the terms that govern your use of the Meridian website, services, and related content.',
-  keywords: ['terms and conditions', 'terms of service', 'meridian terms'],
-  alternates: {
-    canonical: `${process.env.NEXT_PUBLIC_APP_URL}/terms-conditions`
-  }
-}
+  path: '/terms-conditions',
+  keywords: ['terms and conditions', 'terms of service', 'meridian terms']
+})
 
 const sections = [
   {
@@ -83,10 +82,10 @@ const jsonLd = {
     {
       '@context': 'https://schema.org',
       '@type': 'WebPage',
-      '@id': `${process.env.NEXT_PUBLIC_APP_URL}/terms-conditions#webpage`,
-      name: 'Terms & Conditions',
+      '@id': absoluteUrl('/terms-conditions#webpage'),
+      name: 'Terms & Conditions | Meridian',
       description: 'Review the terms that govern your use of the Meridian website, services, and related content.',
-      url: `${process.env.NEXT_PUBLIC_APP_URL}/terms-conditions`,
+      url: absoluteUrl('/terms-conditions'),
       inLanguage: 'en-US'
     }
   ]

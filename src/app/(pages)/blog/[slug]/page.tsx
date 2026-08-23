@@ -49,17 +49,19 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   }
 
   const { metadata } = post
+  const postTitle = metadata.title ?? 'Meridian Blog Article'
+  const postDescription = metadata.description ?? 'Read the latest Meridian article.'
 
   return {
     ...buildMetadata({
-      title: `${metadata.title} | Meridian`,
-      description: metadata.description ?? 'Read the latest Meridian article.',
+      title: `${postTitle} | Meridian`,
+      description: postDescription,
       path: `/blog/${metadata.slug}`,
       keywords: metadata.keywords
     }),
     openGraph: {
-      title: `${metadata.title} | Meridian`,
-      description: metadata.description ?? 'Read the latest Meridian article.',
+      title: `${postTitle} | Meridian`,
+      description: postDescription,
       url: absoluteUrl(`/blog/${metadata.slug}`),
       type: 'article',
       publishedTime: metadata.publishedAt,
@@ -67,7 +69,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
         ? [
             {
               url: absoluteUrl(metadata.image),
-              alt: metadata.title ?? 'Meridian blog article'
+              alt: postTitle
             }
           ]
         : undefined
@@ -88,6 +90,8 @@ const BlogDetailsPage = async ({ params }: { params: Promise<{ slug: string }> }
   }
 
   const { metadata, content } = post
+  const postTitle = metadata.title ?? 'Meridian Blog Article'
+  const postDescription = metadata.description ?? 'Read the latest Meridian article.'
 
   // Sort posts by published date
   const allPosts = posts.sort(
@@ -112,11 +116,11 @@ const BlogDetailsPage = async ({ params }: { params: Promise<{ slug: string }> }
       {
         ...createWebPageSchema({
           path: `/blog/${metadata.slug}`,
-          title: `${metadata.title} | Meridian`,
-          description: metadata.description ?? 'Read the latest Meridian article.'
+          title: `${postTitle} | Meridian`,
+          description: postDescription
         }),
         '@type': 'BlogPosting',
-        headline: metadata.title,
+        headline: postTitle,
         image: metadata.image ? [absoluteUrl(metadata.image)] : undefined,
         datePublished: metadata.publishedAt,
         dateModified: metadata.publishedAt,
@@ -138,7 +142,7 @@ const BlogDetailsPage = async ({ params }: { params: Promise<{ slug: string }> }
       createBreadcrumbSchema([
         { name: 'Home', path: '/' },
         { name: 'Blog', path: '/blog' },
-        { name: metadata.title ?? 'Article', path: `/blog/${metadata.slug}` }
+        { name: postTitle, path: `/blog/${metadata.slug}` }
       ])
     ]
   }
@@ -172,9 +176,9 @@ const BlogDetailsPage = async ({ params }: { params: Promise<{ slug: string }> }
               </BreadcrumbList>
             </Breadcrumb>
 
-            <h1 className='mb-6 text-2xl font-semibold md:text-3xl lg:text-4xl'>{metadata.title}</h1>
+            <h1 className='mb-6 text-2xl font-semibold md:text-3xl lg:text-4xl'>{postTitle}</h1>
 
-            <p className='text-muted-foreground'>{metadata.description}</p>
+            <p className='text-muted-foreground'>{postDescription}</p>
 
             <Separator className='my-6' />
 
@@ -207,7 +211,7 @@ const BlogDetailsPage = async ({ params }: { params: Promise<{ slug: string }> }
               </div>
             </div>
 
-            <img src={metadata.image} alt={metadata.title} className='mb-16 max-h-110 w-full rounded-xl object-cover' />
+            <img src={metadata.image} alt={postTitle} className='mb-16 max-h-110 w-full rounded-xl object-cover' />
 
             <MDXContent source={content} />
 

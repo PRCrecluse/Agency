@@ -1,15 +1,14 @@
 import type { Metadata } from 'next'
 
 import LegalDocument from '@/components/legal/legal-document'
+import { absoluteUrl, buildMetadata } from '@/lib/seo'
 
-export const metadata: Metadata = {
-  title: 'Privacy Policy',
+export const metadata: Metadata = buildMetadata({
+  title: 'Privacy Policy | Meridian',
   description: 'Learn how Meridian collects, uses, stores, and protects personal information shared through the website.',
-  keywords: ['privacy policy', 'data privacy', 'meridian privacy'],
-  alternates: {
-    canonical: `${process.env.NEXT_PUBLIC_APP_URL}/privacy-policy`
-  }
-}
+  path: '/privacy-policy',
+  keywords: ['privacy policy', 'data privacy', 'meridian privacy']
+})
 
 const sections = [
   {
@@ -83,10 +82,10 @@ const jsonLd = {
     {
       '@context': 'https://schema.org',
       '@type': 'WebPage',
-      '@id': `${process.env.NEXT_PUBLIC_APP_URL}/privacy-policy#webpage`,
-      name: 'Privacy Policy',
+      '@id': absoluteUrl('/privacy-policy#webpage'),
+      name: 'Privacy Policy | Meridian',
       description: 'Learn how Meridian collects, uses, stores, and protects personal information shared through the website.',
-      url: `${process.env.NEXT_PUBLIC_APP_URL}/privacy-policy`,
+      url: absoluteUrl('/privacy-policy'),
       inLanguage: 'en-US'
     }
   ]

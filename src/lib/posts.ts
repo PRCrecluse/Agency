@@ -24,8 +24,10 @@ export type PostMetadata = {
   keywords?: string[]
 }
 
-// local content directory (comment below line if using remote fetching)
-const rootDirectory = path.join(process.cwd(), 'src', 'content', 'blog')
+export type PostLocale = 'en' | 'zh'
+
+const getRootDirectory = (locale: PostLocale = 'en') =>
+  path.join(process.cwd(), 'src', 'content', locale === 'zh' ? 'blog-zh' : 'blog')
 
 // Remote repository details
 // const GITHUB_USERNAME = 'yourusername'
@@ -33,10 +35,10 @@ const rootDirectory = path.join(process.cwd(), 'src', 'content', 'blog')
 // const GITHUB_BRANCH = 'main'
 // const CONTENT_PATH = 'content/blog'
 
-export async function getPostBySlug(slug: string): Promise<Post | null> {
+export async function getPostBySlug(slug: string, locale: PostLocale = 'en'): Promise<Post | null> {
   try {
     // LOCAL LOGIC:
-    const filePath = path.join(rootDirectory, `${slug}.mdx`)
+    const filePath = path.join(getRootDirectory(locale), `${slug}.mdx`)
     const fileContent = fs.readFileSync(filePath, { encoding: 'utf8' })
 
     // REMOTE LOGIC (commented for reference):
@@ -53,11 +55,11 @@ export async function getPostBySlug(slug: string): Promise<Post | null> {
   }
 }
 
-export async function getPosts(limit?: number): Promise<PostMetadata[]> {
+export async function getPosts(limit?: number, locale: PostLocale = 'en'): Promise<PostMetadata[]> {
   try {
     // LOCAL LOGIC:
-    const files = fs.readdirSync(rootDirectory)
-    const posts = await Promise.all(files.map(async (file: any) => await getPostMetadata(file)))
+    const files = fs.readdirSync(getRootDirectory(locale)).filter(file => file.endsWith('.mdx'))
+    const posts = await Promise.all(files.map(async file => await getPostMetadata(file, locale)))
 
     // REMOTE LOGIC (commented for reference):
     // const res = await fetch(`https://api.github.com/repos/${GITHUB_USERNAME}/${GITHUB_REPO}/contents/${CONTENT_PATH}`)
@@ -88,12 +90,12 @@ export async function getPosts(limit?: number): Promise<PostMetadata[]> {
   }
 }
 
-export async function getPostMetadata(filepath: string): Promise<PostMetadata> {
+export async function getPostMetadata(filepath: string, locale: PostLocale = 'en'): Promise<PostMetadata> {
   try {
     const slug = filepath.replace(/\.mdx$/, '')
 
     // LOCAL LOGIC:
-    const filePath = path.join(rootDirectory, filepath)
+    const filePath = path.join(getRootDirectory(locale), filepath)
     const fileContent = fs.readFileSync(filePath, { encoding: 'utf8' })
 
     // REMOTE LOGIC (commented for reference):

@@ -3,10 +3,10 @@ import type { Metadata } from 'next'
 import ForgotPassword from '@/components/auth/forgot-password/forgot-password'
 
 export const metadata: Metadata = {
-  title: 'Forgot Password',
+  title: 'Forgot password | Meridian',
   robots: 'noindex,nofollow',
   alternates: {
-    canonical: `${process.env.NEXT_PUBLIC_APP_URL}/forgot-password`
+    canonical: '/forgot-password'
   }
 }
 

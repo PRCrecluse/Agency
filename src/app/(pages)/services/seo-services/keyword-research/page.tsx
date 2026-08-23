@@ -4,7 +4,6 @@ import SpecializedServicePage from '@/components/services/specialized-service-pa
 import { newSeoServicePages } from '@/content/new-seo-service-pages'
 import { getSpecializedServiceLang } from '@/content/specialized-service-pages'
 
-const baseUrl = process.env.NEXT_PUBLIC_APP_URL ?? 'http://localhost:3000'
 const path = '/services/seo-services/keyword-research'
 
 export async function generateMetadata({
@@ -20,7 +19,7 @@ export async function generateMetadata({
     title: metadata.title,
     description: metadata.description,
     keywords: [...metadata.keywords],
-    alternates: { canonical: `${baseUrl}${path}` }
+    alternates: { canonical: path }
   }
 }
 

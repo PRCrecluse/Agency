@@ -1,7 +1,7 @@
 {
-  "name": "Meridian - SaaS Landing page",
+  "name": "Meridian",
   "short_name": "Meridian",
-  "description": "Grow your product faster with an all-in-one sales and analytics platform. Track performance, automate follow-ups, and make smarter decisions easily.",
+  "description": "Meridian is an AI-native growth agency for SaaS and AI companies, focused on technical SEO, programmatic SEO, Reddit growth, GEO, and durable organic demand.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
@@ -9,10 +9,9 @@
   "theme_color": "#000000",
   "orientation": "portrait-primary",
   "categories": [
-    "sales",
-    "analytics",
-    "productivity",
-    "business intelligence",
+    "marketing",
+    "seo",
+    "ai",
     "growth",
     "saas"
   ],

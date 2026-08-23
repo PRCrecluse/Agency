@@ -23,13 +23,14 @@ import {
   serviceSectionParams,
   type ServiceLang
 } from '@/content/services'
+import { absoluteUrl, createBreadcrumbSchema, createWebPageSchema } from '@/lib/seo'
+import { buildServiceAlternates, getLocalizedServicePath } from '@/lib/service-localization'
 import { cn } from '@/lib/utils'
-
-const baseUrl = process.env.NEXT_PUBLIC_APP_URL ?? 'http://localhost:3000'
 
 const getLang = (value?: string): ServiceLang => (value?.toLowerCase().startsWith('zh') ? 'zh' : 'en')
 
-const withLang = (path: string, lang: ServiceLang, hash?: string) => `${path}?lang=${lang}${hash ? `#${hash}` : ''}`
+const withLang = (path: string, lang: ServiceLang, hash?: string) =>
+  `${getLocalizedServicePath(path, lang)}${hash ? `#${hash}` : ''}`
 
 export async function generateStaticParams() {
   return serviceSectionParams
@@ -50,12 +51,10 @@ export async function generateMetadata({
   }
 
   return {
-    title: `${service.title.en} | ${service.title.zh}`,
-    description: `${service.description.en} / ${service.description.zh}`,
+    title: `${service.title.en} | Meridian`,
+    description: service.description.en,
     keywords: [...service.keywords.map(keyword => keyword.en), ...service.keywords.map(keyword => keyword.zh)],
-    alternates: {
-      canonical: `${baseUrl}/services/${slug}/${sectionSlug}`
-    }
+    alternates: buildServiceAlternates(`/services/${slug}/${sectionSlug}`)
   }
 }
 
@@ -80,53 +79,35 @@ const ServiceSectionDetailPage = async ({
 
   const hasCustomIncludes = Boolean(service.serviceIncludes?.length)
   const hasFaqSection = Boolean(service.faqItems?.length)
+  const currentPath = getLocalizedServicePath(`/services/${slug}/${sectionSlug}`, lang)
+  const currentServicesPath = getLocalizedServicePath('/services', lang)
+  const currentParentPath = getLocalizedServicePath(`/services/${slug}`, lang)
 
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
       {
-        '@type': 'WebPage',
-        '@id': `${baseUrl}/services/${slug}/${sectionSlug}#webpage`,
-        name: resolveLocalizedText(service.title, lang),
-        description: resolveLocalizedText(service.description, lang),
-        url: `${baseUrl}/services/${slug}/${sectionSlug}?lang=${lang}`
+        ...createWebPageSchema({
+          path: currentPath,
+          title: lang === 'zh' ? `${service.title.zh} | Meridian` : `${service.title.en} | Meridian`,
+          description: resolveLocalizedText(service.description, lang)
+        }),
+        inLanguage: lang === 'zh' ? 'zh-CN' : 'en-US'
       },
-      {
-        '@type': 'BreadcrumbList',
-        itemListElement: [
-          {
-            '@type': 'ListItem',
-            position: 1,
-            name: copy.home,
-            item: `${baseUrl}`
-          },
-          {
-            '@type': 'ListItem',
-            position: 2,
-            name: copy.services,
-            item: `${baseUrl}/services?lang=${lang}`
-          },
-          {
-            '@type': 'ListItem',
-            position: 3,
-            name: resolveLocalizedText(parentService.title, lang),
-            item: `${baseUrl}/services/${slug}?lang=${lang}`
-          },
-          {
-            '@type': 'ListItem',
-            position: 4,
-            name: resolveLocalizedText(service.title, lang),
-            item: `${baseUrl}/services/${slug}/${sectionSlug}?lang=${lang}`
-          }
-        ]
-      },
+      createBreadcrumbSchema([
+        { name: copy.home, path: '/' },
+        { name: copy.services, path: currentServicesPath },
+        { name: resolveLocalizedText(parentService.title, lang), path: currentParentPath },
+        { name: resolveLocalizedText(service.title, lang), path: currentPath }
+      ]),
       {
         '@type': 'Service',
         name: resolveLocalizedText(service.title, lang),
         description: resolveLocalizedText(service.description, lang),
         serviceType: resolveLocalizedText(parentService.category, lang),
-        url: `${baseUrl}/services/${slug}/${sectionSlug}?lang=${lang}`,
-        areaServed: 'Global'
+        url: absoluteUrl(currentPath),
+        areaServed: 'Global',
+        inLanguage: lang === 'zh' ? 'zh-CN' : 'en-US'
       }
     ]
   }

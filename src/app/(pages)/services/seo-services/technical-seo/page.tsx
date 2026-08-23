@@ -26,8 +26,8 @@ import { Badge } from '@/components/ui/badge'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { PrimaryFlowButton, SecondaryFlowButton } from '@/components/ui/flow-button'
 import { getTechnicalSEOLang, technicalSEOCopy } from '@/content/technical-seo'
-
-const baseUrl = process.env.NEXT_PUBLIC_APP_URL ?? 'http://localhost:3000'
+import { absoluteUrl, createFAQSchema, createWebPageSchema } from '@/lib/seo'
+import { buildServiceAlternates, getLocalizedServicePath } from '@/lib/service-localization'
 
 export async function generateMetadata({
   searchParams
@@ -42,9 +42,7 @@ export async function generateMetadata({
     title: metadata.title,
     description: metadata.description,
     keywords: [...metadata.keywords],
-    alternates: {
-      canonical: `${baseUrl}/services/seo-services/technical-seo`
-    }
+    alternates: buildServiceAlternates('/services/seo-services/technical-seo')
   }
 }
 
@@ -57,16 +55,18 @@ const TechnicalSEOPage = async ({ searchParams }: { searchParams?: Promise<{ lan
   const discoveryIcons = [SearchIcon, Code2Icon, Layers3Icon, MonitorCheckIcon]
   const dashboardStatusColors = ['bg-emerald-400', 'bg-amber-300', 'bg-sky-300']
   const matrixColors = ['bg-primary/12', 'bg-secondary/30', 'bg-muted/75', 'bg-muted/45']
+  const currentPath = getLocalizedServicePath('/services/seo-services/technical-seo', lang)
 
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
       {
-        '@type': 'WebPage',
-        '@id': `${baseUrl}/services/seo-services/technical-seo?lang=${lang}#webpage`,
-        name: copy.metadata.title,
-        description: copy.metadata.description,
-        url: `${baseUrl}/services/seo-services/technical-seo?lang=${lang}`
+        ...createWebPageSchema({
+          path: currentPath,
+          title: copy.metadata.title,
+          description: copy.metadata.description
+        }),
+        inLanguage: lang === 'zh' ? 'zh-CN' : 'en-US'
       },
       {
         '@type': 'Service',
@@ -74,22 +74,14 @@ const TechnicalSEOPage = async ({ searchParams }: { searchParams?: Promise<{ lan
         serviceType: 'Technical SEO',
         description: copy.metadata.description,
         areaServed: 'Global',
+        url: absoluteUrl(currentPath),
+        inLanguage: lang === 'zh' ? 'zh-CN' : 'en-US',
         provider: {
           '@type': 'Organization',
           name: 'Meridian'
         }
       },
-      {
-        '@type': 'FAQPage',
-        mainEntity: copy.faq.items.map(([question, answer]) => ({
-          '@type': 'Question',
-          name: question,
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: answer
-          }
-        }))
-      }
+      createFAQSchema(copy.faq.items.map(([question, answer]) => ({ question, answer })))
     ]
   }
 

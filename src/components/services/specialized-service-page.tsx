@@ -22,8 +22,8 @@ import { Badge } from '@/components/ui/badge'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { PrimaryFlowButton, SecondaryFlowButton } from '@/components/ui/flow-button'
 import type { SpecializedServiceLang, SpecializedServicePageContent } from '@/content/specialized-service-pages'
-
-const baseUrl = process.env.NEXT_PUBLIC_APP_URL ?? 'http://localhost:3000'
+import { absoluteUrl, createFAQSchema, createWebPageSchema } from '@/lib/seo'
+import { getLocalizedServicePath } from '@/lib/service-localization'
 
 const moduleIcons = [SearchIcon, Layers3Icon, SparklesIcon, WrenchIcon, FileSearchIcon]
 const processIcons = [TargetIcon, SearchIcon, ListChecksIcon, MessageSquareMoreIcon, SparklesIcon]
@@ -35,15 +35,18 @@ type SpecializedServicePageProps = {
 }
 
 const SpecializedServicePage = ({ lang, path, copy }: SpecializedServicePageProps) => {
+  const currentPath = getLocalizedServicePath(path, lang)
+
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
       {
-        '@type': 'WebPage',
-        '@id': `${baseUrl}${path}?lang=${lang}#webpage`,
-        name: copy.metadata.title,
-        description: copy.metadata.description,
-        url: `${baseUrl}${path}?lang=${lang}`
+        ...createWebPageSchema({
+          path: currentPath,
+          title: copy.metadata.title,
+          description: copy.metadata.description
+        }),
+        inLanguage: lang === 'zh' ? 'zh-CN' : 'en-US'
       },
       {
         '@type': 'Service',
@@ -51,22 +54,14 @@ const SpecializedServicePage = ({ lang, path, copy }: SpecializedServicePageProp
         serviceType: copy.serviceType,
         description: copy.metadata.description,
         areaServed: 'Global',
+        url: absoluteUrl(currentPath),
+        inLanguage: lang === 'zh' ? 'zh-CN' : 'en-US',
         provider: {
           '@type': 'Organization',
           name: 'Meridian'
         }
       },
-      {
-        '@type': 'FAQPage',
-        mainEntity: copy.faq.items.map(item => ({
-          '@type': 'Question',
-          name: item.question,
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: item.answer
-          }
-        }))
-      }
+      createFAQSchema(copy.faq.items)
     ]
   }
 

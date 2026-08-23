@@ -32,8 +32,8 @@ const Footer = () => {
             <Logo />
           </Link>
           <p className='text-muted-foreground'>
-            Meridian helps you centralize your product, sales, and user data - all in one simple, real-time dashboard built
-            for growing businesses.
+            Meridian helps SaaS and AI companies grow through technical SEO, programmatic SEO, Reddit strategy, GEO,
+            and AI-native demand systems.
           </p>
           <Separator className='w-35!' />
           <div className='flex items-center gap-4'>

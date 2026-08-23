@@ -3,7 +3,6 @@ import type { Metadata } from 'next'
 import SpecializedServicePage from '@/components/services/specialized-service-page'
 import { getSpecializedServiceLang, specializedServicePages } from '@/content/specialized-service-pages'
 
-const baseUrl = process.env.NEXT_PUBLIC_APP_URL ?? 'http://localhost:3000'
 const path = '/services/reddit-services/community-management'
 
 export async function generateMetadata({
@@ -20,7 +19,7 @@ export async function generateMetadata({
     description: metadata.description,
     keywords: [...metadata.keywords],
     alternates: {
-      canonical: `${baseUrl}${path}`
+      canonical: path
     }
   }
 }

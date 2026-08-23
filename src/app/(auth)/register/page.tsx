@@ -3,10 +3,10 @@ import type { Metadata } from 'next'
 import Register from '@/components/auth/register/register'
 
 export const metadata: Metadata = {
-  title: 'Register',
+  title: 'Register | Meridian',
   robots: 'noindex,nofollow',
   alternates: {
-    canonical: `${process.env.NEXT_PUBLIC_APP_URL}/register`
+    canonical: '/register'
   }
 }
 

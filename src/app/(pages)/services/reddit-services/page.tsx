@@ -17,11 +17,14 @@ import CampaignPriceCalculator from '@/components/services/campaign-price-calcul
 import { PrimaryFlowButton, SecondaryFlowButton } from '@/components/ui/flow-button'
 import SectionSeparator from '@/components/section-separator'
 import { logos } from '@/assets/data/trusted-brands'
+import { buildMetadata } from '@/lib/seo'
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: 'Reddit Marketing Services | Meridian',
-  description: 'Reddit marketing packages, campaign execution, delivery standards, and service guarantees.'
-}
+  description: 'Reddit marketing packages, campaign execution, delivery standards, and service guarantees for brands that need native community growth.',
+  path: '/services/reddit-services',
+  keywords: ['reddit marketing services', 'reddit campaign services', 'reddit community management']
+})
 
 const servicePackages = [
   {

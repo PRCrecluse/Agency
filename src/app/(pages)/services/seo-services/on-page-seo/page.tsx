@@ -2,8 +2,8 @@ import type { Metadata } from 'next'
 
 import SpecializedServicePage from '@/components/services/specialized-service-page'
 import { getSpecializedServiceLang, specializedServicePages } from '@/content/specialized-service-pages'
+import { buildServiceAlternates } from '@/lib/service-localization'
 
-const baseUrl = process.env.NEXT_PUBLIC_APP_URL ?? 'http://localhost:3000'
 const path = '/services/seo-services/on-page-seo'
 
 export async function generateMetadata({
@@ -19,9 +19,7 @@ export async function generateMetadata({
     title: metadata.title,
     description: metadata.description,
     keywords: [...metadata.keywords],
-    alternates: {
-      canonical: `${baseUrl}${path}`
-    }
+    alternates: buildServiceAlternates(path)
   }
 }
 

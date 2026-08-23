@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 
 const LOCAL_SITE_URL = 'http://localhost:3000'
+const PRODUCTION_SITE_URL = 'https://withmeridian.org'
 
 const normalizeSiteUrl = (value: string) => value.trim().replace(/\/+$/, '')
 
@@ -11,8 +12,14 @@ const resolveSiteUrl = () => {
     return normalizeSiteUrl(configuredUrl)
   }
 
+  const vercelProductionUrl = process.env.VERCEL_PROJECT_PRODUCTION_URL
+
+  if (vercelProductionUrl) {
+    return normalizeSiteUrl(`https://${vercelProductionUrl}`)
+  }
+
   if (process.env.NODE_ENV === 'production') {
-    throw new Error('NEXT_PUBLIC_APP_URL must be set in production builds.')
+    return PRODUCTION_SITE_URL
   }
 
   return LOCAL_SITE_URL
@@ -54,17 +61,19 @@ export const buildMetadata = ({
   title,
   description,
   path,
-  keywords
+  keywords,
+  alternates
 }: {
   title: string
   description: string
   path: string
   keywords?: string[]
+  alternates?: Metadata['alternates']
 }): Metadata => ({
   title,
   description,
   keywords,
-  alternates: {
+  alternates: alternates ?? {
     canonical: path
   },
   openGraph: {
