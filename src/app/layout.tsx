@@ -6,6 +6,7 @@ import type { Metadata } from 'next'
 import { ThemeProvider } from '@/components/theme-provider'
 import { TooltipProvider } from '@/components/ui/tooltip'
 
+import { defaultOgImage, siteDescription, siteKeywords, siteTitle, siteUrl } from '@/lib/seo'
 import { cn } from '@/lib/utils'
 
 import './globals.css'
@@ -21,21 +22,11 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: {
-    template: 'Demo: %s - Meridian | Shadcn Studio',
-    default: 'Demo: Meridian - SaaS Landing page | Shadcn Studio'
-  },
-  description:
-    'Grow your product faster with an all-in-one sales and analytics platform. Track performance, automate follow-ups, and make smarter decisions easily.',
+  title: siteTitle,
+  description: siteDescription,
   robots: 'index,follow',
-  keywords: [
-    'sales analytics',
-    'product growth',
-    'sales dashboard',
-    'business analytics',
-    'growth tracking',
-    'sales performance'
-  ],
+  applicationName: 'Meridian',
+  keywords: siteKeywords,
   icons: {
     icon: [
       {
@@ -76,35 +67,20 @@ export const metadata: Metadata = {
       }
     ]
   },
-  metadataBase: new URL(`${process.env.NEXT_PUBLIC_APP_URL ?? 'http://localhost:3000'}`),
+  metadataBase: new URL(siteUrl),
   openGraph: {
-    title: {
-      template: 'Demo: %s - Meridian | Shadcn Studio',
-      default: 'Demo: Meridian - SaaS Landing page | Shadcn Studio'
-    },
-    description:
-      'Grow your product faster with an all-in-one sales and analytics platform. Track performance, automate follow-ups, and make smarter decisions easily.',
+    title: siteTitle,
+    description: siteDescription,
     type: 'website',
     siteName: 'Meridian',
-    url: `${process.env.NEXT_PUBLIC_APP_URL ?? 'http://localhost:3000'}`,
-    images: [
-      {
-        url: '/images/og-image.png',
-        type: 'image/png',
-        width: 1200,
-        height: 630,
-        alt: 'Meridian - SaaS Landing page'
-      }
-    ]
+    url: siteUrl,
+    images: [defaultOgImage]
   },
   twitter: {
     card: 'summary_large_image',
-    title: {
-      template: 'Demo: %s - Meridian | Shadcn Studio',
-      default: 'Demo: Meridian - SaaS Landing page | Shadcn Studio'
-    },
-    description:
-      'Grow your product faster with an all-in-one sales and analytics platform. Track performance, automate follow-ups, and make smarter decisions easily.'
+    title: siteTitle,
+    description: siteDescription,
+    images: [defaultOgImage.url]
   }
 }
 

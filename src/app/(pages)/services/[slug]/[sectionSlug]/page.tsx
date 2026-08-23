@@ -5,12 +5,12 @@ import type { Metadata } from 'next'
 import {
   ArrowRightIcon,
   CheckCircle2Icon,
-  SparklesIcon,
-  TargetIcon
+  SparklesIcon
 } from 'lucide-react'
 
 import { Badge } from '@/components/ui/badge'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { Card, CardContent } from '@/components/ui/card'
+import CTASection from '@/components/blocks/cta/cta'
 import FAQ from '@/components/blocks/faq/faq'
 import { PrimaryFlowButton, SecondaryFlowButton } from '@/components/ui/flow-button'
 import SectionSeparator from '@/components/section-separator'
@@ -80,7 +80,6 @@ const ServiceSectionDetailPage = async ({
 
   const hasCustomIncludes = Boolean(service.serviceIncludes?.length)
   const hasFaqSection = Boolean(service.faqItems?.length)
-  const renderOutcomes = !service.hideOutcomes
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -268,6 +267,8 @@ const ServiceSectionDetailPage = async ({
           />
         </>
       ) : null}
+
+      <CTASection />
 
       <script
         type='application/ld+json'

@@ -55,19 +55,21 @@ const Features = () => {
           slide={{ direction: 'down', offset: 50 }}
           blur
           transition={{ duration: 0.5 }}
-          className='mb-12 space-y-4 text-center sm:mb-16 lg:mb-24'
+          className='mx-auto mb-12 max-w-3xl space-y-4 text-center sm:mb-16 lg:mb-24'
         >
           <p className='text-primary text-sm font-medium uppercase'>Highlights</p>
 
-          <h2 className='text-2xl font-semibold md:text-3xl lg:text-4xl'>Three Reasons Global Teams Work With Us</h2>
+          <h2 className='text-xl font-semibold sm:text-2xl md:text-3xl lg:text-4xl'>
+            Three Reasons Global Teams Work With Us
+          </h2>
 
-          <p className='text-muted-foreground text-xl'>
+          <p className='text-muted-foreground text-base sm:text-lg lg:text-xl'>
             We combine sharp brand taste, AI-native execution, and hands-on technical depth in one global growth
             partner.
           </p>
         </MotionPreset>
 
-        <div className='grid grid-cols-1 gap-6 xl:grid-cols-3'>
+        <div className='grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3'>
           {coreReasons.map((item, index) => (
             <MotionPreset
               key={item.title}
@@ -88,9 +90,9 @@ const Features = () => {
                   />
                 </div>
 
-                <CardContent className='flex flex-1 flex-col gap-4 pt-6'>
-                  <h5 className='text-2xl font-semibold'>{item.title}</h5>
-                  <p className='text-muted-foreground line-clamp-1 text-base'>{item.description}</p>
+                <CardContent className='flex flex-1 flex-col gap-3 p-5 sm:pt-6'>
+                  <h5 className='text-xl font-semibold sm:text-2xl'>{item.title}</h5>
+                  <p className='text-muted-foreground text-sm sm:text-base'>{item.description}</p>
                 </CardContent>
               </Card>
             </MotionPreset>
@@ -104,21 +106,21 @@ const Features = () => {
           slide={{ direction: 'down', offset: 50 }}
           blur
           transition={{ duration: 0.5 }}
-          className='mt-8 space-y-4 text-center sm:mt-10 lg:mt-12'
+          className='mx-auto mt-8 max-w-3xl space-y-4 text-center sm:mt-10 lg:mt-12'
         >
           <p className='text-primary text-sm font-medium uppercase'>AI Systems</p>
 
-          <h3 className='text-2xl font-semibold md:text-3xl lg:text-4xl'>
+          <h3 className='text-xl font-semibold sm:text-2xl md:text-3xl lg:text-4xl'>
             Proprietary AI SaaS Systems, Powered by a Strong Technical Engine
           </h3>
 
-          <p className='text-muted-foreground text-xl'>
+          <p className='text-muted-foreground text-base sm:text-lg lg:text-xl'>
             We turn growth execution into reusable AI agents and product systems, so strategy, distribution,
             conversion, and SEO can compound together.
           </p>
         </MotionPreset>
 
-        <div className='mt-10 grid grid-cols-1 gap-6 xl:grid-cols-3'>
+        <div className='mt-10 grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3'>
           {aiSystems.map((item, index) => (
             <MotionPreset
               key={item.title}
@@ -139,9 +141,9 @@ const Features = () => {
                   />
                 </div>
 
-                <CardContent className='flex flex-1 flex-col gap-4 pt-6'>
-                  <h5 className='text-2xl font-semibold'>{item.title}</h5>
-                  <p className='text-muted-foreground text-base'>{item.description}</p>
+                <CardContent className='flex flex-1 flex-col gap-3 p-5 sm:pt-6'>
+                  <h5 className='text-xl font-semibold sm:text-2xl'>{item.title}</h5>
+                  <p className='text-muted-foreground text-sm sm:text-base'>{item.description}</p>
                 </CardContent>
               </Card>
             </MotionPreset>

@@ -1,3 +1,5 @@
+import type { Metadata } from 'next'
+
 import Hero from '@/components/blocks/hero-section/hero-section'
 import TrustedBrands from '@/components/blocks/trusted-brands/trusted-brands'
 import Features from '@/components/blocks/features/features'
@@ -10,20 +12,34 @@ import { testimonials } from '@/assets/data/testimonials'
 import { faqItems } from '@/assets/data/faqs'
 
 import SectionSeparator from '@/components/section-separator'
+import {
+  buildMetadata,
+  createFAQSchema,
+  createOrganizationSchema,
+  createWebPageSchema,
+  createWebsiteSchema
+} from '@/lib/seo'
+
+export const metadata: Metadata = buildMetadata({
+  title: 'AI Growth Agency for SaaS Companies | Meridian',
+  description:
+    'Meridian helps SaaS and AI companies grow organic demand through technical SEO, programmatic SEO, Reddit strategy, GEO, and AI-native content systems.',
+  path: '/',
+  keywords: ['ai growth agency', 'saas seo', 'reddit growth', 'geo services', 'programmatic seo']
+})
 
 const jsonLd = {
   '@context': 'https://schema.org',
   '@graph': [
-    {
-      '@context': 'https://schema.org',
-      '@type': 'WebSite',
-      '@id': `${process.env.NEXT_PUBLIC_APP_URL}#website`,
-      name: 'Meridian',
+    createOrganizationSchema(),
+    createWebsiteSchema(),
+    createWebPageSchema({
+      path: '/',
+      title: 'AI Growth Agency for SaaS Companies | Meridian',
       description:
-        'Grow your product faster with an all-in-one sales and analytics platform. Track performance, automate follow-ups, and make smarter decisions easily.',
-      url: `${process.env.NEXT_PUBLIC_APP_URL}`,
-      inLanguage: 'en-US'
-    }
+        'Meridian helps SaaS and AI companies grow organic demand through technical SEO, programmatic SEO, Reddit strategy, GEO, and AI-native content systems.'
+    }),
+    createFAQSchema(faqItems)
   ]
 }
 

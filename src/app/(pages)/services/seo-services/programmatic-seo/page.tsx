@@ -29,14 +29,7 @@ const ProgrammaticSEOPage = async ({ searchParams }: { searchParams?: Promise<{ 
   const resolvedSearchParams = await searchParams
   const lang = getSpecializedServiceLang(resolvedSearchParams?.lang)
 
-  return (
-    <SpecializedServicePage
-      lang={lang}
-      path={path}
-      copy={specializedServicePages.programmaticSeo[lang]}
-      showHomepageCta
-    />
-  )
+  return <SpecializedServicePage lang={lang} path={path} copy={specializedServicePages.programmaticSeo[lang]} />
 }
 
 export default ProgrammaticSEOPage

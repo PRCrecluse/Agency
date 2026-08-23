@@ -28,10 +28,13 @@ import { getServiceBySlug, resolveLocalizedText, servicePageCopy, serviceSlugs, 
 import { cn } from '@/lib/utils'
 
 const baseUrl = process.env.NEXT_PUBLIC_APP_URL ?? 'http://localhost:3000'
+const trustedBrandServiceSlugs = new Set(['seo-services', 'geo-services'])
 
 const getLang = (value?: string): ServiceLang => (value?.toLowerCase().startsWith('zh') ? 'zh' : 'en')
 
 const withLang = (path: string, lang: ServiceLang, hash?: string) => `${path}?lang=${lang}${hash ? `#${hash}` : ''}`
+const getTrustedBrandsTitle = (lang: ServiceLang) =>
+  lang === 'zh' ? '服务过从初创公司到行业头部企业的团队。' : 'Trusted by startups, enterprises, and category leaders alike.'
 
 const getSectionIcon = (sectionId: string) => {
   const key = sectionId.toLowerCase()
@@ -114,8 +117,8 @@ const ServiceDetailPage = async ({
   const hasHighlights = service.highlights.length > 0
   const hasFaqSection = Boolean(service.faqItems?.length)
   const renderOutcomes = !service.hideOutcomes
-  const showTrustedBrandsSection = service.slug === 'seo-services'
-  const showOverviewSection = showTrustedBrandsSection || hasCustomIncludes || hasHighlights
+  const showTrustedBrandsSection = trustedBrandServiceSlugs.has(service.slug)
+  const showOverviewSection = hasCustomIncludes || hasHighlights
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -187,13 +190,15 @@ const ServiceDetailPage = async ({
         </div>
       </section>
 
-      {showOverviewSection ? (
+      {showTrustedBrandsSection || showOverviewSection ? (
         <>
           <SectionSeparator />
 
-          {showTrustedBrandsSection ? (
-            <TrustedBrands brandLogos={logos} />
-          ) : (
+          {showTrustedBrandsSection ? <TrustedBrands brandLogos={logos} title={getTrustedBrandsTitle(lang)} /> : null}
+
+          {showTrustedBrandsSection && showOverviewSection ? <SectionSeparator /> : null}
+
+          {showOverviewSection ? (
             <section className='px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20'>
               <div
                 className={cn(
@@ -260,7 +265,7 @@ const ServiceDetailPage = async ({
                 )}
               </div>
             </section>
-          )}
+          ) : null}
 
           <SectionSeparator />
         </>

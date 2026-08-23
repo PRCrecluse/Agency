@@ -32,10 +32,9 @@ type SpecializedServicePageProps = {
   lang: SpecializedServiceLang
   path: string
   copy: SpecializedServicePageContent
-  showHomepageCta?: boolean
 }
 
-const SpecializedServicePage = ({ lang, path, copy, showHomepageCta = false }: SpecializedServicePageProps) => {
+const SpecializedServicePage = ({ lang, path, copy }: SpecializedServicePageProps) => {
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
@@ -292,7 +291,7 @@ const SpecializedServicePage = ({ lang, path, copy, showHomepageCta = false }: S
       <SectionSeparator />
 
       <section className='px-4 py-14 sm:px-6 sm:py-20 lg:px-8'>
-        <div className={`mx-auto grid w-full max-w-7xl gap-8 ${showHomepageCta ? '' : 'lg:grid-cols-[minmax(0,1.05fr)_minmax(360px,0.95fr)] lg:items-start'}`}>
+        <div className='mx-auto w-full max-w-7xl'>
           <Card className='bg-card/85 border'>
             <CardHeader className='space-y-4'>
               <Badge variant='outline' className='h-auto w-fit px-3 py-1 text-sm font-normal'>
@@ -312,30 +311,6 @@ const SpecializedServicePage = ({ lang, path, copy, showHomepageCta = false }: S
               </div>
             </CardContent>
           </Card>
-
-          {!showHomepageCta ? (
-            <div className='from-primary/10 via-background to-secondary/10 rounded-[28px] border bg-gradient-to-r p-6 sm:p-8'>
-              <p className='text-muted-foreground text-xs font-medium uppercase tracking-[0.24em]'>
-                {lang === 'zh' ? '下一步' : 'Next step'}
-              </p>
-              <h3 className='mt-3 text-2xl font-semibold tracking-tight sm:text-3xl'>
-                {lang === 'zh' ? '想把这项服务映射到你的增长目标上吗？' : 'Want this service mapped to your growth goals?'}
-              </h3>
-              <p className='text-muted-foreground mt-3 text-sm leading-6 sm:text-base'>
-                {lang === 'zh'
-                  ? '我们可以一起确认优先页面、社区或批次范围，并说明哪些部分由你们执行、哪些部分由我们负责。'
-                  : 'We can map the highest-priority pages, communities, or rollout scope, then define what your team owns and where Meridian should step in.'}
-              </p>
-              <div className='mt-6'>
-                <PrimaryFlowButton asChild>
-                  <Link href='https://cal.com/team/meridian-growth' target='_blank' rel='noreferrer'>
-                    {lang === 'zh' ? '预约策略沟通' : 'Book a strategy call'}
-                    <ArrowRightIcon />
-                  </Link>
-                </PrimaryFlowButton>
-              </div>
-            </div>
-          ) : null}
         </div>
       </section>
 
@@ -348,7 +323,7 @@ const SpecializedServicePage = ({ lang, path, copy, showHomepageCta = false }: S
         description={copy.faq.description}
       />
 
-      {showHomepageCta ? <CTASection /> : null}
+      <CTASection />
 
       <script
         type='application/ld+json'

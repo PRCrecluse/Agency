@@ -57,6 +57,7 @@ const TechnicalSEOPage = async ({ searchParams }: { searchParams?: Promise<{ lan
   const discoveryIcons = [SearchIcon, Code2Icon, Layers3Icon, MonitorCheckIcon]
   const dashboardStatusColors = ['bg-emerald-400', 'bg-amber-300', 'bg-sky-300']
   const matrixColors = ['bg-primary/12', 'bg-secondary/30', 'bg-muted/75', 'bg-muted/45']
+
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
@@ -192,6 +193,7 @@ const TechnicalSEOPage = async ({ searchParams }: { searchParams?: Promise<{ lan
           <div className='mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-3'>
             {copy.includes.modules.map((module, index) => {
               const Icon = serviceIcons[index]
+
               return (
                 <Card
                   key={module.title}
@@ -317,6 +319,7 @@ const TechnicalSEOPage = async ({ searchParams }: { searchParams?: Promise<{ lan
           <div className='relative mt-10 grid gap-4 md:grid-cols-4'>
             {copy.discovery.stages.map(([title, description], index) => {
               const Icon = discoveryIcons[index]
+
               return (
                 <Card key={title} className='bg-card/85 relative border'>
                   {index < 3 ? (
@@ -545,7 +548,7 @@ const TechnicalSEOPage = async ({ searchParams }: { searchParams?: Promise<{ lan
         description={copy.faq.description}
       />
 
-      <CTA title={copy.cta.title} description={copy.cta.description} buttonLabel={copy.cta.buttonLabel} />
+      <CTA />
 
       <script
         type='application/ld+json'

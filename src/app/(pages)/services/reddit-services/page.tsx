@@ -12,9 +12,11 @@ import {
 import { Badge } from '@/components/ui/badge'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import FAQ from '@/components/blocks/faq/faq'
+import TrustedBrands from '@/components/blocks/trusted-brands/trusted-brands'
 import CampaignPriceCalculator from '@/components/services/campaign-price-calculator'
 import { PrimaryFlowButton, SecondaryFlowButton } from '@/components/ui/flow-button'
 import SectionSeparator from '@/components/section-separator'
+import { logos } from '@/assets/data/trusted-brands'
 
 export const metadata: Metadata = {
   title: 'Reddit Marketing Services | Meridian',
@@ -146,6 +148,10 @@ const RedditServicesPage = () => {
           </div>
         </div>
       </section>
+
+      <SectionSeparator />
+
+      <TrustedBrands brandLogos={logos} title='服务过从初创公司到行业头部企业的团队。' />
 
       <SectionSeparator />
 
