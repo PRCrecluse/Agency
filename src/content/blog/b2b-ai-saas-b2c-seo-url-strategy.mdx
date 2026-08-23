@@ -27,11 +27,38 @@ That difference affects keyword research, information architecture, content prod
 
 ## The URL-Level View
 
-| Business model | Common traffic center | High-value commercial URLs | Primary conversion |
-| --- | --- | --- | --- |
-| Traditional B2B | `/blog/`, `/resources/`, `/guides/` | `/solutions/`, `/industries/`, `/use-cases/`, `/compare/` | Demo, consultation, qualified lead |
-| AI SaaS | `/tools/`, `/templates/`, `/integrations/`, public product pages | Tool, use-case, comparison, and pricing pages | Tool completion, signup, activation, paid plan |
-| B2C ecommerce | `/collections/`, `/category/`, `/products/` | Category and product pages | Add to cart and purchase |
+<div className="my-6 overflow-x-auto rounded-xl border border-border">
+  <table className="w-full min-w-[760px] border-collapse text-left text-sm">
+    <thead className="bg-muted/70">
+      <tr>
+        <th className="border-b border-border px-4 py-3 font-semibold text-foreground">Business model</th>
+        <th className="border-b border-border px-4 py-3 font-semibold text-foreground">Common traffic center</th>
+        <th className="border-b border-border px-4 py-3 font-semibold text-foreground">High-value commercial URLs</th>
+        <th className="border-b border-border px-4 py-3 font-semibold text-foreground">Primary conversion</th>
+      </tr>
+    </thead>
+    <tbody className="divide-y divide-border">
+      <tr>
+        <td className="px-4 py-3 font-medium text-foreground">Traditional B2B</td>
+        <td className="px-4 py-3 text-muted-foreground"><code>/blog/</code>, <code>/resources/</code>, <code>/guides/</code></td>
+        <td className="px-4 py-3 text-muted-foreground"><code>/solutions/</code>, <code>/industries/</code>, <code>/use-cases/</code>, <code>/compare/</code></td>
+        <td className="px-4 py-3 text-muted-foreground">Demo, consultation, qualified lead</td>
+      </tr>
+      <tr>
+        <td className="px-4 py-3 font-medium text-foreground">AI SaaS</td>
+        <td className="px-4 py-3 text-muted-foreground"><code>/tools/</code>, <code>/templates/</code>, <code>/integrations/</code>, public product pages</td>
+        <td className="px-4 py-3 text-muted-foreground">Tool, use-case, comparison, and pricing pages</td>
+        <td className="px-4 py-3 text-muted-foreground">Tool completion, signup, activation, paid plan</td>
+      </tr>
+      <tr>
+        <td className="px-4 py-3 font-medium text-foreground">B2C ecommerce</td>
+        <td className="px-4 py-3 text-muted-foreground"><code>/collections/</code>, <code>/category/</code>, <code>/products/</code></td>
+        <td className="px-4 py-3 text-muted-foreground">Category and product pages</td>
+        <td className="px-4 py-3 text-muted-foreground">Add to cart and purchase</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
 These are patterns, not fixed rules. An enterprise AI platform may behave more like a traditional B2B company. A consumer subscription app may use AI SaaS-style tool pages even though it sells to individuals.
 
@@ -346,13 +373,50 @@ For each group, compare:
 
 The resulting table may reveal that the largest traffic directory is not the most valuable one:
 
-| URL group | Share of traffic | Share of meaningful conversions | Interpretation |
-| --- | ---: | ---: | --- |
-| `/blog/` | 62% | 14% | Strong reach, weak commercial efficiency |
-| `/solutions/` | 11% | 31% | Smaller traffic base with high B2B value |
-| `/compare/` | 5% | 17% | High-intent opportunity worth expanding |
-| `/tools/` | 16% | 33% | Product-led acquisition is working |
-| Other | 6% | 5% | Review individually |
+<div className="my-6 overflow-x-auto rounded-xl border border-border">
+  <table className="w-full min-w-[760px] border-collapse text-left text-sm">
+    <thead className="bg-muted/70">
+      <tr>
+        <th className="border-b border-border px-4 py-3 font-semibold text-foreground">URL group</th>
+        <th className="border-b border-border px-4 py-3 font-semibold text-foreground">Share of traffic</th>
+        <th className="border-b border-border px-4 py-3 font-semibold text-foreground">Share of meaningful conversions</th>
+        <th className="border-b border-border px-4 py-3 font-semibold text-foreground">Interpretation</th>
+      </tr>
+    </thead>
+    <tbody className="divide-y divide-border">
+      <tr>
+        <td className="px-4 py-3 font-medium text-foreground"><code>/blog/</code></td>
+        <td className="px-4 py-3 text-muted-foreground">62%</td>
+        <td className="px-4 py-3 text-muted-foreground">14%</td>
+        <td className="px-4 py-3 text-muted-foreground">Strong reach, weak commercial efficiency</td>
+      </tr>
+      <tr>
+        <td className="px-4 py-3 font-medium text-foreground"><code>/solutions/</code></td>
+        <td className="px-4 py-3 text-muted-foreground">11%</td>
+        <td className="px-4 py-3 text-muted-foreground">31%</td>
+        <td className="px-4 py-3 text-muted-foreground">Smaller traffic base with high B2B value</td>
+      </tr>
+      <tr>
+        <td className="px-4 py-3 font-medium text-foreground"><code>/compare/</code></td>
+        <td className="px-4 py-3 text-muted-foreground">5%</td>
+        <td className="px-4 py-3 text-muted-foreground">17%</td>
+        <td className="px-4 py-3 text-muted-foreground">High-intent opportunity worth expanding</td>
+      </tr>
+      <tr>
+        <td className="px-4 py-3 font-medium text-foreground"><code>/tools/</code></td>
+        <td className="px-4 py-3 text-muted-foreground">16%</td>
+        <td className="px-4 py-3 text-muted-foreground">33%</td>
+        <td className="px-4 py-3 text-muted-foreground">Product-led acquisition is working</td>
+      </tr>
+      <tr>
+        <td className="px-4 py-3 font-medium text-foreground">Other</td>
+        <td className="px-4 py-3 text-muted-foreground">6%</td>
+        <td className="px-4 py-3 text-muted-foreground">5%</td>
+        <td className="px-4 py-3 text-muted-foreground">Review individually</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
 This analysis is more useful than asking whether the website needs “more content.” It shows which page system deserves investment.
 
