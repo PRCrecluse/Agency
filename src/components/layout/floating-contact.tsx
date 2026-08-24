@@ -74,26 +74,27 @@ const FloatingContact = () => {
         )}
         aria-hidden={!open}
       >
-        <div className='w-[min(23rem,calc(100vw-1.5rem))] rounded-[28px] border border-white/12 bg-[linear-gradient(180deg,rgba(27,27,30,0.94)_0%,rgba(12,12,14,0.92)_100%)] p-3 shadow-[0_24px_80px_rgba(0,0,0,0.45)] backdrop-blur-xl sm:p-4'>
-          <div className='grid grid-cols-2 gap-3'>
+        <div className='w-[min(29rem,calc(100vw-1.5rem))] rounded-[30px] border border-white/12 bg-[linear-gradient(180deg,rgba(27,27,30,0.94)_0%,rgba(12,12,14,0.92)_100%)] p-4 shadow-[0_24px_80px_rgba(0,0,0,0.45)] backdrop-blur-xl sm:p-5'>
+          <div className='grid grid-cols-2 gap-4'>
             {contactOptions.map(option => (
               <div
                 key={option.id}
-                className='rounded-[22px] border border-white/10 bg-white/4 p-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]'
+                className='rounded-[24px] border border-white/10 bg-white/4 p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]'
               >
-                <p className='text-[11px] font-medium tracking-[0.18em] text-white/58 uppercase'>{option.label}</p>
-                <div className='mt-2 overflow-hidden rounded-[18px] border border-white/12 bg-white p-1.5'>
+                <div className='mb-3'>
+                  <p className='text-[1.55rem] leading-none font-semibold text-white'>{option.label}</p>
+                  <p className='mt-1 text-base text-white/62'>{option.description}</p>
+                </div>
+                <div className='overflow-hidden rounded-[22px] border border-white/12 bg-white p-2.5'>
                   <Image
                     src={option.imageSrc}
                     alt={option.imageAlt}
                     width={option.width}
                     height={option.height}
-                    className='h-auto w-full rounded-[14px] object-cover'
-                    sizes='(max-width: 640px) 40vw, 180px'
+                    className='h-auto w-full rounded-[18px] object-cover'
+                    sizes='(max-width: 640px) 42vw, 220px'
                   />
                 </div>
-                <p className='mt-3 text-sm font-medium text-white'>{option.label}</p>
-                <p className='text-xs text-white/62'>{option.description}</p>
               </div>
             ))}
           </div>
