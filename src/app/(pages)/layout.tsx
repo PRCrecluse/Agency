@@ -13,6 +13,7 @@ import {
 
 import Header from '@/components/layout/header'
 import Footer from '@/components/layout/footer'
+import FloatingContact from '@/components/layout/floating-contact'
 import type { Navigation } from '@/components/layout/header-navigation'
 
 const navigationData: Navigation[] = [
@@ -125,6 +126,7 @@ const PagesLayout = ({ children }: Readonly<{ children: ReactNode }>) => {
 
           {/* Footer Section */}
           <Footer />
+          <FloatingContact />
         </div>
       </div>
     </div>
