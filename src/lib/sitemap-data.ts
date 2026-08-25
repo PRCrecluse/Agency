@@ -14,14 +14,19 @@ const specializedServicePaths = [
   '/services/reddit-services/community-management',
   '/services/reddit-services/reddit-campaigns'
 ]
+
 const specializedServicePathSet = new Set(specializedServicePaths)
 
-export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+export async function getSitemapEntries(): Promise<MetadataRoute.Sitemap> {
   const posts = await getPosts()
   const zhPosts = await getPosts(undefined, 'zh')
   const englishPostSlugs = new Set(posts.map(post => post.slug))
   const zhPostSlugs = new Set(zhPosts.map(post => post.slug))
   const now = new Date()
+
+  const postLastModified = (post: (typeof posts)[number]) =>
+    post.updatedAt ? new Date(post.updatedAt) : post.publishedAt ? new Date(post.publishedAt) : now
+
   const localizedServiceEntry = (path: string, priority: number) => ({
     url: absoluteUrl(path),
     lastModified: now,
@@ -165,7 +170,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
       return {
         url: absoluteUrl(englishPath),
-        lastModified: post.publishedAt ? new Date(post.publishedAt) : now,
+        lastModified: postLastModified(post),
         changeFrequency: 'monthly' as const,
         priority: 0.7,
         alternates: zhPostSlugs.has(post.slug)
@@ -181,7 +186,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     }),
     ...zhPosts.map(post => ({
       url: absoluteUrl(`/zh/blog/${post.slug}`),
-      lastModified: post.publishedAt ? new Date(post.publishedAt) : now,
+      lastModified: postLastModified(post),
       changeFrequency: 'monthly' as const,
       priority: 0.7,
       alternates: englishPostSlugs.has(post.slug)

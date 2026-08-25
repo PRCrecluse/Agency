@@ -12,6 +12,7 @@ type ContextualBlogCtaProps = {
 }
 
 const SEO_BOOKING_URL = 'https://cal.com/team/meridian-growth/book-a-call-for-seo-services'
+const GEO_BOOKING_URL = 'https://cal.com/team/meridian-growth/book-a-call-for-geo-services'
 const REDDIT_BOOKING_URL = 'https://cal.com/team/meridian-growth/book-a-demo'
 
 export type BlogCtaContent = {
@@ -65,8 +66,8 @@ export function getBlogCtaContent({
         locale === 'zh'
           ? '通过可引用的内容、技术 SEO 与权威信号，让品牌更容易被 ChatGPT、Google AI Overviews 等平台发现和引用。'
           : 'Build citable content, technical foundations, and authority signals that help AI search platforms discover and reference your brand.',
-      buttonLabel: locale === 'zh' ? '咨询 GEO 服务' : 'Discuss GEO strategy',
-      href: SEO_BOOKING_URL
+      buttonLabel: locale === 'zh' ? '预约 GEO Demo' : 'Book a GEO demo call',
+      href: GEO_BOOKING_URL
     }
   }
 
