@@ -5,6 +5,7 @@ import { Suspense, useEffect, useState } from 'react'
 import { ArrowUpRightIcon, ExternalLinkIcon } from 'lucide-react'
 
 import Link from 'next/link'
+import { usePathname, useSearchParams } from 'next/navigation'
 
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip'
 import { PrimaryFlowButton } from '@/components/ui/flow-button'
@@ -30,7 +31,9 @@ const HeaderActionFallback = ({ className = '' }: { className?: string }) => <di
 
 const Header = ({ navigationData, className }: HeaderProps) => {
   const [isScrolled, setIsScrolled] = useState(false)
-  const [currentLang, setCurrentLang] = useState<QueryLang>('en')
+  const pathname = usePathname()
+  const searchParams = useSearchParams()
+  const currentLang: QueryLang = pathname.startsWith('/zh/') ? 'zh' : getQueryLang(searchParams.get('lang'))
 
   useEffect(() => {
     const handleScroll = () => {
@@ -42,36 +45,6 @@ const Header = ({ navigationData, className }: HeaderProps) => {
 
     return () => {
       window.removeEventListener('scroll', handleScroll)
-    }
-  }, [])
-
-  useEffect(() => {
-    const syncCurrentLang = () => {
-      const nextLang = getQueryLang(new URLSearchParams(window.location.search).get('lang'))
-
-      setCurrentLang(previousLang => (previousLang === nextLang ? previousLang : nextLang))
-    }
-
-    const originalPushState = window.history.pushState.bind(window.history)
-    const originalReplaceState = window.history.replaceState.bind(window.history)
-
-    window.history.pushState = function (...args) {
-      originalPushState(...args)
-      syncCurrentLang()
-    }
-
-    window.history.replaceState = function (...args) {
-      originalReplaceState(...args)
-      syncCurrentLang()
-    }
-
-    window.addEventListener('popstate', syncCurrentLang)
-    syncCurrentLang()
-
-    return () => {
-      window.history.pushState = originalPushState
-      window.history.replaceState = originalReplaceState
-      window.removeEventListener('popstate', syncCurrentLang)
     }
   }, [])
 

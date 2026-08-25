@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from 'react'
 
 import { CheckIcon, ChevronDownIcon, LanguagesIcon } from 'lucide-react'
-import { usePathname, useRouter } from 'next/navigation'
+import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 
 import { cn } from '@/lib/utils'
 import type { QueryLang } from '@/lib/language'
@@ -17,11 +17,13 @@ const languageOptions: { value: QueryLang; label: string; shortLabel: string }[]
 const LanguageToggle = () => {
   const pathname = usePathname()
   const router = useRouter()
+  const searchParams = useSearchParams()
   const containerRef = useRef<HTMLDivElement>(null)
-  const [currentHref, setCurrentHref] = useState(pathname)
-  const [currentLang, setCurrentLang] = useState<QueryLang>('en')
   const [hash, setHash] = useState('')
   const [open, setOpen] = useState(false)
+  const search = searchParams.toString()
+  const currentHref = `${pathname}${search ? `?${search}` : ''}${hash}`
+  const currentLang: QueryLang = pathname.startsWith('/zh/') ? 'zh' : getQueryLang(searchParams.get('lang'))
 
   useEffect(() => {
     const syncHash = () => {
@@ -35,41 +37,6 @@ const LanguageToggle = () => {
       window.removeEventListener('hashchange', syncHash)
     }
   }, [])
-
-  useEffect(() => {
-    const syncLanguageState = () => {
-      const search = window.location.search
-      const nextHref = `${pathname}${search}${hash}`
-      const nextLang = pathname.startsWith('/zh/')
-        ? 'zh'
-        : getQueryLang(new URLSearchParams(search).get('lang'))
-
-      setCurrentHref(previousHref => (previousHref === nextHref ? previousHref : nextHref))
-      setCurrentLang(previousLang => (previousLang === nextLang ? previousLang : nextLang))
-    }
-
-    const originalPushState = window.history.pushState.bind(window.history)
-    const originalReplaceState = window.history.replaceState.bind(window.history)
-
-    window.history.pushState = function (...args) {
-      originalPushState(...args)
-      syncLanguageState()
-    }
-
-    window.history.replaceState = function (...args) {
-      originalReplaceState(...args)
-      syncLanguageState()
-    }
-
-    window.addEventListener('popstate', syncLanguageState)
-    syncLanguageState()
-
-    return () => {
-      window.history.pushState = originalPushState
-      window.history.replaceState = originalReplaceState
-      window.removeEventListener('popstate', syncLanguageState)
-    }
-  }, [hash, pathname])
 
   useEffect(() => {
     const handlePointerDown = (event: MouseEvent) => {
@@ -102,8 +69,6 @@ const LanguageToggle = () => {
       return
     }
 
-    setCurrentHref(nextHref)
-    setCurrentLang(nextLang)
     router.push(nextHref, { scroll: false })
   }
 

@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react'
+import { Suspense, type ReactNode } from 'react'
 
 import {
   LayoutDashboardIcon,
@@ -119,7 +119,9 @@ const PagesLayout = ({ children }: Readonly<{ children: ReactNode }>) => {
       <div className='mx-auto h-full w-full max-w-336 px-4 sm:px-6 lg:px-8'>
         <div className='bg-background h-full w-full max-w-7xl border-x'>
           {/* Header Section */}
-          <Header navigationData={navigationData} />
+          <Suspense fallback={<div aria-hidden='true' className='h-16 border-b' />}>
+            <Header navigationData={navigationData} />
+          </Suspense>
 
           {/* Main Content */}
           <main className='flex flex-1 flex-col *:scroll-mt-16'>{children}</main>
