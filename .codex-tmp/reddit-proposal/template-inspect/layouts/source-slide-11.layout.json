@@ -1,0 +1,1078 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/jetc3ut0",
+    "id": "jetc3ut0",
+    "slide": 11,
+    "layoutId": "/ppt/slideLayouts/slideLayout1.xml",
+    "layoutName": "DEFAULT",
+    "masterLayoutId": "/ppt/slideMasters/slideMaster1.xml",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 960,
+      "height": 540
+    }
+  },
+  "theme": {
+    "colorSchemeName": "Office",
+    "colors": {
+      "accent1": "#4472C4",
+      "accent2": "#ED7D31",
+      "accent3": "#A5A5A5",
+      "accent4": "#FFC000",
+      "accent5": "#5B9BD5",
+      "accent6": "#70AD47",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#44546A",
+      "lt2": "#E7E6E6",
+      "hlink": "#0563C1",
+      "folHlink": "#954F72"
+    },
+    "fontScheme": {
+      "name": "Office",
+      "majorFont": {
+        "latinTypeface": "Calibri Light"
+      },
+      "minorFont": {
+        "latinTypeface": "Calibri"
+      }
+    },
+    "typefaces": [
+      "Calibri",
+      "Calibri Light",
+      "Inter",
+      "Inter Black",
+      "Inter ExtraBold"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "/ppt/slideLayouts/slideLayout1.xml",
+      "name": "DEFAULT",
+      "parentLayoutId": "/ppt/slideMasters/slideMaster1.xml",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "/ppt/slideMasters/slideMaster1.xml",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/one5kr2l",
+      "id": "17",
+      "name": "Image 0",
+      "bbox": [
+        0,
+        0,
+        960,
+        540
+      ],
+      "contentType": "image/jpeg",
+      "asset": {
+        "assetId": "/ppt/media/image2.jpeg",
+        "contentType": "image/jpeg",
+        "byteLength": 11127
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image2.jpeg",
+        "contentType": "image/jpeg",
+        "byteLength": 11127
+      }
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/wbih4b6d",
+      "id": "3",
+      "name": "Shape 0",
+      "bbox": [
+        0,
+        0,
+        960,
+        92.44
+      ],
+      "geometry": "rect",
+      "fillColor": "#055C4E"
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/n69grmpw",
+      "id": "4",
+      "name": "Text 1",
+      "bbox": [
+        45,
+        30,
+        870,
+        32.44
+      ],
+      "geometry": "rect",
+      "text": "核心策略：10 天脉冲式打法 & 热门算法触发机制",
+      "textPreview": "核心策略：10 天脉冲式打法 & 热门算法触发机制",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "核心策略：10 天脉冲式打法 & 热门算法触发机制"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "核心策略：10 天脉冲式打法 & 热门算法触发机制",
+          "resolvedTextStyle": {
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "核心策略：10 天脉冲式打法 & 热门算法触发机制",
+              "fontSize": 21.33,
+              "typeface": "Inter ExtraBold",
+              "color": "#FFFFFF",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/250zy18b",
+      "id": "5",
+      "name": "Shape 2",
+      "bbox": [
+        0,
+        92.44,
+        480,
+        447.56
+      ],
+      "geometry": "rect",
+      "fillColor": "#020817"
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/98rytw72",
+      "id": "6",
+      "name": "Text 3",
+      "bbox": [
+        45,
+        181.97,
+        390,
+        61.5
+      ],
+      "geometry": "rect",
+      "text": "10 天脉冲式打法\n(Blitz Campaign)",
+      "textPreview": "10 天脉冲式打法 | (Blitz Campaign)",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "10 天脉冲式打法"
+          },
+          {
+            "index": 2,
+            "text": "(Blitz Campaign)"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "10 天脉冲式打法\n(Blitz Campaign)",
+          "resolvedTextStyle": {
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "10 天脉冲式打法",
+              "fontSize": 21.33,
+              "typeface": "Inter Black",
+              "color": "#5EEAD4",
+              "bold": true
+            },
+            {
+              "index": 2,
+              "text": "\n",
+              "fontSize": 21.33,
+              "typeface": "Inter Black",
+              "color": "#5EEAD4",
+              "bold": true
+            },
+            {
+              "index": 3,
+              "text": "(Blitz Campaign)",
+              "fontSize": 21.33,
+              "typeface": "Inter Black",
+              "color": "#5EEAD4",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/o7ih0r6h",
+      "id": "7",
+      "name": "Text 4",
+      "bbox": [
+        45,
+        265.97,
+        390,
+        18
+      ],
+      "geometry": "rect",
+      "text": "执行节奏",
+      "textPreview": "执行节奏",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "执行节奏"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "执行节奏",
+          "resolvedTextStyle": {
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "执行节奏",
+              "fontSize": 12,
+              "typeface": "Inter ExtraBold",
+              "color": "#00D1AE",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/72t03qp0",
+      "id": "8",
+      "name": "Text 5",
+      "bbox": [
+        45,
+        292.97,
+        390,
+        43.2
+      ],
+      "geometry": "rect",
+      "text": "在 10 天 内集中发布 30 个高质量主贴，平均每天 3 贴。摒弃传统的缓慢滴灌策略，采用高频、高强度的矩阵式发布。",
+      "textPreview": "在 10 天 内集中发布 30 个高质量主贴，平均每天 3 贴。摒弃传统的缓慢滴灌策略，采用高频、高强度的矩阵式发布。",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "在 10 天 内集中发布 30 个高质量主贴，平均每天 3 贴。摒弃传"
+          },
+          {
+            "index": 2,
+            "text": "统的缓慢滴灌策略，采用高频、高强度的矩阵式发布。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "在 10 天 内集中发布 30 个高质量主贴，平均每天 3 贴。摒弃传统的缓慢滴灌策略，采用高频、高强度的矩阵式发布。",
+          "lineSpacingPercent": 128000,
+          "resolvedTextStyle": {
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "在 ",
+              "fontSize": 12.67,
+              "typeface": "Inter",
+              "color": "rgba(255, 255, 255, 0.85)"
+            },
+            {
+              "index": 2,
+              "text": "10 天",
+              "fontSize": 12,
+              "typeface": "Inter ExtraBold",
+              "color": "#FFFFFF",
+              "bold": true
+            },
+            {
+              "index": 3,
+              "text": " 内集中发布 ",
+              "fontSize": 12.67,
+              "typeface": "Inter",
+              "color": "rgba(255, 255, 255, 0.85)"
+            },
+            {
+              "index": 4,
+              "text": "30 个高质量主贴",
+              "fontSize": 12,
+              "typeface": "Inter ExtraBold",
+              "color": "#FFFFFF",
+              "bold": true
+            },
+            {
+              "index": 5,
+              "text": "，平均每天 3 贴。摒弃传",
+              "fontSize": 12.67,
+              "typeface": "Inter",
+              "color": "rgba(255, 255, 255, 0.85)"
+            },
+            {
+              "index": 6,
+              "text": "统的缓慢滴灌策略，采用高频、高强度的矩阵式发布。",
+              "fontSize": 12.67,
+              "typeface": "Inter",
+              "color": "rgba(255, 255, 255, 0.85)"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/61kzalof",
+      "id": "9",
+      "name": "Text 6",
+      "bbox": [
+        45,
+        358.67,
+        390,
+        18
+      ],
+      "geometry": "rect",
+      "text": "核心目的",
+      "textPreview": "核心目的",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "核心目的"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "核心目的",
+          "resolvedTextStyle": {
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "核心目的",
+              "fontSize": 12,
+              "typeface": "Inter ExtraBold",
+              "color": "#00D1AE",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 9,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ofqtgnyt",
+      "id": "10",
+      "name": "Text 7",
+      "bbox": [
+        45,
+        385.67,
+        390,
+        64.79
+      ],
+      "geometry": "rect",
+      "text": "通过短时间内的密集曝光，在目标版块（如 r/sales, r/hubspot）制造 “全网都在讨论 Expertise.ai” 的势能，迅速占领目标受众的心智和话语权。",
+      "textPreview": "通过短时间内的密集曝光，在目标版块（如 r/sales, r/hubspot）制造 “全网都在讨论 Expertise.ai” 的势能，迅速占领目标受众的心智和话语权。",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 3,
+        "lines": [
+          {
+            "index": 1,
+            "text": "通过短时间内的密集曝光，在目标版块（如 r/sales, r/hubspot）制造"
+          },
+          {
+            "index": 2,
+            "text": "“全网都在讨论 Expertise.ai” 的势能，迅速占领目标受众的"
+          },
+          {
+            "index": 3,
+            "text": "心智和话语权。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "通过短时间内的密集曝光，在目标版块（如 r/sales, r/hubspot）制造 “全网都在讨论 Expertise.ai” 的势能，迅速占领目标受众的心智和话语权。",
+          "lineSpacingPercent": 128000,
+          "resolvedTextStyle": {
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "通过短时间内的密集曝光，在目标版块（如 r/sales, r/hubspot）",
+              "fontSize": 12.67,
+              "typeface": "Inter",
+              "color": "rgba(255, 255, 255, 0.85)"
+            },
+            {
+              "index": 2,
+              "text": "制造 ",
+              "fontSize": 12.67,
+              "typeface": "Inter",
+              "color": "rgba(255, 255, 255, 0.85)"
+            },
+            {
+              "index": 3,
+              "text": "“全网都在讨论 Expertise.ai”",
+              "fontSize": 12,
+              "typeface": "Inter ExtraBold",
+              "color": "#FFFFFF",
+              "bold": true
+            },
+            {
+              "index": 4,
+              "text": " 的势能，迅速占领目标受众的",
+              "fontSize": 12.67,
+              "typeface": "Inter",
+              "color": "rgba(255, 255, 255, 0.85)"
+            },
+            {
+              "index": 5,
+              "text": "心智和话语权。",
+              "fontSize": 12.67,
+              "typeface": "Inter",
+              "color": "rgba(255, 255, 255, 0.85)"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 10,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/9gza9sze",
+      "id": "11",
+      "name": "Shape 8",
+      "bbox": [
+        480,
+        92.44,
+        480,
+        447.56
+      ],
+      "geometry": "rect",
+      "fillColor": "#5EEAD4"
+    },
+    {
+      "order": 11,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/mdobedg3",
+      "id": "12",
+      "name": "Text 9",
+      "bbox": [
+        525,
+        171.18,
+        390,
+        61.5
+      ],
+      "geometry": "rect",
+      "text": "1 Post + 5 Comments\n算法触发机制",
+      "textPreview": "1 Post + 5 Comments | 算法触发机制",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "1 Post + 5 Comments"
+          },
+          {
+            "index": 2,
+            "text": "算法触发机制"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "1 Post + 5 Comments\n算法触发机制",
+          "resolvedTextStyle": {
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "1 Post + 5 Comments",
+              "fontSize": 21.33,
+              "typeface": "Inter Black",
+              "color": "#020817",
+              "bold": true
+            },
+            {
+              "index": 2,
+              "text": "\n",
+              "fontSize": 21.33,
+              "typeface": "Inter Black",
+              "color": "#020817",
+              "bold": true
+            },
+            {
+              "index": 3,
+              "text": "算法触发机制",
+              "fontSize": 21.33,
+              "typeface": "Inter Black",
+              "color": "#020817",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 12,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/nehs7iho",
+      "id": "13",
+      "name": "Text 10",
+      "bbox": [
+        525,
+        255.18,
+        390,
+        18
+      ],
+      "geometry": "rect",
+      "text": "突破 REDDIT 算法",
+      "textPreview": "突破 REDDIT 算法",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "突破 REDDIT 算法"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "突破 REDDIT 算法",
+          "resolvedTextStyle": {
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "突破 REDDIT 算法",
+              "fontSize": 12,
+              "typeface": "Inter ExtraBold",
+              "color": "#055C4E",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 13,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/0b6tc3yx",
+      "id": "14",
+      "name": "Text 11",
+      "bbox": [
+        525,
+        282.18,
+        390,
+        58.73
+      ],
+      "geometry": "rect",
+      "text": "Reddit 算法极其看重帖子发布后 前 30 分钟 的互动率。预计每个主贴至少获得 5 条高质量评论，能瞬间拉高活跃度权重，将帖子推上版块的 \"Hot\"（热门）榜单。",
+      "textPreview": "Reddit 算法极其看重帖子发布后 前 30 分钟 的互动率。预计每个主贴至少获得 5 条高质量评论，能瞬间拉高活跃度权重，将帖子推上版块的 \"Hot\"（热门）榜单。",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 3,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Reddit 算法极其看重帖子发布后 前 30 分钟 的互动率。预计"
+          },
+          {
+            "index": 2,
+            "text": "每个主贴至少获得 5 条高质量评论"
+          },
+          {
+            "index": 3,
+            "text": "，能瞬间拉高活跃度权重，将帖子推上版块的 \"Hot\"（热门）榜单。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Reddit 算法极其看重帖子发布后 前 30 分钟 的互动率。预计每个主贴至少获得 5 条高质量评论，能瞬间拉高活跃度权重，将帖子推上版块的 \"Hot\"（热门）榜单。",
+          "lineSpacingPercent": 128000,
+          "resolvedTextStyle": {
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Reddit 算法极其看重帖子发布后 ",
+              "fontSize": 12.67,
+              "typeface": "Inter",
+              "color": "#020817"
+            },
+            {
+              "index": 2,
+              "text": "前 30 分钟",
+              "fontSize": 12,
+              "typeface": "Inter ExtraBold",
+              "color": "#055C4E",
+              "bold": true
+            },
+            {
+              "index": 3,
+              "text": " 的互动率。",
+              "fontSize": 12.67,
+              "typeface": "Inter",
+              "color": "#020817"
+            },
+            {
+              "index": 4,
+              "text": "预计",
+              "fontSize": 12.67,
+              "typeface": "Inter",
+              "color": "#020817"
+            },
+            {
+              "index": 5,
+              "text": "每个主贴",
+              "fontSize": 12.67,
+              "typeface": "Inter",
+              "color": "#020817"
+            },
+            {
+              "index": 6,
+              "text": "至少获得",
+              "fontSize": 12.67,
+              "typeface": "Inter",
+              "color": "#020817"
+            },
+            {
+              "index": 7,
+              "text": " ",
+              "fontSize": 12.67,
+              "typeface": "Inter",
+              "color": "#020817"
+            },
+            {
+              "index": 8,
+              "text": "5 条高质量评论",
+              "fontSize": 12,
+              "typeface": "Inter ExtraBold",
+              "color": "#055C4E",
+              "bold": true
+            },
+            {
+              "index": 9,
+              "text": "，能瞬间拉高活跃度权重，将帖子推上",
+              "fontSize": 12.67,
+              "typeface": "Inter",
+              "color": "#020817"
+            },
+            {
+              "index": 10,
+              "text": "版块的 \"Hot\"（热门）榜单。",
+              "fontSize": 12.67,
+              "typeface": "Inter",
+              "color": "#020817"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 14,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/1cfa58zi",
+      "id": "15",
+      "name": "Text 12",
+      "bbox": [
+        525,
+        369.47,
+        390,
+        18
+      ],
+      "geometry": "rect",
+      "text": "自问自答式植入",
+      "textPreview": "自问自答式植入",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "自问自答式植入"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "自问自答式植入",
+          "resolvedTextStyle": {
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "自问自答式植入",
+              "fontSize": 12,
+              "typeface": "Inter ExtraBold",
+              "color": "#055C4E",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 15,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/epobatgr",
+      "id": "16",
+      "name": "Text 13",
+      "bbox": [
+        525,
+        396.47,
+        390,
+        58.73
+      ],
+      "geometry": "rect",
+      "text": "主贴保持客观中立（如痛点探讨），可以 5 条评论进行 争议互动或自问自答。在评论区自然引出 Expertise.ai 的核心优势（如 HubSpot 深度集成），极大降低硬广嫌疑。",
+      "textPreview": "主贴保持客观中立（如痛点探讨），可以 5 条评论进行 争议互动或自问自答。在评论区自然引出 Expertise.ai 的核心优势（如 HubSpot 深度集成），极大降低硬广嫌疑。",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 3,
+        "lines": [
+          {
+            "index": 1,
+            "text": "主贴保持客观中立（如痛点探讨），可以 5 条评论进行 争"
+          },
+          {
+            "index": 2,
+            "text": "议互动或自问自答。在评论区自然引出 Expertise.ai 的核心优势（如"
+          },
+          {
+            "index": 3,
+            "text": "HubSpot 深度集成），极大降低硬广嫌疑。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "主贴保持客观中立（如痛点探讨），可以 5 条评论进行 争议互动或自问自答。在评论区自然引出 Expertise.ai 的核心优势（如 HubSpot 深度集成），极大降低硬广嫌疑。",
+          "lineSpacingPercent": 128000,
+          "resolvedTextStyle": {
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "主贴保持客观中立（如痛点探讨），",
+              "fontSize": 12.67,
+              "typeface": "Inter",
+              "color": "#020817"
+            },
+            {
+              "index": 2,
+              "text": "可以",
+              "fontSize": 12.67,
+              "typeface": "Inter",
+              "color": "#020817"
+            },
+            {
+              "index": 3,
+              "text": " 5 条评论进行 ",
+              "fontSize": 12.67,
+              "typeface": "Inter",
+              "color": "#020817"
+            },
+            {
+              "index": 4,
+              "text": "争",
+              "fontSize": 12,
+              "typeface": "Inter ExtraBold",
+              "color": "#055C4E",
+              "bold": true
+            },
+            {
+              "index": 5,
+              "text": "议互动或自问自答",
+              "fontSize": 12,
+              "typeface": "Inter ExtraBold",
+              "color": "#055C4E",
+              "bold": true
+            },
+            {
+              "index": 6,
+              "text": "。在评论区自然引出 Expertise.ai 的核心优势",
+              "fontSize": 12.67,
+              "typeface": "Inter",
+              "color": "#020817"
+            },
+            {
+              "index": 7,
+              "text": "（如 HubSpot 深度集成），极大降低硬广嫌疑。",
+              "fontSize": 12.67,
+              "typeface": "Inter",
+              "color": "#020817"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    }
+  ],
+  "composeRuns": []
+}

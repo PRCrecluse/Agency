@@ -1,15 +1,39 @@
 import type { MetadataRoute } from 'next'
 
 import { aboutStories } from '@/content/about-stories'
-import { serviceSlugs } from '@/content/services'
+import { serviceSectionParams, serviceSlugs } from '@/content/services'
 import { getPosts } from '@/lib/posts'
 import { absoluteUrl } from '@/lib/seo'
+
+const specializedServicePaths = [
+  '/services/seo-services/on-page-seo',
+  '/services/seo-services/technical-seo',
+  '/services/seo-services/programmatic-seo',
+  '/services/seo-services/link-building',
+  '/services/seo-services/keyword-research',
+  '/services/reddit-services/community-management',
+  '/services/reddit-services/reddit-campaigns'
+]
+const specializedServicePathSet = new Set(specializedServicePaths)
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const posts = await getPosts()
   const zhPosts = await getPosts(undefined, 'zh')
   const zhPostSlugs = new Set(zhPosts.map(post => post.slug))
   const now = new Date()
+  const localizedServiceEntry = (path: string, priority: number) => ({
+    url: absoluteUrl(path),
+    lastModified: now,
+    changeFrequency: 'weekly' as const,
+    priority,
+    alternates: {
+      languages: {
+        en: absoluteUrl(path.replace(/^\/zh/, '')),
+        'zh-CN': absoluteUrl(path.startsWith('/zh/') ? path : `/zh${path}`),
+        'x-default': absoluteUrl(path.replace(/^\/zh/, ''))
+      }
+    }
+  })
 
   return [
     {
@@ -56,6 +80,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: 'weekly',
       priority: 0.9
     },
+    localizedServiceEntry('/zh/services', 0.9),
     {
       url: absoluteUrl('/services/reddit-services'),
       lastModified: now,
@@ -122,6 +147,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: 'weekly' as const,
       priority: 0.7
     })),
+    ...serviceSlugs.map(slug => localizedServiceEntry(`/zh/services/${slug}`, 0.7)),
+    ...specializedServicePaths.map(path => localizedServiceEntry(`/zh${path}`, 0.8)),
+    ...serviceSectionParams
+      .filter(({ slug, sectionSlug }) => !specializedServicePathSet.has(`/services/${slug}/${sectionSlug}`))
+      .map(({ slug, sectionSlug }) => localizedServiceEntry(`/zh/services/${slug}/${sectionSlug}`, 0.7)),
     ...aboutStories.map(story => ({
       url: absoluteUrl(`/about/stories/${story.slug}`),
       lastModified: new Date(story.date),

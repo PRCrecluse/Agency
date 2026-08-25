@@ -1,0 +1,916 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/jetc3ut0",
+    "id": "jetc3ut0",
+    "slide": 11,
+    "layoutId": "/ppt/slideLayouts/slideLayout1.xml",
+    "layoutName": "DEFAULT",
+    "masterLayoutId": "/ppt/slideMasters/slideMaster1.xml",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 960,
+      "height": 540
+    }
+  },
+  "theme": {
+    "colorSchemeName": "Office",
+    "colors": {
+      "accent1": "#4472C4",
+      "accent2": "#ED7D31",
+      "accent3": "#A5A5A5",
+      "accent4": "#FFC000",
+      "accent5": "#5B9BD5",
+      "accent6": "#70AD47",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#44546A",
+      "lt2": "#E7E6E6",
+      "hlink": "#0563C1",
+      "folHlink": "#954F72"
+    },
+    "fontScheme": {
+      "name": "Office",
+      "majorFont": {
+        "latinTypeface": "Calibri Light"
+      },
+      "minorFont": {
+        "latinTypeface": "Calibri"
+      }
+    },
+    "typefaces": [
+      "Calibri",
+      "Calibri Light",
+      "Inter",
+      "Inter Black",
+      "Inter ExtraBold"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "/ppt/slideLayouts/slideLayout1.xml",
+      "name": "DEFAULT",
+      "parentLayoutId": "/ppt/slideMasters/slideMaster1.xml",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "/ppt/slideMasters/slideMaster1.xml",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/one5kr2l",
+      "id": "17",
+      "name": "Image 0",
+      "bbox": [
+        0,
+        0,
+        960,
+        540
+      ],
+      "contentType": "image/jpeg",
+      "asset": {
+        "assetId": "/ppt/media/image2.jpeg",
+        "contentType": "image/jpeg",
+        "byteLength": 11127
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image2.jpeg",
+        "contentType": "image/jpeg",
+        "byteLength": 11127
+      }
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/wbih4b6d",
+      "id": "3",
+      "name": "Shape 0",
+      "bbox": [
+        0,
+        0,
+        960,
+        92.44
+      ],
+      "geometry": "rect",
+      "fillColor": "#055C4E"
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/n69grmpw",
+      "id": "4",
+      "name": "Text 1",
+      "bbox": [
+        45,
+        30,
+        870,
+        32.44
+      ],
+      "geometry": "rect",
+      "text": "首轮采用 10 天冲刺；后续由模型发布雷达持续供稿",
+      "textPreview": "首轮采用 10 天冲刺；后续由模型发布雷达持续供稿",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "首轮采用 10 天冲刺；后续由模型发布雷达持续供稿"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "首轮采用 10 天冲刺；后续由模型发布雷达持续供稿",
+          "resolvedTextStyle": {
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "首轮采用 10 天冲刺；后续由模型发布雷达持续供稿",
+              "fontSize": 21.33,
+              "typeface": "Inter ExtraBold",
+              "color": "#FFFFFF",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/250zy18b",
+      "id": "5",
+      "name": "Shape 2",
+      "bbox": [
+        0,
+        92.44,
+        480,
+        447.56
+      ],
+      "geometry": "rect",
+      "fillColor": "#020817"
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/98rytw72",
+      "id": "6",
+      "name": "Text 3",
+      "bbox": [
+        45,
+        181.97,
+        390,
+        61.5
+      ],
+      "geometry": "rect",
+      "text": "10 天发布冲刺\n(Launch Sprint)",
+      "textPreview": "10 天发布冲刺 | (Launch Sprint)",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "10 天发布冲刺"
+          },
+          {
+            "index": 2,
+            "text": "(Launch Sprint)"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "10 天发布冲刺",
+          "resolvedTextStyle": {
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "10 天发布冲刺",
+              "fontSize": 21.33,
+              "typeface": "Inter Black",
+              "color": "#5EEAD4",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "(Launch Sprint)",
+          "resolvedTextStyle": {
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "(Launch Sprint)",
+              "fontSize": 21.33,
+              "typeface": "Inter Black",
+              "color": "#5EEAD4",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/o7ih0r6h",
+      "id": "7",
+      "name": "Text 4",
+      "bbox": [
+        45,
+        265.97,
+        390,
+        18
+      ],
+      "geometry": "rect",
+      "text": "执行节奏",
+      "textPreview": "执行节奏",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "执行节奏"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "执行节奏",
+          "resolvedTextStyle": {
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "执行节奏",
+              "fontSize": 12,
+              "typeface": "Inter ExtraBold",
+              "color": "#00D1AE",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/72t03qp0",
+      "id": "8",
+      "name": "Text 5",
+      "bbox": [
+        45,
+        292.97,
+        390,
+        58.37
+      ],
+      "geometry": "rect",
+      "text": "每天 2–3 篇，错开社区与账号；先技术价值，后品牌解释。每篇只在一个社区首发，其他社区重新写标题、证据顺序与讨论问题。",
+      "textPreview": "每天 2–3 篇，错开社区与账号；先技术价值，后品牌解释。每篇只在一个社区首发，其他社区重新写标题、证据顺序与讨论问题。",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 3,
+        "lines": [
+          {
+            "index": 1,
+            "text": "每天 2–3"
+          },
+          {
+            "index": 2,
+            "text": "篇，错开社区与账号；先技术价值，后品牌解释。每篇只在一个社区"
+          },
+          {
+            "index": 3,
+            "text": "首发，其他社区重新写标题、证据顺序与讨论问题。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "每天 2–3 篇，错开社区与账号；先技术价值，后品牌解释。每篇只在一个社区首发，其他社区重新写标题、证据顺序与讨论问题。",
+          "lineSpacingPercent": 128000,
+          "resolvedTextStyle": {
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "每天 2–3 篇，错开社区与账号；先技术价值，后品牌解释。每篇只在一个社区首发，其他社区重新写标题、证据顺序与讨论问题。",
+              "fontSize": 12.67,
+              "typeface": "Inter",
+              "color": "rgba(255, 255, 255, 0.85)"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/61kzalof",
+      "id": "9",
+      "name": "Text 6",
+      "bbox": [
+        45,
+        358.67,
+        390,
+        18
+      ],
+      "geometry": "rect",
+      "text": "核心目的",
+      "textPreview": "核心目的",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "核心目的"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "核心目的",
+          "resolvedTextStyle": {
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "核心目的",
+              "fontSize": 12,
+              "typeface": "Inter ExtraBold",
+              "color": "#00D1AE",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 9,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ofqtgnyt",
+      "id": "10",
+      "name": "Text 7",
+      "bbox": [
+        45,
+        385.67,
+        390,
+        64.79
+      ],
+      "geometry": "rect",
+      "text": "快速找到三种可规模化内容：价格对照、热点实测、工程可靠性；用真实评论决定下一轮预算，而不是追求虚假热度。",
+      "textPreview": "快速找到三种可规模化内容：价格对照、热点实测、工程可靠性；用真实评论决定下一轮预算，而不是追求虚假热度。",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "快速找到三种可规模化内容：价格对照、热点实测、工程可靠性；用"
+          },
+          {
+            "index": 2,
+            "text": "真实评论决定下一轮预算，而不是追求虚假热度。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "快速找到三种可规模化内容：价格对照、热点实测、工程可靠性；用真实评论决定下一轮预算，而不是追求虚假热度。",
+          "lineSpacingPercent": 128000,
+          "resolvedTextStyle": {
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "快速找到三种可规模化内容：价格对照、热点实测、工程可靠性；用真实评论决定下一轮预算，而不是追求虚假热度。",
+              "fontSize": 12.67,
+              "typeface": "Inter",
+              "color": "rgba(255, 255, 255, 0.85)"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 10,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/9gza9sze",
+      "id": "11",
+      "name": "Shape 8",
+      "bbox": [
+        480,
+        92.44,
+        480,
+        447.56
+      ],
+      "geometry": "rect",
+      "fillColor": "#5EEAD4"
+    },
+    {
+      "order": 11,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/mdobedg3",
+      "id": "12",
+      "name": "Text 9",
+      "bbox": [
+        525,
+        171.18,
+        390,
+        61.5
+      ],
+      "geometry": "rect",
+      "text": "模型发布雷达\n(Always-on)",
+      "textPreview": "模型发布雷达 | (Always-on)",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "模型发布雷达"
+          },
+          {
+            "index": 2,
+            "text": "(Always-on)"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "模型发布雷达",
+          "resolvedTextStyle": {
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "模型发布雷达",
+              "fontSize": 21.33,
+              "typeface": "Inter Black",
+              "color": "#020817",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "(Always-on)",
+          "resolvedTextStyle": {
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "(Always-on)",
+              "fontSize": 21.33,
+              "typeface": "Inter Black",
+              "color": "#020817",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 12,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/nehs7iho",
+      "id": "13",
+      "name": "Text 10",
+      "bbox": [
+        525,
+        255.18,
+        390,
+        18
+      ],
+      "geometry": "rect",
+      "text": "监测清单",
+      "textPreview": "监测清单",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "监测清单"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "监测清单",
+          "resolvedTextStyle": {
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "监测清单",
+              "fontSize": 12,
+              "typeface": "Inter ExtraBold",
+              "color": "#055C4E",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 13,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/0b6tc3yx",
+      "id": "14",
+      "name": "Text 11",
+      "bbox": [
+        525,
+        282.18,
+        390,
+        58.73
+      ],
+      "geometry": "rect",
+      "text": "Gemini、Kimi、DeepSeek、Qwen、Wan、OpenAI、Claude；跟踪官方账号、模型页、API changelog 与社区置顶。",
+      "textPreview": "Gemini、Kimi、DeepSeek、Qwen、Wan、OpenAI、Claude；跟踪官方账号、模型页、API changelog 与社区置顶。",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Gemini、Kimi、DeepSeek、Qwen、Wan、OpenAI、Claude；跟踪"
+          },
+          {
+            "index": 2,
+            "text": "官方账号、模型页、API changelog 与社区置顶。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Gemini、Kimi、DeepSeek、Qwen、Wan、OpenAI、Claude；跟踪官方账号、模型页、API changelog 与社区置顶。",
+          "lineSpacingPercent": 128000,
+          "resolvedTextStyle": {
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Gemini、Kimi、DeepSeek、Qwen、Wan、OpenAI、Claude；跟踪官方账号、模型页、API changelog 与社区置顶。",
+              "fontSize": 12.67,
+              "typeface": "Inter",
+              "color": "#020817"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 14,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/1cfa58zi",
+      "id": "15",
+      "name": "Text 12",
+      "bbox": [
+        525,
+        369.47,
+        390,
+        18
+      ],
+      "geometry": "rect",
+      "text": "24/48 小时 SLA",
+      "textPreview": "24/48 小时 SLA",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "24/48 小时 SLA"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "24/48 小时 SLA",
+          "resolvedTextStyle": {
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "24/48 小时 SLA",
+              "fontSize": 12,
+              "typeface": "Inter ExtraBold",
+              "color": "#055C4E",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 15,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/epobatgr",
+      "id": "16",
+      "name": "Text 13",
+      "bbox": [
+        525,
+        396.47,
+        390,
+        58.73
+      ],
+      "geometry": "rect",
+      "text": "24 小时完成测试；48 小时发布社区版本。预备：Gemini 3.7 Flash、Kimi K3、DeepSeek V4 Flash、GPT-5.6 Luna、Wan 3.0；发布前再次核实。",
+      "textPreview": "24 小时完成测试；48 小时发布社区版本。预备：Gemini 3.7 Flash、Kimi K3、DeepSeek V4 Flash、GPT-5.6 Luna、Wan 3.0；发布前再次核实。",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 3,
+        "lines": [
+          {
+            "index": 1,
+            "text": "24 小时完成测试；48 小时发布社区版本。预备：Gemini 3.7"
+          },
+          {
+            "index": 2,
+            "text": "Flash、Kimi K3、DeepSeek V4 Flash、GPT-5.6 Luna、Wan"
+          },
+          {
+            "index": 3,
+            "text": "3.0；发布前再次核实。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "24 小时完成测试；48 小时发布社区版本。预备：Gemini 3.7 Flash、Kimi K3、DeepSeek V4 Flash、GPT-5.6 Luna、Wan 3.0；发布前再次核实。",
+          "lineSpacingPercent": 128000,
+          "resolvedTextStyle": {
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "24 小时完成测试；48 小时发布社区版本。预备：Gemini 3.7 Flash、Kimi K3、DeepSeek V4 Flash、GPT-5.6 Luna、Wan 3.0；发布前再次核实。",
+              "fontSize": 12.67,
+              "typeface": "Inter",
+              "color": "#020817"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    }
+  ],
+  "composeRuns": []
+}

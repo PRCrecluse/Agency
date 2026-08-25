@@ -1,0 +1,1383 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/x8f69ofe",
+    "id": "x8f69ofe",
+    "slide": 6,
+    "layoutId": "/ppt/slideLayouts/slideLayout1.xml",
+    "layoutName": "DEFAULT",
+    "masterLayoutId": "/ppt/slideMasters/slideMaster1.xml",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 960,
+      "height": 540
+    }
+  },
+  "theme": {
+    "colorSchemeName": "Office",
+    "colors": {
+      "accent1": "#4472C4",
+      "accent2": "#ED7D31",
+      "accent3": "#A5A5A5",
+      "accent4": "#FFC000",
+      "accent5": "#5B9BD5",
+      "accent6": "#70AD47",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#44546A",
+      "lt2": "#E7E6E6",
+      "hlink": "#0563C1",
+      "folHlink": "#954F72"
+    },
+    "fontScheme": {
+      "name": "Office",
+      "majorFont": {
+        "latinTypeface": "Calibri Light"
+      },
+      "minorFont": {
+        "latinTypeface": "Calibri"
+      }
+    },
+    "typefaces": [
+      "Calibri",
+      "Calibri Light",
+      "Inter",
+      "Inter ExtraBold",
+      "Inter SemiBold"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "/ppt/slideLayouts/slideLayout1.xml",
+      "name": "DEFAULT",
+      "parentLayoutId": "/ppt/slideMasters/slideMaster1.xml",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "/ppt/slideMasters/slideMaster1.xml",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/3id8b69w",
+      "id": "28",
+      "name": "Image 0",
+      "bbox": [
+        0,
+        0,
+        960,
+        540
+      ],
+      "contentType": "image/jpeg",
+      "asset": {
+        "assetId": "/ppt/media/image2.jpeg",
+        "contentType": "image/jpeg",
+        "byteLength": 11127
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image2.jpeg",
+        "contentType": "image/jpeg",
+        "byteLength": 11127
+      }
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/zi98nu94",
+      "id": "3",
+      "name": "Shape 0",
+      "bbox": [
+        0,
+        0,
+        960,
+        77.44
+      ],
+      "geometry": "rect",
+      "fillColor": "#055C4E"
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/87ipkzal",
+      "id": "4",
+      "name": "Text 1",
+      "bbox": [
+        45,
+        22.5,
+        870,
+        32.44
+      ],
+      "geometry": "rect",
+      "text": "r/sales (58万+) & r/techsales — AE 和销售经理的主战场",
+      "textPreview": "r/sales (58万+) & r/techsales — AE 和销售经理的主战场",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "r/sales (58万+) & r/techsales — AE 和销售经理的主战场"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "r/sales (58万+) & r/techsales — AE 和销售经理的主战场",
+          "resolvedTextStyle": {
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "r/sales (58万+) & r/techsales — AE 和销售经理的主战场",
+              "fontSize": 21.33,
+              "typeface": "Inter ExtraBold",
+              "color": "#FFFFFF",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/98rqt4r6",
+      "id": "5",
+      "name": "Shape 2",
+      "bbox": [
+        30,
+        92.44,
+        307.65,
+        301.31
+      ],
+      "geometry": "rect",
+      "fillColor": "#020817"
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ml07i9sv",
+      "id": "6",
+      "name": "Text 3",
+      "bbox": [
+        45,
+        107.44,
+        277.65,
+        24.38
+      ],
+      "geometry": "rect",
+      "text": "社区画像",
+      "textPreview": "社区画像",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "社区画像"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "社区画像",
+          "resolvedTextStyle": {
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "社区画像",
+              "fontSize": 16,
+              "typeface": "Inter ExtraBold",
+              "color": "#5EEAD4",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/7m98ru9g",
+      "id": "7",
+      "name": "Text 4",
+      "bbox": [
+        45,
+        143.81,
+        277.65,
+        36
+      ],
+      "geometry": "rect",
+      "text": "受众：Account Executives、销售经理、SDR、RevOps",
+      "textPreview": "受众：Account Executives、销售经理、SDR、RevOps",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "受众：Account Executives、销售经理、SDR、RevOps"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "受众：Account Executives、销售经理、SDR、RevOps",
+          "lineSpacingPercent": 120000,
+          "resolvedTextStyle": {
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "受众：",
+              "fontSize": 10.67,
+              "typeface": "Inter ExtraBold",
+              "color": "#FFFFFF",
+              "bold": true
+            },
+            {
+              "index": 2,
+              "text": "Account Executives、销售经理、SDR、RevOps",
+              "fontSize": 11.33,
+              "typeface": "Inter",
+              "color": "rgba(255, 255, 255, 0.9)"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/oryp8fah",
+      "id": "8",
+      "name": "Text 5",
+      "bbox": [
+        45,
+        188.81,
+        277.65,
+        18
+      ],
+      "geometry": "rect",
+      "text": "规模：r/sales 58万+，r/techsales 活跃度高",
+      "textPreview": "规模：r/sales 58万+，r/techsales 活跃度高",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "none",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "规模：r/sales 58万+，r/techsales 活跃度高"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "规模：r/sales 58万+，r/techsales 活跃度高",
+          "lineSpacingPercent": 120000,
+          "resolvedTextStyle": {
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "规模：",
+              "fontSize": 10.67,
+              "typeface": "Inter ExtraBold",
+              "color": "#FFFFFF",
+              "bold": true
+            },
+            {
+              "index": 2,
+              "text": "r/sales 58万+，r/techsales 活跃度高",
+              "fontSize": 11.33,
+              "typeface": "Inter",
+              "color": "rgba(255, 255, 255, 0.9)"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/pc76hkr2",
+      "id": "9",
+      "name": "Text 6",
+      "bbox": [
+        45,
+        215.81,
+        277.65,
+        18
+      ],
+      "geometry": "rect",
+      "text": "推广政策：严格禁止硬广，价值内容受欢迎",
+      "textPreview": "推广政策：严格禁止硬广，价值内容受欢迎",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "none",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "推广政策：严格禁止硬广，价值内容受欢迎"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "推广政策：严格禁止硬广，价值内容受欢迎",
+          "lineSpacingPercent": 120000,
+          "resolvedTextStyle": {
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "推广政策：",
+              "fontSize": 10.67,
+              "typeface": "Inter ExtraBold",
+              "color": "#FFFFFF",
+              "bold": true
+            },
+            {
+              "index": 2,
+              "text": "严格禁止硬广，价值内容受欢迎",
+              "fontSize": 11.33,
+              "typeface": "Inter",
+              "color": "rgba(255, 255, 255, 0.9)"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 9,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/h4bupgn6",
+      "id": "10",
+      "name": "Text 7",
+      "bbox": [
+        45,
+        242.81,
+        277.65,
+        18
+      ],
+      "geometry": "rect",
+      "text": "最佳发帖时间：周一至周三上午 9-11 点（美东）",
+      "textPreview": "最佳发帖时间：周一至周三上午 9-11 点（美东）",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "none",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "最佳发帖时间：周一至周三上午 9-11 点（美东）"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "最佳发帖时间：周一至周三上午 9-11 点（美东）",
+          "lineSpacingPercent": 120000,
+          "resolvedTextStyle": {
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "最佳发帖时间：",
+              "fontSize": 10.67,
+              "typeface": "Inter ExtraBold",
+              "color": "#FFFFFF",
+              "bold": true
+            },
+            {
+              "index": 2,
+              "text": "周一至周三上午 9-11 点（美东）",
+              "fontSize": 11.33,
+              "typeface": "Inter",
+              "color": "rgba(255, 255, 255, 0.9)"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 10,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/w32twb6l",
+      "id": "11",
+      "name": "Shape 8",
+      "bbox": [
+        30,
+        402.75,
+        307.65,
+        122.25
+      ],
+      "geometry": "rect",
+      "fillColor": "#5EEAD4"
+    },
+    {
+      "order": 11,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/v2tcn650",
+      "id": "12",
+      "name": "Text 9",
+      "bbox": [
+        46.5,
+        414.75,
+        274.65,
+        20.25
+      ],
+      "geometry": "rect",
+      "text": "备选方案（如发帖受阻）",
+      "textPreview": "备选方案（如发帖受阻）",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "备选方案（如发帖受阻）"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "备选方案（如发帖受阻）",
+          "resolvedTextStyle": {
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "备选方案（如发帖受阻）",
+              "fontSize": 13.33,
+              "typeface": "Inter ExtraBold",
+              "color": "#020817",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 12,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/u1kbu1ov",
+      "id": "13",
+      "name": "Text 10",
+      "bbox": [
+        46.5,
+        441,
+        274.65,
+        72
+      ],
+      "geometry": "rect",
+      "text": "若主帖被删或 Karma 不足，转向 r/sales 的 Weekly Discussion Thread 或 r/EntrepreneurRideAlong（允许自我推广，规则更宽松）。",
+      "textPreview": "若主帖被删或 Karma 不足，转向 r/sales 的 Weekly Discussion Thread 或 r/EntrepreneurRideAlong（允许自我推广，规则更宽松）。",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 4,
+        "lines": [
+          {
+            "index": 1,
+            "text": "若主帖被删或 Karma 不足，转向 r/sales 的 Weekly"
+          },
+          {
+            "index": 2,
+            "text": "Discussion Thread 或"
+          },
+          {
+            "index": 3,
+            "text": "r/EntrepreneurRideAlong（允许自我推广，规则更宽松）"
+          },
+          {
+            "index": 4,
+            "text": "。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "若主帖被删或 Karma 不足，转向 r/sales 的 Weekly Discussion Thread 或 r/EntrepreneurRideAlong（允许自我推广，规则更宽松）。",
+          "lineSpacingPercent": 120000,
+          "resolvedTextStyle": {
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "若主帖被删或 Karma 不足，转向 r/sales 的 Weekly Discussion Thread 或 r/EntrepreneurRideAlong（允许自我推广，规则更宽松）。",
+              "fontSize": 10.67,
+              "typeface": "Inter SemiBold",
+              "color": "#055C4E"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 13,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/5svutgni",
+      "id": "14",
+      "name": "Text 11",
+      "bbox": [
+        358.65,
+        92.44,
+        571.35,
+        24.38
+      ],
+      "geometry": "rect",
+      "text": "推荐内容方向",
+      "textPreview": "推荐内容方向",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "推荐内容方向"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "推荐内容方向",
+          "resolvedTextStyle": {
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "推荐内容方向",
+              "fontSize": 16,
+              "typeface": "Inter ExtraBold",
+              "color": "#020817",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 14,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/47mt0b6x",
+      "id": "15",
+      "name": "Shape 12",
+      "bbox": [
+        358.65,
+        128.81,
+        571.35,
+        112.13
+      ],
+      "geometry": "rect",
+      "fillColor": "#055C4E"
+    },
+    {
+      "order": 15,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/j6dcr65c",
+      "id": "16",
+      "name": "Text 13",
+      "bbox": [
+        373.65,
+        139.31,
+        541.35,
+        20.25
+      ],
+      "geometry": "rect",
+      "text": "内容 1 — 痛点共鸣帖（Post）",
+      "textPreview": "内容 1 — 痛点共鸣帖（Post）",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "内容 1 — 痛点共鸣帖（Post）"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "内容 1 — 痛点共鸣帖（Post）",
+          "resolvedTextStyle": {
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "内容 1 — 痛点共鸣帖（Post）",
+              "fontSize": 13.33,
+              "typeface": "Inter ExtraBold",
+              "color": "#5EEAD4",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 16,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/i54bylor",
+      "id": "17",
+      "name": "Shape 14",
+      "bbox": [
+        373.65,
+        165.56,
+        541.35,
+        40.87
+      ],
+      "geometry": "rect",
+      "fillColor": "rgba(0, 0, 0, 0.15)"
+    },
+    {
+      "order": 17,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/twfux0ne",
+      "id": "18",
+      "name": "Text 15",
+      "bbox": [
+        373.65,
+        165.56,
+        541.35,
+        40.87
+      ],
+      "geometry": "rect",
+      "text": "\"I tracked my time as an AE for 30 days. 70% went to CRM updates. Here's the AI stack I used to fix it.\"",
+      "textPreview": "\"I tracked my time as an AE for 30 days. 70% went to CRM updates. Here's the AI stack I used to fix it.\"",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 7.15,
+          "right": 10.72,
+          "bottom": 7.15,
+          "left": 10.72
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "\"I tracked my time as an AE for 30 days. 70% went to CRM updates. Here's the AI stack I used to fix it.\""
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "\"I tracked my time as an AE for 30 days. 70% went to CRM updates. Here's the AI stack I used to fix it.\"",
+          "resolvedTextStyle": {
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "\"I tracked my time as an AE for 30 days. 70% went to CRM updates. Here's the AI stack I used to fix it.\"",
+              "fontSize": 10.67,
+              "typeface": "Inter SemiBold",
+              "color": "#FFFFFF",
+              "italic": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 18,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/svmt4v6t",
+      "id": "19",
+      "name": "Text 16",
+      "bbox": [
+        373.65,
+        212.44,
+        541.35,
+        18
+      ],
+      "geometry": "rect",
+      "text": "策略：分享真实的时间追踪数据，提供 3-5 个工作流优化建议，Expertise.ai 作为其中一个自然提及。",
+      "textPreview": "策略：分享真实的时间追踪数据，提供 3-5 个工作流优化建议，Expertise.ai 作为其中一个自然提及。",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "none",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "策略：分享真实的时间追踪数据，提供 3-5 个工作流优化建议，Expertise.ai 作为其中一个自然提及。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "策略：分享真实的时间追踪数据，提供 3-5 个工作流优化建议，Expertise.ai 作为其中一个自然提及。",
+          "lineSpacingPercent": 120000,
+          "resolvedTextStyle": {
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "策略：",
+              "fontSize": 10.67,
+              "typeface": "Inter ExtraBold",
+              "color": "#FFFFFF",
+              "bold": true
+            },
+            {
+              "index": 2,
+              "text": "分享真实的时间追踪数据，提供 3-5 个工作流优化建议，Expertise.ai 作为其中一个自然提及。",
+              "fontSize": 11.33,
+              "typeface": "Inter",
+              "color": "#FFFFFF"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 19,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/cbe5g3ih",
+      "id": "20",
+      "name": "Shape 17",
+      "bbox": [
+        358.65,
+        249.94,
+        571.35,
+        115.69
+      ],
+      "geometry": "rect",
+      "fillColor": "#00D1AE"
+    },
+    {
+      "order": 20,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/dcnm98zm",
+      "id": "21",
+      "name": "Text 18",
+      "bbox": [
+        373.65,
+        260.44,
+        541.35,
+        20.25
+      ],
+      "geometry": "rect",
+      "text": "内容 2 — 工具对比帖（Post）",
+      "textPreview": "内容 2 — 工具对比帖（Post）",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "内容 2 — 工具对比帖（Post）"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "内容 2 — 工具对比帖（Post）",
+          "resolvedTextStyle": {
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "内容 2 — 工具对比帖（Post）",
+              "fontSize": 13.33,
+              "typeface": "Inter ExtraBold",
+              "color": "#020817",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 21,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/qpwnet0b",
+      "id": "22",
+      "name": "Shape 19",
+      "bbox": [
+        373.65,
+        286.69,
+        541.35,
+        26.44
+      ],
+      "geometry": "rect",
+      "fillColor": "rgba(0, 0, 0, 0.15)"
+    },
+    {
+      "order": 22,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/bq547yhw",
+      "id": "23",
+      "name": "Text 20",
+      "bbox": [
+        373.65,
+        286.69,
+        541.35,
+        26.44
+      ],
+      "geometry": "rect",
+      "text": "\"I tested 4 AI sales agents for our AE team. Here's what actually happened after 60 days.\"",
+      "textPreview": "\"I tested 4 AI sales agents for our AE team. Here's what actually happened after 60 days.\"",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 7.15,
+          "right": 10.72,
+          "bottom": 7.15,
+          "left": 10.72
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "\"I tested 4 AI sales agents for our AE team. Here's what actually happened after 60 days.\""
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "\"I tested 4 AI sales agents for our AE team. Here's what actually happened after 60 days.\"",
+          "resolvedTextStyle": {
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "\"I tested 4 AI sales agents for our AE team. Here's what actually happened after 60 days.\"",
+              "fontSize": 10.67,
+              "typeface": "Inter SemiBold",
+              "color": "#020817",
+              "italic": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 23,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/0fy5k3id",
+      "id": "24",
+      "name": "Text 21",
+      "bbox": [
+        373.65,
+        319.13,
+        541.35,
+        36
+      ],
+      "geometry": "rect",
+      "text": "策略：客观对比 Qualified、Drift、Intercom 和 Expertise.ai，主动承认各自的不足，突出 HubSpot 深度集成的差异化。",
+      "textPreview": "策略：客观对比 Qualified、Drift、Intercom 和 Expertise.ai，主动承认各自的不足，突出 HubSpot 深度集成的差异化。",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "策略：客观对比 Qualified、Drift、Intercom 和 Expertise.ai，主动承认各自的不足，突出 HubSpot"
+          },
+          {
+            "index": 2,
+            "text": "深度集成的差异化。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "策略：客观对比 Qualified、Drift、Intercom 和 Expertise.ai，主动承认各自的不足，突出 HubSpot 深度集成的差异化。",
+          "lineSpacingPercent": 120000,
+          "resolvedTextStyle": {
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "策略：",
+              "fontSize": 10.67,
+              "typeface": "Inter ExtraBold",
+              "color": "#020817",
+              "bold": true
+            },
+            {
+              "index": 2,
+              "text": "客观对比 Qualified、Drift、Intercom 和 Expertise.ai，主动承认各自的不足，突出 HubSpot ",
+              "fontSize": 11.33,
+              "typeface": "Inter",
+              "color": "#020817"
+            },
+            {
+              "index": 3,
+              "text": "深度集成的差异化。",
+              "fontSize": 11.33,
+              "typeface": "Inter",
+              "color": "#020817"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 24,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/lg76d8zy",
+      "id": "25",
+      "name": "Shape 22",
+      "bbox": [
+        358.65,
+        374.62,
+        571.35,
+        83.25
+      ],
+      "geometry": "rect",
+      "fillColor": "#FFFFFF"
+    },
+    {
+      "order": 25,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ydgnit07",
+      "id": "26",
+      "name": "Text 23",
+      "bbox": [
+        373.65,
+        385.13,
+        541.35,
+        20.25
+      ],
+      "geometry": "rect",
+      "text": "内容 3 — 精准拦截评论（Comment）",
+      "textPreview": "内容 3 — 精准拦截评论（Comment）",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "内容 3 — 精准拦截评论（Comment）"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "内容 3 — 精准拦截评论（Comment）",
+          "resolvedTextStyle": {
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "内容 3 — 精准拦截评论（Comment）",
+              "fontSize": 13.33,
+              "typeface": "Inter ExtraBold",
+              "color": "#055C4E",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 26,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/zep4byhs",
+      "id": "27",
+      "name": "Text 24",
+      "bbox": [
+        373.65,
+        411.38,
+        541.35,
+        36
+      ],
+      "geometry": "rect",
+      "text": "场景：在\"best AI tool for AEs\"、\"HubSpot chatbot alternative\"等讨论帖下，以真实用户身份分享切换体验。",
+      "textPreview": "场景：在\"best AI tool for AEs\"、\"HubSpot chatbot alternative\"等讨论帖下，以真实用户身份分享切换体验。",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "场景：在\"best AI tool for AEs\"、\"HubSpot chatbot alternative\"等讨论帖下，以真实用户身份分享切"
+          },
+          {
+            "index": 2,
+            "text": "换体验。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "场景：在\"best AI tool for AEs\"、\"HubSpot chatbot alternative\"等讨论帖下，以真实用户身份分享切换体验。",
+          "lineSpacingPercent": 120000,
+          "resolvedTextStyle": {
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "场景：",
+              "fontSize": 10.67,
+              "typeface": "Inter ExtraBold",
+              "color": "#020817",
+              "bold": true
+            },
+            {
+              "index": 2,
+              "text": "在\"best AI tool for AEs\"、\"HubSpot chatbot alternative\"等讨论帖下，以真实用户身份分享切",
+              "fontSize": 11.33,
+              "typeface": "Inter",
+              "color": "#020817"
+            },
+            {
+              "index": 3,
+              "text": "换体验。",
+              "fontSize": 11.33,
+              "typeface": "Inter",
+              "color": "#020817"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    }
+  ],
+  "composeRuns": []
+}

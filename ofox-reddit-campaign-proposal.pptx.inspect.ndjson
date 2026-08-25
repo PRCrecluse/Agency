@@ -1,0 +1,319 @@
+{"kind":"deck","id":"pr/4c8nrz","name":"Deck"}
+{"kind":"layout","layoutId":"/ppt/slideMasters/slideMaster1.xml","name":"","type":"master"}
+{"kind":"layout","layoutId":"/ppt/slideLayouts/slideLayout1.xml","name":"DEFAULT"}
+{"kind":"slide","id":"sl/y90nupkv","slide":1,"title":"30 Posts · 10 Days","textShapes":5}
+{"kind":"shape","id":"sh/k3yl0zql","slide":1,"name":"Shape 0","bbox":[0,0,384,540]}
+{"kind":"shape","id":"sh/7qp4be9c","slide":1,"name":"Shape 1","bbox":[60,198.53,206.25,45.75]}
+{"kind":"textbox","id":"sh/65g3298r","slide":1,"name":"Text 2","text":"30 Posts · 10 Days","textPreview":"30 Posts · 10 Days","textChars":18,"textLines":1,"bbox":[60,198.53,206.25,47.76]}
+{"kind":"textbox","id":"sh/ts7md4r2","slide":1,"name":"Text 3","text":"Reddit Campaign Proposal","textPreview":"Reddit Campaign Proposal","textChars":24,"textLines":1,"bbox":[60,274.28,264,67.2]}
+{"kind":"textbox","id":"sh/sryl4zqx","slide":1,"name":"Text 4","text":"oFox.ai Reddit\nCampaign Strategy","textPreview":"oFox.ai Reddit | Campaign Strategy","textChars":32,"textLines":2,"bbox":[444,165.45,456,105.6]}
+{"kind":"textbox","id":"sh/fu94fe98","slide":1,"name":"Text 5","text":"Model launches. Price proof. Real tests.","textPreview":"Model launches. Price proof. Real tests.","textChars":40,"textLines":1,"bbox":[465,297.11,320.06,19.2]}
+{"kind":"textbox","id":"sh/utg3698n","slide":1,"name":"Text 6","text":"Turn every new model release into a credible Reddit conversation.","textPreview":"Turn every new model release into a credible Reddit conversation.","textChars":65,"textLines":1,"bbox":[465,329.55,435,45]}
+{"kind":"image","id":"im/jqxw72dk","slide":1,"name":"Image 0","bbox":[0,0,960,540]}
+{"kind":"notes","id":"nt/y90nupkv","slide":1,"text":"[Sources]\nhttps://ofox.ai/vs/openrouter\nhttps://openrouter.ai/pricing\nhttps://x.com/AiHubMix/status/2085260781705388444\nhttps://www.reddit.com/r/GeminiAI/\nhttps://www.reddit.com/r/LLMDevs/\nhttps://www.reddit.com/r/kimi/\n[/Sources]"}
+{"kind":"slide","id":"sl/hwbqtkby","slide":2,"title":"Reddit 是 AI 模型选择与 API 采购决策的前线","textShapes":13}
+{"kind":"shape","id":"sh/ozy1ofad","slide":2,"name":"Shape 0","bbox":[0,0,960,92.44]}
+{"kind":"textbox","id":"sh/b29kza94","slide":2,"name":"Text 1","text":"Reddit 是 AI 模型选择与 API 采购决策的前线","textPreview":"Reddit 是 AI 模型选择与 API 采购决策的前线","textChars":29,"textLines":1,"bbox":[45,30,870,32.44]}
+{"kind":"textbox","id":"sh/a10jqpsj","slide":2,"name":"Text 2","text":"开发者会在 Reddit 搜索“哪个模型更好”“API 网关是否加价”“真实跑分如何”。这类讨论发生在需求形成阶段，比品牌广告更接近实际切换与采购。","textPreview":"开发者会在 Reddit 搜索“哪个模型更好”“API 网关是否加价”“真实跑分如何”。这类讨论发生在需求形成阶段，比品牌广告更接近实际切换与采购。","textChars":74,"textLines":1,"bbox":[45,137.44,412.5,107.99]}
+{"kind":"textbox","id":"sh/x4r21kru","slide":2,"name":"Text 3","text":"目标不是重复产品卖点，而是持续提供可复现的测试、透明价格与真实失败案例，让 oFox.ai 成为模型发布当天就能被引用的实测来源。","textPreview":"目标不是重复产品卖点，而是持续提供可复现的测试、透明价格与真实失败案例，让 oFox.ai 成为模型发布当天就能被引用的实测来源。","textChars":65,"textLines":1,"bbox":[45,269.43,412.5,86.39]}
+{"kind":"shape","id":"sh/w3i1sfa9","slide":2,"name":"Shape 4","bbox":[502.5,137.44,197.25,103.87]}
+{"kind":"shape","id":"sh/r65knqtk","slide":2,"name":"Shape 5","bbox":[502.5,137.44,3,103.87]}
+{"kind":"textbox","id":"sh/q5wjelsz","slide":2,"name":"Text 6","text":"4 类","textPreview":"4 类","textChars":3,"textLines":1,"bbox":[525,159.94,152.25,36.56]}
+{"kind":"textbox","id":"sh/ove9o7yd","slide":2,"name":"Text 7","text":"核心内容钩子","textPreview":"核心内容钩子","textChars":6,"textLines":1,"bbox":[525,202.5,152.25,16.31]}
+{"kind":"shape","id":"sh/9wnqhczy","slide":2,"name":"Shape 8","bbox":[717.75,137.44,197.25,103.87]}
+{"kind":"shape","id":"sh/mtwrmxg7","slide":2,"name":"Shape 9","bbox":[717.75,137.44,3,103.87]}
+{"kind":"textbox","id":"sh/nu58f2hs","slide":2,"name":"Text 10","text":"3+","textPreview":"3+","textChars":2,"textLines":1,"bbox":[740.25,159.94,152.25,36.56]}
+{"kind":"textbox","id":"sh/wjy9sry9","slide":2,"name":"Text 11","text":"必投垂直社区","textPreview":"必投垂直社区","textChars":6,"textLines":1,"bbox":[740.25,202.5,152.25,16.31]}
+{"kind":"shape","id":"sh/xk7qlczu","slide":2,"name":"Shape 12","bbox":[502.5,259.31,197.25,100.13]}
+{"kind":"shape","id":"sh/ahwrqhgj","slide":2,"name":"Shape 13","bbox":[502.5,259.31,3,100.13]}
+{"kind":"textbox","id":"sh/bip8jmho","slide":2,"name":"Text 14","text":"10 天","textPreview":"10 天","textChars":4,"textLines":1,"bbox":[525,281.81,152.25,32.81]}
+{"kind":"textbox","id":"sh/cnupgny5","slide":2,"name":"Text 15","text":"首轮 campaign","textPreview":"首轮 campaign","textChars":11,"textLines":1,"bbox":[525,320.62,152.25,16.31]}
+{"kind":"shape","id":"sh/do3q9szq","slide":2,"name":"Shape 16","bbox":[717.75,259.31,197.25,100.13]}
+{"kind":"shape","id":"sh/t8byxkn2","slide":2,"name":"Shape 17","bbox":[717.75,259.31,3,100.13]}
+{"kind":"textbox","id":"sh/s72xofmh","slide":2,"name":"Text 18","text":"30","textPreview":"30","textChars":2,"textLines":1,"bbox":[740.25,281.81,152.25,32.81]}
+{"kind":"textbox","id":"sh/76twva5c","slide":2,"name":"Text 19","text":"主贴","textPreview":"主贴","textChars":2,"textLines":1,"bbox":[740.25,320.62,152.25,16.31]}
+{"kind":"shape","id":"sh/65kfmpor","slide":2,"name":"Shape 20","bbox":[502.5,377.44,412.5,103.87]}
+{"kind":"shape","id":"sh/hcvy14ne","slide":2,"name":"Shape 21","bbox":[502.5,377.44,3,103.87]}
+{"kind":"textbox","id":"sh/gbmxszmt","slide":2,"name":"Text 22","text":"持续","textPreview":"持续","textChars":2,"textLines":1,"bbox":[525,399.94,367.5,36.56]}
+{"kind":"textbox","id":"sh/fadgzu58","slide":2,"name":"Text 23","text":"模型发布雷达","textPreview":"模型发布雷达","textChars":6,"textLines":1,"bbox":[525,442.5,367.5,16.31]}
+{"kind":"image","id":"im/ls3yt036","slide":2,"name":"Image 0","bbox":[0,0,960,540]}
+{"kind":"notes","id":"nt/hwbqtkby","slide":2,"text":"[Sources]\nhttps://ofox.ai/vs/openrouter\nhttps://openrouter.ai/pricing\nhttps://x.com/AiHubMix/status/2085260781705388444\nhttps://www.reddit.com/r/GeminiAI/\nhttps://www.reddit.com/r/LLMDevs/\nhttps://www.reddit.com/r/kimi/\n[/Sources]"}
+{"kind":"slide","id":"sl/ofy9wn61","slide":3,"title":"我们的优势不是“更便宜”一句话，而是三种可验证证据","textShapes":9}
+{"kind":"shape","id":"sh/d0jax03i","slide":3,"name":"Shape 0","bbox":[0,0,960,92.44]}
+{"kind":"textbox","id":"sh/298ryl4v","slide":3,"name":"Text 1","text":"我们的优势不是“更便宜”一句话，而是三种可验证证据","textPreview":"我们的优势不是“更便宜”一句话，而是三种可验证证据","textChars":25,"textLines":1,"bbox":[45,30,870,32.44]}
+{"kind":"shape","id":"sh/3ah8rqlg","slide":3,"name":"Shape 2","bbox":[0,92.44,480,223.78]}
+{"kind":"textbox","id":"sh/obq90bml","slide":3,"name":"Text 3","text":"证据 1 — OpenRouter 成本对照","textPreview":"证据 1 — OpenRouter 成本对照","textChars":22,"textLines":1,"bbox":[45,152.24,390,24.38]}
+{"kind":"textbox","id":"sh/pcjqtg36","slide":3,"name":"Text 4","text":"以同一模型、同一 token 用量比较最终到账成本。OpenRouter 公示信用卡充值费 5.5%；oFox.ai 主张官方模型价直通、无充值加价。每帖附计算条件与日期。","textPreview":"以同一模型、同一 token 用量比较最终到账成本。OpenRouter 公示信用卡充值费 5.5%；oFox.ai 主张官方模型价直通、无充值加价。每帖附计算条件与日期。","textChars":86,"textLines":1,"bbox":[45,191.62,390,64.79]}
+{"kind":"shape","id":"sh/m5cra54z","slide":3,"name":"Shape 5","bbox":[480,92.44,480,223.78]}
+{"kind":"textbox","id":"sh/n6ls3alk","slide":3,"name":"Text 6","text":"证据 2 — Wan 3.0 热点实测","textPreview":"证据 2 — Wan 3.0 热点实测","textChars":19,"textLines":1,"bbox":[525,152.24,390,24.38]}
+{"kind":"textbox","id":"sh/n2l4fq98","slide":3,"name":"Text 7","text":"发布原 prompt、参数、生成时间、成本与结果： “I tested this prompt on Wan 3.0 on oFox.ai — here’s what I got.” 让用户先评结果，再自然发现入口。","textPreview":"发布原 prompt、参数、生成时间、成本与结果： “I tested this prompt on Wan 3.0 on oFox.ai — here’s what I got.” 让用户先评结果，再自然发现入口。","textChars":108,"textLines":1,"bbox":[525,191.62,390,64.79]}
+{"kind":"shape","id":"sh/m1c3mlsn","slide":3,"name":"Shape 8","bbox":[0,316.22,480,223.78]}
+{"kind":"textbox","id":"sh/943mhgre","slide":3,"name":"Text 9","text":"证据 3 — 同题模型对比","textPreview":"证据 3 — 同题模型对比","textChars":13,"textLines":1,"bbox":[45,376.03,390,24.38]}
+{"kind":"textbox","id":"sh/83ulovat","slide":3,"name":"Text 10","text":"复用 AiHubMix 的形式：同一 prompt、同一 gateway，比较成本、首轮成功率与返工次数；不只报 benchmark，报告完成任务的总成本。","textPreview":"复用 AiHubMix 的形式：同一 prompt、同一 gateway，比较成本、首轮成功率与返工次数；不只报 benchmark，报告完成任务的总成本。","textChars":78,"textLines":1,"bbox":[45,415.4,390,64.79]}
+{"kind":"shape","id":"sh/v6l4jq94","slide":3,"name":"Shape 11","bbox":[480,316.22,480,223.78]}
+{"kind":"textbox","id":"sh/a5c3ql8z","slide":3,"name":"Text 12","text":"证据 4 — 发布日抢跑","textPreview":"证据 4 — 发布日抢跑","textChars":12,"textLines":1,"bbox":[525,376.03,390,24.38]}
+{"kind":"textbox","id":"sh/x8nml0ra","slide":3,"name":"Text 13","text":"建立 Gemini、Kimi、DeepSeek、Qwen、Wan 等模型监测清单；上线后 24 小时内完成可复现实测，48 小时内发布多社区版本。","textPreview":"建立 Gemini、Kimi、DeepSeek、Qwen、Wan 等模型监测清单；上线后 24 小时内完成可复现实测，48 小时内发布多社区版本。","textChars":73,"textLines":1,"bbox":[525,415.4,390,64.79]}
+{"kind":"image","id":"im/vmlojqd0","slide":3,"name":"Image 0","bbox":[0,0,960,540]}
+{"kind":"notes","id":"nt/ofy9wn61","slide":3,"text":"[Sources]\nhttps://ofox.ai/vs/openrouter\nhttps://openrouter.ai/pricing\nhttps://x.com/AiHubMix/status/2085260781705388444\nhttps://www.reddit.com/r/GeminiAI/\nhttps://www.reddit.com/r/LLMDevs/\nhttps://www.reddit.com/r/kimi/\n[/Sources]"}
+{"kind":"slide","id":"sl/jyx0ra1s","slide":4,"title":"X 上的对比格式已经证明：价格与可靠性必须一起讲","textShapes":21}
+{"kind":"shape","id":"sh/0ba143al","slide":4,"name":"Shape 0","bbox":[0,0,960,92.44]}
+{"kind":"textbox","id":"sh/rm1k7yt4","slide":4,"name":"Text 1","text":"X 上的对比格式已经证明：价格与可靠性必须一起讲","textPreview":"X 上的对比格式已经证明：价格与可靠性必须一起讲","textChars":24,"textLines":1,"bbox":[45,30,870,32.44]}
+{"kind":"shape","id":"sh/ql8jytsj","slide":4,"name":"Shape 2","bbox":[0,92.44,320,155.36]}
+{"kind":"textbox","id":"sh/doj29oba","slide":4,"name":"Text 3","text":"5×","textPreview":"5×","textChars":2,"textLines":1,"bbox":[45,124.29,230,43.5]}
+{"kind":"textbox","id":"sh/sna103ap","slide":4,"name":"Text 4","text":"DeepSeek V4 Flash 0731 更便宜","textPreview":"DeepSeek V4 Flash 0731 更便宜","textChars":26,"textLines":1,"bbox":[45,176.79,230,18.9]}
+{"kind":"textbox","id":"sh/3ihk3et8","slide":4,"name":"Text 5","text":"AiHubMix 单次测试：$0.02","textPreview":"AiHubMix 单次测试：$0.02","textChars":19,"textLines":1,"bbox":[45,201.69,230,14.25]}
+{"kind":"shape","id":"sh/ih8ju9sn","slide":4,"name":"Shape 6","bbox":[320,92.44,320,155.36]}
+{"kind":"textbox","id":"sh/kbm987y5","slide":4,"name":"Text 7","text":"$0.10","textPreview":"$0.10","textChars":5,"textLines":1,"bbox":[365,124.29,230,43.5]}
+{"kind":"textbox","id":"sh/5cva1cfq","slide":4,"name":"Text 8","text":"GPT-5.6 Luna 成本","textPreview":"GPT-5.6 Luna 成本","textChars":15,"textLines":1,"bbox":[365,176.79,230,18.9]}
+{"kind":"textbox","id":"sh/i94r6xgz","slide":4,"name":"Text 9","text":"但首轮完成且结果更可靠","textPreview":"但首轮完成且结果更可靠","textChars":11,"textLines":1,"bbox":[365,201.69,230,14.25]}
+{"kind":"shape","id":"sh/jadsz2xk","slide":4,"name":"Shape 10","bbox":[640,92.44,320,155.36]}
+{"kind":"textbox","id":"sh/w72947yt","slide":4,"name":"Text 11","text":"1 vs 3","textPreview":"1 vs 3","textChars":6,"textLines":1,"bbox":[685,124.29,230,43.5]}
+{"kind":"textbox","id":"sh/x8vaxsfe","slide":4,"name":"Text 12","text":"完成所需尝试次数","textPreview":"完成所需尝试次数","textChars":8,"textLines":1,"bbox":[685,176.79,230,18.9]}
+{"kind":"textbox","id":"sh/a5kr2xg3","slide":4,"name":"Text 13","text":"可靠性会改变“真实总成本”","textPreview":"可靠性会改变“真实总成本”","textChars":13,"textLines":1,"bbox":[685,201.69,230,14.25]}
+{"kind":"shape","id":"sh/v6tsv2xo","slide":4,"name":"Shape 14","bbox":[0,247.8,320,155.36]}
+{"kind":"textbox","id":"sh/g36tgryd","slide":4,"name":"Text 15","text":"同题","textPreview":"同题","textChars":2,"textLines":1,"bbox":[45,280.41,230,43.5]}
+{"kind":"textbox","id":"sh/h4fa9wfy","slide":4,"name":"Text 16","text":"Same prompt","textPreview":"Same prompt","textChars":11,"textLines":1,"bbox":[45,332.91,230,18.9]}
+{"kind":"textbox","id":"sh/p0batw72","slide":4,"name":"Text 17","text":"避免 benchmark 口水战","textPreview":"避免 benchmark 口水战","textChars":16,"textLines":1,"bbox":[45,357.81,230,12.75]}
+{"kind":"shape","id":"sh/oz29krqh","slide":4,"name":"Shape 18","bbox":[320,247.8,320,155.36]}
+{"kind":"textbox","id":"sh/3ytsrmpw","slide":4,"name":"Text 19","text":"同网关","textPreview":"同网关","textChars":3,"textLines":1,"bbox":[365,279.66,230,43.5]}
+{"kind":"textbox","id":"sh/2xkrih8b","slide":4,"name":"Text 20","text":"Same gateway","textPreview":"Same gateway","textChars":12,"textLines":1,"bbox":[365,332.16,230,18.9]}
+{"kind":"textbox","id":"sh/1wbapc7q","slide":4,"name":"Text 21","text":"控制变量，结果更可信","textPreview":"控制变量，结果更可信","textChars":10,"textLines":1,"bbox":[365,357.06,230,14.25]}
+{"kind":"shape","id":"sh/gv29g7q5","slide":4,"name":"Shape 22","bbox":[640,247.8,320,155.36]}
+{"kind":"textbox","id":"sh/fu9sn2p0","slide":4,"name":"Text 23","text":"结论","textPreview":"结论","textChars":2,"textLines":1,"bbox":[685,280.41,230,43.5]}
+{"kind":"textbox","id":"sh/et0reh8f","slide":4,"name":"Text 24","text":"不要只做“最便宜”叙事","textPreview":"不要只做“最便宜”叙事","textChars":11,"textLines":1,"bbox":[685,332.91,230,18.9]}
+{"kind":"textbox","id":"sh/tsrqlc7u","slide":4,"name":"Text 25","text":"oFox.ai 应提供价格、成功率、延迟与返工次数四维证据","textPreview":"oFox.ai 应提供价格、成功率、延迟与返工次数四维证据","textChars":29,"textLines":1,"bbox":[685,357.81,230,24]}
+{"kind":"shape","id":"sh/sri9s7q9","slide":4,"name":"Shape 26","bbox":[0,403.17,960,136.83]}
+{"kind":"textbox","id":"sh/ilwf69kv","slide":4,"name":"Text 27","text":"来源：AiHubMix X 帖（2026-08-25 核实）","textPreview":"来源：AiHubMix X 帖（2026-08-25 核实）","textChars":30,"textLines":1,"bbox":[45,433.17,870,50.4]}
+{"kind":"textbox","id":"sh/jm5gze1g","slide":4,"name":"Text 28","text":"— AIHubMix, X","textPreview":"— AIHubMix, X","textChars":13,"textLines":1,"bbox":[45,495.56,870,14.44]}
+{"kind":"image","id":"im/725s3il8","slide":4,"name":"Image 0","bbox":[0,0,960,540]}
+{"kind":"notes","id":"nt/jyx0ra1s","slide":4,"text":"[Sources]\nhttps://ofox.ai/vs/openrouter\nhttps://openrouter.ai/pricing\nhttps://x.com/AiHubMix/status/2085260781705388444\nhttps://www.reddit.com/r/GeminiAI/\nhttps://www.reddit.com/r/LLMDevs/\nhttps://www.reddit.com/r/kimi/\n[/Sources]"}
+{"kind":"slide","id":"sl/i107q5of","slide":5,"title":"Reddit 用户会奖励透明实测，不会奖励包装后的广告","textShapes":11}
+{"kind":"shape","id":"sh/cf2tcr61","slide":5,"name":"Shape 0","bbox":[0,0,960,92.44]}
+{"kind":"textbox","id":"sh/z2tcnm5s","slide":5,"name":"Text 1","text":"Reddit 用户会奖励透明实测，不会奖励包装后的广告","textPreview":"Reddit 用户会奖励透明实测，不会奖励包装后的广告","textChars":27,"textLines":1,"bbox":[45,30,870,32.44]}
+{"kind":"textbox","id":"sh/yhkbe1o7","slide":5,"name":"Text 2","text":"每篇主贴都提供 prompt、参数、模型版本、时间戳和费用；标题先说结论，正文展示过程，链接与品牌信息放在用户明确询问之后。","textPreview":"每篇主贴都提供 prompt、参数、模型版本、时间戳和费用；标题先说结论，正文展示过程，链接与品牌信息放在用户明确询问之后。","textChars":62,"textLines":1,"bbox":[45,129.94,750,48]}
+{"kind":"shape","id":"sh/l4bupwny","slide":5,"name":"Shape 3","bbox":[45,215.44,270,287.06]}
+{"kind":"textbox","id":"sh/032tgr6d","slide":5,"name":"Text 4","text":"01","textPreview":"01","textChars":2,"textLines":1,"bbox":[75,245.44,210,43.5]}
+{"kind":"textbox","id":"sh/n6dcr65o","slide":5,"name":"Text 5","text":"可复现优先","textPreview":"可复现优先","textChars":5,"textLines":1,"bbox":[75,303.94,210,24.38]}
+{"kind":"textbox","id":"sh/m5kbi1oj","slide":5,"name":"Text 6","text":"提供完整测试条件和失败样本。让读者能在任意 gateway 重跑；oFox.ai 的优势由结果自然得出。","textPreview":"提供完整测试条件和失败样本。让读者能在任意 gateway 重跑；oFox.ai 的优势由结果自然得出。","textChars":52,"textLines":1,"bbox":[75,343.31,210,76.79]}
+{"kind":"shape","id":"sh/w32dkbuh","slide":5,"name":"Shape 7","bbox":[345,215.44,270,287.06]}
+{"kind":"textbox","id":"sh/x4vedgvm","slide":5,"name":"Text 8","text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[375,245.44,210,43.5]}
+{"kind":"textbox","id":"sh/ahkvi1cb","slide":5,"name":"Text 9","text":"承认边界","textPreview":"承认边界","textChars":4,"textLines":1,"bbox":[375,303.94,210,24.38]}
+{"kind":"textbox","id":"sh/v2twb6dw","slide":5,"name":"Text 10","text":"OpenRouter 可能在生态、路由或覆盖面上有优势；不要声称所有模型都更贵，只比较有截图与账单依据的场景。","textPreview":"OpenRouter 可能在生态、路由或覆盖面上有优势；不要声称所有模型都更贵，只比较有截图与账单依据的场景。","textChars":55,"textLines":1,"bbox":[375,343.31,210,69.63]}
+{"kind":"shape","id":"sh/k7mxovud","slide":5,"name":"Shape 11","bbox":[645,215.44,270,287.06]}
+{"kind":"textbox","id":"sh/58vehgvy","slide":5,"name":"Text 12","text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[675,245.44,210,43.5]}
+{"kind":"textbox","id":"sh/i54fmlc7","slide":5,"name":"Text 13","text":"社区原生","textPreview":"社区原生","textChars":4,"textLines":1,"bbox":[675,303.94,210,24.38]}
+{"kind":"textbox","id":"sh/j6dwfqds","slide":5,"name":"Text 14","text":"同一测试按社区改写：Gemini 用户看质量，LLMDevs 看 API/延迟，Kimi 用户看上下文与 agent 任务。","textPreview":"同一测试按社区改写：Gemini 用户看质量，LLMDevs 看 API/延迟，Kimi 用户看上下文与 agent 任务。","textChars":62,"textLines":1,"bbox":[675,343.31,210,76.79]}
+{"kind":"image","id":"im/vitwz65k","slide":5,"name":"Image 0","bbox":[0,0,960,540]}
+{"kind":"notes","id":"nt/i107q5of","slide":5,"text":"[Sources]\nhttps://ofox.ai/vs/openrouter\nhttps://openrouter.ai/pricing\nhttps://x.com/AiHubMix/status/2085260781705388444\nhttps://www.reddit.com/r/GeminiAI/\nhttps://www.reddit.com/r/LLMDevs/\nhttps://www.reddit.com/r/kimi/\n[/Sources]"}
+{"kind":"slide","id":"sl/x8f69ofe","slide":6,"title":"r/GeminiAI — 用新版本实测切入高热度模型讨论","textShapes":17}
+{"kind":"shape","id":"sh/zi98nu94","slide":6,"name":"Shape 0","bbox":[0,0,960,77.44]}
+{"kind":"textbox","id":"sh/87ipkzal","slide":6,"name":"Text 1","text":"r/GeminiAI — 用新版本实测切入高热度模型讨论","textPreview":"r/GeminiAI — 用新版本实测切入高热度模型讨论","textChars":28,"textLines":1,"bbox":[45,22.5,870,32.44]}
+{"kind":"shape","id":"sh/98rqt4r6","slide":6,"name":"Shape 2","bbox":[30,92.44,307.65,301.31]}
+{"kind":"textbox","id":"sh/ml07i9sv","slide":6,"name":"Text 3","text":"社区画像","textPreview":"社区画像","textChars":4,"textLines":1,"bbox":[45,107.44,277.65,24.38]}
+{"kind":"textbox","id":"sh/7m98ru9g","slide":6,"name":"Text 4","text":"受众：Gemini 重度用户、创作者、开发者与评测爱好者","textPreview":"受众：Gemini 重度用户、创作者、开发者与评测爱好者","textChars":28,"textLines":1,"bbox":[45,143.81,277.65,36]}
+{"kind":"textbox","id":"sh/oryp8fah","slide":6,"name":"Text 5","text":"当前热点：Gemini 3.7 Flash 体验、Beyond the Benchmark、真实用例","textPreview":"当前热点：Gemini 3.7 Flash 体验、Beyond the Benchmark、真实用例","textChars":50,"textLines":1,"bbox":[45,188.81,277.65,18]}
+{"kind":"textbox","id":"sh/pc76hkr2","slide":6,"name":"Text 6","text":"推广风险：产品直链容易被视为广告；结果图与方法论更安全","textPreview":"推广风险：产品直链容易被视为广告；结果图与方法论更安全","textChars":27,"textLines":1,"bbox":[45,215.81,277.65,18]}
+{"kind":"textbox","id":"sh/h4bupgn6","slide":6,"name":"Text 7","text":"最佳形式：原生结果图 + prompt + “你们会怎么改？”","textPreview":"最佳形式：原生结果图 + prompt + “你们会怎么改？”","textChars":31,"textLines":1,"bbox":[45,242.81,277.65,18]}
+{"kind":"shape","id":"sh/w32twb6l","slide":6,"name":"Shape 8","bbox":[30,402.75,307.65,122.25]}
+{"kind":"textbox","id":"sh/v2tcn650","slide":6,"name":"Text 9","text":"备选方案","textPreview":"备选方案","textChars":4,"textLines":1,"bbox":[46.5,414.75,274.65,20.25]}
+{"kind":"textbox","id":"sh/u1kbu1ov","slide":6,"name":"Text 10","text":"若主贴被移除，改为对现有 Gemini 3.7 讨论做深度评论；不放链接，只回答复现条件。","textPreview":"若主贴被移除，改为对现有 Gemini 3.7 讨论做深度评论；不放链接，只回答复现条件。","textChars":45,"textLines":1,"bbox":[46.5,441,274.65,72]}
+{"kind":"textbox","id":"sh/5svutgni","slide":6,"name":"Text 11","text":"推荐内容方向","textPreview":"推荐内容方向","textChars":6,"textLines":1,"bbox":[358.65,92.44,571.35,24.38]}
+{"kind":"shape","id":"sh/47mt0b6x","slide":6,"name":"Shape 12","bbox":[358.65,128.81,571.35,112.13]}
+{"kind":"textbox","id":"sh/j6dcr65c","slide":6,"name":"Text 13","text":"内容 1 — 版本首测（Post）","textPreview":"内容 1 — 版本首测（Post）","textChars":17,"textLines":1,"bbox":[373.65,139.31,541.35,20.25]}
+{"kind":"shape","id":"sh/i54bylor","slide":6,"name":"Shape 14","bbox":[373.65,165.56,541.35,40.87]}
+{"kind":"textbox","id":"sh/twfux0ne","slide":6,"name":"Text 15","text":"“I ran the same real-world prompt on Gemini 3.7 Flash and [model] — the cheaper run wasn’t the winner.”","textPreview":"“I ran the same real-world prompt on Gemini 3.7 Flash and [model] — the cheaper run wasn’t the winner.”","textChars":103,"textLines":1,"bbox":[373.65,165.56,541.35,40.87]}
+{"kind":"textbox","id":"sh/svmt4v6t","slide":6,"name":"Text 16","text":"策略：用成功率、延迟、token 与最终成本解释差异。","textPreview":"策略：用成功率、延迟、token 与最终成本解释差异。","textChars":27,"textLines":1,"bbox":[373.65,212.44,541.35,18]}
+{"kind":"shape","id":"sh/cbe5g3ih","slide":6,"name":"Shape 17","bbox":[358.65,249.94,571.35,115.69]}
+{"kind":"textbox","id":"sh/dcnm98zm","slide":6,"name":"Text 18","text":"内容 2 — 图像/视频挑战（Post）","textPreview":"内容 2 — 图像/视频挑战（Post）","textChars":20,"textLines":1,"bbox":[373.65,260.44,541.35,20.25]}
+{"kind":"shape","id":"sh/qpwnet0b","slide":6,"name":"Shape 19","bbox":[373.65,286.69,541.35,26.44]}
+{"kind":"textbox","id":"sh/bq547yhw","slide":6,"name":"Text 20","text":"“One prompt, three attempts: what Gemini fixed — and what it still missed.”","textPreview":"“One prompt, three attempts: what Gemini fixed — and what it still missed.”","textChars":75,"textLines":1,"bbox":[373.65,286.69,541.35,27.09]}
+{"kind":"textbox","id":"sh/0fy5k3id","slide":6,"name":"Text 21","text":"策略：公开失败轮次，邀请社区给改进 prompt。","textPreview":"策略：公开失败轮次，邀请社区给改进 prompt。","textChars":25,"textLines":1,"bbox":[373.65,319.13,541.35,36]}
+{"kind":"shape","id":"sh/lg76d8zy","slide":6,"name":"Shape 22","bbox":[358.65,374.62,571.35,83.25]}
+{"kind":"textbox","id":"sh/ydgnit07","slide":6,"name":"Text 23","text":"内容 3 — 高价值评论（Comment）","textPreview":"内容 3 — 高价值评论（Comment）","textChars":21,"textLines":1,"bbox":[373.65,385.13,541.35,20.25]}
+{"kind":"textbox","id":"sh/zep4byhs","slide":6,"name":"Text 24","text":"场景：新版本体验、限额、API 价格、模型退化讨论；提供可复现数据，不做品牌口号。","textPreview":"场景：新版本体验、限额、API 价格、模型退化讨论；提供可复现数据，不做品牌口号。","textChars":41,"textLines":1,"bbox":[373.65,411.38,541.35,36]}
+{"kind":"image","id":"im/3id8b69w","slide":6,"name":"Image 0","bbox":[0,0,960,540]}
+{"kind":"notes","id":"nt/x8f69ofe","slide":6,"text":"[Sources]\nhttps://ofox.ai/vs/openrouter\nhttps://openrouter.ai/pricing\nhttps://x.com/AiHubMix/status/2085260781705388444\nhttps://www.reddit.com/r/GeminiAI/\nhttps://www.reddit.com/r/LLMDevs/\nhttps://www.reddit.com/r/kimi/\n[/Sources]"}
+{"kind":"slide","id":"sl/gnmp4jqx","slide":7,"title":"r/LLMDevs — 技术可信度最高，但必须零营销味","textShapes":17}
+{"kind":"shape","id":"sh/dcbud0ra","slide":7,"name":"Shape 0","bbox":[0,0,960,92.44]}
+{"kind":"textbox","id":"sh/ydkbm5sv","slide":7,"name":"Text 1","text":"r/LLMDevs — 技术可信度最高，但必须零营销味","textPreview":"r/LLMDevs — 技术可信度最高，但必须零营销味","textChars":27,"textLines":1,"bbox":[45,30,870,32.44]}
+{"kind":"shape","id":"sh/zedcfa9g","slide":7,"name":"Shape 2","bbox":[30,110.44,352.8,216.06]}
+{"kind":"textbox","id":"sh/kzmdova1","slide":7,"name":"Text 3","text":"社区画像","textPreview":"社区画像","textChars":4,"textLines":1,"bbox":[48,128.44,316.8,24.38]}
+{"kind":"textbox","id":"sh/l0vuh0rm","slide":7,"name":"Text 4","text":"受众：LLM 工程师、研究者、agent/infra 开发者","textPreview":"受众：LLM 工程师、研究者、agent/infra 开发者","textChars":30,"textLines":1,"bbox":[48,166.31,316.8,38.4]}
+{"kind":"textbox","id":"sh/eh0ba1sr","slide":7,"name":"Text 5","text":"当前规则：明确反自我推广、反营销；未经批准的 promotion 风险高","textPreview":"当前规则：明确反自我推广、反营销；未经批准的 promotion 风险高","textChars":36,"textLines":1,"bbox":[48,213.71,316.8,19.2]}
+{"kind":"textbox","id":"sh/fi9c369c","slide":7,"name":"Text 6","text":"适合内容：网关成本、失败分类、重试策略、延迟与可观测性","textPreview":"适合内容：网关成本、失败分类、重试策略、延迟与可观测性","textChars":27,"textLines":1,"bbox":[48,241.91,316.8,19.2]}
+{"kind":"textbox","id":"sh/baxkjqlk","slide":7,"name":"Text 7","text":"核心指标：TTFT、总延迟、成功率、重试、每个成功任务成本","textPreview":"核心指标：TTFT、总延迟、成功率、重试、每个成功任务成本","textChars":29,"textLines":1,"bbox":[48,270.11,316.8,38.4]}
+{"kind":"shape","id":"sh/a9ojq5kz","slide":7,"name":"Shape 8","bbox":[30,344.5,352.8,107.84]}
+{"kind":"textbox","id":"sh/xcz2l03q","slide":7,"name":"Text 9","text":"备选方案","textPreview":"备选方案","textChars":4,"textLines":1,"bbox":[48,356.5,316.8,20.25]}
+{"kind":"textbox","id":"sh/cbq1sv25","slide":7,"name":"Text 10","text":"先联系 mod 审批；若不获批，只以非品牌技术帖或高质量评论参与，并将代码/数据置于中立仓库。","textPreview":"先联系 mod 审批；若不获批，只以非品牌技术帖或高质量评论参与，并将代码/数据置于中立仓库。","textChars":47,"textLines":1,"bbox":[48,382.75,316.8,57.59]}
+{"kind":"shape","id":"sh/n6x0fqlo","slide":7,"name":"Shape 11","bbox":[400.8,110.44,529.2,320.17]}
+{"kind":"textbox","id":"sh/25ojml43","slide":7,"name":"Text 12","text":"推荐内容方向","textPreview":"推荐内容方向","textChars":6,"textLines":1,"bbox":[418.8,128.44,493.2,24.38]}
+{"kind":"shape","id":"sh/p8fih03e","slide":7,"name":"Shape 13","bbox":[418.8,167.81,240.6,165.59]}
+{"kind":"textbox","id":"sh/o761ov2t","slide":7,"name":"Text 14","text":"内容 1 — 失败分类（Post）","textPreview":"内容 1 — 失败分类（Post）","textChars":17,"textLines":1,"bbox":[430.8,179.81,216.6,18]}
+{"kind":"textbox","id":"sh/f2d0b6lc","slide":7,"name":"Text 15","text":"“I stopped treating every failed agent tool call as the same failure — here’s the retry matrix.”","textPreview":"“I stopped treating every failed agent tool call as the same failure — here’s the retry matrix.”","textChars":96,"textLines":1,"bbox":[430.8,203.81,216.6,54]}
+{"kind":"textbox","id":"sh/eh4jil4r","slide":7,"name":"Text 16","text":"策略：复用社区当前话题，把 gateway 价值嵌入工程方法。","textPreview":"策略：复用社区当前话题，把 gateway 价值嵌入工程方法。","textChars":31,"textLines":1,"bbox":[430.8,263.81,216.6,57.59]}
+{"kind":"shape","id":"sh/id4ju1oz","slide":7,"name":"Shape 17","bbox":[671.4,167.81,240.6,165.59]}
+{"kind":"textbox","id":"sh/jedkn654","slide":7,"name":"Text 18","text":"内容 2 — 网关对照（Post）","textPreview":"内容 2 — 网关对照（Post）","textChars":17,"textLines":1,"bbox":[683.4,179.81,216.6,18]}
+{"kind":"textbox","id":"sh/4fm1wb6p","slide":7,"name":"Text 19","text":"“Same model, two gateways: fee, latency and retry-cost breakdown.”","textPreview":"“Same model, two gateways: fee, latency and retry-cost breakdown.”","textChars":66,"textLines":1,"bbox":[683.4,203.81,216.6,54]}
+{"kind":"textbox","id":"sh/50v2pgna","slide":7,"name":"Text 20","text":"策略：列出时间、区域、样本量与限制，不下泛化结论。","textPreview":"策略：列出时间、区域、样本量与限制，不下泛化结论。","textChars":25,"textLines":1,"bbox":[683.4,263.81,216.6,57.59]}
+{"kind":"shape","id":"sh/q143ylov","slide":7,"name":"Shape 21","bbox":[418.8,345.41,493.2,67.2]}
+{"kind":"textbox","id":"sh/r2dkrq5g","slide":7,"name":"Text 22","text":"内容 3 — Mod-approved AMA / Comment","textPreview":"内容 3 — Mod-approved AMA / Comment","textChars":33,"textLines":1,"bbox":[430.8,357.41,469.2,18]}
+{"kind":"textbox","id":"sh/s3ml0v61","slide":7,"name":"Text 23","text":"场景：模型上线与 API 变更讨论；以工程师身份回答接入、路由与账单问题。","textPreview":"场景：模型上线与 API 变更讨论；以工程师身份回答接入、路由与账单问题。","textChars":37,"textLines":1,"bbox":[430.8,381.41,469.2,19.2]}
+{"kind":"image","id":"im/ix4nytoz","slide":7,"name":"Image 0","bbox":[0,0,960,540]}
+{"kind":"notes","id":"nt/gnmp4jqx","slide":7,"text":"[Sources]\nhttps://ofox.ai/vs/openrouter\nhttps://openrouter.ai/pricing\nhttps://x.com/AiHubMix/status/2085260781705388444\nhttps://www.reddit.com/r/GeminiAI/\nhttps://www.reddit.com/r/LLMDevs/\nhttps://www.reddit.com/r/kimi/\n[/Sources]"}
+{"kind":"slide","id":"sl/fu1gfa1s","slide":8,"title":"r/kimi + 模型垂直社区 — 在发布日承接最强搜索意图","textShapes":23}
+{"kind":"shape","id":"sh/g72x4zyd","slide":8,"name":"Shape 0","bbox":[0,0,960,92.44]}
+{"kind":"textbox","id":"sh/ri9g7uhw","slide":8,"name":"Text 1","text":"r/kimi + 模型垂直社区 — 在发布日承接最强搜索意图","textPreview":"r/kimi + 模型垂直社区 — 在发布日承接最强搜索意图","textChars":30,"textLines":1,"bbox":[45,30,870,32.44]}
+{"kind":"shape","id":"sh/6h0fypgb","slide":8,"name":"Shape 2","bbox":[0,92.44,336,322.02]}
+{"kind":"textbox","id":"sh/tkby9kzm","slide":8,"name":"Text 3","text":"社区画像","textPreview":"社区画像","textChars":4,"textLines":1,"bbox":[45,102.19,246,24.38]}
+{"kind":"textbox","id":"sh/sjix0zy1","slide":8,"name":"Text 4","text":"受众","textPreview":"受众","textChars":2,"textLines":1,"bbox":[45,141.56,246,18]}
+{"kind":"textbox","id":"sh/je9g3ahk","slide":8,"name":"Text 5","text":"Kimi 用户、agent 构建者、长上下文与办公工作流用户","textPreview":"Kimi 用户、agent 构建者、长上下文与办公工作流用户","textChars":30,"textLines":1,"bbox":[45,164.25,225.38,16.32]}
+{"kind":"textbox","id":"sh/id0fu50z","slide":8,"name":"Text 6","text":"当前热点","textPreview":"当前热点","textChars":4,"textLines":1,"bbox":[45,189.56,246,18]}
+{"kind":"textbox","id":"sh/o7ydoret","slide":8,"name":"Text 7","text":"Kimi K3 发布、Kimi Work、credential / agent 安全讨论","textPreview":"Kimi K3 发布、Kimi Work、credential / agent 安全讨论","textChars":44,"textLines":1,"bbox":[45,212.25,215.25,16.32]}
+{"kind":"textbox","id":"sh/98rehwve","slide":8,"name":"Text 8","text":"推广政策","textPreview":"推广政策","textChars":4,"textLines":1,"bbox":[45,237.56,246,18]}
+{"kind":"textbox","id":"sh/m5gvmhwn","slide":8,"name":"Text 9","text":"品牌发布可见度高，但需要明确身份与真实技术细节","textPreview":"品牌发布可见度高，但需要明确身份与真实技术细节","textChars":23,"textLines":1,"bbox":[45,260.25,239.44,16.32]}
+{"kind":"textbox","id":"sh/n6pwfmd8","slide":8,"name":"Text 10","text":"优先发布实测与教程，不做功能清单","textPreview":"优先发布实测与教程，不做功能清单","textChars":16,"textLines":1,"bbox":[45,278.25,205.5,16.32]}
+{"kind":"textbox","id":"sh/0jydkreh","slide":8,"name":"Text 11","text":"核心关注点","textPreview":"核心关注点","textChars":5,"textLines":1,"bbox":[45,303.56,246,18]}
+{"kind":"textbox","id":"sh/1k7edwv2","slide":8,"name":"Text 12","text":"长任务完成率、工具调用、安全边界、价格","textPreview":"长任务完成率、工具调用、安全边界、价格","textChars":19,"textLines":1,"bbox":[45,326.25,234.19,16.32]}
+{"kind":"textbox","id":"sh/ehgvihwr","slide":8,"name":"Text 13","text":"首轮成功率与返工次数","textPreview":"首轮成功率与返工次数","textChars":10,"textLines":1,"bbox":[45,344.25,36,16.32]}
+{"kind":"shape","id":"sh/zipwbmdc","slide":8,"name":"Shape 14","bbox":[0,414.46,336,125.54]}
+{"kind":"textbox","id":"sh/kfixwbe1","slide":8,"name":"Text 15","text":"备选方案","textPreview":"备选方案","textChars":4,"textLines":1,"bbox":[45,424.21,246,20.25]}
+{"kind":"textbox","id":"sh/lgbepgvm","slide":8,"name":"Text 16","text":"同步布局 r/LocalLLaMA、r/ArtificialInteligence、r/StableDiffusion、r/singularity；按模型类型选择，不机械群发。","textPreview":"同步布局 r/LocalLLaMA、r/ArtificialInteligence、r/StableDiffusion、r/singularity；按模型类型选择，不机械群发。","textChars":88,"textLines":1,"bbox":[45,453.46,246,76.79]}
+{"kind":"shape","id":"sh/tw7e9gnq","slide":8,"name":"Shape 17","bbox":[336,92.44,624,148.94]}
+{"kind":"textbox","id":"sh/svydgb65","slide":8,"name":"Text 18","text":"内容 1 — Kimi K3 真实任务（Post）","textPreview":"内容 1 — Kimi K3 真实任务（Post）","textChars":25,"textLines":1,"bbox":[381,106.68,534,20.25]}
+{"kind":"textbox","id":"sh/7u5w765k","slide":8,"name":"Text 19","text":"“I gave Kimi K3 a 30-minute research-to-slides task — full prompt, cost and failure points.”","textPreview":"“I gave Kimi K3 a 30-minute research-to-slides task — full prompt, cost and failure points.”","textChars":92,"textLines":1,"bbox":[381,138.93,534,37.8]}
+{"kind":"textbox","id":"sh/6twve1oz","slide":8,"name":"Text 20","text":"策略：贴出任务分解、工具调用和最终交付物。","textPreview":"策略：贴出任务分解、工具调用和最终交付物。","textChars":21,"textLines":1,"bbox":[381,188.73,534,38.4]}
+{"kind":"shape","id":"sh/5sne5wne","slide":8,"name":"Shape 21","bbox":[336,241.37,624,148.94]}
+{"kind":"textbox","id":"sh/kredcr6t","slide":8,"name":"Text 22","text":"内容 2 — Wan 3.0 热点实测（Post）","textPreview":"内容 2 — Wan 3.0 热点实测（Post）","textChars":25,"textLines":1,"bbox":[381,255.62,534,20.25]}
+{"kind":"textbox","id":"sh/jq5w365o","slide":8,"name":"Text 23","text":"“I tested this prompt on Wan 3.0 on oFox.ai — here’s the result I got.”","textPreview":"“I tested this prompt on Wan 3.0 on oFox.ai — here’s the result I got.”","textChars":71,"textLines":1,"bbox":[381,287.87,534,37.8]}
+{"kind":"textbox","id":"sh/i5wva1o3","slide":8,"name":"Text 24","text":"策略：用视频/图片结果做第一屏，正文说明 prompt、seed、耗时与成本。","textPreview":"策略：用视频/图片结果做第一屏，正文说明 prompt、seed、耗时与成本。","textChars":39,"textLines":1,"bbox":[381,337.67,534,38.4]}
+{"kind":"shape","id":"sh/x4ne1wni","slide":8,"name":"Shape 25","bbox":[336,390.31,624,149.69]}
+{"kind":"shape","id":"sh/w3ed8r6x","slide":8,"name":"Shape 26","bbox":[336,539.25,624,0.75]}
+{"kind":"textbox","id":"sh/m9sb2x4v","slide":8,"name":"Text 27","text":"内容 3 — 安全/可靠性讨论","textPreview":"内容 3 — 安全/可靠性讨论","textChars":15,"textLines":1,"bbox":[381,405.33,534,20.25]}
+{"kind":"textbox","id":"sh/na1sb2lg","slide":8,"name":"Text 28","text":"“When should an agent ask for credentials? A test matrix across Kimi and peers.”","textPreview":"“When should an agent ask for credentials? A test matrix across Kimi and peers.”","textChars":80,"textLines":1,"bbox":[381,437.58,534,56.7]}
+{"kind":"textbox","id":"sh/8bat47ml","slide":8,"name":"Text 29","text":"策略：以安全边界建立专业信誉，再讨论 gateway 可观测性。","textPreview":"策略：以安全边界建立专业信誉，再讨论 gateway 可观测性。","textChars":32,"textLines":1,"bbox":[381,506.28,534,19.2]}
+{"kind":"image","id":"im/29cve1ob","slide":8,"name":"Image 0","bbox":[0,0,960,540]}
+{"kind":"notes","id":"nt/fu1gfa1s","slide":8,"text":"[Sources]\nhttps://ofox.ai/vs/openrouter\nhttps://openrouter.ai/pricing\nhttps://x.com/AiHubMix/status/2085260781705388444\nhttps://www.reddit.com/r/GeminiAI/\nhttps://www.reddit.com/r/LLMDevs/\nhttps://www.reddit.com/r/kimi/\n[/Sources]"}
+{"kind":"slide","id":"sl/udsvah03","slide":9,"title":"四类内容钩子，把每次模型发布变成一轮自然讨论","textShapes":20}
+{"kind":"shape","id":"sh/0b65obm9","slide":9,"name":"Shape 0","bbox":[0,0,960,92.44]}
+{"kind":"textbox","id":"sh/nex4jq5k","slide":9,"name":"Text 1","text":"四类内容钩子，把每次模型发布变成一轮自然讨论","textPreview":"四类内容钩子，把每次模型发布变成一轮自然讨论","textChars":22,"textLines":1,"bbox":[36,30,888,32.44]}
+{"kind":"shape","id":"sh/mdonql4z","slide":9,"name":"Shape 2","bbox":[0,92.44,336,308.52]}
+{"kind":"textbox","id":"sh/9gzml0nq","slide":9,"name":"Text 3","text":"社区画像","textPreview":"社区画像","textChars":4,"textLines":1,"bbox":[30,113.44,276,24.38]}
+{"kind":"textbox","id":"sh/ofq5svm5","slide":9,"name":"Text 4","text":"钩子","textPreview":"钩子","textChars":2,"textLines":1,"bbox":[30,155.81,276,18]}
+{"kind":"textbox","id":"sh/bih4na5w","slide":9,"name":"Text 5","text":"① 价格账单对照：同模型、同用量、最终到账成本","textPreview":"① 价格账单对照：同模型、同用量、最终到账成本","textChars":23,"textLines":1,"bbox":[30,178.5,230.44,16.32]}
+{"kind":"textbox","id":"sh/ah8nu54b","slide":9,"name":"Text 6","text":"证据","textPreview":"证据","textChars":2,"textLines":1,"bbox":[30,206.81,276,18]}
+{"kind":"textbox","id":"sh/oza1gfyh","slide":9,"name":"Text 7","text":"账单截图、充值费、token 计算","textPreview":"账单截图、充值费、token 计算","textChars":17,"textLines":1,"bbox":[30,229.5,254.06,16.32]}
+{"kind":"textbox","id":"sh/p0ji9kf2","slide":9,"name":"Text 8","text":"适配社区","textPreview":"适配社区","textChars":4,"textLines":1,"bbox":[30,257.81,276,18]}
+{"kind":"textbox","id":"sh/2xsjepgb","slide":9,"name":"Text 9","text":"r/LLMDevs、r/LocalLLaMA","textPreview":"r/LLMDevs、r/LocalLLaMA","textChars":22,"textLines":1,"bbox":[30,280.5,228,16.32]}
+{"kind":"textbox","id":"sh/3y107axw","slide":9,"name":"Text 10","text":"表达方式","textPreview":"表达方式","textChars":4,"textLines":1,"bbox":[30,308.81,276,18]}
+{"kind":"textbox","id":"sh/cnu1kzyd","slide":9,"name":"Text 11","text":"“Here is the math”","textPreview":"“Here is the math”","textChars":18,"textLines":1,"bbox":[30,331.5,247.87,16.32]}
+{"kind":"shape","id":"sh/do3id4fy","slide":9,"name":"Shape 12","bbox":[0,400.96,336,139.04]}
+{"kind":"textbox","id":"sh/qlcjipgn","slide":9,"name":"Text 13","text":"备选方案","textPreview":"备选方案","textChars":4,"textLines":1,"bbox":[30,418.96,276,20.25]}
+{"kind":"textbox","id":"sh/bml0buxs","slide":9,"name":"Text 14","text":"任何“更便宜”结论必须带日期、模型 ID、区域与支付方式；数据变化后及时更新评论。","textPreview":"任何“更便宜”结论必须带日期、模型 ID、区域与支付方式；数据变化后及时更新评论。","textChars":41,"textLines":1,"bbox":[30,445.21,276,76.79]}
+{"kind":"shape","id":"sh/0ru1ozyp","slide":9,"name":"Shape 15","bbox":[336,92.44,624,148.94]}
+{"kind":"textbox","id":"sh/lsn2h4fa","slide":9,"name":"Text 16","text":"内容 1 — 热点首测（Post）","textPreview":"内容 1 — 热点首测（Post）","textChars":17,"textLines":1,"bbox":[366,119.28,564,20.25]}
+{"kind":"textbox","id":"sh/98ji147e","slide":9,"name":"Text 17","text":"新模型上线 24 小时内：prompt + 原始结果 + 失败轮次","textPreview":"新模型上线 24 小时内：prompt + 原始结果 + 失败轮次","textChars":33,"textLines":1,"bbox":[366,148.53,564,37.8]}
+{"kind":"textbox","id":"sh/87a18zqt","slide":9,"name":"Text 18","text":"内容 2 — 同题擂台（Post）","textPreview":"内容 2 — 同题擂台（Post）","textChars":17,"textLines":1,"bbox":[366,195.33,564,19.2]}
+{"kind":"shape","id":"sh/76h0zup8","slide":9,"name":"Shape 19","bbox":[336,241.37,624,148.94]}
+{"kind":"textbox","id":"sh/ml8j6p8n","slide":9,"name":"Text 20","text":"同一任务比较 Wan / Gemini / Kimi / DeepSeek / GPT，报告每个成功任务成本","textPreview":"同一任务比较 Wan / Gemini / Kimi / DeepSeek / GPT，报告每个成功任务成本","textChars":54,"textLines":1,"bbox":[366,268.22,564,20.25]}
+{"kind":"textbox","id":"sh/hcji5o7a","slide":9,"name":"Text 21","text":"内容 3 — 购买决策（Post）","textPreview":"内容 3 — 购买决策（Post）","textChars":17,"textLines":1,"bbox":[366,297.47,564,37.8]}
+{"kind":"textbox","id":"sh/wba1cjqp","slide":9,"name":"Text 22","text":"“Which gateway should I use?” 用透明维度表回答，不把所有人导向同一选择","textPreview":"“Which gateway should I use?” 用透明维度表回答，不把所有人导向同一选择","textChars":50,"textLines":1,"bbox":[366,344.27,564,19.2]}
+{"kind":"shape","id":"sh/va103ep4","slide":9,"name":"Shape 23","bbox":[336,390.31,624,149.69]}
+{"kind":"shape","id":"sh/u9sja98z","slide":9,"name":"Shape 24","bbox":[336,539.25,624,0.75]}
+{"kind":"textbox","id":"sh/xgzitk76","slide":9,"name":"Text 25","text":"评论策略","textPreview":"评论策略","textChars":4,"textLines":1,"bbox":[366,431.58,564,20.25]}
+{"kind":"textbox","id":"sh/cf6h0fql","slide":9,"name":"Text 26","text":"追踪热门帖子，在问题出现后 2 小时内提供数据型回答。","textPreview":"追踪热门帖子，在问题出现后 2 小时内提供数据型回答。","textChars":27,"textLines":1,"bbox":[366,460.83,564,38.4]}
+{"kind":"image","id":"im/t0za54zu","slide":9,"name":"Image 0","bbox":[0,0,960,540]}
+{"kind":"notes","id":"nt/udsvah03","slide":9,"text":"[Sources]\nhttps://ofox.ai/vs/openrouter\nhttps://openrouter.ai/pricing\nhttps://x.com/AiHubMix/status/2085260781705388444\nhttps://www.reddit.com/r/GeminiAI/\nhttps://www.reddit.com/r/LLMDevs/\nhttps://www.reddit.com/r/kimi/\n[/Sources]"}
+{"kind":"slide","id":"sl/m90b6t0r","slide":10,"title":"30 个主贴分配：必投社区 + 可扩展模型社区","textShapes":24}
+{"kind":"shape","id":"sh/cbu58j2h","slide":10,"name":"Shape 0","bbox":[0,0,960,92.44]}
+{"kind":"textbox","id":"sh/zelojyl8","slide":10,"name":"Text 1","text":"30 个主贴分配：必投社区 + 可扩展模型社区","textPreview":"30 个主贴分配：必投社区 + 可扩展模型社区","textChars":23,"textLines":1,"bbox":[45,30,870,32.44]}
+{"kind":"shape","id":"sh/ydcnatkn","slide":10,"name":"Shape 2","bbox":[45,125.44,870,42]}
+{"kind":"textbox","id":"sh/l036l83y","slide":10,"name":"Text 3","text":"Subreddit","textPreview":"Subreddit","textChars":9,"textLines":1,"bbox":[45,126.28,241.66,42.96]}
+{"kind":"textbox","id":"sh/kzu5c32t","slide":10,"name":"Text 4","text":"主贴","textPreview":"主贴","textChars":2,"textLines":1,"bbox":[286.66,125.44,120.83,42.96]}
+{"kind":"textbox","id":"sh/m1cnetkj","slide":10,"name":"Text 6","text":"核心内容方向","textPreview":"核心内容方向","textChars":6,"textLines":1,"bbox":[552.5,125.44,362.5,42.96]}
+{"kind":"shape","id":"sh/s7yt4b21","slide":10,"name":"Shape 7","bbox":[45,167.44,870,57.75]}
+{"kind":"shape","id":"sh/d87uxg3m","slide":10,"name":"Shape 8","bbox":[45,224.44,870,0.75]}
+{"kind":"textbox","id":"sh/q5gb21kb","slide":10,"name":"Text 9","text":"r/GeminiAI","textPreview":"r/GeminiAI","textChars":10,"textLines":1,"bbox":[45,172.78,241.66,50.11]}
+{"kind":"shape","id":"sh/r6pcv6lw","slide":10,"name":"Shape 10","bbox":[304.66,182.44,27,27]}
+{"kind":"textbox","id":"sh/0bit8b2d","slide":10,"name":"Text 11","text":"7","textPreview":"7","textChars":1,"textLines":1,"bbox":[304.66,182.44,27,27]}
+{"kind":"textbox","id":"sh/1cru1g3y","slide":10,"name":"Text 12","text":"篇","textPreview":"篇","textChars":1,"textLines":1,"bbox":[340.66,187.78,16.87,16.31]}
+{"kind":"textbox","id":"sh/fapcz6ls","slide":10,"name":"Text 14","text":"Gemini 新版实测、图像/视频挑战","textPreview":"Gemini 新版实测、图像/视频挑战","textChars":19,"textLines":1,"bbox":[552.5,171.94,362.5,50.91]}
+{"kind":"shape","id":"sh/ozitcv29","slide":10,"name":"Shape 15","bbox":[45,224.44,870,57.75]}
+{"kind":"shape","id":"sh/p0ru503u","slide":10,"name":"Shape 16","bbox":[45,281.44,870,0.75]}
+{"kind":"textbox","id":"sh/xwnupgvy","slide":10,"name":"Text 17","text":"r/LLMDevs","textPreview":"r/LLMDevs","textChars":9,"textLines":1,"bbox":[45,229.78,241.66,50.11]}
+{"kind":"shape","id":"sh/wvetgbud","slide":10,"name":"Shape 18","bbox":[304.66,239.44,27,27]}
+{"kind":"textbox","id":"sh/bu5cnqd8","slide":10,"name":"Text 19","text":"5","textPreview":"5","textChars":1,"textLines":1,"bbox":[304.66,239.44,27,27]}
+{"kind":"textbox","id":"sh/atwbelcn","slide":10,"name":"Text 20","text":"篇","textPreview":"篇","textChars":1,"textLines":1,"bbox":[340.66,244.78,16.87,16.31]}
+{"kind":"textbox","id":"sh/kjytkvup","slide":10,"name":"Text 22","text":"网关费用、延迟、失败分类（需 mod approval）","textPreview":"网关费用、延迟、失败分类（需 mod approval）","textChars":28,"textLines":1,"bbox":[552.5,228.94,362.5,50.91]}
+{"kind":"shape","id":"sh/jypcrqd4","slide":10,"name":"Shape 23","bbox":[45,281.44,870,57.75]}
+{"kind":"shape","id":"sh/yxgbilcj","slide":10,"name":"Shape 24","bbox":[45,338.44,870,0.75]}
+{"kind":"textbox","id":"sh/1o3ahwvq","slide":10,"name":"Text 25","text":"r/kimi","textPreview":"r/kimi","textChars":6,"textLines":1,"bbox":[45,286.78,241.66,50.11]}
+{"kind":"shape","id":"sh/0nut8rul","slide":10,"name":"Shape 26","bbox":[304.66,296.44,27,27]}
+{"kind":"textbox","id":"sh/q9srixs3","slide":10,"name":"Text 27","text":"5","textPreview":"5","textChars":1,"textLines":1,"bbox":[304.66,296.44,27,27]}
+{"kind":"textbox","id":"sh/ru18r2to","slide":10,"name":"Text 28","text":"篇","textPreview":"篇","textChars":1,"textLines":1,"bbox":[340.66,301.78,16.87,16.31]}
+{"kind":"textbox","id":"sh/dwjqtcbu","slide":10,"name":"Text 30","text":"Kimi K3、agent 任务、安全边界","textPreview":"Kimi K3、agent 任务、安全边界","textChars":21,"textLines":1,"bbox":[552.5,285.94,362.5,50.91]}
+{"kind":"shape","id":"sh/exsrmhsf","slide":10,"name":"Shape 31","bbox":[45,338.44,870,63.38]}
+{"kind":"shape","id":"sh/zyl8vmt0","slide":10,"name":"Shape 32","bbox":[45,401.06,870,0.75]}
+{"kind":"textbox","id":"sh/0zu9ora5","slide":10,"name":"Text 33","text":"r/LocalLLaMA + 模型社区","textPreview":"r/LocalLLaMA + 模型社区","textChars":19,"textLines":1,"bbox":[45,338.44,241.66,62.62]}
+{"kind":"shape","id":"sh/103qxcbq","slide":10,"name":"Shape 34","bbox":[304.66,356.25,27,27]}
+{"kind":"textbox","id":"sh/u187adsv","slide":10,"name":"Text 35","text":"13","textPreview":"13","textChars":2,"textLines":1,"bbox":[304.66,356.25,27,27]}
+{"kind":"textbox","id":"sh/f2h8jitg","slide":10,"name":"Text 36","text":"篇","textPreview":"篇","textChars":1,"textLines":1,"bbox":[340.66,361.59,16.87,16.31]}
+{"kind":"textbox","id":"sh/algfy50n","slide":10,"name":"Text 38","text":"DeepSeek/Qwen 对比、Wan 3.0 结果、发布日热点","textPreview":"DeepSeek/Qwen 对比、Wan 3.0 结果、发布日热点","textChars":33,"textLines":1,"bbox":[552.5,345.75,362.5,50.91]}
+{"kind":"shape","id":"sh/xo7ytkzy","slide":10,"name":"Shape 39","bbox":[45,401.06,870,57]}
+{"kind":"textbox","id":"sh/wnyx0fit","slide":10,"name":"Text 40","text":"合计","textPreview":"合计","textChars":2,"textLines":1,"bbox":[45,404.44,241.66,51.71]}
+{"kind":"shape","id":"sh/jq9gvuh4","slide":10,"name":"Shape 41","bbox":[304.66,416.06,27,27]}
+{"kind":"textbox","id":"sh/ip0f2p0j","slide":10,"name":"Text 42","text":"30","textPreview":"30","textChars":2,"textLines":1,"bbox":[304.66,416.06,27,27]}
+{"kind":"textbox","id":"sh/5cryx4za","slide":10,"name":"Text 43","text":"篇","textPreview":"篇","textChars":1,"textLines":1,"bbox":[340.66,419.91,18.38,18.19]}
+{"kind":"textbox","id":"sh/7e9gzuhg","slide":10,"name":"Text 45","text":"覆盖 7+ 个核心版块","textPreview":"覆盖 7+ 个核心版块","textChars":11,"textLines":1,"bbox":[552.5,404.44,362.5,51.71]}
+{"kind":"shape","id":"sh/6d0f6pgv","slide":10,"name":"Shape 46","bbox":[0,468,960,72]}
+{"kind":"image","id":"im/ru10vex8","slide":10,"name":"Image 0","bbox":[0,0,960,540]}
+{"kind":"notes","id":"nt/m90b6t0r","slide":10,"text":"[Sources]\nhttps://ofox.ai/vs/openrouter\nhttps://openrouter.ai/pricing\nhttps://x.com/AiHubMix/status/2085260781705388444\nhttps://www.reddit.com/r/GeminiAI/\nhttps://www.reddit.com/r/LLMDevs/\nhttps://www.reddit.com/r/kimi/\n[/Sources]"}
+{"kind":"slide","id":"sl/jetc3ut0","slide":11,"title":"首轮采用 10 天冲刺；后续由模型发布雷达持续供稿","textShapes":11}
+{"kind":"shape","id":"sh/wbih4b6d","slide":11,"name":"Shape 0","bbox":[0,0,960,92.44]}
+{"kind":"textbox","id":"sh/n69grmpw","slide":11,"name":"Text 1","text":"首轮采用 10 天冲刺；后续由模型发布雷达持续供稿","textPreview":"首轮采用 10 天冲刺；后续由模型发布雷达持续供稿","textChars":25,"textLines":1,"bbox":[45,30,870,32.44]}
+{"kind":"shape","id":"sh/250zy18b","slide":11,"name":"Shape 2","bbox":[0,92.44,480,447.56]}
+{"kind":"textbox","id":"sh/98rytw72","slide":11,"name":"Text 3","text":"10 天发布冲刺\n(Launch Sprint)","textPreview":"10 天发布冲刺 | (Launch Sprint)","textChars":24,"textLines":2,"bbox":[45,181.97,390,61.5]}
+{"kind":"textbox","id":"sh/o7ih0r6h","slide":11,"name":"Text 4","text":"执行节奏","textPreview":"执行节奏","textChars":4,"textLines":1,"bbox":[45,265.97,390,18]}
+{"kind":"textbox","id":"sh/72t03qp0","slide":11,"name":"Text 5","text":"每天 2–3 篇，错开社区与账号；先技术价值，后品牌解释。每篇只在一个社区首发，其他社区重新写标题、证据顺序与讨论问题。","textPreview":"每天 2–3 篇，错开社区与账号；先技术价值，后品牌解释。每篇只在一个社区首发，其他社区重新写标题、证据顺序与讨论问题。","textChars":60,"textLines":1,"bbox":[45,292.97,390,58.37]}
+{"kind":"textbox","id":"sh/61kzalof","slide":11,"name":"Text 6","text":"核心目的","textPreview":"核心目的","textChars":4,"textLines":1,"bbox":[45,358.67,390,18]}
+{"kind":"textbox","id":"sh/ofqtgnyt","slide":11,"name":"Text 7","text":"快速找到三种可规模化内容：价格对照、热点实测、工程可靠性；用真实评论决定下一轮预算，而不是追求虚假热度。","textPreview":"快速找到三种可规模化内容：价格对照、热点实测、工程可靠性；用真实评论决定下一轮预算，而不是追求虚假热度。","textChars":52,"textLines":1,"bbox":[45,385.67,390,64.79]}
+{"kind":"shape","id":"sh/9gza9sze","slide":11,"name":"Shape 8","bbox":[480,92.44,480,447.56]}
+{"kind":"textbox","id":"sh/mdobedg3","slide":11,"name":"Text 9","text":"模型发布雷达\n(Always-on)","textPreview":"模型发布雷达 | (Always-on)","textChars":18,"textLines":2,"bbox":[525,171.18,390,61.5]}
+{"kind":"textbox","id":"sh/nehs7iho","slide":11,"name":"Text 10","text":"监测清单","textPreview":"监测清单","textChars":4,"textLines":1,"bbox":[525,255.18,390,18]}
+{"kind":"textbox","id":"sh/0b6tc3yx","slide":11,"name":"Text 11","text":"Gemini、Kimi、DeepSeek、Qwen、Wan、OpenAI、Claude；跟踪官方账号、模型页、API changelog 与社区置顶。","textPreview":"Gemini、Kimi、DeepSeek、Qwen、Wan、OpenAI、Claude；跟踪官方账号、模型页、API changelog 与社区置顶。","textChars":75,"textLines":1,"bbox":[525,282.18,390,58.73]}
+{"kind":"textbox","id":"sh/1cfa58zi","slide":11,"name":"Text 12","text":"24/48 小时 SLA","textPreview":"24/48 小时 SLA","textChars":12,"textLines":1,"bbox":[525,369.47,390,18]}
+{"kind":"textbox","id":"sh/epobatgr","slide":11,"name":"Text 13","text":"24 小时完成测试；48 小时发布社区版本。预备：Gemini 3.7 Flash、Kimi K3、DeepSeek V4 Flash、GPT-5.6 Luna、Wan 3.0；发布前再次核实。","textPreview":"24 小时完成测试；48 小时发布社区版本。预备：Gemini 3.7 Flash、Kimi K3、DeepSeek V4 Flash、GPT-5.6 Luna、Wan 3.0；发布前再次核实。","textChars":97,"textLines":1,"bbox":[525,396.47,390,58.73]}
+{"kind":"image","id":"im/one5kr2l","slide":11,"name":"Image 0","bbox":[0,0,960,540]}
+{"kind":"notes","id":"nt/jetc3ut0","slide":11,"text":"[Sources]\nhttps://ofox.ai/vs/openrouter\nhttps://openrouter.ai/pricing\nhttps://x.com/AiHubMix/status/2085260781705388444\nhttps://www.reddit.com/r/GeminiAI/\nhttps://www.reddit.com/r/LLMDevs/\nhttps://www.reddit.com/r/kimi/\n[/Sources]"}
+{"kind":"slide","id":"sl/8f2psfyx","slide":12,"title":"合规与测量决定这套 campaign 能否持续","textShapes":17}
+{"kind":"shape","id":"sh/0f2lgnmp","slide":12,"name":"Shape 0","bbox":[0,0,960,92.44]}
+{"kind":"textbox","id":"sh/ra943il8","slide":12,"name":"Text 1","text":"合规与测量决定这套 campaign 能否持续","textPreview":"合规与测量决定这套 campaign 能否持续","textChars":23,"textLines":1,"bbox":[45,30,870,32.44]}
+{"kind":"shape","id":"sh/q903ad4n","slide":12,"name":"Shape 2","bbox":[45,122.44,423.75,55.31]}
+{"kind":"shape","id":"sh/dcbm583y","slide":12,"name":"Shape 3","bbox":[67.5,137.44,52.87,25.31]}
+{"kind":"textbox","id":"sh/sb2lcnmd","slide":12,"name":"Text 4","text":"风险 1","textPreview":"风险 1","textChars":4,"textLines":1,"bbox":[67.5,137.44,52.87,25.31]}
+{"kind":"textbox","id":"sh/b6d4f2lc","slide":12,"name":"Text 5","text":"“OpenRouter 一定更贵”被反驳","textPreview":"“OpenRouter 一定更贵”被反驳","textChars":20,"textLines":1,"bbox":[132.38,139.97,118.8,20.25]}
+{"kind":"shape","id":"sh/a543mx4r","slide":12,"name":"Shape 6","bbox":[45,177.75,423.75,127.91]}
+{"kind":"textbox","id":"sh/wvupgz6t","slide":12,"name":"Text 7","text":"应对策略","textPreview":"应对策略","textChars":4,"textLines":1,"bbox":[67.5,200.25,378.75,16.31]}
+{"kind":"textbox","id":"sh/xw3q94ne","slide":12,"name":"Text 8","text":"只陈述已核实机制：OpenRouter 公示充值费；逐模型、逐支付方式比较，并标注时间。把“更贵”改写为可复现问题。","textPreview":"只陈述已核实机制：OpenRouter 公示充值费；逐模型、逐支付方式比较，并标注时间。把“更贵”改写为可复现问题。","textChars":58,"textLines":1,"bbox":[67.5,225.56,378.75,52.22]}
+{"kind":"shape","id":"sh/atc7epon","slide":12,"name":"Shape 9","bbox":[491.25,122.44,423.75,55.31]}
+{"kind":"shape","id":"sh/bulo7u58","slide":12,"name":"Shape 10","bbox":[513.75,137.44,55.13,25.31]}
+{"kind":"textbox","id":"sh/orapcf6h","slide":12,"name":"Text 11","text":"风险 2","textPreview":"风险 2","textChars":4,"textLines":1,"bbox":[513.75,137.44,55.13,25.31]}
+{"kind":"textbox","id":"sh/9sj65kn2","slide":12,"name":"Text 12","text":"r/LLMDevs 删除推广内容","textPreview":"r/LLMDevs 删除推广内容","textChars":16,"textLines":1,"bbox":[580.87,139.97,118.8,20.25]}
+{"kind":"shape","id":"sh/mps7a5or","slide":12,"name":"Shape 13","bbox":[491.25,177.75,423.75,127.91]}
+{"kind":"textbox","id":"sh/nq1o3a5w","slide":12,"name":"Text 14","text":"应对策略","textPreview":"应对策略","textChars":4,"textLines":1,"bbox":[513.75,200.25,378.75,16.31]}
+{"kind":"textbox","id":"sh/0nap8f6l","slide":12,"name":"Text 15","text":"遵守反营销规则，优先申请 mod approval；品牌员工 Full Disclosure；不使用多账号伪装口碑。","textPreview":"遵守反营销规则，优先申请 mod approval；品牌员工 Full Disclosure；不使用多账号伪装口碑。","textChars":58,"textLines":1,"bbox":[513.75,225.56,378.75,57.59]}
+{"kind":"shape","id":"sh/1oj61kn6","slide":12,"name":"Shape 16","bbox":[45,328.16,423.75,55.31]}
+{"kind":"shape","id":"sh/hkbm5wzu","slide":12,"name":"Shape 17","bbox":[67.5,343.16,55.5,25.31]}
+{"kind":"textbox","id":"sh/gj25cry9","slide":12,"name":"Text 18","text":"风险 3","textPreview":"风险 3","textChars":4,"textLines":1,"bbox":[67.5,343.16,55.5,25.31]}
+{"kind":"textbox","id":"sh/fit436ho","slide":12,"name":"Text 19","text":"复制粘贴造成 spam 信号","textPreview":"复制粘贴造成 spam 信号","textChars":14,"textLines":1,"bbox":[135,345.69,118.8,20.25]}
+{"kind":"shape","id":"sh/uh0na1g3","slide":12,"name":"Shape 20","bbox":[45,383.47,423.75,127.91]}
+{"kind":"textbox","id":"sh/tgrm1wzy","slide":12,"name":"Text 21","text":"应对策略","textPreview":"应对策略","textChars":4,"textLines":1,"bbox":[67.5,405.97,378.75,16.31]}
+{"kind":"textbox","id":"sh/sfi58ryd","slide":12,"name":"Text 22","text":"每个 subreddit 独立改写标题、证据与问题；不购买投票、不组织虚假评论、不进行自问自答操纵。","textPreview":"每个 subreddit 独立改写标题、证据与问题；不购买投票、不组织虚假评论、不进行自问自答操纵。","textChars":50,"textLines":1,"bbox":[67.5,431.28,378.75,52.22]}
+{"kind":"shape","id":"sh/7u94zmhs","slide":12,"name":"Shape 23","bbox":[491.25,328.16,423.75,55.31]}
+{"kind":"shape","id":"sh/6t0n6hg7","slide":12,"name":"Shape 24","bbox":[513.75,343.16,55.87,25.31]}
+{"kind":"textbox","id":"sh/dcv6dgz2","slide":12,"name":"Text 25","text":"风险 4","textPreview":"风险 4","textChars":4,"textLines":1,"bbox":[513.75,343.16,55.87,25.31]}
+{"kind":"textbox","id":"sh/cbm5kbyh","slide":12,"name":"Text 26","text":"只看 upvotes，无法证明业务价值","textPreview":"只看 upvotes，无法证明业务价值","textChars":19,"textLines":1,"bbox":[581.62,345.69,197.78,32]}
+{"kind":"shape","id":"sh/alwbitsn","slide":12,"name":"Shape 27","bbox":[491.25,383.47,423.75,127.91]}
+{"kind":"textbox","id":"sh/bm5sryt8","slide":12,"name":"Text 28","text":"应对策略","textPreview":"应对策略","textChars":4,"textLines":1,"bbox":[513.75,405.97,378.75,16.31]}
+{"kind":"textbox","id":"sh/wnetkjat","slide":12,"name":"Text 29","text":"核心 KPI：高质量评论率、收藏/分享、品牌搜索、oFox.ai referral、注册与首次 API 调用。周报按内容钩子复盘。","textPreview":"核心 KPI：高质量评论率、收藏/分享、品牌搜索、oFox.ai referral、注册与首次 API 调用。周报按内容钩子复盘。","textChars":65,"textLines":1,"bbox":[513.75,431.28,378.75,57.59]}
+{"kind":"image","id":"im/2pw3qhc3","slide":12,"name":"Image 0","bbox":[0,0,960,540]}
+{"kind":"notes","id":"nt/8f2psfyx","slide":12,"text":"[Sources]\nhttps://ofox.ai/vs/openrouter\nhttps://openrouter.ai/pricing\nhttps://x.com/AiHubMix/status/2085260781705388444\nhttps://www.reddit.com/r/GeminiAI/\nhttps://www.reddit.com/r/LLMDevs/\nhttps://www.reddit.com/r/kimi/\n[/Sources]"}

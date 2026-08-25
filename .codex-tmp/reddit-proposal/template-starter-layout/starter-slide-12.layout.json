@@ -1,0 +1,1401 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/wvikso",
+    "id": "wvikso",
+    "slide": 12,
+    "layoutId": "/ppt/slideLayouts/slideLayout1.xml",
+    "layoutName": "DEFAULT",
+    "masterLayoutId": "/ppt/slideMasters/slideMaster1.xml",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 960,
+      "height": 540
+    }
+  },
+  "theme": {
+    "colorSchemeName": "Office",
+    "colors": {
+      "accent1": "#4472C4",
+      "accent2": "#ED7D31",
+      "accent3": "#A5A5A5",
+      "accent4": "#FFC000",
+      "accent5": "#5B9BD5",
+      "accent6": "#70AD47",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#44546A",
+      "lt2": "#E7E6E6",
+      "hlink": "#0563C1",
+      "folHlink": "#954F72"
+    },
+    "fontScheme": {
+      "name": "Office",
+      "majorFont": {
+        "latinTypeface": "Calibri Light"
+      },
+      "minorFont": {
+        "latinTypeface": "Calibri"
+      }
+    },
+    "typefaces": [
+      "Calibri",
+      "Calibri Light",
+      "Inter Black",
+      "Inter ExtraBold",
+      "Inter Medium"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "/ppt/slideLayouts/slideLayout1.xml",
+      "name": "DEFAULT",
+      "parentLayoutId": "/ppt/slideMasters/slideMaster1.xml",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "/ppt/slideMasters/slideMaster1.xml",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/50nil4zm",
+      "id": "33",
+      "name": "Image 0",
+      "bbox": [
+        0,
+        0,
+        960,
+        540
+      ],
+      "contentType": "image/jpeg",
+      "asset": {
+        "assetId": "/ppt/media/image2.jpeg",
+        "contentType": "image/jpeg",
+        "byteLength": 11127
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image2.jpeg",
+        "contentType": "image/jpeg",
+        "byteLength": 11127
+      }
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/lonu1c3m",
+      "id": "3",
+      "name": "Shape 0",
+      "bbox": [
+        0,
+        0,
+        960,
+        92.44
+      ],
+      "geometry": "rect",
+      "fillColor": "#055C4E"
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/axcbmd4z",
+      "id": "4",
+      "name": "Text 1",
+      "bbox": [
+        45,
+        30,
+        870,
+        32.44
+      ],
+      "geometry": "rect",
+      "text": "合规执行：避开 Reddit 的核心雷区",
+      "textPreview": "合规执行：避开 Reddit 的核心雷区",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "合规执行：避开 Reddit 的核心雷区"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "合规执行：避开 Reddit 的核心雷区",
+          "resolvedTextStyle": {
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "合规执行：避开 Reddit 的核心雷区",
+              "fontSize": 21.33,
+              "typeface": "Inter ExtraBold",
+              "color": "#FFFFFF",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/bylsvilk",
+      "id": "5",
+      "name": "Shape 2",
+      "bbox": [
+        45,
+        122.44,
+        423.75,
+        55.31
+      ],
+      "geometry": "rect",
+      "fillColor": "#020817"
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/czutonmp",
+      "id": "6",
+      "name": "Shape 3",
+      "bbox": [
+        67.5,
+        137.44,
+        52.87,
+        25.31
+      ],
+      "geometry": "rect",
+      "fillColor": "#5EEAD4"
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/x03axs3a",
+      "id": "7",
+      "name": "Text 4",
+      "bbox": [
+        67.5,
+        137.44,
+        52.87,
+        25.31
+      ],
+      "geometry": "rect",
+      "text": "风险 1",
+      "textPreview": "风险 1",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "none",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 5.36,
+          "right": 12.51,
+          "bottom": 5.36,
+          "left": 12.51
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "风险 1"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "风险 1",
+          "resolvedTextStyle": {
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "风险 1",
+              "fontSize": 10.67,
+              "typeface": "Inter Black",
+              "color": "#055C4E",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/2tsbid4n",
+      "id": "8",
+      "name": "Text 5",
+      "bbox": [
+        132.38,
+        139.97,
+        118.8,
+        20.25
+      ],
+      "geometry": "rect",
+      "text": "新账号发帖被秒删",
+      "textPreview": "新账号发帖被秒删",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "none",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "新账号发帖被秒删"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "新账号发帖被秒删",
+          "resolvedTextStyle": {
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "新账号发帖被秒删",
+              "fontSize": 13.33,
+              "typeface": "Inter ExtraBold",
+              "color": "#FFFFFF",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/nulsril8",
+      "id": "9",
+      "name": "Shape 6",
+      "bbox": [
+        45,
+        177.75,
+        423.75,
+        127.91
+      ],
+      "geometry": "rect",
+      "fillColor": "#FFFFFF"
+    },
+    {
+      "order": 9,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/7udob2p0",
+      "id": "10",
+      "name": "Text 7",
+      "bbox": [
+        67.5,
+        200.25,
+        378.75,
+        16.31
+      ],
+      "geometry": "rect",
+      "text": "应对策略",
+      "textPreview": "应对策略",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "应对策略"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "应对策略",
+          "resolvedTextStyle": {
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "应对策略",
+              "fontSize": 10.67,
+              "typeface": "Inter Black",
+              "color": "#00D1AE",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 10,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/6t47ix8f",
+      "id": "11",
+      "name": "Text 8",
+      "bbox": [
+        67.5,
+        225.56,
+        378.75,
+        38.4
+      ],
+      "geometry": "rect",
+      "text": "使用 800+ Karma 的养号，发帖前在目标版块进行真实互动 3–5 天，建立账号在该版块的活跃度记录。",
+      "textPreview": "使用 800+ Karma 的养号，发帖前在目标版块进行真实互动 3–5 天，建立账号在该版块的活跃度记录。",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "使用 800+ Karma 的养号，发帖前在目标版块进行真实互动 3–5"
+          },
+          {
+            "index": 2,
+            "text": "天，建立账号在该版块的活跃度记录。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "使用 800+ Karma 的养号，发帖前在目标版块进行真实互动 3–5 天，建立账号在该版块的活跃度记录。",
+          "lineSpacingPercent": 128000,
+          "resolvedTextStyle": {
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "使用 800+ Karma 的养号，发帖前在目标版块进行真实互动 3–5 天，建立账号在该版块的活跃度记录。",
+              "fontSize": 11.33,
+              "typeface": "Inter Medium",
+              "color": "#020817"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 11,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/tgf6ds7q",
+      "id": "12",
+      "name": "Shape 9",
+      "bbox": [
+        491.25,
+        122.44,
+        423.75,
+        55.31
+      ],
+      "geometry": "rect",
+      "fillColor": "#020817"
+    },
+    {
+      "order": 12,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/sv6pk76l",
+      "id": "13",
+      "name": "Shape 10",
+      "bbox": [
+        513.75,
+        137.44,
+        55.13,
+        25.31
+      ],
+      "geometry": "rect",
+      "fillColor": "#5EEAD4"
+    },
+    {
+      "order": 13,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/fixof2pw",
+      "id": "14",
+      "name": "Text 11",
+      "bbox": [
+        513.75,
+        137.44,
+        55.13,
+        25.31
+      ],
+      "geometry": "rect",
+      "text": "风险 2",
+      "textPreview": "风险 2",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "none",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 5.36,
+          "right": 12.51,
+          "bottom": 5.36,
+          "left": 12.51
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "风险 2"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "风险 2",
+          "resolvedTextStyle": {
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "风险 2",
+              "fontSize": 10.67,
+              "typeface": "Inter Black",
+              "color": "#055C4E",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 14,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/uho7mxob",
+      "id": "15",
+      "name": "Text 12",
+      "bbox": [
+        580.87,
+        139.97,
+        118.8,
+        20.25
+      ],
+      "geometry": "rect",
+      "text": "被识别为营销账号",
+      "textPreview": "被识别为营销账号",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "none",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "被识别为营销账号"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "被识别为营销账号",
+          "resolvedTextStyle": {
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "被识别为营销账号",
+              "fontSize": 13.33,
+              "typeface": "Inter ExtraBold",
+              "color": "#FFFFFF",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 15,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/hkf6hc72",
+      "id": "16",
+      "name": "Shape 13",
+      "bbox": [
+        491.25,
+        177.75,
+        423.75,
+        127.91
+      ],
+      "geometry": "rect",
+      "fillColor": "#FFFFFF"
+    },
+    {
+      "order": 16,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/gj6po76h",
+      "id": "17",
+      "name": "Text 14",
+      "bbox": [
+        513.75,
+        200.25,
+        378.75,
+        16.31
+      ],
+      "geometry": "rect",
+      "text": "应对策略",
+      "textPreview": "应对策略",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "应对策略"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "应对策略",
+          "resolvedTextStyle": {
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "应对策略",
+              "fontSize": 10.67,
+              "typeface": "Inter Black",
+              "color": "#00D1AE",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 17,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/vmto3ips",
+      "id": "18",
+      "name": "Text 15",
+      "bbox": [
+        513.75,
+        225.56,
+        378.75,
+        57.59
+      ],
+      "geometry": "rect",
+      "text": "采用 Full Disclosure（如在文末注明\"我在 Expertise.ai 工作\"）。在 Reddit，极度的透明度反而能建立信任，掩饰身份一旦被发现将面临永久封禁。",
+      "textPreview": "采用 Full Disclosure（如在文末注明\"我在 Expertise.ai 工作\"）。在 Reddit，极度的透明度反而能建立信任，掩饰身份一旦被发现将面临永久封禁。",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 3,
+        "lines": [
+          {
+            "index": 1,
+            "text": "采用 Full Disclosure（如在文末注明\"我在 Expertise.ai 工作\"）。在"
+          },
+          {
+            "index": 2,
+            "text": "Reddit，极度的透明度反而能建立信任，掩饰身份一旦被发现将面临永久封"
+          },
+          {
+            "index": 3,
+            "text": "禁。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "采用 Full Disclosure（如在文末注明\"我在 Expertise.ai 工作\"）。在 Reddit，极度的透明度反而能建立信任，掩饰身份一旦被发现将面临永久封禁。",
+          "lineSpacingPercent": 128000,
+          "resolvedTextStyle": {
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "采用 Full Disclosure（如在文末注明\"我在 Expertise.ai 工作\"）。在 Reddit，极度的透明度反而能建立信任，掩饰身份一旦被发现将面临永久封禁。",
+              "fontSize": 11.33,
+              "typeface": "Inter Medium",
+              "color": "#020817"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 18,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/alknad87",
+      "id": "19",
+      "name": "Shape 16",
+      "bbox": [
+        45,
+        328.16,
+        423.75,
+        55.31
+      ],
+      "geometry": "rect",
+      "fillColor": "#020817"
+    },
+    {
+      "order": 19,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ehsril8v",
+      "id": "20",
+      "name": "Shape 17",
+      "bbox": [
+        67.5,
+        343.16,
+        55.5,
+        25.31
+      ],
+      "geometry": "rect",
+      "fillColor": "#5EEAD4"
+    },
+    {
+      "order": 20,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/zi1sbq9g",
+      "id": "21",
+      "name": "Text 18",
+      "bbox": [
+        67.5,
+        343.16,
+        55.5,
+        25.31
+      ],
+      "geometry": "rect",
+      "text": "风险 3",
+      "textPreview": "风险 3",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "none",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 5.36,
+          "right": 12.51,
+          "bottom": 5.36,
+          "left": 12.51
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "风险 3"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "风险 3",
+          "resolvedTextStyle": {
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "风险 3",
+              "fontSize": 10.67,
+              "typeface": "Inter Black",
+              "color": "#055C4E",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 21,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/0ja9kbql",
+      "id": "22",
+      "name": "Text 19",
+      "bbox": [
+        135,
+        345.69,
+        118.8,
+        20.25
+      ],
+      "geometry": "rect",
+      "text": "版块规则禁止推广",
+      "textPreview": "版块规则禁止推广",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "none",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "版块规则禁止推广"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "版块规则禁止推广",
+          "resolvedTextStyle": {
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "版块规则禁止推广",
+              "fontSize": 13.33,
+              "typeface": "Inter ExtraBold",
+              "color": "#FFFFFF",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 22,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/1kjadgr6",
+      "id": "23",
+      "name": "Shape 20",
+      "bbox": [
+        45,
+        383.47,
+        423.75,
+        127.91
+      ],
+      "geometry": "rect",
+      "fillColor": "#FFFFFF"
+    },
+    {
+      "order": 23,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/qd8re18j",
+      "id": "24",
+      "name": "Text 21",
+      "bbox": [
+        67.5,
+        405.97,
+        378.75,
+        16.31
+      ],
+      "geometry": "rect",
+      "text": "应对策略",
+      "textPreview": "应对策略",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "应对策略"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "应对策略",
+          "resolvedTextStyle": {
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "应对策略",
+              "fontSize": 10.67,
+              "typeface": "Inter Black",
+              "color": "#00D1AE",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 24,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/re1s7694",
+      "id": "25",
+      "name": "Text 22",
+      "bbox": [
+        67.5,
+        431.28,
+        378.75,
+        38.4
+      ],
+      "geometry": "rect",
+      "text": "发帖前先观察该版块热门帖风格 1–2 天。如果主版面严禁推广，则在允许推广的特定线程（如 Weekly Self-Promotion Thread）中发布。",
+      "textPreview": "发帖前先观察该版块热门帖风格 1–2 天。如果主版面严禁推广，则在允许推广的特定线程（如 Weekly Self-Promotion Thread）中发布。",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 3,
+        "lines": [
+          {
+            "index": 1,
+            "text": "发帖前先观察该版块热门帖风格 1–2"
+          },
+          {
+            "index": 2,
+            "text": "天。如果主版面严禁推广，则在允许推广的特定线程（如 Weekly"
+          },
+          {
+            "index": 3,
+            "text": "Self-Promotion Thread）中发布。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "发帖前先观察该版块热门帖风格 1–2 天。如果主版面严禁推广，则在允许推广的特定线程（如 Weekly Self-Promotion Thread）中发布。",
+          "lineSpacingPercent": 128000,
+          "resolvedTextStyle": {
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "发帖前先观察该版块热门帖风格 1–2 天。如果主版面严禁推广，则在允许推广的特定线程（如 Weekly Self-Promotion Thread）中发布。",
+              "fontSize": 11.33,
+              "typeface": "Inter Medium",
+              "color": "#020817"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 25,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/cfa9gbqp",
+      "id": "26",
+      "name": "Shape 23",
+      "bbox": [
+        491.25,
+        328.16,
+        423.75,
+        55.31
+      ],
+      "geometry": "rect",
+      "fillColor": "#020817"
+    },
+    {
+      "order": 26,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/dgja9gra",
+      "id": "27",
+      "name": "Shape 24",
+      "bbox": [
+        513.75,
+        343.16,
+        55.87,
+        25.31
+      ],
+      "geometry": "rect",
+      "fillColor": "#5EEAD4"
+    },
+    {
+      "order": 27,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/2p8ra1sn",
+      "id": "28",
+      "name": "Text 25",
+      "bbox": [
+        513.75,
+        343.16,
+        55.87,
+        25.31
+      ],
+      "geometry": "rect",
+      "text": "风险 4",
+      "textPreview": "风险 4",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "none",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 5.36,
+          "right": 12.51,
+          "bottom": 5.36,
+          "left": 12.51
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "风险 4"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "风险 4",
+          "resolvedTextStyle": {
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "风险 4",
+              "fontSize": 10.67,
+              "typeface": "Inter Black",
+              "color": "#055C4E",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 28,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/3ah83698",
+      "id": "29",
+      "name": "Text 26",
+      "bbox": [
+        581.62,
+        345.69,
+        197.78,
+        20.25
+      ],
+      "geometry": "rect",
+      "text": "AI chatbot 疲劳引发负面讨论",
+      "textPreview": "AI chatbot 疲劳引发负面讨论",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "AI chatbot 疲劳引发负面讨论"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "AI chatbot 疲劳引发负面讨论",
+          "resolvedTextStyle": {
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "AI chatbot 疲劳引发负面讨论",
+              "fontSize": 13.33,
+              "typeface": "Inter ExtraBold",
+              "color": "#FFFFFF",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 29,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/54nup4bq",
+      "id": "30",
+      "name": "Shape 27",
+      "bbox": [
+        491.25,
+        383.47,
+        423.75,
+        127.91
+      ],
+      "geometry": "rect",
+      "fillColor": "#FFFFFF"
+    },
+    {
+      "order": 30,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/k3edgza5",
+      "id": "31",
+      "name": "Text 28",
+      "bbox": [
+        513.75,
+        405.97,
+        378.75,
+        16.31
+      ],
+      "geometry": "rect",
+      "text": "应对策略",
+      "textPreview": "应对策略",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "应对策略"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "应对策略",
+          "resolvedTextStyle": {
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "应对策略",
+              "fontSize": 10.67,
+              "typeface": "Inter Black",
+              "color": "#00D1AE",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 31,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/j25cnutk",
+      "id": "32",
+      "name": "Text 29",
+      "bbox": [
+        513.75,
+        431.28,
+        378.75,
+        57.59
+      ],
+      "geometry": "rect",
+      "text": "避免使用\"AI chatbot\"标签，改用\"AI sales agent\"或\"pipeline automation\"。聚焦真实 ROI 数据（如 84% 转化提升、22% 工单减少），而非功能描述。",
+      "textPreview": "避免使用\"AI chatbot\"标签，改用\"AI sales agent\"或\"pipeline automation\"。聚焦真实 ROI 数据（如 84% 转化提升、22% 工单减少），而非功能描述。",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 3,
+        "lines": [
+          {
+            "index": 1,
+            "text": "避免使用\"AI chatbot\"标签，改用\"AI sales agent\"或\"pipeline"
+          },
+          {
+            "index": 2,
+            "text": "automation\"。聚焦真实 ROI 数据（如 84% 转化提升、22%"
+          },
+          {
+            "index": 3,
+            "text": "工单减少），而非功能描述。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "避免使用\"AI chatbot\"标签，改用\"AI sales agent\"或\"pipeline automation\"。聚焦真实 ROI 数据（如 84% 转化提升、22% 工单减少），而非功能描述。",
+          "lineSpacingPercent": 128000,
+          "resolvedTextStyle": {
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "避免使用\"AI chatbot\"标签，改用\"AI sales agent\"或\"pipeline automation\"。聚焦真实 ROI 数据（如 84% 转化提升、22% 工单减少），而非功能描述。",
+              "fontSize": 11.33,
+              "typeface": "Inter Medium",
+              "color": "#020817"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    }
+  ],
+  "composeRuns": []
+}

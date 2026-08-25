@@ -1,0 +1,776 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/6xcdtf",
+    "id": "6xcdtf",
+    "slide": 3,
+    "layoutId": "/ppt/slideLayouts/slideLayout1.xml",
+    "layoutName": "DEFAULT",
+    "masterLayoutId": "/ppt/slideMasters/slideMaster1.xml",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 960,
+      "height": 540
+    }
+  },
+  "theme": {
+    "colorSchemeName": "Office",
+    "colors": {
+      "accent1": "#4472C4",
+      "accent2": "#ED7D31",
+      "accent3": "#A5A5A5",
+      "accent4": "#FFC000",
+      "accent5": "#5B9BD5",
+      "accent6": "#70AD47",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#44546A",
+      "lt2": "#E7E6E6",
+      "hlink": "#0563C1",
+      "folHlink": "#954F72"
+    },
+    "fontScheme": {
+      "name": "Office",
+      "majorFont": {
+        "latinTypeface": "Calibri Light"
+      },
+      "minorFont": {
+        "latinTypeface": "Calibri"
+      }
+    },
+    "typefaces": [
+      "Calibri",
+      "Calibri Light",
+      "Inter",
+      "Inter ExtraBold"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "/ppt/slideLayouts/slideLayout1.xml",
+      "name": "DEFAULT",
+      "parentLayoutId": "/ppt/slideMasters/slideMaster1.xml",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "/ppt/slideMasters/slideMaster1.xml",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/nu10b6xs",
+      "id": "17",
+      "name": "Image 0",
+      "bbox": [
+        0,
+        0,
+        960,
+        540
+      ],
+      "contentType": "image/jpeg",
+      "asset": {
+        "assetId": "/ppt/media/image2.jpeg",
+        "contentType": "image/jpeg",
+        "byteLength": 11127
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image2.jpeg",
+        "contentType": "image/jpeg",
+        "byteLength": 11127
+      }
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/hwv69k7m",
+      "id": "3",
+      "name": "Shape 0",
+      "bbox": [
+        0,
+        0,
+        960,
+        92.44
+      ],
+      "geometry": "rect",
+      "fillColor": "#055C4E"
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/65knuloz",
+      "id": "4",
+      "name": "Text 1",
+      "bbox": [
+        45,
+        30,
+        870,
+        32.44
+      ],
+      "geometry": "rect",
+      "text": "AE 每周 70% 的时间被行政工作吞噬——Expertise.ai 把它夺回来",
+      "textPreview": "AE 每周 70% 的时间被行政工作吞噬——Expertise.ai 把它夺回来",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "AE 每周 70% 的时间被行政工作吞噬——Expertise.ai 把它夺回来"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "AE 每周 70% 的时间被行政工作吞噬——Expertise.ai 把它夺回来",
+          "resolvedTextStyle": {
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "AE 每周 70% 的时间被行政工作吞噬——Expertise.ai 把它夺回来",
+              "fontSize": 21.33,
+              "typeface": "Inter ExtraBold",
+              "color": "#FFFFFF",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/76t43qpk",
+      "id": "5",
+      "name": "Shape 2",
+      "bbox": [
+        0,
+        92.44,
+        480,
+        223.78
+      ],
+      "geometry": "rect",
+      "fillColor": "#020817"
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/sr25wv65",
+      "id": "6",
+      "name": "Text 3",
+      "bbox": [
+        45,
+        152.24,
+        390,
+        24.38
+      ],
+      "geometry": "rect",
+      "text": "痛点 1 — CRM 录入黑洞",
+      "textPreview": "痛点 1 — CRM 录入黑洞",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "痛点 1 — CRM 录入黑洞"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "痛点 1 — CRM 录入黑洞",
+          "resolvedTextStyle": {
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "痛点 1 — CRM 录入黑洞",
+              "fontSize": 16,
+              "typeface": "Inter ExtraBold",
+              "color": "#FFFFFF",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/tsbm507q",
+      "id": "7",
+      "name": "Text 4",
+      "bbox": [
+        45,
+        191.62,
+        390,
+        64.79
+      ],
+      "geometry": "rect",
+      "text": "销售代表每周平均花费 11+ 小时在 CRM 更新、会议记录和跟进邮件上。Expertise.ai 自动将通话内容、会议摘要和信号写入 HubSpot / Salesforce，AE 无需手动操作。",
+      "textPreview": "销售代表每周平均花费 11+ 小时在 CRM 更新、会议记录和跟进邮件上。Expertise.ai 自动将通话内容、会议摘要和信号写入 HubSpot / Salesforce，AE 无需手动操作。",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 4,
+        "lines": [
+          {
+            "index": 1,
+            "text": "销售代表每周平均花费 11+ 小时在 CRM"
+          },
+          {
+            "index": 2,
+            "text": "更新、会议记录和跟进邮件上。Expertise.ai"
+          },
+          {
+            "index": 3,
+            "text": "自动将通话内容、会议摘要和信号写入 HubSpot / Salesforce，AE"
+          },
+          {
+            "index": 4,
+            "text": "无需手动操作。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "销售代表每周平均花费 11+ 小时在 CRM 更新、会议记录和跟进邮件上。Expertise.ai 自动将通话内容、会议摘要和信号写入 HubSpot / Salesforce，AE 无需手动操作。",
+          "lineSpacingPercent": 128000,
+          "resolvedTextStyle": {
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "销售代表每周平均花费 11+ 小时在 CRM 更新、会议记录和跟进邮件上。Expertise.ai 自动将通话内容、会议摘要和信号写入 HubSpot / Salesforce，AE 无需手动操作。",
+              "fontSize": 12.67,
+              "typeface": "Inter",
+              "color": "rgba(255, 255, 255, 0.85)"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/i10nqlo3",
+      "id": "8",
+      "name": "Shape 5",
+      "bbox": [
+        480,
+        92.44,
+        480,
+        223.78
+      ],
+      "geometry": "rect",
+      "fillColor": "#5EEAD4"
+    },
+    {
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/j2t4zqpo",
+      "id": "9",
+      "name": "Text 6",
+      "bbox": [
+        525,
+        152.24,
+        390,
+        24.38
+      ],
+      "geometry": "rect",
+      "text": "痛点 2 — 高意向访客匿名流失",
+      "textPreview": "痛点 2 — 高意向访客匿名流失",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "痛点 2 — 高意向访客匿名流失"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "痛点 2 — 高意向访客匿名流失",
+          "resolvedTextStyle": {
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "痛点 2 — 高意向访客匿名流失",
+              "fontSize": 16,
+              "typeface": "Inter ExtraBold",
+              "color": "#055C4E",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 9,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/jmlkfqps",
+      "id": "10",
+      "name": "Text 7",
+      "bbox": [
+        525,
+        191.62,
+        390,
+        64.79
+      ],
+      "geometry": "rect",
+      "text": "超过 97% 的网站访客不填表单就离开。Expertise.ai 的访客去匿名化功能识别公司和决策者，并主动发起个性化对话，将沉默流量转化为可行动线索。",
+      "textPreview": "超过 97% 的网站访客不填表单就离开。Expertise.ai 的访客去匿名化功能识别公司和决策者，并主动发起个性化对话，将沉默流量转化为可行动线索。",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 3,
+        "lines": [
+          {
+            "index": 1,
+            "text": "超过 97% 的网站访客不填表单就离开。Expertise.ai"
+          },
+          {
+            "index": 2,
+            "text": "的访客去匿名化功能识别公司和决策者，并主动发起个性化对话，将"
+          },
+          {
+            "index": 3,
+            "text": "沉默流量转化为可行动线索。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "超过 97% 的网站访客不填表单就离开。Expertise.ai 的访客去匿名化功能识别公司和决策者，并主动发起个性化对话，将沉默流量转化为可行动线索。",
+          "lineSpacingPercent": 128000,
+          "resolvedTextStyle": {
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "超过 97% 的网站访客不填表单就离开。Expertise.ai 的访客去匿名化功能识别公司和决策者，并主动发起个性化对话，将沉默流量转化为可行动线索。",
+              "fontSize": 12.67,
+              "typeface": "Inter",
+              "color": "#055C4E"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 10,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ilcj6lo7",
+      "id": "11",
+      "name": "Shape 8",
+      "bbox": [
+        0,
+        316.22,
+        480,
+        223.78
+      ],
+      "geometry": "rect",
+      "fillColor": "#00D1AE"
+    },
+    {
+      "order": 11,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/58n2h07i",
+      "id": "12",
+      "name": "Text 9",
+      "bbox": [
+        45,
+        376.03,
+        390,
+        24.38
+      ],
+      "geometry": "rect",
+      "text": "痛点 3 — 传统聊天机器人只会客服，不会卖货",
+      "textPreview": "痛点 3 — 传统聊天机器人只会客服，不会卖货",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "痛点 3 — 传统聊天机器人只会客服，不会卖货"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "痛点 3 — 传统聊天机器人只会客服，不会卖货",
+          "resolvedTextStyle": {
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "痛点 3 — 传统聊天机器人只会客服，不会卖货",
+              "fontSize": 16,
+              "typeface": "Inter ExtraBold",
+              "color": "#020817",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 12,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/k7u18v6x",
+      "id": "13",
+      "name": "Text 10",
+      "bbox": [
+        45,
+        415.4,
+        390,
+        64.79
+      ],
+      "geometry": "rect",
+      "text": "Intercom、HubSpot 原生 Bot 以支持为先，无法执行复杂的销售对话。Expertise.ai 使用自定义 Playbook 进行多步骤资格审查，并直接在销售日历上预约会议。",
+      "textPreview": "Intercom、HubSpot 原生 Bot 以支持为先，无法执行复杂的销售对话。Expertise.ai 使用自定义 Playbook 进行多步骤资格审查，并直接在销售日历上预约会议。",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 3,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Intercom、HubSpot 原生 Bot"
+          },
+          {
+            "index": 2,
+            "text": "以支持为先，无法执行复杂的销售对话。Expertise.ai 使用自定义"
+          },
+          {
+            "index": 3,
+            "text": "Playbook 进行多步骤资格审查，并直接在销售日历上预约会议。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Intercom、HubSpot 原生 Bot 以支持为先，无法执行复杂的销售对话。Expertise.ai 使用自定义 Playbook 进行多步骤资格审查，并直接在销售日历上预约会议。",
+          "lineSpacingPercent": 128000,
+          "resolvedTextStyle": {
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Intercom、HubSpot 原生 Bot 以支持为先，无法执行复杂的销售对话。Expertise.ai 使用自定义 Playbook 进行多步骤资格审查，并直接在销售日历上预约会议。",
+              "fontSize": 12.67,
+              "typeface": "Inter",
+              "color": "#020817"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 13,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/7a5kjapo",
+      "id": "14",
+      "name": "Shape 11",
+      "bbox": [
+        480,
+        316.22,
+        480,
+        223.78
+      ],
+      "geometry": "rect",
+      "fillColor": "#055C4E"
+    },
+    {
+      "order": 14,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/69wja5o3",
+      "id": "15",
+      "name": "Text 12",
+      "bbox": [
+        525,
+        376.03,
+        390,
+        24.38
+      ],
+      "geometry": "rect",
+      "text": "痛点 4 — 支持成本高昂，响应延迟",
+      "textPreview": "痛点 4 — 支持成本高昂，响应延迟",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "痛点 4 — 支持成本高昂，响应延迟"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "痛点 4 — 支持成本高昂，响应延迟",
+          "resolvedTextStyle": {
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "痛点 4 — 支持成本高昂，响应延迟",
+              "fontSize": 16,
+              "typeface": "Inter ExtraBold",
+              "color": "#FFFFFF",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 15,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/tcn2lk7u",
+      "id": "16",
+      "name": "Text 13",
+      "bbox": [
+        525,
+        415.4,
+        390,
+        64.79
+      ],
+      "geometry": "rect",
+      "text": "Expertise.ai 处理 99%+ 的常见问题，将工单量降低 22%+，同时在高意向时刻无缝转接人工，实现\"AI 先行，人工收尾\"的最优分工。",
+      "textPreview": "Expertise.ai 处理 99%+ 的常见问题，将工单量降低 22%+，同时在高意向时刻无缝转接人工，实现\"AI 先行，人工收尾\"的最优分工。",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 3,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Expertise.ai 处理 99%+ 的常见问题，将工单量降低"
+          },
+          {
+            "index": 2,
+            "text": "22%+，同时在高意向时刻无缝转接人工，实现\"AI"
+          },
+          {
+            "index": 3,
+            "text": "先行，人工收尾\"的最优分工。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Expertise.ai 处理 99%+ 的常见问题，将工单量降低 22%+，同时在高意向时刻无缝转接人工，实现\"AI 先行，人工收尾\"的最优分工。",
+          "lineSpacingPercent": 128000,
+          "resolvedTextStyle": {
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Expertise.ai 处理 99%+ 的常见问题，将工单量降低 22%+，同时在高意向时刻无缝转接人工，实现\"AI 先行，人工收尾\"的最优分工。",
+              "fontSize": 12.67,
+              "typeface": "Inter",
+              "color": "rgba(255, 255, 255, 0.85)"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ]
+    }
+  ],
+  "composeRuns": []
+}

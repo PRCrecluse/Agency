@@ -9,6 +9,15 @@ export function proxy(request: NextRequest, event: NextFetchEvent) {
     domain: DATAFAST_DOMAIN
   })
 
+  if (/^\/zh\/services(?:\/|$)/.test(request.nextUrl.pathname)) {
+    const destination = request.nextUrl.clone()
+
+    destination.pathname = request.nextUrl.pathname.replace(/^\/zh/, '')
+    destination.searchParams.set('lang', 'zh')
+
+    return NextResponse.rewrite(destination)
+  }
+
   return NextResponse.next()
 }
 

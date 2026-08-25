@@ -1,0 +1,1 @@
+12-slide 16:9 source deck. Reuse every slide one-to-one. Preserve dark green / mint / navy system, Inter typography, background images, masters and layouts. Rewrite only inherited text-bearing slide elements listed in template-frame-map.json. No inherited placeholders are present in the inspected source deck.

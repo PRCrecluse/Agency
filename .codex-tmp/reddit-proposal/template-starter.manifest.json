@@ -1,0 +1,145 @@
+{
+  "sourcePptx": "/Users/prcrecluse/Desktop/Agency-客户文档/Redditagency/expertiseproposal1.pptx",
+  "mapPath": "/Users/prcrecluse/Desktop/shadcn-nextjs-flow-landing-page-2.0.0/.codex-tmp/reddit-proposal/template-frame-map.json",
+  "output": "/Users/prcrecluse/Desktop/shadcn-nextjs-flow-landing-page-2.0.0/.codex-tmp/reddit-proposal/template-starter.pptx",
+  "outputBytes": 68732,
+  "sourceSlideCount": 12,
+  "slideCount": 12,
+  "previewDir": "/Users/prcrecluse/Desktop/shadcn-nextjs-flow-landing-page-2.0.0/.codex-tmp/reddit-proposal/template-starter-preview",
+  "layoutDir": "/Users/prcrecluse/Desktop/shadcn-nextjs-flow-landing-page-2.0.0/.codex-tmp/reddit-proposal/template-starter-layout",
+  "contactSheet": "/Users/prcrecluse/Desktop/shadcn-nextjs-flow-landing-page-2.0.0/.codex-tmp/reddit-proposal/template-starter-contact-sheet.png",
+  "slides": [
+    {
+      "outputSlide": 1,
+      "sourceSlide": 1,
+      "narrativeRole": "opening offer",
+      "reuseMode": "duplicate-slide",
+      "editTargetCount": 5,
+      "previewPath": "/Users/prcrecluse/Desktop/shadcn-nextjs-flow-landing-page-2.0.0/.codex-tmp/reddit-proposal/template-starter-preview/starter-slide-01.png",
+      "previewRelativePath": "template-starter-preview/starter-slide-01.png",
+      "layoutPath": "/Users/prcrecluse/Desktop/shadcn-nextjs-flow-landing-page-2.0.0/.codex-tmp/reddit-proposal/template-starter-layout/starter-slide-01.layout.json",
+      "layoutRelativePath": "template-starter-layout/starter-slide-01.layout.json"
+    },
+    {
+      "outputSlide": 2,
+      "sourceSlide": 2,
+      "narrativeRole": "market opportunity",
+      "reuseMode": "duplicate-slide",
+      "editTargetCount": 13,
+      "previewPath": "/Users/prcrecluse/Desktop/shadcn-nextjs-flow-landing-page-2.0.0/.codex-tmp/reddit-proposal/template-starter-preview/starter-slide-02.png",
+      "previewRelativePath": "template-starter-preview/starter-slide-02.png",
+      "layoutPath": "/Users/prcrecluse/Desktop/shadcn-nextjs-flow-landing-page-2.0.0/.codex-tmp/reddit-proposal/template-starter-layout/starter-slide-02.layout.json",
+      "layoutRelativePath": "template-starter-layout/starter-slide-02.layout.json"
+    },
+    {
+      "outputSlide": 3,
+      "sourceSlide": 3,
+      "narrativeRole": "campaign thesis",
+      "reuseMode": "duplicate-slide",
+      "editTargetCount": 9,
+      "previewPath": "/Users/prcrecluse/Desktop/shadcn-nextjs-flow-landing-page-2.0.0/.codex-tmp/reddit-proposal/template-starter-preview/starter-slide-03.png",
+      "previewRelativePath": "template-starter-preview/starter-slide-03.png",
+      "layoutPath": "/Users/prcrecluse/Desktop/shadcn-nextjs-flow-landing-page-2.0.0/.codex-tmp/reddit-proposal/template-starter-layout/starter-slide-03.layout.json",
+      "layoutRelativePath": "template-starter-layout/starter-slide-03.layout.json"
+    },
+    {
+      "outputSlide": 4,
+      "sourceSlide": 4,
+      "narrativeRole": "evidence angles",
+      "reuseMode": "duplicate-slide",
+      "editTargetCount": 21,
+      "previewPath": "/Users/prcrecluse/Desktop/shadcn-nextjs-flow-landing-page-2.0.0/.codex-tmp/reddit-proposal/template-starter-preview/starter-slide-04.png",
+      "previewRelativePath": "template-starter-preview/starter-slide-04.png",
+      "layoutPath": "/Users/prcrecluse/Desktop/shadcn-nextjs-flow-landing-page-2.0.0/.codex-tmp/reddit-proposal/template-starter-layout/starter-slide-04.layout.json",
+      "layoutRelativePath": "template-starter-layout/starter-slide-04.layout.json"
+    },
+    {
+      "outputSlide": 5,
+      "sourceSlide": 5,
+      "narrativeRole": "Reddit-native principles",
+      "reuseMode": "duplicate-slide",
+      "editTargetCount": 11,
+      "previewPath": "/Users/prcrecluse/Desktop/shadcn-nextjs-flow-landing-page-2.0.0/.codex-tmp/reddit-proposal/template-starter-preview/starter-slide-05.png",
+      "previewRelativePath": "template-starter-preview/starter-slide-05.png",
+      "layoutPath": "/Users/prcrecluse/Desktop/shadcn-nextjs-flow-landing-page-2.0.0/.codex-tmp/reddit-proposal/template-starter-layout/starter-slide-05.layout.json",
+      "layoutRelativePath": "template-starter-layout/starter-slide-05.layout.json"
+    },
+    {
+      "outputSlide": 6,
+      "sourceSlide": 6,
+      "narrativeRole": "GeminiAI community plan",
+      "reuseMode": "duplicate-slide",
+      "editTargetCount": 17,
+      "previewPath": "/Users/prcrecluse/Desktop/shadcn-nextjs-flow-landing-page-2.0.0/.codex-tmp/reddit-proposal/template-starter-preview/starter-slide-06.png",
+      "previewRelativePath": "template-starter-preview/starter-slide-06.png",
+      "layoutPath": "/Users/prcrecluse/Desktop/shadcn-nextjs-flow-landing-page-2.0.0/.codex-tmp/reddit-proposal/template-starter-layout/starter-slide-06.layout.json",
+      "layoutRelativePath": "template-starter-layout/starter-slide-06.layout.json"
+    },
+    {
+      "outputSlide": 7,
+      "sourceSlide": 7,
+      "narrativeRole": "LLMDevs community plan",
+      "reuseMode": "duplicate-slide",
+      "editTargetCount": 17,
+      "previewPath": "/Users/prcrecluse/Desktop/shadcn-nextjs-flow-landing-page-2.0.0/.codex-tmp/reddit-proposal/template-starter-preview/starter-slide-07.png",
+      "previewRelativePath": "template-starter-preview/starter-slide-07.png",
+      "layoutPath": "/Users/prcrecluse/Desktop/shadcn-nextjs-flow-landing-page-2.0.0/.codex-tmp/reddit-proposal/template-starter-layout/starter-slide-07.layout.json",
+      "layoutRelativePath": "template-starter-layout/starter-slide-07.layout.json"
+    },
+    {
+      "outputSlide": 8,
+      "sourceSlide": 8,
+      "narrativeRole": "Kimi and model communities plan",
+      "reuseMode": "duplicate-slide",
+      "editTargetCount": 23,
+      "previewPath": "/Users/prcrecluse/Desktop/shadcn-nextjs-flow-landing-page-2.0.0/.codex-tmp/reddit-proposal/template-starter-preview/starter-slide-08.png",
+      "previewRelativePath": "template-starter-preview/starter-slide-08.png",
+      "layoutPath": "/Users/prcrecluse/Desktop/shadcn-nextjs-flow-landing-page-2.0.0/.codex-tmp/reddit-proposal/template-starter-layout/starter-slide-08.layout.json",
+      "layoutRelativePath": "template-starter-layout/starter-slide-08.layout.json"
+    },
+    {
+      "outputSlide": 9,
+      "sourceSlide": 9,
+      "narrativeRole": "content angle library",
+      "reuseMode": "duplicate-slide",
+      "editTargetCount": 20,
+      "previewPath": "/Users/prcrecluse/Desktop/shadcn-nextjs-flow-landing-page-2.0.0/.codex-tmp/reddit-proposal/template-starter-preview/starter-slide-09.png",
+      "previewRelativePath": "template-starter-preview/starter-slide-09.png",
+      "layoutPath": "/Users/prcrecluse/Desktop/shadcn-nextjs-flow-landing-page-2.0.0/.codex-tmp/reddit-proposal/template-starter-layout/starter-slide-09.layout.json",
+      "layoutRelativePath": "template-starter-layout/starter-slide-09.layout.json"
+    },
+    {
+      "outputSlide": 10,
+      "sourceSlide": 10,
+      "narrativeRole": "post allocation",
+      "reuseMode": "duplicate-slide",
+      "editTargetCount": 24,
+      "previewPath": "/Users/prcrecluse/Desktop/shadcn-nextjs-flow-landing-page-2.0.0/.codex-tmp/reddit-proposal/template-starter-preview/starter-slide-10.png",
+      "previewRelativePath": "template-starter-preview/starter-slide-10.png",
+      "layoutPath": "/Users/prcrecluse/Desktop/shadcn-nextjs-flow-landing-page-2.0.0/.codex-tmp/reddit-proposal/template-starter-layout/starter-slide-10.layout.json",
+      "layoutRelativePath": "template-starter-layout/starter-slide-10.layout.json"
+    },
+    {
+      "outputSlide": 11,
+      "sourceSlide": 11,
+      "narrativeRole": "launch calendar and model radar",
+      "reuseMode": "duplicate-slide",
+      "editTargetCount": 11,
+      "previewPath": "/Users/prcrecluse/Desktop/shadcn-nextjs-flow-landing-page-2.0.0/.codex-tmp/reddit-proposal/template-starter-preview/starter-slide-11.png",
+      "previewRelativePath": "template-starter-preview/starter-slide-11.png",
+      "layoutPath": "/Users/prcrecluse/Desktop/shadcn-nextjs-flow-landing-page-2.0.0/.codex-tmp/reddit-proposal/template-starter-layout/starter-slide-11.layout.json",
+      "layoutRelativePath": "template-starter-layout/starter-slide-11.layout.json"
+    },
+    {
+      "outputSlide": 12,
+      "sourceSlide": 12,
+      "narrativeRole": "governance and measurement",
+      "reuseMode": "duplicate-slide",
+      "editTargetCount": 17,
+      "previewPath": "/Users/prcrecluse/Desktop/shadcn-nextjs-flow-landing-page-2.0.0/.codex-tmp/reddit-proposal/template-starter-preview/starter-slide-12.png",
+      "previewRelativePath": "template-starter-preview/starter-slide-12.png",
+      "layoutPath": "/Users/prcrecluse/Desktop/shadcn-nextjs-flow-landing-page-2.0.0/.codex-tmp/reddit-proposal/template-starter-layout/starter-slide-12.layout.json",
+      "layoutRelativePath": "template-starter-layout/starter-slide-12.layout.json"
+    }
+  ]
+}

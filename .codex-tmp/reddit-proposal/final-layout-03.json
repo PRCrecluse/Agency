@@ -1,0 +1,781 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/ofy9wn61",
+    "id": "ofy9wn61",
+    "slide": 3,
+    "layoutId": "/ppt/slideLayouts/slideLayout1.xml",
+    "layoutName": "DEFAULT",
+    "masterLayoutId": "/ppt/slideMasters/slideMaster1.xml",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 960,
+      "height": 540
+    }
+  },
+  "theme": {
+    "colorSchemeName": "Office",
+    "colors": {
+      "accent1": "#4472C4",
+      "accent2": "#ED7D31",
+      "accent3": "#A5A5A5",
+      "accent4": "#FFC000",
+      "accent5": "#5B9BD5",
+      "accent6": "#70AD47",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#44546A",
+      "lt2": "#E7E6E6",
+      "hlink": "#0563C1",
+      "folHlink": "#954F72"
+    },
+    "fontScheme": {
+      "name": "Office",
+      "majorFont": {
+        "latinTypeface": "Calibri Light"
+      },
+      "minorFont": {
+        "latinTypeface": "Calibri"
+      }
+    },
+    "typefaces": [
+      "Calibri",
+      "Calibri Light",
+      "Inter",
+      "Inter ExtraBold"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "/ppt/slideLayouts/slideLayout1.xml",
+      "name": "DEFAULT",
+      "parentLayoutId": "/ppt/slideMasters/slideMaster1.xml",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "/ppt/slideMasters/slideMaster1.xml",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/vmlojqd0",
+      "id": "17",
+      "name": "Image 0",
+      "bbox": [
+        0,
+        0,
+        960,
+        540
+      ],
+      "contentType": "image/jpeg",
+      "asset": {
+        "assetId": "/ppt/media/image2.jpeg",
+        "contentType": "image/jpeg",
+        "byteLength": 11127
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image2.jpeg",
+        "contentType": "image/jpeg",
+        "byteLength": 11127
+      }
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/d0jax03i",
+      "id": "3",
+      "name": "Shape 0",
+      "bbox": [
+        0,
+        0,
+        960,
+        92.44
+      ],
+      "geometry": "rect",
+      "fillColor": "#055C4E"
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/298ryl4v",
+      "id": "4",
+      "name": "Text 1",
+      "bbox": [
+        45,
+        30,
+        870,
+        32.44
+      ],
+      "geometry": "rect",
+      "text": "我们的优势不是“更便宜”一句话，而是三种可验证证据",
+      "textPreview": "我们的优势不是“更便宜”一句话，而是三种可验证证据",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "我们的优势不是“更便宜”一句话，而是三种可验证证据"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "我们的优势不是“更便宜”一句话，而是三种可验证证据",
+          "resolvedTextStyle": {
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "我们的优势不是“更便宜”一句话，而是三种可验证证据",
+              "fontSize": 21.33,
+              "typeface": "Inter ExtraBold",
+              "color": "#FFFFFF",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/3ah8rqlg",
+      "id": "5",
+      "name": "Shape 2",
+      "bbox": [
+        0,
+        92.44,
+        480,
+        223.78
+      ],
+      "geometry": "rect",
+      "fillColor": "#020817"
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/obq90bml",
+      "id": "6",
+      "name": "Text 3",
+      "bbox": [
+        45,
+        152.24,
+        390,
+        24.38
+      ],
+      "geometry": "rect",
+      "text": "证据 1 — OpenRouter 成本对照",
+      "textPreview": "证据 1 — OpenRouter 成本对照",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "证据 1 — OpenRouter 成本对照"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "证据 1 — OpenRouter 成本对照",
+          "resolvedTextStyle": {
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "证据 1 — OpenRouter 成本对照",
+              "fontSize": 16,
+              "typeface": "Inter ExtraBold",
+              "color": "#FFFFFF",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/pcjqtg36",
+      "id": "7",
+      "name": "Text 4",
+      "bbox": [
+        45,
+        191.62,
+        390,
+        64.79
+      ],
+      "geometry": "rect",
+      "text": "以同一模型、同一 token 用量比较最终到账成本。OpenRouter 公示信用卡充值费 5.5%；oFox.ai 主张官方模型价直通、无充值加价。每帖附计算条件与日期。",
+      "textPreview": "以同一模型、同一 token 用量比较最终到账成本。OpenRouter 公示信用卡充值费 5.5%；oFox.ai 主张官方模型价直通、无充值加价。每帖附计算条件与日期。",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 3,
+        "lines": [
+          {
+            "index": 1,
+            "text": "以同一模型、同一 token 用量比较最终到账成本。OpenRouter"
+          },
+          {
+            "index": 2,
+            "text": "公示信用卡充值费 5.5%；oFox.ai"
+          },
+          {
+            "index": 3,
+            "text": "主张官方模型价直通、无充值加价。每帖附计算条件与日期。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "以同一模型、同一 token 用量比较最终到账成本。OpenRouter 公示信用卡充值费 5.5%；oFox.ai 主张官方模型价直通、无充值加价。每帖附计算条件与日期。",
+          "lineSpacingPercent": 128000,
+          "resolvedTextStyle": {
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "以同一模型、同一 token 用量比较最终到账成本。OpenRouter 公示信用卡充值费 5.5%；oFox.ai 主张官方模型价直通、无充值加价。每帖附计算条件与日期。",
+              "fontSize": 12.67,
+              "typeface": "Inter",
+              "color": "rgba(255, 255, 255, 0.85)"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/m5cra54z",
+      "id": "8",
+      "name": "Shape 5",
+      "bbox": [
+        480,
+        92.44,
+        480,
+        223.78
+      ],
+      "geometry": "rect",
+      "fillColor": "#5EEAD4"
+    },
+    {
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/n6ls3alk",
+      "id": "9",
+      "name": "Text 6",
+      "bbox": [
+        525,
+        152.24,
+        390,
+        24.38
+      ],
+      "geometry": "rect",
+      "text": "证据 2 — Wan 3.0 热点实测",
+      "textPreview": "证据 2 — Wan 3.0 热点实测",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "证据 2 — Wan 3.0 热点实测"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "证据 2 — Wan 3.0 热点实测",
+          "resolvedTextStyle": {
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "证据 2 — Wan 3.0 热点实测",
+              "fontSize": 16,
+              "typeface": "Inter ExtraBold",
+              "color": "#055C4E",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 9,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/n2l4fq98",
+      "id": "10",
+      "name": "Text 7",
+      "bbox": [
+        525,
+        191.62,
+        390,
+        64.79
+      ],
+      "geometry": "rect",
+      "text": "发布原 prompt、参数、生成时间、成本与结果： “I tested this prompt on Wan 3.0 on oFox.ai — here’s what I got.” 让用户先评结果，再自然发现入口。",
+      "textPreview": "发布原 prompt、参数、生成时间、成本与结果： “I tested this prompt on Wan 3.0 on oFox.ai — here’s what I got.” 让用户先评结果，再自然发现入口。",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 3,
+        "lines": [
+          {
+            "index": 1,
+            "text": "发布原 prompt、参数、生成时间、成本与结果： “I tested this"
+          },
+          {
+            "index": 2,
+            "text": "prompt on Wan 3.0 on oFox.ai — here’s what I got.”"
+          },
+          {
+            "index": 3,
+            "text": "让用户先评结果，再自然发现入口。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "发布原 prompt、参数、生成时间、成本与结果： “I tested this prompt on Wan 3.0 on oFox.ai — here’s what I got.” 让用户先评结果，再自然发现入口。",
+          "lineSpacingPercent": 128000,
+          "resolvedTextStyle": {
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "发布原 prompt、参数、生成时间、成本与结果： “I tested this prompt on Wan 3.0 on oFox.ai — here’s what I got.” 让用户先评结果，再自然发现入口。",
+              "fontSize": 12.67,
+              "typeface": "Inter",
+              "color": "#055C4E"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 10,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/m1c3mlsn",
+      "id": "11",
+      "name": "Shape 8",
+      "bbox": [
+        0,
+        316.22,
+        480,
+        223.78
+      ],
+      "geometry": "rect",
+      "fillColor": "#00D1AE"
+    },
+    {
+      "order": 11,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/943mhgre",
+      "id": "12",
+      "name": "Text 9",
+      "bbox": [
+        45,
+        376.03,
+        390,
+        24.38
+      ],
+      "geometry": "rect",
+      "text": "证据 3 — 同题模型对比",
+      "textPreview": "证据 3 — 同题模型对比",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "证据 3 — 同题模型对比"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "证据 3 — 同题模型对比",
+          "resolvedTextStyle": {
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "证据 3 — 同题模型对比",
+              "fontSize": 16,
+              "typeface": "Inter ExtraBold",
+              "color": "#020817",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 12,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/83ulovat",
+      "id": "13",
+      "name": "Text 10",
+      "bbox": [
+        45,
+        415.4,
+        390,
+        64.79
+      ],
+      "geometry": "rect",
+      "text": "复用 AiHubMix 的形式：同一 prompt、同一 gateway，比较成本、首轮成功率与返工次数；不只报 benchmark，报告完成任务的总成本。",
+      "textPreview": "复用 AiHubMix 的形式：同一 prompt、同一 gateway，比较成本、首轮成功率与返工次数；不只报 benchmark，报告完成任务的总成本。",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 3,
+        "lines": [
+          {
+            "index": 1,
+            "text": "复用 AiHubMix 的形式：同一 prompt、同一"
+          },
+          {
+            "index": 2,
+            "text": "gateway，比较成本、首轮成功率与返工次数；不只报"
+          },
+          {
+            "index": 3,
+            "text": "benchmark，报告完成任务的总成本。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "复用 AiHubMix 的形式：同一 prompt、同一 gateway，比较成本、首轮成功率与返工次数；不只报 benchmark，报告完成任务的总成本。",
+          "lineSpacingPercent": 128000,
+          "resolvedTextStyle": {
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "复用 AiHubMix 的形式：同一 prompt、同一 gateway，比较成本、首轮成功率与返工次数；不只报 benchmark，报告完成任务的总成本。",
+              "fontSize": 12.67,
+              "typeface": "Inter",
+              "color": "#020817"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 13,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/v6l4jq94",
+      "id": "14",
+      "name": "Shape 11",
+      "bbox": [
+        480,
+        316.22,
+        480,
+        223.78
+      ],
+      "geometry": "rect",
+      "fillColor": "#055C4E"
+    },
+    {
+      "order": 14,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/a5c3ql8z",
+      "id": "15",
+      "name": "Text 12",
+      "bbox": [
+        525,
+        376.03,
+        390,
+        24.38
+      ],
+      "geometry": "rect",
+      "text": "证据 4 — 发布日抢跑",
+      "textPreview": "证据 4 — 发布日抢跑",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "证据 4 — 发布日抢跑"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "证据 4 — 发布日抢跑",
+          "resolvedTextStyle": {
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "证据 4 — 发布日抢跑",
+              "fontSize": 16,
+              "typeface": "Inter ExtraBold",
+              "color": "#FFFFFF",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 15,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/x8nml0ra",
+      "id": "16",
+      "name": "Text 13",
+      "bbox": [
+        525,
+        415.4,
+        390,
+        64.79
+      ],
+      "geometry": "rect",
+      "text": "建立 Gemini、Kimi、DeepSeek、Qwen、Wan 等模型监测清单；上线后 24 小时内完成可复现实测，48 小时内发布多社区版本。",
+      "textPreview": "建立 Gemini、Kimi、DeepSeek、Qwen、Wan 等模型监测清单；上线后 24 小时内完成可复现实测，48 小时内发布多社区版本。",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 3,
+        "lines": [
+          {
+            "index": 1,
+            "text": "建立 Gemini、Kimi、DeepSeek、Qwen、Wan"
+          },
+          {
+            "index": 2,
+            "text": "等模型监测清单；上线后 24 小时内完成可复现实测，48"
+          },
+          {
+            "index": 3,
+            "text": "小时内发布多社区版本。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "建立 Gemini、Kimi、DeepSeek、Qwen、Wan 等模型监测清单；上线后 24 小时内完成可复现实测，48 小时内发布多社区版本。",
+          "lineSpacingPercent": 128000,
+          "resolvedTextStyle": {
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "建立 Gemini、Kimi、DeepSeek、Qwen、Wan 等模型监测清单；上线后 24 小时内完成可复现实测，48 小时内发布多社区版本。",
+              "fontSize": 12.67,
+              "typeface": "Inter",
+              "color": "rgba(255, 255, 255, 0.85)"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    }
+  ],
+  "composeRuns": []
+}

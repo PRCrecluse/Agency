@@ -1,0 +1,143 @@
+{"kind":"slide","id":"sl/y90nupkv","slide":1,"title":"30 Posts · $2,500","textShapes":5}
+{"kind":"shape","id":"sh/k3yl0zql","slide":1,"name":"Shape 0","bbox":[0,0,384,540]}
+{"kind":"shape","id":"sh/7qp4be9c","slide":1,"name":"Shape 1","bbox":[60,198.53,206.25,45.75]}
+{"kind":"textbox","id":"sh/65g3298r","slide":1,"textChars":17,"textLines":1}
+{"kind":"textbox","id":"sh/ts7md4r2","slide":1,"textChars":23,"textLines":1}
+{"kind":"textbox","id":"sh/sryl4zqx","slide":1,"textChars":37,"textLines":2}
+{"kind":"textbox","id":"sh/fu94fe98","slide":1,"textChars":43,"textLines":1}
+{"kind":"textbox","id":"sh/utg3698n","slide":1,"textChars":61,"textLines":1}
+{"kind":"image","id":"im/jqxw72dk","slide":1,"name":"Image 0","bbox":[0,0,960,540]}
+{"kind":"slide","id":"sl/hwbqtkby","slide":2,"title":"Reddit 是 B2B 销售决策的新战场","textShapes":13}
+{"kind":"shape","id":"sh/ozy1ofad","slide":2,"name":"Shape 0","bbox":[0,0,960,92.44]}
+{"kind":"textbox","id":"sh/b29kza94","slide":2,"textChars":21,"textLines":1}
+{"kind":"textbox","id":"sh/a10jqpsj","slide":2,"textChars":184,"textLines":1}
+{"kind":"textbox","id":"sh/x4r21kru","slide":2,"textChars":154,"textLines":1}
+{"kind":"shape","id":"sh/w3i1sfa9","slide":2,"name":"Shape 4","bbox":[502.5,137.44,197.25,103.87]}
+{"kind":"shape","id":"sh/r65knqtk","slide":2,"name":"Shape 5","bbox":[502.5,137.44,3,103.87]}
+{"kind":"textbox","id":"sh/q5wjelsz","slide":2,"textChars":6,"textLines":1}
+{"kind":"textbox","id":"sh/ove9o7yd","slide":2,"textChars":6,"textLines":1}
+{"kind":"shape","id":"sh/9wnqhczy","slide":2,"name":"Shape 8","bbox":[717.75,137.44,197.25,103.87]}
+{"kind":"shape","id":"sh/mtwrmxg7","slide":2,"name":"Shape 9","bbox":[717.75,137.44,3,103.87]}
+{"kind":"textbox","id":"sh/nu58f2hs","slide":2,"textChars":5,"textLines":1}
+{"kind":"textbox","id":"sh/wjy9sry9","slide":2,"textChars":11,"textLines":1}
+{"kind":"shape","id":"sh/xk7qlczu","slide":2,"name":"Shape 12","bbox":[502.5,259.31,197.25,100.13]}
+{"kind":"shape","id":"sh/ahwrqhgj","slide":2,"name":"Shape 13","bbox":[502.5,259.31,3,100.13]}
+{"kind":"textbox","id":"sh/bip8jmho","slide":2,"textChars":5,"textLines":1}
+{"kind":"textbox","id":"sh/cnupgny5","slide":2,"textChars":16,"textLines":1}
+{"kind":"shape","id":"sh/do3q9szq","slide":2,"name":"Shape 16","bbox":[717.75,259.31,197.25,100.13]}
+{"kind":"shape","id":"sh/t8byxkn2","slide":2,"name":"Shape 17","bbox":[717.75,259.31,3,100.13]}
+{"kind":"textbox","id":"sh/s72xofmh","slide":2,"textChars":3,"textLines":1}
+{"kind":"textbox","id":"sh/76twva5c","slide":2,"textChars":16,"textLines":1}
+{"kind":"shape","id":"sh/65kfmpor","slide":2,"name":"Shape 20","bbox":[502.5,377.44,412.5,103.87]}
+{"kind":"shape","id":"sh/hcvy14ne","slide":2,"name":"Shape 21","bbox":[502.5,377.44,3,103.87]}
+{"kind":"textbox","id":"sh/gbmxszmt","slide":2,"textChars":2,"textLines":1}
+{"kind":"textbox","id":"sh/fadgzu58","slide":2,"textChars":9,"textLines":1}
+{"kind":"image","id":"im/ls3yt036","slide":2,"name":"Image 0","bbox":[0,0,960,540]}
+{"kind":"slide","id":"sl/ofy9wn61","slide":3,"title":"AE 每周 70% 的时间被行政工作吞噬——Expertise.ai 把它夺回来","textShapes":9}
+{"kind":"shape","id":"sh/d0jax03i","slide":3,"name":"Shape 0","bbox":[0,0,960,92.44]}
+{"kind":"textbox","id":"sh/298ryl4v","slide":3,"textChars":40,"textLines":1}
+{"kind":"shape","id":"sh/3ah8rqlg","slide":3,"name":"Shape 2","bbox":[0,92.44,480,223.78]}
+{"kind":"textbox","id":"sh/obq90bml","slide":3,"textChars":15,"textLines":1}
+{"kind":"textbox","id":"sh/pcjqtg36","slide":3,"textChars":99,"textLines":1}
+{"kind":"shape","id":"sh/m5cra54z","slide":3,"name":"Shape 5","bbox":[480,92.44,480,223.78]}
+{"kind":"textbox","id":"sh/n6ls3alk","slide":3,"textChars":16,"textLines":1}
+{"kind":"textbox","id":"sh/n2l4fq98","slide":3,"textChars":76,"textLines":1}
+{"kind":"shape","id":"sh/m1c3mlsn","slide":3,"name":"Shape 8","bbox":[0,316.22,480,223.78]}
+{"kind":"textbox","id":"sh/943mhgre","slide":3,"textChars":23,"textLines":1}
+{"kind":"textbox","id":"sh/83ulovat","slide":3,"textChars":94,"textLines":1}
+{"kind":"shape","id":"sh/v6l4jq94","slide":3,"name":"Shape 11","bbox":[480,316.22,480,223.78]}
+{"kind":"textbox","id":"sh/a5c3ql8z","slide":3,"textChars":18,"textLines":1}
+{"kind":"textbox","id":"sh/x8nml0ra","slide":3,"textChars":74,"textLines":1}
+{"kind":"image","id":"im/vmlojqd0","slide":3,"name":"Image 0","bbox":[0,0,960,540]}
+{"kind":"slide","id":"sl/jyx0ra1s","slide":4,"title":"真实客户数据证明：Expertise.ai 不是 demo，是 pipeline","textShapes":21}
+{"kind":"shape","id":"sh/0ba143al","slide":4,"name":"Shape 0","bbox":[0,0,960,92.44]}
+{"kind":"textbox","id":"sh/rm1k7yt4","slide":4,"textChars":40,"textLines":1}
+{"kind":"shape","id":"sh/ql8jytsj","slide":4,"name":"Shape 2","bbox":[0,92.44,320,155.36]}
+{"kind":"textbox","id":"sh/doj29oba","slide":4,"textChars":4,"textLines":1}
+{"kind":"textbox","id":"sh/sna103ap","slide":4,"textChars":18,"textLines":1}
+{"kind":"textbox","id":"sh/3ihk3et8","slide":4,"textChars":15,"textLines":1}
+{"kind":"shape","id":"sh/ih8ju9sn","slide":4,"name":"Shape 6","bbox":[320,92.44,320,155.36]}
+{"kind":"textbox","id":"sh/kbm987y5","slide":4,"textChars":6,"textLines":1}
+{"kind":"textbox","id":"sh/5cva1cfq","slide":4,"textChars":6,"textLines":1}
+{"kind":"textbox","id":"sh/i94r6xgz","slide":4,"textChars":21,"textLines":1}
+{"kind":"shape","id":"sh/jadsz2xk","slide":4,"name":"Shape 10","bbox":[640,92.44,320,155.36]}
+{"kind":"textbox","id":"sh/w72947yt","slide":4,"textChars":4,"textLines":1}
+{"kind":"textbox","id":"sh/x8vaxsfe","slide":4,"textChars":6,"textLines":1}
+{"kind":"textbox","id":"sh/a5kr2xg3","slide":4,"textChars":14,"textLines":1}
+{"kind":"shape","id":"sh/v6tsv2xo","slide":4,"name":"Shape 14","bbox":[0,247.8,320,155.36]}
+{"kind":"textbox","id":"sh/g36tgryd","slide":4,"textChars":4,"textLines":1}
+{"kind":"textbox","id":"sh/h4fa9wfy","slide":4,"textChars":14,"textLines":1}
+{"kind":"textbox","id":"sh/p0batw72","slide":4,"textChars":11,"textLines":1}
+{"kind":"shape","id":"sh/oz29krqh","slide":4,"name":"Shape 18","bbox":[320,247.8,320,155.36]}
+{"kind":"textbox","id":"sh/3ytsrmpw","slide":4,"textChars":2,"textLines":1}
+{"kind":"textbox","id":"sh/2xkrih8b","slide":4,"textChars":15,"textLines":1}
+{"kind":"textbox","id":"sh/1wbapc7q","slide":4,"textChars":29,"textLines":1}
+{"kind":"shape","id":"sh/gv29g7q5","slide":4,"name":"Shape 22","bbox":[640,247.8,320,155.36]}
+{"kind":"textbox","id":"sh/fu9sn2p0","slide":4,"textChars":4,"textLines":1}
+{"kind":"textbox","id":"sh/et0reh8f","slide":4,"textChars":10,"textLines":1}
+{"kind":"textbox","id":"sh/tsrqlc7u","slide":4,"textChars":11,"textLines":1}
+{"kind":"shape","id":"sh/sri9s7q9","slide":4,"name":"Shape 26","bbox":[0,403.17,960,136.83]}
+{"kind":"textbox","id":"sh/ilwf69kv","slide":4,"textChars":124,"textLines":1}
+{"kind":"textbox","id":"sh/jm5gze1g","slide":4,"textChars":50,"textLines":1}
+{"kind":"image","id":"im/725s3il8","slide":4,"name":"Image 0","bbox":[0,0,960,540]}
+{"kind":"slide","id":"sl/i107q5of","slide":5,"title":"Reddit 用户讨厌广告，但会主动传播真实价值","textShapes":11}
+{"kind":"shape","id":"sh/cf2tcr61","slide":5,"name":"Shape 0","bbox":[0,0,960,92.44]}
+{"kind":"textbox","id":"sh/z2tcnm5s","slide":5,"textChars":24,"textLines":1}
+{"kind":"textbox","id":"sh/yhkbe1o7","slide":5,"textChars":82,"textLines":1}
+{"kind":"shape","id":"sh/l4bupwny","slide":5,"name":"Shape 3","bbox":[45,215.44,270,287.06]}
+{"kind":"textbox","id":"sh/032tgr6d","slide":5,"textChars":2,"textLines":1}
+{"kind":"textbox","id":"sh/n6dcr65o","slide":5,"textChars":6,"textLines":1}
+{"kind":"textbox","id":"sh/m5kbi1oj","slide":5,"textChars":76,"textLines":1}
+{"kind":"shape","id":"sh/w32dkbuh","slide":5,"name":"Shape 7","bbox":[345,215.44,270,287.06]}
+{"kind":"textbox","id":"sh/x4vedgvm","slide":5,"textChars":2,"textLines":1}
+{"kind":"textbox","id":"sh/ahkvi1cb","slide":5,"textChars":6,"textLines":1}
+{"kind":"textbox","id":"sh/v2twb6dw","slide":5,"textChars":62,"textLines":1}
+{"kind":"shape","id":"sh/k7mxovud","slide":5,"name":"Shape 11","bbox":[645,215.44,270,287.06]}
+{"kind":"textbox","id":"sh/58vehgvy","slide":5,"textChars":2,"textLines":1}
+{"kind":"textbox","id":"sh/i54fmlc7","slide":5,"textChars":6,"textLines":1}
+{"kind":"textbox","id":"sh/j6dwfqds","slide":5,"textChars":80,"textLines":1}
+{"kind":"image","id":"im/vitwz65k","slide":5,"name":"Image 0","bbox":[0,0,960,540]}
+{"kind":"slide","id":"sl/x8f69ofe","slide":6,"title":"r/sales (58万+) & r/techsales — AE 和销售经理的主战场","textShapes":17}
+{"kind":"shape","id":"sh/zi98nu94","slide":6,"name":"Shape 0","bbox":[0,0,960,77.44]}
+{"kind":"textbox","id":"sh/87ipkzal","slide":6,"textChars":43,"textLines":1}
+{"kind":"shape","id":"sh/98rqt4r6","slide":6,"name":"Shape 2","bbox":[30,92.44,307.65,301.31]}
+{"kind":"textbox","id":"sh/ml07i9sv","slide":6,"textChars":4,"textLines":1}
+{"kind":"textbox","id":"sh/7m98ru9g","slide":6,"textChars":37,"textLines":1}
+{"kind":"textbox","id":"sh/oryp8fah","slide":6,"textChars":32,"textLines":1}
+{"kind":"textbox","id":"sh/pc76hkr2","slide":6,"textChars":19,"textLines":1}
+{"kind":"textbox","id":"sh/h4bupgn6","slide":6,"textChars":25,"textLines":1}
+{"kind":"shape","id":"sh/w32twb6l","slide":6,"name":"Shape 8","bbox":[30,402.75,307.65,122.25]}
+{"kind":"textbox","id":"sh/v2tcn650","slide":6,"textChars":11,"textLines":1}
+{"kind":"textbox","id":"sh/u1kbu1ov","slide":6,"textChars":94,"textLines":1}
+{"kind":"textbox","id":"sh/5svutgni","slide":6,"textChars":6,"textLines":1}
+{"kind":"shape","id":"sh/47mt0b6x","slide":6,"name":"Shape 12","bbox":[358.65,128.81,571.35,112.13]}
+{"kind":"textbox","id":"sh/j6dcr65c","slide":6,"textChars":18,"textLines":1}
+{"kind":"shape","id":"sh/i54bylor","slide":6,"name":"Shape 14","bbox":[373.65,165.56,541.35,40.87]}
+{"kind":"textbox","id":"sh/twfux0ne","slide":6,"textChars":104,"textLines":1}
+{"kind":"textbox","id":"sh/svmt4v6t","slide":6,"textChars":55,"textLines":1}
+{"kind":"shape","id":"sh/cbe5g3ih","slide":6,"name":"Shape 17","bbox":[358.65,249.94,571.35,115.69]}
+{"kind":"textbox","id":"sh/dcnm98zm","slide":6,"textChars":18,"textLines":1}
+{"kind":"shape","id":"sh/qpwnet0b","slide":6,"name":"Shape 19","bbox":[373.65,286.69,541.35,26.44]}
+{"kind":"textbox","id":"sh/bq547yhw","slide":6,"textChars":90,"textLines":1}
+{"kind":"textbox","id":"sh/0fy5k3id","slide":6,"textChars":78,"textLines":1}
+{"kind":"shape","id":"sh/lg76d8zy","slide":6,"name":"Shape 22","bbox":[358.65,374.62,571.35,83.25]}
+{"kind":"textbox","id":"sh/ydgnit07","slide":6,"textChars":22,"textLines":1}
+{"kind":"textbox","id":"sh/zep4byhs","slide":6,"textChars":76,"textLines":1}
+{"kind":"image","id":"im/3id8b69w","slide":6,"name":"Image 0","bbox":[0,0,960,540]}
+{"kind":"slide","id":"sl/gnmp4jqx","slide":7,"title":"r/hubspot & r/RevOps — HubSpot 用户和 GTM 决策者的精准圈子","textShapes":17}
+{"kind":"shape","id":"sh/dcbud0ra","slide":7,"name":"Shape 0","bbox":[0,0,960,92.44]}
+{"kind":"textbox","id":"sh/ydkbm5sv","slide":7,"textChars":47,"textLines":1}
+{"kind":"shape","id":"sh/zedcfa9g","slide":7,"name":"Shape 2","bbox":[30,110.44,352.8,216.06]}
+{"kind":"textbox","id":"sh/kzmdova1","slide":7,"textChars":4,"textLines":1}
+{"kind":"textbox","id":"sh/l0vuh0rm","slide":7,"textChars":40,"textLines":1}
+{"kind":"textbox","id":"sh/eh0ba1sr","slide":7,"textChars":32,"textLines":1}
+{"kind":"textbox","id":"sh/fi9c369c","slide":7,"textChars":22,"textLines":1}
+{"kind":"textbox","id":"sh/baxkjqlk","slide":7,"textChars":51,"textLines":1}
+{"kind":"shape","id":"sh/a9ojq5kz","slide":7,"name":"Shape 8","bbox":[30,344.5,352.8,107.84]}
+{"kind":"textbox","id":"sh/xcz2l03q","slide":7,"textChars":11,"textLines":1}
+{"kind":"textbox","id":"sh/cbq1sv25","slide":7,"textChars":106,"textLines":1}
+{"kind":"shape","id":"sh/n6x0fqlo","slide":7,"name":"Shape 11","bbox":[400.8,110.44,529.2,320.17]}
+{"kind":"textbox","id":"sh/25ojml43","slide":7,"textChars":6,"textLines":1}
+{"kind":"shape","id":"sh/p8fih03e","slide":7,"name":"Shape 13","bbox":[418.8,167.81,240.6,165.59]}
+{"kind":"textbox","id":"sh/o761ov2t","slide":7,"textChars":18,"textLines":1}
+{"kind":"notice","message":"Truncated: omitted 162 lines. Increase maxChars or narrow target."}

@@ -1,0 +1,319 @@
+{"kind":"deck","id":"pr/ghazwf","name":"Deck"}
+{"kind":"layout","layoutId":"/ppt/slideMasters/slideMaster1.xml","name":"","type":"master"}
+{"kind":"layout","layoutId":"/ppt/slideLayouts/slideLayout1.xml","name":"DEFAULT"}
+{"kind":"slide","id":"sl/dvvvdi","slide":1,"title":"30 Posts · $2,500","textShapes":5}
+{"kind":"shape","id":"sh/7y9knmh0","slide":1,"name":"Shape 0","bbox":[0,0,384,540]}
+{"kind":"shape","id":"sh/kvi1c7i9","slide":1,"name":"Shape 1","bbox":[60,198.53,206.25,45.75]}
+{"kind":"textbox","id":"sh/lwr2lczu","slide":1,"name":"Text 2","text":"30 Posts · $2,500","textPreview":"30 Posts · $2,500","textChars":17,"textLines":1,"bbox":[60,198.53,206.25,45.75]}
+{"kind":"textbox","id":"sh/ytgjah03","slide":1,"name":"Text 3","text":"Organic Growth Playbook","textPreview":"Organic Growth Playbook","textChars":23,"textLines":1,"bbox":[60,274.28,264,67.2]}
+{"kind":"textbox","id":"sh/jupkj2ho","slide":1,"name":"Text 4","text":"Expertise.ai Reddit\nCampaign Strategy","textPreview":"Expertise.ai Reddit | Campaign Strategy","textChars":37,"textLines":2,"bbox":[444,165.45,456,105.6]}
+{"kind":"textbox","id":"sh/4r2lobid","slide":1,"name":"Text 5","text":"No paid ads. No bots. Pure community trust.","textPreview":"No paid ads. No bots. Pure community trust.","textChars":43,"textLines":1,"bbox":[465,297.11,320.06,18.19]}
+{"kind":"textbox","id":"sh/5sb2xgzy","slide":1,"name":"Text 6","text":"Reddit is where B2B sales and GTM decisions are made in 2026.","textPreview":"Reddit is where B2B sales and GTM decisions are made in 2026.","textChars":61,"textLines":1,"bbox":[465,329.55,435,45]}
+{"kind":"image","id":"im/ihw3il8v","slide":1,"name":"Image 0","bbox":[0,0,960,540]}
+{"kind":"notes","id":"nt/dvvvdi","slide":1,"text":""}
+{"kind":"slide","id":"sl/353rp8","slide":2,"title":"Reddit 是 B2B 销售决策的新战场","textShapes":13}
+{"kind":"shape","id":"sh/n2983mdk","slide":2,"name":"Shape 0","bbox":[0,0,960,92.44]}
+{"kind":"textbox","id":"sh/cri90ruh","slide":2,"name":"Text 1","text":"Reddit 是 B2B 销售决策的新战场","textPreview":"Reddit 是 B2B 销售决策的新战场","textChars":21,"textLines":1,"bbox":[45,30,870,32.44]}
+{"kind":"textbox","id":"sh/xsra9wv2","slide":2,"name":"Text 2","text":"Reddit 美国 MAU 超 1.9 亿，r/sales 拥有超过 58 万成员，r/Entrepreneur 超过 280 万成员，r/SaaS 超过 38 万成员。B2B 销售、RevOps 和 GTM 从业者每天在这些版块主动讨论工具对比（Qualified vs. Drift vs. Expertise.ai）、HubSpot 集成方案和 AE 效率工具。","textPreview":"Reddit 美国 MAU 超 1.9 亿，r/sales 拥有超过 58 万成员，r/Entrepreneur 超过 280 万成员，r/SaaS 超过 38 万成员。B2B 销售、RevOps 和 GTM 从业者每天在这些版块主动讨论工具对比（Qualified vs....","textChars":184,"textLines":1,"bbox":[45,137.44,412.5,107.99]}
+{"kind":"textbox","id":"sh/a50ry1cb","slide":2,"name":"Text 3","text":"Reddit 的 AI 搜索引用量在 2024 年增长 400%，意味着 Reddit 上的帖子不仅影响社区，还直接影响 ChatGPT 等 AI 的推荐结果。当买家搜索\"best AI sales agent\"或\"HubSpot chatbot alternative\"时，Reddit 帖子往往排在首页。","textPreview":"Reddit 的 AI 搜索引用量在 2024 年增长 400%，意味着 Reddit 上的帖子不仅影响社区，还直接影响 ChatGPT 等 AI 的推荐结果。当买家搜索\"best AI sales agent\"或\"HubSpot chatbot alternative\"时...","textChars":154,"textLines":1,"bbox":[45,269.43,412.5,86.39]}
+{"kind":"shape","id":"sh/bq9s7mdw","slide":2,"name":"Shape 4","bbox":[502.5,137.44,197.25,103.87]}
+{"kind":"shape","id":"sh/svy9o7ux","slide":2,"name":"Shape 5","bbox":[502.5,137.44,3,103.87]}
+{"kind":"textbox","id":"sh/tw7qxcvi","slide":2,"name":"Text 6","text":"1.9 亿+","textPreview":"1.9 亿+","textChars":6,"textLines":1,"bbox":[525,159.94,152.25,36.56]}
+{"kind":"textbox","id":"sh/5kby54vq","slide":2,"name":"Text 7","text":"美国 MAU","textPreview":"美国 MAU","textChars":6,"textLines":1,"bbox":[525,202.5,152.25,16.31]}
+{"kind":"shape","id":"sh/4j2xwze5","slide":2,"name":"Shape 8","bbox":[717.75,137.44,197.25,103.87]}
+{"kind":"shape","id":"sh/3itg3udk","slide":2,"name":"Shape 9","bbox":[717.75,137.44,3,103.87]}
+{"kind":"textbox","id":"sh/ihkfu9wz","slide":2,"name":"Text 10","text":"58 万+","textPreview":"58 万+","textChars":5,"textLines":1,"bbox":[740.25,159.94,152.25,36.56]}
+{"kind":"textbox","id":"sh/d8vy9ovm","slide":2,"name":"Text 11","text":"r/sales 成员数","textPreview":"r/sales 成员数","textChars":11,"textLines":1,"bbox":[740.25,202.5,152.25,16.31]}
+{"kind":"shape","id":"sh/snmh0jeh","slide":2,"name":"Shape 12","bbox":[502.5,259.31,197.25,100.13]}
+{"kind":"shape","id":"sh/rmdg7edw","slide":2,"name":"Shape 13","bbox":[502.5,259.31,3,100.13]}
+{"kind":"textbox","id":"sh/ql4zy9wb","slide":2,"name":"Text 14","text":"+400%","textPreview":"+400%","textChars":5,"textLines":1,"bbox":[525,281.81,152.25,32.81]}
+{"kind":"textbox","id":"sh/1cfydovy","slide":2,"name":"Text 15","text":"AI 搜索引用增长 (2024)","textPreview":"AI 搜索引用增长 (2024)","textChars":16,"textLines":1,"bbox":[525,320.62,152.25,16.31]}
+{"kind":"shape","id":"sh/0bmh4jed","slide":2,"name":"Shape 16","bbox":[717.75,259.31,197.25,100.13]}
+{"kind":"shape","id":"sh/kre9wr6l","slide":2,"name":"Shape 17","bbox":[717.75,259.31,3,100.13]}
+{"kind":"textbox","id":"sh/lsnapw76","slide":2,"name":"Text 18","text":"7M+","textPreview":"7M+","textChars":3,"textLines":1,"bbox":[740.25,281.81,152.25,32.81]}
+{"kind":"textbox","id":"sh/y5wruhov","slide":2,"name":"Text 19","text":"目标 Subreddit 总成员","textPreview":"目标 Subreddit 总成员","textChars":16,"textLines":1,"bbox":[740.25,320.62,152.25,16.31]}
+{"kind":"shape","id":"sh/zq5snmpg","slide":2,"name":"Shape 20","bbox":[502.5,377.44,412.5,103.87]}
+{"kind":"shape","id":"sh/8vy90b6x","slide":2,"name":"Shape 21","bbox":[502.5,377.44,3,103.87]}
+{"kind":"textbox","id":"sh/tw7atw7i","slide":2,"name":"Text 22","text":"极低","textPreview":"极低","textChars":2,"textLines":1,"bbox":[525,399.94,367.5,36.56]}
+{"kind":"textbox","id":"sh/mtwry1or","slide":2,"name":"Text 23","text":"用户对硬广的接受度","textPreview":"用户对硬广的接受度","textChars":9,"textLines":1,"bbox":[525,442.5,367.5,16.31]}
+{"kind":"image","id":"im/cva98nal","slide":2,"name":"Image 0","bbox":[0,0,960,540]}
+{"kind":"notes","id":"nt/353rp8","slide":2,"text":""}
+{"kind":"slide","id":"sl/6xcdtf","slide":3,"title":"AE 每周 70% 的时间被行政工作吞噬——Expertise.ai 把它夺回来","textShapes":9}
+{"kind":"shape","id":"sh/hwv69k7m","slide":3,"name":"Shape 0","bbox":[0,0,960,92.44]}
+{"kind":"textbox","id":"sh/65knuloz","slide":3,"name":"Text 1","text":"AE 每周 70% 的时间被行政工作吞噬——Expertise.ai 把它夺回来","textPreview":"AE 每周 70% 的时间被行政工作吞噬——Expertise.ai 把它夺回来","textChars":40,"textLines":1,"bbox":[45,30,870,32.44]}
+{"kind":"shape","id":"sh/76t43qpk","slide":3,"name":"Shape 2","bbox":[0,92.44,480,223.78]}
+{"kind":"textbox","id":"sh/sr25wv65","slide":3,"name":"Text 3","text":"痛点 1 — CRM 录入黑洞","textPreview":"痛点 1 — CRM 录入黑洞","textChars":15,"textLines":1,"bbox":[45,152.24,390,24.38]}
+{"kind":"textbox","id":"sh/tsbm507q","slide":3,"name":"Text 4","text":"销售代表每周平均花费 11+ 小时在 CRM 更新、会议记录和跟进邮件上。Expertise.ai 自动将通话内容、会议摘要和信号写入 HubSpot / Salesforce，AE 无需手动操作。","textPreview":"销售代表每周平均花费 11+ 小时在 CRM 更新、会议记录和跟进邮件上。Expertise.ai 自动将通话内容、会议摘要和信号写入 HubSpot / Salesforce，AE 无需手动操作。","textChars":99,"textLines":1,"bbox":[45,191.62,390,64.79]}
+{"kind":"shape","id":"sh/i10nqlo3","slide":3,"name":"Shape 5","bbox":[480,92.44,480,223.78]}
+{"kind":"textbox","id":"sh/j2t4zqpo","slide":3,"name":"Text 6","text":"痛点 2 — 高意向访客匿名流失","textPreview":"痛点 2 — 高意向访客匿名流失","textChars":16,"textLines":1,"bbox":[525,152.24,390,24.38]}
+{"kind":"textbox","id":"sh/jmlkfqps","slide":3,"name":"Text 7","text":"超过 97% 的网站访客不填表单就离开。Expertise.ai 的访客去匿名化功能识别公司和决策者，并主动发起个性化对话，将沉默流量转化为可行动线索。","textPreview":"超过 97% 的网站访客不填表单就离开。Expertise.ai 的访客去匿名化功能识别公司和决策者，并主动发起个性化对话，将沉默流量转化为可行动线索。","textChars":76,"textLines":1,"bbox":[525,191.62,390,64.79]}
+{"kind":"shape","id":"sh/ilcj6lo7","slide":3,"name":"Shape 8","bbox":[0,316.22,480,223.78]}
+{"kind":"textbox","id":"sh/58n2h07i","slide":3,"name":"Text 9","text":"痛点 3 — 传统聊天机器人只会客服，不会卖货","textPreview":"痛点 3 — 传统聊天机器人只会客服，不会卖货","textChars":23,"textLines":1,"bbox":[45,376.03,390,24.38]}
+{"kind":"textbox","id":"sh/k7u18v6x","slide":3,"name":"Text 10","text":"Intercom、HubSpot 原生 Bot 以支持为先，无法执行复杂的销售对话。Expertise.ai 使用自定义 Playbook 进行多步骤资格审查，并直接在销售日历上预约会议。","textPreview":"Intercom、HubSpot 原生 Bot 以支持为先，无法执行复杂的销售对话。Expertise.ai 使用自定义 Playbook 进行多步骤资格审查，并直接在销售日历上预约会议。","textChars":94,"textLines":1,"bbox":[45,415.4,390,64.79]}
+{"kind":"shape","id":"sh/7a5kjapo","slide":3,"name":"Shape 11","bbox":[480,316.22,480,223.78]}
+{"kind":"textbox","id":"sh/69wja5o3","slide":3,"name":"Text 12","text":"痛点 4 — 支持成本高昂，响应延迟","textPreview":"痛点 4 — 支持成本高昂，响应延迟","textChars":18,"textLines":1,"bbox":[525,376.03,390,24.38]}
+{"kind":"textbox","id":"sh/tcn2lk7u","slide":3,"name":"Text 13","text":"Expertise.ai 处理 99%+ 的常见问题，将工单量降低 22%+，同时在高意向时刻无缝转接人工，实现\"AI 先行，人工收尾\"的最优分工。","textPreview":"Expertise.ai 处理 99%+ 的常见问题，将工单量降低 22%+，同时在高意向时刻无缝转接人工，实现\"AI 先行，人工收尾\"的最优分工。","textChars":74,"textLines":1,"bbox":[525,415.4,390,64.79]}
+{"kind":"image","id":"im/nu10b6xs","slide":3,"name":"Image 0","bbox":[0,0,960,540]}
+{"kind":"notes","id":"nt/6xcdtf","slide":3,"text":""}
+{"kind":"slide","id":"sl/0bqh90","slide":4,"title":"真实客户数据证明：Expertise.ai 不是 demo，是 pipeline","textShapes":21}
+{"kind":"shape","id":"sh/2d8nadwv","slide":4,"name":"Shape 0","bbox":[0,0,960,92.44]}
+{"kind":"textbox","id":"sh/xkj6psvi","slide":4,"name":"Text 1","text":"真实客户数据证明：Expertise.ai 不是 demo，是 pipeline","textPreview":"真实客户数据证明：Expertise.ai 不是 demo，是 pipeline","textChars":40,"textLines":1,"bbox":[45,30,870,32.44]}
+{"kind":"shape","id":"sh/cjapgnud","slide":4,"name":"Shape 2","bbox":[0,92.44,320,155.36]}
+{"kind":"textbox","id":"sh/bi1onids","slide":4,"name":"Text 3","text":"+84%","textPreview":"+84%","textChars":4,"textLines":1,"bbox":[45,124.29,230,43.5]}
+{"kind":"textbox","id":"sh/ahs7edw7","slide":4,"name":"Text 4","text":"Chat-to-Lead 转化率提升","textPreview":"Chat-to-Lead 转化率提升","textChars":18,"textLines":1,"bbox":[45,176.79,230,18.9]}
+{"kind":"textbox","id":"sh/lo36tcvu","slide":4,"name":"Text 5","text":"AnChain.AI, 30天","textPreview":"AnChain.AI, 30天","textChars":15,"textLines":1,"bbox":[45,201.69,230,14.25]}
+{"kind":"shape","id":"sh/knapk7u9","slide":4,"name":"Shape 6","bbox":[320,92.44,320,155.36]}
+{"kind":"textbox","id":"sh/2947qpov","slide":4,"name":"Text 7","text":"22.35%","textPreview":"22.35%","textChars":6,"textLines":1,"bbox":[365,124.29,230,43.5]}
+{"kind":"textbox","id":"sh/3ad8ju50","slide":4,"name":"Text 8","text":"客服工单减少","textPreview":"客服工单减少","textChars":6,"textLines":1,"bbox":[365,176.79,230,18.9]}
+{"kind":"textbox","id":"sh/4bmpsz6l","slide":4,"name":"Text 9","text":"Circuit Electric, 60天","textPreview":"Circuit Electric, 60天","textChars":21,"textLines":1,"bbox":[365,201.69,230,14.25]}
+{"kind":"shape","id":"sh/pcfql4n6","slide":4,"name":"Shape 10","bbox":[640,92.44,320,155.36]}
+{"kind":"textbox","id":"sh/qdo7u9or","slide":4,"name":"Text 11","text":"+50%","textPreview":"+50%","textChars":4,"textLines":1,"bbox":[685,124.29,230,43.5]}
+{"kind":"textbox","id":"sh/rex8nu5c","slide":4,"name":"Text 12","text":"企业线索增长","textPreview":"企业线索增长","textChars":6,"textLines":1,"bbox":[685,176.79,230,18.9]}
+{"kind":"textbox","id":"sh/cf6pgz6x","slide":4,"name":"Text 13","text":"SafeCheck, 60天","textPreview":"SafeCheck, 60天","textChars":14,"textLines":1,"bbox":[685,201.69,230,14.25]}
+{"kind":"shape","id":"sh/dgfqp4ni","slide":4,"name":"Shape 14","bbox":[0,247.8,320,155.36]}
+{"kind":"textbox","id":"sh/6hk7i5on","slide":4,"name":"Text 15","text":"2.7x","textPreview":"2.7x","textChars":4,"textLines":1,"bbox":[45,280.41,230,43.5]}
+{"kind":"textbox","id":"sh/7itoba58","slide":4,"name":"Text 16","text":"线索量增长，成本降低 90%","textPreview":"线索量增长，成本降低 90%","textChars":14,"textLines":1,"bbox":[45,332.91,230,18.9]}
+{"kind":"textbox","id":"sh/bm94j6l0","slide":4,"name":"Text 17","text":"Holistiplan","textPreview":"Holistiplan","textChars":11,"textLines":1,"bbox":[45,357.81,230,12.75]}
+{"kind":"shape","id":"sh/al0na14f","slide":4,"name":"Shape 18","bbox":[320,247.8,320,155.36]}
+{"kind":"textbox","id":"sh/xormlg3q","slide":4,"name":"Text 19","text":"9x","textPreview":"9x","textChars":2,"textLines":1,"bbox":[365,279.66,230,43.5]}
+{"kind":"textbox","id":"sh/wni5cbm5","slide":4,"name":"Text 20","text":"ROI in pipeline","textPreview":"ROI in pipeline","textChars":15,"textLines":1,"bbox":[365,332.16,230,18.9]}
+{"kind":"textbox","id":"sh/nip4fmlo","slide":4,"name":"Text 21","text":"David Sklar & Associates, 6个月","textPreview":"David Sklar & Associates, 6个月","textChars":29,"textLines":1,"bbox":[365,357.06,230,14.25]}
+{"kind":"shape","id":"sh/mhg36143","slide":4,"name":"Shape 22","bbox":[640,247.8,320,155.36]}
+{"kind":"textbox","id":"sh/9k7mhw3u","slide":4,"name":"Text 23","text":">99%","textPreview":">99%","textChars":4,"textLines":1,"bbox":[685,280.41,230,43.5]}
+{"kind":"textbox","id":"sh/ojyl8rm9","slide":4,"name":"Text 24","text":"AI 自主处理对话率","textPreview":"AI 自主处理对话率","textChars":10,"textLines":1,"bbox":[685,332.91,230,18.9]}
+{"kind":"textbox","id":"sh/7et4rqls","slide":4,"name":"Text 25","text":"Gutterglove","textPreview":"Gutterglove","textChars":11,"textLines":1,"bbox":[685,357.81,230,12.75]}
+{"kind":"shape","id":"sh/6dknil4n","slide":4,"name":"Shape 26","bbox":[0,403.17,960,136.83]}
+{"kind":"textbox","id":"sh/4zu1cn25","slide":4,"name":"Text 27","text":"\"What I was pleasantly surprised to find is that Expertise AI was actually better than the HubSpot chatbot at a lower cost.\"","textPreview":"\"What I was pleasantly surprised to find is that Expertise AI was actually better than the HubSpot chatbot at a lower cost.\"","textChars":124,"textLines":1,"bbox":[45,433.17,870,50.4]}
+{"kind":"textbox","id":"sh/p032lsja","slide":4,"name":"Text 28","text":"— Jared Twitchell, VP of Digital Enablement, 401GO","textPreview":"— Jared Twitchell, VP of Digital Enablement, 401GO","textChars":50,"textLines":1,"bbox":[45,495.56,870,14.44]}
+{"kind":"image","id":"im/t8j6p0ne","slide":4,"name":"Image 0","bbox":[0,0,960,540]}
+{"kind":"notes","id":"nt/0bqh90","slide":4,"text":""}
+{"kind":"slide","id":"sl/meax17","slide":5,"title":"Reddit 用户讨厌广告，但会主动传播真实价值","textShapes":11}
+{"kind":"shape","id":"sh/h8v69c7m","slide":5,"name":"Shape 0","bbox":[0,0,960,92.44]}
+{"kind":"textbox","id":"sh/it4n2ho7","slide":5,"name":"Text 1","text":"Reddit 用户讨厌广告，但会主动传播真实价值","textPreview":"Reddit 用户讨厌广告，但会主动传播真实价值","textChars":24,"textLines":1,"bbox":[45,30,870,32.44]}
+{"kind":"textbox","id":"sh/3uxobmpc","slide":5,"name":"Text 2","text":"Reddit 社区的核心文化是\"价值优先\"。任何带有明显推销意图的帖子会被迅速识别并被 Downvote 甚至举报。成功的 Reddit 营销策略必须遵循三条铁律：","textPreview":"Reddit 社区的核心文化是\"价值优先\"。任何带有明显推销意图的帖子会被迅速识别并被 Downvote 甚至举报。成功的 Reddit 营销策略必须遵循三条铁律：","textChars":82,"textLines":1,"bbox":[45,129.94,750,48]}
+{"kind":"shape","id":"sh/4v6p4r6x","slide":5,"name":"Shape 3","bbox":[45,215.44,270,287.06]}
+{"kind":"textbox","id":"sh/5wf6dw7i","slide":5,"name":"Text 4","text":"01","textPreview":"01","textChars":2,"textLines":1,"bbox":[75,245.44,210,43.5]}
+{"kind":"textbox","id":"sh/yxknqdon","slide":5,"name":"Text 5","text":"解决问题优先","textPreview":"解决问题优先","textChars":6,"textLines":1,"bbox":[75,303.94,210,24.38]}
+{"kind":"textbox","id":"sh/jytozip8","slide":5,"name":"Text 6","text":"帖子或评论必须以解决具体用户痛点为核心——AE 的 CRM 录入负担、匿名流量流失、HubSpot chatbot 不够用——产品只是解决方案的一部分。","textPreview":"帖子或评论必须以解决具体用户痛点为核心——AE 的 CRM 录入负担、匿名流量流失、HubSpot chatbot 不够用——产品只是解决方案的一部分。","textChars":76,"textLines":1,"bbox":[75,343.31,210,76.79]}
+{"kind":"shape","id":"sh/zmt8v21o","slide":5,"name":"Shape 7","bbox":[345,215.44,270,287.06]}
+{"kind":"textbox","id":"sh/y1k7mxk3","slide":5,"name":"Text 8","text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[375,245.44,210,43.5]}
+{"kind":"textbox","id":"sh/lobqxcju","slide":5,"name":"Text 9","text":"透明承认不足","textPreview":"透明承认不足","textChars":6,"textLines":1,"bbox":[375,303.94,210,24.38]}
+{"kind":"textbox","id":"sh/kn2po729","slide":5,"name":"Text 10","text":"主动承认 Expertise.ai 的学习曲线或某些场景下的局限，反而能建立信任。Reddit 用户对\"完美产品\"极度怀疑。","textPreview":"主动承认 Expertise.ai 的学习曲线或某些场景下的局限，反而能建立信任。Reddit 用户对\"完美产品\"极度怀疑。","textChars":62,"textLines":1,"bbox":[375,343.31,210,57.59]}
+{"kind":"shape","id":"sh/by9ori1s","slide":5,"name":"Shape 11","bbox":[645,215.44,270,287.06]}
+{"kind":"textbox","id":"sh/ax07idk7","slide":5,"name":"Text 12","text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[675,245.44,210,43.5]}
+{"kind":"textbox","id":"sh/x0rqtsji","slide":5,"name":"Text 13","text":"聚焦超级利基","textPreview":"聚焦超级利基","textChars":6,"textLines":1,"bbox":[675,303.94,210,24.38]}
+{"kind":"textbox","id":"sh/czipkn2x","slide":5,"name":"Text 14","text":"不与 Intercom 在通用客服市场正面竞争，主打\"AE 行政自动化\"、\"HubSpot 原生 AI 升级\"、\"匿名访客识别与高意向线索转化\"三大差异化场景。","textPreview":"不与 Intercom 在通用客服市场正面竞争，主打\"AE 行政自动化\"、\"HubSpot 原生 AI 升级\"、\"匿名访客识别与高意向线索转化\"三大差异化场景。","textChars":80,"textLines":1,"bbox":[675,343.31,210,76.79]}
+{"kind":"image","id":"im/8zq50j6x","slide":5,"name":"Image 0","bbox":[0,0,960,540]}
+{"kind":"notes","id":"nt/meax17","slide":5,"text":""}
+{"kind":"slide","id":"sl/wf3wbn","slide":6,"title":"r/sales (58万+) & r/techsales — AE 和销售经理的主战场","textShapes":17}
+{"kind":"shape","id":"sh/18v6xkb6","slide":6,"name":"Shape 0","bbox":[0,0,960,77.44]}
+{"kind":"textbox","id":"sh/29onq5cb","slide":6,"name":"Text 1","text":"r/sales (58万+) & r/techsales — AE 和销售经理的主战场","textPreview":"r/sales (58万+) & r/techsales — AE 和销售经理的主战场","textChars":43,"textLines":1,"bbox":[45,22.5,870,32.44]}
+{"kind":"shape","id":"sh/naxozatw","slide":6,"name":"Shape 2","bbox":[30,92.44,307.65,301.31]}
+{"kind":"textbox","id":"sh/ob65sfuh","slide":6,"name":"Text 3","text":"社区画像","textPreview":"社区画像","textChars":4,"textLines":1,"bbox":[45,107.44,277.65,24.38]}
+{"kind":"textbox","id":"sh/pcf61kb2","slide":6,"name":"Text 4","text":"受众：Account Executives、销售经理、SDR、RevOps","textPreview":"受众：Account Executives、销售经理、SDR、RevOps","textChars":37,"textLines":1,"bbox":[45,143.81,277.65,36]}
+{"kind":"textbox","id":"sh/adonupcn","slide":6,"name":"Text 5","text":"规模：r/sales 58万+，r/techsales 活跃度高","textPreview":"规模：r/sales 58万+，r/techsales 活跃度高","textChars":32,"textLines":1,"bbox":[45,188.81,277.65,18]}
+{"kind":"textbox","id":"sh/bexo3ut8","slide":6,"name":"Text 6","text":"推广政策：严格禁止硬广，价值内容受欢迎","textPreview":"推广政策：严格禁止硬广，价值内容受欢迎","textChars":19,"textLines":1,"bbox":[45,215.81,277.65,18]}
+{"kind":"textbox","id":"sh/7udo7mlw","slide":6,"name":"Text 7","text":"最佳发帖时间：周一至周三上午 9-11 点（美东）","textPreview":"最佳发帖时间：周一至周三上午 9-11 点（美东）","textChars":25,"textLines":1,"bbox":[45,242.81,277.65,18]}
+{"kind":"shape","id":"sh/6t47e14b","slide":6,"name":"Shape 8","bbox":[30,402.75,307.65,122.25]}
+{"kind":"textbox","id":"sh/twf69w32","slide":6,"name":"Text 9","text":"备选方案（如发帖受阻）","textPreview":"备选方案（如发帖受阻）","textChars":11,"textLines":1,"bbox":[46.5,414.75,274.65,20.25]}
+{"kind":"textbox","id":"sh/8v6pgrmh","slide":6,"name":"Text 10","text":"若主帖被删或 Karma 不足，转向 r/sales 的 Weekly Discussion Thread 或 r/EntrepreneurRideAlong（允许自我推广，规则更宽松）。","textPreview":"若主帖被删或 Karma 不足，转向 r/sales 的 Weekly Discussion Thread 或 r/EntrepreneurRideAlong（允许自我推广，规则更宽松）。","textChars":94,"textLines":1,"bbox":[46.5,441,274.65,72]}
+{"kind":"textbox","id":"sh/jqdo3ml0","slide":6,"name":"Text 11","text":"推荐内容方向","textPreview":"推荐内容方向","textChars":6,"textLines":1,"bbox":[358.65,92.44,571.35,24.38]}
+{"kind":"shape","id":"sh/yp47ah4f","slide":6,"name":"Shape 12","bbox":[358.65,128.81,571.35,112.13]}
+{"kind":"textbox","id":"sh/lsv65w3q","slide":6,"name":"Text 13","text":"内容 1 — 痛点共鸣帖（Post）","textPreview":"内容 1 — 痛点共鸣帖（Post）","textChars":18,"textLines":1,"bbox":[373.65,139.31,541.35,20.25]}
+{"kind":"shape","id":"sh/krmpcrml","slide":6,"name":"Shape 14","bbox":[373.65,165.56,541.35,40.87]}
+{"kind":"textbox","id":"sh/3mxofql4","slide":6,"name":"Text 15","text":"\"I tracked my time as an AE for 30 days. 70% went to CRM updates. Here's the AI stack I used to fix it.\"","textPreview":"\"I tracked my time as an AE for 30 days. 70% went to CRM updates. Here's the AI stack I used to fix it.\"","textChars":104,"textLines":1,"bbox":[373.65,165.56,541.35,40.87]}
+{"kind":"textbox","id":"sh/2lo7ml4j","slide":6,"name":"Text 16","text":"策略：分享真实的时间追踪数据，提供 3-5 个工作流优化建议，Expertise.ai 作为其中一个自然提及。","textPreview":"策略：分享真实的时间追踪数据，提供 3-5 个工作流优化建议，Expertise.ai 作为其中一个自然提及。","textChars":55,"textLines":1,"bbox":[373.65,212.44,541.35,18]}
+{"kind":"shape","id":"sh/ytcju9s3","slide":6,"name":"Shape 17","bbox":[358.65,249.94,571.35,115.69]}
+{"kind":"textbox","id":"sh/zul03e9o","slide":6,"name":"Text 18","text":"内容 2 — 工具对比帖（Post）","textPreview":"内容 2 — 工具对比帖（Post）","textChars":18,"textLines":1,"bbox":[373.65,260.44,541.35,20.25]}
+{"kind":"shape","id":"sh/0vu1wja9","slide":6,"name":"Shape 19","bbox":[373.65,286.69,541.35,26.44]}
+{"kind":"textbox","id":"sh/lw3i5ore","slide":6,"name":"Text 20","text":"\"I tested 4 AI sales agents for our AE team. Here's what actually happened after 60 days.\"","textPreview":"\"I tested 4 AI sales agents for our AE team. Here's what actually happened after 60 days.\"","textChars":90,"textLines":1,"bbox":[373.65,286.69,541.35,26.44]}
+{"kind":"textbox","id":"sh/mxcjytsz","slide":6,"name":"Text 21","text":"策略：客观对比 Qualified、Drift、Intercom 和 Expertise.ai，主动承认各自的不足，突出 HubSpot 深度集成的差异化。","textPreview":"策略：客观对比 Qualified、Drift、Intercom 和 Expertise.ai，主动承认各自的不足，突出 HubSpot 深度集成的差异化。","textChars":78,"textLines":1,"bbox":[373.65,319.13,541.35,36]}
+{"kind":"shape","id":"sh/nyl07e9k","slide":6,"name":"Shape 22","bbox":[358.65,374.62,571.35,83.25]}
+{"kind":"textbox","id":"sh/8ze10ja5","slide":6,"name":"Text 23","text":"内容 3 — 精准拦截评论（Comment）","textPreview":"内容 3 — 精准拦截评论（Comment）","textChars":22,"textLines":1,"bbox":[373.65,385.13,541.35,20.25]}
+{"kind":"textbox","id":"sh/9kni9orq","slide":6,"name":"Text 24","text":"场景：在\"best AI tool for AEs\"、\"HubSpot chatbot alternative\"等讨论帖下，以真实用户身份分享切换体验。","textPreview":"场景：在\"best AI tool for AEs\"、\"HubSpot chatbot alternative\"等讨论帖下，以真实用户身份分享切换体验。","textChars":76,"textLines":1,"bbox":[373.65,411.38,541.35,36]}
+{"kind":"image","id":"im/dszm18za","slide":6,"name":"Image 0","bbox":[0,0,960,540]}
+{"kind":"notes","id":"nt/wf3wbn","slide":6,"text":""}
+{"kind":"slide","id":"sl/4ukknm","slide":7,"title":"r/hubspot & r/RevOps — HubSpot 用户和 GTM 决策者的精准圈子","textShapes":17}
+{"kind":"shape","id":"sh/8z6hwbex","slide":7,"name":"Shape 0","bbox":[0,0,960,92.44]}
+{"kind":"textbox","id":"sh/v2x07qx8","slide":7,"name":"Text 1","text":"r/hubspot & r/RevOps — HubSpot 用户和 GTM 决策者的精准圈子","textPreview":"r/hubspot & r/RevOps — HubSpot 用户和 GTM 决策者的精准圈子","textChars":47,"textLines":1,"bbox":[45,30,870,32.44]}
+{"kind":"shape","id":"sh/a1ozylw3","slide":7,"name":"Shape 2","bbox":[30,110.44,352.8,216.06]}
+{"kind":"textbox","id":"sh/xozi90ve","slide":7,"name":"Text 3","text":"社区画像","textPreview":"社区画像","textChars":4,"textLines":1,"bbox":[48,128.44,316.8,24.38]}
+{"kind":"textbox","id":"sh/wnqh0vet","slide":7,"name":"Text 4","text":"受众：HubSpot 管理员、RevOps 负责人、GTM 工程师、营收运营团队","textPreview":"受众：HubSpot 管理员、RevOps 负责人、GTM 工程师、营收运营团队","textChars":40,"textLines":1,"bbox":[48,166.31,316.8,38.4]}
+{"kind":"textbox","id":"sh/b6dgvmx4","slide":7,"name":"Text 5","text":"规模：r/hubspot 活跃，r/RevOps 精准但规模较小","textPreview":"规模：r/hubspot 活跃，r/RevOps 精准但规模较小","textChars":32,"textLines":1,"bbox":[48,213.71,316.8,19.2]}
+{"kind":"textbox","id":"sh/q54zm1wj","slide":7,"name":"Text 6","text":"推广政策：允许工具讨论，需提供实质性技术价值","textPreview":"推广政策：允许工具讨论，需提供实质性技术价值","textChars":22,"textLines":1,"bbox":[48,241.91,316.8,19.2]}
+{"kind":"textbox","id":"sh/07qlojy5","slide":7,"name":"Text 7","text":"竞品关键词：HubSpot chatbot、HubSpot workflow、lead routing","textPreview":"竞品关键词：HubSpot chatbot、HubSpot workflow、lead routing","textChars":51,"textLines":1,"bbox":[48,270.11,316.8,38.4]}
+{"kind":"shape","id":"sh/l8jmxozq","slide":7,"name":"Shape 8","bbox":[30,344.5,352.8,107.84]}
+{"kind":"textbox","id":"sh/e583mtgz","slide":7,"name":"Text 9","text":"备选方案（如发帖受阻）","textPreview":"备选方案（如发帖受阻）","textChars":11,"textLines":1,"bbox":[48,356.5,316.8,20.25]}
+{"kind":"textbox","id":"sh/z6hkvehk","slide":7,"name":"Text 10","text":"若 r/RevOps 帖子被删（该版块对推广敏感），转向 r/SalesOperations 或 r/hubspot 的 Weekly Thread，或使用 HubSpot 官方 Community Forum。","textPreview":"若 r/RevOps 帖子被删（该版块对推广敏感），转向 r/SalesOperations 或 r/hubspot 的 Weekly Thread，或使用 HubSpot 官方 Community Forum。","textChars":106,"textLines":1,"bbox":[48,382.75,316.8,57.59]}
+{"kind":"shape","id":"sh/8bals3y1","slide":7,"name":"Shape 11","bbox":[400.8,110.44,529.2,320.17]}
+{"kind":"textbox","id":"sh/9cjm18fm","slide":7,"name":"Text 12","text":"推荐内容方向","textPreview":"推荐内容方向","textChars":6,"textLines":1,"bbox":[418.8,128.44,493.2,24.38]}
+{"kind":"shape","id":"sh/m9s3qtgv","slide":7,"name":"Shape 13","bbox":[418.8,167.81,240.6,165.59]}
+{"kind":"textbox","id":"sh/na14zyhg","slide":7,"name":"Text 14","text":"内容 1 — 技术方案帖（Post）","textPreview":"内容 1 — 技术方案帖（Post）","textChars":18,"textLines":1,"bbox":[430.8,179.81,216.6,18]}
+{"kind":"textbox","id":"sh/4f6lgzyx","slide":7,"name":"Text 15","text":"\"Why the native HubSpot chatbot is killing your conversion rate (and what we use instead)\"","textPreview":"\"Why the native HubSpot chatbot is killing your conversion rate (and what we use instead)\"","textChars":90,"textLines":1,"bbox":[430.8,203.81,216.6,54]}
+{"kind":"textbox","id":"sh/pgz2p4zi","slide":7,"name":"Text 16","text":"策略：从技术角度分析 HubSpot Bot 的局限，提供 Expertise.ai 的集成配置要点。","textPreview":"策略：从技术角度分析 HubSpot Bot 的局限，提供 Expertise.ai 的集成配置要点。","textChars":51,"textLines":1,"bbox":[430.8,263.81,216.6,57.59]}
+{"kind":"shape","id":"sh/5writ0r6","slide":7,"name":"Shape 17","bbox":[671.4,167.81,240.6,165.59]}
+{"kind":"textbox","id":"sh/4vy1kvql","slide":7,"name":"Text 18","text":"内容 2 — 自动化工作流帖（Post）","textPreview":"内容 2 — 自动化工作流帖（Post）","textChars":20,"textLines":1,"bbox":[683.4,179.81,216.6,18]}
+{"kind":"textbox","id":"sh/jap0rq90","slide":7,"name":"Text 19","text":"\"How we automated lead routing and HubSpot ticket creation using AI — full setup guide\"","textPreview":"\"How we automated lead routing and HubSpot ticket creation using AI — full setup guide\"","textChars":87,"textLines":1,"bbox":[683.4,203.81,216.6,54]}
+{"kind":"textbox","id":"sh/i9gjil8f","slide":7,"name":"Text 20","text":"策略：分享 HubSpot + Expertise.ai 集成工作流的核心步骤（Webhook、路由逻辑）。","textPreview":"策略：分享 HubSpot + Expertise.ai 集成工作流的核心步骤（Webhook、路由逻辑）。","textChars":54,"textLines":1,"bbox":[683.4,263.81,216.6,57.59]}
+{"kind":"shape","id":"sh/t0rix0r2","slide":7,"name":"Shape 21","bbox":[418.8,345.41,493.2,67.2]}
+{"kind":"textbox","id":"sh/szi1ofqx","slide":7,"name":"Text 22","text":"内容 3 — 评论拦截（Comment）","textPreview":"内容 3 — 评论拦截（Comment）","textChars":20,"textLines":1,"bbox":[430.8,357.41,469.2,18]}
+{"kind":"textbox","id":"sh/ry90va9c","slide":7,"name":"Text 23","text":"场景：在相关讨论帖下提供对比分析与操作建议。","textPreview":"场景：在相关讨论帖下提供对比分析与操作建议。","textChars":22,"textLines":1,"bbox":[430.8,381.41,469.2,19.2]}
+{"kind":"image","id":"im/hwfmd4fy","slide":7,"name":"Image 0","bbox":[0,0,960,540]}
+{"kind":"notes","id":"nt/4ukknm","slide":7,"text":""}
+{"kind":"slide","id":"sl/e3j5k7","slide":8,"title":"r/SaaS (38万+) & r/Entrepreneur (280万+) — 创始人和决策者的增长社区","textShapes":23}
+{"kind":"shape","id":"sh/t8jyxwry","slide":8,"name":"Shape 0","bbox":[0,0,960,92.44]}
+{"kind":"textbox","id":"sh/u9sz618j","slide":8,"name":"Text 1","text":"r/SaaS (38万+) & r/Entrepreneur (280万+) — 创始人和决策者的增长社区","textPreview":"r/SaaS (38万+) & r/Entrepreneur (280万+) — 创始人和决策者的增长社区","textChars":53,"textLines":1,"bbox":[45,30,870,32.44]}
+{"kind":"shape","id":"sh/falgz6p4","slide":8,"name":"Shape 2","bbox":[0,92.44,336,322.02]}
+{"kind":"textbox","id":"sh/gbuh8bqp","slide":8,"name":"Text 3","text":"社区画像","textPreview":"社区画像","textChars":4,"textLines":1,"bbox":[45,102.19,246,24.38]}
+{"kind":"textbox","id":"sh/hc3y1g7a","slide":8,"name":"Text 4","text":"受众","textPreview":"受众","textChars":2,"textLines":1,"bbox":[45,141.56,246,18]}
+{"kind":"textbox","id":"sh/ad8fuh8f","slide":8,"name":"Text 5","text":"SaaS 创始人、CEO、产品负责人、企业主","textPreview":"SaaS 创始人、CEO、产品负责人、企业主","textChars":22,"textLines":1,"bbox":[45,164.25,225.38,14.44]}
+{"kind":"textbox","id":"sh/vehgn29k","slide":8,"name":"Text 6","text":"规模","textPreview":"规模","textChars":2,"textLines":1,"bbox":[45,189.56,246,18]}
+{"kind":"textbox","id":"sh/jq987i54","slide":8,"name":"Text 7","text":"r/SaaS 38万+，r/Entrepreneur 280万+","textPreview":"r/SaaS 38万+，r/Entrepreneur 280万+","textChars":32,"textLines":1,"bbox":[45,212.25,215.25,14.44]}
+{"kind":"textbox","id":"sh/ipg7ydoj","slide":8,"name":"Text 8","text":"推广政策","textPreview":"推广政策","textChars":4,"textLines":1,"bbox":[45,237.56,246,18]}
+{"kind":"textbox","id":"sh/5srq9snu","slide":8,"name":"Text 9","text":"r/SaaS 有 Weekly Feedback Thread 允许自","textPreview":"r/SaaS 有 Weekly Feedback Thread 允许自","textChars":35,"textLines":1,"bbox":[45,260.25,239.44,14.44]}
+{"kind":"textbox","id":"sh/krip0n6p","slide":8,"name":"Text 10","text":"我推广；r/Entrepreneur 允许价值内容","textPreview":"我推广；r/Entrepreneur 允许价值内容","textChars":25,"textLines":1,"bbox":[45,278.25,205.5,14.44]}
+{"kind":"textbox","id":"sh/v2p83i5s","slide":8,"name":"Text 11","text":"核心关注点","textPreview":"核心关注点","textChars":5,"textLines":1,"bbox":[45,303.56,246,18]}
+{"kind":"textbox","id":"sh/a1g7udo7","slide":8,"name":"Text 12","text":"ROI、不加 headcount 扩规模、AI 工具的实","textPreview":"ROI、不加 headcount 扩规模、AI 工具的实","textChars":28,"textLines":1,"bbox":[45,326.25,234.19,14.44]}
+{"kind":"textbox","id":"sh/xo7q58ny","slide":8,"name":"Text 13","text":"际效果","textPreview":"际效果","textChars":3,"textLines":1,"bbox":[45,344.25,36,14.44]}
+{"kind":"shape","id":"sh/wnypw36d","slide":8,"name":"Shape 14","bbox":[0,414.46,336,125.54]}
+{"kind":"textbox","id":"sh/ny5ozy5w","slide":8,"name":"Text 15","text":"备选方案（如发帖受阻）","textPreview":"备选方案（如发帖受阻）","textChars":11,"textLines":1,"bbox":[45,424.21,246,20.25]}
+{"kind":"textbox","id":"sh/mxw7qtob","slide":8,"name":"Text 16","text":"若 r/Entrepreneur 帖子因推广嫌疑被删，转向 r/startups（规则类似但审核稍松）或 r/indiehackers（对 SaaS 工具极度友好，允许 SHOW IH 帖）。","textPreview":"若 r/Entrepreneur 帖子因推广嫌疑被删，转向 r/startups（规则类似但审核稍松）或 r/indiehackers（对 SaaS 工具极度友好，允许 SHOW IH 帖）。","textChars":96,"textLines":1,"bbox":[45,453.46,246,76.79]}
+{"kind":"shape","id":"sh/qtwr2t83","slide":8,"name":"Shape 17","bbox":[336,92.44,624,148.94]}
+{"kind":"textbox","id":"sh/bu58by9o","slide":8,"name":"Text 18","text":"内容 1 — 案例故事帖（Post）","textPreview":"内容 1 — 案例故事帖（Post）","textChars":18,"textLines":1,"bbox":[381,106.68,534,20.25]}
+{"kind":"textbox","id":"sh/cve943q9","slide":8,"name":"Text 19","text":"\"Case study: How a B2B SaaS increased chat-to-lead conversion by 84% in 30 days without adding SDRs\"","textPreview":"\"Case study: How a B2B SaaS increased chat-to-lead conversion by 84% in 30 days without adding SDRs\"","textChars":100,"textLines":1,"bbox":[381,138.93,534,37.8]}
+{"kind":"textbox","id":"sh/dwnqd8ru","slide":8,"name":"Text 20","text":"策略：基于 AnChain.AI 真实案例改编，分享具体数据、实施步骤和遇到的挑战，Expertise.ai 作为工具自然出现。","textPreview":"策略：基于 AnChain.AI 真实案例改编，分享具体数据、实施步骤和遇到的挑战，Expertise.ai 作为工具自然出现。","textChars":64,"textLines":1,"bbox":[381,188.73,534,38.4]}
+{"kind":"shape","id":"sh/yxwr6d8f","slide":8,"name":"Shape 21","bbox":[336,241.37,624,148.94]}
+{"kind":"textbox","id":"sh/zy58fy90","slide":8,"name":"Text 22","text":"内容 2 — 创始人视角帖（Post）","textPreview":"内容 2 — 创始人视角帖（Post）","textChars":19,"textLines":1,"bbox":[381,255.62,534,20.25]}
+{"kind":"textbox","id":"sh/0zy983q5","slide":8,"name":"Text 23","text":"\"We scaled customer support for 8.5M users without adding headcount. Here's the AI agent setup.\"","textPreview":"\"We scaled customer support for 8.5M users without adding headcount. Here's the AI agent setup.\"","textChars":96,"textLines":1,"bbox":[381,287.87,534,37.8]}
+{"kind":"textbox","id":"sh/l07qh8rq","slide":8,"name":"Text 24","text":"策略：基于 Circuit Electric 案例，讲述如何用 AI 代理处理 22% 的工单减少，分享具体的部署决策过程。","textPreview":"策略：基于 Circuit Electric 案例，讲述如何用 AI 代理处理 22% 的工单减少，分享具体的部署决策过程。","textChars":62,"textLines":1,"bbox":[381,337.67,534,38.4]}
+{"kind":"shape","id":"sh/mlgrad8b","slide":8,"name":"Shape 25","bbox":[336,390.31,624,149.69]}
+{"kind":"shape","id":"sh/nmp8ji9w","slide":8,"name":"Shape 26","bbox":[336,539.25,624,0.75]}
+{"kind":"textbox","id":"sh/xgru9cby","slide":8,"name":"Text 27","text":"内容 3 — 反馈帖（r/SaaS Weekly Thread）","textPreview":"内容 3 — 反馈帖（r/SaaS Weekly Thread）","textChars":32,"textLines":1,"bbox":[381,405.33,534,20.25]}
+{"kind":"textbox","id":"sh/wfitg7ad","slide":8,"name":"Text 28","text":"\"We built an AI Executive Assistant for AEs that automates CRM updates and books meetings from website chat. Looking for honest feedback from sales leaders.\"","textPreview":"\"We built an AI Executive Assistant for AEs that automates CRM updates and books meetings from website chat. Looking for honest feedback ...","textChars":157,"textLines":1,"bbox":[381,437.58,534,56.7]}
+{"kind":"textbox","id":"sh/vu9c72t8","slide":8,"name":"Text 29","text":"策略：在允许推广的集中讨论区直接展示产品价值，以寻求反馈的姿态吸引目标用户体验。","textPreview":"策略：在允许推广的集中讨论区直接展示产品价值，以寻求反馈的姿态吸引目标用户体验。","textChars":40,"textLines":1,"bbox":[381,506.28,534,19.2]}
+{"kind":"image","id":"im/1knahkr6","slide":8,"name":"Image 0","bbox":[0,0,960,540]}
+{"kind":"notes","id":"nt/e3j5k7","slide":8,"text":""}
+{"kind":"slide","id":"sl/nlin4b","slide":9,"title":"r/B2BMarketing & r/LeadGeneration — 负责为销售团队提供弹药的营销人","textShapes":20}
+{"kind":"shape","id":"sh/pwbqdgva","slide":9,"name":"Shape 0","bbox":[0,0,960,92.44]}
+{"kind":"textbox","id":"sh/u507e1cn","slide":9,"name":"Text 1","text":"r/B2BMarketing & r/LeadGeneration — 负责为销售团队提供弹药的营销人","textPreview":"r/B2BMarketing & r/LeadGeneration — 负责为销售团队提供弹药的营销人","textChars":51,"textLines":1,"bbox":[36,30,888,32.44]}
+{"kind":"shape","id":"sh/f69876d8","slide":9,"name":"Shape 2","bbox":[0,92.44,336,308.52]}
+{"kind":"textbox","id":"sh/g7ipgbut","slide":9,"name":"Text 3","text":"社区画像","textPreview":"社区画像","textChars":4,"textLines":1,"bbox":[30,113.44,276,24.38]}
+{"kind":"textbox","id":"sh/hsbq9gve","slide":9,"name":"Text 4","text":"受众","textPreview":"受众","textChars":2,"textLines":1,"bbox":[30,155.81,276,18]}
+{"kind":"textbox","id":"sh/e14rq5cr","slide":9,"name":"Text 5","text":"B2B 营销经理、增长负责人、需求生成团队","textPreview":"B2B 营销经理、增长负责人、需求生成团队","textChars":21,"textLines":1,"bbox":[30,178.5,230.44,14.44]}
+{"kind":"textbox","id":"sh/z2d8jadc","slide":9,"name":"Text 6","text":"规模","textPreview":"规模","textChars":2,"textLines":1,"bbox":[30,206.81,276,18]}
+{"kind":"textbox","id":"sh/fylk7apo","slide":9,"name":"Text 7","text":"r/B2BMarketing 精准，r/LeadGeneration 活跃","textPreview":"r/B2BMarketing 精准，r/LeadGeneration 活跃","textChars":37,"textLines":1,"bbox":[30,229.5,254.06,14.44]}
+{"kind":"textbox","id":"sh/excje5o3","slide":9,"name":"Text 8","text":"推广政策","textPreview":"推广政策","textChars":4,"textLines":1,"bbox":[30,257.81,276,18]}
+{"kind":"textbox","id":"sh/10n29k7u","slide":9,"name":"Text 9","text":"严格禁止硬广，案例研究和数据内容受欢迎","textPreview":"严格禁止硬广，案例研究和数据内容受欢迎","textChars":19,"textLines":1,"bbox":[30,280.5,228,14.44]}
+{"kind":"textbox","id":"sh/0zulgf69","slide":9,"name":"Text 10","text":"核心关注点","textPreview":"核心关注点","textChars":5,"textLines":1,"bbox":[30,308.81,276,18]}
+{"kind":"textbox","id":"sh/n25kbap0","slide":9,"name":"Text 11","text":"CRO、访客识别、MQL 质量、营销与销售对齐","textPreview":"CRO、访客识别、MQL 质量、营销与销售对齐","textChars":23,"textLines":1,"bbox":[30,331.5,247.87,14.44]}
+{"kind":"shape","id":"sh/21w3ipof","slide":9,"name":"Shape 12","bbox":[0,400.96,336,139.04]}
+{"kind":"textbox","id":"sh/p4n2dknq","slide":9,"name":"Text 13","text":"备选方案（如发帖受阻）","textPreview":"备选方案（如发帖受阻）","textChars":11,"textLines":1,"bbox":[30,418.96,276,20.25]}
+{"kind":"textbox","id":"sh/o3elkf65","slide":9,"name":"Text 14","text":"若 r/B2BMarketing 帖子被删，转向 r/DigitalMarketing（规模更大，180万+，审核相对宽松）或 r/marketing（同样大社区，但需要更高质量内容）。","textPreview":"若 r/B2BMarketing 帖子被删，转向 r/DigitalMarketing（规模更大，180万+，审核相对宽松）或 r/marketing（同样大社区，但需要更高质量内容）。","textChars":93,"textLines":1,"bbox":[30,445.21,276,76.79]}
+{"kind":"shape","id":"sh/b65kfu5w","slide":9,"name":"Shape 15","bbox":[336,92.44,624,148.94]}
+{"kind":"textbox","id":"sh/a5w3mpob","slide":9,"name":"Text 16","text":"内容 1 — CRO 案例帖（Post）","textPreview":"内容 1 — CRO 案例帖（Post）","textChars":20,"textLines":1,"bbox":[366,119.28,564,20.25]}
+{"kind":"textbox","id":"sh/6l0net8j","slide":9,"name":"Text 17","text":"\"Forms are dead. We switched to an AI sales agent and saw a 25% increase in booked meetings. Here's the setup.\"","textPreview":"\"Forms are dead. We switched to an AI sales agent and saw a 25% increase in booked meetings. Here's the setup.\"","textChars":111,"textLines":1,"bbox":[366,148.53,564,37.8]}
+{"kind":"textbox","id":"sh/7m9onyp4","slide":9,"name":"Text 18","text":"策略：从\"表单 vs 对话式营销\"的角度切入，分享转化率数据对比，提供具体的实施建议。","textPreview":"策略：从\"表单 vs 对话式营销\"的角度切入，分享转化率数据对比，提供具体的实施建议。","textChars":43,"textLines":1,"bbox":[366,195.33,564,19.2]}
+{"kind":"shape","id":"sh/8ni5g3qp","slide":9,"name":"Shape 19","bbox":[336,241.37,624,148.94]}
+{"kind":"textbox","id":"sh/tor6p87a","slide":9,"name":"Text 20","text":"内容 2 — 访客识别帖（Post）","textPreview":"内容 2 — 访客识别帖（Post）","textChars":18,"textLines":1,"bbox":[366,268.22,564,20.25]}
+{"kind":"textbox","id":"sh/yxgna98n","slide":9,"name":"Text 21","text":"\"You're losing 97% of your website visitors without knowing who they are. 3 strategies to fix it.\"","textPreview":"\"You're losing 97% of your website visitors without knowing who they are. 3 strategies to fix it.\"","textChars":98,"textLines":1,"bbox":[366,297.47,564,37.8]}
+{"kind":"textbox","id":"sh/jyp4je98","slide":9,"name":"Text 22","text":"策略：教育性内容，介绍访客去匿名化的方法，Expertise.ai 作为其中一个工具提及。","textPreview":"策略：教育性内容，介绍访客去匿名化的方法，Expertise.ai 作为其中一个工具提及。","textChars":45,"textLines":1,"bbox":[366,344.27,564,19.2]}
+{"kind":"shape","id":"sh/kzi5cjqd","slide":9,"name":"Shape 23","bbox":[336,390.31,624,149.69]}
+{"kind":"shape","id":"sh/l0rmlory","slide":9,"name":"Shape 24","bbox":[336,539.25,624,0.75]}
+{"kind":"textbox","id":"sh/itknmd8r","slide":9,"name":"Text 25","text":"内容 3 — 评论拦截（Comment）","textPreview":"内容 3 — 评论拦截（Comment）","textChars":20,"textLines":1,"bbox":[366,431.58,564,20.25]}
+{"kind":"textbox","id":"sh/3utovipc","slide":9,"name":"Text 26","text":"场景：在\"how to improve website conversion\"、\"best lead gen tools 2025\"等讨论帖下提供专业建议。","textPreview":"场景：在\"how to improve website conversion\"、\"best lead gen tools 2025\"等讨论帖下提供专业建议。","textChars":78,"textLines":1,"bbox":[366,460.83,564,38.4]}
+{"kind":"image","id":"im/yhwfqd8b","slide":9,"name":"Image 0","bbox":[0,0,960,540]}
+{"kind":"notes","id":"nt/nlin4b","slide":9,"text":""}
+{"kind":"slide","id":"sl/2f3rec","slide":10,"title":"30 个主贴分配策略：全漏斗覆盖 + 热门算法触发","textShapes":24}
+{"kind":"shape","id":"sh/j61czup0","slide":10,"name":"Shape 0","bbox":[0,0,960,92.44]}
+{"kind":"textbox","id":"sh/sbadwjqh","slide":10,"name":"Text 1","text":"30 个主贴分配策略：全漏斗覆盖 + 热门算法触发","textPreview":"30 个主贴分配策略：全漏斗覆盖 + 热门算法触发","textChars":25,"textLines":1,"bbox":[45,30,870,32.44]}
+{"kind":"shape","id":"sh/tcju5o72","slide":10,"name":"Shape 2","bbox":[45,125.44,870,42]}
+{"kind":"textbox","id":"sh/69svu98b","slide":10,"name":"Text 3","text":"Subreddit","textPreview":"Subreddit","textChars":9,"textLines":1,"bbox":[45,126.28,241.66,40.31]}
+{"kind":"textbox","id":"sh/7a1c3epw","slide":10,"name":"Text 4","text":"主贴 (Posts)","textPreview":"主贴 (Posts)","textChars":10,"textLines":1,"bbox":[286.66,125.44,120.83,42]}
+{"kind":"textbox","id":"sh/9gzutkry","slide":10,"name":"Text 6","text":"核心内容方向","textPreview":"核心内容方向","textChars":6,"textLines":1,"bbox":[552.5,125.44,362.5,42]}
+{"kind":"shape","id":"sh/1gf25wj2","slide":10,"name":"Shape 7","bbox":[45,167.44,870,57.75]}
+{"kind":"shape","id":"sh/gf61wrih","slide":10,"name":"Shape 8","bbox":[45,224.44,870,0.75]}
+{"kind":"textbox","id":"sh/fux03m1w","slide":10,"name":"Text 9","text":"r/sales + r/techsales","textPreview":"r/sales + r/techsales","textChars":21,"textLines":1,"bbox":[45,172.78,241.66,46.31]}
+{"kind":"shape","id":"sh/etojuh0b","slide":10,"name":"Shape 10","bbox":[304.66,182.44,27,27]}
+{"kind":"textbox","id":"sh/pkz29wjy","slide":10,"name":"Text 11","text":"10","textPreview":"10","textChars":2,"textLines":1,"bbox":[304.66,182.44,27,27]}
+{"kind":"textbox","id":"sh/oj610rid","slide":10,"name":"Text 12","text":"篇","textPreview":"篇","textChars":1,"textLines":1,"bbox":[340.66,187.78,16.87,16.31]}
+{"kind":"textbox","id":"sh/2hojy10n","slide":10,"name":"Text 14","text":"AE 工具对比、CRM 自动化工作流","textPreview":"AE 工具对比、CRM 自动化工作流","textChars":18,"textLines":1,"bbox":[552.5,171.94,362.5,48]}
+{"kind":"shape","id":"sh/doz2dgja","slide":10,"name":"Shape 15","bbox":[45,224.44,870,57.75]}
+{"kind":"shape","id":"sh/cnq14bip","slide":10,"name":"Shape 16","bbox":[45,281.44,870,0.75]}
+{"kind":"textbox","id":"sh/w3idwjux","slide":10,"name":"Text 17","text":"r/hubspot + r/RevOps","textPreview":"r/hubspot + r/RevOps","textChars":20,"textLines":1,"bbox":[45,229.78,241.66,46.31]}
+{"kind":"shape","id":"sh/h4rup4vi","slide":10,"name":"Shape 18","bbox":[304.66,239.44,27,27]}
+{"kind":"textbox","id":"sh/u10vu9cr","slide":10,"name":"Text 19","text":"8","textPreview":"8","textChars":1,"textLines":1,"bbox":[304.66,239.44,27,27]}
+{"kind":"textbox","id":"sh/v29cnedc","slide":10,"name":"Text 20","text":"篇","textPreview":"篇","textChars":1,"textLines":1,"bbox":[340.66,244.78,16.87,16.31]}
+{"kind":"textbox","id":"sh/5sbutove","slide":10,"name":"Text 22","text":"HubSpot 集成、线索路由自动化","textPreview":"HubSpot 集成、线索路由自动化","textChars":18,"textLines":1,"bbox":[552.5,228.94,362.5,48]}
+{"kind":"shape","id":"sh/i50vy9c3","slide":10,"name":"Shape 23","bbox":[45,281.44,870,57.75]}
+{"kind":"shape","id":"sh/j69credo","slide":10,"name":"Shape 24","bbox":[45,338.44,870,0.75]}
+{"kind":"textbox","id":"sh/0bytozup","slide":10,"name":"Text 25","text":"r/SaaS + r/Entrepreneur","textPreview":"r/SaaS + r/Entrepreneur","textChars":23,"textLines":1,"bbox":[45,286.78,241.66,46.31]}
+{"kind":"shape","id":"sh/lc7uhkva","slide":10,"name":"Shape 26","bbox":[304.66,296.44,27,27]}
+{"kind":"textbox","id":"sh/3qdg32xs","slide":10,"name":"Text 27","text":"7","textPreview":"7","textChars":1,"textLines":1,"bbox":[304.66,296.44,27,27]}
+{"kind":"textbox","id":"sh/2p4fuxw7","slide":10,"name":"Text 28","text":"篇","textPreview":"篇","textChars":1,"textLines":1,"bbox":[340.66,301.78,16.87,16.31]}
+{"kind":"textbox","id":"sh/or6xw7ed","slide":10,"name":"Text 30","text":"案例故事、不加 headcount 扩 pipeline","textPreview":"案例故事、不加 headcount 扩 pipeline","textChars":28,"textLines":1,"bbox":[552.5,285.94,362.5,48]}
+{"kind":"shape","id":"sh/fmdgzixw","slide":10,"name":"Shape 31","bbox":[45,338.44,870,63.38]}
+{"kind":"shape","id":"sh/e14fqdwb","slide":10,"name":"Shape 32","bbox":[45,401.06,870,0.75]}
+{"kind":"textbox","id":"sh/1ovy1sfm","slide":10,"name":"Text 33","text":"r/B2BMarketing + r/LeadGeneration","textPreview":"r/B2BMarketing + r/LeadGeneration","textChars":33,"textLines":1,"bbox":[45,338.44,241.66,62.62]}
+{"kind":"shape","id":"sh/gnmxsneh","slide":10,"name":"Shape 34","bbox":[304.66,356.25,27,27]}
+{"kind":"textbox","id":"sh/rytwvixk","slide":10,"name":"Text 35","text":"5","textPreview":"5","textChars":1,"textLines":1,"bbox":[304.66,356.25,27,27]}
+{"kind":"textbox","id":"sh/6xkfmdwz","slide":10,"name":"Text 36","text":"篇","textPreview":"篇","textChars":1,"textLines":1,"bbox":[340.66,361.59,16.87,16.31]}
+{"kind":"textbox","id":"sh/76xkz6t4","slide":10,"name":"Text 38","text":"CRO 案例、访客识别策略","textPreview":"CRO 案例、访客识别策略","textChars":13,"textLines":1,"bbox":[552.5,345.75,362.5,48]}
+{"kind":"shape","id":"sh/8761sbap","slide":10,"name":"Shape 39","bbox":[45,401.06,870,57]}
+{"kind":"textbox","id":"sh/98f21gba","slide":10,"name":"Text 40","text":"合计","textPreview":"合计","textChars":2,"textLines":1,"bbox":[45,404.44,241.66,50.25]}
+{"kind":"shape","id":"sh/y14jm1sn","slide":10,"name":"Shape 41","bbox":[304.66,416.06,27,27]}
+{"kind":"textbox","id":"sh/z2d0v6t8","slide":10,"name":"Text 42","text":"30","textPreview":"30","textChars":2,"textLines":1,"bbox":[304.66,416.06,27,27]}
+{"kind":"textbox","id":"sh/k3m1obat","slide":10,"name":"Text 43","text":"篇","textPreview":"篇","textChars":1,"textLines":1,"bbox":[340.66,419.91,18.38,18.19]}
+{"kind":"textbox","id":"sh/adkjihsr","slide":10,"name":"Text 45","text":"覆盖 8 个核心版块","textPreview":"覆盖 8 个核心版块","textChars":10,"textLines":1,"bbox":[552.5,404.44,362.5,50.25]}
+{"kind":"shape","id":"sh/bet0rmtc","slide":10,"name":"Shape 46","bbox":[0,468,960,72]}
+{"kind":"image","id":"im/6pkn25g3","slide":10,"name":"Image 0","bbox":[0,0,960,540]}
+{"kind":"notes","id":"nt/2f3rec","slide":10,"text":""}
+{"kind":"slide","id":"sl/d7ogqh","slide":11,"title":"核心策略：10 天脉冲式打法 & 热门算法触发机制","textShapes":11}
+{"kind":"shape","id":"sh/mhsjal47","slide":11,"name":"Shape 0","bbox":[0,0,960,92.44]}
+{"kind":"textbox","id":"sh/ho32p03u","slide":11,"name":"Text 1","text":"核心策略：10 天脉冲式打法 & 热门算法触发机制","textPreview":"核心策略：10 天脉冲式打法 & 热门算法触发机制","textChars":25,"textLines":1,"bbox":[45,30,870,32.44]}
+{"kind":"shape","id":"sh/gnalgfm9","slide":11,"name":"Shape 2","bbox":[0,92.44,480,447.56]}
+{"kind":"textbox","id":"sh/vm1knalo","slide":11,"name":"Text 3","text":"10 天脉冲式打法\n(Blitz Campaign)","textPreview":"10 天脉冲式打法 | (Blitz Campaign)","textChars":26,"textLines":2,"bbox":[45,181.97,390,61.5]}
+{"kind":"textbox","id":"sh/uls3e543","slide":11,"name":"Text 4","text":"执行节奏","textPreview":"执行节奏","textChars":4,"textLines":1,"bbox":[45,265.97,390,18]}
+{"kind":"textbox","id":"sh/5c32tk3q","slide":11,"name":"Text 5","text":"在 10 天 内集中发布 30 个高质量主贴，平均每天 3 贴。摒弃传统的缓慢滴灌策略，采用高频、高强度的矩阵式发布。","textPreview":"在 10 天 内集中发布 30 个高质量主贴，平均每天 3 贴。摒弃传统的缓慢滴灌策略，采用高频、高强度的矩阵式发布。","textChars":59,"textLines":1,"bbox":[45,292.97,390,43.2]}
+{"kind":"textbox","id":"sh/4rulkfml","slide":11,"name":"Text 6","text":"核心目的","textPreview":"核心目的","textChars":4,"textLines":1,"bbox":[45,358.67,390,18]}
+{"kind":"textbox","id":"sh/qpsjmp83","slide":11,"name":"Text 7","text":"通过短时间内的密集曝光，在目标版块（如 r/sales, r/hubspot）制造 “全网都在讨论 Expertise.ai” 的势能，迅速占领目标受众的心智和话语权。","textPreview":"通过短时间内的密集曝光，在目标版块（如 r/sales, r/hubspot）制造 “全网都在讨论 Expertise.ai” 的势能，迅速占领目标受众的心智和话语权。","textChars":84,"textLines":1,"bbox":[45,385.67,390,64.79]}
+{"kind":"shape","id":"sh/rq10vupo","slide":11,"name":"Shape 8","bbox":[480,92.44,480,447.56]}
+{"kind":"textbox","id":"sh/sra1ofq9","slide":11,"name":"Text 9","text":"1 Post + 5 Comments\n算法触发机制","textPreview":"1 Post + 5 Comments | 算法触发机制","textChars":26,"textLines":2,"bbox":[525,171.18,390,61.5]}
+{"kind":"textbox","id":"sh/dsjixk7u","slide":11,"name":"Text 10","text":"突破 REDDIT 算法","textPreview":"突破 REDDIT 算法","textChars":12,"textLines":1,"bbox":[525,255.18,390,18]}
+{"kind":"textbox","id":"sh/etsjqp8f","slide":11,"name":"Text 11","text":"Reddit 算法极其看重帖子发布后 前 30 分钟 的互动率。预计每个主贴至少获得 5 条高质量评论，能瞬间拉高活跃度权重，将帖子推上版块的 \"Hot\"（热门）榜单。","textPreview":"Reddit 算法极其看重帖子发布后 前 30 分钟 的互动率。预计每个主贴至少获得 5 条高质量评论，能瞬间拉高活跃度权重，将帖子推上版块的 \"Hot\"（热门）榜单。","textChars":84,"textLines":1,"bbox":[525,282.18,390,58.73]}
+{"kind":"textbox","id":"sh/fu10zup0","slide":11,"name":"Text 12","text":"自问自答式植入","textPreview":"自问自答式植入","textChars":7,"textLines":1,"bbox":[525,369.47,390,18]}
+{"kind":"textbox","id":"sh/0va1szql","slide":11,"name":"Text 13","text":"主贴保持客观中立（如痛点探讨），可以 5 条评论进行 争议互动或自问自答。在评论区自然引出 Expertise.ai 的核心优势（如 HubSpot 深度集成），极大降低硬广嫌疑。","textPreview":"主贴保持客观中立（如痛点探讨），可以 5 条评论进行 争议互动或自问自答。在评论区自然引出 Expertise.ai 的核心优势（如 HubSpot 深度集成），极大降低硬广嫌疑。","textChars":90,"textLines":1,"bbox":[525,396.47,390,58.73]}
+{"kind":"image","id":"im/mxwr25g7","slide":11,"name":"Image 0","bbox":[0,0,960,540]}
+{"kind":"notes","id":"nt/d7ogqh","slide":11,"text":""}
+{"kind":"slide","id":"sl/wvikso","slide":12,"title":"合规执行：避开 Reddit 的核心雷区","textShapes":17}
+{"kind":"shape","id":"sh/lonu1c3m","slide":12,"name":"Shape 0","bbox":[0,0,960,92.44]}
+{"kind":"textbox","id":"sh/axcbmd4z","slide":12,"name":"Text 1","text":"合规执行：避开 Reddit 的核心雷区","textPreview":"合规执行：避开 Reddit 的核心雷区","textChars":20,"textLines":1,"bbox":[45,30,870,32.44]}
+{"kind":"shape","id":"sh/bylsvilk","slide":12,"name":"Shape 2","bbox":[45,122.44,423.75,55.31]}
+{"kind":"shape","id":"sh/czutonmp","slide":12,"name":"Shape 3","bbox":[67.5,137.44,52.87,25.31]}
+{"kind":"textbox","id":"sh/x03axs3a","slide":12,"name":"Text 4","text":"风险 1","textPreview":"风险 1","textChars":4,"textLines":1,"bbox":[67.5,137.44,52.87,25.31]}
+{"kind":"textbox","id":"sh/2tsbid4n","slide":12,"name":"Text 5","text":"新账号发帖被秒删","textPreview":"新账号发帖被秒删","textChars":8,"textLines":1,"bbox":[132.38,139.97,118.8,20.25]}
+{"kind":"shape","id":"sh/nulsril8","slide":12,"name":"Shape 6","bbox":[45,177.75,423.75,127.91]}
+{"kind":"textbox","id":"sh/7udob2p0","slide":12,"name":"Text 7","text":"应对策略","textPreview":"应对策略","textChars":4,"textLines":1,"bbox":[67.5,200.25,378.75,16.31]}
+{"kind":"textbox","id":"sh/6t47ix8f","slide":12,"name":"Text 8","text":"使用 800+ Karma 的养号，发帖前在目标版块进行真实互动 3–5 天，建立账号在该版块的活跃度记录。","textPreview":"使用 800+ Karma 的养号，发帖前在目标版块进行真实互动 3–5 天，建立账号在该版块的活跃度记录。","textChars":54,"textLines":1,"bbox":[67.5,225.56,378.75,38.4]}
+{"kind":"shape","id":"sh/tgf6ds7q","slide":12,"name":"Shape 9","bbox":[491.25,122.44,423.75,55.31]}
+{"kind":"shape","id":"sh/sv6pk76l","slide":12,"name":"Shape 10","bbox":[513.75,137.44,55.13,25.31]}
+{"kind":"textbox","id":"sh/fixof2pw","slide":12,"name":"Text 11","text":"风险 2","textPreview":"风险 2","textChars":4,"textLines":1,"bbox":[513.75,137.44,55.13,25.31]}
+{"kind":"textbox","id":"sh/uho7mxob","slide":12,"name":"Text 12","text":"被识别为营销账号","textPreview":"被识别为营销账号","textChars":8,"textLines":1,"bbox":[580.87,139.97,118.8,20.25]}
+{"kind":"shape","id":"sh/hkf6hc72","slide":12,"name":"Shape 13","bbox":[491.25,177.75,423.75,127.91]}
+{"kind":"textbox","id":"sh/gj6po76h","slide":12,"name":"Text 14","text":"应对策略","textPreview":"应对策略","textChars":4,"textLines":1,"bbox":[513.75,200.25,378.75,16.31]}
+{"kind":"textbox","id":"sh/vmto3ips","slide":12,"name":"Text 15","text":"采用 Full Disclosure（如在文末注明\"我在 Expertise.ai 工作\"）。在 Reddit，极度的透明度反而能建立信任，掩饰身份一旦被发现将面临永久封禁。","textPreview":"采用 Full Disclosure（如在文末注明\"我在 Expertise.ai 工作\"）。在 Reddit，极度的透明度反而能建立信任，掩饰身份一旦被发现将面临永久封禁。","textChars":87,"textLines":1,"bbox":[513.75,225.56,378.75,57.59]}
+{"kind":"shape","id":"sh/alknad87","slide":12,"name":"Shape 16","bbox":[45,328.16,423.75,55.31]}
+{"kind":"shape","id":"sh/ehsril8v","slide":12,"name":"Shape 17","bbox":[67.5,343.16,55.5,25.31]}
+{"kind":"textbox","id":"sh/zi1sbq9g","slide":12,"name":"Text 18","text":"风险 3","textPreview":"风险 3","textChars":4,"textLines":1,"bbox":[67.5,343.16,55.5,25.31]}
+{"kind":"textbox","id":"sh/0ja9kbql","slide":12,"name":"Text 19","text":"版块规则禁止推广","textPreview":"版块规则禁止推广","textChars":8,"textLines":1,"bbox":[135,345.69,118.8,20.25]}
+{"kind":"shape","id":"sh/1kjadgr6","slide":12,"name":"Shape 20","bbox":[45,383.47,423.75,127.91]}
+{"kind":"textbox","id":"sh/qd8re18j","slide":12,"name":"Text 21","text":"应对策略","textPreview":"应对策略","textChars":4,"textLines":1,"bbox":[67.5,405.97,378.75,16.31]}
+{"kind":"textbox","id":"sh/re1s7694","slide":12,"name":"Text 22","text":"发帖前先观察该版块热门帖风格 1–2 天。如果主版面严禁推广，则在允许推广的特定线程（如 Weekly Self-Promotion Thread）中发布。","textPreview":"发帖前先观察该版块热门帖风格 1–2 天。如果主版面严禁推广，则在允许推广的特定线程（如 Weekly Self-Promotion Thread）中发布。","textChars":78,"textLines":1,"bbox":[67.5,431.28,378.75,38.4]}
+{"kind":"shape","id":"sh/cfa9gbqp","slide":12,"name":"Shape 23","bbox":[491.25,328.16,423.75,55.31]}
+{"kind":"shape","id":"sh/dgja9gra","slide":12,"name":"Shape 24","bbox":[513.75,343.16,55.87,25.31]}
+{"kind":"textbox","id":"sh/2p8ra1sn","slide":12,"name":"Text 25","text":"风险 4","textPreview":"风险 4","textChars":4,"textLines":1,"bbox":[513.75,343.16,55.87,25.31]}
+{"kind":"textbox","id":"sh/3ah83698","slide":12,"name":"Text 26","text":"AI chatbot 疲劳引发负面讨论","textPreview":"AI chatbot 疲劳引发负面讨论","textChars":19,"textLines":1,"bbox":[581.62,345.69,197.78,20.25]}
+{"kind":"shape","id":"sh/54nup4bq","slide":12,"name":"Shape 27","bbox":[491.25,383.47,423.75,127.91]}
+{"kind":"textbox","id":"sh/k3edgza5","slide":12,"name":"Text 28","text":"应对策略","textPreview":"应对策略","textChars":4,"textLines":1,"bbox":[513.75,405.97,378.75,16.31]}
+{"kind":"textbox","id":"sh/j25cnutk","slide":12,"name":"Text 29","text":"避免使用\"AI chatbot\"标签，改用\"AI sales agent\"或\"pipeline automation\"。聚焦真实 ROI 数据（如 84% 转化提升、22% 工单减少），而非功能描述。","textPreview":"避免使用\"AI chatbot\"标签，改用\"AI sales agent\"或\"pipeline automation\"。聚焦真实 ROI 数据（如 84% 转化提升、22% 工单减少），而非功能描述。","textChars":100,"textLines":1,"bbox":[513.75,431.28,378.75,57.59]}
+{"kind":"image","id":"im/50nil4zm","slide":12,"name":"Image 0","bbox":[0,0,960,540]}
+{"kind":"notes","id":"nt/wvikso","slide":12,"text":""}
