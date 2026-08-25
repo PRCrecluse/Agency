@@ -110,10 +110,6 @@ const navigationData: Navigation[] = [
     title: 'Blog',
     href: '/blog',
     activeMatch: 'prefix'
-  },
-  {
-    title: 'UTM Builder',
-    href: '/utm-builder'
   }
 ]
 

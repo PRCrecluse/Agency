@@ -63,12 +63,12 @@ const FloatingContact = () => {
   return (
     <div
       ref={containerRef}
-      className='pointer-events-none fixed right-4 bottom-4 z-50 flex flex-col items-end gap-3 sm:right-6 sm:bottom-6'
+      className='pointer-events-none fixed right-4 bottom-4 z-50 sm:right-6 sm:bottom-6'
     >
       <div
         id={panelId}
         className={cn(
-          'pointer-events-auto origin-bottom-right transition-all duration-200 ease-out',
+          'pointer-events-auto absolute right-0 bottom-[calc(100%+0.75rem)] origin-bottom-right transition-all duration-200 ease-out',
           open ? 'translate-y-0 scale-100 opacity-100' : 'translate-y-3 scale-95 opacity-0',
           open ? '' : 'pointer-events-none'
         )}
@@ -107,7 +107,7 @@ const FloatingContact = () => {
         aria-controls={panelId}
         aria-expanded={open}
         onClick={() => setOpen(current => !current)}
-        className='pointer-events-auto inline-flex size-14 items-center justify-center rounded-full border border-white/16 bg-[radial-gradient(circle_at_top,rgba(255,122,47,0.38),rgba(0,0,0,0.95)_62%)] text-white shadow-[0_0_0_1px_rgba(255,255,255,0.06),0_10px_32px_rgba(0,0,0,0.42),0_0_28px_rgba(255,106,41,0.28)] backdrop-blur-xl transition-transform duration-200 hover:scale-[1.03] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40 active:scale-95'
+        className='pointer-events-auto inline-flex size-14 items-center justify-center rounded-full border border-white/20 bg-neutral-950 text-white shadow-[0_10px_32px_rgba(0,0,0,0.35)] transition-transform duration-200 hover:scale-[1.03] hover:bg-neutral-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40 active:scale-95'
       >
         {open ? <XIcon className='size-5' /> : <MessageCircleMoreIcon className='size-5' />}
       </button>

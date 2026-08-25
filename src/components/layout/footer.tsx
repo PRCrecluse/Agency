@@ -50,7 +50,7 @@ const Footer = () => {
             </Link>
           </div>
         </div>
-        <div className='col-span-full grid grid-cols-2 gap-6 sm:grid-cols-4 lg:col-span-4 lg:gap-8'>
+        <div className='col-span-full grid grid-cols-2 gap-6 sm:grid-cols-5 lg:col-span-4 lg:gap-8'>
           <div className='flex flex-col gap-5'>
             <div className='text-lg font-medium'>Company</div>
             <ul className='text-muted-foreground space-y-3'>
@@ -92,6 +92,16 @@ const Footer = () => {
               <li>
                 <Link href='/privacy-policy' className='hover:text-foreground transition-colors duration-300'>
                   Privacy Policy
+                </Link>
+              </li>
+            </ul>
+          </div>
+          <div className='flex flex-col gap-5'>
+            <div className='text-lg font-medium'>Tools</div>
+            <ul className='text-muted-foreground space-y-3'>
+              <li>
+                <Link href='/utm-builder' className='hover:text-foreground transition-colors duration-300'>
+                  UTM Builder
                 </Link>
               </li>
             </ul>
