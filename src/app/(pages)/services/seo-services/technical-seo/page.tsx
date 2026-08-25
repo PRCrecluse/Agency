@@ -26,7 +26,7 @@ import { Badge } from '@/components/ui/badge'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { PrimaryFlowButton, SecondaryFlowButton } from '@/components/ui/flow-button'
 import { getTechnicalSEOLang, technicalSEOCopy } from '@/content/technical-seo'
-import { absoluteUrl, createFAQSchema, createWebPageSchema } from '@/lib/seo'
+import { absoluteUrl, createFAQSchema, createLocalizedAlternates, createWebPageSchema } from '@/lib/seo'
 
 export async function generateMetadata({
   searchParams
@@ -41,9 +41,7 @@ export async function generateMetadata({
     title: metadata.title,
     description: metadata.description,
     keywords: [...metadata.keywords],
-    alternates: {
-      canonical: '/services/seo-services/technical-seo'
-    }
+    alternates: createLocalizedAlternates('/services/seo-services/technical-seo', lang)
   }
 }
 

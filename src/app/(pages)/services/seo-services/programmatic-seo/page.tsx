@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 
 import SpecializedServicePage from '@/components/services/specialized-service-page'
 import { getSpecializedServiceLang, specializedServicePages } from '@/content/specialized-service-pages'
+import { createLocalizedAlternates } from '@/lib/seo'
 
 const path = '/services/seo-services/programmatic-seo'
 
@@ -18,9 +19,7 @@ export async function generateMetadata({
     title: metadata.title,
     description: metadata.description,
     keywords: [...metadata.keywords],
-    alternates: {
-      canonical: path
-    }
+    alternates: createLocalizedAlternates(path, lang)
   }
 }
 

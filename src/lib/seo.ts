@@ -51,6 +51,21 @@ export const socialProfiles = [
 
 export const absoluteUrl = (path = '/') => new URL(path, `${siteUrl}/`).toString()
 
+export const createLocalizedAlternates = (path: string, language?: string): Metadata['alternates'] => {
+  const englishPath = path.replace(/^\/zh(?=\/|$)/, '') || '/'
+  const chinesePath = englishPath === '/' ? '/zh' : `/zh${englishPath}`
+  const isChinese = language?.toLowerCase().startsWith('zh')
+
+  return {
+    canonical: isChinese ? chinesePath : englishPath,
+    languages: {
+      'en-US': englishPath,
+      'zh-CN': chinesePath,
+      'x-default': englishPath
+    }
+  }
+}
+
 export const defaultOgImage = {
   url: absoluteUrl('/images/og-image.png'),
   width: 1200,

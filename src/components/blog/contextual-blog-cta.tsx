@@ -16,7 +16,7 @@ const GEO_BOOKING_URL = 'https://cal.com/team/meridian-growth/book-a-call-for-ge
 const REDDIT_BOOKING_URL = 'https://cal.com/team/meridian-growth/book-a-demo'
 
 export type BlogCtaContent = {
-  eyebrow: string
+  eyebrow?: string
   title: string
   description: string
   buttonLabel: string
@@ -60,7 +60,7 @@ export function getBlogCtaContent({
 
   if (normalizedTopic === 'geo') {
     return {
-      eyebrow: locale === 'zh' ? '提升 AI 搜索可见性' : 'Grow your AI search visibility',
+      eyebrow: locale === 'zh' ? '提升 AI 搜索可见性' : undefined,
       title: locale === 'zh' ? '让品牌出现在 AI 答案中' : 'Earn Visibility in AI Search',
       description:
         locale === 'zh'
@@ -73,13 +73,13 @@ export function getBlogCtaContent({
 
   if (normalizedTopic === 'seo' || normalizedTopic === 'agency' || slug.includes('seo')) {
     return {
-      eyebrow: locale === 'zh' ? '把搜索需求变成增长' : 'Turn search demand into growth',
-      title: locale === 'zh' ? '为你的产品建立可持续 SEO 渠道' : 'Build a Sustainable SEO Growth Channel',
+      eyebrow: locale === 'zh' ? '把搜索需求变成增长' : undefined,
+      title: locale === 'zh' ? '为你的产品建立可持续 SEO 渠道' : "Grow your website's seo with experts",
       description:
         locale === 'zh'
           ? '从技术基础、关键词策略到高意图内容，建立能够持续带来合格流量与转化的自然增长系统。'
           : 'Connect technical SEO, search strategy, and high-intent content to create a durable source of qualified traffic and conversions.',
-      buttonLabel: locale === 'zh' ? '咨询 SEO 服务' : 'Discuss your SEO strategy',
+      buttonLabel: locale === 'zh' ? '咨询 SEO 服务' : 'Book a demo',
       href: SEO_BOOKING_URL
     }
   }
@@ -101,8 +101,10 @@ export default function ContextualBlogCta({ slug, topic, locale = 'en', classNam
 
   return (
     <aside className={cn('bg-card rounded-2xl border p-5 shadow-sm', className)} aria-label={cta.title}>
-      <p className='text-primary text-xs font-semibold tracking-[0.16em] uppercase'>{cta.eyebrow}</p>
-      <h2 className='mt-3 text-xl leading-tight font-semibold'>{cta.title}</h2>
+      {cta.eyebrow ? (
+        <p className='text-primary text-xs font-semibold tracking-[0.16em] uppercase'>{cta.eyebrow}</p>
+      ) : null}
+      <h2 className={cn('text-xl leading-tight font-semibold', cta.eyebrow && 'mt-3')}>{cta.title}</h2>
       <p className='text-muted-foreground mt-3 text-sm leading-6'>{cta.description}</p>
       <PrimaryFlowButton asChild className='mt-5 w-full *:w-full'>
         <Link href={cta.href} target='_blank' rel='noreferrer'>

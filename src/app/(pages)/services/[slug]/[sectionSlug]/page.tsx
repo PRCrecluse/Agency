@@ -23,7 +23,7 @@ import {
   serviceSectionParams,
   type ServiceLang
 } from '@/content/services'
-import { absoluteUrl, createBreadcrumbSchema, createWebPageSchema } from '@/lib/seo'
+import { absoluteUrl, createBreadcrumbSchema, createLocalizedAlternates, createWebPageSchema } from '@/lib/seo'
 import { cn } from '@/lib/utils'
 
 const getLang = (value?: string): ServiceLang => (value?.toLowerCase().startsWith('zh') ? 'zh' : 'en')
@@ -37,11 +37,15 @@ export async function generateStaticParams() {
 export const dynamic = 'force-dynamic'
 
 export async function generateMetadata({
-  params
+  params,
+  searchParams
 }: {
   params: Promise<{ slug: string; sectionSlug: string }>
+  searchParams?: Promise<{ lang?: string }>
 }): Promise<Metadata> {
   const { slug, sectionSlug } = await params
+  const resolvedSearchParams = await searchParams
+  const lang = getLang(resolvedSearchParams?.lang)
   const service = getServiceSectionPage(slug, sectionSlug)
 
   if (!service) {
@@ -49,12 +53,10 @@ export async function generateMetadata({
   }
 
   return {
-    title: `${service.title.en} | Meridian`,
-    description: service.description.en,
+    title: `${resolveLocalizedText(service.title, lang)} | Meridian`,
+    description: resolveLocalizedText(service.description, lang),
     keywords: [...service.keywords.map(keyword => keyword.en), ...service.keywords.map(keyword => keyword.zh)],
-    alternates: {
-      canonical: `/services/${slug}/${sectionSlug}`
-    }
+    alternates: createLocalizedAlternates(`/services/${slug}/${sectionSlug}`, lang)
   }
 }
 

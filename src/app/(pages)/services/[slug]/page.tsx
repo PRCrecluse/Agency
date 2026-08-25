@@ -25,7 +25,7 @@ import { PrimaryFlowButton, SecondaryFlowButton } from '@/components/ui/flow-but
 import SectionSeparator from '@/components/section-separator'
 import { logos } from '@/assets/data/trusted-brands'
 import { getServiceBySlug, resolveLocalizedText, servicePageCopy, serviceSlugs, type ServiceLang } from '@/content/services'
-import { absoluteUrl, createBreadcrumbSchema, createWebPageSchema } from '@/lib/seo'
+import { absoluteUrl, createBreadcrumbSchema, createLocalizedAlternates, createWebPageSchema } from '@/lib/seo'
 import { cn } from '@/lib/utils'
 
 const trustedBrandServiceSlugs = new Set(['seo-services', 'geo-services'])
@@ -77,8 +77,16 @@ export async function generateStaticParams() {
   return serviceSlugs.map(slug => ({ slug }))
 }
 
-export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+  searchParams
+}: {
+  params: Promise<{ slug: string }>
+  searchParams?: Promise<{ lang?: string }>
+}): Promise<Metadata> {
   const { slug } = await params
+  const resolvedSearchParams = await searchParams
+  const lang = getLang(resolvedSearchParams?.lang)
   const service = getServiceBySlug(slug)
 
   if (!service) {
@@ -86,12 +94,10 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   }
 
   return {
-    title: `${service.title.en} | Meridian`,
-    description: service.description.en,
+    title: `${resolveLocalizedText(service.title, lang)} | Meridian`,
+    description: resolveLocalizedText(service.description, lang),
     keywords: [...service.keywords.map(keyword => keyword.en), ...service.keywords.map(keyword => keyword.zh)],
-    alternates: {
-      canonical: `/services/${service.slug}`
-    }
+    alternates: createLocalizedAlternates(`/services/${service.slug}`, lang)
   }
 }
 
