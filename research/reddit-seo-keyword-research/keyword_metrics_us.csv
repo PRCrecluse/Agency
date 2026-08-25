@@ -21,6 +21,21 @@ keyword,cluster_id,intent,target,searchVolume,clicks,cpc,difficulty,globalSearch
 "reddit brand management","reddit-community-management","commercial","/services/reddit-services/community-management",0,0,"","",0,"",200
 "reddit reputation management","reddit-community-management","commercial","/services/reddit-services/community-management",20,0,"","",40,"",200
 "reddit engagement service","reddit-community-management","commercial","/services/reddit-services/community-management",10,0,"","",10,"",200
+"reddit community service","reddit-community-management","commercial","/services/reddit-services/community-management",0,0,"","",0,"",200
+"reddit community services","reddit-community-management","commercial","/services/reddit-services/community-management",0,0,"","","","",200
+"reddit community management service","reddit-community-management","commercial","/services/reddit-services/community-management",0,0,"","","","",200
+"reddit community management services","reddit-community-management","commercial","/services/reddit-services/community-management",20,0,"","",20,"",200
+"reddit community management agency","reddit-community-management","commercial","/services/reddit-services/community-management",0,0,"","",0,"",200
+"reddit community agency","reddit-community-management","commercial","/services/reddit-services/community-management",0,0,"","","","",200
+"reddit community marketing","reddit-community-management","commercial","/services/reddit-services/community-management",10,0,"","",10,"",200
+"reddit community engagement","reddit-community-management","commercial","/services/reddit-services/community-management",10,0,"","",20,"",200
+"reddit community building","reddit-community-management","commercial","/services/reddit-services/community-management",0,0,"","",0,"",200
+"reddit moderation service","reddit-community-management","commercial","/services/reddit-services/community-management",0,0,"","","","",200
+"reddit moderation services","reddit-community-management","commercial","/services/reddit-services/community-management",0,0,"","","","",200
+"subreddit moderation service","reddit-community-management","commercial","/services/reddit-services/community-management",0,0,"","","","",200
+"subreddit moderation services","reddit-community-management","commercial","/services/reddit-services/community-management",0,0,"","","","",200
+"subreddit community management","reddit-community-management","commercial","/services/reddit-services/community-management",0,0,"","","","",200
+"reddit social media management","reddit-community-management","commercial","/services/reddit-services/community-management",40,0,"","",40,"",200
 "reddit campaign","reddit-campaigns","commercial","/services/reddit-services/reddit-campaigns",400,0,35,9,450,12000,200
 "reddit marketing campaign","reddit-campaigns","commercial","/services/reddit-services/reddit-campaigns",20,0,"","",20,"",200
 "reddit campaign management","reddit-campaigns","commercial","/services/reddit-services/reddit-campaigns",0,0,"","","","",200
@@ -69,3 +84,53 @@ keyword,cluster_id,intent,target,searchVolume,clicks,cpc,difficulty,globalSearch
 "reddit ai search","reddit-brand-and-geo-guides","informational","/blog",150,0,25,"",350,"",200
 "reddit llm visibility","reddit-brand-and-geo-guides","informational","/blog",0,0,"","","","",200
 "reddit chatgpt citations","reddit-brand-and-geo-guides","informational","/blog",0,0,"","","","",200
+"how to market on reddit without getting banned","reddit-ban-and-compliance-guides","informational","/blog",20,0,"","",20,"",200
+"how to promote on reddit without getting banned","reddit-ban-and-compliance-guides","informational","/blog",30,0,"","",30,"",200
+"how to post on reddit without getting banned","reddit-ban-and-compliance-guides","informational","/blog",10,0,"","",10,"",200
+"how to avoid getting banned on reddit","reddit-ban-and-compliance-guides","informational","/blog",10,0,"","",10,"",200
+"how to not get banned on reddit","reddit-ban-and-compliance-guides","informational","/blog",10,0,"","",10,"",200
+"reddit marketing without getting banned","reddit-ban-and-compliance-guides","informational","/blog",0,0,"","",0,"",200
+"reddit ban prevention","reddit-ban-and-compliance-guides","informational","/blog",0,0,"","","","",200
+"reddit account banned","reddit-ban-and-compliance-guides","informational","/blog",150,0,"",0,350,10,200
+"reddit account suspended","reddit-ban-and-compliance-guides","informational","/blog",100,106,"",0,300,90,200
+"reddit shadowban","reddit-ban-and-compliance-guides","informational","/blog",600,795,"",0,900,1600,200
+"reddit shadow banned","reddit-ban-and-compliance-guides","informational","/blog",20,23,"","",20,"",200
+"how to avoid reddit shadowban","reddit-ban-and-compliance-guides","informational","/blog",10,0,"","",10,"",200
+"reddit spam rules","reddit-ban-and-compliance-guides","informational","/blog",0,0,"","",10,"",200
+"reddit self promotion rules","reddit-ban-and-compliance-guides","informational","/blog",70,0,"",3,100,90,200
+"reddit promotion rules","reddit-ban-and-compliance-guides","informational","/blog",0,0,"","",0,"",200
+"reddit marketing rules","reddit-ban-and-compliance-guides","informational","/blog",0,0,"","","","",200
+"reddit subreddit rules","reddit-ban-and-compliance-guides","informational","/blog",0,0,"","",10,"",200
+"reddit ban evasion","reddit-ban-and-compliance-guides","informational","/blog",70,0,"",0,250,90,200
+"why does reddit keep banning me","reddit-ban-and-compliance-guides","informational","/blog",10,0,"","",10,"",200
+"why was my reddit account banned","reddit-ban-and-compliance-guides","informational","/blog",80,0,"","",100,"",200
+"reddit account warming","reddit-account-trust-guides","informational","/blog",0,0,"","","","",200
+"how to warm up a reddit account","reddit-account-trust-guides","informational","/blog",0,0,"","",10,"",200
+"reddit account age","reddit-account-trust-guides","informational","/blog",10,6,"","",10,"",200
+"how to get reddit karma","reddit-account-trust-guides","informational","/blog",700,767,0.02,0,900,1400,200
+"how to build reddit karma","reddit-account-trust-guides","informational","/blog",20,0,"",0,20,1300,200
+"reddit karma requirements","reddit-account-trust-guides","informational","/blog",10,0,"",1,20,30,200
+"reddit posting requirements","reddit-account-trust-guides","informational","/blog",0,0,"","","","",200
+"reddit account restrictions","reddit-account-trust-guides","informational","/blog",0,0,"","","","",200
+"reddit posting limits","reddit-account-trust-guides","informational","/blog",0,0,"","",0,"",200
+"reddit new account restrictions","reddit-account-trust-guides","informational","/blog",10,0,"","",10,"",200
+"reddit anti spam","reddit-account-trust-guides","informational","/blog",0,0,"","","","",200
+"reddit spam filter","reddit-account-trust-guides","informational","/blog",0,5,"","",10,"",200
+"reddit post removed by moderators","reddit-account-trust-guides","informational","/blog",0,0,"","","","",200
+"reddit post keeps getting removed","reddit-account-trust-guides","informational","/blog",0,0,"","",0,"",200
+"reddit content policy","reddit-account-trust-guides","informational","/blog",50,48,"",15,90,350,200
+"reddit community guidelines","reddit-account-trust-guides","informational","/blog",30,0,"","",70,"",200
+"reddit moderator approval","reddit-account-trust-guides","informational","/blog",0,0,"","",0,"",200
+"how to post in a subreddit","reddit-account-trust-guides","informational","/blog",50,55,"",0,100,500,200
+"reddit marketing without ads","reddit-native-marketing-guides","informational","/blog",0,0,"","","","",200
+"organic reddit strategy","reddit-native-marketing-guides","informational","/blog",0,0,"","","","",200
+"how to build a brand on reddit","reddit-native-marketing-guides","informational","/blog",0,0,"","","","",200
+"how brands should use reddit","reddit-native-marketing-guides","informational","/blog",0,0,"","","","",200
+"how to engage on reddit","reddit-native-marketing-guides","informational","/blog",0,0,"","","","",200
+"how to join reddit conversations","reddit-native-marketing-guides","informational","/blog",0,0,"","","","",200
+"how to mention your brand on reddit","reddit-native-marketing-guides","informational","/blog",0,0,"","","","",200
+"reddit authentic marketing","reddit-native-marketing-guides","informational","/blog",0,0,"","","","",200
+"reddit native marketing","reddit-native-marketing-guides","informational","/blog",0,0,"","","","",200
+"reddit community marketing strategy","reddit-native-marketing-guides","informational","/blog",0,0,"","",0,"",200
+"reddit engagement strategy","reddit-native-marketing-guides","informational","/blog",0,0,"","","","",200
+"reddit brand strategy","reddit-native-marketing-guides","informational","/blog",0,0,"","",10,"",200

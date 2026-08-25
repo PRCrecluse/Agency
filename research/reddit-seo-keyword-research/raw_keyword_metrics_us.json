@@ -422,6 +422,291 @@
       }
     },
     {
+      "keyword": "reddit community service",
+      "cluster_id": "reddit-community-management",
+      "intent": "commercial",
+      "target": "/services/reddit-services/community-management",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "reddit community service",
+          "searchVolume": 0,
+          "clicks": 0,
+          "cpc": null,
+          "difficulty": null,
+          "globalSearchVolume": 0,
+          "trafficPotential": null
+        }
+      }
+    },
+    {
+      "keyword": "reddit community services",
+      "cluster_id": "reddit-community-management",
+      "intent": "commercial",
+      "target": "/services/reddit-services/community-management",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "reddit community services",
+          "searchVolume": 0,
+          "clicks": 0,
+          "cpc": null,
+          "difficulty": null,
+          "globalSearchVolume": null,
+          "trafficPotential": null
+        }
+      }
+    },
+    {
+      "keyword": "reddit community management service",
+      "cluster_id": "reddit-community-management",
+      "intent": "commercial",
+      "target": "/services/reddit-services/community-management",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "reddit community management service",
+          "searchVolume": 0,
+          "clicks": 0,
+          "cpc": null,
+          "difficulty": null,
+          "globalSearchVolume": null,
+          "trafficPotential": null
+        }
+      }
+    },
+    {
+      "keyword": "reddit community management services",
+      "cluster_id": "reddit-community-management",
+      "intent": "commercial",
+      "target": "/services/reddit-services/community-management",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "reddit community management services",
+          "searchVolume": 20,
+          "clicks": 0,
+          "cpc": null,
+          "difficulty": null,
+          "globalSearchVolume": 20,
+          "trafficPotential": null
+        }
+      }
+    },
+    {
+      "keyword": "reddit community management agency",
+      "cluster_id": "reddit-community-management",
+      "intent": "commercial",
+      "target": "/services/reddit-services/community-management",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "reddit community management agency",
+          "searchVolume": 0,
+          "clicks": 0,
+          "cpc": null,
+          "difficulty": null,
+          "globalSearchVolume": 0,
+          "trafficPotential": null
+        }
+      }
+    },
+    {
+      "keyword": "reddit community agency",
+      "cluster_id": "reddit-community-management",
+      "intent": "commercial",
+      "target": "/services/reddit-services/community-management",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "reddit community agency",
+          "searchVolume": 0,
+          "clicks": 0,
+          "cpc": null,
+          "difficulty": null,
+          "globalSearchVolume": null,
+          "trafficPotential": null
+        }
+      }
+    },
+    {
+      "keyword": "reddit community marketing",
+      "cluster_id": "reddit-community-management",
+      "intent": "commercial",
+      "target": "/services/reddit-services/community-management",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "reddit community marketing",
+          "searchVolume": 10,
+          "clicks": 0,
+          "cpc": null,
+          "difficulty": null,
+          "globalSearchVolume": 10,
+          "trafficPotential": null
+        }
+      }
+    },
+    {
+      "keyword": "reddit community engagement",
+      "cluster_id": "reddit-community-management",
+      "intent": "commercial",
+      "target": "/services/reddit-services/community-management",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "reddit community engagement",
+          "searchVolume": 10,
+          "clicks": 0,
+          "cpc": null,
+          "difficulty": null,
+          "globalSearchVolume": 20,
+          "trafficPotential": null
+        }
+      }
+    },
+    {
+      "keyword": "reddit community building",
+      "cluster_id": "reddit-community-management",
+      "intent": "commercial",
+      "target": "/services/reddit-services/community-management",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "reddit community building",
+          "searchVolume": 0,
+          "clicks": 0,
+          "cpc": null,
+          "difficulty": null,
+          "globalSearchVolume": 0,
+          "trafficPotential": null
+        }
+      }
+    },
+    {
+      "keyword": "reddit moderation service",
+      "cluster_id": "reddit-community-management",
+      "intent": "commercial",
+      "target": "/services/reddit-services/community-management",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "reddit moderation service",
+          "searchVolume": 0,
+          "clicks": 0,
+          "cpc": null,
+          "difficulty": null,
+          "globalSearchVolume": null,
+          "trafficPotential": null
+        }
+      }
+    },
+    {
+      "keyword": "reddit moderation services",
+      "cluster_id": "reddit-community-management",
+      "intent": "commercial",
+      "target": "/services/reddit-services/community-management",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "reddit moderation services",
+          "searchVolume": 0,
+          "clicks": 0,
+          "cpc": null,
+          "difficulty": null,
+          "globalSearchVolume": null,
+          "trafficPotential": null
+        }
+      }
+    },
+    {
+      "keyword": "subreddit moderation service",
+      "cluster_id": "reddit-community-management",
+      "intent": "commercial",
+      "target": "/services/reddit-services/community-management",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "subreddit moderation service",
+          "searchVolume": 0,
+          "clicks": 0,
+          "cpc": null,
+          "difficulty": null,
+          "globalSearchVolume": null,
+          "trafficPotential": null
+        }
+      }
+    },
+    {
+      "keyword": "subreddit moderation services",
+      "cluster_id": "reddit-community-management",
+      "intent": "commercial",
+      "target": "/services/reddit-services/community-management",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "subreddit moderation services",
+          "searchVolume": 0,
+          "clicks": 0,
+          "cpc": null,
+          "difficulty": null,
+          "globalSearchVolume": null,
+          "trafficPotential": null
+        }
+      }
+    },
+    {
+      "keyword": "subreddit community management",
+      "cluster_id": "reddit-community-management",
+      "intent": "commercial",
+      "target": "/services/reddit-services/community-management",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "subreddit community management",
+          "searchVolume": 0,
+          "clicks": 0,
+          "cpc": null,
+          "difficulty": null,
+          "globalSearchVolume": null,
+          "trafficPotential": null
+        }
+      }
+    },
+    {
+      "keyword": "reddit social media management",
+      "cluster_id": "reddit-community-management",
+      "intent": "commercial",
+      "target": "/services/reddit-services/community-management",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "reddit social media management",
+          "searchVolume": 40,
+          "clicks": 0,
+          "cpc": null,
+          "difficulty": null,
+          "globalSearchVolume": 40,
+          "trafficPotential": null
+        }
+      }
+    },
+    {
       "keyword": "reddit campaign",
       "cluster_id": "reddit-campaigns",
       "intent": "commercial",
@@ -1329,6 +1614,956 @@
           "cpc": null,
           "difficulty": null,
           "globalSearchVolume": null,
+          "trafficPotential": null
+        }
+      }
+    },
+    {
+      "keyword": "how to market on reddit without getting banned",
+      "cluster_id": "reddit-ban-and-compliance-guides",
+      "intent": "informational",
+      "target": "/blog",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "how to market on reddit without getting banned",
+          "searchVolume": 20,
+          "clicks": 0,
+          "cpc": null,
+          "difficulty": null,
+          "globalSearchVolume": 20,
+          "trafficPotential": null
+        }
+      }
+    },
+    {
+      "keyword": "how to promote on reddit without getting banned",
+      "cluster_id": "reddit-ban-and-compliance-guides",
+      "intent": "informational",
+      "target": "/blog",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "how to promote on reddit without getting banned",
+          "searchVolume": 30,
+          "clicks": 0,
+          "cpc": null,
+          "difficulty": null,
+          "globalSearchVolume": 30,
+          "trafficPotential": null
+        }
+      }
+    },
+    {
+      "keyword": "how to post on reddit without getting banned",
+      "cluster_id": "reddit-ban-and-compliance-guides",
+      "intent": "informational",
+      "target": "/blog",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "how to post on reddit without getting banned",
+          "searchVolume": 10,
+          "clicks": 0,
+          "cpc": null,
+          "difficulty": null,
+          "globalSearchVolume": 10,
+          "trafficPotential": null
+        }
+      }
+    },
+    {
+      "keyword": "how to avoid getting banned on reddit",
+      "cluster_id": "reddit-ban-and-compliance-guides",
+      "intent": "informational",
+      "target": "/blog",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "how to avoid getting banned on reddit",
+          "searchVolume": 10,
+          "clicks": 0,
+          "cpc": null,
+          "difficulty": null,
+          "globalSearchVolume": 10,
+          "trafficPotential": null
+        }
+      }
+    },
+    {
+      "keyword": "how to not get banned on reddit",
+      "cluster_id": "reddit-ban-and-compliance-guides",
+      "intent": "informational",
+      "target": "/blog",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "how to not get banned on reddit",
+          "searchVolume": 10,
+          "clicks": 0,
+          "cpc": null,
+          "difficulty": null,
+          "globalSearchVolume": 10,
+          "trafficPotential": null
+        }
+      }
+    },
+    {
+      "keyword": "reddit marketing without getting banned",
+      "cluster_id": "reddit-ban-and-compliance-guides",
+      "intent": "informational",
+      "target": "/blog",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "reddit marketing without getting banned",
+          "searchVolume": 0,
+          "clicks": 0,
+          "cpc": null,
+          "difficulty": null,
+          "globalSearchVolume": 0,
+          "trafficPotential": null
+        }
+      }
+    },
+    {
+      "keyword": "reddit ban prevention",
+      "cluster_id": "reddit-ban-and-compliance-guides",
+      "intent": "informational",
+      "target": "/blog",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "reddit ban prevention",
+          "searchVolume": 0,
+          "clicks": 0,
+          "cpc": null,
+          "difficulty": null,
+          "globalSearchVolume": null,
+          "trafficPotential": null
+        }
+      }
+    },
+    {
+      "keyword": "reddit account banned",
+      "cluster_id": "reddit-ban-and-compliance-guides",
+      "intent": "informational",
+      "target": "/blog",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "reddit account banned",
+          "searchVolume": 150,
+          "clicks": 0,
+          "cpc": null,
+          "difficulty": 0,
+          "globalSearchVolume": 350,
+          "trafficPotential": 10
+        }
+      }
+    },
+    {
+      "keyword": "reddit account suspended",
+      "cluster_id": "reddit-ban-and-compliance-guides",
+      "intent": "informational",
+      "target": "/blog",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "reddit account suspended",
+          "searchVolume": 100,
+          "clicks": 106,
+          "cpc": null,
+          "difficulty": 0,
+          "globalSearchVolume": 300,
+          "trafficPotential": 90
+        }
+      }
+    },
+    {
+      "keyword": "reddit shadowban",
+      "cluster_id": "reddit-ban-and-compliance-guides",
+      "intent": "informational",
+      "target": "/blog",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "reddit shadowban",
+          "searchVolume": 600,
+          "clicks": 795,
+          "cpc": null,
+          "difficulty": 0,
+          "globalSearchVolume": 900,
+          "trafficPotential": 1600
+        }
+      }
+    },
+    {
+      "keyword": "reddit shadow banned",
+      "cluster_id": "reddit-ban-and-compliance-guides",
+      "intent": "informational",
+      "target": "/blog",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "reddit shadow banned",
+          "searchVolume": 20,
+          "clicks": 23,
+          "cpc": null,
+          "difficulty": null,
+          "globalSearchVolume": 20,
+          "trafficPotential": null
+        }
+      }
+    },
+    {
+      "keyword": "how to avoid reddit shadowban",
+      "cluster_id": "reddit-ban-and-compliance-guides",
+      "intent": "informational",
+      "target": "/blog",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "how to avoid reddit shadowban",
+          "searchVolume": 10,
+          "clicks": 0,
+          "cpc": null,
+          "difficulty": null,
+          "globalSearchVolume": 10,
+          "trafficPotential": null
+        }
+      }
+    },
+    {
+      "keyword": "reddit spam rules",
+      "cluster_id": "reddit-ban-and-compliance-guides",
+      "intent": "informational",
+      "target": "/blog",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "reddit spam rules",
+          "searchVolume": 0,
+          "clicks": 0,
+          "cpc": null,
+          "difficulty": null,
+          "globalSearchVolume": 10,
+          "trafficPotential": null
+        }
+      }
+    },
+    {
+      "keyword": "reddit self promotion rules",
+      "cluster_id": "reddit-ban-and-compliance-guides",
+      "intent": "informational",
+      "target": "/blog",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "reddit self promotion rules",
+          "searchVolume": 70,
+          "clicks": 0,
+          "cpc": null,
+          "difficulty": 3,
+          "globalSearchVolume": 100,
+          "trafficPotential": 90
+        }
+      }
+    },
+    {
+      "keyword": "reddit promotion rules",
+      "cluster_id": "reddit-ban-and-compliance-guides",
+      "intent": "informational",
+      "target": "/blog",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "reddit promotion rules",
+          "searchVolume": 0,
+          "clicks": 0,
+          "cpc": null,
+          "difficulty": null,
+          "globalSearchVolume": 0,
+          "trafficPotential": null
+        }
+      }
+    },
+    {
+      "keyword": "reddit marketing rules",
+      "cluster_id": "reddit-ban-and-compliance-guides",
+      "intent": "informational",
+      "target": "/blog",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "reddit marketing rules",
+          "searchVolume": 0,
+          "clicks": 0,
+          "cpc": null,
+          "difficulty": null,
+          "globalSearchVolume": null,
+          "trafficPotential": null
+        }
+      }
+    },
+    {
+      "keyword": "reddit subreddit rules",
+      "cluster_id": "reddit-ban-and-compliance-guides",
+      "intent": "informational",
+      "target": "/blog",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "reddit subreddit rules",
+          "searchVolume": 0,
+          "clicks": 0,
+          "cpc": null,
+          "difficulty": null,
+          "globalSearchVolume": 10,
+          "trafficPotential": null
+        }
+      }
+    },
+    {
+      "keyword": "reddit ban evasion",
+      "cluster_id": "reddit-ban-and-compliance-guides",
+      "intent": "informational",
+      "target": "/blog",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "reddit ban evasion",
+          "searchVolume": 70,
+          "clicks": 0,
+          "cpc": null,
+          "difficulty": 0,
+          "globalSearchVolume": 250,
+          "trafficPotential": 90
+        }
+      }
+    },
+    {
+      "keyword": "why does reddit keep banning me",
+      "cluster_id": "reddit-ban-and-compliance-guides",
+      "intent": "informational",
+      "target": "/blog",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "why does reddit keep banning me",
+          "searchVolume": 10,
+          "clicks": 0,
+          "cpc": null,
+          "difficulty": null,
+          "globalSearchVolume": 10,
+          "trafficPotential": null
+        }
+      }
+    },
+    {
+      "keyword": "why was my reddit account banned",
+      "cluster_id": "reddit-ban-and-compliance-guides",
+      "intent": "informational",
+      "target": "/blog",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "why was my reddit account banned",
+          "searchVolume": 80,
+          "clicks": 0,
+          "cpc": null,
+          "difficulty": null,
+          "globalSearchVolume": 100,
+          "trafficPotential": null
+        }
+      }
+    },
+    {
+      "keyword": "reddit account warming",
+      "cluster_id": "reddit-account-trust-guides",
+      "intent": "informational",
+      "target": "/blog",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "reddit account warming",
+          "searchVolume": 0,
+          "clicks": 0,
+          "cpc": null,
+          "difficulty": null,
+          "globalSearchVolume": null,
+          "trafficPotential": null
+        }
+      }
+    },
+    {
+      "keyword": "how to warm up a reddit account",
+      "cluster_id": "reddit-account-trust-guides",
+      "intent": "informational",
+      "target": "/blog",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "how to warm up a reddit account",
+          "searchVolume": 0,
+          "clicks": 0,
+          "cpc": null,
+          "difficulty": null,
+          "globalSearchVolume": 10,
+          "trafficPotential": null
+        }
+      }
+    },
+    {
+      "keyword": "reddit account age",
+      "cluster_id": "reddit-account-trust-guides",
+      "intent": "informational",
+      "target": "/blog",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "reddit account age",
+          "searchVolume": 10,
+          "clicks": 6,
+          "cpc": null,
+          "difficulty": null,
+          "globalSearchVolume": 10,
+          "trafficPotential": null
+        }
+      }
+    },
+    {
+      "keyword": "how to get reddit karma",
+      "cluster_id": "reddit-account-trust-guides",
+      "intent": "informational",
+      "target": "/blog",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "how to get reddit karma",
+          "searchVolume": 700,
+          "clicks": 767,
+          "cpc": 0.02,
+          "difficulty": 0,
+          "globalSearchVolume": 900,
+          "trafficPotential": 1400
+        }
+      }
+    },
+    {
+      "keyword": "how to build reddit karma",
+      "cluster_id": "reddit-account-trust-guides",
+      "intent": "informational",
+      "target": "/blog",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "how to build reddit karma",
+          "searchVolume": 20,
+          "clicks": 0,
+          "cpc": null,
+          "difficulty": 0,
+          "globalSearchVolume": 20,
+          "trafficPotential": 1300
+        }
+      }
+    },
+    {
+      "keyword": "reddit karma requirements",
+      "cluster_id": "reddit-account-trust-guides",
+      "intent": "informational",
+      "target": "/blog",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "reddit karma requirements",
+          "searchVolume": 10,
+          "clicks": 0,
+          "cpc": null,
+          "difficulty": 1,
+          "globalSearchVolume": 20,
+          "trafficPotential": 30
+        }
+      }
+    },
+    {
+      "keyword": "reddit posting requirements",
+      "cluster_id": "reddit-account-trust-guides",
+      "intent": "informational",
+      "target": "/blog",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "reddit posting requirements",
+          "searchVolume": 0,
+          "clicks": 0,
+          "cpc": null,
+          "difficulty": null,
+          "globalSearchVolume": null,
+          "trafficPotential": null
+        }
+      }
+    },
+    {
+      "keyword": "reddit account restrictions",
+      "cluster_id": "reddit-account-trust-guides",
+      "intent": "informational",
+      "target": "/blog",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "reddit account restrictions",
+          "searchVolume": 0,
+          "clicks": 0,
+          "cpc": null,
+          "difficulty": null,
+          "globalSearchVolume": null,
+          "trafficPotential": null
+        }
+      }
+    },
+    {
+      "keyword": "reddit posting limits",
+      "cluster_id": "reddit-account-trust-guides",
+      "intent": "informational",
+      "target": "/blog",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "reddit posting limits",
+          "searchVolume": 0,
+          "clicks": 0,
+          "cpc": null,
+          "difficulty": null,
+          "globalSearchVolume": 0,
+          "trafficPotential": null
+        }
+      }
+    },
+    {
+      "keyword": "reddit new account restrictions",
+      "cluster_id": "reddit-account-trust-guides",
+      "intent": "informational",
+      "target": "/blog",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "reddit new account restrictions",
+          "searchVolume": 10,
+          "clicks": 0,
+          "cpc": null,
+          "difficulty": null,
+          "globalSearchVolume": 10,
+          "trafficPotential": null
+        }
+      }
+    },
+    {
+      "keyword": "reddit anti spam",
+      "cluster_id": "reddit-account-trust-guides",
+      "intent": "informational",
+      "target": "/blog",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "reddit anti spam",
+          "searchVolume": 0,
+          "clicks": 0,
+          "cpc": null,
+          "difficulty": null,
+          "globalSearchVolume": null,
+          "trafficPotential": null
+        }
+      }
+    },
+    {
+      "keyword": "reddit spam filter",
+      "cluster_id": "reddit-account-trust-guides",
+      "intent": "informational",
+      "target": "/blog",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "reddit spam filter",
+          "searchVolume": 0,
+          "clicks": 5,
+          "cpc": null,
+          "difficulty": null,
+          "globalSearchVolume": 10,
+          "trafficPotential": null
+        }
+      }
+    },
+    {
+      "keyword": "reddit post removed by moderators",
+      "cluster_id": "reddit-account-trust-guides",
+      "intent": "informational",
+      "target": "/blog",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "reddit post removed by moderators",
+          "searchVolume": 0,
+          "clicks": 0,
+          "cpc": null,
+          "difficulty": null,
+          "globalSearchVolume": null,
+          "trafficPotential": null
+        }
+      }
+    },
+    {
+      "keyword": "reddit post keeps getting removed",
+      "cluster_id": "reddit-account-trust-guides",
+      "intent": "informational",
+      "target": "/blog",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "reddit post keeps getting removed",
+          "searchVolume": 0,
+          "clicks": 0,
+          "cpc": null,
+          "difficulty": null,
+          "globalSearchVolume": 0,
+          "trafficPotential": null
+        }
+      }
+    },
+    {
+      "keyword": "reddit content policy",
+      "cluster_id": "reddit-account-trust-guides",
+      "intent": "informational",
+      "target": "/blog",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "reddit content policy",
+          "searchVolume": 50,
+          "clicks": 48,
+          "cpc": null,
+          "difficulty": 15,
+          "globalSearchVolume": 90,
+          "trafficPotential": 350
+        }
+      }
+    },
+    {
+      "keyword": "reddit community guidelines",
+      "cluster_id": "reddit-account-trust-guides",
+      "intent": "informational",
+      "target": "/blog",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "reddit community guidelines",
+          "searchVolume": 30,
+          "clicks": 0,
+          "cpc": null,
+          "difficulty": null,
+          "globalSearchVolume": 70,
+          "trafficPotential": null
+        }
+      }
+    },
+    {
+      "keyword": "reddit moderator approval",
+      "cluster_id": "reddit-account-trust-guides",
+      "intent": "informational",
+      "target": "/blog",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "reddit moderator approval",
+          "searchVolume": 0,
+          "clicks": 0,
+          "cpc": null,
+          "difficulty": null,
+          "globalSearchVolume": 0,
+          "trafficPotential": null
+        }
+      }
+    },
+    {
+      "keyword": "how to post in a subreddit",
+      "cluster_id": "reddit-account-trust-guides",
+      "intent": "informational",
+      "target": "/blog",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "how to post in a subreddit",
+          "searchVolume": 50,
+          "clicks": 55,
+          "cpc": null,
+          "difficulty": 0,
+          "globalSearchVolume": 100,
+          "trafficPotential": 500
+        }
+      }
+    },
+    {
+      "keyword": "reddit marketing without ads",
+      "cluster_id": "reddit-native-marketing-guides",
+      "intent": "informational",
+      "target": "/blog",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "reddit marketing without ads",
+          "searchVolume": 0,
+          "clicks": 0,
+          "cpc": null,
+          "difficulty": null,
+          "globalSearchVolume": null,
+          "trafficPotential": null
+        }
+      }
+    },
+    {
+      "keyword": "organic reddit strategy",
+      "cluster_id": "reddit-native-marketing-guides",
+      "intent": "informational",
+      "target": "/blog",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "organic reddit strategy",
+          "searchVolume": 0,
+          "clicks": 0,
+          "cpc": null,
+          "difficulty": null,
+          "globalSearchVolume": null,
+          "trafficPotential": null
+        }
+      }
+    },
+    {
+      "keyword": "how to build a brand on reddit",
+      "cluster_id": "reddit-native-marketing-guides",
+      "intent": "informational",
+      "target": "/blog",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "how to build a brand on reddit",
+          "searchVolume": 0,
+          "clicks": 0,
+          "cpc": null,
+          "difficulty": null,
+          "globalSearchVolume": null,
+          "trafficPotential": null
+        }
+      }
+    },
+    {
+      "keyword": "how brands should use reddit",
+      "cluster_id": "reddit-native-marketing-guides",
+      "intent": "informational",
+      "target": "/blog",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "how brands should use reddit",
+          "searchVolume": 0,
+          "clicks": 0,
+          "cpc": null,
+          "difficulty": null,
+          "globalSearchVolume": null,
+          "trafficPotential": null
+        }
+      }
+    },
+    {
+      "keyword": "how to engage on reddit",
+      "cluster_id": "reddit-native-marketing-guides",
+      "intent": "informational",
+      "target": "/blog",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "how to engage on reddit",
+          "searchVolume": 0,
+          "clicks": 0,
+          "cpc": null,
+          "difficulty": null,
+          "globalSearchVolume": null,
+          "trafficPotential": null
+        }
+      }
+    },
+    {
+      "keyword": "how to join reddit conversations",
+      "cluster_id": "reddit-native-marketing-guides",
+      "intent": "informational",
+      "target": "/blog",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "how to join reddit conversations",
+          "searchVolume": 0,
+          "clicks": 0,
+          "cpc": null,
+          "difficulty": null,
+          "globalSearchVolume": null,
+          "trafficPotential": null
+        }
+      }
+    },
+    {
+      "keyword": "how to mention your brand on reddit",
+      "cluster_id": "reddit-native-marketing-guides",
+      "intent": "informational",
+      "target": "/blog",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "how to mention your brand on reddit",
+          "searchVolume": 0,
+          "clicks": 0,
+          "cpc": null,
+          "difficulty": null,
+          "globalSearchVolume": null,
+          "trafficPotential": null
+        }
+      }
+    },
+    {
+      "keyword": "reddit authentic marketing",
+      "cluster_id": "reddit-native-marketing-guides",
+      "intent": "informational",
+      "target": "/blog",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "reddit authentic marketing",
+          "searchVolume": 0,
+          "clicks": 0,
+          "cpc": null,
+          "difficulty": null,
+          "globalSearchVolume": null,
+          "trafficPotential": null
+        }
+      }
+    },
+    {
+      "keyword": "reddit native marketing",
+      "cluster_id": "reddit-native-marketing-guides",
+      "intent": "informational",
+      "target": "/blog",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "reddit native marketing",
+          "searchVolume": 0,
+          "clicks": 0,
+          "cpc": null,
+          "difficulty": null,
+          "globalSearchVolume": null,
+          "trafficPotential": null
+        }
+      }
+    },
+    {
+      "keyword": "reddit community marketing strategy",
+      "cluster_id": "reddit-native-marketing-guides",
+      "intent": "informational",
+      "target": "/blog",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "reddit community marketing strategy",
+          "searchVolume": 0,
+          "clicks": 0,
+          "cpc": null,
+          "difficulty": null,
+          "globalSearchVolume": 0,
+          "trafficPotential": null
+        }
+      }
+    },
+    {
+      "keyword": "reddit engagement strategy",
+      "cluster_id": "reddit-native-marketing-guides",
+      "intent": "informational",
+      "target": "/blog",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "reddit engagement strategy",
+          "searchVolume": 0,
+          "clicks": 0,
+          "cpc": null,
+          "difficulty": null,
+          "globalSearchVolume": null,
+          "trafficPotential": null
+        }
+      }
+    },
+    {
+      "keyword": "reddit brand strategy",
+      "cluster_id": "reddit-native-marketing-guides",
+      "intent": "informational",
+      "target": "/blog",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "reddit brand strategy",
+          "searchVolume": 0,
+          "clicks": 0,
+          "cpc": null,
+          "difficulty": null,
+          "globalSearchVolume": 10,
           "trafficPotential": null
         }
       }
