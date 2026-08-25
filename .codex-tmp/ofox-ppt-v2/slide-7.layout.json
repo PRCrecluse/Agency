@@ -1,0 +1,1781 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/i8qydz",
+    "id": "i8qydz",
+    "slide": 7,
+    "layoutId": "88dbbc44-7d33-448a-a81d-f37e40702ffa",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "dfbc83ba-e4e5-4dbd-abc1-f69af290a2bd",
+    "masterLayoutName": "Master",
+    "backgroundColor": "#F4F4F4",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "bg1": "#FFFFFF",
+      "bg2": "#000000",
+      "tx1": "#1F1F1F",
+      "tx2": "#FFFFFF",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "typefaces": [
+      "+mn-lt"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "88dbbc44-7d33-448a-a81d-f37e40702ffa",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "dfbc83ba-e4e5-4dbd-abc1-f69af290a2bd",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "dfbc83ba-e4e5-4dbd-abc1-f69af290a2bd",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/dorqlwv2",
+      "id": "1",
+      "bbox": [
+        64,
+        34,
+        140,
+        32
+      ],
+      "geometry": "rect",
+      "text": "oFox.ai",
+      "textPreview": "oFox.ai",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "fontSize": 24,
+        "typeface": "+mn-lt",
+        "color": "#1F1F1F",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "oFox.ai"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "oFox.ai",
+          "resolvedTextStyle": {
+            "fontSize": 24,
+            "color": "#1F1F1F",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "oFox.ai",
+              "fontSize": 24,
+              "color": "#1F1F1F",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/qlgrq1wb",
+      "id": "2",
+      "bbox": [
+        1128,
+        38,
+        64,
+        28
+      ],
+      "geometry": "rect",
+      "text": "06",
+      "textPreview": "06",
+      "resolvedFontSize": 18,
+      "resolvedTextStyle": {
+        "fontSize": 18,
+        "typeface": "+mn-lt",
+        "color": "#FF5000",
+        "bold": true,
+        "alignment": "right",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "06"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "06",
+          "resolvedTextStyle": {
+            "fontSize": 18,
+            "color": "#FF5000",
+            "bold": true,
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "06",
+              "fontSize": 18,
+              "color": "#FF5000",
+              "bold": true,
+              "alignment": "right"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/bmp8j6dw",
+      "id": "3",
+      "bbox": [
+        64,
+        102,
+        500,
+        24
+      ],
+      "geometry": "rect",
+      "text": "COMMUNITY SELECTION",
+      "textPreview": "COMMUNITY SELECTION",
+      "resolvedFontSize": 14,
+      "resolvedTextStyle": {
+        "fontSize": 14,
+        "typeface": "+mn-lt",
+        "color": "#FF5000",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "COMMUNITY SELECTION"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "COMMUNITY SELECTION",
+          "resolvedTextStyle": {
+            "fontSize": 14,
+            "color": "#FF5000",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "COMMUNITY SELECTION",
+              "fontSize": 14,
+              "color": "#FF5000",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/0bi9wbed",
+      "id": "4",
+      "bbox": [
+        64,
+        138,
+        1140,
+        64
+      ],
+      "geometry": "rect",
+      "text": "社区只做选择：每个思路发到最匹配的地方",
+      "textPreview": "社区只做选择：每个思路发到最匹配的地方",
+      "resolvedFontSize": 42,
+      "resolvedTextStyle": {
+        "fontSize": 42,
+        "typeface": "+mn-lt",
+        "color": "#1F1F1F",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "社区只做选择：每个思路发到最匹配的地方"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "社区只做选择：每个思路发到最匹配的地方",
+          "resolvedTextStyle": {
+            "fontSize": 42,
+            "color": "#1F1F1F",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "社区只做选择：每个思路发到最匹配的地方",
+              "fontSize": 42,
+              "color": "#1F1F1F",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/lcrqpgvy",
+      "id": "5",
+      "bbox": [
+        72,
+        226,
+        260,
+        28
+      ],
+      "geometry": "rect",
+      "text": "社区",
+      "textPreview": "社区",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "fontSize": 16,
+        "typeface": "+mn-lt",
+        "color": "#6B6B6B",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "社区"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "社区",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "color": "#6B6B6B",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "社区",
+              "fontSize": 16,
+              "color": "#6B6B6B",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/yp0ru1wn",
+      "id": "6",
+      "bbox": [
+        400,
+        226,
+        420,
+        28
+      ],
+      "geometry": "rect",
+      "text": "适合的讨论",
+      "textPreview": "适合的讨论",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "fontSize": 16,
+        "typeface": "+mn-lt",
+        "color": "#6B6B6B",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "适合的讨论"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "适合的讨论",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "color": "#6B6B6B",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "适合的讨论",
+              "fontSize": 16,
+              "color": "#6B6B6B",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/zq98n6d8",
+      "id": "7",
+      "bbox": [
+        930,
+        226,
+        240,
+        28
+      ],
+      "geometry": "rect",
+      "text": "对应思路",
+      "textPreview": "对应思路",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "fontSize": 16,
+        "typeface": "+mn-lt",
+        "color": "#6B6B6B",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "对应思路"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "对应思路",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "color": "#6B6B6B",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "对应思路",
+              "fontSize": 16,
+              "color": "#6B6B6B",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/8f290vep",
+      "id": "8",
+      "bbox": [
+        72,
+        272,
+        280,
+        32
+      ],
+      "geometry": "rect",
+      "text": "r/GeminiAI",
+      "textPreview": "r/GeminiAI",
+      "resolvedFontSize": 22,
+      "resolvedTextStyle": {
+        "fontSize": 22,
+        "typeface": "+mn-lt",
+        "color": "#1F1F1F",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "r/GeminiAI"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "r/GeminiAI",
+          "resolvedTextStyle": {
+            "fontSize": 22,
+            "color": "#1F1F1F",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "r/GeminiAI",
+              "fontSize": 22,
+              "color": "#1F1F1F",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 9,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/9gbqtgva",
+      "id": "9",
+      "bbox": [
+        400,
+        272,
+        440,
+        32
+      ],
+      "geometry": "rect",
+      "text": "模型体验 / 同题对比",
+      "textPreview": "模型体验 / 同题对比",
+      "resolvedFontSize": 19,
+      "resolvedTextStyle": {
+        "fontSize": 19,
+        "typeface": "+mn-lt",
+        "color": "#6B6B6B",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "模型体验 / 同题对比"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "模型体验 / 同题对比",
+          "resolvedTextStyle": {
+            "fontSize": 19,
+            "color": "#6B6B6B",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "模型体验 / 同题对比",
+              "fontSize": 19,
+              "color": "#6B6B6B",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 10,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/1krqhcnu",
+      "id": "10",
+      "bbox": [
+        930,
+        272,
+        240,
+        32
+      ],
+      "geometry": "rect",
+      "text": "思路 3、思路 4",
+      "textPreview": "思路 3、思路 4",
+      "resolvedFontSize": 19,
+      "resolvedTextStyle": {
+        "fontSize": 19,
+        "typeface": "+mn-lt",
+        "color": "#FF5000",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "思路 3、思路 4"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "思路 3、思路 4",
+          "resolvedTextStyle": {
+            "fontSize": 19,
+            "color": "#FF5000",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "思路 3、思路 4",
+              "fontSize": 19,
+              "color": "#FF5000",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 11,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/gjip87m9",
+      "id": "11",
+      "bbox": [
+        72,
+        314,
+        1120,
+        1
+      ],
+      "geometry": "rect",
+      "fillColor": "#DEDEDE",
+      "lineWidth": 0
+    },
+    {
+      "order": 12,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/fi98f25o",
+      "id": "12",
+      "bbox": [
+        72,
+        330,
+        280,
+        32
+      ],
+      "geometry": "rect",
+      "text": "r/LLMDevs",
+      "textPreview": "r/LLMDevs",
+      "resolvedFontSize": 22,
+      "resolvedTextStyle": {
+        "fontSize": 22,
+        "typeface": "+mn-lt",
+        "color": "#1F1F1F",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "r/LLMDevs"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "r/LLMDevs",
+          "resolvedTextStyle": {
+            "fontSize": 22,
+            "color": "#1F1F1F",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "r/LLMDevs",
+              "fontSize": 22,
+              "color": "#1F1F1F",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 13,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/eh076xo3",
+      "id": "13",
+      "bbox": [
+        400,
+        330,
+        440,
+        32
+      ],
+      "geometry": "rect",
+      "text": "API 成本 / 工程测试",
+      "textPreview": "API 成本 / 工程测试",
+      "resolvedFontSize": 19,
+      "resolvedTextStyle": {
+        "fontSize": 19,
+        "typeface": "+mn-lt",
+        "color": "#6B6B6B",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "API 成本 / 工程测试"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "API 成本 / 工程测试",
+          "resolvedTextStyle": {
+            "fontSize": 19,
+            "color": "#6B6B6B",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "API 成本 / 工程测试",
+              "fontSize": 19,
+              "color": "#6B6B6B",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 14,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/pobqlcnq",
+      "id": "14",
+      "bbox": [
+        930,
+        330,
+        240,
+        32
+      ],
+      "geometry": "rect",
+      "text": "思路 1、思路 4",
+      "textPreview": "思路 1、思路 4",
+      "resolvedFontSize": 19,
+      "resolvedTextStyle": {
+        "fontSize": 19,
+        "typeface": "+mn-lt",
+        "color": "#FF5000",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "思路 1、思路 4"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "思路 1、思路 4",
+          "resolvedTextStyle": {
+            "fontSize": 19,
+            "color": "#FF5000",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "思路 1、思路 4",
+              "fontSize": 19,
+              "color": "#FF5000",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 15,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/on29c7ml",
+      "id": "15",
+      "bbox": [
+        72,
+        372,
+        1120,
+        1
+      ],
+      "geometry": "rect",
+      "fillColor": "#DEDEDE",
+      "lineWidth": 0
+    },
+    {
+      "order": 16,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/nmt8jm50",
+      "id": "16",
+      "bbox": [
+        72,
+        388,
+        280,
+        32
+      ],
+      "geometry": "rect",
+      "text": "r/kimi",
+      "textPreview": "r/kimi",
+      "resolvedFontSize": 22,
+      "resolvedTextStyle": {
+        "fontSize": 22,
+        "typeface": "+mn-lt",
+        "color": "#1F1F1F",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "r/kimi"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "r/kimi",
+          "resolvedTextStyle": {
+            "fontSize": 22,
+            "color": "#1F1F1F",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "r/kimi",
+              "fontSize": 22,
+              "color": "#1F1F1F",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 17,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/2lkrah4f",
+      "id": "17",
+      "bbox": [
+        400,
+        388,
+        440,
+        32
+      ],
+      "geometry": "rect",
+      "text": "中国模型 / Agent 用户",
+      "textPreview": "中国模型 / Agent 用户",
+      "resolvedFontSize": 19,
+      "resolvedTextStyle": {
+        "fontSize": 19,
+        "typeface": "+mn-lt",
+        "color": "#6B6B6B",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "中国模型 / Agent 用户"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "中国模型 / Agent 用户",
+          "resolvedTextStyle": {
+            "fontSize": 19,
+            "color": "#6B6B6B",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "中国模型 / Agent 用户",
+              "fontSize": 19,
+              "color": "#6B6B6B",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 18,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/5s7q9snm",
+      "id": "18",
+      "bbox": [
+        930,
+        388,
+        240,
+        32
+      ],
+      "geometry": "rect",
+      "text": "思路 3",
+      "textPreview": "思路 3",
+      "resolvedFontSize": 19,
+      "resolvedTextStyle": {
+        "fontSize": 19,
+        "typeface": "+mn-lt",
+        "color": "#FF5000",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "思路 3"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "思路 3",
+          "resolvedTextStyle": {
+            "fontSize": 19,
+            "color": "#FF5000",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "思路 3",
+              "fontSize": 19,
+              "color": "#FF5000",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 19,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/4ryp0n61",
+      "id": "19",
+      "bbox": [
+        72,
+        430,
+        1120,
+        1
+      ],
+      "geometry": "rect",
+      "fillColor": "#DEDEDE",
+      "lineWidth": 0
+    },
+    {
+      "order": 20,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/wv29gnex",
+      "id": "20",
+      "bbox": [
+        72,
+        446,
+        280,
+        32
+      ],
+      "geometry": "rect",
+      "text": "r/LocalLLaMA",
+      "textPreview": "r/LocalLLaMA",
+      "resolvedFontSize": 22,
+      "resolvedTextStyle": {
+        "fontSize": 22,
+        "typeface": "+mn-lt",
+        "color": "#1F1F1F",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "r/LocalLLaMA"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "r/LocalLLaMA",
+          "resolvedTextStyle": {
+            "fontSize": 22,
+            "color": "#1F1F1F",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "r/LocalLLaMA",
+              "fontSize": 22,
+              "color": "#1F1F1F",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 21,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/xwbqpsvi",
+      "id": "21",
+      "bbox": [
+        400,
+        446,
+        440,
+        32
+      ],
+      "geometry": "rect",
+      "text": "DeepSeek / Qwen / 开源模型",
+      "textPreview": "DeepSeek / Qwen / 开源模型",
+      "resolvedFontSize": 19,
+      "resolvedTextStyle": {
+        "fontSize": 19,
+        "typeface": "+mn-lt",
+        "color": "#6B6B6B",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "DeepSeek / Qwen / 开源模型"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "DeepSeek / Qwen / 开源模型",
+          "resolvedTextStyle": {
+            "fontSize": 19,
+            "color": "#6B6B6B",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "DeepSeek / Qwen / 开源模型",
+              "fontSize": 19,
+              "color": "#6B6B6B",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 22,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/atk7edwr",
+      "id": "22",
+      "bbox": [
+        930,
+        446,
+        240,
+        32
+      ],
+      "geometry": "rect",
+      "text": "思路 1、思路 3",
+      "textPreview": "思路 1、思路 3",
+      "resolvedFontSize": 19,
+      "resolvedTextStyle": {
+        "fontSize": 19,
+        "typeface": "+mn-lt",
+        "color": "#FF5000",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "思路 1、思路 3"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "思路 1、思路 3",
+          "resolvedTextStyle": {
+            "fontSize": 19,
+            "color": "#FF5000",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "思路 1、思路 3",
+              "fontSize": 19,
+              "color": "#FF5000",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 23,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/vut8nidc",
+      "id": "23",
+      "bbox": [
+        72,
+        488,
+        1120,
+        1
+      ],
+      "geometry": "rect",
+      "fillColor": "#DEDEDE",
+      "lineWidth": 0
+    },
+    {
+      "order": 24,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/kzm9k7e9",
+      "id": "24",
+      "bbox": [
+        72,
+        504,
+        280,
+        32
+      ],
+      "geometry": "rect",
+      "text": "r/StableDiffusion",
+      "textPreview": "r/StableDiffusion",
+      "resolvedFontSize": 22,
+      "resolvedTextStyle": {
+        "fontSize": 22,
+        "typeface": "+mn-lt",
+        "color": "#1F1F1F",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "r/StableDiffusion"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "r/StableDiffusion",
+          "resolvedTextStyle": {
+            "fontSize": 22,
+            "color": "#1F1F1F",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "r/StableDiffusion",
+              "fontSize": 22,
+              "color": "#1F1F1F",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 25,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/50vqtcve",
+      "id": "25",
+      "bbox": [
+        400,
+        504,
+        440,
+        32
+      ],
+      "geometry": "rect",
+      "text": "图像与视频生成",
+      "textPreview": "图像与视频生成",
+      "resolvedFontSize": 19,
+      "resolvedTextStyle": {
+        "fontSize": 19,
+        "typeface": "+mn-lt",
+        "color": "#6B6B6B",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "图像与视频生成"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "图像与视频生成",
+          "resolvedTextStyle": {
+            "fontSize": 19,
+            "color": "#6B6B6B",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "图像与视频生成",
+              "fontSize": 19,
+              "color": "#6B6B6B",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 26,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ixkrixw3",
+      "id": "26",
+      "bbox": [
+        930,
+        504,
+        240,
+        32
+      ],
+      "geometry": "rect",
+      "text": "思路 2、思路 3",
+      "textPreview": "思路 2、思路 3",
+      "resolvedFontSize": 19,
+      "resolvedTextStyle": {
+        "fontSize": 19,
+        "typeface": "+mn-lt",
+        "color": "#FF5000",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "思路 2、思路 3"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "思路 2、思路 3",
+          "resolvedTextStyle": {
+            "fontSize": 19,
+            "color": "#FF5000",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "思路 2、思路 3",
+              "fontSize": 19,
+              "color": "#FF5000",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 27,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/jyt8r2do",
+      "id": "27",
+      "bbox": [
+        72,
+        546,
+        1120,
+        1
+      ],
+      "geometry": "rect",
+      "fillColor": "#DEDEDE",
+      "lineWidth": 0
+    },
+    {
+      "order": 28,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/s3m9o7e5",
+      "id": "28",
+      "bbox": [
+        72,
+        562,
+        280,
+        32
+      ],
+      "geometry": "rect",
+      "text": "r/singularity",
+      "textPreview": "r/singularity",
+      "resolvedFontSize": 22,
+      "resolvedTextStyle": {
+        "fontSize": 22,
+        "typeface": "+mn-lt",
+        "color": "#1F1F1F",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "r/singularity"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "r/singularity",
+          "resolvedTextStyle": {
+            "fontSize": 22,
+            "color": "#1F1F1F",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "r/singularity",
+              "fontSize": 22,
+              "color": "#1F1F1F",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 29,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/t4vqxcvq",
+      "id": "29",
+      "bbox": [
+        400,
+        562,
+        440,
+        32
+      ],
+      "geometry": "rect",
+      "text": "模型发布热点",
+      "textPreview": "模型发布热点",
+      "resolvedFontSize": 19,
+      "resolvedTextStyle": {
+        "fontSize": 19,
+        "typeface": "+mn-lt",
+        "color": "#6B6B6B",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "模型发布热点"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "模型发布热点",
+          "resolvedTextStyle": {
+            "fontSize": 19,
+            "color": "#6B6B6B",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "模型发布热点",
+              "fontSize": 19,
+              "color": "#6B6B6B",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 30,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/3yhcn6xs",
+      "id": "30",
+      "bbox": [
+        930,
+        562,
+        240,
+        32
+      ],
+      "geometry": "rect",
+      "text": "思路 2、思路 4",
+      "textPreview": "思路 2、思路 4",
+      "resolvedFontSize": 19,
+      "resolvedTextStyle": {
+        "fontSize": 19,
+        "typeface": "+mn-lt",
+        "color": "#FF5000",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "思路 2、思路 4"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "思路 2、思路 4",
+          "resolvedTextStyle": {
+            "fontSize": 19,
+            "color": "#FF5000",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "思路 2、思路 4",
+              "fontSize": 19,
+              "color": "#FF5000",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 31,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/2xobe1g7",
+      "id": "31",
+      "bbox": [
+        72,
+        604,
+        1120,
+        1
+      ],
+      "geometry": "rect",
+      "fillColor": "#DEDEDE",
+      "lineWidth": 0
+    },
+    {
+      "order": 32,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/pkzupgfy",
+      "id": "32",
+      "bbox": [
+        72,
+        640,
+        1120,
+        32
+      ],
+      "geometry": "rect",
+      "text": "优先顺序：先做 Wan 3.0 视频 → 再做折扣价格对照 → 最后准备 GPT‑6 发布模板。",
+      "textPreview": "优先顺序：先做 Wan 3.0 视频 → 再做折扣价格对照 → 最后准备 GPT‑6 发布模板。",
+      "resolvedFontSize": 20,
+      "resolvedTextStyle": {
+        "fontSize": 20,
+        "typeface": "+mn-lt",
+        "color": "#1F1F1F",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "优先顺序：先做 Wan 3.0 视频 → 再做折扣价格对照 → 最后准备 GPT‑6 发布模板。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "优先顺序：先做 Wan 3.0 视频 → 再做折扣价格对照 → 最后准备 GPT‑6 发布模板。",
+          "resolvedTextStyle": {
+            "fontSize": 20,
+            "color": "#1F1F1F",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "优先顺序：先做 Wan 3.0 视频 → 再做折扣价格对照 → 最后准备 GPT‑6 发布模板。",
+              "fontSize": 20,
+              "color": "#1F1F1F",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    }
+  ],
+  "composeRuns": []
+}

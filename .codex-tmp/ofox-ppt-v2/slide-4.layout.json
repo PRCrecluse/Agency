@@ -1,0 +1,932 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/l3b4g3",
+    "id": "l3b4g3",
+    "slide": 4,
+    "layoutId": "88dbbc44-7d33-448a-a81d-f37e40702ffa",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "dfbc83ba-e4e5-4dbd-abc1-f69af290a2bd",
+    "masterLayoutName": "Master",
+    "backgroundColor": "#F4F4F4",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "bg1": "#FFFFFF",
+      "bg2": "#000000",
+      "tx1": "#1F1F1F",
+      "tx2": "#FFFFFF",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "typefaces": [
+      "+mn-lt"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "88dbbc44-7d33-448a-a81d-f37e40702ffa",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "dfbc83ba-e4e5-4dbd-abc1-f69af290a2bd",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "dfbc83ba-e4e5-4dbd-abc1-f69af290a2bd",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/hw3i9wva",
+      "id": "1",
+      "bbox": [
+        64,
+        34,
+        140,
+        32
+      ],
+      "geometry": "rect",
+      "text": "oFox.ai",
+      "textPreview": "oFox.ai",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "fontSize": 24,
+        "typeface": "+mn-lt",
+        "color": "#1F1F1F",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "oFox.ai"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "oFox.ai",
+          "resolvedTextStyle": {
+            "fontSize": 24,
+            "color": "#1F1F1F",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "oFox.ai",
+              "fontSize": 24,
+              "color": "#1F1F1F",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/utcze1cz",
+      "id": "2",
+      "bbox": [
+        1128,
+        38,
+        64,
+        28
+      ],
+      "geometry": "rect",
+      "text": "03",
+      "textPreview": "03",
+      "resolvedFontSize": 18,
+      "resolvedTextStyle": {
+        "fontSize": 18,
+        "typeface": "+mn-lt",
+        "color": "#FF5000",
+        "bold": true,
+        "alignment": "right",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "03"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "03",
+          "resolvedTextStyle": {
+            "fontSize": 18,
+            "color": "#FF5000",
+            "bold": true,
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "03",
+              "fontSize": 18,
+              "color": "#FF5000",
+              "bold": true,
+              "alignment": "right"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ful076d4",
+      "id": "3",
+      "bbox": [
+        64,
+        102,
+        500,
+        24
+      ],
+      "geometry": "rect",
+      "text": "IDEA 02",
+      "textPreview": "IDEA 02",
+      "resolvedFontSize": 14,
+      "resolvedTextStyle": {
+        "fontSize": 14,
+        "typeface": "+mn-lt",
+        "color": "#FF5000",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "IDEA 02"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "IDEA 02",
+          "resolvedTextStyle": {
+            "fontSize": 14,
+            "color": "#FF5000",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "IDEA 02",
+              "fontSize": 14,
+              "color": "#FF5000",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/4ze1kbu1",
+      "id": "4",
+      "bbox": [
+        64,
+        138,
+        1140,
+        64
+      ],
+      "geometry": "rect",
+      "text": "Wan 3.0 热点：先让视频结果自己说话",
+      "textPreview": "Wan 3.0 热点：先让视频结果自己说话",
+      "resolvedFontSize": 42,
+      "resolvedTextStyle": {
+        "fontSize": 42,
+        "typeface": "+mn-lt",
+        "color": "#1F1F1F",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Wan 3.0 热点：先让视频结果自己说话"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Wan 3.0 热点：先让视频结果自己说话",
+          "resolvedTextStyle": {
+            "fontSize": 42,
+            "color": "#1F1F1F",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Wan 3.0 热点：先让视频结果自己说话",
+              "fontSize": 42,
+              "color": "#1F1F1F",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/p0nidgvm",
+      "id": "5",
+      "bbox": [
+        72,
+        232,
+        720,
+        360
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#1F1F1F",
+      "lineColor": "#1F1F1F",
+      "lineWidth": 1
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/2xwzi1cv",
+      "id": "6",
+      "bbox": [
+        108,
+        270,
+        130,
+        38
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#FF5000",
+      "lineColor": "#FF5000",
+      "lineWidth": 1
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/3y50b6dg",
+      "id": "7",
+      "bbox": [
+        108,
+        277,
+        130,
+        24
+      ],
+      "geometry": "rect",
+      "text": "WAN 3.0",
+      "textPreview": "WAN 3.0",
+      "resolvedFontSize": 15,
+      "resolvedTextStyle": {
+        "fontSize": 15,
+        "typeface": "+mn-lt",
+        "color": "#FFFFFF",
+        "bold": true,
+        "alignment": "center",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "WAN 3.0"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "WAN 3.0",
+          "resolvedTextStyle": {
+            "fontSize": 15,
+            "color": "#FFFFFF",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "WAN 3.0",
+              "fontSize": 15,
+              "color": "#FFFFFF",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/cne1ovux",
+      "id": "8",
+      "bbox": [
+        108,
+        348,
+        135,
+        32
+      ],
+      "geometry": "rect",
+      "text": "PROMPT",
+      "textPreview": "PROMPT",
+      "resolvedFontSize": 18,
+      "resolvedTextStyle": {
+        "fontSize": 18,
+        "typeface": "+mn-lt",
+        "color": "#A7A7A7",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "PROMPT"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "PROMPT",
+          "resolvedTextStyle": {
+            "fontSize": 18,
+            "color": "#A7A7A7",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "PROMPT",
+              "fontSize": 18,
+              "color": "#A7A7A7",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 9,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/do7ihgbi",
+      "id": "9",
+      "bbox": [
+        285,
+        337,
+        60,
+        50
+      ],
+      "geometry": "rect",
+      "text": "→",
+      "textPreview": "→",
+      "resolvedFontSize": 36,
+      "resolvedTextStyle": {
+        "fontSize": 36,
+        "typeface": "+mn-lt",
+        "color": "#FF5000",
+        "bold": true,
+        "alignment": "center",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "→"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "→",
+          "resolvedTextStyle": {
+            "fontSize": 36,
+            "color": "#FF5000",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "→",
+              "fontSize": 36,
+              "color": "#FF5000",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 10,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/hgb2lcry",
+      "id": "10",
+      "bbox": [
+        388,
+        348,
+        150,
+        32
+      ],
+      "geometry": "rect",
+      "text": "VIDEO",
+      "textPreview": "VIDEO",
+      "resolvedFontSize": 18,
+      "resolvedTextStyle": {
+        "fontSize": 18,
+        "typeface": "+mn-lt",
+        "color": "#FFFFFF",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "VIDEO"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "VIDEO",
+          "resolvedTextStyle": {
+            "fontSize": 18,
+            "color": "#FFFFFF",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "VIDEO",
+              "fontSize": 18,
+              "color": "#FFFFFF",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 11,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/gf2lc7ad",
+      "id": "11",
+      "bbox": [
+        108,
+        430,
+        590,
+        62
+      ],
+      "geometry": "rect",
+      "text": "视频画面是第一屏；正文只解释生成条件。",
+      "textPreview": "视频画面是第一屏；正文只解释生成条件。",
+      "resolvedFontSize": 30,
+      "resolvedTextStyle": {
+        "fontSize": 30,
+        "typeface": "+mn-lt",
+        "color": "#FFFFFF",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "视频画面是第一屏；正文只解释生成条件"
+          },
+          {
+            "index": 2,
+            "text": "。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "视频画面是第一屏；正文只解释生成条件。",
+          "resolvedTextStyle": {
+            "fontSize": 30,
+            "color": "#FFFFFF",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "视频画面是第一屏；正文只解释生成条件。",
+              "fontSize": 30,
+              "color": "#FFFFFF",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 12,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/fetkj29s",
+      "id": "12",
+      "bbox": [
+        108,
+        520,
+        610,
+        30
+      ],
+      "geometry": "rect",
+      "text": "prompt · seed · 时长 · 分辨率 · 生成耗时 · 成本",
+      "textPreview": "prompt · seed · 时长 · 分辨率 · 生成耗时 · 成本",
+      "resolvedFontSize": 18,
+      "resolvedTextStyle": {
+        "fontSize": 18,
+        "typeface": "+mn-lt",
+        "color": "#BDBDBD",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "prompt · seed · 时长 · 分辨率 · 生成耗时 · 成本"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "prompt · seed · 时长 · 分辨率 · 生成耗时 · 成本",
+          "resolvedTextStyle": {
+            "fontSize": 18,
+            "color": "#BDBDBD",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "prompt · seed · 时长 · 分辨率 · 生成耗时 · 成本",
+              "fontSize": 18,
+              "color": "#BDBDBD",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 13,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ud03ahs7",
+      "id": "13",
+      "bbox": [
+        850,
+        250,
+        210,
+        26
+      ],
+      "geometry": "rect",
+      "text": "发布文案",
+      "textPreview": "发布文案",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "fontSize": 16,
+        "typeface": "+mn-lt",
+        "color": "#FF5000",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "发布文案"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "发布文案",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "color": "#FF5000",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "发布文案",
+              "fontSize": 16,
+              "color": "#FF5000",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 14,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/p4b2pwru",
+      "id": "14",
+      "bbox": [
+        850,
+        294,
+        330,
+        124
+      ],
+      "geometry": "rect",
+      "text": "“I tested this prompt on Wan 3.0 on oFox.ai — here’s the result I got.”",
+      "textPreview": "“I tested this prompt on Wan 3.0 on oFox.ai — here’s the result I got.”",
+      "resolvedFontSize": 28,
+      "resolvedTextStyle": {
+        "fontSize": 28,
+        "typeface": "+mn-lt",
+        "color": "#1F1F1F",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 4,
+        "lines": [
+          {
+            "index": 1,
+            "text": "“I tested this prompt"
+          },
+          {
+            "index": 2,
+            "text": "on Wan 3.0 on oFox.ai"
+          },
+          {
+            "index": 3,
+            "text": "— here’s the result I"
+          },
+          {
+            "index": 4,
+            "text": "got.”"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "“I tested this prompt on Wan 3.0 on oFox.ai — here’s the result I got.”",
+          "resolvedTextStyle": {
+            "fontSize": 28,
+            "color": "#1F1F1F",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "“I tested this prompt on Wan 3.0 on oFox.ai — here’s the result I got.”",
+              "fontSize": 28,
+              "color": "#1F1F1F",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 15,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/4j2lgra9",
+      "id": "15",
+      "bbox": [
+        850,
+        470,
+        330,
+        88
+      ],
+      "geometry": "rect",
+      "text": "目标：蹭新模型热度，同时把 oFox.ai 自然放进完整复现信息里。",
+      "textPreview": "目标：蹭新模型热度，同时把 oFox.ai 自然放进完整复现信息里。",
+      "resolvedFontSize": 19,
+      "resolvedTextStyle": {
+        "fontSize": 19,
+        "typeface": "+mn-lt",
+        "color": "#6B6B6B",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "目标：蹭新模型热度，同时把"
+          },
+          {
+            "index": 2,
+            "text": "oFox.ai 自然放进完整复现信息里。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "目标：蹭新模型热度，同时把 oFox.ai 自然放进完整复现信息里。",
+          "resolvedTextStyle": {
+            "fontSize": 19,
+            "color": "#6B6B6B",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "目标：蹭新模型热度，同时把 oFox.ai 自然放进完整复现信息里。",
+              "fontSize": 19,
+              "color": "#6B6B6B",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    }
+  ],
+  "composeRuns": []
+}

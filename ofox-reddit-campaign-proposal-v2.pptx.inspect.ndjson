@@ -1,0 +1,147 @@
+{"kind":"deck","id":"pr/qysn0s","name":"Deck"}
+{"kind":"layout","layoutId":"dfbc83ba-e4e5-4dbd-abc1-f69af290a2bd","name":"Master","type":"master"}
+{"kind":"layout","layoutId":"88dbbc44-7d33-448a-a81d-f37e40702ffa","name":"Title Slide","type":"title"}
+{"kind":"slide","id":"sl/k9ycwt","slide":1,"title":"oFox.ai","textShapes":8}
+{"kind":"textbox","id":"sh/fqpobehw","slide":1,"text":"oFox.ai","textPreview":"oFox.ai","textChars":7,"textLines":1,"bbox":[64,44,180,42]}
+{"kind":"shape","id":"sh/gry54zih","slide":1,"bbox":[1000,48,210,38]}
+{"kind":"textbox","id":"sh/1sr6d4z2","slide":1,"text":"REDDIT CAMPAIGN","textPreview":"REDDIT CAMPAIGN","textChars":15,"textLines":1,"bbox":[1000,55,210,24]}
+{"kind":"textbox","id":"sh/61gnyp0f","slide":1,"text":"Four campaign ideas\nfor the next model cycle","textPreview":"Four campaign ideas | for the next model cycle","textChars":44,"textLines":2,"bbox":[64,190,900,150]}
+{"kind":"textbox","id":"sh/r2p47uh0","slide":1,"text":"用折扣、新模型热点与真实对比，把 oFox.ai 变成 Reddit 上的讨论入口。","textPreview":"用折扣、新模型热点与真实对比，把 oFox.ai 变成 Reddit 上的讨论入口。","textChars":42,"textLines":1,"bbox":[68,390,810,50]}
+{"kind":"shape","id":"sh/s3y50zil","slide":1,"bbox":[68,492,1144,2]}
+{"kind":"textbox","id":"sh/t47m94z6","slide":1,"text":"01  成本对照","textPreview":"01  成本对照","textChars":8,"textLines":1,"bbox":[68,530,230,34]}
+{"kind":"textbox","id":"sh/ixwnup0j","slide":1,"text":"02  Wan 3.0 视频","textPreview":"02  Wan 3.0 视频","textChars":14,"textLines":1,"bbox":[350,530,260,34]}
+{"kind":"textbox","id":"sh/jy543ah4","slide":1,"text":"03  中美模型对比","textPreview":"03  中美模型对比","textChars":10,"textLines":1,"bbox":[670,530,260,34]}
+{"kind":"textbox","id":"sh/7e5c3ylw","slide":1,"text":"04  GPT‑6 热点","textPreview":"04  GPT‑6 热点","textChars":12,"textLines":1,"bbox":[990,530,220,34]}
+{"kind":"notes","id":"nt/k9ycwt","slide":1,"text":"[Sources]\nhttps://ofox.ai/zh\n[/Sources]"}
+{"kind":"slide","id":"sl/bmpla9","slide":2,"title":"oFox.ai","textShapes":16}
+{"kind":"textbox","id":"sh/zi9obils","slide":2,"text":"oFox.ai","textPreview":"oFox.ai","textChars":7,"textLines":1,"bbox":[64,34,140,32]}
+{"kind":"textbox","id":"sh/0jip4n2x","slide":2,"text":"01","textPreview":"01","textChars":2,"textLines":1,"bbox":[1128,38,64,28]}
+{"kind":"textbox","id":"sh/1kr6d83i","slide":2,"text":"CAMPAIGN FRAMEWORK","textPreview":"CAMPAIGN FRAMEWORK","textChars":18,"textLines":1,"bbox":[64,102,500,24]}
+{"kind":"textbox","id":"sh/ml076dk3","slide":2,"text":"四个思路，只围绕“现在为什么值得讨论”","textPreview":"四个思路，只围绕“现在为什么值得讨论”","textChars":19,"textLines":1,"bbox":[64,138,1140,64]}
+{"kind":"textbox","id":"sh/nmtofilo","slide":2,"text":"思路 1","textPreview":"思路 1","textChars":4,"textLines":1,"bbox":[72,238,120,28]}
+{"kind":"textbox","id":"sh/on2p8n29","slide":2,"text":"OpenRouter 成本对照","textPreview":"OpenRouter 成本对照","textChars":15,"textLines":1,"bbox":[210,234,310,36]}
+{"kind":"textbox","id":"sh/9ob6hs3u","slide":2,"text":"抓住 oFox.ai 多款模型折扣，做相同用量下的实际支出对比。","textPreview":"抓住 oFox.ai 多款模型折扣，做相同用量下的实际支出对比。","textChars":32,"textLines":1,"bbox":[545,238,650,42]}
+{"kind":"shape","id":"sh/2pgnat4z","slide":2,"bbox":[72,303,1120,1]}
+{"kind":"textbox","id":"sh/3qpo3ylk","slide":2,"text":"思路 2","textPreview":"思路 2","textChars":4,"textLines":1,"bbox":[72,340,120,28]}
+{"kind":"textbox","id":"sh/fqdsjip4","slide":2,"text":"Wan 3.0 热点视频","textPreview":"Wan 3.0 热点视频","textChars":12,"textLines":1,"bbox":[210,336,310,36]}
+{"kind":"textbox","id":"sh/ep4bqx8j","slide":2,"text":"直接做一条可传播的视频结果，完整公开 prompt 与参数。","textPreview":"直接做一条可传播的视频结果，完整公开 prompt 与参数。","textChars":30,"textLines":1,"bbox":[545,340,650,42]}
+{"kind":"shape","id":"sh/1sfals7a","slide":2,"bbox":[72,405,1120,1]}
+{"kind":"textbox","id":"sh/0r6tsnqp","slide":2,"text":"思路 3","textPreview":"思路 3","textChars":4,"textLines":1,"bbox":[72,442,120,28]}
+{"kind":"textbox","id":"sh/rmdsfi9s","slide":2,"text":"中美模型同题对比","textPreview":"中美模型同题对比","textChars":8,"textLines":1,"bbox":[210,438,310,36]}
+{"kind":"textbox","id":"sh/6l4rmd87","slide":2,"text":"同一条高难度 prompt 跑 Wan 3.0 与海外模型，看结果差异。","textPreview":"同一条高难度 prompt 跑 Wan 3.0 与海外模型，看结果差异。","textChars":36,"textLines":1,"bbox":[545,442,650,42]}
+{"kind":"shape","id":"sh/tovahs7y","slide":2,"bbox":[72,507,1120,1]}
+{"kind":"textbox","id":"sh/snm9onqd","slide":2,"text":"思路 4","textPreview":"思路 4","textChars":4,"textLines":1,"bbox":[72,544,120,28]}
+{"kind":"textbox","id":"sh/jitsby9w","slide":2,"text":"GPT‑6 发布热点","textPreview":"GPT‑6 发布热点","textChars":10,"textLines":1,"bbox":[210,540,310,36]}
+{"kind":"textbox","id":"sh/ixkrid8b","slide":2,"text":"把传闻窗口当预热节点；官方确认后第一时间实测发布。","textPreview":"把传闻窗口当预热节点；官方确认后第一时间实测发布。","textChars":25,"textLines":1,"bbox":[545,544,650,42]}
+{"kind":"notes","id":"nt/bmpla9","slide":2,"text":"[Sources]\nhttps://ofox.ai/zh\n[/Sources]"}
+{"kind":"slide","id":"sl/4gfc1k","slide":3,"title":"oFox.ai","textShapes":18}
+{"kind":"textbox","id":"sh/4fepgjah","slide":3,"text":"oFox.ai","textPreview":"oFox.ai","textChars":7,"textLines":1,"bbox":[64,34,140,32]}
+{"kind":"textbox","id":"sh/3e5ony9w","slide":3,"text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[1128,38,64,28]}
+{"kind":"textbox","id":"sh/idw7etsb","slide":3,"text":"IDEA 01","textPreview":"IDEA 01","textChars":7,"textLines":1,"bbox":[64,102,500,24]}
+{"kind":"textbox","id":"sh/d476t8ry","slide":3,"text":"OpenRouter 成本对照：让“折扣”变成可转发的账单","textPreview":"OpenRouter 成本对照：让“折扣”变成可转发的账单","textChars":29,"textLines":1,"bbox":[64,138,1140,64]}
+{"kind":"shape","id":"sh/c3ypk3ad","slide":3,"bbox":[72,232,205,38]}
+{"kind":"textbox","id":"sh/ri5ory98","slide":3,"text":"CURRENT DISCOUNTS","textPreview":"CURRENT DISCOUNTS","textChars":17,"textLines":1,"bbox":[72,239,205,24]}
+{"kind":"textbox","id":"sh/qhw7itsn","slide":3,"text":"5 折 / 8 折 / 充值优惠","textPreview":"5 折 / 8 折 / 充值优惠","textChars":16,"textLines":1,"bbox":[72,288,500,48]}
+{"kind":"textbox","id":"sh/1876x8ra","slide":3,"text":"不是泛泛说“oFox 更便宜”，而是挑 3–5 个正在打折的热门模型，统一输入量与输出量，展示最终支出。","textPreview":"不是泛泛说“oFox 更便宜”，而是挑 3–5 个正在打折的热门模型，统一输入量与输出量，展示最终支出。","textChars":52,"textLines":1,"bbox":[72,350,520,92]}
+{"kind":"shape","id":"sh/07ypo3ap","slide":3,"bbox":[650,232,542,308]}
+{"kind":"textbox","id":"sh/idkvu9o3","slide":3,"text":"对比结构","textPreview":"对比结构","textChars":4,"textLines":1,"bbox":[690,268,180,28]}
+{"kind":"textbox","id":"sh/3etw3epo","slide":3,"text":"01","textPreview":"01","textChars":2,"textLines":1,"bbox":[690,316,42,28]}
+{"kind":"textbox","id":"sh/4f2dwj69","slide":3,"text":"同一模型 / 同一 token 用量","textPreview":"同一模型 / 同一 token 用量","textChars":18,"textLines":1,"bbox":[748,314,390,32]}
+{"kind":"textbox","id":"sh/5gbe5o7u","slide":3,"text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[690,370,42,28]}
+{"kind":"textbox","id":"sh/qhkvytof","slide":3,"text":"oFox.ai 折后价格","textPreview":"oFox.ai 折后价格","textChars":12,"textLines":1,"bbox":[748,368,390,32]}
+{"kind":"textbox","id":"sh/ritw7ypk","slide":3,"text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[690,424,42,28]}
+{"kind":"textbox","id":"sh/sj2d0365","slide":3,"text":"OpenRouter 实际充值与调用成本","textPreview":"OpenRouter 实际充值与调用成本","textChars":20,"textLines":1,"bbox":[748,422,390,32]}
+{"kind":"textbox","id":"sh/dkbe987q","slide":3,"text":"04","textPreview":"04","textChars":2,"textLines":1,"bbox":[690,478,42,28]}
+{"kind":"textbox","id":"sh/6lgvmpov","slide":3,"text":"最终差额 + 截图 + 核实日期","textPreview":"最终差额 + 截图 + 核实日期","textChars":16,"textLines":1,"bbox":[748,476,390,32]}
+{"kind":"textbox","id":"sh/7m9cvupg","slide":3,"text":"Reddit 标题示例","textPreview":"Reddit 标题示例","textChars":11,"textLines":1,"bbox":[72,520,210,26]}
+{"kind":"textbox","id":"sh/bq5s3q58","slide":3,"text":"“I priced the same 5 models on oFox.ai and OpenRouter — here is the real checkout difference.”","textPreview":"“I priced the same 5 models on oFox.ai and OpenRouter — here is the real checkout difference.”","textChars":94,"textLines":1,"bbox":[72,558,1120,66]}
+{"kind":"notes","id":"nt/4gfc1k","slide":3,"text":"[Sources]\nhttps://ofox.ai/zh\nhttps://openrouter.ai/pricing\n[/Sources]"}
+{"kind":"slide","id":"sl/l3b4g3","slide":4,"title":"oFox.ai","textShapes":13}
+{"kind":"textbox","id":"sh/hw3i9wva","slide":4,"text":"oFox.ai","textPreview":"oFox.ai","textChars":7,"textLines":1,"bbox":[64,34,140,32]}
+{"kind":"textbox","id":"sh/utcze1cz","slide":4,"text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[1128,38,64,28]}
+{"kind":"textbox","id":"sh/ful076d4","slide":4,"text":"IDEA 02","textPreview":"IDEA 02","textChars":7,"textLines":1,"bbox":[64,102,500,24]}
+{"kind":"textbox","id":"sh/4ze1kbu1","slide":4,"text":"Wan 3.0 热点：先让视频结果自己说话","textPreview":"Wan 3.0 热点：先让视频结果自己说话","textChars":21,"textLines":1,"bbox":[64,138,1140,64]}
+{"kind":"shape","id":"sh/p0nidgvm","slide":4,"bbox":[72,232,720,360]}
+{"kind":"shape","id":"sh/2xwzi1cv","slide":4,"bbox":[108,270,130,38]}
+{"kind":"textbox","id":"sh/3y50b6dg","slide":4,"text":"WAN 3.0","textPreview":"WAN 3.0","textChars":7,"textLines":1,"bbox":[108,277,130,24]}
+{"kind":"textbox","id":"sh/cne1ovux","slide":4,"text":"PROMPT","textPreview":"PROMPT","textChars":6,"textLines":1,"bbox":[108,348,135,32]}
+{"kind":"textbox","id":"sh/do7ihgbi","slide":4,"text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[285,337,60,50]}
+{"kind":"textbox","id":"sh/hgb2lcry","slide":4,"text":"VIDEO","textPreview":"VIDEO","textChars":5,"textLines":1,"bbox":[388,348,150,32]}
+{"kind":"textbox","id":"sh/gf2lc7ad","slide":4,"text":"视频画面是第一屏；正文只解释生成条件。","textPreview":"视频画面是第一屏；正文只解释生成条件。","textChars":19,"textLines":1,"bbox":[108,430,590,62]}
+{"kind":"textbox","id":"sh/fetkj29s","slide":4,"text":"prompt · seed · 时长 · 分辨率 · 生成耗时 · 成本","textPreview":"prompt · seed · 时长 · 分辨率 · 生成耗时 · 成本","textChars":36,"textLines":1,"bbox":[108,520,610,30]}
+{"kind":"textbox","id":"sh/ud03ahs7","slide":4,"text":"发布文案","textPreview":"发布文案","textChars":4,"textLines":1,"bbox":[850,250,210,26]}
+{"kind":"textbox","id":"sh/p4b2pwru","slide":4,"text":"“I tested this prompt on Wan 3.0 on oFox.ai — here’s the result I got.”","textPreview":"“I tested this prompt on Wan 3.0 on oFox.ai — here’s the result I got.”","textChars":71,"textLines":1,"bbox":[850,294,330,124]}
+{"kind":"textbox","id":"sh/4j2lgra9","slide":4,"text":"目标：蹭新模型热度，同时把 oFox.ai 自然放进完整复现信息里。","textPreview":"目标：蹭新模型热度，同时把 oFox.ai 自然放进完整复现信息里。","textChars":34,"textLines":1,"bbox":[850,470,330,88]}
+{"kind":"notes","id":"nt/l3b4g3","slide":4,"text":"[Sources]\nhttps://ofox.ai/zh\n[/Sources]"}
+{"kind":"slide","id":"sl/mbtvf4","slide":5,"title":"oFox.ai","textShapes":12}
+{"kind":"textbox","id":"sh/bu5872h4","slide":5,"text":"oFox.ai","textPreview":"oFox.ai","textChars":7,"textLines":1,"bbox":[64,34,140,32]}
+{"kind":"textbox","id":"sh/cvep07yp","slide":5,"text":"04","textPreview":"04","textChars":2,"textLines":1,"bbox":[1128,38,64,28]}
+{"kind":"textbox","id":"sh/dwnq9cfa","slide":5,"text":"IDEA 03","textPreview":"IDEA 03","textChars":7,"textLines":1,"bbox":[64,102,500,24]}
+{"kind":"textbox","id":"sh/yxw72hgv","slide":5,"text":"中美模型对比：同一条高难度 prompt，看谁更听话","textPreview":"中美模型对比：同一条高难度 prompt，看谁更听话","textChars":26,"textLines":1,"bbox":[64,138,1140,64]}
+{"kind":"textbox","id":"sh/zy58b2x0","slide":5,"text":"同题，不做抽象 benchmark。","textPreview":"同题，不做抽象 benchmark。","textChars":18,"textLines":1,"bbox":[72,226,500,42]}
+{"kind":"textbox","id":"sh/0zyp47yl","slide":5,"text":"把为 Wan 3.0 设计的复杂 prompt 原样交给海外视频模型，比较真实画面，而不是只看厂商分数。","textPreview":"把为 Wan 3.0 设计的复杂 prompt 原样交给海外视频模型，比较真实画面，而不是只看厂商分数。","textChars":52,"textLines":1,"bbox":[72,276,1080,46]}
+{"kind":"shape","id":"sh/l07qdcf6","slide":5,"bbox":[72,356,360,184]}
+{"kind":"shape","id":"sh/m1g76hgr","slide":5,"bbox":[848,356,360,184]}
+{"kind":"textbox","id":"sh/72p8fmxc","slide":5,"text":"WAN 3.0","textPreview":"WAN 3.0","textChars":7,"textLines":1,"bbox":[102,396,300,42]}
+{"kind":"textbox","id":"sh/7uxc7ih4","slide":5,"text":"中国模型","textPreview":"中国模型","textChars":4,"textLines":1,"bbox":[102,460,300,28]}
+{"kind":"shape","id":"sh/mtobydgz","slide":5,"bbox":[514,414,250,38]}
+{"kind":"textbox","id":"sh/9wfu98za","slide":5,"text":"SAME PROMPT","textPreview":"SAME PROMPT","textChars":11,"textLines":1,"bbox":[514,421,250,24]}
+{"kind":"textbox","id":"sh/8v6t0nyp","slide":5,"text":"海外视频模型","textPreview":"海外视频模型","textChars":6,"textLines":1,"bbox":[878,396,300,42]}
+{"kind":"textbox","id":"sh/zqds3yh8","slide":5,"text":"美国 / 国际模型","textPreview":"美国 / 国际模型","textChars":9,"textLines":1,"bbox":[878,460,300,28]}
+{"kind":"textbox","id":"sh/yp4butgn","slide":5,"text":"比较维度：指令遵循 / 主体一致性 / 运动自然度 / 文字生成 / 成本","textPreview":"比较维度：指令遵循 / 主体一致性 / 运动自然度 / 文字生成 / 成本","textChars":37,"textLines":1,"bbox":[72,582,1136,36]}
+{"kind":"notes","id":"nt/mbtvf4","slide":5,"text":"[Sources]\nhttps://ofox.ai/zh\n[/Sources]"}
+{"kind":"slide","id":"sl/b2mxy4","slide":6,"title":"oFox.ai","textShapes":17}
+{"kind":"textbox","id":"sh/i5wnedw3","slide":6,"text":"oFox.ai","textPreview":"oFox.ai","textChars":7,"textLines":1,"bbox":[64,34,140,32]}
+{"kind":"textbox","id":"sh/5s76psve","slide":6,"text":"05","textPreview":"05","textChars":2,"textLines":1,"bbox":[1128,38,64,28]}
+{"kind":"textbox","id":"sh/4ry5gnet","slide":6,"text":"IDEA 04","textPreview":"IDEA 04","textChars":7,"textLines":1,"bbox":[64,102,500,24]}
+{"kind":"textbox","id":"sh/v254jixc","slide":6,"text":"GPT‑6 热点：把“可能的 6 月窗口”做成发布预案","textPreview":"GPT‑6 热点：把“可能的 6 月窗口”做成发布预案","textChars":27,"textLines":1,"bbox":[64,138,1140,64]}
+{"kind":"shape","id":"sh/u1wnadwr","slide":6,"bbox":[72,232,210,38]}
+{"kind":"textbox","id":"sh/h4nml8fi","slide":6,"text":"RUMOR / WATCHLIST","textPreview":"RUMOR / WATCHLIST","textChars":17,"textLines":1,"bbox":[72,239,210,24]}
+{"kind":"textbox","id":"sh/g3e5c3ex","slide":6,"text":"不把 GPT‑6 发布时间写成事实。","textPreview":"不把 GPT‑6 发布时间写成事实。","textChars":18,"textLines":1,"bbox":[72,296,600,46]}
+{"kind":"textbox","id":"sh/fy9ov2dg","slide":6,"text":"现阶段只做内容和测试模板；等 OpenAI 官方确认型号、时间与 API 可用性后，再启动发布。","textPreview":"现阶段只做内容和测试模板；等 OpenAI 官方确认型号、时间与 API 可用性后，再启动发布。","textChars":48,"textLines":1,"bbox":[72,354,590,74]}
+{"kind":"shape","id":"sh/ex0nmxwv","slide":6,"bbox":[720,232,472,290]}
+{"kind":"textbox","id":"sh/gza5w3mp","slide":6,"text":"T‑7","textPreview":"T‑7","textChars":3,"textLines":1,"bbox":[758,268,78,28]}
+{"kind":"textbox","id":"sh/10jmpo3a","slide":6,"text":"预备 3 条真实任务 prompt","textPreview":"预备 3 条真实任务 prompt","textChars":17,"textLines":1,"bbox":[850,266,300,32]}
+{"kind":"textbox","id":"sh/exsnut4j","slide":6,"text":"T+0","textPreview":"T+0","textChars":3,"textLines":1,"bbox":[758,326,78,28]}
+{"kind":"textbox","id":"sh/fy14nyl4","slide":6,"text":"确认 API / 价格 / 模型 ID","textPreview":"确认 API / 价格 / 模型 ID","textChars":19,"textLines":1,"bbox":[850,324,300,32]}
+{"kind":"textbox","id":"sh/svqlsjmd","slide":6,"text":"T+24h","textPreview":"T+24h","textChars":5,"textLines":1,"bbox":[758,384,78,28]}
+{"kind":"textbox","id":"sh/twjmlo3y","slide":6,"text":"完成 oFox.ai 首轮实测","textPreview":"完成 oFox.ai 首轮实测","textChars":15,"textLines":1,"bbox":[850,382,300,32]}
+{"kind":"textbox","id":"sh/6t83q94n","slide":6,"text":"T+48h","textPreview":"T+48h","textChars":5,"textLines":1,"bbox":[758,442,78,28]}
+{"kind":"textbox","id":"sh/ruh4je5s","slide":6,"text":"按社区发布不同版本","textPreview":"按社区发布不同版本","textChars":9,"textLines":1,"bbox":[850,440,300,32]}
+{"kind":"textbox","id":"sh/4rqlojmh","slide":6,"text":"可预备标题","textPreview":"可预备标题","textChars":5,"textLines":1,"bbox":[72,504,180,26]}
+{"kind":"textbox","id":"sh/5szmh4n2","slide":6,"text":"“GPT‑6 is live. I ran the same real task on GPT‑6, GPT‑5.6 and DeepSeek — cost, retries and final output.”","textPreview":"“GPT‑6 is live. I ran the same real task on GPT‑6, GPT‑5.6 and DeepSeek — cost, retries and final output.”","textChars":106,"textLines":1,"bbox":[72,542,1120,72]}
+{"kind":"notes","id":"nt/b2mxy4","slide":6,"text":"[Sources]\nhttps://openai.com/news/\nhttps://platform.openai.com/docs/models\n[/Sources]"}
+{"kind":"slide","id":"sl/i8qydz","slide":7,"title":"oFox.ai","textShapes":26}
+{"kind":"textbox","id":"sh/dorqlwv2","slide":7,"text":"oFox.ai","textPreview":"oFox.ai","textChars":7,"textLines":1,"bbox":[64,34,140,32]}
+{"kind":"textbox","id":"sh/qlgrq1wb","slide":7,"text":"06","textPreview":"06","textChars":2,"textLines":1,"bbox":[1128,38,64,28]}
+{"kind":"textbox","id":"sh/bmp8j6dw","slide":7,"text":"COMMUNITY SELECTION","textPreview":"COMMUNITY SELECTION","textChars":19,"textLines":1,"bbox":[64,102,500,24]}
+{"kind":"textbox","id":"sh/0bi9wbed","slide":7,"text":"社区只做选择：每个思路发到最匹配的地方","textPreview":"社区只做选择：每个思路发到最匹配的地方","textChars":19,"textLines":1,"bbox":[64,138,1140,64]}
+{"kind":"textbox","id":"sh/lcrqpgvy","slide":7,"text":"社区","textPreview":"社区","textChars":2,"textLines":1,"bbox":[72,226,260,28]}
+{"kind":"textbox","id":"sh/yp0ru1wn","slide":7,"text":"适合的讨论","textPreview":"适合的讨论","textChars":5,"textLines":1,"bbox":[400,226,420,28]}
+{"kind":"textbox","id":"sh/zq98n6d8","slide":7,"text":"对应思路","textPreview":"对应思路","textChars":4,"textLines":1,"bbox":[930,226,240,28]}
+{"kind":"textbox","id":"sh/8f290vep","slide":7,"text":"r/GeminiAI","textPreview":"r/GeminiAI","textChars":10,"textLines":1,"bbox":[72,272,280,32]}
+{"kind":"textbox","id":"sh/9gbqtgva","slide":7,"text":"模型体验 / 同题对比","textPreview":"模型体验 / 同题对比","textChars":11,"textLines":1,"bbox":[400,272,440,32]}
+{"kind":"textbox","id":"sh/1krqhcnu","slide":7,"text":"思路 3、思路 4","textPreview":"思路 3、思路 4","textChars":9,"textLines":1,"bbox":[930,272,240,32]}
+{"kind":"shape","id":"sh/gjip87m9","slide":7,"bbox":[72,314,1120,1]}
+{"kind":"textbox","id":"sh/fi98f25o","slide":7,"text":"r/LLMDevs","textPreview":"r/LLMDevs","textChars":9,"textLines":1,"bbox":[72,330,280,32]}
+{"kind":"textbox","id":"sh/eh076xo3","slide":7,"text":"API 成本 / 工程测试","textPreview":"API 成本 / 工程测试","textChars":13,"textLines":1,"bbox":[400,330,440,32]}
+{"kind":"textbox","id":"sh/pobqlcnq","slide":7,"text":"思路 1、思路 4","textPreview":"思路 1、思路 4","textChars":9,"textLines":1,"bbox":[930,330,240,32]}
+{"kind":"shape","id":"sh/on29c7ml","slide":7,"bbox":[72,372,1120,1]}
+{"kind":"textbox","id":"sh/nmt8jm50","slide":7,"text":"r/kimi","textPreview":"r/kimi","textChars":6,"textLines":1,"bbox":[72,388,280,32]}
+{"kind":"textbox","id":"sh/2lkrah4f","slide":7,"text":"中国模型 / Agent 用户","textPreview":"中国模型 / Agent 用户","textChars":15,"textLines":1,"bbox":[400,388,440,32]}
+{"kind":"textbox","id":"sh/5s7q9snm","slide":7,"text":"思路 3","textPreview":"思路 3","textChars":4,"textLines":1,"bbox":[930,388,240,32]}
+{"kind":"shape","id":"sh/4ryp0n61","slide":7,"bbox":[72,430,1120,1]}
+{"kind":"textbox","id":"sh/wv29gnex","slide":7,"text":"r/LocalLLaMA","textPreview":"r/LocalLLaMA","textChars":12,"textLines":1,"bbox":[72,446,280,32]}
+{"kind":"textbox","id":"sh/xwbqpsvi","slide":7,"text":"DeepSeek / Qwen / 开源模型","textPreview":"DeepSeek / Qwen / 开源模型","textChars":22,"textLines":1,"bbox":[400,446,440,32]}
+{"kind":"textbox","id":"sh/atk7edwr","slide":7,"text":"思路 1、思路 3","textPreview":"思路 1、思路 3","textChars":9,"textLines":1,"bbox":[930,446,240,32]}
+{"kind":"shape","id":"sh/vut8nidc","slide":7,"bbox":[72,488,1120,1]}
+{"kind":"textbox","id":"sh/kzm9k7e9","slide":7,"text":"r/StableDiffusion","textPreview":"r/StableDiffusion","textChars":17,"textLines":1,"bbox":[72,504,280,32]}
+{"kind":"textbox","id":"sh/50vqtcve","slide":7,"text":"图像与视频生成","textPreview":"图像与视频生成","textChars":7,"textLines":1,"bbox":[400,504,440,32]}
+{"kind":"textbox","id":"sh/ixkrixw3","slide":7,"text":"思路 2、思路 3","textPreview":"思路 2、思路 3","textChars":9,"textLines":1,"bbox":[930,504,240,32]}
+{"kind":"shape","id":"sh/jyt8r2do","slide":7,"bbox":[72,546,1120,1]}
+{"kind":"textbox","id":"sh/s3m9o7e5","slide":7,"text":"r/singularity","textPreview":"r/singularity","textChars":13,"textLines":1,"bbox":[72,562,280,32]}
+{"kind":"textbox","id":"sh/t4vqxcvq","slide":7,"text":"模型发布热点","textPreview":"模型发布热点","textChars":6,"textLines":1,"bbox":[400,562,440,32]}
+{"kind":"textbox","id":"sh/3yhcn6xs","slide":7,"text":"思路 2、思路 4","textPreview":"思路 2、思路 4","textChars":9,"textLines":1,"bbox":[930,562,240,32]}
+{"kind":"shape","id":"sh/2xobe1g7","slide":7,"bbox":[72,604,1120,1]}
+{"kind":"textbox","id":"sh/pkzupgfy","slide":7,"text":"优先顺序：先做 Wan 3.0 视频 → 再做折扣价格对照 → 最后准备 GPT‑6 发布模板。","textPreview":"优先顺序：先做 Wan 3.0 视频 → 再做折扣价格对照 → 最后准备 GPT‑6 发布模板。","textChars":48,"textLines":1,"bbox":[72,640,1120,32]}
+{"kind":"notes","id":"nt/i8qydz","slide":7,"text":"[Sources]\nhttps://www.reddit.com/r/GeminiAI/\nhttps://www.reddit.com/r/LLMDevs/\nhttps://www.reddit.com/r/kimi/\nhttps://www.reddit.com/r/LocalLLaMA/\nhttps://www.reddit.com/r/StableDiffusion/\nhttps://www.reddit.com/r/singularity/\n[/Sources]"}

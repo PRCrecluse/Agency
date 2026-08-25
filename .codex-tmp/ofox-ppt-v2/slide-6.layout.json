@@ -1,0 +1,1175 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/b2mxy4",
+    "id": "b2mxy4",
+    "slide": 6,
+    "layoutId": "88dbbc44-7d33-448a-a81d-f37e40702ffa",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "dfbc83ba-e4e5-4dbd-abc1-f69af290a2bd",
+    "masterLayoutName": "Master",
+    "backgroundColor": "#F4F4F4",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "bg1": "#FFFFFF",
+      "bg2": "#000000",
+      "tx1": "#1F1F1F",
+      "tx2": "#FFFFFF",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "typefaces": [
+      "+mn-lt"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "88dbbc44-7d33-448a-a81d-f37e40702ffa",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "dfbc83ba-e4e5-4dbd-abc1-f69af290a2bd",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "dfbc83ba-e4e5-4dbd-abc1-f69af290a2bd",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/i5wnedw3",
+      "id": "1",
+      "bbox": [
+        64,
+        34,
+        140,
+        32
+      ],
+      "geometry": "rect",
+      "text": "oFox.ai",
+      "textPreview": "oFox.ai",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "fontSize": 24,
+        "typeface": "+mn-lt",
+        "color": "#1F1F1F",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "oFox.ai"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "oFox.ai",
+          "resolvedTextStyle": {
+            "fontSize": 24,
+            "color": "#1F1F1F",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "oFox.ai",
+              "fontSize": 24,
+              "color": "#1F1F1F",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/5s76psve",
+      "id": "2",
+      "bbox": [
+        1128,
+        38,
+        64,
+        28
+      ],
+      "geometry": "rect",
+      "text": "05",
+      "textPreview": "05",
+      "resolvedFontSize": 18,
+      "resolvedTextStyle": {
+        "fontSize": 18,
+        "typeface": "+mn-lt",
+        "color": "#FF5000",
+        "bold": true,
+        "alignment": "right",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "05"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "05",
+          "resolvedTextStyle": {
+            "fontSize": 18,
+            "color": "#FF5000",
+            "bold": true,
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "05",
+              "fontSize": 18,
+              "color": "#FF5000",
+              "bold": true,
+              "alignment": "right"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/4ry5gnet",
+      "id": "3",
+      "bbox": [
+        64,
+        102,
+        500,
+        24
+      ],
+      "geometry": "rect",
+      "text": "IDEA 04",
+      "textPreview": "IDEA 04",
+      "resolvedFontSize": 14,
+      "resolvedTextStyle": {
+        "fontSize": 14,
+        "typeface": "+mn-lt",
+        "color": "#FF5000",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "IDEA 04"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "IDEA 04",
+          "resolvedTextStyle": {
+            "fontSize": 14,
+            "color": "#FF5000",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "IDEA 04",
+              "fontSize": 14,
+              "color": "#FF5000",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/v254jixc",
+      "id": "4",
+      "bbox": [
+        64,
+        138,
+        1140,
+        64
+      ],
+      "geometry": "rect",
+      "text": "GPT‑6 热点：把“可能的 6 月窗口”做成发布预案",
+      "textPreview": "GPT‑6 热点：把“可能的 6 月窗口”做成发布预案",
+      "resolvedFontSize": 42,
+      "resolvedTextStyle": {
+        "fontSize": 42,
+        "typeface": "+mn-lt",
+        "color": "#1F1F1F",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "GPT‑6 热点：把“可能的 6 月窗口”做成发布预案"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "GPT‑6 热点：把“可能的 6 月窗口”做成发布预案",
+          "resolvedTextStyle": {
+            "fontSize": 42,
+            "color": "#1F1F1F",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "GPT‑6 热点：把“可能的 6 月窗口”做成发布预案",
+              "fontSize": 42,
+              "color": "#1F1F1F",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/u1wnadwr",
+      "id": "5",
+      "bbox": [
+        72,
+        232,
+        210,
+        38
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#1F1F1F",
+      "lineColor": "#1F1F1F",
+      "lineWidth": 1
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/h4nml8fi",
+      "id": "6",
+      "bbox": [
+        72,
+        239,
+        210,
+        24
+      ],
+      "geometry": "rect",
+      "text": "RUMOR / WATCHLIST",
+      "textPreview": "RUMOR / WATCHLIST",
+      "resolvedFontSize": 15,
+      "resolvedTextStyle": {
+        "fontSize": 15,
+        "typeface": "+mn-lt",
+        "color": "#FFFFFF",
+        "bold": true,
+        "alignment": "center",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "RUMOR / WATCHLIST"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "RUMOR / WATCHLIST",
+          "resolvedTextStyle": {
+            "fontSize": 15,
+            "color": "#FFFFFF",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "RUMOR / WATCHLIST",
+              "fontSize": 15,
+              "color": "#FFFFFF",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/g3e5c3ex",
+      "id": "7",
+      "bbox": [
+        72,
+        296,
+        600,
+        46
+      ],
+      "geometry": "rect",
+      "text": "不把 GPT‑6 发布时间写成事实。",
+      "textPreview": "不把 GPT‑6 发布时间写成事实。",
+      "resolvedFontSize": 32,
+      "resolvedTextStyle": {
+        "fontSize": 32,
+        "typeface": "+mn-lt",
+        "color": "#1F1F1F",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "不把 GPT‑6 发布时间写成事实。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "不把 GPT‑6 发布时间写成事实。",
+          "resolvedTextStyle": {
+            "fontSize": 32,
+            "color": "#1F1F1F",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "不把 GPT‑6 发布时间写成事实。",
+              "fontSize": 32,
+              "color": "#1F1F1F",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/fy9ov2dg",
+      "id": "8",
+      "bbox": [
+        72,
+        354,
+        590,
+        74
+      ],
+      "geometry": "rect",
+      "text": "现阶段只做内容和测试模板；等 OpenAI 官方确认型号、时间与 API 可用性后，再启动发布。",
+      "textPreview": "现阶段只做内容和测试模板；等 OpenAI 官方确认型号、时间与 API 可用性后，再启动发布。",
+      "resolvedFontSize": 20,
+      "resolvedTextStyle": {
+        "fontSize": 20,
+        "typeface": "+mn-lt",
+        "color": "#6B6B6B",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "现阶段只做内容和测试模板；等 OpenAI 官方确认型号、时间与"
+          },
+          {
+            "index": 2,
+            "text": "API 可用性后，再启动发布。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "现阶段只做内容和测试模板；等 OpenAI 官方确认型号、时间与 API 可用性后，再启动发布。",
+          "resolvedTextStyle": {
+            "fontSize": 20,
+            "color": "#6B6B6B",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "现阶段只做内容和测试模板；等 OpenAI 官方确认型号、时间与 API 可用性后，再启动发布。",
+              "fontSize": 20,
+              "color": "#6B6B6B",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 9,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ex0nmxwv",
+      "id": "9",
+      "bbox": [
+        720,
+        232,
+        472,
+        290
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#DEDEDE",
+      "lineWidth": 1
+    },
+    {
+      "order": 10,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/gza5w3mp",
+      "id": "10",
+      "bbox": [
+        758,
+        268,
+        78,
+        28
+      ],
+      "geometry": "rect",
+      "text": "T‑7",
+      "textPreview": "T‑7",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "fontSize": 16,
+        "typeface": "+mn-lt",
+        "color": "#FF5000",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "T‑7"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "T‑7",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "color": "#FF5000",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "T‑7",
+              "fontSize": 16,
+              "color": "#FF5000",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 11,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/10jmpo3a",
+      "id": "11",
+      "bbox": [
+        850,
+        266,
+        300,
+        32
+      ],
+      "geometry": "rect",
+      "text": "预备 3 条真实任务 prompt",
+      "textPreview": "预备 3 条真实任务 prompt",
+      "resolvedFontSize": 20,
+      "resolvedTextStyle": {
+        "fontSize": 20,
+        "typeface": "+mn-lt",
+        "color": "#1F1F1F",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "预备 3 条真实任务 prompt"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "预备 3 条真实任务 prompt",
+          "resolvedTextStyle": {
+            "fontSize": 20,
+            "color": "#1F1F1F",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "预备 3 条真实任务 prompt",
+              "fontSize": 20,
+              "color": "#1F1F1F",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 12,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/exsnut4j",
+      "id": "12",
+      "bbox": [
+        758,
+        326,
+        78,
+        28
+      ],
+      "geometry": "rect",
+      "text": "T+0",
+      "textPreview": "T+0",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "fontSize": 16,
+        "typeface": "+mn-lt",
+        "color": "#FF5000",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "T+0"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "T+0",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "color": "#FF5000",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "T+0",
+              "fontSize": 16,
+              "color": "#FF5000",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 13,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/fy14nyl4",
+      "id": "13",
+      "bbox": [
+        850,
+        324,
+        300,
+        32
+      ],
+      "geometry": "rect",
+      "text": "确认 API / 价格 / 模型 ID",
+      "textPreview": "确认 API / 价格 / 模型 ID",
+      "resolvedFontSize": 20,
+      "resolvedTextStyle": {
+        "fontSize": 20,
+        "typeface": "+mn-lt",
+        "color": "#1F1F1F",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "确认 API / 价格 / 模型 ID"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "确认 API / 价格 / 模型 ID",
+          "resolvedTextStyle": {
+            "fontSize": 20,
+            "color": "#1F1F1F",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "确认 API / 价格 / 模型 ID",
+              "fontSize": 20,
+              "color": "#1F1F1F",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 14,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/svqlsjmd",
+      "id": "14",
+      "bbox": [
+        758,
+        384,
+        78,
+        28
+      ],
+      "geometry": "rect",
+      "text": "T+24h",
+      "textPreview": "T+24h",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "fontSize": 16,
+        "typeface": "+mn-lt",
+        "color": "#FF5000",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "T+24h"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "T+24h",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "color": "#FF5000",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "T+24h",
+              "fontSize": 16,
+              "color": "#FF5000",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 15,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/twjmlo3y",
+      "id": "15",
+      "bbox": [
+        850,
+        382,
+        300,
+        32
+      ],
+      "geometry": "rect",
+      "text": "完成 oFox.ai 首轮实测",
+      "textPreview": "完成 oFox.ai 首轮实测",
+      "resolvedFontSize": 20,
+      "resolvedTextStyle": {
+        "fontSize": 20,
+        "typeface": "+mn-lt",
+        "color": "#1F1F1F",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "完成 oFox.ai 首轮实测"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "完成 oFox.ai 首轮实测",
+          "resolvedTextStyle": {
+            "fontSize": 20,
+            "color": "#1F1F1F",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "完成 oFox.ai 首轮实测",
+              "fontSize": 20,
+              "color": "#1F1F1F",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 16,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/6t83q94n",
+      "id": "16",
+      "bbox": [
+        758,
+        442,
+        78,
+        28
+      ],
+      "geometry": "rect",
+      "text": "T+48h",
+      "textPreview": "T+48h",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "fontSize": 16,
+        "typeface": "+mn-lt",
+        "color": "#FF5000",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "T+48h"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "T+48h",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "color": "#FF5000",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "T+48h",
+              "fontSize": 16,
+              "color": "#FF5000",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 17,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ruh4je5s",
+      "id": "17",
+      "bbox": [
+        850,
+        440,
+        300,
+        32
+      ],
+      "geometry": "rect",
+      "text": "按社区发布不同版本",
+      "textPreview": "按社区发布不同版本",
+      "resolvedFontSize": 20,
+      "resolvedTextStyle": {
+        "fontSize": 20,
+        "typeface": "+mn-lt",
+        "color": "#1F1F1F",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "按社区发布不同版本"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "按社区发布不同版本",
+          "resolvedTextStyle": {
+            "fontSize": 20,
+            "color": "#1F1F1F",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "按社区发布不同版本",
+              "fontSize": 20,
+              "color": "#1F1F1F",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 18,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/4rqlojmh",
+      "id": "18",
+      "bbox": [
+        72,
+        504,
+        180,
+        26
+      ],
+      "geometry": "rect",
+      "text": "可预备标题",
+      "textPreview": "可预备标题",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "fontSize": 16,
+        "typeface": "+mn-lt",
+        "color": "#FF5000",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "可预备标题"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "可预备标题",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "color": "#FF5000",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "可预备标题",
+              "fontSize": 16,
+              "color": "#FF5000",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 19,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/5szmh4n2",
+      "id": "19",
+      "bbox": [
+        72,
+        542,
+        1120,
+        72
+      ],
+      "geometry": "rect",
+      "text": "“GPT‑6 is live. I ran the same real task on GPT‑6, GPT‑5.6 and DeepSeek — cost, retries and final output.”",
+      "textPreview": "“GPT‑6 is live. I ran the same real task on GPT‑6, GPT‑5.6 and DeepSeek — cost, retries and final output.”",
+      "resolvedFontSize": 25,
+      "resolvedTextStyle": {
+        "fontSize": 25,
+        "typeface": "+mn-lt",
+        "color": "#1F1F1F",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "“GPT‑6 is live. I ran the same real task on GPT‑6, GPT‑5.6 and DeepSeek — cost, retries and"
+          },
+          {
+            "index": 2,
+            "text": "final output.”"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "“GPT‑6 is live. I ran the same real task on GPT‑6, GPT‑5.6 and DeepSeek — cost, retries and final output.”",
+          "resolvedTextStyle": {
+            "fontSize": 25,
+            "color": "#1F1F1F",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "“GPT‑6 is live. I ran the same real task on GPT‑6, GPT‑5.6 and DeepSeek — cost, retries and final output.”",
+              "fontSize": 25,
+              "color": "#1F1F1F",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    }
+  ],
+  "composeRuns": []
+}
