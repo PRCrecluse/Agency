@@ -22,8 +22,8 @@ import { Separator } from '@/components/ui/separator'
 
 import RelatedBlogSection from '@/components/blog/related-blog-section/related-blog-section'
 import ContextualBlogCta from '@/components/blog/contextual-blog-cta'
+import BlogCtaSection from '@/components/blog/blog-cta-section'
 import SectionSeparator from '@/components/section-separator'
-import CTASection from '@/components/blocks/cta/cta'
 import { SecondaryFlowButton } from '@/components/ui/flow-button'
 import {
   absoluteUrl,
@@ -120,6 +120,7 @@ const BlogDetailsPage = async ({ params }: { params: Promise<{ slug: string }> }
   const sameCategoryPosts = metadata.topic
     ? allPosts.filter(p => p.topic === metadata.topic && p.slug !== slug)
     : []
+
   const otherCategoryPosts = allPosts.filter(p => p.topic !== metadata.topic && p.slug !== slug)
   const relatedPosts = [...sameCategoryPosts, ...otherCategoryPosts].slice(0, 3)
 
@@ -272,7 +273,7 @@ const BlogDetailsPage = async ({ params }: { params: Promise<{ slug: string }> }
 
       <RelatedBlogSection posts={relatedPosts} />
 
-      <CTASection />
+      <BlogCtaSection slug={slug} topic={metadata.topic} locale='en' />
 
       {/* Add JSON-LD to your page */}
       <script

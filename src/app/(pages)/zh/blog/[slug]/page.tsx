@@ -4,7 +4,7 @@ import { notFound } from 'next/navigation'
 
 import { ChevronLeftIcon } from 'lucide-react'
 
-import CTASection from '@/components/blocks/cta/cta'
+import BlogCtaSection from '@/components/blog/blog-cta-section'
 import ContextualBlogCta from '@/components/blog/contextual-blog-cta'
 import TableOfContents from '@/components/blog/table-of-contents'
 import MDXContent from '@/components/mdx-content'
@@ -35,6 +35,7 @@ export const dynamicParams = false
 
 export async function generateStaticParams() {
   const posts = await getPosts(undefined, 'zh')
+
   return posts.map(post => ({ slug: post.slug }))
 }
 
@@ -91,6 +92,7 @@ const ChineseBlogDetailsPage = async ({ params }: { params: Promise<{ slug: stri
   const postDescription = metadata.description ?? '阅读 Meridian 的最新文章。'
   const path = `/zh/blog/${slug}`
   const headings = extractHeadings(content)
+
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
@@ -209,11 +211,7 @@ const ChineseBlogDetailsPage = async ({ params }: { params: Promise<{ slug: stri
         </div>
       </section>
       <SectionSeparator />
-      <CTASection
-        title='想找到最值得优先投入的自然增长渠道？'
-        description='预约一次沟通，我们会一起梳理你的搜索、Reddit 与 AI 可见性，并判断最适合的起点。'
-        buttonLabel='预约沟通'
-      />
+      <BlogCtaSection slug={slug} topic={metadata.topic} locale='zh' />
       <script
         type='application/ld+json'
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, '\\u003c') }}

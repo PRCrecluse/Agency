@@ -1,0 +1,264 @@
+---
+slug: 'how-to-find-geo-competitor-sites'
+title: 'How to Find GEO Competitor Sites Worth Studying: Five Measurable Signals'
+description: 'Use AI Overview share, cited-page scale, growth rate, SEO/GEO correlation, and AI channel mix to identify GEO competitors worth analyzing.'
+category: 'geo'
+publishedAt: '2026-08-25'
+updatedAt: '2026-08-25'
+author: { name: 'Yiwei', picture: '/images/about/founder.jpg' }
+reviewedBy: { name: 'Meridian Content Team', role: 'Fact and source review' }
+methodology: 'Adapted frame by frame from Yiwei’s July 31, 2026 Xiaohongshu video, with metric definitions checked against official Semrush and Google documentation. Case figures remain labeled as third-party estimates.'
+disclosure: 'The original Xiaohongshu video and frames are attributed and linked. This article was not sponsored by Semrush or Fish Audio, and showing a third-party tool does not constitute an endorsement.'
+image: '/media/blog/geo-competitor-selection/hero.jpg'
+video:
+  url: '/media/blog/geo-competitor-selection/xiaohongshu-source-video.mp4'
+  thumbnail: '/media/blog/geo-competitor-selection/semrush-domain-overview.jpg'
+  duration: 'PT2M10S'
+  uploadDate: '2026-07-31'
+  description: 'Yiwei explains five signals for finding competitor sites with useful GEO patterns.'
+featured: true
+keywords: ['GEO competitor analysis', 'AI search competitor analysis', 'AI Overview', 'AI Visibility', 'Cited Pages', 'GEO growth']
+readTime: '10 min read'
+---
+
+## The short answer: what makes a useful GEO competitor?
+
+A useful GEO competitor is not merely a site that ChatGPT mentions occasionally. It should have meaningful AI visibility, a substantial set of cited pages, a sustained growth trend, and enough evidence to examine how conventional SEO relates to generative-search performance.
+
+Start with five signals: **whether AI Overviews contribute a clear share of visibility, whether cited pages exist at meaningful scale, whether growth is sustained over three to six months, whether SEO and GEO trends move together, and whether the distribution across ChatGPT, Gemini, and other channels reveals a pattern worth investigating.**
+
+> This method was adapted from Yiwei's original Xiaohongshu video, [How to Find a Valuable GEO Competitor Site](https://www.xiaohongshu.com/explore/6a6b80bc000000002402cb2e). We converted the observations into a repeatable workflow and added metric definitions, screening thresholds, and safeguards against overclaiming.
+
+## Original video: five competitor-screening signals
+
+<figure>
+  <video
+    src="/media/blog/geo-competitor-selection/xiaohongshu-source-video.mp4"
+    poster="/media/blog/geo-competitor-selection/semrush-domain-overview.jpg"
+    aria-label="Yiwei explains how to identify GEO competitor sites worth studying"
+  />
+  <figcaption>
+    Source: Yiwei on Xiaohongshu, published July 31, 2026. This article structures the spoken explanation for readability; refer to the [original post](https://www.xiaohongshu.com/explore/6a6b80bc000000002402cb2e) for the source context.
+  </figcaption>
+</figure>
+
+The video uses the Semrush Domain Overview for `fish.audio` as an observational example. The captured snapshot shows AI Visibility 22, 1.9K Mentions, 1.5K Cited Pages, Authority Score 51, and estimated organic traffic of 575.9K. **These are third-party estimates for a particular date, location, and database. They are not traffic figures disclosed by Fish Audio and should not be treated as industry benchmarks.**
+
+## First, separate Mentions, Citations, and Cited Pages
+
+| Metric | Question it answers | Use in competitor analysis |
+| --- | --- | --- |
+| Mentions | In how many generated answers was the brand mentioned? | Shows whether the brand enters relevant conversations |
+| Citations | How often did answers cite the domain? | Shows how often the site acts as a source |
+| Cited Pages | How many different pages on the domain were cited? | Distinguishes a one-page success from a content system |
+| AI Visibility | What is the brand's relative presence across selected platforms and topics? | Supports comparisons within one tool and methodology |
+
+Semrush defines Cited Pages as pages on a company's domain, blog, or knowledge base cited by AI-generated answers. Its Visibility Overview includes AI Overviews, AI Mode, ChatGPT, and Gemini. The dataset comes from Semrush's Prompt Database, so it is useful for trends and comparisons but is not a complete log from the AI platforms. See the [Semrush metric documentation](https://www.semrush.com/kb/1596-visibility-overview-report).
+
+## Signal 1: Does one AI channel contribute a clear share?
+
+The goal is not to prove that AI Overviews are inherently better. It is to identify the retrieval ecosystem where the competitor succeeds.
+
+### Screening thresholds
+
+Using the same country, device, date, and tool definition, record Mentions or Cited Pages by platform:
+
+- leading channel share **≥40%**: a distinct channel pattern worth analyzing;
+- leading channel share **25%–39%**: multi-channel distribution; sample each platform separately;
+- every channel **&lt;25%**: do not claim there is a primary source;
+- fewer than **100 Mentions** or **30 Cited Pages**: keep as a watchlist item, not a core competitor.
+
+```text
+Channel share = channel Mentions (or Cited Pages) ÷ total of the same metric
+```
+
+Do not divide ChatGPT Mentions by total Cited Pages. Numerator and denominator must use the same metric.
+
+Google says support links in AI Overviews and AI Mode come from Google Search indexing and ranking systems. Pages must satisfy standard indexability and snippet requirements; there is no separate AI Overview technical shortcut. When AI Overviews dominate a competitor's visibility, investigate its search foundation first. See [Google: AI features and your website](https://developers.google.com/search/docs/appearance/ai-features).
+
+## Signal 2: Have Cited Pages reached meaningful scale?
+
+One homepage cited repeatedly proves one page performs. Many distinct cited pages indicate a potentially repeatable content system.
+
+```text
+Cited-page coverage = Cited Pages ÷ indexable content pages
+```
+
+| Condition | Classification |
+| --- | --- |
+| Cited Pages ≥500 and coverage ≥10% | Core GEO competitor |
+| 100–499 pages or 3%–9.9% coverage | Worth sampling |
+| 30–99 pages | Early watchlist |
+| &lt;30 pages | Insufficient sample for strategy conclusions |
+
+These are internal screening thresholds, not platform ranking rules. Compare large UGC, documentation, and tool sites with their peers rather than with a 15-page SaaS site.
+
+Sample the competitor's top 20 cited pages. Label page type, topic, intent, update date, firsthand evidence, sources, schema, internal links, and CTA. Treat a pattern as repeatable only when at least **60%** of sampled pages share it.
+
+## Signal 3: Is AI visibility growing for three to six months?
+
+The third signal is sustained movement, not a single monthly spike.
+
+<figure>
+  <img
+    src="/media/blog/geo-competitor-selection/ai-visibility-growth.jpg"
+    alt="Semrush AI Visibility trend shown in the source video, with Mentions, Citations, and Cited Pages rising over several months"
+  />
+  <figcaption>
+    Frame from Yiwei's Xiaohongshu video; interface and estimates are from Semrush. It illustrates trend analysis and is not an independent audit of fish.audio traffic.
+  </figcaption>
+</figure>
+
+Pull at least six consecutive months and calculate:
+
+```text
+90-day growth = (current month - three months earlier) ÷ three months earlier
+```
+
+- **≥50%** 90-day growth plus three consecutive positive months: high-value growth case;
+- **20%–49%** growth: stable watchlist case;
+- **>100%** in one month followed by a rapid decline: event-driven anomaly; investigate launches, PR, or methodology changes;
+- baseline below 30 Cited Pages: do not use percentage growth alone.
+
+Save the country, platform, date, and database version with every export. Semrush uses rolling datasets, so filter or coverage changes can look like business growth. See [Semrush's AI Visibility data methodology](https://www.semrush.com/kb/1607-semrush-ai-visibility-data).
+
+## Signal 4: Do SEO and GEO trends move together?
+
+If organic keywords, organic traffic, and Cited Pages rise together, AI visibility may be building on indexing, topical authority, and content expansion.
+
+Export at least six months of Organic Traffic, top-10 Organic Keywords, Cited Pages, Mentions, and Citations.
+
+| Six-month pattern | SEO | GEO | Interpretation |
+| --- | --- | --- | --- |
+| Both rise for at least four months | Rising | Rising | Strong correlation; inspect content and indexing foundations |
+| SEO leads by one to three months | Leading | Lagging | Possible retrieval and citation propagation |
+| GEO rises while SEO is flat | Flat | Rising | Check PR, third-party mentions, and platform-specific effects |
+| Both rise in only one month | Volatile | Volatile | Insufficient evidence |
+
+Parallel trends show correlation, not causation. Google's official position is still that generative search features build on core indexing, ranking, and quality systems. See the [Google AI search optimization guide](https://developers.google.com/search/docs/fundamentals/ai-optimization-guide).
+
+## Signal 5: Is the ChatGPT-versus-Gemini mix unusual?
+
+Separate two types of data:
+
+- **AI referral traffic:** real visits after a user clicks a link in an AI answer;
+- **AI visibility or citations:** third-party observations that a brand or page appeared.
+
+Do not combine both under “GEO traffic.” Semrush's AI Traffic Dashboard estimates visits from assistants, while Visibility Overview observes Mentions, Citations, and Cited Pages. See [Semrush's AI Traffic Dashboard](https://www.semrush.com/kb/1562-the-ai-traffic-dashboard).
+
+### Screening thresholds
+
+- one AI referral source contributes **≥50%** of AI visits: primary traffic channel;
+- ChatGPT-to-Gemini traffic ratio **≥3:1** or **≤1:3**: unusual platform mix worth investigating;
+- fewer than **100 monthly AI referral visits**: do not infer a stable mix;
+- third-party estimate differs from first-party analytics by **>30%**: use first-party data and document the difference.
+
+Platform concentration is not automatically an advantage. It may reflect audience habits, market, subject area, crawler access, or measurement coverage. Ask which pages, queries, and external sources produced the pattern.
+
+## A 30-minute GEO competitor screening workflow
+
+### 1. Build a candidate pool — 5 minutes
+
+Collect **10–20 domains** from conventional search results, AI-answer citations, industry lists, and customer interviews. Require at least two matches across audience, product type, and business model.
+
+### 2. Normalize the data — 3 minutes
+
+Fix country, device, observation date, domain scope, AI platform, and the exact metric used.
+
+### 3. Score candidates out of 100 — 10 minutes
+
+| Dimension | Weight | Full-score condition |
+| --- | ---: | --- |
+| Clear AI channel signal | 15 | Leading channel share ≥40% |
+| Cited-page scale | 25 | ≥500 and coverage ≥10% |
+| 90-day growth | 20 | ≥50% plus three positive months |
+| SEO/GEO co-movement | 20 | Same direction in at least four of six months |
+| Research value of channel mix | 10 | ≥3:1 platform gap with adequate sample |
+| Commercial and audience fit | 10 | At least two matches across product, market, audience |
+
+- **80–100:** core analysis target;
+- **60–79:** monthly watchlist;
+- **40–59:** analyze selected pages only;
+- **below 40:** exclude.
+
+### 4. Sample pages — 10 minutes
+
+For every selected domain, inspect **20 Cited Pages**. Record the five common page types, ten recurring entities, five frequent source types, publication and update dates, original evidence, and whether pages have both search rankings and AI citations.
+
+### 5. Write only testable hypotheses — 2 minutes
+
+A defensible conclusion:
+
+> Thirteen of the site's 20 frequently cited pages are product documentation or tutorials (65%). Next, test whether this page type also contributes organic rankings.
+
+An unsupported conclusion:
+
+> AI prefers long articles, so every page should contain 3,000 words.
+
+## Common analytical errors
+
+### Reporting third-party estimates as actual traffic
+
+Tools such as Semrush help with comparisons and trends. First-party analytics and server logs are closer to real traffic. Write “estimated” or “observed by the tool,” not “the site received.”
+
+### Treating Mentions as Citations
+
+A brand mention does not mean the site served as a source. To assess content participation, inspect Citations, Cited Pages, and the cited URLs.
+
+### Looking at totals without time
+
+A domain with 1,000 historical Cited Pages may be shrinking, while one with 200 may be growing rapidly. Use scale and trend together.
+
+### Turning correlation into causation
+
+SEO and GEO may rise together because of a launch, media coverage, branded demand, or a measurement change. Co-movement alone does not establish cause.
+
+### Copying competitor content
+
+Competitor research should identify topics, evidence, and distribution mechanisms—not produce a rewrite. Google warns that scaled pages without original value may violate its abuse policies. See [Google's generative AI content guidance](https://developers.google.com/search/docs/fundamentals/using-gen-ai-content).
+
+## Execution checklist
+
+- [ ] Candidate pool contains 10–20 comparable domains
+- [ ] Country, date, device, and platform definitions are consistent
+- [ ] Mentions, Citations, and Cited Pages are not mixed
+- [ ] A leading channel requires at least 40% share
+- [ ] Cited Pages are evaluated by both count and coverage
+- [ ] Trends include at least six consecutive months
+- [ ] Small baselines are not judged by percentage alone
+- [ ] SEO/GEO co-movement is described as correlation
+- [ ] AI referral traffic and AI citations are tracked separately
+- [ ] At least 20 cited pages are sampled per selected competitor
+- [ ] Third-party figures include “estimated” and observation date
+- [ ] Recommendations are framed as testable hypotheses
+
+## FAQ
+
+### Do more Cited Pages always mean better GEO performance?
+
+No. Evaluate the queries, brand context, position, clicks, and conversions. A high count of irrelevant citations may create no business value.
+
+### Is a small site without 500 Cited Pages not worth studying?
+
+It can still be valuable. Prioritize coverage and growth rate. A site with 25 cited pages out of 100 indexable content pages has 25% coverage and may be more instructive than a much larger domain.
+
+### Does GEO still require SEO?
+
+Yes—especially for Google AI Overviews and AI Mode, which rely on core search indexing, ranking, and quality systems. Crawlability, indexability, content quality, internal links, and page experience remain foundational.
+
+### How often should competitors be reviewed?
+
+Record core competitor metrics monthly and resample Cited Pages quarterly. During rapid growth or a launch, observe every two weeks, but do not rewrite strategy because of one week's movement.
+
+## Conclusion
+
+The goal is not to choose the best-known brand or the most impressive AI Visibility score. Find a site with **scale, a sustained trend, analyzable patterns, and a meaningful similarity to your business**. Screen with five signals, sample 20 cited pages, and convert observations into testable hypotheses.
+
+## Media and sources
+
+1. [Xiaohongshu — Yiwei: How to Find a Valuable GEO Competitor Site](https://www.xiaohongshu.com/explore/6a6b80bc000000002402cb2e), July 31, 2026. Original video source for the method.
+2. [Semrush: Domain Overview](https://www.semrush.com/kb/1202-domain-overview-overview-report).
+3. [Semrush: AI Visibility Overview](https://www.semrush.com/kb/1596-visibility-overview-report).
+4. [Semrush: Where AI Visibility data comes from](https://www.semrush.com/kb/1607-semrush-ai-visibility-data).
+5. [Google Search Central: AI features and your website](https://developers.google.com/search/docs/appearance/ai-features).
+6. [Google Search Central: AI search optimization guide](https://developers.google.com/search/docs/fundamentals/ai-optimization-guide).

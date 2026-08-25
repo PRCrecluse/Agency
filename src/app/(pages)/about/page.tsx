@@ -202,7 +202,7 @@ const AboutPage = () => {
 
             <div className='flex flex-wrap gap-3'>
               <SecondaryFlowButton asChild>
-                <Link href='https://x.com/PRCrecluse674' target='_blank' rel='noreferrer'>
+                <Link href='https://x.com/Yiwei_growth' target='_blank' rel='noreferrer'>
                   Follow on X
                   <ExternalLinkIcon />
                 </Link>

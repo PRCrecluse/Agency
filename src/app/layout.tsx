@@ -1,6 +1,5 @@
 import type { ReactNode } from 'react'
 
-import { Geist, Geist_Mono } from 'next/font/google'
 import { headers } from 'next/headers'
 import type { Metadata } from 'next'
 import Script from 'next/script'
@@ -10,19 +9,7 @@ import { TooltipProvider } from '@/components/ui/tooltip'
 import { DATAFAST_DOMAIN, DATAFAST_WEBSITE_ID } from '@/lib/analytics/datafast'
 
 import { defaultOgImage, siteDescription, siteKeywords, siteTitle, siteUrl } from '@/lib/seo'
-import { cn } from '@/lib/utils'
-
 import './globals.css'
-
-const geistSans = Geist({
-  variable: '--font-geist-sans',
-  subsets: ['latin']
-})
-
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
-  subsets: ['latin']
-})
 
 export const metadata: Metadata = {
   title: siteTitle,
@@ -93,7 +80,7 @@ const RootLayout = async ({ children }: Readonly<{ children: ReactNode }>) => {
   return (
     <html
       lang={pageLocale}
-      className={cn(geistSans.variable, geistMono.variable, 'flex min-h-full w-full scroll-smooth antialiased')}
+      className='flex min-h-full w-full scroll-smooth antialiased'
       suppressHydrationWarning
     >
       <body className='flex min-h-full w-full flex-auto flex-col'>
