@@ -163,6 +163,7 @@ Reddit 服务页应以 **`reddit marketing`** 为总主题，以 **`reddit marke
 
 | 文件 | 用途 |
 |---|---|
+| `reddit_keyword_master_table_us.csv` | 135 个关键词的统一主表：优先级、词簇、意图、页面、内容资产、全部指标与备注 |
 | `seed_plan.json` | 关键词候选池、意图与目标页面 |
 | `raw_keyword_metrics_us.json` | API 原始响应，便于审计 |
 | `keyword_metrics_us.csv` | 可筛选的完整指标表 |
