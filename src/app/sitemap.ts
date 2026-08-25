@@ -19,6 +19,7 @@ const specializedServicePathSet = new Set(specializedServicePaths)
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const posts = await getPosts()
   const zhPosts = await getPosts(undefined, 'zh')
+  const englishPostSlugs = new Set(posts.map(post => post.slug))
   const zhPostSlugs = new Set(zhPosts.map(post => post.slug))
   const now = new Date()
   const localizedServiceEntry = (path: string, priority: number) => ({
@@ -183,13 +184,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: post.publishedAt ? new Date(post.publishedAt) : now,
       changeFrequency: 'monthly' as const,
       priority: 0.7,
-      alternates: {
-        languages: {
-          en: absoluteUrl(`/blog/${post.slug}`),
-          'zh-CN': absoluteUrl(`/zh/blog/${post.slug}`),
-          'x-default': absoluteUrl(`/blog/${post.slug}`)
-        }
-      }
+      alternates: englishPostSlugs.has(post.slug)
+        ? {
+            languages: {
+              en: absoluteUrl(`/blog/${post.slug}`),
+              'zh-CN': absoluteUrl(`/zh/blog/${post.slug}`),
+              'x-default': absoluteUrl(`/blog/${post.slug}`)
+            }
+          }
+        : undefined
     }))
   ]
 }

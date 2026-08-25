@@ -21,6 +21,7 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { Separator } from '@/components/ui/separator'
 
 import RelatedBlogSection from '@/components/blog/related-blog-section/related-blog-section'
+import ContextualBlogCta from '@/components/blog/contextual-blog-cta'
 import SectionSeparator from '@/components/section-separator'
 import CTASection from '@/components/blocks/cta/cta'
 import { SecondaryFlowButton } from '@/components/ui/flow-button'
@@ -165,12 +166,12 @@ const BlogDetailsPage = async ({ params }: { params: Promise<{ slug: string }> }
   return (
     <>
       <section className='py-8 sm:py-16'>
-        <div className='mx-auto grid w-full max-w-7xl grid-cols-1 px-4 sm:px-6 lg:grid-cols-[250px_1fr] lg:gap-12 lg:px-8 xl:gap-16'>
+        <div className='mx-auto grid w-full max-w-7xl grid-cols-1 px-4 sm:px-6 lg:grid-cols-[220px_minmax(0,1fr)] lg:gap-10 lg:px-8 xl:grid-cols-[220px_minmax(0,1fr)_260px] xl:gap-10'>
           <aside className='hidden lg:block'>
             <TableOfContents headings={headings} />
           </aside>
 
-          <div>
+          <div className='min-w-0'>
             <Breadcrumb className='mb-6'>
               <BreadcrumbList>
                 <BreadcrumbItem>
@@ -226,6 +227,8 @@ const BlogDetailsPage = async ({ params }: { params: Promise<{ slug: string }> }
               </div>
             </div>
 
+            <ContextualBlogCta slug={slug} topic={metadata.topic} locale='en' className='mb-10 xl:hidden' />
+
             <img src={metadata.image} alt={postTitle} className='mb-16 max-h-110 w-full rounded-xl object-cover' />
 
             <MDXContent source={content} />
@@ -258,6 +261,9 @@ const BlogDetailsPage = async ({ params }: { params: Promise<{ slug: string }> }
                 </SecondaryFlowButton>
               )}
             </div>
+          </div>
+          <div className='hidden xl:block'>
+            <ContextualBlogCta slug={slug} topic={metadata.topic} locale='en' className='sticky top-24' />
           </div>
         </div>
       </section>

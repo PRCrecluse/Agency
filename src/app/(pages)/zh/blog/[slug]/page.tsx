@@ -5,6 +5,7 @@ import { notFound } from 'next/navigation'
 import { ChevronLeftIcon } from 'lucide-react'
 
 import CTASection from '@/components/blocks/cta/cta'
+import ContextualBlogCta from '@/components/blog/contextual-blog-cta'
 import TableOfContents from '@/components/blog/table-of-contents'
 import MDXContent from '@/components/mdx-content'
 import SectionSeparator from '@/components/section-separator'
@@ -40,6 +41,7 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params
   const post = await getPostBySlug(slug, 'zh')
+  const englishPost = await getPostBySlug(slug)
 
   if (!post) return {}
 
@@ -53,14 +55,16 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       description: postDescription,
       path,
       keywords: post.metadata.keywords,
-      alternates: {
-        canonical: path,
-        languages: {
-          'en-US': `/blog/${slug}`,
-          'zh-CN': path,
-          'x-default': `/blog/${slug}`
-        }
-      }
+      alternates: englishPost
+        ? {
+            canonical: path,
+            languages: {
+              'en-US': `/blog/${slug}`,
+              'zh-CN': path,
+              'x-default': `/blog/${slug}`
+            }
+          }
+        : { canonical: path }
     }),
     openGraph: {
       title: `${postTitle} | Meridian`,
@@ -128,11 +132,11 @@ const ChineseBlogDetailsPage = async ({ params }: { params: Promise<{ slug: stri
   return (
     <>
       <section lang='zh-CN' className='py-8 sm:py-16'>
-        <div className='mx-auto grid w-full max-w-7xl grid-cols-1 px-4 sm:px-6 lg:grid-cols-[250px_1fr] lg:gap-12 lg:px-8 xl:gap-16'>
+        <div className='mx-auto grid w-full max-w-7xl grid-cols-1 px-4 sm:px-6 lg:grid-cols-[220px_minmax(0,1fr)] lg:gap-10 lg:px-8 xl:grid-cols-[220px_minmax(0,1fr)_260px] xl:gap-10'>
           <aside className='hidden lg:block'>
             <TableOfContents headings={headings} />
           </aside>
-          <article>
+          <article className='min-w-0'>
             <Breadcrumb className='mb-6'>
               <BreadcrumbList>
                 <BreadcrumbItem><BreadcrumbLink asChild><Link href='/'>首页</Link></BreadcrumbLink></BreadcrumbItem>
@@ -183,6 +187,13 @@ const ChineseBlogDetailsPage = async ({ params }: { params: Promise<{ slug: stri
               </aside>
             )}
 
+            <ContextualBlogCta
+              slug={slug}
+              topic={metadata.topic}
+              locale='zh'
+              className='mb-10 xl:hidden'
+            />
+
             <img src={metadata.image} alt={postTitle} className='mb-16 max-h-110 w-full rounded-xl object-cover' />
             <MDXContent source={content} />
 
@@ -192,6 +203,9 @@ const ChineseBlogDetailsPage = async ({ params }: { params: Promise<{ slug: stri
               </SecondaryFlowButton>
             </div>
           </article>
+          <div className='hidden xl:block'>
+            <ContextualBlogCta slug={slug} topic={metadata.topic} locale='zh' className='sticky top-24' />
+          </div>
         </div>
       </section>
       <SectionSeparator />
