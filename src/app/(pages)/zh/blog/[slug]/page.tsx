@@ -70,6 +70,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       locale: 'zh_CN',
       alternateLocale: ['en_US'],
       publishedTime: post.metadata.publishedAt,
+      modifiedTime: post.metadata.updatedAt ?? post.metadata.publishedAt,
       images: post.metadata.image ? [{ url: absoluteUrl(post.metadata.image), alt: postTitle }] : undefined
     }
   }
@@ -96,7 +97,7 @@ const ChineseBlogDetailsPage = async ({ params }: { params: Promise<{ slug: stri
         headline: postTitle,
         image: metadata.image ? [absoluteUrl(metadata.image)] : undefined,
         datePublished: metadata.publishedAt,
-        dateModified: metadata.publishedAt,
+        dateModified: metadata.updatedAt ?? metadata.publishedAt,
         author: metadata.author ? { '@type': 'Person', name: metadata.author.name } : undefined,
         publisher: { '@id': absoluteUrl('/#organization') },
         mainEntityOfPage: { '@id': absoluteUrl(`${path}#webpage`) }
@@ -107,7 +108,20 @@ const ChineseBlogDetailsPage = async ({ params }: { params: Promise<{ slug: stri
         { name: '首页', path: '/' },
         { name: '博客', path: '/zh/blog' },
         { name: postTitle, path }
-      ])
+      ]),
+      ...(metadata.video
+        ? [
+            {
+              '@type': 'VideoObject',
+              name: postTitle,
+              description: metadata.video.description ?? postDescription,
+              thumbnailUrl: [absoluteUrl(metadata.video.thumbnail)],
+              contentUrl: absoluteUrl(metadata.video.url),
+              uploadDate: metadata.video.uploadDate ?? metadata.publishedAt,
+              duration: metadata.video.duration
+            }
+          ]
+        : [])
     ]
   }
 
@@ -141,7 +155,7 @@ const ChineseBlogDetailsPage = async ({ params }: { params: Promise<{ slug: stri
                 </Avatar>
                 <div className='flex flex-col text-sm'>
                   <span className='text-muted-foreground mb-1'>作者</span>
-                  <span className='font-medium'>{metadata.author?.name}</span>
+                  <Link href='/about' className='font-medium underline-offset-4 hover:underline'>{metadata.author?.name}</Link>
                 </div>
               </div>
               <div className='flex flex-col text-sm'>
@@ -152,7 +166,22 @@ const ChineseBlogDetailsPage = async ({ params }: { params: Promise<{ slug: stri
                 <span className='text-muted-foreground mb-1.5'>发布日期</span>
                 <span className='font-medium'>{new Date(metadata.publishedAt ?? '').toLocaleDateString('zh-CN')}</span>
               </div>
+              {metadata.updatedAt && (
+                <div className='flex flex-col text-sm'>
+                  <span className='text-muted-foreground mb-1.5'>最近更新</span>
+                  <span className='font-medium'>{new Date(metadata.updatedAt).toLocaleDateString('zh-CN')}</span>
+                </div>
+              )}
             </div>
+
+            {(metadata.reviewedBy || metadata.methodology || metadata.disclosure) && (
+              <aside className='bg-muted/50 mb-10 rounded-xl border p-5 text-sm leading-6' aria-label='内容可信度说明'>
+                <p className='font-semibold'>内容可信度说明</p>
+                {metadata.reviewedBy && <p className='mt-2'><span className='text-muted-foreground'>审核：</span>{metadata.reviewedBy.name}{metadata.reviewedBy.role ? `（${metadata.reviewedBy.role}）` : ''}</p>}
+                {metadata.methodology && <p className='mt-2'><span className='text-muted-foreground'>方法：</span>{metadata.methodology}</p>}
+                {metadata.disclosure && <p className='mt-2'><span className='text-muted-foreground'>利益披露：</span>{metadata.disclosure}</p>}
+              </aside>
+            )}
 
             <img src={metadata.image} alt={postTitle} className='mb-16 max-h-110 w-full rounded-xl object-cover' />
             <MDXContent source={content} />

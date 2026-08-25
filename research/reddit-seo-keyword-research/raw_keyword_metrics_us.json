@@ -1,0 +1,1337 @@
+{
+  "source": "RapidAPI SEO API - keyword-metrics",
+  "host": "seo-api-dr-rd-rank-keywords-backlinks1.p.rapidapi.com",
+  "country": "us",
+  "records": [
+    {
+      "keyword": "reddit marketing",
+      "cluster_id": "reddit-marketing-services",
+      "intent": "commercial",
+      "target": "/services/reddit-services",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "reddit marketing",
+          "searchVolume": 800,
+          "clicks": 787,
+          "cpc": 4,
+          "difficulty": 36,
+          "globalSearchVolume": 2100,
+          "trafficPotential": 1000
+        }
+      }
+    },
+    {
+      "keyword": "reddit marketing agency",
+      "cluster_id": "reddit-marketing-services",
+      "intent": "commercial",
+      "target": "/services/reddit-services",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "reddit marketing agency",
+          "searchVolume": 300,
+          "clicks": 0,
+          "cpc": 3,
+          "difficulty": 11,
+          "globalSearchVolume": 900,
+          "trafficPotential": 100
+        }
+      }
+    },
+    {
+      "keyword": "reddit marketing services",
+      "cluster_id": "reddit-marketing-services",
+      "intent": "commercial",
+      "target": "/services/reddit-services",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "reddit marketing services",
+          "searchVolume": 200,
+          "clicks": 0,
+          "cpc": 6,
+          "difficulty": 4,
+          "globalSearchVolume": 350,
+          "trafficPotential": 10
+        }
+      }
+    },
+    {
+      "keyword": "reddit agency",
+      "cluster_id": "reddit-marketing-services",
+      "intent": "commercial",
+      "target": "/services/reddit-services",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "reddit agency",
+          "searchVolume": 150,
+          "clicks": 0,
+          "cpc": 6,
+          "difficulty": 19,
+          "globalSearchVolume": 400,
+          "trafficPotential": 150
+        }
+      }
+    },
+    {
+      "keyword": "reddit advertising agency",
+      "cluster_id": "reddit-marketing-services",
+      "intent": "commercial",
+      "target": "/services/reddit-services",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "reddit advertising agency",
+          "searchVolume": 70,
+          "clicks": 0,
+          "cpc": 3.5,
+          "difficulty": 13,
+          "globalSearchVolume": 250,
+          "trafficPotential": 100
+        }
+      }
+    },
+    {
+      "keyword": "reddit promotion service",
+      "cluster_id": "reddit-marketing-services",
+      "intent": "commercial",
+      "target": "/services/reddit-services",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "reddit promotion service",
+          "searchVolume": 60,
+          "clicks": 0,
+          "cpc": null,
+          "difficulty": 0,
+          "globalSearchVolume": 70,
+          "trafficPotential": 11000
+        }
+      }
+    },
+    {
+      "keyword": "reddit growth service",
+      "cluster_id": "reddit-marketing-services",
+      "intent": "commercial",
+      "target": "/services/reddit-services",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "reddit growth service",
+          "searchVolume": 0,
+          "clicks": 0,
+          "cpc": null,
+          "difficulty": null,
+          "globalSearchVolume": null,
+          "trafficPotential": null
+        }
+      }
+    },
+    {
+      "keyword": "reddit seo",
+      "cluster_id": "reddit-marketing-services",
+      "intent": "commercial",
+      "target": "/services/reddit-services",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "reddit seo",
+          "searchVolume": 1300,
+          "clicks": 1309,
+          "cpc": 10,
+          "difficulty": 34,
+          "globalSearchVolume": 3000,
+          "trafficPotential": 6600
+        }
+      }
+    },
+    {
+      "keyword": "reddit for business",
+      "cluster_id": "reddit-marketing-services",
+      "intent": "commercial",
+      "target": "/services/reddit-services",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "reddit for business",
+          "searchVolume": 700,
+          "clicks": 903,
+          "cpc": 10,
+          "difficulty": 8,
+          "globalSearchVolume": 1200,
+          "trafficPotential": 12000
+        }
+      }
+    },
+    {
+      "keyword": "reddit lead generation",
+      "cluster_id": "reddit-marketing-services",
+      "intent": "commercial",
+      "target": "/services/reddit-services",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "reddit lead generation",
+          "searchVolume": 70,
+          "clicks": 0,
+          "cpc": 5,
+          "difficulty": 0,
+          "globalSearchVolume": 150,
+          "trafficPotential": 200
+        }
+      }
+    },
+    {
+      "keyword": "reddit b2b marketing",
+      "cluster_id": "reddit-marketing-services",
+      "intent": "commercial",
+      "target": "/services/reddit-services",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "reddit b2b marketing",
+          "searchVolume": 40,
+          "clicks": 0,
+          "cpc": 7,
+          "difficulty": null,
+          "globalSearchVolume": 60,
+          "trafficPotential": null
+        }
+      }
+    },
+    {
+      "keyword": "reddit saas marketing",
+      "cluster_id": "reddit-marketing-services",
+      "intent": "commercial",
+      "target": "/services/reddit-services",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "reddit saas marketing",
+          "searchVolume": 10,
+          "clicks": 0,
+          "cpc": null,
+          "difficulty": null,
+          "globalSearchVolume": 10,
+          "trafficPotential": null
+        }
+      }
+    },
+    {
+      "keyword": "reddit community management",
+      "cluster_id": "reddit-community-management",
+      "intent": "commercial",
+      "target": "/services/reddit-services/community-management",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "reddit community management",
+          "searchVolume": 20,
+          "clicks": 0,
+          "cpc": null,
+          "difficulty": null,
+          "globalSearchVolume": 40,
+          "trafficPotential": null
+        }
+      }
+    },
+    {
+      "keyword": "reddit community manager",
+      "cluster_id": "reddit-community-management",
+      "intent": "commercial",
+      "target": "/services/reddit-services/community-management",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "reddit community manager",
+          "searchVolume": 10,
+          "clicks": 0,
+          "cpc": null,
+          "difficulty": null,
+          "globalSearchVolume": 20,
+          "trafficPotential": null
+        }
+      }
+    },
+    {
+      "keyword": "reddit management agency",
+      "cluster_id": "reddit-community-management",
+      "intent": "commercial",
+      "target": "/services/reddit-services/community-management",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "reddit management agency",
+          "searchVolume": 0,
+          "clicks": 0,
+          "cpc": null,
+          "difficulty": null,
+          "globalSearchVolume": 10,
+          "trafficPotential": null
+        }
+      }
+    },
+    {
+      "keyword": "reddit account management",
+      "cluster_id": "reddit-community-management",
+      "intent": "commercial",
+      "target": "/services/reddit-services/community-management",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "reddit account management",
+          "searchVolume": 20,
+          "clicks": 0,
+          "cpc": null,
+          "difficulty": null,
+          "globalSearchVolume": 20,
+          "trafficPotential": null
+        }
+      }
+    },
+    {
+      "keyword": "subreddit management",
+      "cluster_id": "reddit-community-management",
+      "intent": "commercial",
+      "target": "/services/reddit-services/community-management",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "subreddit management",
+          "searchVolume": 0,
+          "clicks": 0,
+          "cpc": null,
+          "difficulty": null,
+          "globalSearchVolume": null,
+          "trafficPotential": null
+        }
+      }
+    },
+    {
+      "keyword": "subreddit manager",
+      "cluster_id": "reddit-community-management",
+      "intent": "commercial",
+      "target": "/services/reddit-services/community-management",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "subreddit manager",
+          "searchVolume": 0,
+          "clicks": 0,
+          "cpc": null,
+          "difficulty": null,
+          "globalSearchVolume": 0,
+          "trafficPotential": null
+        }
+      }
+    },
+    {
+      "keyword": "subreddit marketing",
+      "cluster_id": "reddit-community-management",
+      "intent": "commercial",
+      "target": "/services/reddit-services/community-management",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "subreddit marketing",
+          "searchVolume": 0,
+          "clicks": 0,
+          "cpc": null,
+          "difficulty": null,
+          "globalSearchVolume": null,
+          "trafficPotential": null
+        }
+      }
+    },
+    {
+      "keyword": "reddit brand management",
+      "cluster_id": "reddit-community-management",
+      "intent": "commercial",
+      "target": "/services/reddit-services/community-management",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "reddit brand management",
+          "searchVolume": 0,
+          "clicks": 0,
+          "cpc": null,
+          "difficulty": null,
+          "globalSearchVolume": 0,
+          "trafficPotential": null
+        }
+      }
+    },
+    {
+      "keyword": "reddit reputation management",
+      "cluster_id": "reddit-community-management",
+      "intent": "commercial",
+      "target": "/services/reddit-services/community-management",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "reddit reputation management",
+          "searchVolume": 20,
+          "clicks": 0,
+          "cpc": null,
+          "difficulty": null,
+          "globalSearchVolume": 40,
+          "trafficPotential": null
+        }
+      }
+    },
+    {
+      "keyword": "reddit engagement service",
+      "cluster_id": "reddit-community-management",
+      "intent": "commercial",
+      "target": "/services/reddit-services/community-management",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "reddit engagement service",
+          "searchVolume": 10,
+          "clicks": 0,
+          "cpc": null,
+          "difficulty": null,
+          "globalSearchVolume": 10,
+          "trafficPotential": null
+        }
+      }
+    },
+    {
+      "keyword": "reddit campaign",
+      "cluster_id": "reddit-campaigns",
+      "intent": "commercial",
+      "target": "/services/reddit-services/reddit-campaigns",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "reddit campaign",
+          "searchVolume": 400,
+          "clicks": 0,
+          "cpc": 35,
+          "difficulty": 9,
+          "globalSearchVolume": 450,
+          "trafficPotential": 12000
+        }
+      }
+    },
+    {
+      "keyword": "reddit marketing campaign",
+      "cluster_id": "reddit-campaigns",
+      "intent": "commercial",
+      "target": "/services/reddit-services/reddit-campaigns",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "reddit marketing campaign",
+          "searchVolume": 20,
+          "clicks": 0,
+          "cpc": null,
+          "difficulty": null,
+          "globalSearchVolume": 20,
+          "trafficPotential": null
+        }
+      }
+    },
+    {
+      "keyword": "reddit campaign management",
+      "cluster_id": "reddit-campaigns",
+      "intent": "commercial",
+      "target": "/services/reddit-services/reddit-campaigns",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "reddit campaign management",
+          "searchVolume": 0,
+          "clicks": 0,
+          "cpc": null,
+          "difficulty": null,
+          "globalSearchVolume": null,
+          "trafficPotential": null
+        }
+      }
+    },
+    {
+      "keyword": "reddit content marketing",
+      "cluster_id": "reddit-campaigns",
+      "intent": "commercial",
+      "target": "/services/reddit-services/reddit-campaigns",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "reddit content marketing",
+          "searchVolume": 40,
+          "clicks": 0,
+          "cpc": null,
+          "difficulty": null,
+          "globalSearchVolume": 60,
+          "trafficPotential": null
+        }
+      }
+    },
+    {
+      "keyword": "reddit content strategy",
+      "cluster_id": "reddit-campaigns",
+      "intent": "commercial",
+      "target": "/services/reddit-services/reddit-campaigns",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "reddit content strategy",
+          "searchVolume": 10,
+          "clicks": 0,
+          "cpc": null,
+          "difficulty": null,
+          "globalSearchVolume": 10,
+          "trafficPotential": null
+        }
+      }
+    },
+    {
+      "keyword": "reddit post promotion",
+      "cluster_id": "reddit-campaigns",
+      "intent": "commercial",
+      "target": "/services/reddit-services/reddit-campaigns",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "reddit post promotion",
+          "searchVolume": 0,
+          "clicks": 0,
+          "cpc": null,
+          "difficulty": null,
+          "globalSearchVolume": null,
+          "trafficPotential": null
+        }
+      }
+    },
+    {
+      "keyword": "reddit influencer marketing",
+      "cluster_id": "reddit-campaigns",
+      "intent": "commercial",
+      "target": "/services/reddit-services/reddit-campaigns",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "reddit influencer marketing",
+          "searchVolume": 30,
+          "clicks": 0,
+          "cpc": 7,
+          "difficulty": null,
+          "globalSearchVolume": 60,
+          "trafficPotential": null
+        }
+      }
+    },
+    {
+      "keyword": "reddit product launch",
+      "cluster_id": "reddit-campaigns",
+      "intent": "commercial",
+      "target": "/services/reddit-services/reddit-campaigns",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "reddit product launch",
+          "searchVolume": 0,
+          "clicks": 0,
+          "cpc": null,
+          "difficulty": null,
+          "globalSearchVolume": 0,
+          "trafficPotential": null
+        }
+      }
+    },
+    {
+      "keyword": "reddit organic marketing",
+      "cluster_id": "reddit-campaigns",
+      "intent": "commercial",
+      "target": "/services/reddit-services/reddit-campaigns",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "reddit organic marketing",
+          "searchVolume": 60,
+          "clicks": 0,
+          "cpc": null,
+          "difficulty": null,
+          "globalSearchVolume": 80,
+          "trafficPotential": null
+        }
+      }
+    },
+    {
+      "keyword": "reddit brand awareness",
+      "cluster_id": "reddit-campaigns",
+      "intent": "commercial",
+      "target": "/services/reddit-services/reddit-campaigns",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "reddit brand awareness",
+          "searchVolume": 10,
+          "clicks": 0,
+          "cpc": null,
+          "difficulty": null,
+          "globalSearchVolume": 10,
+          "trafficPotential": null
+        }
+      }
+    },
+    {
+      "keyword": "how to market on reddit",
+      "cluster_id": "reddit-marketing-guides",
+      "intent": "informational",
+      "target": "/blog",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "how to market on reddit",
+          "searchVolume": 50,
+          "clicks": 0,
+          "cpc": 6,
+          "difficulty": 8,
+          "globalSearchVolume": 60,
+          "trafficPotential": 100
+        }
+      }
+    },
+    {
+      "keyword": "how to use reddit for marketing",
+      "cluster_id": "reddit-marketing-guides",
+      "intent": "informational",
+      "target": "/blog",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "how to use reddit for marketing",
+          "searchVolume": 100,
+          "clicks": 0,
+          "cpc": 4.5,
+          "difficulty": 6,
+          "globalSearchVolume": 150,
+          "trafficPotential": 100
+        }
+      }
+    },
+    {
+      "keyword": "reddit marketing strategy",
+      "cluster_id": "reddit-marketing-guides",
+      "intent": "informational",
+      "target": "/blog",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "reddit marketing strategy",
+          "searchVolume": 200,
+          "clicks": 0,
+          "cpc": 2,
+          "difficulty": 0,
+          "globalSearchVolume": 400,
+          "trafficPotential": 30
+        }
+      }
+    },
+    {
+      "keyword": "reddit marketing guide",
+      "cluster_id": "reddit-marketing-guides",
+      "intent": "informational",
+      "target": "/blog",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "reddit marketing guide",
+          "searchVolume": 20,
+          "clicks": 0,
+          "cpc": null,
+          "difficulty": null,
+          "globalSearchVolume": 40,
+          "trafficPotential": null
+        }
+      }
+    },
+    {
+      "keyword": "reddit marketing examples",
+      "cluster_id": "reddit-marketing-guides",
+      "intent": "informational",
+      "target": "/blog",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "reddit marketing examples",
+          "searchVolume": 0,
+          "clicks": 0,
+          "cpc": null,
+          "difficulty": null,
+          "globalSearchVolume": 20,
+          "trafficPotential": null
+        }
+      }
+    },
+    {
+      "keyword": "reddit marketing tips",
+      "cluster_id": "reddit-marketing-guides",
+      "intent": "informational",
+      "target": "/blog",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "reddit marketing tips",
+          "searchVolume": 10,
+          "clicks": 0,
+          "cpc": null,
+          "difficulty": null,
+          "globalSearchVolume": 10,
+          "trafficPotential": null
+        }
+      }
+    },
+    {
+      "keyword": "reddit marketing ideas",
+      "cluster_id": "reddit-marketing-guides",
+      "intent": "informational",
+      "target": "/blog",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "reddit marketing ideas",
+          "searchVolume": 0,
+          "clicks": 0,
+          "cpc": null,
+          "difficulty": null,
+          "globalSearchVolume": 0,
+          "trafficPotential": null
+        }
+      }
+    },
+    {
+      "keyword": "reddit marketing best practices",
+      "cluster_id": "reddit-marketing-guides",
+      "intent": "informational",
+      "target": "/blog",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "reddit marketing best practices",
+          "searchVolume": 20,
+          "clicks": 0,
+          "cpc": null,
+          "difficulty": null,
+          "globalSearchVolume": 20,
+          "trafficPotential": null
+        }
+      }
+    },
+    {
+      "keyword": "reddit marketing mistakes",
+      "cluster_id": "reddit-marketing-guides",
+      "intent": "informational",
+      "target": "/blog",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "reddit marketing mistakes",
+          "searchVolume": 10,
+          "clicks": 0,
+          "cpc": null,
+          "difficulty": null,
+          "globalSearchVolume": 10,
+          "trafficPotential": null
+        }
+      }
+    },
+    {
+      "keyword": "reddit seo strategy",
+      "cluster_id": "reddit-marketing-guides",
+      "intent": "informational",
+      "target": "/blog",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "reddit seo strategy",
+          "searchVolume": 100,
+          "clicks": 0,
+          "cpc": 5,
+          "difficulty": 4,
+          "globalSearchVolume": 250,
+          "trafficPotential": 0
+        }
+      }
+    },
+    {
+      "keyword": "reddit keyword research",
+      "cluster_id": "reddit-marketing-guides",
+      "intent": "informational",
+      "target": "/blog",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "reddit keyword research",
+          "searchVolume": 200,
+          "clicks": 0,
+          "cpc": 4,
+          "difficulty": 9,
+          "globalSearchVolume": 250,
+          "trafficPotential": 28000
+        }
+      }
+    },
+    {
+      "keyword": "how to find subreddits",
+      "cluster_id": "reddit-marketing-guides",
+      "intent": "informational",
+      "target": "/blog",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "how to find subreddits",
+          "searchVolume": 90,
+          "clicks": 96,
+          "cpc": null,
+          "difficulty": 1,
+          "globalSearchVolume": 100,
+          "trafficPotential": 4900
+        }
+      }
+    },
+    {
+      "keyword": "how to promote on reddit",
+      "cluster_id": "reddit-marketing-guides",
+      "intent": "informational",
+      "target": "/blog",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "how to promote on reddit",
+          "searchVolume": 150,
+          "clicks": 0,
+          "cpc": 3,
+          "difficulty": 2,
+          "globalSearchVolume": 150,
+          "trafficPotential": 80
+        }
+      }
+    },
+    {
+      "keyword": "reddit ads",
+      "cluster_id": "reddit-ads-guides",
+      "intent": "informational",
+      "target": "/blog",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "reddit ads",
+          "searchVolume": 8300,
+          "clicks": 9825,
+          "cpc": 30,
+          "difficulty": 10,
+          "globalSearchVolume": 24000,
+          "trafficPotential": 14000
+        }
+      }
+    },
+    {
+      "keyword": "reddit advertising",
+      "cluster_id": "reddit-ads-guides",
+      "intent": "informational",
+      "target": "/blog",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "reddit advertising",
+          "searchVolume": 4200,
+          "clicks": 4829,
+          "cpc": 9,
+          "difficulty": 22,
+          "globalSearchVolume": 6200,
+          "trafficPotential": 2000
+        }
+      }
+    },
+    {
+      "keyword": "reddit ads cost",
+      "cluster_id": "reddit-ads-guides",
+      "intent": "informational",
+      "target": "/blog",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "reddit ads cost",
+          "searchVolume": 400,
+          "clicks": 0,
+          "cpc": 11,
+          "difficulty": 1,
+          "globalSearchVolume": 800,
+          "trafficPotential": 800
+        }
+      }
+    },
+    {
+      "keyword": "reddit advertising cost",
+      "cluster_id": "reddit-ads-guides",
+      "intent": "informational",
+      "target": "/blog",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "reddit advertising cost",
+          "searchVolume": 250,
+          "clicks": 233,
+          "cpc": 9,
+          "difficulty": 0,
+          "globalSearchVolume": 350,
+          "trafficPotential": 1100
+        }
+      }
+    },
+    {
+      "keyword": "how to advertise on reddit",
+      "cluster_id": "reddit-ads-guides",
+      "intent": "informational",
+      "target": "/blog",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "how to advertise on reddit",
+          "searchVolume": 300,
+          "clicks": 321,
+          "cpc": 8,
+          "difficulty": 4,
+          "globalSearchVolume": 450,
+          "trafficPotential": 12000
+        }
+      }
+    },
+    {
+      "keyword": "reddit ads guide",
+      "cluster_id": "reddit-ads-guides",
+      "intent": "informational",
+      "target": "/blog",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "reddit ads guide",
+          "searchVolume": 80,
+          "clicks": 0,
+          "cpc": 9,
+          "difficulty": null,
+          "globalSearchVolume": 100,
+          "trafficPotential": null
+        }
+      }
+    },
+    {
+      "keyword": "reddit ads examples",
+      "cluster_id": "reddit-ads-guides",
+      "intent": "informational",
+      "target": "/blog",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "reddit ads examples",
+          "searchVolume": 150,
+          "clicks": 0,
+          "cpc": 5,
+          "difficulty": 3,
+          "globalSearchVolume": 300,
+          "trafficPotential": 600
+        }
+      }
+    },
+    {
+      "keyword": "reddit ads best practices",
+      "cluster_id": "reddit-ads-guides",
+      "intent": "informational",
+      "target": "/blog",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "reddit ads best practices",
+          "searchVolume": 200,
+          "clicks": 0,
+          "cpc": 11,
+          "difficulty": 2,
+          "globalSearchVolume": 250,
+          "trafficPotential": 150
+        }
+      }
+    },
+    {
+      "keyword": "reddit ads targeting",
+      "cluster_id": "reddit-ads-guides",
+      "intent": "informational",
+      "target": "/blog",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "reddit ads targeting",
+          "searchVolume": 30,
+          "clicks": 0,
+          "cpc": 7,
+          "difficulty": 4,
+          "globalSearchVolume": 70,
+          "trafficPotential": 20
+        }
+      }
+    },
+    {
+      "keyword": "reddit ads vs facebook ads",
+      "cluster_id": "reddit-ads-guides",
+      "intent": "informational",
+      "target": "/blog",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "reddit ads vs facebook ads",
+          "searchVolume": 20,
+          "clicks": 0,
+          "cpc": 9,
+          "difficulty": null,
+          "globalSearchVolume": 20,
+          "trafficPotential": null
+        }
+      }
+    },
+    {
+      "keyword": "reddit ads vs google ads",
+      "cluster_id": "reddit-ads-guides",
+      "intent": "informational",
+      "target": "/blog",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "reddit ads vs google ads",
+          "searchVolume": 10,
+          "clicks": 0,
+          "cpc": null,
+          "difficulty": null,
+          "globalSearchVolume": 10,
+          "trafficPotential": null
+        }
+      }
+    },
+    {
+      "keyword": "are reddit ads worth it",
+      "cluster_id": "reddit-ads-guides",
+      "intent": "informational",
+      "target": "/blog",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "are reddit ads worth it",
+          "searchVolume": 200,
+          "clicks": 0,
+          "cpc": 20,
+          "difficulty": 0,
+          "globalSearchVolume": 350,
+          "trafficPotential": 100
+        }
+      }
+    },
+    {
+      "keyword": "reddit brand monitoring",
+      "cluster_id": "reddit-brand-and-geo-guides",
+      "intent": "informational",
+      "target": "/blog",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "reddit brand monitoring",
+          "searchVolume": 100,
+          "clicks": 0,
+          "cpc": null,
+          "difficulty": null,
+          "globalSearchVolume": 150,
+          "trafficPotential": null
+        }
+      }
+    },
+    {
+      "keyword": "reddit social listening",
+      "cluster_id": "reddit-brand-and-geo-guides",
+      "intent": "informational",
+      "target": "/blog",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "reddit social listening",
+          "searchVolume": 200,
+          "clicks": 0,
+          "cpc": 7,
+          "difficulty": 2,
+          "globalSearchVolume": 300,
+          "trafficPotential": 60
+        }
+      }
+    },
+    {
+      "keyword": "reddit sentiment analysis",
+      "cluster_id": "reddit-brand-and-geo-guides",
+      "intent": "informational",
+      "target": "/blog",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "reddit sentiment analysis",
+          "searchVolume": 150,
+          "clicks": 0,
+          "cpc": 13,
+          "difficulty": 0,
+          "globalSearchVolume": 300,
+          "trafficPotential": 80
+        }
+      }
+    },
+    {
+      "keyword": "reddit brand mentions",
+      "cluster_id": "reddit-brand-and-geo-guides",
+      "intent": "informational",
+      "target": "/blog",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "reddit brand mentions",
+          "searchVolume": 60,
+          "clicks": 0,
+          "cpc": null,
+          "difficulty": null,
+          "globalSearchVolume": 70,
+          "trafficPotential": null
+        }
+      }
+    },
+    {
+      "keyword": "reddit traffic",
+      "cluster_id": "reddit-brand-and-geo-guides",
+      "intent": "informational",
+      "target": "/blog",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "reddit traffic",
+          "searchVolume": 200,
+          "clicks": 226,
+          "cpc": 3.5,
+          "difficulty": 4,
+          "globalSearchVolume": 300,
+          "trafficPotential": 250
+        }
+      }
+    },
+    {
+      "keyword": "reddit referral traffic",
+      "cluster_id": "reddit-brand-and-geo-guides",
+      "intent": "informational",
+      "target": "/blog",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "reddit referral traffic",
+          "searchVolume": 0,
+          "clicks": 0,
+          "cpc": null,
+          "difficulty": null,
+          "globalSearchVolume": null,
+          "trafficPotential": null
+        }
+      }
+    },
+    {
+      "keyword": "reddit backlinks",
+      "cluster_id": "reddit-brand-and-geo-guides",
+      "intent": "informational",
+      "target": "/blog",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "reddit backlinks",
+          "searchVolume": 100,
+          "clicks": 0,
+          "cpc": 6,
+          "difficulty": 3,
+          "globalSearchVolume": 250,
+          "trafficPotential": 90
+        }
+      }
+    },
+    {
+      "keyword": "reddit link building",
+      "cluster_id": "reddit-brand-and-geo-guides",
+      "intent": "informational",
+      "target": "/blog",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "reddit link building",
+          "searchVolume": 60,
+          "clicks": 0,
+          "cpc": 4.5,
+          "difficulty": 4,
+          "globalSearchVolume": 90,
+          "trafficPotential": 300
+        }
+      }
+    },
+    {
+      "keyword": "reddit for seo",
+      "cluster_id": "reddit-brand-and-geo-guides",
+      "intent": "informational",
+      "target": "/blog",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "reddit for seo",
+          "searchVolume": 70,
+          "clicks": 0,
+          "cpc": 5,
+          "difficulty": null,
+          "globalSearchVolume": 150,
+          "trafficPotential": null
+        }
+      }
+    },
+    {
+      "keyword": "reddit google ranking",
+      "cluster_id": "reddit-brand-and-geo-guides",
+      "intent": "informational",
+      "target": "/blog",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "reddit google ranking",
+          "searchVolume": 10,
+          "clicks": 0,
+          "cpc": null,
+          "difficulty": null,
+          "globalSearchVolume": 20,
+          "trafficPotential": null
+        }
+      }
+    },
+    {
+      "keyword": "reddit ai search",
+      "cluster_id": "reddit-brand-and-geo-guides",
+      "intent": "informational",
+      "target": "/blog",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "reddit ai search",
+          "searchVolume": 150,
+          "clicks": 0,
+          "cpc": 25,
+          "difficulty": null,
+          "globalSearchVolume": 350,
+          "trafficPotential": null
+        }
+      }
+    },
+    {
+      "keyword": "reddit llm visibility",
+      "cluster_id": "reddit-brand-and-geo-guides",
+      "intent": "informational",
+      "target": "/blog",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "reddit llm visibility",
+          "searchVolume": 0,
+          "clicks": 0,
+          "cpc": null,
+          "difficulty": null,
+          "globalSearchVolume": null,
+          "trafficPotential": null
+        }
+      }
+    },
+    {
+      "keyword": "reddit chatgpt citations",
+      "cluster_id": "reddit-brand-and-geo-guides",
+      "intent": "informational",
+      "target": "/blog",
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "data": {
+          "keyword": "reddit chatgpt citations",
+          "searchVolume": 0,
+          "clicks": 0,
+          "cpc": null,
+          "difficulty": null,
+          "globalSearchVolume": null,
+          "trafficPotential": null
+        }
+      }
+    }
+  ]
+}

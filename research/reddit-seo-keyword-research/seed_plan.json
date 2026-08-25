@@ -1,0 +1,67 @@
+{
+  "market": { "country": "us", "language": "en" },
+  "clusters": [
+    {
+      "id": "reddit-marketing-services",
+      "intent": "commercial",
+      "target": "/services/reddit-services",
+      "keywords": [
+        "reddit marketing", "reddit marketing agency", "reddit marketing services", "reddit agency",
+        "reddit advertising agency", "reddit promotion service", "reddit growth service", "reddit seo",
+        "reddit for business", "reddit lead generation", "reddit b2b marketing", "reddit saas marketing"
+      ]
+    },
+    {
+      "id": "reddit-community-management",
+      "intent": "commercial",
+      "target": "/services/reddit-services/community-management",
+      "keywords": [
+        "reddit community management", "reddit community manager", "reddit management agency",
+        "reddit account management", "subreddit management", "subreddit manager", "subreddit marketing",
+        "reddit brand management", "reddit reputation management", "reddit engagement service"
+      ]
+    },
+    {
+      "id": "reddit-campaigns",
+      "intent": "commercial",
+      "target": "/services/reddit-services/reddit-campaigns",
+      "keywords": [
+        "reddit campaign", "reddit marketing campaign", "reddit campaign management", "reddit content marketing",
+        "reddit content strategy", "reddit post promotion", "reddit influencer marketing", "reddit product launch",
+        "reddit organic marketing", "reddit brand awareness"
+      ]
+    },
+    {
+      "id": "reddit-marketing-guides",
+      "intent": "informational",
+      "target": "/blog",
+      "keywords": [
+        "how to market on reddit", "how to use reddit for marketing", "reddit marketing strategy",
+        "reddit marketing guide", "reddit marketing examples", "reddit marketing tips", "reddit marketing ideas",
+        "reddit marketing best practices", "reddit marketing mistakes", "reddit content strategy",
+        "reddit seo strategy", "reddit keyword research", "how to find subreddits", "how to promote on reddit"
+      ]
+    },
+    {
+      "id": "reddit-ads-guides",
+      "intent": "informational",
+      "target": "/blog",
+      "keywords": [
+        "reddit ads", "reddit advertising", "reddit ads cost", "reddit advertising cost", "how to advertise on reddit",
+        "reddit ads guide", "reddit ads examples", "reddit ads best practices", "reddit ads targeting",
+        "reddit ads vs facebook ads", "reddit ads vs google ads", "are reddit ads worth it"
+      ]
+    },
+    {
+      "id": "reddit-brand-and-geo-guides",
+      "intent": "informational",
+      "target": "/blog",
+      "keywords": [
+        "reddit brand monitoring", "reddit social listening", "reddit reputation management",
+        "reddit sentiment analysis", "reddit brand mentions", "reddit traffic", "reddit referral traffic",
+        "reddit backlinks", "reddit link building", "reddit for seo", "reddit google ranking",
+        "reddit ai search", "reddit llm visibility", "reddit chatgpt citations"
+      ]
+    }
+  ]
+}

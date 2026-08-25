@@ -1,0 +1,71 @@
+keyword,cluster_id,intent,target,searchVolume,clicks,cpc,difficulty,globalSearchVolume,trafficPotential,http_status
+"reddit marketing","reddit-marketing-services","commercial","/services/reddit-services",800,787,4,36,2100,1000,200
+"reddit marketing agency","reddit-marketing-services","commercial","/services/reddit-services",300,0,3,11,900,100,200
+"reddit marketing services","reddit-marketing-services","commercial","/services/reddit-services",200,0,6,4,350,10,200
+"reddit agency","reddit-marketing-services","commercial","/services/reddit-services",150,0,6,19,400,150,200
+"reddit advertising agency","reddit-marketing-services","commercial","/services/reddit-services",70,0,3.5,13,250,100,200
+"reddit promotion service","reddit-marketing-services","commercial","/services/reddit-services",60,0,"",0,70,11000,200
+"reddit growth service","reddit-marketing-services","commercial","/services/reddit-services",0,0,"","","","",200
+"reddit seo","reddit-marketing-services","commercial","/services/reddit-services",1300,1309,10,34,3000,6600,200
+"reddit for business","reddit-marketing-services","commercial","/services/reddit-services",700,903,10,8,1200,12000,200
+"reddit lead generation","reddit-marketing-services","commercial","/services/reddit-services",70,0,5,0,150,200,200
+"reddit b2b marketing","reddit-marketing-services","commercial","/services/reddit-services",40,0,7,"",60,"",200
+"reddit saas marketing","reddit-marketing-services","commercial","/services/reddit-services",10,0,"","",10,"",200
+"reddit community management","reddit-community-management","commercial","/services/reddit-services/community-management",20,0,"","",40,"",200
+"reddit community manager","reddit-community-management","commercial","/services/reddit-services/community-management",10,0,"","",20,"",200
+"reddit management agency","reddit-community-management","commercial","/services/reddit-services/community-management",0,0,"","",10,"",200
+"reddit account management","reddit-community-management","commercial","/services/reddit-services/community-management",20,0,"","",20,"",200
+"subreddit management","reddit-community-management","commercial","/services/reddit-services/community-management",0,0,"","","","",200
+"subreddit manager","reddit-community-management","commercial","/services/reddit-services/community-management",0,0,"","",0,"",200
+"subreddit marketing","reddit-community-management","commercial","/services/reddit-services/community-management",0,0,"","","","",200
+"reddit brand management","reddit-community-management","commercial","/services/reddit-services/community-management",0,0,"","",0,"",200
+"reddit reputation management","reddit-community-management","commercial","/services/reddit-services/community-management",20,0,"","",40,"",200
+"reddit engagement service","reddit-community-management","commercial","/services/reddit-services/community-management",10,0,"","",10,"",200
+"reddit campaign","reddit-campaigns","commercial","/services/reddit-services/reddit-campaigns",400,0,35,9,450,12000,200
+"reddit marketing campaign","reddit-campaigns","commercial","/services/reddit-services/reddit-campaigns",20,0,"","",20,"",200
+"reddit campaign management","reddit-campaigns","commercial","/services/reddit-services/reddit-campaigns",0,0,"","","","",200
+"reddit content marketing","reddit-campaigns","commercial","/services/reddit-services/reddit-campaigns",40,0,"","",60,"",200
+"reddit content strategy","reddit-campaigns","commercial","/services/reddit-services/reddit-campaigns",10,0,"","",10,"",200
+"reddit post promotion","reddit-campaigns","commercial","/services/reddit-services/reddit-campaigns",0,0,"","","","",200
+"reddit influencer marketing","reddit-campaigns","commercial","/services/reddit-services/reddit-campaigns",30,0,7,"",60,"",200
+"reddit product launch","reddit-campaigns","commercial","/services/reddit-services/reddit-campaigns",0,0,"","",0,"",200
+"reddit organic marketing","reddit-campaigns","commercial","/services/reddit-services/reddit-campaigns",60,0,"","",80,"",200
+"reddit brand awareness","reddit-campaigns","commercial","/services/reddit-services/reddit-campaigns",10,0,"","",10,"",200
+"how to market on reddit","reddit-marketing-guides","informational","/blog",50,0,6,8,60,100,200
+"how to use reddit for marketing","reddit-marketing-guides","informational","/blog",100,0,4.5,6,150,100,200
+"reddit marketing strategy","reddit-marketing-guides","informational","/blog",200,0,2,0,400,30,200
+"reddit marketing guide","reddit-marketing-guides","informational","/blog",20,0,"","",40,"",200
+"reddit marketing examples","reddit-marketing-guides","informational","/blog",0,0,"","",20,"",200
+"reddit marketing tips","reddit-marketing-guides","informational","/blog",10,0,"","",10,"",200
+"reddit marketing ideas","reddit-marketing-guides","informational","/blog",0,0,"","",0,"",200
+"reddit marketing best practices","reddit-marketing-guides","informational","/blog",20,0,"","",20,"",200
+"reddit marketing mistakes","reddit-marketing-guides","informational","/blog",10,0,"","",10,"",200
+"reddit seo strategy","reddit-marketing-guides","informational","/blog",100,0,5,4,250,0,200
+"reddit keyword research","reddit-marketing-guides","informational","/blog",200,0,4,9,250,28000,200
+"how to find subreddits","reddit-marketing-guides","informational","/blog",90,96,"",1,100,4900,200
+"how to promote on reddit","reddit-marketing-guides","informational","/blog",150,0,3,2,150,80,200
+"reddit ads","reddit-ads-guides","informational","/blog",8300,9825,30,10,24000,14000,200
+"reddit advertising","reddit-ads-guides","informational","/blog",4200,4829,9,22,6200,2000,200
+"reddit ads cost","reddit-ads-guides","informational","/blog",400,0,11,1,800,800,200
+"reddit advertising cost","reddit-ads-guides","informational","/blog",250,233,9,0,350,1100,200
+"how to advertise on reddit","reddit-ads-guides","informational","/blog",300,321,8,4,450,12000,200
+"reddit ads guide","reddit-ads-guides","informational","/blog",80,0,9,"",100,"",200
+"reddit ads examples","reddit-ads-guides","informational","/blog",150,0,5,3,300,600,200
+"reddit ads best practices","reddit-ads-guides","informational","/blog",200,0,11,2,250,150,200
+"reddit ads targeting","reddit-ads-guides","informational","/blog",30,0,7,4,70,20,200
+"reddit ads vs facebook ads","reddit-ads-guides","informational","/blog",20,0,9,"",20,"",200
+"reddit ads vs google ads","reddit-ads-guides","informational","/blog",10,0,"","",10,"",200
+"are reddit ads worth it","reddit-ads-guides","informational","/blog",200,0,20,0,350,100,200
+"reddit brand monitoring","reddit-brand-and-geo-guides","informational","/blog",100,0,"","",150,"",200
+"reddit social listening","reddit-brand-and-geo-guides","informational","/blog",200,0,7,2,300,60,200
+"reddit sentiment analysis","reddit-brand-and-geo-guides","informational","/blog",150,0,13,0,300,80,200
+"reddit brand mentions","reddit-brand-and-geo-guides","informational","/blog",60,0,"","",70,"",200
+"reddit traffic","reddit-brand-and-geo-guides","informational","/blog",200,226,3.5,4,300,250,200
+"reddit referral traffic","reddit-brand-and-geo-guides","informational","/blog",0,0,"","","","",200
+"reddit backlinks","reddit-brand-and-geo-guides","informational","/blog",100,0,6,3,250,90,200
+"reddit link building","reddit-brand-and-geo-guides","informational","/blog",60,0,4.5,4,90,300,200
+"reddit for seo","reddit-brand-and-geo-guides","informational","/blog",70,0,5,"",150,"",200
+"reddit google ranking","reddit-brand-and-geo-guides","informational","/blog",10,0,"","",20,"",200
+"reddit ai search","reddit-brand-and-geo-guides","informational","/blog",150,0,25,"",350,"",200
+"reddit llm visibility","reddit-brand-and-geo-guides","informational","/blog",0,0,"","","","",200
+"reddit chatgpt citations","reddit-brand-and-geo-guides","informational","/blog",0,0,"","","","",200

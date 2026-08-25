@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react'
 
 import { Geist, Geist_Mono } from 'next/font/google'
+import { headers } from 'next/headers'
 import type { Metadata } from 'next'
 import Script from 'next/script'
 
@@ -86,10 +87,12 @@ export const metadata: Metadata = {
   }
 }
 
-const RootLayout = ({ children }: Readonly<{ children: ReactNode }>) => {
+const RootLayout = async ({ children }: Readonly<{ children: ReactNode }>) => {
+  const pageLocale = (await headers()).get('x-page-locale') === 'zh-CN' ? 'zh-CN' : 'en'
+
   return (
     <html
-      lang='en'
+      lang={pageLocale}
       className={cn(geistSans.variable, geistMono.variable, 'flex min-h-full w-full scroll-smooth antialiased')}
       suppressHydrationWarning
     >

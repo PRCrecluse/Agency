@@ -16,11 +16,25 @@ export type PostMetadata = {
   topic?: BlogTopicId
   category?: string
   publishedAt?: string
+  updatedAt?: string
+  reviewedBy?: {
+    name: string
+    role?: string
+  }
+  methodology?: string
+  disclosure?: string
   author?: {
     name: string
     picture: string
   }
   image?: string
+  video?: {
+    url: string
+    thumbnail: string
+    duration?: string
+    uploadDate?: string
+    description?: string
+  }
   featured?: boolean
   readTime?: string
   keywords?: string[]
