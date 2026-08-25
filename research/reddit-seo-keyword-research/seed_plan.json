@@ -18,7 +18,12 @@
       "keywords": [
         "reddit community management", "reddit community manager", "reddit management agency",
         "reddit account management", "subreddit management", "subreddit manager", "subreddit marketing",
-        "reddit brand management", "reddit reputation management", "reddit engagement service"
+        "reddit brand management", "reddit reputation management", "reddit engagement service",
+        "reddit community service", "reddit community services", "reddit community management service",
+        "reddit community management services", "reddit community management agency", "reddit community agency",
+        "reddit community marketing", "reddit community engagement", "reddit community building",
+        "reddit moderation service", "reddit moderation services", "subreddit moderation service",
+        "subreddit moderation services", "subreddit community management", "reddit social media management"
       ]
     },
     {
@@ -61,6 +66,44 @@
         "reddit sentiment analysis", "reddit brand mentions", "reddit traffic", "reddit referral traffic",
         "reddit backlinks", "reddit link building", "reddit for seo", "reddit google ranking",
         "reddit ai search", "reddit llm visibility", "reddit chatgpt citations"
+      ]
+    },
+    {
+      "id": "reddit-ban-and-compliance-guides",
+      "intent": "informational",
+      "target": "/blog",
+      "keywords": [
+        "how to market on reddit without getting banned", "how to promote on reddit without getting banned",
+        "how to post on reddit without getting banned", "how to avoid getting banned on reddit",
+        "how to not get banned on reddit", "reddit marketing without getting banned", "reddit ban prevention",
+        "reddit account banned", "reddit account suspended", "reddit shadowban", "reddit shadow banned",
+        "how to avoid reddit shadowban", "reddit spam rules", "reddit self promotion rules",
+        "reddit promotion rules", "reddit marketing rules", "reddit subreddit rules", "reddit ban evasion",
+        "why does reddit keep banning me", "why was my reddit account banned"
+      ]
+    },
+    {
+      "id": "reddit-account-trust-guides",
+      "intent": "informational",
+      "target": "/blog",
+      "keywords": [
+        "reddit account warming", "how to warm up a reddit account", "reddit account age",
+        "how to get reddit karma", "how to build reddit karma", "reddit karma requirements",
+        "reddit posting requirements", "reddit account restrictions", "reddit posting limits",
+        "reddit new account restrictions", "reddit anti spam", "reddit spam filter",
+        "reddit post removed by moderators", "reddit post keeps getting removed", "reddit content policy",
+        "reddit community guidelines", "reddit moderator approval", "how to post in a subreddit"
+      ]
+    },
+    {
+      "id": "reddit-native-marketing-guides",
+      "intent": "informational",
+      "target": "/blog",
+      "keywords": [
+        "reddit marketing without ads", "organic reddit strategy", "how to build a brand on reddit",
+        "how brands should use reddit", "how to engage on reddit", "how to join reddit conversations",
+        "how to mention your brand on reddit", "reddit authentic marketing", "reddit native marketing",
+        "reddit community marketing strategy", "reddit engagement strategy", "reddit brand strategy"
       ]
     }
   ]

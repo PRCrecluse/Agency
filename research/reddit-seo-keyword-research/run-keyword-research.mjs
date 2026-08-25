@@ -28,14 +28,20 @@ async function fetchMetric(item) {
 }
 
 const items = [...unique.values()]
-const records = []
-for (let index = 0; index < items.length; index += 4) {
-  records.push(...await Promise.all(items.slice(index, index + 4).map(fetchMetric)))
-  process.stdout.write(`\r${Math.min(index + 4, items.length)}/${items.length}`)
+const rawPath = path.join(root, 'raw_keyword_metrics_us.json')
+const previous = await fs.readFile(rawPath, 'utf8').then(JSON.parse).catch(() => ({ records: [] }))
+const cache = new Map(previous.records.filter(record => record.http_status === 200).map(record => [record.keyword, record]))
+const missing = items.filter(item => !cache.has(item.keyword))
+
+for (let index = 0; index < missing.length; index += 4) {
+  const fetched = await Promise.all(missing.slice(index, index + 4).map(fetchMetric))
+  for (const record of fetched) cache.set(record.keyword, record)
+  process.stdout.write(`\r${Math.min(index + 4, missing.length)}/${missing.length} new keywords`)
 }
 process.stdout.write('\n')
 
-await fs.writeFile(path.join(root, 'raw_keyword_metrics_us.json'), JSON.stringify({ source: 'RapidAPI SEO API - keyword-metrics', host, country: plan.market.country, records }, null, 2) + '\n')
+const records = items.map(item => cache.get(item.keyword)).filter(Boolean)
+await fs.writeFile(rawPath, JSON.stringify({ source: 'RapidAPI SEO API - keyword-metrics', host, country: plan.market.country, records }, null, 2) + '\n')
 
 const rows = records.map(record => {
   const data = record.response?.data ?? {}
