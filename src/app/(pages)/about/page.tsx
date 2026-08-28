@@ -33,15 +33,15 @@ const founderHighlights = [
 
 const stories = [
   {
-    date: 'June 28, 2026',
-    eyebrow: 'Founder, GoGlobal.to',
-    title: 'GoGlobal.to was featured alongside WaytoAGI at Sequoia Accelerator',
+    date: 'August 24, 2026',
+    eyebrow: 'Growth interview · LinkLoud',
+    title: 'Yiwei recorded a growth interview with LinkLoud co-founder Galen Gao',
     quote:
-      '“GoGlobal.to, our Reddit SaaS, appeared alongside the WaytoAGI project during a Sequoia Accelerator showcase, marking an early milestone for the team.”',
-    image: '/images/about/sparklab-founders.jpg',
-    alt: 'Yiwei at SparkLab Accelerator with fellow founders',
-    label: 'Early momentum',
-    href: '/about/stories/goglobal-waytoagi-sequoia'
+      '“Their first sit-down turned into a relaxed series of conversations about growth, building, and helping founders go global.”',
+    image: '/images/about/stories/yiwei-linkloud-gaoning-interview.jpg',
+    alt: 'Yiwei recording a growth interview with LinkLoud co-founder Galen Gao',
+    label: 'Founder conversations',
+    href: '/about/stories/yiwei-linkloud-gaoning-growth-interview'
   },
   {
     date: 'July 5, 2026',

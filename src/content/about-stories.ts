@@ -1,25 +1,25 @@
 export const aboutStories = [
   {
-    slug: 'goglobal-waytoagi-sequoia',
-    date: 'June 28, 2026',
-    title: 'GoGlobal.to Was Featured Alongside WaytoAGI at Sequoia Accelerator',
-    deck: 'GoGlobal.to, our Reddit SaaS, appeared alongside the WaytoAGI project during a Sequoia Accelerator showcase, marking an early milestone for the team.',
-    eyebrow: 'Founder story · GoGlobal.to',
-    authorRole: 'Founder, GoGlobal.to',
-    imageOne: '/images/about/stories/goglobal-sequoia-showcase.jpg',
-    imageOneAlt: 'GoGlobal.to and WaytoAGI featured at a Sequoia Accelerator showcase',
-    imageTwo: '/images/about/stories/goglobal-sequoia-moment.jpg',
-    imageTwoAlt: 'Sequoia Accelerator showcase moment for GoGlobal.to',
-    quote: 'Practical growth products deserve to be understood in the same room as ambitious AI builders.',
+    slug: 'yiwei-linkloud-gaoning-growth-interview',
+    date: 'August 24, 2026',
+    title: 'Yiwei Recorded a Growth Interview With LinkLoud Co-Founder Galen Gao',
+    deck: 'Yiwei sat down with LinkLoud co-founder Galen Gao for a candid growth interview about building, distribution, and helping founders go global.',
+    eyebrow: 'Growth interview · LinkLoud',
+    authorRole: 'Founder, Meridian',
+    imageOne: '/images/about/stories/yiwei-linkloud-gaoning-interview.jpg',
+    imageOneAlt: 'Yiwei recording a growth interview with LinkLoud co-founder Galen Gao',
+    imageTwo: '/images/about/stories/yiwei-linkloud-gaoning-interview.jpg',
+    imageTwoAlt: 'Yiwei and Galen Gao during their LinkLoud growth conversation',
+    quote: 'The best founder conversations feel less like interviews and more like building the next idea together.',
     paragraphs: [
-      'GoGlobal.to, our Reddit SaaS, was featured alongside the WaytoAGI project during a Sequoia Accelerator showcase. For the team, it was a meaningful signal: the product could stand inside a higher-context conversation about founders, AI, and practical distribution.',
-      'The moment validated more than visibility. It showed that a product built around hands-on growth execution could sit beside strong community-driven AI projects and still be understood immediately—without a long explanation of why it mattered.',
-      'That early milestone strengthened our conviction that GoGlobal.to and Meridian were not just tools or services. They were becoming part of a broader narrative around AI-native distribution and global growth.'
+      'Yiwei invited Galen Gao, co-founder of LinkLoud, to record a candid growth interview. They had last met on the LinkLoud stage, but their first meal together quickly turned into a series of relaxed conversations captured on camera.',
+      'The easy chemistry opened space for an honest exchange about growth, founder-led distribution, and the realities of helping products reach global markets. What began as Yiwei’s first formal interview felt more like two builders comparing notes in public.',
+      'The Q&A is the start of a broader interview series built around practical lessons from people doing the work—founders and operators willing to share the decisions, experiments, and hard-earned insights behind sustainable growth.'
     ],
     highlights: [
-      'A founder and AI-builder context for GoGlobal.to',
-      'A clearer narrative for practical distribution work',
-      'Conviction to keep building at the intersection of AI and growth'
+      'A candid conversation with LinkLoud co-founder Galen Gao',
+      'Practical lessons on founder-led growth and global distribution',
+      'The beginning of Yiwei’s growth interview series'
     ],
     nextSlug: 'yiwei-sparklab-birthday',
     nextLabel: 'Read the SparkLab founder story'
@@ -46,8 +46,8 @@ export const aboutStories = [
       'A shared environment for product focus and execution',
       'Renewed conviction in builder-led growth'
     ],
-    nextSlug: 'goglobal-waytoagi-sequoia',
-    nextLabel: 'Read the GoGlobal.to showcase story'
+    nextSlug: 'yiwei-linkloud-gaoning-growth-interview',
+    nextLabel: 'Read the LinkLoud growth interview story'
   }
 ] as const
 
