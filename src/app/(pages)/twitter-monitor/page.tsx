@@ -17,6 +17,7 @@ export const metadata = buildMetadata({
 export default async function TwitterMonitorPage() {
   const cookieStore = await cookies()
   const session = verifyAccessToken(cookieStore.get(TWITTER_MONITOR_ACCESS_COOKIE)?.value)
+
   const initialSnapshot: TwitterMonitorSnapshot = session
     ? await getMonitorSnapshot()
     : {

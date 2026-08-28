@@ -22,11 +22,11 @@ export interface TrafficPoint {
   id: string
   campaignId: string
   timestamp: string
-  impressions: number
-  engagements: number
-  linkClicks: number
-  conversions: number
-  spend: number
+  impressions: number | null
+  engagements: number | null
+  linkClicks: number | null
+  conversions: number | null
+  spend: number | null
 }
 
 export interface MonitorActivity {

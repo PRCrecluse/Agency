@@ -1,10 +1,10 @@
-import type { TrafficPoint, TwitterCampaign, TwitterMonitorSnapshot } from '@/lib/twitter-monitor/types'
+import type { TwitterCampaign, TwitterMonitorSnapshot } from '@/lib/twitter-monitor/types'
 
 const formatNumber = (value: number) => new Intl.NumberFormat('en-US').format(Math.round(value))
+const formatMetric = (value: number | null) => (value === null ? '—' : formatNumber(value))
+
 const formatDate = (value: string) =>
-  new Intl.DateTimeFormat('en-US', { dateStyle: 'medium', timeStyle: 'short', timeZone: 'UTC' }).format(
-    new Date(value)
-  )
+  new Intl.DateTimeFormat('en-US', { dateStyle: 'medium', timeStyle: 'short', timeZone: 'UTC' }).format(new Date(value))
 
 const escapeHtml = (value: string) =>
   value.replace(/[&<>'"]/g, character => {
@@ -33,10 +33,6 @@ function campaignPoints(snapshot: TwitterMonitorSnapshot, campaign: TwitterCampa
     .sort((a, b) => new Date(a.timestamp).getTime() - new Date(b.timestamp).getTime())
 }
 
-function sum(points: TrafficPoint[], key: 'impressions' | 'engagements' | 'linkClicks') {
-  return points.reduce((total, point) => total + point[key], 0)
-}
-
 export async function sendTwitterMonitorReport(recipient: string, snapshot: TwitterMonitorSnapshot) {
   const accountId = process.env.CLOUDFLARE_ACCOUNT_ID
   const apiToken = process.env.CLOUDFLARE_API_TOKEN
@@ -51,11 +47,13 @@ export async function sendTwitterMonitorReport(recipient: string, snapshot: Twit
   if (!campaign) throw new Error('Configure an X post before sending a report')
 
   const points = campaignPoints(snapshot, campaign)
-  const impressions = sum(points, 'impressions')
-  const engagements = sum(points, 'engagements')
-  const linkClicks = sum(points, 'linkClicks')
-  const engagementRate = impressions ? (engagements / impressions) * 100 : 0
+  const latestPoint = points.at(-1)
+  const impressions = latestPoint?.impressions ?? null
+  const engagements = latestPoint?.engagements ?? null
+  const linkClicks = latestPoint?.linkClicks ?? null
+  const engagementRate = impressions && engagements !== null ? (engagements / impressions) * 100 : null
   const appUrl = `${(process.env.NEXT_PUBLIC_APP_URL ?? 'https://withmeridian.org').replace(/\/$/, '')}/twitter-monitor`
+
   const recentRows = points
     .slice(-8)
     .reverse()
@@ -63,15 +61,18 @@ export async function sendTwitterMonitorReport(recipient: string, snapshot: Twit
       point => `
         <tr>
           <td style="padding:10px 12px;border-top:1px solid #e4e4e7;color:#71717a">${escapeHtml(formatDate(point.timestamp))}</td>
-          <td style="padding:10px 12px;border-top:1px solid #e4e4e7;text-align:right">${formatNumber(point.impressions)}</td>
-          <td style="padding:10px 12px;border-top:1px solid #e4e4e7;text-align:right">${formatNumber(point.engagements)}</td>
-          <td style="padding:10px 12px;border-top:1px solid #e4e4e7;text-align:right">${formatNumber(point.linkClicks)}</td>
+          <td style="padding:10px 12px;border-top:1px solid #e4e4e7;text-align:right">${formatMetric(point.impressions)}</td>
+          <td style="padding:10px 12px;border-top:1px solid #e4e4e7;text-align:right">${formatMetric(point.engagements)}</td>
+          <td style="padding:10px 12px;border-top:1px solid #e4e4e7;text-align:right">${formatMetric(point.linkClicks)}</td>
         </tr>`
     )
     .join('')
+
   const emptyRow = `
     <tr><td colspan="4" style="padding:18px 12px;border-top:1px solid #e4e4e7;color:#71717a;text-align:center">No observations have been received in this window yet.</td></tr>`
+
   const subject = `X post monitoring report — ${campaign.handle}`
+
   const html = `<!doctype html>
 <html><body style="margin:0;background:#f4f4f5;font-family:Arial,sans-serif;color:#18181b">
   <div style="max-width:680px;margin:0 auto;padding:32px 16px">
@@ -84,11 +85,11 @@ export async function sendTwitterMonitorReport(recipient: string, snapshot: Twit
       <p style="margin:0 0 22px;color:#71717a;font-size:13px;word-break:break-all">${escapeHtml(campaign.url)}</p>
       <div style="font-size:13px;color:#71717a;margin-bottom:22px">${escapeHtml(formatDate(campaign.monitorStartAt))} → ${escapeHtml(formatDate(campaign.monitorEndAt))}</div>
       <table role="presentation" style="width:100%;border-collapse:separate;border-spacing:8px"><tr>
-        <td style="background:#fafafa;border:1px solid #e4e4e7;border-radius:10px;padding:16px"><div style="font-size:12px;color:#71717a">Impressions</div><div style="font-size:24px;font-weight:700;margin-top:7px">${formatNumber(impressions)}</div></td>
-        <td style="background:#fafafa;border:1px solid #e4e4e7;border-radius:10px;padding:16px"><div style="font-size:12px;color:#71717a">Engagements</div><div style="font-size:24px;font-weight:700;margin-top:7px">${formatNumber(engagements)}</div></td>
-        <td style="background:#fafafa;border:1px solid #e4e4e7;border-radius:10px;padding:16px"><div style="font-size:12px;color:#71717a">Link clicks</div><div style="font-size:24px;font-weight:700;margin-top:7px">${formatNumber(linkClicks)}</div></td>
+        <td style="background:#fafafa;border:1px solid #e4e4e7;border-radius:10px;padding:16px"><div style="font-size:12px;color:#71717a">Impressions</div><div style="font-size:24px;font-weight:700;margin-top:7px">${formatMetric(impressions)}</div></td>
+        <td style="background:#fafafa;border:1px solid #e4e4e7;border-radius:10px;padding:16px"><div style="font-size:12px;color:#71717a">Engagements</div><div style="font-size:24px;font-weight:700;margin-top:7px">${formatMetric(engagements)}</div></td>
+        <td style="background:#fafafa;border:1px solid #e4e4e7;border-radius:10px;padding:16px"><div style="font-size:12px;color:#71717a">Link clicks</div><div style="font-size:24px;font-weight:700;margin-top:7px">${formatMetric(linkClicks)}</div></td>
       </tr></table>
-      <p style="font-size:13px;color:#71717a;margin:14px 8px 24px">Engagement rate: ${engagementRate.toFixed(2)}% · ${points.length} observation${points.length === 1 ? '' : 's'}</p>
+      <p style="font-size:13px;color:#71717a;margin:14px 8px 24px">Engagement rate: ${engagementRate === null ? '—' : `${engagementRate.toFixed(2)}%`} · ${points.length} observation${points.length === 1 ? '' : 's'}</p>
       <table style="width:100%;border-collapse:collapse;font-size:12px">
         <thead><tr><th style="padding:10px 12px;text-align:left;background:#fafafa">Latest observations (UTC)</th><th style="padding:10px 12px;text-align:right;background:#fafafa">Views</th><th style="padding:10px 12px;text-align:right;background:#fafafa">Eng.</th><th style="padding:10px 12px;text-align:right;background:#fafafa">Clicks</th></tr></thead>
         <tbody>${recentRows || emptyRow}</tbody>
@@ -97,44 +98,56 @@ export async function sendTwitterMonitorReport(recipient: string, snapshot: Twit
     </div>
   </div>
 </body></html>`
+
   const text = `${subject}
 
 Post: ${campaign.url}
 Window (UTC): ${formatDate(campaign.monitorStartAt)} → ${formatDate(campaign.monitorEndAt)}
 
-Impressions: ${formatNumber(impressions)}
-Engagements: ${formatNumber(engagements)}
-Link clicks: ${formatNumber(linkClicks)}
-Engagement rate: ${engagementRate.toFixed(2)}%
+Impressions: ${formatMetric(impressions)}
+Engagements: ${formatMetric(engagements)}
+Link clicks: ${formatMetric(linkClicks)}
+Engagement rate: ${engagementRate === null ? '—' : `${engagementRate.toFixed(2)}%`}
 Observations: ${points.length}
 
 Open the live curve: ${appUrl}`
-  const response = await fetch(`https://api.cloudflare.com/client/v4/accounts/${encodeURIComponent(accountId)}/email/sending/send`, {
-    method: 'POST',
-    headers: {
-      Authorization: `Bearer ${apiToken}`,
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({
-      to: recipient,
-      from: process.env.CLOUDFLARE_EMAIL_FROM_NAME
-        ? { address: fromAddress, name: process.env.CLOUDFLARE_EMAIL_FROM_NAME }
-        : fromAddress,
-      ...(process.env.CLOUDFLARE_EMAIL_REPLY_TO ? { reply_to: process.env.CLOUDFLARE_EMAIL_REPLY_TO } : {}),
-      subject,
-      html,
-      text
-    }),
-    cache: 'no-store'
-  })
-  const result = (await response.json().catch(() => null)) as
-    | { success?: boolean; errors?: Array<{ message?: string }>; result?: { delivered?: string[]; queued?: string[] } }
-    | null
+
+  const response = await fetch(
+    `https://api.cloudflare.com/client/v4/accounts/${encodeURIComponent(accountId)}/email/sending/send`,
+    {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${apiToken}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        to: recipient,
+        from: process.env.CLOUDFLARE_EMAIL_FROM_NAME
+          ? { address: fromAddress, name: process.env.CLOUDFLARE_EMAIL_FROM_NAME }
+          : fromAddress,
+        ...(process.env.CLOUDFLARE_EMAIL_REPLY_TO ? { reply_to: process.env.CLOUDFLARE_EMAIL_REPLY_TO } : {}),
+        subject,
+        html,
+        text
+      }),
+      cache: 'no-store'
+    }
+  )
+
+  const result = (await response.json().catch(() => null)) as {
+    success?: boolean
+    errors?: Array<{ message?: string }>
+    result?: { delivered?: string[]; queued?: string[]; permanent_bounces?: string[] }
+  } | null
 
   if (!response.ok || !result?.success) {
     const detail = result?.errors?.[0]?.message
 
     throw new Error(detail ? `Email delivery failed: ${detail}` : 'Email delivery failed')
+  }
+
+  if (result.result?.permanent_bounces?.includes(recipient)) {
+    throw new Error('Email delivery failed: the recipient address was permanently rejected')
   }
 
   return {

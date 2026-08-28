@@ -25,6 +25,16 @@ const round = (value: number) => Math.max(0, Math.round(value))
 const LEGACY_DEMO_CAMPAIGN_ID = 'cmp_back_to_school'
 const LEGACY_DEMO_URL = 'https://x.com/northstar_app/status/1960425100892201041'
 
+interface RapidApiPostMetrics {
+  impressions: number | null
+  engagements: number | null
+  linkClicks: number | null
+}
+
+type JsonRecord = Record<string, unknown>
+
+const RAPIDAPI_TWITTER_HOST = 'twitter-api45.p.rapidapi.com'
+
 function createEmptyStore(): TwitterMonitorStore {
   return {
     version: 1,
@@ -32,6 +42,123 @@ function createEmptyStore(): TwitterMonitorStore {
     points: [],
     activity: [],
     updatedAt: new Date().toISOString()
+  }
+}
+
+function getPostId(url: string) {
+  const match = new URL(url).pathname.match(/\/status\/(\d+)/)
+
+  if (!match?.[1]) throw new Error('Could not read the post ID from this X URL')
+
+  return match[1]
+}
+
+function asRecord(value: unknown): JsonRecord | undefined {
+  return value !== null && typeof value === 'object' && !Array.isArray(value) ? (value as JsonRecord) : undefined
+}
+
+function parseMetricValue(value: unknown) {
+  if (typeof value === 'number' && Number.isFinite(value)) return value
+  if (typeof value !== 'string') return null
+
+  const normalized = value.trim().replaceAll(',', '').toUpperCase()
+  const match = normalized.match(/^(-?\d+(?:\.\d+)?)([KMB])?$/)
+
+  if (!match?.[1]) return null
+
+  const multiplier = match[2] === 'K' ? 1_000 : match[2] === 'M' ? 1_000_000 : match[2] === 'B' ? 1_000_000_000 : 1
+
+  return Number(match[1]) * multiplier
+}
+
+function getMetricContainers(payload: JsonRecord) {
+  const data = asRecord(payload.data)
+  const result = asRecord(payload.result)
+  const tweet = asRecord(payload.tweet)
+  const tweetResult = asRecord(payload.tweet_result) ?? asRecord(payload.tweetResult)
+  const nestedResult = asRecord(tweetResult?.result)
+
+  return [payload, tweet, data, result, tweetResult, nestedResult, asRecord(nestedResult?.legacy)].filter(
+    (item): item is JsonRecord => Boolean(item)
+  )
+}
+
+function readMetric(containers: JsonRecord[], names: string[]) {
+  for (const container of containers) {
+    for (const name of names) {
+      const value = parseMetricValue(container[name])
+
+      if (value !== null) return value
+    }
+  }
+
+  return null
+}
+
+async function fetchRapidApiPostMetrics(url: string): Promise<RapidApiPostMetrics> {
+  const apiKey = process.env.RAPIDAPI_KEY ?? process.env.RAPID_API_KEY
+
+  if (!apiKey) {
+    throw new Error('RapidAPI credentials are not configured. Set RAPIDAPI_KEY to collect post metrics.')
+  }
+
+  const postId = getPostId(url)
+  const endpoint = new URL(`https://${RAPIDAPI_TWITTER_HOST}/tweet.php`)
+
+  endpoint.searchParams.set('id', postId)
+
+  const response = await fetch(endpoint, {
+    headers: {
+      'content-type': 'application/json',
+      'x-rapidapi-host': RAPIDAPI_TWITTER_HOST,
+      'x-rapidapi-key': apiKey
+    },
+    cache: 'no-store'
+  })
+  const payload = (await response.json()) as JsonRecord
+
+  if (!response.ok) {
+    const detail = payload.message ?? payload.error ?? payload.detail
+
+    throw new Error(typeof detail === 'string' ? detail : `RapidAPI request failed with status ${response.status}`)
+  }
+
+  const containers = getMetricContainers(payload)
+  const impressions = readMetric(containers, [
+    'views',
+    'view_count',
+    'viewCount',
+    'views_count',
+    'impressions',
+    'impression_count'
+  ])
+  const directEngagements = readMetric(containers, ['engagements', 'engagement_count', 'engagementCount'])
+  const likes = readMetric(containers, [
+    'favorites',
+    'favorite_count',
+    'favoriteCount',
+    'likes',
+    'like_count',
+    'likeCount'
+  ])
+  const retweets = readMetric(containers, ['retweets', 'retweet_count', 'retweetCount'])
+  const replies = readMetric(containers, ['replies', 'reply_count', 'replyCount'])
+  const quotes = readMetric(containers, ['quotes', 'quote_count', 'quoteCount'])
+  const bookmarks = readMetric(containers, ['bookmarks', 'bookmark_count', 'bookmarkCount'])
+  const linkClicks = readMetric(containers, ['link_clicks', 'linkClicks', 'url_link_clicks'])
+  const publicEngagementMetrics = [likes, retweets, replies, quotes, bookmarks]
+  const publicEngagements = publicEngagementMetrics.some(value => value !== null)
+    ? publicEngagementMetrics.reduce<number>((total, value) => total + (value ?? 0), 0)
+    : null
+
+  if (impressions === null && directEngagements === null && publicEngagements === null && linkClicks === null) {
+    throw new Error('RapidAPI returned the post, but no supported metric fields were found in its response.')
+  }
+
+  return {
+    impressions,
+    engagements: directEngagements ?? publicEngagements,
+    linkClicks
   }
 }
 
@@ -204,6 +331,71 @@ function toSnapshot(store: TwitterMonitorStore): TwitterMonitorSnapshot {
 
 export async function getMonitorSnapshot() {
   return toSnapshot(await readStore())
+}
+
+export async function collectCampaignMetrics(force = false, campaignIds?: string[]) {
+  const now = new Date()
+  const snapshot = await getMonitorSnapshot()
+  const candidates = snapshot.campaigns.filter(campaign => {
+    if (campaignIds && !campaignIds.includes(campaign.id)) return false
+    if (campaign.status !== 'active') return false
+    if (now.getTime() < new Date(campaign.monitorStartAt).getTime()) return false
+    if (now.getTime() > new Date(campaign.monitorEndAt).getTime()) return false
+
+    const lastSync = campaign.lastSyncAt ? new Date(campaign.lastSyncAt).getTime() : 0
+
+    return force || now.getTime() - lastSync >= campaign.cadenceMinutes * 60 * 1000
+  })
+
+  const results = await Promise.allSettled(
+    candidates.map(async campaign => ({
+      campaignId: campaign.id,
+      url: campaign.url,
+      metrics: await fetchRapidApiPostMetrics(campaign.url)
+    }))
+  )
+  const observations = results.flatMap(result => (result.status === 'fulfilled' ? [result.value] : []))
+  const errors = results.flatMap(result =>
+    result.status === 'rejected'
+      ? [result.reason instanceof Error ? result.reason.message : 'RapidAPI metrics collection failed']
+      : []
+  )
+
+  if (!observations.length) return { snapshot, collected: 0, errors }
+
+  let storedCount = 0
+  const store = await mutateStore(currentStore => {
+    observations.forEach(observation => {
+      const campaign = currentStore.campaigns.find(item => item.id === observation.campaignId)
+
+      if (!campaign || campaign.url !== observation.url || campaign.status !== 'active') return
+
+      currentStore.points.push({
+        id: createId('pt'),
+        campaignId: campaign.id,
+        timestamp: now.toISOString(),
+        impressions: observation.metrics.impressions,
+        engagements: observation.metrics.engagements,
+        linkClicks: observation.metrics.linkClicks,
+        conversions: null,
+        spend: null
+      })
+      campaign.lastSyncAt = now.toISOString()
+      storedCount += 1
+    })
+
+    if (storedCount) {
+      currentStore.activity.unshift({
+        id: createId('activity'),
+        type: 'sync',
+        title: 'X post metrics synced',
+        detail: `${storedCount} real observation${storedCount === 1 ? '' : 's'} saved from Twitter API45`,
+        timestamp: now.toISOString()
+      })
+    }
+  })
+
+  return { snapshot: toSnapshot(store), collected: storedCount, errors }
 }
 
 export async function configureTwitterMonitor(input: ConfigureTwitterMonitorInput) {

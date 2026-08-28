@@ -25,9 +25,13 @@ export async function POST(request: NextRequest) {
     const message = error instanceof Error ? error.message : 'Could not send the monitoring report'
     const configurationError = message === 'Email delivery is not configured'
     const noCampaign = message.startsWith('Configure an X post')
+    const validationError = message.startsWith('Please enter')
 
     console.error('Twitter monitor report delivery failed', error)
 
-    return NextResponse.json({ error: message }, { status: configurationError ? 503 : noCampaign ? 400 : 502 })
+    return NextResponse.json(
+      { error: message },
+      { status: configurationError ? 503 : noCampaign || validationError ? 400 : 502 }
+    )
   }
 }

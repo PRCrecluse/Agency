@@ -15,12 +15,14 @@ export const dynamic = 'force-dynamic'
 export async function POST(request: NextRequest) {
   try {
     const body = (await request.json()) as Partial<LeadCaptureInput>
+
     const { lead, storage } = await persistLeadCapture({
       companyName: body.companyName ?? '',
       website: body.website ?? '',
       role: body.role ?? '',
       email: body.email ?? ''
     })
+
     const response = NextResponse.json({
       granted: true,
       email: lead.email,

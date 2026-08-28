@@ -37,7 +37,14 @@ const decode = (value: string) => Buffer.from(value, 'base64url').toString('utf8
 function getAccessSecret() {
   const secret = process.env.TWITTER_MONITOR_ACCESS_SECRET
 
-  if (secret) return secret
+  if (secret) {
+    if (process.env.NODE_ENV === 'production' && secret.length < 32) {
+      throw new Error('TWITTER_MONITOR_ACCESS_SECRET must contain at least 32 characters')
+    }
+
+    return secret
+  }
+
   if (process.env.NODE_ENV === 'production') {
     throw new Error('TWITTER_MONITOR_ACCESS_SECRET is not configured')
   }
@@ -97,6 +104,7 @@ async function writeLeadToNotion(record: LeadCaptureRecord) {
   if (!notionToken) return false
 
   const parentPageId = process.env.NOTION_LEADS_PAGE_ID ?? DEFAULT_NOTION_PARENT_PAGE_ID
+
   const response = await fetch('https://api.notion.com/v1/pages', {
     method: 'POST',
     headers: {
@@ -167,7 +175,10 @@ async function writeLeadToJson(record: LeadCaptureRecord) {
 }
 
 export async function persistLeadCapture(input: LeadCaptureInput) {
+  if (process.env.NODE_ENV === 'production') getAccessSecret()
+
   const lead = validateLeadCapture(input)
+
   const record: LeadCaptureRecord = {
     ...lead,
     id: randomUUID(),
@@ -194,6 +205,7 @@ export function createAccessToken(lead: LeadCaptureInput) {
     email: lead.email,
     expiresAt: Math.floor(Date.now() / 1000) + ACCESS_TTL_SECONDS
   }
+
   const payload = encode(JSON.stringify(session))
   const signature = createHmac('sha256', getAccessSecret()).update(payload).digest('base64url')
 
