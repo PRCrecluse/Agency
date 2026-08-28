@@ -1,5 +1,6 @@
 import { NextResponse, type NextRequest } from 'next/server'
 
+import { TWITTER_MONITOR_ACCESS_COOKIE, verifyAccessToken } from '@/lib/twitter-monitor/access'
 import {
   configureTwitterMonitor,
   getMonitorSnapshot,
@@ -13,7 +14,11 @@ export const dynamic = 'force-dynamic'
 
 const errorResponse = (message: string, status = 400) => NextResponse.json({ error: message }, { status })
 
-export async function GET() {
+export async function GET(request: NextRequest) {
+  const session = verifyAccessToken(request.cookies.get(TWITTER_MONITOR_ACCESS_COOKIE)?.value)
+
+  if (!session) return errorResponse('Complete the access form before using this tool.', 401)
+
   try {
     return NextResponse.json(await getMonitorSnapshot())
   } catch (error) {
@@ -32,6 +37,20 @@ export async function POST(request: NextRequest) {
       point?: IngestPointInput
     }
 
+    if (body.action === 'ingest') {
+      const configuredSecret = process.env.TWITTER_MONITOR_INGEST_SECRET
+      const suppliedSecret = request.headers.get('x-monitor-secret')
+
+      if (configuredSecret && suppliedSecret !== configuredSecret) return errorResponse('Unauthorized.', 401)
+      if (!body.point?.campaignId) return errorResponse('A metric point with campaignId is required.')
+
+      return NextResponse.json({ snapshot: await ingestMetricPoint(body.point) })
+    }
+
+    const session = verifyAccessToken(request.cookies.get(TWITTER_MONITOR_ACCESS_COOKIE)?.value)
+
+    if (!session) return errorResponse('Complete the access form before using this tool.', 401)
+
     if (body.action === 'configure') {
       if (!body.monitor?.url || !body.monitor.monitorStartAt || !body.monitor.monitorEndAt) {
         return errorResponse('Tweet URL, start time, and end time are required.')
@@ -44,16 +63,6 @@ export async function POST(request: NextRequest) {
       if (!body.campaignId) return errorResponse('campaignId is required.')
 
       return NextResponse.json({ snapshot: await toggleCampaign(body.campaignId) })
-    }
-
-    if (body.action === 'ingest') {
-      const configuredSecret = process.env.TWITTER_MONITOR_INGEST_SECRET
-      const suppliedSecret = request.headers.get('x-monitor-secret')
-
-      if (configuredSecret && suppliedSecret !== configuredSecret) return errorResponse('Unauthorized.', 401)
-      if (!body.point?.campaignId) return errorResponse('A metric point with campaignId is required.')
-
-      return NextResponse.json({ snapshot: await ingestMetricPoint(body.point) })
     }
 
     return errorResponse('Unsupported action.')

@@ -1,6 +1,10 @@
+import { cookies } from 'next/headers'
+
 import { TwitterMonitorDashboard } from '@/components/twitter-monitor/twitter-monitor-dashboard'
 import { buildMetadata } from '@/lib/seo'
+import { TWITTER_MONITOR_ACCESS_COOKIE, verifyAccessToken } from '@/lib/twitter-monitor/access'
 import { getMonitorSnapshot } from '@/lib/twitter-monitor/store'
+import type { TwitterMonitorSnapshot } from '@/lib/twitter-monitor/types'
 
 export const dynamic = 'force-dynamic'
 
@@ -11,7 +15,24 @@ export const metadata = buildMetadata({
 })
 
 export default async function TwitterMonitorPage() {
-  const initialSnapshot = await getMonitorSnapshot()
+  const cookieStore = await cookies()
+  const session = verifyAccessToken(cookieStore.get(TWITTER_MONITOR_ACCESS_COOKIE)?.value)
+  const initialSnapshot: TwitterMonitorSnapshot = session
+    ? await getMonitorSnapshot()
+    : {
+        version: 1,
+        campaigns: [],
+        points: [],
+        activity: [],
+        updatedAt: new Date().toISOString(),
+        storage: { driver: process.env.DATABASE_URL ? 'planetscale' : 'json-file', persistent: true }
+      }
 
-  return <TwitterMonitorDashboard initialSnapshot={initialSnapshot} />
+  return (
+    <TwitterMonitorDashboard
+      initialSnapshot={initialSnapshot}
+      initialAccessGranted={Boolean(session)}
+      initialReportEmail={session?.email ?? ''}
+    />
+  )
 }
