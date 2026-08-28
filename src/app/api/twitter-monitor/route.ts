@@ -2,12 +2,12 @@ import { NextResponse, type NextRequest } from 'next/server'
 
 import {
   collectCampaignMetrics,
-  createCampaign,
+  configureTwitterMonitor,
   getMonitorSnapshot,
   ingestMetricPoint,
   toggleCampaign
 } from '@/lib/twitter-monitor/store'
-import type { CreateCampaignInput, IngestPointInput } from '@/lib/twitter-monitor/types'
+import type { ConfigureTwitterMonitorInput, IngestPointInput } from '@/lib/twitter-monitor/types'
 
 export const runtime = 'nodejs'
 export const dynamic = 'force-dynamic'
@@ -30,7 +30,7 @@ export async function POST(request: NextRequest) {
       action?: string
       force?: boolean
       campaignId?: string
-      campaign?: CreateCampaignInput
+      monitor?: ConfigureTwitterMonitorInput
       point?: IngestPointInput
     }
 
@@ -38,12 +38,12 @@ export async function POST(request: NextRequest) {
       return NextResponse.json(await collectCampaignMetrics(body.force ?? false))
     }
 
-    if (body.action === 'create') {
-      if (!body.campaign?.name || !body.campaign.handle || !body.campaign.url || body.campaign.targetClicks <= 0) {
-        return errorResponse('Campaign name, handle, URL, and a positive click target are required.')
+    if (body.action === 'configure') {
+      if (!body.monitor?.url || !body.monitor.monitorStartAt || !body.monitor.monitorEndAt) {
+        return errorResponse('Tweet URL, start time, and end time are required.')
       }
 
-      return NextResponse.json(await createCampaign(body.campaign))
+      return NextResponse.json({ snapshot: await configureTwitterMonitor(body.monitor) })
     }
 
     if (body.action === 'toggle') {
@@ -65,9 +65,10 @@ export async function POST(request: NextRequest) {
     return errorResponse('Unsupported action.')
   } catch (error) {
     const message = error instanceof Error ? error.message : 'Unexpected monitor error'
+    const validationError = message.startsWith('Please enter') || message.startsWith('The monitoring')
 
     console.error('Twitter monitor mutation failed', error)
 
-    return errorResponse(message, message === 'Campaign not found' ? 404 : 500)
+    return errorResponse(message, message === 'Campaign not found' ? 404 : validationError ? 400 : 500)
   }
 }

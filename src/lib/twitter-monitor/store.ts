@@ -4,7 +4,7 @@ import path from 'node:path'
 import { connect, type Connection } from '@planetscale/database'
 
 import type {
-  CreateCampaignInput,
+  ConfigureTwitterMonitorInput,
   IngestPointInput,
   TrafficPoint,
   TwitterCampaign,
@@ -14,7 +14,6 @@ import type {
 
 const DATA_DIRECTORY = process.env.TWITTER_MONITOR_DATA_DIR ?? path.join(process.cwd(), '.data')
 const DATA_FILE = path.join(DATA_DIRECTORY, 'twitter-monitor.json')
-const CAMPAIGN_COLORS = ['#b8f348', '#7c5cff', '#ff8a4c', '#1b9df0', '#ef5da8']
 
 let writeQueue: Promise<unknown> = Promise.resolve()
 let connection: Connection | undefined
@@ -23,7 +22,7 @@ let schemaReady: Promise<void> | undefined
 const createId = (prefix: string) => `${prefix}_${Date.now().toString(36)}_${Math.random().toString(36).slice(2, 8)}`
 
 const campaignSeeds: Array<
-  Omit<TwitterCampaign, 'createdAt' | 'lastSyncAt'> & {
+  Omit<TwitterCampaign, 'createdAt' | 'lastSyncAt' | 'monitorStartAt' | 'monitorEndAt'> & {
     baseImpressions: number
     phase: number
   }
@@ -40,45 +39,6 @@ const campaignSeeds: Array<
     cadenceMinutes: 15,
     baseImpressions: 4300,
     phase: 0.4
-  },
-  {
-    id: 'cmp_ai_webinar',
-    name: 'AI launch webinar',
-    handle: '@northstar_app',
-    url: 'https://x.com/northstar_app/status/1958266043285307490',
-    status: 'active',
-    source: 'demo',
-    color: '#7c5cff',
-    targetClicks: 9000,
-    cadenceMinutes: 15,
-    baseImpressions: 3600,
-    phase: 1.8
-  },
-  {
-    id: 'cmp_creator_collab',
-    name: 'Creator partnership',
-    handle: '@northstar_app',
-    url: 'https://x.com/northstar_app/status/1956103265689694601',
-    status: 'active',
-    source: 'demo',
-    color: '#ff8a4c',
-    targetClicks: 6500,
-    cadenceMinutes: 30,
-    baseImpressions: 2600,
-    phase: 2.7
-  },
-  {
-    id: 'cmp_pro_annual',
-    name: 'Pro annual offer',
-    handle: '@northstar_app',
-    url: 'https://x.com/northstar_app/status/1949962407004680338',
-    status: 'paused',
-    source: 'demo',
-    color: '#1b9df0',
-    targetClicks: 5000,
-    cadenceMinutes: 60,
-    baseImpressions: 1800,
-    phase: 3.5
   }
 ]
 
@@ -130,6 +90,8 @@ function buildSeedStore(): TwitterMonitorStore {
     color: seed.color,
     targetClicks: seed.targetClicks,
     cadenceMinutes: seed.cadenceMinutes,
+    monitorStartAt: new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000).toISOString(),
+    monitorEndAt: new Date(now.getTime() + 7 * 24 * 60 * 60 * 1000).toISOString(),
     createdAt,
     lastSyncAt: now.toISOString()
   }))
@@ -142,22 +104,22 @@ function buildSeedStore(): TwitterMonitorStore {
       {
         id: 'activity_seed_sync',
         type: 'sync',
-        title: 'All campaign metrics synced',
-        detail: `${campaigns.length} campaigns · Persistent storage healthy`,
+        title: 'Tweet metrics synced',
+        detail: 'The latest observation was persisted successfully',
         timestamp: now.toISOString()
       },
       {
         id: 'activity_seed_alert',
         type: 'alert',
-        title: 'Back to school is accelerating',
-        detail: 'Link clicks are 18.4% above the previous period',
+        title: 'Traffic increased',
+        detail: 'Link clicks are 18.4% above the previous observation',
         timestamp: new Date(now.getTime() - 48 * 60 * 1000).toISOString()
       },
       {
         id: 'activity_seed_campaign',
         type: 'campaign',
-        title: 'Creator partnership monitor added',
-        detail: 'Collection cadence set to every 30 minutes',
+        title: 'Tweet monitor started',
+        detail: 'Collection cadence set to every 15 minutes',
         timestamp: new Date(now.getTime() - 4.2 * 60 * 60 * 1000).toISOString()
       }
     ],
@@ -196,7 +158,19 @@ function parseStoredPayload(payload: unknown) {
     throw new Error('Unsupported Twitter monitor data format')
   }
 
-  return parsed
+  const primaryCampaign = parsed.campaigns[0]
+
+  if (!primaryCampaign) return buildSeedStore()
+
+  const now = Date.now()
+  const monitorStartAt = primaryCampaign.monitorStartAt ?? new Date(now - 7 * 24 * 60 * 60 * 1000).toISOString()
+  const monitorEndAt = primaryCampaign.monitorEndAt ?? new Date(now + 7 * 24 * 60 * 60 * 1000).toISOString()
+
+  return {
+    ...parsed,
+    campaigns: [{ ...primaryCampaign, monitorStartAt, monitorEndAt }],
+    points: parsed.points.filter(point => point.campaignId === primaryCampaign.id)
+  }
 }
 
 async function writeJsonStore(store: TwitterMonitorStore) {
@@ -315,6 +289,8 @@ export async function collectCampaignMetrics(force = false) {
   const store = await mutateStore(currentStore => {
     currentStore.campaigns.forEach((campaign, campaignIndex) => {
       if (campaign.status !== 'active') return
+      if (now.getTime() < new Date(campaign.monitorStartAt).getTime()) return
+      if (now.getTime() > new Date(campaign.monitorEndAt).getTime()) return
 
       const lastSync = campaign.lastSyncAt ? new Date(campaign.lastSyncAt).getTime() : 0
       const isDue = now.getTime() - lastSync >= campaign.cadenceMinutes * 60 * 1000
@@ -348,8 +324,8 @@ export async function collectCampaignMetrics(force = false) {
       currentStore.activity.unshift({
         id: createId('activity'),
         type: 'sync',
-        title: 'Campaign metrics synced',
-        detail: `${collected} active ${collected === 1 ? 'campaign' : 'campaigns'} · persisted to disk`,
+        title: 'Tweet metrics synced',
+        detail: 'One new observation was saved to persistent storage',
         timestamp: now.toISOString()
       })
     }
@@ -358,35 +334,64 @@ export async function collectCampaignMetrics(force = false) {
   return { snapshot: toSnapshot(store), collected }
 }
 
-export async function createCampaign(input: CreateCampaignInput) {
+export async function configureTwitterMonitor(input: ConfigureTwitterMonitorInput) {
+  const start = new Date(input.monitorStartAt)
+  const end = new Date(input.monitorEndAt)
+
+  if (Number.isNaN(start.getTime()) || Number.isNaN(end.getTime()) || end <= start) {
+    throw new Error('The monitoring end time must be later than the start time')
+  }
+
+  const url = new URL(input.url)
+  const pathParts = url.pathname.split('/').filter(Boolean)
+  const hasAccountStatusPath = pathParts.length >= 3 && pathParts[1] === 'status'
+  const hasWebStatusPath = pathParts.length >= 4 && pathParts[0] === 'i' && pathParts[1] === 'web' && pathParts[2] === 'status'
+
+  if (
+    !['x.com', 'twitter.com', 'www.x.com', 'www.twitter.com'].includes(url.hostname) ||
+    (!hasAccountStatusPath && !hasWebStatusPath)
+  ) {
+    throw new Error('Please enter a valid X or Twitter post URL')
+  }
+
+  const handle = hasAccountStatusPath ? `@${pathParts[0]}` : '@x'
   const now = new Date().toISOString()
-  let createdCampaign: TwitterCampaign | undefined
 
   const store = await mutateStore(currentStore => {
-    createdCampaign = {
-      id: createId('cmp'),
-      name: input.name.trim(),
-      handle: input.handle.trim().startsWith('@') ? input.handle.trim() : `@${input.handle.trim()}`,
+    const previousCampaign = currentStore.campaigns[0]
+    const campaignId = previousCampaign?.id ?? 'primary_tweet_monitor'
+    const urlChanged = previousCampaign?.url !== input.url.trim()
+
+    const campaign: TwitterCampaign = {
+      id: campaignId,
+      name: `${handle} post`,
+      handle,
       url: input.url.trim(),
       status: 'active',
       source: 'ingestion',
-      color: CAMPAIGN_COLORS[currentStore.campaigns.length % CAMPAIGN_COLORS.length],
-      targetClicks: input.targetClicks,
-      cadenceMinutes: input.cadenceMinutes ?? 15,
-      createdAt: now,
-      lastSyncAt: null
+      color: '#18181b',
+      targetClicks: previousCampaign?.targetClicks ?? 5000,
+      cadenceMinutes: input.cadenceMinutes,
+      monitorStartAt: start.toISOString(),
+      monitorEndAt: end.toISOString(),
+      createdAt: previousCampaign?.createdAt ?? now,
+      lastSyncAt: urlChanged ? null : (previousCampaign?.lastSyncAt ?? null)
     }
-    currentStore.campaigns.push(createdCampaign)
+
+    currentStore.campaigns = [campaign]
+    currentStore.points = urlChanged
+      ? []
+      : currentStore.points.filter(point => point.campaignId === campaign.id)
     currentStore.activity.unshift({
       id: createId('activity'),
       type: 'campaign',
-      title: `${createdCampaign.name} monitor added`,
-      detail: `Collection cadence set to every ${createdCampaign.cadenceMinutes} minutes`,
+      title: urlChanged ? 'Tweet monitor started' : 'Monitoring window updated',
+      detail: `${start.toISOString()} → ${end.toISOString()} · every ${input.cadenceMinutes} minutes`,
       timestamp: now
     })
   })
 
-  return { snapshot: toSnapshot(store), campaign: createdCampaign! }
+  return toSnapshot(store)
 }
 
 export async function toggleCampaign(campaignId: string) {

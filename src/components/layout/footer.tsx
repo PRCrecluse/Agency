@@ -104,6 +104,11 @@ const Footer = () => {
                   UTM Builder
                 </Link>
               </li>
+              <li>
+                <Link href='/twitter-monitor' className='hover:text-foreground transition-colors duration-300'>
+                  X Post Monitor
+                </Link>
+              </li>
             </ul>
           </div>
           <div className='col-span-full flex flex-col gap-5 sm:col-span-2'>

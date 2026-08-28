@@ -12,6 +12,8 @@ export interface TwitterCampaign {
   color: string
   targetClicks: number
   cadenceMinutes: number
+  monitorStartAt: string
+  monitorEndAt: string
   createdAt: string
   lastSyncAt: string | null
 }
@@ -50,12 +52,11 @@ export interface TwitterMonitorSnapshot extends TwitterMonitorStore {
   }
 }
 
-export interface CreateCampaignInput {
-  name: string
-  handle: string
+export interface ConfigureTwitterMonitorInput {
   url: string
-  targetClicks: number
-  cadenceMinutes?: number
+  monitorStartAt: string
+  monitorEndAt: string
+  cadenceMinutes: number
 }
 
 export interface IngestPointInput {

@@ -1,6 +1,6 @@
-# Pulsewatch X campaign monitor
+# Meridian X post monitor
 
-The monitor is available at `/twitter-monitor`. It collects time-series campaign metrics, persists them, and renders selectable 7, 14, and 30-day performance curves.
+The monitor is available at `/twitter-monitor`. It tracks one X post at a time across a user-selected start and end time, persists each observation, and renders its impressions, engagements, and link-click curve.
 
 ## Persistence modes
 
@@ -11,7 +11,7 @@ Never commit the production connection string. Add it to `.env.local` for local 
 
 ## Continuous collection
 
-`vercel.json` calls `/api/cron/twitter-monitor` every 15 minutes. Set `CRON_SECRET` in Vercel; Vercel sends it as a bearer token to scheduled functions. A browser-open live mode also checks whether campaigns are due every 30 seconds.
+`vercel.json` calls `/api/cron/twitter-monitor` every 15 minutes. Set `CRON_SECRET` in Vercel; Vercel sends it as a bearer token to scheduled functions. While the tool is open, the browser also checks every 30 seconds whether the current post is due for collection.
 
 The included collector generates realistic demo measurements so the interface works immediately. A real analytics pipeline can write data through:
 
