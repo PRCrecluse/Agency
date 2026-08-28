@@ -1,11 +1,5 @@
 {
   "git": {
     "deploymentEnabled": false
-  },
-  "crons": [
-    {
-      "path": "/api/cron/twitter-monitor",
-      "schedule": "*/15 * * * *"
-    }
-  ]
+  }
 }

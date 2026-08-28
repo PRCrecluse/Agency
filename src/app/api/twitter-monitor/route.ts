@@ -1,7 +1,6 @@
 import { NextResponse, type NextRequest } from 'next/server'
 
 import {
-  collectCampaignMetrics,
   configureTwitterMonitor,
   getMonitorSnapshot,
   ingestMetricPoint,
@@ -28,14 +27,9 @@ export async function POST(request: NextRequest) {
   try {
     const body = (await request.json()) as {
       action?: string
-      force?: boolean
       campaignId?: string
       monitor?: ConfigureTwitterMonitorInput
       point?: IngestPointInput
-    }
-
-    if (body.action === 'collect') {
-      return NextResponse.json(await collectCampaignMetrics(body.force ?? false))
     }
 
     if (body.action === 'configure') {

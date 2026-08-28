@@ -6,7 +6,6 @@ import { connect, type Connection } from '@planetscale/database'
 import type {
   ConfigureTwitterMonitorInput,
   IngestPointInput,
-  TrafficPoint,
   TwitterCampaign,
   TwitterMonitorSnapshot,
   TwitterMonitorStore
@@ -21,109 +20,18 @@ let schemaReady: Promise<void> | undefined
 
 const createId = (prefix: string) => `${prefix}_${Date.now().toString(36)}_${Math.random().toString(36).slice(2, 8)}`
 
-const campaignSeeds: Array<
-  Omit<TwitterCampaign, 'createdAt' | 'lastSyncAt' | 'monitorStartAt' | 'monitorEndAt'> & {
-    baseImpressions: number
-    phase: number
-  }
-> = [
-  {
-    id: 'cmp_back_to_school',
-    name: 'Back to school',
-    handle: '@northstar_app',
-    url: 'https://x.com/northstar_app/status/1960425100892201041',
-    status: 'active',
-    source: 'demo',
-    color: '#b8f348',
-    targetClicks: 12000,
-    cadenceMinutes: 15,
-    baseImpressions: 4300,
-    phase: 0.4
-  }
-]
-
 const round = (value: number) => Math.max(0, Math.round(value))
 
-function buildSeedStore(): TwitterMonitorStore {
-  const now = new Date()
-  const createdAt = new Date(now.getTime() - 65 * 24 * 60 * 60 * 1000).toISOString()
-  const points: TrafficPoint[] = []
-  const samplesPerDay = 2
-  const totalDays = 62
+const LEGACY_DEMO_CAMPAIGN_ID = 'cmp_back_to_school'
+const LEGACY_DEMO_URL = 'https://x.com/northstar_app/status/1960425100892201041'
 
-  campaignSeeds.forEach(seed => {
-    for (let step = 0; step < totalDays * samplesPerDay; step += 1) {
-      const timestamp = new Date(
-        now.getTime() - (totalDays * samplesPerDay - 1 - step) * (24 / samplesPerDay) * 60 * 60 * 1000
-      )
-
-      const dayProgress = step / samplesPerDay
-      const weekday = timestamp.getUTCDay()
-      const weekdayFactor = weekday === 0 || weekday === 6 ? 0.72 : 1
-      const momentum = 0.72 + dayProgress * 0.018
-      const wave = 0.82 + Math.sin(step * 0.41 + seed.phase) * 0.17
-      const impressions = round(seed.baseImpressions * weekdayFactor * momentum * wave)
-      const engagements = round(impressions * (0.038 + ((step + seed.phase) % 6) * 0.0022))
-      const linkClicks = round(engagements * (0.43 + Math.sin(step * 0.19 + seed.phase) * 0.06))
-      const conversions = round(linkClicks * (0.055 + seed.phase * 0.004))
-
-      points.push({
-        id: `pt_${seed.id}_${step}`,
-        campaignId: seed.id,
-        timestamp: timestamp.toISOString(),
-        impressions,
-        engagements,
-        linkClicks,
-        conversions,
-        spend: Number((linkClicks * (0.68 + seed.phase * 0.08)).toFixed(2))
-      })
-    }
-  })
-
-  const campaigns = campaignSeeds.map(seed => ({
-    id: seed.id,
-    name: seed.name,
-    handle: seed.handle,
-    url: seed.url,
-    status: seed.status,
-    source: seed.source,
-    color: seed.color,
-    targetClicks: seed.targetClicks,
-    cadenceMinutes: seed.cadenceMinutes,
-    monitorStartAt: new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000).toISOString(),
-    monitorEndAt: new Date(now.getTime() + 7 * 24 * 60 * 60 * 1000).toISOString(),
-    createdAt,
-    lastSyncAt: now.toISOString()
-  }))
-
+function createEmptyStore(): TwitterMonitorStore {
   return {
     version: 1,
-    campaigns,
-    points,
-    activity: [
-      {
-        id: 'activity_seed_sync',
-        type: 'sync',
-        title: 'Tweet metrics synced',
-        detail: 'The latest observation was persisted successfully',
-        timestamp: now.toISOString()
-      },
-      {
-        id: 'activity_seed_alert',
-        type: 'alert',
-        title: 'Traffic increased',
-        detail: 'Link clicks are 18.4% above the previous observation',
-        timestamp: new Date(now.getTime() - 48 * 60 * 1000).toISOString()
-      },
-      {
-        id: 'activity_seed_campaign',
-        type: 'campaign',
-        title: 'Tweet monitor started',
-        detail: 'Collection cadence set to every 15 minutes',
-        timestamp: new Date(now.getTime() - 4.2 * 60 * 60 * 1000).toISOString()
-      }
-    ],
-    updatedAt: now.toISOString()
+    campaigns: [],
+    points: [],
+    activity: [],
+    updatedAt: new Date().toISOString()
   }
 }
 
@@ -139,13 +47,15 @@ function getPlanetScaleConnection() {
 
 async function ensurePlanetScaleSchema(database: Connection) {
   schemaReady ??= database
-    .execute(`
+    .execute(
+      `
       CREATE TABLE IF NOT EXISTS twitter_monitor_state (
         id VARCHAR(48) NOT NULL PRIMARY KEY,
         payload JSON NOT NULL,
         updated_at DATETIME(3) NOT NULL
       )
-    `)
+    `
+    )
     .then(() => undefined)
 
   return schemaReady
@@ -160,7 +70,19 @@ function parseStoredPayload(payload: unknown) {
 
   const primaryCampaign = parsed.campaigns[0]
 
-  if (!primaryCampaign) return buildSeedStore()
+  if (!primaryCampaign) {
+    return {
+      ...parsed,
+      campaigns: [],
+      points: []
+    }
+  }
+
+  const isLegacyDemo =
+    (primaryCampaign as unknown as { source?: string }).source === 'demo' ||
+    (primaryCampaign.id === LEGACY_DEMO_CAMPAIGN_ID && primaryCampaign.url === LEGACY_DEMO_URL)
+
+  if (isLegacyDemo) return createEmptyStore()
 
   const now = Date.now()
   const monitorStartAt = primaryCampaign.monitorStartAt ?? new Date(now - 7 * 24 * 60 * 60 * 1000).toISOString()
@@ -195,7 +117,7 @@ async function readStore(): Promise<TwitterMonitorStore> {
 
     if (result.rows[0]) return parseStoredPayload(result.rows[0].payload)
 
-    const initialStore = buildSeedStore()
+    const initialStore = createEmptyStore()
 
     await database.execute(
       'INSERT INTO twitter_monitor_state (id, payload, updated_at) VALUES (?, ?, ?) ON DUPLICATE KEY UPDATE id = id',
@@ -214,7 +136,9 @@ async function readStore(): Promise<TwitterMonitorStore> {
       throw new Error('Twitter monitor data file is not valid JSON', { cause: error })
     }
 
-    const initialStore = buildSeedStore()
+    if (!missingFile) throw error
+
+    const initialStore = createEmptyStore()
 
     await writeJsonStore(initialStore)
 
@@ -234,7 +158,7 @@ async function mutateStore(mutator: (store: TwitterMonitorStore) => void | Promi
         ['primary']
       )
 
-      const store = result.rows[0] ? parseStoredPayload(result.rows[0].payload) : buildSeedStore()
+      const store = result.rows[0] ? parseStoredPayload(result.rows[0].payload) : createEmptyStore()
 
       await mutator(store)
       store.updatedAt = new Date().toISOString()
@@ -282,58 +206,6 @@ export async function getMonitorSnapshot() {
   return toSnapshot(await readStore())
 }
 
-export async function collectCampaignMetrics(force = false) {
-  const now = new Date()
-  let collected = 0
-
-  const store = await mutateStore(currentStore => {
-    currentStore.campaigns.forEach((campaign, campaignIndex) => {
-      if (campaign.status !== 'active') return
-      if (now.getTime() < new Date(campaign.monitorStartAt).getTime()) return
-      if (now.getTime() > new Date(campaign.monitorEndAt).getTime()) return
-
-      const lastSync = campaign.lastSyncAt ? new Date(campaign.lastSyncAt).getTime() : 0
-      const isDue = now.getTime() - lastSync >= campaign.cadenceMinutes * 60 * 1000
-
-      if (!force && !isDue) return
-
-      const recent = [...currentStore.points].reverse().find(point => point.campaignId === campaign.id)
-      const baseline = recent?.impressions ?? 2400 + campaignIndex * 800
-      const hourFactor = 0.7 + Math.max(0, Math.sin((now.getHours() / 24) * Math.PI)) * 0.55
-      const variance = 0.86 + Math.random() * 0.3
-      const impressions = round(baseline * hourFactor * variance)
-      const engagements = round(impressions * (0.04 + Math.random() * 0.014))
-      const linkClicks = round(engagements * (0.4 + Math.random() * 0.12))
-      const conversions = round(linkClicks * (0.05 + Math.random() * 0.03))
-
-      currentStore.points.push({
-        id: createId('pt'),
-        campaignId: campaign.id,
-        timestamp: now.toISOString(),
-        impressions,
-        engagements,
-        linkClicks,
-        conversions,
-        spend: Number((linkClicks * (0.55 + Math.random() * 0.5)).toFixed(2))
-      })
-      campaign.lastSyncAt = now.toISOString()
-      collected += 1
-    })
-
-    if (collected > 0) {
-      currentStore.activity.unshift({
-        id: createId('activity'),
-        type: 'sync',
-        title: 'Tweet metrics synced',
-        detail: 'One new observation was saved to persistent storage',
-        timestamp: now.toISOString()
-      })
-    }
-  })
-
-  return { snapshot: toSnapshot(store), collected }
-}
-
 export async function configureTwitterMonitor(input: ConfigureTwitterMonitorInput) {
   const start = new Date(input.monitorStartAt)
   const end = new Date(input.monitorEndAt)
@@ -345,7 +217,9 @@ export async function configureTwitterMonitor(input: ConfigureTwitterMonitorInpu
   const url = new URL(input.url)
   const pathParts = url.pathname.split('/').filter(Boolean)
   const hasAccountStatusPath = pathParts.length >= 3 && pathParts[1] === 'status'
-  const hasWebStatusPath = pathParts.length >= 4 && pathParts[0] === 'i' && pathParts[1] === 'web' && pathParts[2] === 'status'
+
+  const hasWebStatusPath =
+    pathParts.length >= 4 && pathParts[0] === 'i' && pathParts[1] === 'web' && pathParts[2] === 'status'
 
   if (
     !['x.com', 'twitter.com', 'www.x.com', 'www.twitter.com'].includes(url.hostname) ||
@@ -379,9 +253,7 @@ export async function configureTwitterMonitor(input: ConfigureTwitterMonitorInpu
     }
 
     currentStore.campaigns = [campaign]
-    currentStore.points = urlChanged
-      ? []
-      : currentStore.points.filter(point => point.campaignId === campaign.id)
+    currentStore.points = urlChanged ? [] : currentStore.points.filter(point => point.campaignId === campaign.id)
     currentStore.activity.unshift({
       id: createId('activity'),
       type: 'campaign',

@@ -1,6 +1,6 @@
 export type CampaignStatus = 'active' | 'paused'
 
-export type CampaignSource = 'demo' | 'ingestion'
+export type CampaignSource = 'ingestion'
 
 export interface TwitterCampaign {
   id: string

@@ -9,11 +9,9 @@ The monitor is available at `/twitter-monitor`. It tracks one X post at a time a
 
 Never commit the production connection string. Add it to `.env.local` for local testing and to the Vercel project environment for production.
 
-## Continuous collection
+## Real metric ingestion
 
-`vercel.json` calls `/api/cron/twitter-monitor` every 15 minutes. Set `CRON_SECRET` in Vercel; Vercel sends it as a bearer token to scheduled functions. While the tool is open, the browser also checks every 30 seconds whether the current post is due for collection.
-
-The included collector generates realistic demo measurements so the interface works immediately. A real analytics pipeline can write data through:
+The monitor never generates demo measurements. It starts empty and only renders metric points supplied by a real analytics pipeline through:
 
 ```http
 POST /api/twitter-monitor
