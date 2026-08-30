@@ -86,6 +86,12 @@ export async function getSitemapEntries(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: 'weekly',
       priority: 0.9
     },
+    {
+      url: absoluteUrl('/seo-prompts'),
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.8
+    },
     localizedServiceEntry('/zh/services', 0.9),
     {
       url: absoluteUrl('/services/reddit-services'),

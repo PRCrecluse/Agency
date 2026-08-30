@@ -32,8 +32,8 @@ const Footer = () => {
             <Logo />
           </Link>
           <p className='text-muted-foreground'>
-            Meridian helps SaaS and AI companies grow through technical SEO, programmatic SEO, Reddit strategy, GEO,
-            and AI-native demand systems.
+            Meridian helps SaaS and AI companies grow through technical SEO, programmatic SEO, Reddit strategy, GEO, and
+            AI-native demand systems.
           </p>
           <Separator className='w-35!' />
           <div className='flex items-center gap-4'>
@@ -102,6 +102,11 @@ const Footer = () => {
               <li>
                 <Link href='/utm-builder' className='hover:text-foreground transition-colors duration-300'>
                   UTM Builder
+                </Link>
+              </li>
+              <li>
+                <Link href='/seo-prompts' className='hover:text-foreground transition-colors duration-300'>
+                  SEO Prompts
                 </Link>
               </li>
               <li>

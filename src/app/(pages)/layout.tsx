@@ -107,6 +107,10 @@ const navigationData: Navigation[] = [
     href: '/#testimonials'
   },
   {
+    title: 'SEO Prompts',
+    href: '/seo-prompts'
+  },
+  {
     title: 'Blog',
     href: '/blog',
     activeMatch: 'prefix'
