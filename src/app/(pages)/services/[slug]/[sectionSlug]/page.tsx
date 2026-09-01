@@ -246,7 +246,11 @@ const ServiceSectionDetailPage = async ({
         </>
       ) : null}
 
-      <CTASection />
+      <CTASection
+        title={copy.nextStepTitle}
+        description={copy.nextStepDescription}
+        buttonLabel={copy.bookStrategyCall}
+      />
 
       <script
         type='application/ld+json'

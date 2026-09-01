@@ -55,7 +55,11 @@ const BlogPage = async () => {
 
       <BlogSection posts={blogPosts} />
 
-      <CTASection />
+      <CTASection
+        title='Turn Organic Growth Research Into Your Next Move'
+        description='Talk with Meridian about the SEO, Reddit, or AI-discovery opportunity that matters most for your current stage.'
+        buttonLabel='Discuss your growth strategy'
+      />
 
       {/* Add JSON-LD to your page */}
       <script

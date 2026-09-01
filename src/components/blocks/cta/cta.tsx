@@ -11,16 +11,16 @@ import LogoVector from '@/assets/svg/logo-vector'
 import DottedSheet from '@/assets/svg/dotted-sheet'
 
 type CTASectionProps = {
-  title?: string
-  description?: string
-  buttonLabel?: string
+  title: string
+  description: string
+  buttonLabel: string
   href?: string
 }
 
 const CTASection = ({
-  title = 'Take Control of Your Sales Pipeline',
-  description = 'Join Meridian and get a complete overview of your users, sales, and performance - all from one powerful dashboard.',
-  buttonLabel = 'Book a call',
+  title,
+  description,
+  buttonLabel,
   href = 'https://cal.com/team/meridian-growth'
 }: CTASectionProps) => {
   return (

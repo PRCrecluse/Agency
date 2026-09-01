@@ -77,13 +77,8 @@ const Footer = () => {
             </ul>
           </div>
           <div className='flex flex-col gap-5'>
-            <div className='text-lg font-medium'>Help</div>
+            <div className='text-lg font-medium'>Legal</div>
             <ul className='text-muted-foreground space-y-3'>
-              <li>
-                <Link href='#' className='hover:text-foreground transition-colors duration-300'>
-                  Delivery Details
-                </Link>
-              </li>
               <li>
                 <Link href='/terms-conditions' className='hover:text-foreground transition-colors duration-300'>
                   Terms & Conditions
