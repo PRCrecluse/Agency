@@ -23,12 +23,10 @@ import {
   serviceSectionParams,
   type ServiceLang
 } from '@/content/services'
-import { absoluteUrl, createBreadcrumbSchema, createLocalizedAlternates, createWebPageSchema } from '@/lib/seo'
+import { absoluteUrl, buildMetadata, createBreadcrumbSchema, createLocalizedAlternates, createWebPageSchema } from '@/lib/seo'
+import { getLocalizedPath, toLocalizedHref } from '@/lib/language'
+import { getRequestLanguage } from '@/lib/request-language'
 import { cn } from '@/lib/utils'
-
-const getLang = (value?: string): ServiceLang => (value?.toLowerCase().startsWith('zh') ? 'zh' : 'en')
-
-const withLang = (path: string, lang: ServiceLang, hash?: string) => `${path}?lang=${lang}${hash ? `#${hash}` : ''}`
 
 export async function generateStaticParams() {
   return serviceSectionParams
@@ -37,39 +35,37 @@ export async function generateStaticParams() {
 export const dynamic = 'force-dynamic'
 
 export async function generateMetadata({
-  params,
-  searchParams
+  params
 }: {
   params: Promise<{ slug: string; sectionSlug: string }>
-  searchParams?: Promise<{ lang?: string }>
 }): Promise<Metadata> {
   const { slug, sectionSlug } = await params
-  const resolvedSearchParams = await searchParams
-  const lang = getLang(resolvedSearchParams?.lang)
+  const lang: ServiceLang = await getRequestLanguage()
   const service = getServiceSectionPage(slug, sectionSlug)
 
   if (!service) {
     return {}
   }
 
-  return {
+  const path = getLocalizedPath(`/services/${slug}/${sectionSlug}`, lang)
+
+  return buildMetadata({
     title: `${resolveLocalizedText(service.title, lang)} | Meridian`,
     description: resolveLocalizedText(service.description, lang),
     keywords: [...service.keywords.map(keyword => keyword.en), ...service.keywords.map(keyword => keyword.zh)],
-    alternates: createLocalizedAlternates(`/services/${slug}/${sectionSlug}`, lang)
-  }
+    path,
+    alternates: createLocalizedAlternates(path, lang),
+    language: lang
+  })
 }
 
 const ServiceSectionDetailPage = async ({
-  params,
-  searchParams
+  params
 }: {
   params: Promise<{ slug: string; sectionSlug: string }>
-  searchParams?: Promise<{ lang?: string }>
 }) => {
   const { slug, sectionSlug } = await params
-  const resolvedSearchParams = await searchParams
-  const lang = getLang(resolvedSearchParams?.lang)
+  const lang: ServiceLang = await getRequestLanguage()
   const copy = servicePageCopy[lang]
   const parentService = getServiceBySlug(slug)
   const currentSection = getServiceSectionBySlug(slug, sectionSlug)
@@ -81,15 +77,17 @@ const ServiceSectionDetailPage = async ({
 
   const hasCustomIncludes = Boolean(service.serviceIncludes?.length)
   const hasFaqSection = Boolean(service.faqItems?.length)
+  const path = getLocalizedPath(`/services/${slug}/${sectionSlug}`, lang)
 
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
       {
         ...createWebPageSchema({
-          path: `/services/${slug}/${sectionSlug}`,
-          title: `${service.title.en} | Meridian`,
-          description: service.description.en
+          path,
+          title: `${resolveLocalizedText(service.title, lang)} | Meridian`,
+          description: resolveLocalizedText(service.description, lang),
+          language: lang
         })
       },
       createBreadcrumbSchema([
@@ -97,13 +95,13 @@ const ServiceSectionDetailPage = async ({
         { name: copy.services, path: '/services' },
         { name: resolveLocalizedText(parentService.title, lang), path: `/services/${slug}` },
         { name: resolveLocalizedText(service.title, lang), path: `/services/${slug}/${sectionSlug}` }
-      ]),
+      ], lang),
       {
         '@type': 'Service',
         name: resolveLocalizedText(service.title, lang),
         description: resolveLocalizedText(service.description, lang),
         serviceType: resolveLocalizedText(parentService.category, lang),
-        url: absoluteUrl(`/services/${slug}/${sectionSlug}`),
+        url: absoluteUrl(path),
         areaServed: 'Global'
       }
     ]
@@ -128,7 +126,7 @@ const ServiceSectionDetailPage = async ({
                 </Link>
               </PrimaryFlowButton>
               <SecondaryFlowButton asChild>
-                <Link href={withLang('/services', lang)}>{copy.allServices}</Link>
+                <Link href={toLocalizedHref('/services', lang)}>{copy.allServices}</Link>
               </SecondaryFlowButton>
             </div>
           </div>

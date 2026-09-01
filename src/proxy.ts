@@ -11,16 +11,29 @@ export function proxy(request: NextRequest, event: NextFetchEvent) {
 
   const requestHeaders = new Headers(request.headers)
 
-  requestHeaders.set(
-    'x-page-locale',
-    request.nextUrl.pathname === '/zh' || request.nextUrl.pathname.startsWith('/zh/') ? 'zh-CN' : 'en'
-  )
+  const isChinesePath =
+    request.nextUrl.pathname === '/zh' ||
+    request.nextUrl.pathname.startsWith('/zh/') ||
+    request.headers.get('x-page-locale') === 'zh-CN'
 
-  if (/^\/zh\/services(?:\/|$)/.test(request.nextUrl.pathname)) {
+  if (request.nextUrl.searchParams.has('lang') && /^\/(?:zh\/)?(?:services|utm-builder)(?:\/|$)/.test(request.nextUrl.pathname)) {
+    const destination = request.nextUrl.clone()
+    const wantsChinese = request.nextUrl.searchParams.get('lang')?.toLowerCase().startsWith('zh')
+
+    destination.pathname = wantsChinese
+      ? `/zh${request.nextUrl.pathname.replace(/^\/zh(?=\/|$)/, '')}`
+      : request.nextUrl.pathname.replace(/^\/zh(?=\/|$)/, '') || '/'
+    destination.searchParams.delete('lang')
+
+    return NextResponse.redirect(destination, 308)
+  }
+
+  requestHeaders.set('x-page-locale', isChinesePath ? 'zh-CN' : 'en')
+
+  if (/^\/zh\/(?:services|utm-builder)(?:\/|$)/.test(request.nextUrl.pathname)) {
     const destination = request.nextUrl.clone()
 
     destination.pathname = request.nextUrl.pathname.replace(/^\/zh/, '')
-    destination.searchParams.set('lang', 'zh')
 
     return NextResponse.rewrite(destination, {
       request: {

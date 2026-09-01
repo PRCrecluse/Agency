@@ -2,7 +2,6 @@
 
 import { useMemo, useState } from 'react'
 
-import { useSearchParams } from 'next/navigation'
 import {
   ArrowUpRightIcon,
   CheckIcon,
@@ -19,6 +18,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { cn } from '@/lib/utils'
+import type { SiteLang } from '@/lib/language'
 
 type FieldKey = 'source' | 'medium' | 'campaign' | 'term' | 'content' | 'id'
 
@@ -124,9 +124,7 @@ function buildUrl(destination: string, fields: Record<FieldKey, string>) {
   }
 }
 
-const UtmBuilder = () => {
-  const searchParams = useSearchParams()
-  const lang = searchParams.get('lang')?.toLowerCase().startsWith('zh') ? 'zh' : 'en'
+const UtmBuilder = ({ lang }: { lang: SiteLang }) => {
   const copy = COPY[lang]
   const [destination, setDestination] = useState('')
   const [fields, setFields] = useState<Record<FieldKey, string>>(EMPTY_FIELDS)

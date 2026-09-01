@@ -1,11 +1,24 @@
-export type QueryLang = 'en' | 'zh'
+export type SiteLang = 'en' | 'zh'
 
 const externalHrefPattern = /^(?:[a-z][a-z\d+\-.]*:)?\/\//i
-const translatedBlogSlugs = new Set(['b2b-ai-saas-b2c-seo-url-strategy'])
+const localizablePathPattern = /^\/(?:zh\/)?(?:services|blog|utm-builder)(?:\/|$)/
 
-export const getQueryLang = (value?: string | null): QueryLang => (value?.toLowerCase().startsWith('zh') ? 'zh' : 'en')
+export const getPathLanguage = (pathname: string): SiteLang =>
+  pathname === '/zh' || pathname.startsWith('/zh/') ? 'zh' : 'en'
 
-export const withQueryLang = (href: string, lang: QueryLang) => {
+export const getLanguageTag = (lang: SiteLang) => (lang === 'zh' ? 'zh-CN' : 'en')
+
+export const getLocalizedPath = (pathname: string, lang: SiteLang) => {
+  const englishPath = pathname.replace(/^\/zh(?=\/|$)/, '') || '/'
+
+  if (!localizablePathPattern.test(pathname)) {
+    return englishPath
+  }
+
+  return lang === 'zh' ? `/zh${englishPath}` : englishPath
+}
+
+export const toLocalizedHref = (href: string, lang: SiteLang) => {
   if (!href || href.startsWith('mailto:') || href.startsWith('tel:') || externalHrefPattern.test(href)) {
     return href
   }
@@ -16,21 +29,30 @@ export const withQueryLang = (href: string, lang: QueryLang) => {
 
   searchParams.delete('lang')
 
-  let localizedPathname = pathname
-
-  if (/^\/(?:zh\/)?(?:services|blog)(?:\/|$)/.test(pathname)) {
-    localizedPathname = lang === 'zh' ? (pathname.startsWith('/zh/') ? pathname : `/zh${pathname}`) : pathname.replace(/^\/zh/, '')
-  }
-
-  if (lang === 'zh' && pathname.startsWith('/blog/')) {
-    const slug = pathname.slice('/blog/'.length).replace(/\/$/, '')
-
-    if (!translatedBlogSlugs.has(slug)) {
-      localizedPathname = '/zh/blog'
-    }
-  }
-
+  const localizedPathname = getLocalizedPath(pathname, lang)
   const serializedQuery = searchParams.toString()
 
   return `${localizedPathname}${serializedQuery ? `?${serializedQuery}` : ''}${hash ? `#${hash}` : ''}`
+}
+
+export const getLanguageAlternateHref = (
+  href: string,
+  lang: SiteLang,
+  translatedBlogSlugs: ReadonlySet<string>
+) => {
+  const [pathAndQuery] = href.split('#')
+  const [pathname] = pathAndQuery.split('?')
+
+  if (!localizablePathPattern.test(pathname)) {
+    return null
+  }
+
+  const englishPath = pathname.replace(/^\/zh(?=\/|$)/, '') || '/'
+  const blogMatch = englishPath.match(/^\/blog\/([^/]+)\/?$/)
+
+  if (blogMatch && !translatedBlogSlugs.has(blogMatch[1])) {
+    return null
+  }
+
+  return toLocalizedHref(href, lang)
 }

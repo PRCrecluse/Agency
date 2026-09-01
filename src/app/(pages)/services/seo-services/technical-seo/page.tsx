@@ -25,30 +25,31 @@ import SectionSeparator from '@/components/section-separator'
 import { Badge } from '@/components/ui/badge'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { PrimaryFlowButton, SecondaryFlowButton } from '@/components/ui/flow-button'
-import { getTechnicalSEOLang, technicalSEOCopy } from '@/content/technical-seo'
-import { absoluteUrl, createFAQSchema, createLocalizedAlternates, createWebPageSchema } from '@/lib/seo'
+import { technicalSEOCopy } from '@/content/technical-seo'
+import { getLocalizedPath } from '@/lib/language'
+import { getRequestLanguage } from '@/lib/request-language'
+import { absoluteUrl, buildMetadata, createFAQSchema, createLocalizedAlternates, createWebPageSchema } from '@/lib/seo'
 
-export async function generateMetadata({
-  searchParams
-}: {
-  searchParams?: Promise<{ lang?: string }>
-}): Promise<Metadata> {
-  const resolvedSearchParams = await searchParams
-  const lang = getTechnicalSEOLang(resolvedSearchParams?.lang)
+const path = '/services/seo-services/technical-seo'
+
+export async function generateMetadata(): Promise<Metadata> {
+  const lang = await getRequestLanguage()
   const metadata = technicalSEOCopy[lang].metadata
 
-  return {
+  return buildMetadata({
     title: metadata.title,
     description: metadata.description,
     keywords: [...metadata.keywords],
-    alternates: createLocalizedAlternates('/services/seo-services/technical-seo', lang)
-  }
+    path: getLocalizedPath(path, lang),
+    alternates: createLocalizedAlternates(path, lang),
+    language: lang
+  })
 }
 
-const TechnicalSEOPage = async ({ searchParams }: { searchParams?: Promise<{ lang?: string }> }) => {
-  const resolvedSearchParams = await searchParams
-  const lang = getTechnicalSEOLang(resolvedSearchParams?.lang)
+const TechnicalSEOPage = async () => {
+  const lang = await getRequestLanguage()
   const copy = technicalSEOCopy[lang]
+  const localizedPath = getLocalizedPath(path, lang)
 
   const serviceIcons = [FileSearchIcon, SearchIcon, GaugeIcon, WrenchIcon, Globe2Icon, BracesIcon]
   const discoveryIcons = [SearchIcon, Code2Icon, Layers3Icon, MonitorCheckIcon]
@@ -60,9 +61,10 @@ const TechnicalSEOPage = async ({ searchParams }: { searchParams?: Promise<{ lan
     '@graph': [
       {
         ...createWebPageSchema({
-          path: '/services/seo-services/technical-seo',
-          title: technicalSEOCopy.en.metadata.title,
-          description: technicalSEOCopy.en.metadata.description
+          path: localizedPath,
+          title: copy.metadata.title,
+          description: copy.metadata.description,
+          language: lang
         })
       },
       {
@@ -71,7 +73,7 @@ const TechnicalSEOPage = async ({ searchParams }: { searchParams?: Promise<{ lan
         serviceType: 'Technical SEO',
         description: copy.metadata.description,
         areaServed: 'Global',
-        url: absoluteUrl('/services/seo-services/technical-seo'),
+        url: absoluteUrl(localizedPath),
         provider: {
           '@type': 'Organization',
           name: 'Meridian'

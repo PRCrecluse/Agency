@@ -60,12 +60,13 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
         ? {
             canonical: path,
             languages: {
-              'en-US': `/blog/${slug}`,
+              en: `/blog/${slug}`,
               'zh-CN': path,
               'x-default': `/blog/${slug}`
             }
           }
-        : { canonical: path }
+        : { canonical: path },
+      language: 'zh'
     }),
     openGraph: {
       title: `${postTitle} | Meridian`,
@@ -97,7 +98,7 @@ const ChineseBlogDetailsPage = async ({ params }: { params: Promise<{ slug: stri
     '@context': 'https://schema.org',
     '@graph': [
       {
-        ...createWebPageSchema({ path, title: `${postTitle} | Meridian`, description: postDescription }),
+        ...createWebPageSchema({ path, title: `${postTitle} | Meridian`, description: postDescription, language: 'zh' }),
         '@type': 'BlogPosting',
         inLanguage: 'zh-CN',
         headline: postTitle,
@@ -109,12 +110,12 @@ const ChineseBlogDetailsPage = async ({ params }: { params: Promise<{ slug: stri
         mainEntityOfPage: { '@id': absoluteUrl(`${path}#webpage`) }
       },
       createOrganizationSchema(),
-      createWebsiteSchema(),
+      createWebsiteSchema('zh'),
       createBreadcrumbSchema([
         { name: '首页', path: '/' },
         { name: '博客', path: '/zh/blog' },
         { name: postTitle, path }
-      ]),
+      ], 'zh'),
       ...(metadata.video
         ? [
             {

@@ -41,7 +41,8 @@ const SpecializedServicePage = ({ lang, path, copy }: SpecializedServicePageProp
         ...createWebPageSchema({
           path,
           title: copy.metadata.title,
-          description: copy.metadata.description
+          description: copy.metadata.description,
+          language: lang
         })
       },
       {

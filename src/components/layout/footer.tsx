@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 
 import { Separator } from '@/components/ui/separator'
 
@@ -8,14 +9,17 @@ import Logo from '@/components/logo'
 import TwitterIcon from '@/assets/svg/twitter-icon'
 import YoutubeIcon from '@/assets/svg/youtube-icon'
 import SectionSeparator from '@/components/section-separator'
+import { getPathLanguage, toLocalizedHref } from '@/lib/language'
 
 const Footer = () => {
+  const lang = getPathLanguage(usePathname())
+
   return (
     <footer>
       <SectionSeparator />
       <div className='mx-auto grid max-w-7xl grid-cols-6 gap-6 px-4 py-8 sm:gap-8 sm:px-6 sm:py-16 md:py-24 lg:px-8'>
         <div className='col-span-full flex flex-col items-start gap-4 lg:col-span-2'>
-          <Link href='/#home'>
+          <Link href={toLocalizedHref('/#home', lang)}>
             <Logo />
           </Link>
           <p className='text-muted-foreground'>
@@ -52,12 +56,12 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link href='/services' className='hover:text-foreground transition-colors duration-300'>
+                <Link href={toLocalizedHref('/services', lang)} className='hover:text-foreground transition-colors duration-300'>
                   Services
                 </Link>
               </li>
               <li>
-                <Link href='/blog' className='hover:text-foreground transition-colors duration-300'>
+                <Link href={toLocalizedHref('/blog', lang)} className='hover:text-foreground transition-colors duration-300'>
                   Blog
                 </Link>
               </li>
@@ -82,7 +86,7 @@ const Footer = () => {
             <div className='text-lg font-medium'>Tools</div>
             <ul className='text-muted-foreground space-y-3'>
               <li>
-                <Link href='/utm-builder' className='hover:text-foreground transition-colors duration-300'>
+                <Link href={toLocalizedHref('/utm-builder', lang)} className='hover:text-foreground transition-colors duration-300'>
                   UTM Builder
                 </Link>
               </li>
@@ -101,7 +105,7 @@ const Footer = () => {
       <div className='mx-auto flex max-w-7xl justify-center px-4 py-6 sm:px-6'>
         <p className='text-muted-foreground text-center text-balance'>
           {`©${new Date().getFullYear()}`}{' '}
-          <Link className='text-foreground font-medium hover:underline' href='/#home'>
+          <Link className='text-foreground font-medium hover:underline' href={toLocalizedHref('/#home', lang)}>
             Meridian
           </Link>{' '}
           All rights reserved.

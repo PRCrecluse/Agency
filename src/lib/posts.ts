@@ -116,6 +116,13 @@ export async function getPosts(limit?: number, locale: PostLocale = 'en'): Promi
   }
 }
 
+export async function getTranslatedPostSlugs() {
+  const [englishPosts, chinesePosts] = await Promise.all([getPosts(undefined, 'en'), getPosts(undefined, 'zh')])
+  const chineseSlugs = new Set(chinesePosts.map(post => post.slug))
+
+  return englishPosts.map(post => post.slug).filter(slug => chineseSlugs.has(slug))
+}
+
 export async function getPostMetadata(filepath: string, locale: PostLocale = 'en'): Promise<PostMetadata> {
   try {
     const slug = filepath.replace(/\.mdx$/, '')

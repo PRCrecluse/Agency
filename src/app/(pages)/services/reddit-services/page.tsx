@@ -17,34 +17,57 @@ import CampaignPriceCalculator from '@/components/services/campaign-price-calcul
 import { PrimaryFlowButton, SecondaryFlowButton } from '@/components/ui/flow-button'
 import SectionSeparator from '@/components/section-separator'
 import { logos } from '@/assets/data/trusted-brands'
-import { getSpecializedServiceLang } from '@/content/specialized-service-pages'
 import { redditServicesContent } from '@/content/reddit-services'
-import { buildMetadata, createLocalizedAlternates } from '@/lib/seo'
+import { getLocalizedPath } from '@/lib/language'
+import { getRequestLanguage } from '@/lib/request-language'
+import { absoluteUrl, buildMetadata, createFAQSchema, createLocalizedAlternates, createWebPageSchema } from '@/lib/seo'
 
 const path = '/services/reddit-services'
 
-export async function generateMetadata({
-  searchParams
-}: {
-  searchParams?: Promise<{ lang?: string }>
-}): Promise<Metadata> {
-  const resolvedSearchParams = await searchParams
-  const lang = getSpecializedServiceLang(resolvedSearchParams?.lang)
+export async function generateMetadata(): Promise<Metadata> {
+  const lang = await getRequestLanguage()
   const copy = redditServicesContent[lang]
+  const localizedPath = getLocalizedPath(path, lang)
 
   return buildMetadata({
     title: copy.metadata.title,
     description: copy.metadata.description,
-    path: lang === 'zh' ? `/zh${path}` : path,
+    path: localizedPath,
     keywords: copy.metadata.keywords,
-    alternates: createLocalizedAlternates(path, lang)
+    alternates: createLocalizedAlternates(path, lang),
+    language: lang
   })
 }
 
-const RedditServicesPage = async ({ searchParams }: { searchParams?: Promise<{ lang?: string }> }) => {
-  const resolvedSearchParams = await searchParams
-  const lang = getSpecializedServiceLang(resolvedSearchParams?.lang)
+const RedditServicesPage = async () => {
+  const lang = await getRequestLanguage()
   const copy = redditServicesContent[lang]
+  const localizedPath = getLocalizedPath(path, lang)
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      createWebPageSchema({
+        path: localizedPath,
+        title: copy.metadata.title,
+        description: copy.metadata.description,
+        language: lang
+      }),
+      {
+        '@type': 'Service',
+        name: copy.hero.title,
+        serviceType: 'Reddit Marketing',
+        description: copy.metadata.description,
+        areaServed: 'Global',
+        url: absoluteUrl(localizedPath),
+        provider: {
+          '@type': 'Organization',
+          name: 'Meridian'
+        }
+      },
+      createFAQSchema(copy.faq.items)
+    ]
+  }
 
   return (
     <div lang={lang === 'zh' ? 'zh-CN' : 'en-US'}>
@@ -199,7 +222,7 @@ const RedditServicesPage = async ({ searchParams }: { searchParams?: Promise<{ l
 
       <SectionSeparator />
 
-      <section className='px-4 py-14 sm:px-6 sm:py-20 lg:px-8'>
+      <section id='add-ons-and-payment' className='scroll-mt-20 px-4 py-14 sm:px-6 sm:py-20 lg:px-8'>
         <div className='mx-auto grid w-full max-w-7xl gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]'>
           <div className='space-y-5'>
             <Badge variant='outline' className='h-auto px-3 py-1 text-sm font-normal'>
@@ -269,6 +292,10 @@ const RedditServicesPage = async ({ searchParams }: { searchParams?: Promise<{ l
           </CardContent>
         </Card>
       </section>
+      <script
+        type='application/ld+json'
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, '\\u003c') }}
+      />
     </div>
   )
 }

@@ -15,6 +15,7 @@ import Header from '@/components/layout/header'
 import Footer from '@/components/layout/footer'
 import FloatingContact from '@/components/layout/floating-contact'
 import type { Navigation } from '@/components/layout/header-navigation'
+import { getTranslatedPostSlugs } from '@/lib/posts'
 
 const navigationData: Navigation[] = [
   {
@@ -113,14 +114,16 @@ const navigationData: Navigation[] = [
   }
 ]
 
-const PagesLayout = ({ children }: Readonly<{ children: ReactNode }>) => {
+const PagesLayout = async ({ children }: Readonly<{ children: ReactNode }>) => {
+  const translatedBlogSlugs = await getTranslatedPostSlugs()
+
   return (
     <div className='flex flex-col bg-[repeating-linear-gradient(45deg,color-mix(in_oklab,var(--border)40%,transparent)0,color-mix(in_oklab,var(--border)40%,transparent)1px,transparent_0,transparent_50%)] bg-size-[12px_12px] bg-fixed'>
       <div className='mx-auto h-full w-full max-w-336 px-4 sm:px-6 lg:px-8'>
         <div className='bg-background h-full w-full max-w-7xl border-x'>
           {/* Header Section */}
           <Suspense fallback={<div aria-hidden='true' className='h-16 border-b' />}>
-            <Header navigationData={navigationData} />
+            <Header navigationData={navigationData} translatedBlogSlugs={translatedBlogSlugs} />
           </Suspense>
 
           {/* Main Content */}
