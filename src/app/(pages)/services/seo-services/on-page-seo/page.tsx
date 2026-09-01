@@ -1,33 +1,31 @@
 import type { Metadata } from 'next'
 
 import SpecializedServicePage from '@/components/services/specialized-service-page'
-import { getSpecializedServiceLang, specializedServicePages } from '@/content/specialized-service-pages'
-import { createLocalizedAlternates } from '@/lib/seo'
+import { specializedServicePages } from '@/content/specialized-service-pages'
+import { getLocalizedPath } from '@/lib/language'
+import { getRequestLanguage } from '@/lib/request-language'
+import { buildMetadata, createLocalizedAlternates } from '@/lib/seo'
 
 const path = '/services/seo-services/on-page-seo'
 
-export async function generateMetadata({
-  searchParams
-}: {
-  searchParams?: Promise<{ lang?: string }>
-}): Promise<Metadata> {
-  const resolvedSearchParams = await searchParams
-  const lang = getSpecializedServiceLang(resolvedSearchParams?.lang)
+export async function generateMetadata(): Promise<Metadata> {
+  const lang = await getRequestLanguage()
   const metadata = specializedServicePages.onPageSeo[lang].metadata
 
-  return {
+  return buildMetadata({
     title: metadata.title,
     description: metadata.description,
     keywords: [...metadata.keywords],
-    alternates: createLocalizedAlternates(path, lang)
-  }
+    path: getLocalizedPath(path, lang),
+    alternates: createLocalizedAlternates(path, lang),
+    language: lang
+  })
 }
 
-const OnPageSEOPage = async ({ searchParams }: { searchParams?: Promise<{ lang?: string }> }) => {
-  const resolvedSearchParams = await searchParams
-  const lang = getSpecializedServiceLang(resolvedSearchParams?.lang)
+const OnPageSEOPage = async () => {
+  const lang = await getRequestLanguage()
 
-  return <SpecializedServicePage lang={lang} path={path} copy={specializedServicePages.onPageSeo[lang]} />
+  return <SpecializedServicePage lang={lang} path={getLocalizedPath(path, lang)} copy={specializedServicePages.onPageSeo[lang]} />
 }
 
 export default OnPageSEOPage

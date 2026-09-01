@@ -65,7 +65,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       ? {
           canonical: `/blog/${metadata.slug}`,
           languages: {
-            'en-US': `/blog/${metadata.slug}`,
+            en: `/blog/${metadata.slug}`,
             'zh-CN': `/zh/blog/${metadata.slug}`,
             'x-default': `/blog/${metadata.slug}`
           }
@@ -78,6 +78,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       description: postDescription,
       url: absoluteUrl(`/blog/${metadata.slug}`),
       type: 'article',
+      locale: 'en_US',
+      alternateLocale: translatedPost ? ['zh_CN'] : undefined,
       publishedTime: metadata.publishedAt,
       images: metadata.image
         ? [

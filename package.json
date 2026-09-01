@@ -16,7 +16,8 @@
     "verify": "pnpm lint && pnpm typecheck && pnpm build",
     "indexnow:submit": "node scripts/submit-indexnow.mjs --sitemap",
     "indexnow:changed": "node scripts/submit-indexnow.mjs --changed",
-    "indexnow:dry-run": "node scripts/submit-indexnow.mjs --changed --dry-run"
+    "indexnow:dry-run": "node scripts/submit-indexnow.mjs --changed --dry-run",
+    "seo:lang:check": "node scripts/check-language-signals.mjs"
   },
   "dependencies": {
     "@datafast/ai-crawl": "^1.0.9",
