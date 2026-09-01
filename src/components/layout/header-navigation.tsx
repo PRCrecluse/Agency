@@ -73,6 +73,14 @@ const getSectionIdFromHref = (href: string) => {
 
 const getBasePathFromHref = (href: string) => href.split('#')[0]?.split('?')[0] ?? ''
 
+const normalizeLocalizedPath = (value?: string | null) => {
+  if (!value) return ''
+
+  const normalizedPath = value?.replace(/^\/zh(?=\/|$)/, '') ?? ''
+
+  return normalizedPath || '/'
+}
+
 const isHrefActive = ({
   href,
   activeSection,
@@ -85,14 +93,15 @@ const isHrefActive = ({
   activeMatch?: 'exact' | 'prefix'
 }) => {
   const sectionId = getSectionIdFromHref(href)
-  const basePath = getBasePathFromHref(href)
+  const basePath = normalizeLocalizedPath(getBasePathFromHref(href))
+  const currentPathname = normalizeLocalizedPath(pathname)
 
   if (sectionId) {
-    if (basePath && pathname !== basePath) {
+    if (basePath && currentPathname !== basePath) {
       return false
     }
 
-    return activeSection === sectionId || pathname === basePath
+    return activeSection === sectionId || currentPathname === basePath
   }
 
   if (!basePath || !pathname) {
@@ -100,10 +109,10 @@ const isHrefActive = ({
   }
 
   if (activeMatch === 'prefix') {
-    return pathname === basePath || pathname.startsWith(`${basePath}/`)
+    return currentPathname === basePath || currentPathname.startsWith(`${basePath}/`)
   }
 
-  return pathname === basePath
+  return currentPathname === basePath
 }
 
 const ListItem = (props: {
