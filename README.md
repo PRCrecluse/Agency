@@ -50,6 +50,14 @@
 
 ## Meridian Ops
 
+### Deployment policy
+
+- Vercel deploys only the `main` branch to Production. Feature branches and pull requests do not create Preview deployments.
+- Run `pnpm verify` locally before opening or updating a pull request.
+- Review the production build on localhost when visual or interaction checks are needed.
+- Keep each issue in a focused commit; group related low-risk commits into one pull request and one Production release.
+- After merging, verify the affected paths on `withmeridian.org`. Revert the merge commit if the production smoke test fails.
+
 ### IndexNow
 
 - Verification key URL: `https://withmeridian.org/b2634002-6456-49b3-87a3-0e81278ee6a9.txt`
