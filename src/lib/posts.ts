@@ -2,6 +2,7 @@ import fs from 'fs' // Comment this line if using remote fetching
 import path from 'path' // Comment this line if using remote fetching
 
 import matter from 'gray-matter'
+
 import { getBlogTopicLabel, normalizeBlogTopic, type BlogTopicId } from '@/lib/blog-topics'
 
 export type Post = {

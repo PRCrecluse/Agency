@@ -227,10 +227,6 @@ const HeaderNavigation = ({
   const activeSection = useActiveSection(sectionIds)
 
   useEffect(() => {
-    setOpenDropdown(null)
-  }, [pathname, lang])
-
-  useEffect(() => {
     return () => {
       clearCloseTimeout()
     }

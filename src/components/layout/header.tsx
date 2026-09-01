@@ -70,6 +70,7 @@ const Header = ({ navigationData, className }: HeaderProps) => {
         {/* Navigation */}
         <Suspense fallback={<DesktopNavigationFallback />}>
           <HeaderNavigation
+            key={`${pathname}:${currentLang}`}
             currentLang={currentLang}
             navigationData={navigationData}
             navigationClassName='[&_[data-slot="navigation-menu-list"]]:gap-1'

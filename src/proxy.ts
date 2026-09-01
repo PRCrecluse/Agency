@@ -10,6 +10,7 @@ export function proxy(request: NextRequest, event: NextFetchEvent) {
   })
 
   const requestHeaders = new Headers(request.headers)
+
   requestHeaders.set(
     'x-page-locale',
     request.nextUrl.pathname === '/zh' || request.nextUrl.pathname.startsWith('/zh/') ? 'zh-CN' : 'en'

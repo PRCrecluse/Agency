@@ -3,7 +3,8 @@
 import { CheckCircle2Icon } from 'lucide-react'
 
 import { Badge } from '@/components/ui/badge'
-import { resolveLocalizedText, servicePageCopy, type ServiceLang, type ServiceSection } from '@/content/services'
+import { resolveLocalizedText, type ServiceLang, type ServiceSection } from '@/content/services'
+import type { servicePageCopy } from '@/content/services'
 import { cn } from '@/lib/utils'
 
 type DeliveryTableProps = {

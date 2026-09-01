@@ -115,6 +115,7 @@ async function fetchRapidApiPostMetrics(url: string): Promise<RapidApiPostMetric
     },
     cache: 'no-store'
   })
+
   const payload = (await response.json()) as JsonRecord
 
   if (!response.ok) {
@@ -124,6 +125,7 @@ async function fetchRapidApiPostMetrics(url: string): Promise<RapidApiPostMetric
   }
 
   const containers = getMetricContainers(payload)
+
   const impressions = readMetric(containers, [
     'views',
     'view_count',
@@ -132,7 +134,9 @@ async function fetchRapidApiPostMetrics(url: string): Promise<RapidApiPostMetric
     'impressions',
     'impression_count'
   ])
+
   const directEngagements = readMetric(containers, ['engagements', 'engagement_count', 'engagementCount'])
+
   const likes = readMetric(containers, [
     'favorites',
     'favorite_count',
@@ -141,12 +145,14 @@ async function fetchRapidApiPostMetrics(url: string): Promise<RapidApiPostMetric
     'like_count',
     'likeCount'
   ])
+
   const retweets = readMetric(containers, ['retweets', 'retweet_count', 'retweetCount'])
   const replies = readMetric(containers, ['replies', 'reply_count', 'replyCount'])
   const quotes = readMetric(containers, ['quotes', 'quote_count', 'quoteCount'])
   const bookmarks = readMetric(containers, ['bookmarks', 'bookmark_count', 'bookmarkCount'])
   const linkClicks = readMetric(containers, ['link_clicks', 'linkClicks', 'url_link_clicks'])
   const publicEngagementMetrics = [likes, retweets, replies, quotes, bookmarks]
+
   const publicEngagements = publicEngagementMetrics.some(value => value !== null)
     ? publicEngagementMetrics.reduce<number>((total, value) => total + (value ?? 0), 0)
     : null
@@ -336,6 +342,7 @@ export async function getMonitorSnapshot() {
 export async function collectCampaignMetrics(force = false, campaignIds?: string[]) {
   const now = new Date()
   const snapshot = await getMonitorSnapshot()
+
   const candidates = snapshot.campaigns.filter(campaign => {
     if (campaignIds && !campaignIds.includes(campaign.id)) return false
     if (campaign.status !== 'active') return false
@@ -354,7 +361,9 @@ export async function collectCampaignMetrics(force = false, campaignIds?: string
       metrics: await fetchRapidApiPostMetrics(campaign.url)
     }))
   )
+
   const observations = results.flatMap(result => (result.status === 'fulfilled' ? [result.value] : []))
+
   const errors = results.flatMap(result =>
     result.status === 'rejected'
       ? [result.reason instanceof Error ? result.reason.message : 'RapidAPI metrics collection failed']
@@ -364,6 +373,7 @@ export async function collectCampaignMetrics(force = false, campaignIds?: string
   if (!observations.length) return { snapshot, collected: 0, errors }
 
   let storedCount = 0
+
   const store = await mutateStore(currentStore => {
     observations.forEach(observation => {
       const campaign = currentStore.campaigns.find(item => item.id === observation.campaignId)
