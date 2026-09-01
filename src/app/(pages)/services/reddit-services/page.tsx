@@ -199,7 +199,7 @@ const RedditServicesPage = async ({ searchParams }: { searchParams?: Promise<{ l
 
       <SectionSeparator />
 
-      <section className='px-4 py-14 sm:px-6 sm:py-20 lg:px-8'>
+      <section id='add-ons-and-payment' className='scroll-mt-20 px-4 py-14 sm:px-6 sm:py-20 lg:px-8'>
         <div className='mx-auto grid w-full max-w-7xl gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]'>
           <div className='space-y-5'>
             <Badge variant='outline' className='h-auto px-3 py-1 text-sm font-normal'>
