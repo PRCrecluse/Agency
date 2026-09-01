@@ -536,7 +536,7 @@ const TechnicalSEOPage = async ({ searchParams }: { searchParams?: Promise<{ lan
         description={copy.faq.description}
       />
 
-      <CTA />
+      <CTA title={copy.cta.title} description={copy.cta.description} buttonLabel={copy.cta.buttonLabel} />
 
       <script
         type='application/ld+json'

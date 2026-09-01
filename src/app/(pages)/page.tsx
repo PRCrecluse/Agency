@@ -64,7 +64,11 @@ const Home = () => {
 
       <FAQ faqItems={faqItems} visualVariant='compact' />
 
-      <CTA />
+      <CTA
+        title='Build a Clearer Organic Growth Plan'
+        description='Book a strategy call to identify the highest-impact opportunity across technical SEO, programmatic SEO, Reddit growth, and GEO.'
+        buttonLabel='Book a strategy call'
+      />
 
       {/* Add JSON-LD to your page */}
       <script
