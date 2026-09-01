@@ -48,7 +48,7 @@ const stories = [
     eyebrow: 'Founder, Volumn.ai',
     title: 'Yiwei joined SparkLab Accelerator and lived alongside fellow founders',
     quote:
-      '“Yiwei joined SparkLab Accelerator, lived with other founders, and celebrated an unforgettable 20th birthday there.”',
+      '“Yiwei joined SparkLab Accelerator, lived with other founders, and marked a memorable birthday there.”',
     image: '/images/about/sparklab-birthday.jpg',
     alt: 'Yiwei celebrating a birthday at SparkLab',
     label: 'Building in public',
@@ -180,9 +180,9 @@ const AboutPage = () => {
               </Badge>
               <h2 className='text-3xl font-semibold tracking-tight sm:text-4xl'>Yiwei (怡玮)</h2>
               <p className='text-muted-foreground text-base leading-7 sm:text-lg'>
-                Yiwei is a 19-year-old entrepreneur and serial builder who has launched eight products and driven over
-                one million impressions across X/Twitter and Xiaohongshu. With a hands-on reputation in the overseas
-                product-growth community, Yiwei works with teams from Alibaba and a16z-backed companies.
+                Yiwei is an entrepreneur and serial builder who has launched eight products and driven over one million
+                impressions across X/Twitter and Xiaohongshu. With a hands-on reputation in the overseas product-growth
+                community, Yiwei works with teams from Alibaba and a16z-backed companies.
               </p>
               <p className='text-muted-foreground text-base leading-7 sm:text-lg'>
                 Yiwei also founded GoGlobal.to, an AI Reddit marketing agent, applying the same philosophy of

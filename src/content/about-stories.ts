@@ -28,17 +28,17 @@ export const aboutStories = [
     slug: 'yiwei-sparklab-birthday',
     date: 'July 5, 2026',
     title: 'Yiwei Joined SparkLab Accelerator and Lived Alongside Fellow Founders',
-    deck: 'Yiwei joined SparkLab Accelerator, lived with other founders, and celebrated an unforgettable 20th birthday there on July 5, 2026.',
+    deck: 'Yiwei joined SparkLab Accelerator, lived with other founders, and marked a memorable birthday there on July 5, 2026.',
     eyebrow: 'Founder story · SparkLab Accelerator',
     authorRole: 'Founder, Meridian',
     imageOne: '/images/about/stories/yiwei-sparklab-founders.jpg',
     imageOneAlt: 'Yiwei at SparkLab Accelerator with fellow founders',
     imageTwo: '/images/about/stories/yiwei-sparklab-birthday.jpg',
-    imageTwoAlt: 'Yiwei celebrating a memorable twentieth birthday at SparkLab',
+    imageTwoAlt: 'Yiwei celebrating a memorable birthday with fellow founders at SparkLab',
     quote: 'The right founder environment turns daily conversations into direction and momentum.',
     paragraphs: [
       'Yiwei joined SparkLab Accelerator and lived side by side with other founders in the program. The environment compressed product feedback, founder conversations, and daily execution into one shared rhythm.',
-      'On July 5, 2026, Yiwei spent an unforgettable twentieth birthday at SparkLab together with fellow founders. The day captured what the accelerator really meant: equal parts ambition, friendship, and intense building energy.',
+      'On July 5, 2026, Yiwei marked a memorable birthday at SparkLab together with fellow founders. The day captured what the accelerator really meant: equal parts ambition, friendship, and intense building energy.',
       'Being surrounded by founders who were equally serious about shipping sharpened the team’s direction and strengthened the conviction behind Meridian’s work: the best growth decisions are practical, close to the product, and ready to be put into motion.'
     ],
     highlights: [
