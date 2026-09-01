@@ -28,6 +28,7 @@ export const metadata: Metadata = buildMetadata({
 const BlogPageZh = async () => {
   const posts = await getPosts(undefined, 'zh')
   const featuredPosts = posts.filter(post => post.featured)
+
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [

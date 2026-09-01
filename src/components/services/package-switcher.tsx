@@ -8,7 +8,8 @@ import DeliveryTable from '@/components/services/delivery-table'
 import { Badge } from '@/components/ui/badge'
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible'
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs'
-import { resolveLocalizedText, servicePageCopy, type ServiceLang, type ServicePackage } from '@/content/services'
+import { resolveLocalizedText, type ServiceLang, type ServicePackage } from '@/content/services'
+import type { servicePageCopy } from '@/content/services'
 
 type PackageSwitcherProps = {
   packages: ServicePackage[]

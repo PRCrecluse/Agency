@@ -16,6 +16,9 @@ const eslintConfig = defineConfig([
     'dist/',
     'out/**',
     'build/**',
+    '.codex-tmp/**',
+    '.tmp-seo-audit/**',
+    'outputs/**',
     'next-env.d.ts',
     'eslint.config.mjs',
     '**/*.css'
