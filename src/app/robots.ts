@@ -10,14 +10,7 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: '*',
         allow: '/',
-        disallow: [
-          '/private/',
-          '/*?*',
-          '/login',
-          '/register',
-          '/forgot-password',
-          '/reset-password'
-        ]
+        disallow: ['/private/']
       }
     ]
   }
