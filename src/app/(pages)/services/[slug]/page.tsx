@@ -312,7 +312,7 @@ const ServiceDetailPage = async ({
                           </div>
                           <div className='space-y-3'>
                             <Badge variant='outline' className='h-auto px-3 py-1 text-xs font-normal'>
-                              {copy.step} {index + 1} · {section.id}
+                              {copy.tableWorkstream} {String(index + 1).padStart(2, '0')}
                             </Badge>
                             <div className='space-y-2'>
                               <CardTitle className='text-2xl sm:text-[1.75rem]'>
