@@ -56,6 +56,12 @@ const validatePublicUrl = (value, label) => {
   }
 }
 
+const normalizeComparableUrl = value => {
+  const url = new URL(value)
+
+  return url.pathname === '/' && !url.search && !url.hash ? url.origin : url.toString()
+}
+
 for (const entry of entries) {
   validatePublicUrl(entry.loc, entry.loc || 'loc')
 
@@ -140,7 +146,10 @@ if (checkBaseUrl) {
         const canonical = html.match(/<link\b[^>]*\brel=["']canonical["'][^>]*\bhref=["']([^"']+)["'][^>]*>/i)?.[1]
         const robots = html.match(/<meta\b[^>]*\bname=["']robots["'][^>]*\bcontent=["']([^"']+)["'][^>]*>/i)?.[1]
 
-        if (canonical !== entry.loc) fail(`${pathname}: canonical is ${canonical || 'missing'}`)
+        if (!canonical || normalizeComparableUrl(canonical) !== normalizeComparableUrl(entry.loc)) {
+          fail(`${pathname}: canonical is ${canonical || 'missing'}`)
+        }
+
         if (robots?.toLowerCase().includes('noindex')) fail(`${pathname}: sitemap URL is noindex`)
       } catch (error) {
         fail(`${pathname}: request failed (${error instanceof Error ? error.message : String(error)})`)

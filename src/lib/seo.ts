@@ -2,33 +2,10 @@ import type { Metadata } from 'next'
 
 import { getLanguageTag, getLocalizedPath, type SiteLang } from '@/lib/language'
 
-const PRODUCTION_SITE_URL = 'https://withmeridian.org'
-
-const normalizeSiteUrl = (value: string) => value.trim().replace(/\/+$/, '')
-
-const resolveSiteUrl = () => {
-  const configuredUrl = process.env.NEXT_PUBLIC_APP_URL
-
-  if (configuredUrl) {
-    return normalizeSiteUrl(configuredUrl)
-  }
-
-  const vercelProductionUrl = process.env.VERCEL_PROJECT_PRODUCTION_URL
-
-  if (vercelProductionUrl) {
-    return normalizeSiteUrl(`https://${vercelProductionUrl}`)
-  }
-
-  const vercelUrl = process.env.VERCEL_URL
-
-  if (vercelUrl) {
-    return normalizeSiteUrl(`https://${vercelUrl}`)
-  }
-
-  return PRODUCTION_SITE_URL
-}
-
-export const siteUrl = resolveSiteUrl()
+export const PRODUCTION_SITE_URL = 'https://withmeridian.org'
+export const siteUrl = PRODUCTION_SITE_URL
+export const isProductionDeployment = process.env.VERCEL_ENV === 'production'
+export const isPreviewDeployment = process.env.VERCEL_ENV === 'preview'
 export const siteName = 'Meridian'
 export const siteTitle = 'AI Growth Agency for SaaS Companies | Meridian'
 export const siteDescription =

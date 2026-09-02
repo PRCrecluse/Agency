@@ -1,5 +1,6 @@
 import type { MetadataRoute } from 'next'
 
+import { isPreviewDeployment } from '@/lib/seo'
 import { getSitemapEntries } from '@/lib/sitemap-data'
 
 const escapeXml = (value: string) =>
@@ -10,11 +11,10 @@ const formatDate = (value: string | Date) => new Date(value).toISOString()
 function serializeEntry(entry: MetadataRoute.Sitemap[number]) {
   const alternates = entry.alternates?.languages
     ? Object.entries(entry.alternates.languages)
-        .map(
-          ([language, href]) =>
-            href
-              ? `    <xhtml:link rel="alternate" hreflang="${escapeXml(language)}" href="${escapeXml(href.toString())}" />`
-              : ''
+        .map(([language, href]) =>
+          href
+            ? `    <xhtml:link rel="alternate" hreflang="${escapeXml(language)}" href="${escapeXml(href.toString())}" />`
+            : ''
         )
         .filter(Boolean)
         .join('\n')
@@ -34,6 +34,10 @@ function serializeEntry(entry: MetadataRoute.Sitemap[number]) {
 }
 
 export async function GET() {
+  if (isPreviewDeployment) {
+    return new Response(null, { status: 404 })
+  }
+
   const entries = await getSitemapEntries()
 
   const xml = [

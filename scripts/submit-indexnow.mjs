@@ -2,30 +2,12 @@ import process from 'node:process'
 import { execFileSync } from 'node:child_process'
 import path from 'node:path'
 
-const DEFAULT_SITE_URL = 'https://withmeridian.org'
+const SITE_URL = 'https://withmeridian.org'
 const INDEXNOW_KEY = 'b2634002-6456-49b3-87a3-0e81278ee6a9'
 const INDEXNOW_ENDPOINT = process.env.INDEXNOW_ENDPOINT?.trim() || 'https://api.indexnow.org/indexnow'
 const PROJECT_ROOT = process.cwd()
 
-const normalizeSiteUrl = value => value.trim().replace(/\/+$/, '')
-
-const resolveSiteUrl = () => {
-  const configuredUrl = process.env.NEXT_PUBLIC_APP_URL
-
-  if (configuredUrl) {
-    return normalizeSiteUrl(configuredUrl)
-  }
-
-  const vercelProductionUrl = process.env.VERCEL_PROJECT_PRODUCTION_URL
-
-  if (vercelProductionUrl) {
-    return normalizeSiteUrl(`https://${vercelProductionUrl}`)
-  }
-
-  return DEFAULT_SITE_URL
-}
-
-const siteUrl = resolveSiteUrl()
+const siteUrl = SITE_URL
 const siteHost = new URL(siteUrl).host
 const keyLocation = `${siteUrl}/${INDEXNOW_KEY}.txt`
 
@@ -200,7 +182,7 @@ const fetchSitemapUrls = async sitemapUrl => {
     throw new Error(`Sitemap response is not valid XML sitemap content: ${sitemapUrl}`)
   }
 
-  const matches = xml.matchAll(/<loc>(.*?)<\/loc>/gsi)
+  const matches = xml.matchAll(/<loc>(.*?)<\/loc>/gis)
 
   return [...matches].map(match => decodeXmlEntities(match[1].trim()))
 }
@@ -244,9 +226,17 @@ const validateKeyLocation = async () => {
 }
 
 const main = async () => {
+  if (process.env.VERCEL_ENV && process.env.VERCEL_ENV !== 'production') {
+    throw new Error(`IndexNow submission is disabled in the ${process.env.VERCEL_ENV} environment.`)
+  }
+
   const options = parseArgs(process.argv.slice(2))
   const changedFiles = options.useChanged ? getChangedFiles() : []
-  const changedResolution = options.useChanged ? resolveChangedUrls(changedFiles) : { urls: [], needsFullSitemap: false }
+
+  const changedResolution = options.useChanged
+    ? resolveChangedUrls(changedFiles)
+    : { urls: [], needsFullSitemap: false }
+
   const shouldUseSitemap = options.useSitemap || changedResolution.needsFullSitemap
   const sitemapUrls = shouldUseSitemap ? await fetchSitemapUrls(options.sitemapUrl) : []
   const urlList = normalizeUrls([...sitemapUrls, ...changedResolution.urls, ...options.urls])
