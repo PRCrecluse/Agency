@@ -132,6 +132,7 @@ export function TwitterMonitorDashboard({
 
   const [accessGranted, setAccessGranted] = useState(initialAccessGranted)
   const [accessModalOpen, setAccessModalOpen] = useState(false)
+  const [pendingMonitorSave, setPendingMonitorSave] = useState(false)
   const [accessForm, setAccessForm] = useState({ companyName: '', website: '', role: '', email: '' })
   const [accessSubmitting, setAccessSubmitting] = useState(false)
   const [accessError, setAccessError] = useState('')
@@ -214,8 +215,7 @@ export function TwitterMonitorDashboard({
     return () => window.clearTimeout(timer)
   }, [notice])
 
-  async function saveMonitor(event: FormEvent) {
-    event.preventDefault()
+  async function persistMonitor() {
     setSaving(true)
     setError('')
 
@@ -257,6 +257,19 @@ export function TwitterMonitorDashboard({
     } finally {
       setSaving(false)
     }
+  }
+
+  async function saveMonitor(event: FormEvent) {
+    event.preventDefault()
+
+    if (!accessGranted) {
+      setPendingMonitorSave(true)
+      setAccessModalOpen(true)
+
+      return
+    }
+
+    await persistMonitor()
   }
 
   async function syncNow() {
@@ -339,8 +352,15 @@ export function TwitterMonitorDashboard({
       setReportEmail(result.email ?? accessForm.email)
       setAccessGranted(true)
       setAccessModalOpen(false)
-      setNotice('Access confirmed — the monitor is ready')
-      window.setTimeout(() => document.getElementById('monitor')?.scrollIntoView({ behavior: 'smooth' }), 100)
+
+      const shouldSaveMonitor = pendingMonitorSave
+
+      setPendingMonitorSave(false)
+      setNotice(shouldSaveMonitor ? 'Details saved — starting your monitor' : 'Access confirmed — the monitor is ready')
+      window.setTimeout(() => {
+        document.getElementById('monitor')?.scrollIntoView({ behavior: 'smooth' })
+        if (shouldSaveMonitor) void persistMonitor()
+      }, 100)
     } catch (caughtError) {
       setAccessError(caughtError instanceof Error ? caughtError.message : 'Could not unlock the monitor')
     } finally {
@@ -422,19 +442,12 @@ export function TwitterMonitorDashboard({
             delay={0.6}
             className='z-10'
           >
-            {accessGranted ? (
-              <PrimaryFlowButton asChild>
-                <a href='#monitor'>
-                  Set up monitor
-                  <ArrowDownIcon />
-                </a>
-              </PrimaryFlowButton>
-            ) : (
-              <PrimaryFlowButton type='button' onClick={() => setAccessModalOpen(true)}>
-                Use this monitor
+            <PrimaryFlowButton asChild>
+              <a href='#monitor'>
+                {accessGranted ? 'Set up monitor' : 'Use this monitor'}
                 <ArrowDownIcon />
-              </PrimaryFlowButton>
-            )}
+              </a>
+            </PrimaryFlowButton>
           </MotionPreset>
         </div>
       </section>
@@ -459,8 +472,7 @@ export function TwitterMonitorDashboard({
             </p>
           </MotionPreset>
 
-          {accessGranted ? (
-            <div className='space-y-6'>
+          <div className='space-y-6'>
               {error && (
                 <div
                   role='alert'
@@ -791,29 +803,7 @@ export function TwitterMonitorDashboard({
                   )}
                 </CardContent>
               </Card>
-            </div>
-          ) : (
-            <Card className='mx-auto max-w-3xl gap-0 overflow-hidden py-0 shadow-none'>
-              <CardContent className='relative flex min-h-80 flex-col items-center justify-center px-6 py-12 text-center sm:px-12'>
-                <div className='bg-muted/40 pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,color-mix(in_oklab,var(--primary)_16%,transparent),transparent_55%)]' />
-                <div className='bg-background relative flex size-12 items-center justify-center rounded-xl border shadow-sm'>
-                  <LockKeyholeIcon className='size-5' />
-                </div>
-                <h3 className='relative mt-5 text-xl font-semibold'>Tell us who is using the monitor</h3>
-                <p className='text-muted-foreground relative mt-2 max-w-lg text-sm leading-6'>
-                  Company, website, role, and report email are required once before the campaign workspace unlocks.
-                </p>
-                <Button className='relative mt-6 h-10 px-5' onClick={() => setAccessModalOpen(true)}>
-                  Unlock the monitor
-                  <ArrowUpRightIcon />
-                </Button>
-                <div className='text-muted-foreground relative mt-5 flex items-center gap-2 text-xs'>
-                  <ShieldCheckIcon className='size-3.5' />
-                  Your submission is recorded before access is granted.
-                </div>
-              </CardContent>
-            </Card>
-          )}
+          </div>
         </div>
       </section>
 
@@ -830,7 +820,7 @@ export function TwitterMonitorDashboard({
                 <div>
                   <DialogPrimitive.Title className='text-xl font-semibold'>Unlock X Post Monitor</DialogPrimitive.Title>
                   <DialogPrimitive.Description className='text-muted-foreground mt-1.5 text-sm leading-6'>
-                    Complete this one-time form before using the campaign workspace.
+                    Complete this one-time form to start the monitor you just configured.
                   </DialogPrimitive.Description>
                 </div>
               </div>
@@ -940,7 +930,7 @@ export function TwitterMonitorDashboard({
               <div className='border-t pt-5'>
                 <PrimaryFlowButton type='submit' disabled={accessSubmitting} className='w-full [&>button]:w-full'>
                   {accessSubmitting ? <LoaderCircleIcon className='animate-spin' /> : <ShieldCheckIcon />}
-                  Submit & unlock monitor
+                  Submit & start monitor
                 </PrimaryFlowButton>
                 <p className='text-muted-foreground mt-3 text-center text-xs leading-5'>
                   All four fields are required. Access is granted only after the submission is stored.

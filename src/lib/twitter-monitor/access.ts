@@ -2,7 +2,10 @@ import { createHmac, randomUUID, timingSafeEqual } from 'node:crypto'
 import { mkdir, readFile, rename, writeFile } from 'node:fs/promises'
 import path from 'node:path'
 
+import { connect, type Connection } from '@planetscale/database'
+
 export const TWITTER_MONITOR_ACCESS_COOKIE = 'twitter_monitor_access'
+export const UTM_BUILDER_ACCESS_COOKIE = 'utm_builder_access'
 
 const ACCESS_TTL_SECONDS = 60 * 60 * 24 * 30
 const DEFAULT_NOTION_PARENT_PAGE_ID = '3caabc2b-f905-803a-b161-cbd01eed1060'
@@ -11,6 +14,8 @@ const DATA_DIRECTORY = process.env.TWITTER_MONITOR_DATA_DIR ?? path.join(process
 const LEADS_FILE = path.join(DATA_DIRECTORY, 'twitter-monitor-leads.json')
 
 let leadWriteQueue: Promise<unknown> = Promise.resolve()
+let leadConnection: Connection | undefined
+let leadSchemaReady: Promise<void> | undefined
 
 export interface LeadCaptureInput {
   companyName: string
@@ -18,6 +23,8 @@ export interface LeadCaptureInput {
   role: string
   email: string
 }
+
+export type LeadCaptureSource = 'twitter-monitor' | 'utm-builder'
 
 export interface AccessSession {
   companyName: string
@@ -27,8 +34,13 @@ export interface AccessSession {
 
 interface LeadCaptureRecord extends LeadCaptureInput {
   id: string
-  source: 'twitter-monitor'
+  source: LeadCaptureSource
   createdAt: string
+}
+
+const LEAD_SOURCE_DETAILS: Record<LeadCaptureSource, { label: string; path: string }> = {
+  'twitter-monitor': { label: 'X Monitor', path: '/twitter-monitor' },
+  'utm-builder': { label: 'UTM Builder', path: '/utm-builder' }
 }
 
 const encode = (value: string) => Buffer.from(value, 'utf8').toString('base64url')
@@ -66,7 +78,11 @@ function normalizeWebsite(value: string) {
   const candidate = /^https?:\/\//i.test(value.trim()) ? value.trim() : `https://${value.trim()}`
   const website = new URL(candidate)
 
-  if (!['http:', 'https:'].includes(website.protocol) || !website.hostname.includes('.')) {
+  if (
+    !['http:', 'https:'].includes(website.protocol) ||
+    !website.hostname.includes('.') ||
+    website.href.length > 2048
+  ) {
     throw new Error('Please enter a valid company website')
   }
 
@@ -104,6 +120,7 @@ async function writeLeadToNotion(record: LeadCaptureRecord) {
   if (!notionToken) return false
 
   const parentPageId = process.env.NOTION_LEADS_PAGE_ID ?? DEFAULT_NOTION_PARENT_PAGE_ID
+  const source = LEAD_SOURCE_DETAILS[record.source]
 
   const response = await fetch('https://api.notion.com/v1/pages', {
     method: 'POST',
@@ -120,7 +137,7 @@ async function writeLeadToNotion(record: LeadCaptureRecord) {
           title: [
             {
               type: 'text',
-              text: { content: `${record.companyName} — X Monitor access` }
+              text: { content: `${record.companyName} — ${source.label} access` }
             }
           ]
         }
@@ -131,7 +148,7 @@ async function writeLeadToNotion(record: LeadCaptureRecord) {
         textBlock(`Role: ${record.role}`),
         textBlock(`Report email: ${record.email}`),
         textBlock(`Submitted: ${record.createdAt}`),
-        textBlock('Source: /twitter-monitor')
+        textBlock(`Source: ${source.path}`)
       ]
     }),
     cache: 'no-store'
@@ -143,6 +160,56 @@ async function writeLeadToNotion(record: LeadCaptureRecord) {
 
     throw new Error(`Notion rejected the access form${detail}`)
   }
+
+  return true
+}
+
+function getLeadDatabase() {
+  const databaseUrl = process.env.DATABASE_URL
+
+  if (!databaseUrl) return undefined
+
+  leadConnection ??= connect({ url: databaseUrl })
+
+  return leadConnection
+}
+
+async function writeLeadToDatabase(record: LeadCaptureRecord) {
+  const database = getLeadDatabase()
+
+  if (!database) return false
+
+  leadSchemaReady ??= database
+    .execute(
+      `
+      CREATE TABLE IF NOT EXISTS twitter_monitor_leads (
+        id VARCHAR(64) NOT NULL PRIMARY KEY,
+        company_name VARCHAR(120) NOT NULL,
+        website TEXT NOT NULL,
+        role VARCHAR(120) NOT NULL,
+        email VARCHAR(254) NOT NULL,
+        source VARCHAR(32) NOT NULL,
+        created_at DATETIME(3) NOT NULL
+      )
+    `
+    )
+    .then(() => undefined)
+
+  await leadSchemaReady
+  await database.execute(
+    `INSERT INTO twitter_monitor_leads
+      (id, company_name, website, role, email, source, created_at)
+     VALUES (?, ?, ?, ?, ?, ?, ?)`,
+    [
+      record.id,
+      record.companyName,
+      record.website,
+      record.role,
+      record.email,
+      record.source,
+      new Date(record.createdAt)
+    ]
+  )
 
   return true
 }
@@ -174,7 +241,7 @@ async function writeLeadToJson(record: LeadCaptureRecord) {
   await operation
 }
 
-export async function persistLeadCapture(input: LeadCaptureInput) {
+export async function persistLeadCapture(input: LeadCaptureInput, source: LeadCaptureSource = 'twitter-monitor') {
   if (process.env.NODE_ENV === 'production') getAccessSecret()
 
   const lead = validateLeadCapture(input)
@@ -182,21 +249,28 @@ export async function persistLeadCapture(input: LeadCaptureInput) {
   const record: LeadCaptureRecord = {
     ...lead,
     id: randomUUID(),
-    source: 'twitter-monitor',
+    source,
     createdAt: new Date().toISOString()
   }
 
   const storedInNotion = await writeLeadToNotion(record)
+  const storedInDatabase = storedInNotion ? false : await writeLeadToDatabase(record)
 
-  if (!storedInNotion) {
+  if (!storedInNotion && !storedInDatabase) {
     if (process.env.NODE_ENV === 'production') {
-      throw new Error('NOTION_API_TOKEN is not configured')
+      throw new Error('No persistent lead storage is configured')
     }
 
     await writeLeadToJson(record)
   }
 
-  return { lead, storage: storedInNotion ? ('notion' as const) : ('json-file' as const) }
+  const storage = storedInNotion
+    ? ('notion' as const)
+    : storedInDatabase
+      ? ('planetscale' as const)
+      : ('json-file' as const)
+
+  return { lead, storage }
 }
 
 export function createAccessToken(lead: LeadCaptureInput) {

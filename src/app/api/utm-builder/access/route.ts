@@ -4,10 +4,9 @@ import {
   accessCookieOptions,
   createAccessToken,
   persistLeadCapture,
-  TWITTER_MONITOR_ACCESS_COOKIE,
+  UTM_BUILDER_ACCESS_COOKIE,
   type LeadCaptureInput
 } from '@/lib/twitter-monitor/access'
-import { getMonitorSnapshot } from '@/lib/twitter-monitor/store'
 
 export const runtime = 'nodejs'
 export const dynamic = 'force-dynamic'
@@ -23,21 +22,19 @@ export async function POST(request: NextRequest) {
   try {
     const body = (await request.json()) as Partial<LeadCaptureInput>
 
-    const { lead, storage } = await persistLeadCapture({
-      companyName: body.companyName ?? '',
-      website: body.website ?? '',
-      role: body.role ?? '',
-      email: body.email ?? ''
-    })
+    const { lead, storage } = await persistLeadCapture(
+      {
+        companyName: body.companyName ?? '',
+        website: body.website ?? '',
+        role: body.role ?? '',
+        email: body.email ?? ''
+      },
+      'utm-builder'
+    )
 
-    const response = NextResponse.json({
-      granted: true,
-      email: lead.email,
-      storage,
-      snapshot: await getMonitorSnapshot()
-    })
+    const response = NextResponse.json({ granted: true, storage })
 
-    response.cookies.set(TWITTER_MONITOR_ACCESS_COOKIE, createAccessToken(lead), accessCookieOptions)
+    response.cookies.set(UTM_BUILDER_ACCESS_COOKIE, createAccessToken(lead), accessCookieOptions)
     response.headers.set('Cache-Control', 'no-store')
 
     return response
@@ -45,10 +42,10 @@ export async function POST(request: NextRequest) {
     const message = error instanceof Error ? error.message : 'Could not submit the access form'
     const formError = ACCESS_FORM_ERRORS.has(message)
 
-    console.error('Twitter monitor access submission failed', error)
+    console.error('UTM Builder access submission failed', error)
 
     return NextResponse.json(
-      { error: formError ? message : "We couldn't unlock the monitor right now. Please try again shortly." },
+      { error: formError ? message : "We couldn't unlock the UTM Builder right now. Please try again shortly." },
       { status: formError ? 400 : 503 }
     )
   }

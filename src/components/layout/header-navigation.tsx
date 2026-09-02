@@ -44,6 +44,7 @@ type NavigationItem = {
 type Navigation = {
   title: string
   contentClassName?: string
+  dropdownClassName?: string
 } & (
   | {
       items: NavigationSection[]
@@ -227,6 +228,7 @@ const HeaderNavigation = ({
   const activeSection = useActiveSection(sectionIds)
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setOpenDropdown(null)
   }, [pathname, lang])
 
@@ -266,6 +268,7 @@ const HeaderNavigation = ({
         {navigationData.map(navItem => {
           if (navItem.href) {
             const isActive = isHrefActive({ href: navItem.href, activeSection, pathname, activeMatch: navItem.activeMatch })
+
             const localizedHref = withQueryLang(navItem.href, lang)
 
             return (
@@ -294,7 +297,9 @@ const HeaderNavigation = ({
                 getSectionItems(section).some(item => isHrefActive({ href: item.href, activeSection, pathname }))
               )
             } else {
-              hasActiveChild = navItem.items.some(item => isHrefActive({ href: item.href, activeSection, pathname }))
+              hasActiveChild = navItem.items.some(item =>
+                isHrefActive({ href: item.href, activeSection, pathname, activeMatch: item.activeMatch })
+              )
             }
           }
 
@@ -330,7 +335,12 @@ const HeaderNavigation = ({
                 </button>
 
                 {isOpen ? (
-                  <div className='bg-popover text-popover-foreground ring-foreground/10 fixed top-16 left-1/2 z-50 w-[min(82rem,calc(100vw-2rem))] max-w-[calc(100vw-2rem)] -translate-x-1/2 overflow-hidden rounded-md p-2 pr-2.5 shadow-lg ring-1'>
+                  <div
+                    className={cn(
+                      'bg-popover text-popover-foreground ring-foreground/10 fixed top-16 left-1/2 z-50 w-[min(82rem,calc(100vw-2rem))] max-w-[calc(100vw-2rem)] -translate-x-1/2 overflow-hidden rounded-md p-2 pr-2.5 shadow-lg ring-1',
+                      navItem.dropdownClassName
+                    )}
+                  >
                     {navItem.splitItems ? (
                       <div className={cn('grid grid-cols-1 gap-2', navItem.contentClassName)}>
                         {navItem.items.map((section, sectionIndex) => (
@@ -414,6 +424,7 @@ const HeaderNavigation = ({
                             badge={item.badge}
                             activeSection={activeSection}
                             pathname={pathname}
+                            activeMatch={item.activeMatch}
                             lang={lang}
                           />
                         ))}

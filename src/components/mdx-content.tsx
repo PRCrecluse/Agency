@@ -1,6 +1,7 @@
 import type { JSX } from 'react'
 
 import { MDXRemote, type MDXRemoteProps } from 'next-mdx-remote-client/rsc'
+import remarkGfm from 'remark-gfm'
 
 // Helper function to generate slug from text
 function generateSlug(text: string): string {
@@ -88,7 +89,21 @@ const components: MDXRemoteProps['components'] = {
 }
 
 const MDXContent = (props: JSX.IntrinsicAttributes & MDXRemoteProps) => {
-  return <MDXRemote {...props} components={{ ...components, ...(props.components || {}) }} />
+  const remarkPlugins = props.options?.mdxOptions?.remarkPlugins ?? []
+
+  return (
+    <MDXRemote
+      {...props}
+      options={{
+        ...props.options,
+        mdxOptions: {
+          ...props.options?.mdxOptions,
+          remarkPlugins: [remarkGfm, ...remarkPlugins]
+        }
+      }}
+      components={{ ...components, ...(props.components || {}) }}
+    />
+  )
 }
 
 export default MDXContent

@@ -92,6 +92,12 @@ export async function getSitemapEntries(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: 'monthly',
       priority: 0.8
     },
+    {
+      url: absoluteUrl('/products/goglobal'),
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.8
+    },
     localizedServiceEntry('/zh/services', 0.9),
     {
       url: absoluteUrl('/services/reddit-services'),

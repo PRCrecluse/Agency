@@ -1,5 +1,7 @@
 import { Suspense, type ReactNode } from 'react'
 
+import { headers } from 'next/headers'
+
 import {
   LayoutDashboardIcon,
   TelescopeIcon,
@@ -8,7 +10,10 @@ import {
   GitPullRequestIcon,
   SparklesIcon,
   LinkIcon,
-  SearchCheckIcon
+  SearchCheckIcon,
+  BotIcon,
+  FileSearchIcon,
+  MegaphoneIcon
 } from 'lucide-react'
 
 import Header from '@/components/layout/header'
@@ -107,17 +112,42 @@ const navigationData: Navigation[] = [
     href: '/#testimonials'
   },
   {
-    title: 'SEO Prompts',
-    href: '/seo-prompts'
+    title: 'Products',
+    dropdownClassName: 'w-[min(30rem,calc(100vw-2rem))]',
+    items: [
+      {
+        title: 'GoGlobal.to',
+        href: '/products/goglobal',
+        description: 'AI-powered Reddit marketing software for research, content workflows, approvals, and execution.',
+        icon: <MegaphoneIcon className='size-4' />
+      }
+    ]
   },
   {
-    title: 'Blog',
-    href: '/blog',
-    activeMatch: 'prefix'
+    title: 'Resources',
+    dropdownClassName: 'w-[min(42rem,calc(100vw-2rem))]',
+    contentClassName: 'sm:grid-cols-2',
+    items: [
+      {
+        title: 'SEO Prompt Library',
+        href: '/seo-prompts',
+        description: 'Copy execution-ready prompts for research, content, technical SEO, and reporting.',
+        icon: <BotIcon className='size-4' />
+      },
+      {
+        title: 'Blog & Insights',
+        href: '/blog',
+        activeMatch: 'prefix',
+        description: 'Practical thinking on SaaS SEO, Reddit growth, GEO, and AI-native demand.',
+        icon: <FileSearchIcon className='size-4' />
+      }
+    ]
   }
 ]
 
-const PagesLayout = ({ children }: Readonly<{ children: ReactNode }>) => {
+const PagesLayout = async ({ children }: Readonly<{ children: ReactNode }>) => {
+  const lang = (await headers()).get('x-page-locale') === 'zh-CN' ? 'zh' : 'en'
+
   return (
     <div className='flex flex-col bg-[repeating-linear-gradient(45deg,color-mix(in_oklab,var(--border)40%,transparent)0,color-mix(in_oklab,var(--border)40%,transparent)1px,transparent_0,transparent_50%)] bg-size-[12px_12px] bg-fixed'>
       <div className='mx-auto h-full w-full max-w-336 px-4 sm:px-6 lg:px-8'>
@@ -131,7 +161,7 @@ const PagesLayout = ({ children }: Readonly<{ children: ReactNode }>) => {
           <main className='flex flex-1 flex-col *:scroll-mt-16'>{children}</main>
 
           {/* Footer Section */}
-          <Footer />
+          <Footer lang={lang} />
           <FloatingContact />
         </div>
       </div>

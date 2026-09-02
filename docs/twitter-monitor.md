@@ -11,9 +11,9 @@ The campaign workspace and its API are locked until the visitor submits all four
 - Role
 - Report email
 
-With `NOTION_API_TOKEN` configured, every submission creates a child page below `NOTION_LEADS_PAGE_ID`. The Notion integration must have **Insert content** access to that page. A signed, HTTP-only access cookie is then valid for 30 days. `TWITTER_MONITOR_ACCESS_SECRET` is required in production.
+With `NOTION_API_TOKEN` configured, every submission creates a child page below `NOTION_LEADS_PAGE_ID`. The Notion integration must have **Insert content** access to that page. When Notion is not configured and `DATABASE_URL` is available, submissions are stored in the `twitter_monitor_leads` table instead. A signed, HTTP-only access cookie is then valid for 30 days. `TWITTER_MONITOR_ACCESS_SECRET` is required in production.
 
-During local development only, if no Notion token is present, submissions use `.data/twitter-monitor-leads.json`. Production fails closed when Notion or the signing secret is not configured, so the monitor cannot unlock without recording the lead.
+During local development only, if neither Notion nor a database is configured, submissions use `.data/twitter-monitor-leads.json`. Production fails closed when the signing secret or persistent lead storage is not configured, so the monitor cannot unlock without recording the lead.
 
 ## Persistence modes
 
