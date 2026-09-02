@@ -205,17 +205,12 @@ function buildUrl(destination: string, fields: Record<FieldKey, string>) {
   }
 }
 
-<<<<<<< HEAD
 interface UtmBuilderProps {
   initialAccessGranted: boolean
+  lang: SiteLang
 }
 
-const UtmBuilder = ({ initialAccessGranted }: UtmBuilderProps) => {
-  const searchParams = useSearchParams()
-  const lang = searchParams.get('lang')?.toLowerCase().startsWith('zh') ? 'zh' : 'en'
-=======
-const UtmBuilder = ({ lang }: { lang: SiteLang }) => {
->>>>>>> 85b786cf987cc8b56da604c53a8b869eabbc3436
+const UtmBuilder = ({ initialAccessGranted, lang }: UtmBuilderProps) => {
   const copy = COPY[lang]
   const [destination, setDestination] = useState('')
   const [fields, setFields] = useState<Record<FieldKey, string>>(EMPTY_FIELDS)

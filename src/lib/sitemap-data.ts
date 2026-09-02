@@ -57,7 +57,7 @@ export async function getSitemapEntries(): Promise<MetadataRoute.Sitemap> {
     ...localizedEntries('/utm-builder'),
     ...specializedServicePaths.flatMap(path => localizedEntries(path)),
     {
-      url: absoluteUrl('/seo-prompts')
+      url: absoluteUrl('/zh/seo-prompts')
     },
     {
       url: absoluteUrl('/products/goglobal')
