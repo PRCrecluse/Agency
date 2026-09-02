@@ -14,13 +14,23 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import FAQ from '@/components/blocks/faq/faq'
 import TrustedBrands from '@/components/blocks/trusted-brands/trusted-brands'
 import CampaignPriceCalculator from '@/components/services/campaign-price-calculator'
+import ServiceBreadcrumbs from '@/components/services/service-breadcrumbs'
+import ServiceLinksSection from '@/components/services/service-links-section'
 import { PrimaryFlowButton, SecondaryFlowButton } from '@/components/ui/flow-button'
 import SectionSeparator from '@/components/section-separator'
 import { logos } from '@/assets/data/trusted-brands'
 import { redditServicesContent } from '@/content/reddit-services'
+import { getServiceBreadcrumbItems } from '@/content/service-navigation'
 import { getLocalizedPath } from '@/lib/language'
 import { getRequestLanguage } from '@/lib/request-language'
-import { absoluteUrl, buildMetadata, createFAQSchema, createLocalizedAlternates, createWebPageSchema } from '@/lib/seo'
+import {
+  absoluteUrl,
+  buildMetadata,
+  createBreadcrumbSchema,
+  createFAQSchema,
+  createLocalizedAlternates,
+  createWebPageSchema
+} from '@/lib/seo'
 
 const path = '/services/reddit-services'
 
@@ -53,6 +63,7 @@ const RedditServicesPage = async () => {
         description: copy.metadata.description,
         language: lang
       }),
+      createBreadcrumbSchema(getServiceBreadcrumbItems(path, lang), lang),
       {
         '@type': 'Service',
         name: copy.hero.title,
@@ -77,6 +88,7 @@ const RedditServicesPage = async () => {
 
         <div className='relative mx-auto w-full max-w-7xl'>
           <div className='space-y-7'>
+            <ServiceBreadcrumbs path={path} lang={lang} />
             <Badge variant='outline' className='h-auto px-3 py-1 text-sm font-normal'>
               {copy.hero.badge}
             </Badge>
@@ -269,6 +281,8 @@ const RedditServicesPage = async () => {
         description=''
         visualVariant='compact'
       />
+
+      <ServiceLinksSection currentPath={path} lang={lang} />
 
       <SectionSeparator />
 
