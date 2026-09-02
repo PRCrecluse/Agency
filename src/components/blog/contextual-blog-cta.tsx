@@ -1,6 +1,6 @@
-import Link from 'next/link'
 import { ArrowUpRightIcon } from 'lucide-react'
 
+import BookingLink from '@/components/analytics/booking-link'
 import { PrimaryFlowButton } from '@/components/ui/flow-button'
 import { cn } from '@/lib/utils'
 
@@ -21,6 +21,7 @@ export type BlogCtaContent = {
   description: string
   buttonLabel: string
   href: string
+  serviceType: string
 }
 
 export function getBlogCtaContent({
@@ -41,7 +42,8 @@ export function getBlogCtaContent({
           ? '用透明、可核验的方法建立长期搜索增长，避免黑帽策略带来的排名与品牌风险。'
           : 'Build durable search growth with transparent, verifiable methods—without black-hat risk.',
       buttonLabel: locale === 'zh' ? '咨询 SEO 服务' : 'Discuss your SEO strategy',
-      href: SEO_BOOKING_URL
+      href: SEO_BOOKING_URL,
+      serviceType: 'seo'
     }
   }
 
@@ -54,7 +56,8 @@ export function getBlogCtaContent({
           ? '从社区研究、内容策略到长期运营，建立可信且可持续的 Reddit 增长渠道。'
           : 'Build a credible, sustainable Reddit channel through research, strategy, and community operations.',
       buttonLabel: locale === 'zh' ? '咨询 Reddit 服务' : 'Discuss Reddit growth',
-      href: REDDIT_BOOKING_URL
+      href: REDDIT_BOOKING_URL,
+      serviceType: 'reddit'
     }
   }
 
@@ -67,7 +70,8 @@ export function getBlogCtaContent({
           ? '通过可引用的内容、技术 SEO 与权威信号，让品牌更容易被 ChatGPT、Google AI Overviews 等平台发现和引用。'
           : 'Build citable content, technical foundations, and authority signals that help AI search platforms discover and reference your brand.',
       buttonLabel: locale === 'zh' ? '预约 GEO Demo' : 'Book a GEO demo call',
-      href: GEO_BOOKING_URL
+      href: GEO_BOOKING_URL,
+      serviceType: 'geo'
     }
   }
 
@@ -80,7 +84,8 @@ export function getBlogCtaContent({
           ? '从技术基础、关键词策略到高意图内容，建立能够持续带来合格流量与转化的自然增长系统。'
           : 'Connect technical SEO, search strategy, and high-intent content to create a durable source of qualified traffic and conversions.',
       buttonLabel: locale === 'zh' ? '咨询 SEO 服务' : 'Book a demo',
-      href: SEO_BOOKING_URL
+      href: SEO_BOOKING_URL,
+      serviceType: 'seo'
     }
   }
 
@@ -92,7 +97,8 @@ export function getBlogCtaContent({
         ? '一起判断 SEO、GEO 或 Reddit 是否适合你的产品，并确定最值得优先验证的增长机会。'
         : 'Identify whether SEO, GEO, or Reddit fits your product and choose the highest-value opportunity to validate first.',
     buttonLabel: locale === 'zh' ? '预约增长咨询' : 'Book a growth consultation',
-    href: SEO_BOOKING_URL
+    href: SEO_BOOKING_URL,
+    serviceType: 'growth_strategy'
   }
 }
 
@@ -107,10 +113,18 @@ export default function ContextualBlogCta({ slug, topic, locale = 'en', classNam
       <h2 className={cn('text-xl leading-tight font-semibold', cta.eyebrow && 'mt-3')}>{cta.title}</h2>
       <p className='text-muted-foreground mt-3 text-sm leading-6'>{cta.description}</p>
       <PrimaryFlowButton asChild className='mt-5 w-full *:w-full'>
-        <Link href={cta.href} target='_blank' rel='noreferrer'>
+        <BookingLink
+          href={cta.href}
+          ctaLocation='inline_article'
+          pageType='blog_article'
+          serviceType={cta.serviceType}
+          language={locale}
+          target='_blank'
+          rel='noreferrer'
+        >
           {cta.buttonLabel}
           <ArrowUpRightIcon />
-        </Link>
+        </BookingLink>
       </PrimaryFlowButton>
     </aside>
   )

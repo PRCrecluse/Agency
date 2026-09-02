@@ -14,6 +14,7 @@ import {
 } from 'lucide-react'
 
 import { logos } from '@/assets/data/trusted-brands'
+import BookingLink from '@/components/analytics/booking-link'
 import CTASection from '@/components/blocks/cta/cta'
 import FAQ from '@/components/blocks/faq/faq'
 import TrustedBrands from '@/components/blocks/trusted-brands/trusted-brands'
@@ -34,6 +35,8 @@ type SpecializedServicePageProps = {
 }
 
 const SpecializedServicePage = ({ lang, path, copy }: SpecializedServicePageProps) => {
+  const trackingServiceType = path.split('/').filter(Boolean).at(-1) ?? 'growth_strategy'
+
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
@@ -77,10 +80,17 @@ const SpecializedServicePage = ({ lang, path, copy }: SpecializedServicePageProp
           </div>
           <div className='mt-8 flex flex-wrap justify-center gap-4'>
             <PrimaryFlowButton asChild>
-              <Link href='https://cal.com/team/meridian-growth' target='_blank' rel='noreferrer'>
+              <BookingLink
+                ctaLocation='hero'
+                pageType='service_detail'
+                serviceType={trackingServiceType}
+                language={lang}
+                target='_blank'
+                rel='noreferrer'
+              >
                 {copy.hero.primaryCta}
                 <ArrowRightIcon />
-              </Link>
+              </BookingLink>
             </PrimaryFlowButton>
             <SecondaryFlowButton asChild>
               <Link href='#included'>{copy.hero.secondaryCta}</Link>
@@ -326,6 +336,8 @@ const SpecializedServicePage = ({ lang, path, copy }: SpecializedServicePageProp
             : 'Book a strategy call to review your current opportunity, priorities, and the highest-impact next step.'
         }
         buttonLabel={copy.hero.primaryCta}
+        pageType='service_detail'
+        serviceType={trackingServiceType}
       />
 
       <script

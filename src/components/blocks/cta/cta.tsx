@@ -1,8 +1,7 @@
 'use client'
 
-import Link from 'next/link'
-
 import { Card, CardContent } from '@/components/ui/card'
+import BookingLink from '@/components/analytics/booking-link'
 
 import { MotionPreset } from '@/components/ui/motion-preset'
 import { PrimaryFlowButton } from '@/components/ui/flow-button'
@@ -15,13 +14,19 @@ type CTASectionProps = {
   description: string
   buttonLabel: string
   href?: string
+  ctaLocation?: string
+  pageType?: string
+  serviceType?: string
 }
 
 const CTASection = ({
   title,
   description,
   buttonLabel,
-  href = 'https://cal.com/team/meridian-growth'
+  href,
+  ctaLocation = 'section_footer',
+  pageType,
+  serviceType
 }: CTASectionProps) => {
   return (
     <section id='cta' className='relative z-1 pt-16 pb-16 sm:pt-32 sm:pb-16 lg:pt-48 lg:pb-24'>
@@ -52,9 +57,16 @@ const CTASection = ({
                 className='shadow-primary/15 ring-primary/50 shadow-xl **:data-[slot=button]:h-12 **:data-[slot=button]:px-7 **:data-[slot=button]:text-base **:data-[slot=button]:font-semibold'
                 asChild
               >
-                <Link href={href} target='_blank' rel='noreferrer'>
+                <BookingLink
+                  href={href}
+                  ctaLocation={ctaLocation}
+                  pageType={pageType}
+                  serviceType={serviceType}
+                  target='_blank'
+                  rel='noreferrer'
+                >
                   {buttonLabel}
-                </Link>
+                </BookingLink>
               </PrimaryFlowButton>
             </MotionPreset>
             <MotionPreset className='absolute bottom-0 left-0 opacity-100' fade slide transition={{ duration: 0.5 }}>

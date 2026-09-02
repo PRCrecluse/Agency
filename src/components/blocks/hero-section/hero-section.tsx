@@ -2,8 +2,7 @@
 
 import { ArrowUpRightIcon } from 'lucide-react'
 
-import Link from 'next/link'
-
+import BookingLink from '@/components/analytics/booking-link'
 import { Badge } from '@/components/ui/badge'
 import { BackgroundRippleEffect } from '@/components/ui/background-ripple-effect'
 import { MotionPreset } from '@/components/ui/motion-preset'
@@ -62,14 +61,16 @@ const HeroSection = () => {
             className='z-10'
           >
             <PrimaryFlowButton asChild>
-              <Link
-                href='https://cal.com/team/meridian-growth'
+              <BookingLink
+                ctaLocation='hero'
+                pageType='homepage'
+                serviceType='growth_strategy'
                 target='_blank'
                 rel='noreferrer'
               >
                 Book a strategy call
                 <ArrowUpRightIcon />
-              </Link>
+              </BookingLink>
             </PrimaryFlowButton>
           </MotionPreset>
         </div>

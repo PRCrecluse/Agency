@@ -13,6 +13,7 @@ import {
 import { Badge } from '@/components/ui/badge'
 import { Card, CardContent } from '@/components/ui/card'
 import { PrimaryFlowButton, SecondaryFlowButton } from '@/components/ui/flow-button'
+import BookingLink from '@/components/analytics/booking-link'
 import SectionSeparator from '@/components/section-separator'
 import { absoluteUrl, buildMetadata, createOrganizationSchema, createWebPageSchema } from '@/lib/seo'
 
@@ -362,10 +363,16 @@ const AboutPage = () => {
               </p>
             </div>
             <PrimaryFlowButton asChild>
-              <Link href='https://cal.com/team/meridian-growth' target='_blank' rel='noreferrer'>
+              <BookingLink
+                ctaLocation='closing_card'
+                pageType='about'
+                serviceType='growth_strategy'
+                target='_blank'
+                rel='noreferrer'
+              >
                 Book a strategy call
                 <ArrowRightIcon />
-              </Link>
+              </BookingLink>
             </PrimaryFlowButton>
           </CardContent>
         </Card>

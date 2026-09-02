@@ -15,6 +15,7 @@ import FAQ from '@/components/blocks/faq/faq'
 import TrustedBrands from '@/components/blocks/trusted-brands/trusted-brands'
 import CampaignPriceCalculator from '@/components/services/campaign-price-calculator'
 import { PrimaryFlowButton, SecondaryFlowButton } from '@/components/ui/flow-button'
+import BookingLink from '@/components/analytics/booking-link'
 import SectionSeparator from '@/components/section-separator'
 import { logos } from '@/assets/data/trusted-brands'
 import { redditServicesContent } from '@/content/reddit-services'
@@ -88,10 +89,17 @@ const RedditServicesPage = async () => {
             </div>
             <div className='flex flex-wrap gap-4'>
               <PrimaryFlowButton asChild>
-                <Link href='https://cal.com/team/meridian-growth' target='_blank' rel='noreferrer'>
+                <BookingLink
+                  ctaLocation='hero'
+                  pageType='service_page'
+                  serviceType='reddit'
+                  language={lang}
+                  target='_blank'
+                  rel='noreferrer'
+                >
                   {copy.hero.primaryCta}
                   <ArrowRightIcon />
-                </Link>
+                </BookingLink>
               </PrimaryFlowButton>
               <SecondaryFlowButton asChild>
                 <Link href='#service-guarantee'>{copy.hero.secondaryCta}</Link>
@@ -284,10 +292,17 @@ const RedditServicesPage = async () => {
               <p className='text-muted-foreground text-base leading-7'>{copy.closing.description}</p>
             </div>
             <PrimaryFlowButton asChild>
-              <Link href='https://cal.com/team/meridian-growth' target='_blank' rel='noreferrer'>
+              <BookingLink
+                ctaLocation='closing_card'
+                pageType='service_page'
+                serviceType='reddit'
+                language={lang}
+                target='_blank'
+                rel='noreferrer'
+              >
                 {copy.closing.cta}
                 <ArrowRightIcon />
-              </Link>
+              </BookingLink>
             </PrimaryFlowButton>
           </CardContent>
         </Card>

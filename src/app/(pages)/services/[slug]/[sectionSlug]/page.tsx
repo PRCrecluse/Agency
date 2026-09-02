@@ -13,6 +13,7 @@ import { Card, CardContent } from '@/components/ui/card'
 import CTASection from '@/components/blocks/cta/cta'
 import FAQ from '@/components/blocks/faq/faq'
 import { PrimaryFlowButton, SecondaryFlowButton } from '@/components/ui/flow-button'
+import BookingLink from '@/components/analytics/booking-link'
 import SectionSeparator from '@/components/section-separator'
 import {
   getServiceBySlug,
@@ -120,10 +121,17 @@ const ServiceSectionDetailPage = async ({
             </h1>
             <div className='flex flex-wrap gap-4'>
               <PrimaryFlowButton asChild>
-                <Link href='https://cal.com/team/meridian-growth' target='_blank' rel='noreferrer'>
+                <BookingLink
+                  ctaLocation='hero'
+                  pageType='service_detail'
+                  serviceType={sectionSlug}
+                  language={lang}
+                  target='_blank'
+                  rel='noreferrer'
+                >
                   {copy.bookCall}
                   <ArrowRightIcon />
-                </Link>
+                </BookingLink>
               </PrimaryFlowButton>
               <SecondaryFlowButton asChild>
                 <Link href={toLocalizedHref('/services', lang)}>{copy.allServices}</Link>
@@ -248,6 +256,9 @@ const ServiceSectionDetailPage = async ({
         title={copy.nextStepTitle}
         description={copy.nextStepDescription}
         buttonLabel={copy.bookStrategyCall}
+        ctaLocation='section_footer'
+        pageType='service_detail'
+        serviceType={sectionSlug}
       />
 
       <script

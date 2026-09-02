@@ -9,6 +9,7 @@ import { usePathname } from 'next/navigation'
 
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip'
 import { PrimaryFlowButton } from '@/components/ui/flow-button'
+import BookingLink from '@/components/analytics/booking-link'
 import { LanguageToggle } from '@/components/layout/language-toggle'
 import { ModeToggle } from '@/components/layout/mode-toggle'
 
@@ -84,19 +85,19 @@ const Header = ({ navigationData, translatedBlogSlugs, className }: HeaderProps)
           <ModeToggle />
 
           <PrimaryFlowButton className='max-sm:hidden' asChild>
-            <Link href='https://cal.com/team/meridian-growth' target='_blank' rel='noreferrer'>
+            <BookingLink ctaLocation='header_desktop' target='_blank' rel='noreferrer'>
               Book a call
               <ArrowUpRightIcon />
-            </Link>
+            </BookingLink>
           </PrimaryFlowButton>
 
           <Tooltip>
             <TooltipTrigger asChild>
               <PrimaryFlowButton className='sm:hidden [&_[data-slot=button]]:size-10 [&_[data-slot=button]]:px-0' asChild>
-                <Link href='https://cal.com/team/meridian-growth' target='_blank' rel='noreferrer'>
+                <BookingLink ctaLocation='header_mobile' target='_blank' rel='noreferrer'>
                   <ExternalLinkIcon />
                   <span className='sr-only'>Book a call</span>
-                </Link>
+                </BookingLink>
               </PrimaryFlowButton>
             </TooltipTrigger>
             <TooltipContent>Book a call</TooltipContent>

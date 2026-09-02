@@ -22,6 +22,7 @@ import TrustedBrands from '@/components/blocks/trusted-brands/trusted-brands'
 import DeliveryTable from '@/components/services/delivery-table'
 import PackageSwitcher from '@/components/services/package-switcher'
 import { PrimaryFlowButton, SecondaryFlowButton } from '@/components/ui/flow-button'
+import BookingLink from '@/components/analytics/booking-link'
 import SectionSeparator from '@/components/section-separator'
 import { logos } from '@/assets/data/trusted-brands'
 import { getServiceBySlug, resolveLocalizedText, servicePageCopy, serviceSlugs, type ServiceLang } from '@/content/services'
@@ -170,10 +171,17 @@ const ServiceDetailPage = async ({
             </h1>
             <div className='flex flex-wrap gap-4'>
               <PrimaryFlowButton asChild>
-                <Link href='https://cal.com/team/meridian-growth' target='_blank' rel='noreferrer'>
+                <BookingLink
+                  ctaLocation='hero'
+                  pageType='service_page'
+                  serviceType={service.slug.replace(/-services$/, '')}
+                  language={lang}
+                  target='_blank'
+                  rel='noreferrer'
+                >
                   {copy.bookCall}
                   <ArrowRightIcon />
-                </Link>
+                </BookingLink>
               </PrimaryFlowButton>
               <SecondaryFlowButton asChild>
                 <Link href={toLocalizedHref('/services', lang)}>{copy.allServices}</Link>
@@ -388,10 +396,17 @@ const ServiceDetailPage = async ({
                   </div>
 
                   <PrimaryFlowButton asChild>
-                    <Link href='https://cal.com/team/meridian-growth' target='_blank' rel='noreferrer'>
+                    <BookingLink
+                      ctaLocation='outcomes_next_step'
+                      pageType='service_page'
+                      serviceType={service.slug.replace(/-services$/, '')}
+                      language={lang}
+                      target='_blank'
+                      rel='noreferrer'
+                    >
                       {copy.bookStrategyCall}
                       <ArrowRightIcon />
-                    </Link>
+                    </BookingLink>
                   </PrimaryFlowButton>
                 </div>
               </div>

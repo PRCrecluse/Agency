@@ -25,6 +25,7 @@ import SectionSeparator from '@/components/section-separator'
 import { Badge } from '@/components/ui/badge'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { PrimaryFlowButton, SecondaryFlowButton } from '@/components/ui/flow-button'
+import BookingLink from '@/components/analytics/booking-link'
 import { technicalSEOCopy } from '@/content/technical-seo'
 import { getLocalizedPath } from '@/lib/language'
 import { getRequestLanguage } from '@/lib/request-language'
@@ -99,10 +100,17 @@ const TechnicalSEOPage = async () => {
           </div>
           <div className='mt-8 flex flex-wrap justify-center gap-4'>
             <PrimaryFlowButton asChild>
-              <Link href='https://cal.com/team/meridian-growth' target='_blank' rel='noreferrer'>
+              <BookingLink
+                ctaLocation='hero'
+                pageType='service_detail'
+                serviceType='technical_seo'
+                language={lang}
+                target='_blank'
+                rel='noreferrer'
+              >
                 {copy.hero.primaryCta}
                 <ArrowRightIcon />
-              </Link>
+              </BookingLink>
             </PrimaryFlowButton>
             <SecondaryFlowButton asChild>
               <Link href='#included'>{copy.hero.secondaryCta}</Link>
@@ -520,10 +528,17 @@ const TechnicalSEOPage = async () => {
                 <p className='text-muted-foreground mt-2 text-sm leading-6'>{copy.fit.guidanceBody}</p>
               </div>
               <SecondaryFlowButton asChild>
-                <Link href='https://cal.com/team/meridian-growth' target='_blank' rel='noreferrer'>
+                <BookingLink
+                  ctaLocation='fit_guidance'
+                  pageType='service_detail'
+                  serviceType='technical_seo'
+                  language={lang}
+                  target='_blank'
+                  rel='noreferrer'
+                >
                   {copy.fit.guidanceCta}
                   <ArrowRightIcon />
-                </Link>
+                </BookingLink>
               </SecondaryFlowButton>
             </CardContent>
           </Card>
@@ -538,7 +553,13 @@ const TechnicalSEOPage = async () => {
         description={copy.faq.description}
       />
 
-      <CTA title={copy.cta.title} description={copy.cta.description} buttonLabel={copy.cta.buttonLabel} />
+      <CTA
+        title={copy.cta.title}
+        description={copy.cta.description}
+        buttonLabel={copy.cta.buttonLabel}
+        pageType='service_detail'
+        serviceType='technical_seo'
+      />
 
       <script
         type='application/ld+json'

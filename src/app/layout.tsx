@@ -83,6 +83,11 @@ const RootLayout = async ({ children }: Readonly<{ children: ReactNode }>) => {
       className='flex min-h-full w-full scroll-smooth antialiased'
       suppressHydrationWarning
     >
+      <head>
+        <Script id='datafast-queue' strategy='beforeInteractive'>
+          {`window.datafast=window.datafast||function(){window.datafast.q=window.datafast.q||[];window.datafast.q.push(arguments)}`}
+        </Script>
+      </head>
       <body className='flex min-h-full w-full flex-auto flex-col'>
         <ThemeProvider attribute='class' enableSystem={false} disableTransitionOnChange>
           <TooltipProvider>{children}</TooltipProvider>

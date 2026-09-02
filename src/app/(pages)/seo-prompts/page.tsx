@@ -5,6 +5,7 @@ import { ArrowRightIcon, BotIcon, CheckCircle2Icon, SearchCheckIcon, ShieldCheck
 import SeoPromptLibrary from '@/components/tools/seo-prompt-library'
 import { Badge } from '@/components/ui/badge'
 import { PrimaryFlowButton, SecondaryFlowButton } from '@/components/ui/flow-button'
+import BookingLink from '@/components/analytics/booking-link'
 import SectionSeparator from '@/components/section-separator'
 import { seoPromptCategories, seoPrompts } from '@/content/seo-prompts'
 import { absoluteUrl, buildMetadata, createOrganizationSchema, createWebPageSchema } from '@/lib/seo'
@@ -145,10 +146,17 @@ const SeoPromptsPage = () => {
               className='shrink-0 [--primary-foreground:var(--foreground)] [--primary:var(--background)]'
               asChild
             >
-              <Link href='https://cal.com/team/meridian-growth' target='_blank' rel='noreferrer'>
+              <BookingLink
+                ctaLocation='closing_banner'
+                pageType='tool'
+                serviceType='seo'
+                language='zh'
+                target='_blank'
+                rel='noreferrer'
+              >
                 预约一次沟通
                 <ArrowRightIcon />
-              </Link>
+              </BookingLink>
             </PrimaryFlowButton>
           </div>
         </div>

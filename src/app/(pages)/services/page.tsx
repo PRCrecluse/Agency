@@ -6,6 +6,7 @@ import { ArrowRightIcon, CheckCircle2Icon } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
 import { PrimaryFlowButton } from '@/components/ui/flow-button'
+import BookingLink from '@/components/analytics/booking-link'
 import SectionSeparator from '@/components/section-separator'
 import { resolveLocalizedText, servicePageCopy, servicePages, type ServiceLang } from '@/content/services'
 import { getLocalizedPath, toLocalizedHref } from '@/lib/language'
@@ -68,10 +69,17 @@ const ServicesPage = async () => {
 
           <div className='flex flex-wrap gap-4'>
             <PrimaryFlowButton asChild>
-              <Link href='https://cal.com/team/meridian-growth' target='_blank' rel='noreferrer'>
+              <BookingLink
+                ctaLocation='hero'
+                pageType='services_index'
+                serviceType='growth_strategy'
+                language={lang}
+                target='_blank'
+                rel='noreferrer'
+              >
                 {copy.bookCall}
                 <ArrowRightIcon />
-              </Link>
+              </BookingLink>
             </PrimaryFlowButton>
           </div>
         </div>

@@ -16,6 +16,9 @@ export default function BlogCtaSection({ slug, topic, locale = 'en' }: BlogCtaSe
       description={cta.description}
       buttonLabel={cta.buttonLabel}
       href={cta.href}
+      ctaLocation='article_footer'
+      pageType='blog_article'
+      serviceType={cta.serviceType}
     />
   )
 }
