@@ -91,7 +91,7 @@ const Features = () => {
                 </div>
 
                 <CardContent className='flex flex-1 flex-col gap-3 p-5 sm:pt-6'>
-                  <h5 className='text-xl font-semibold sm:text-2xl'>{item.title}</h5>
+                  <h3 className='text-xl font-semibold sm:text-2xl'>{item.title}</h3>
                   <p className='text-muted-foreground text-sm sm:text-base'>{item.description}</p>
                 </CardContent>
               </Card>
@@ -110,9 +110,9 @@ const Features = () => {
         >
           <p className='text-primary text-sm font-medium uppercase'>AI Systems</p>
 
-          <h3 className='text-xl font-semibold sm:text-2xl md:text-3xl lg:text-4xl'>
+          <h2 className='text-xl font-semibold sm:text-2xl md:text-3xl lg:text-4xl'>
             Proprietary AI SaaS Systems, Powered by a Strong Technical Engine
-          </h3>
+          </h2>
 
           <p className='text-muted-foreground text-base sm:text-lg lg:text-xl'>
             We turn growth execution into reusable AI agents and product systems, so strategy, distribution,
@@ -142,7 +142,7 @@ const Features = () => {
                 </div>
 
                 <CardContent className='flex flex-1 flex-col gap-3 p-5 sm:pt-6'>
-                  <h5 className='text-xl font-semibold sm:text-2xl'>{item.title}</h5>
+                  <h3 className='text-xl font-semibold sm:text-2xl'>{item.title}</h3>
                   <p className='text-muted-foreground text-sm sm:text-base'>{item.description}</p>
                 </CardContent>
               </Card>

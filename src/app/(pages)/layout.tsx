@@ -1,7 +1,5 @@
 import { Suspense, type ReactNode } from 'react'
 
-import { headers } from 'next/headers'
-
 import {
   LayoutDashboardIcon,
   TelescopeIcon,
@@ -131,7 +129,8 @@ const navigationData: Navigation[] = [
     items: [
       {
         title: 'SEO Prompt Library',
-        href: '/seo-prompts',
+        href: '/zh/seo-prompts',
+        localize: false,
         description: 'Copy execution-ready prompts for research, content, technical SEO, and reporting.',
         icon: <BotIcon className='size-4' />
       },
@@ -147,11 +146,7 @@ const navigationData: Navigation[] = [
 ]
 
 const PagesLayout = async ({ children }: Readonly<{ children: ReactNode }>) => {
-<<<<<<< HEAD
-  const lang = (await headers()).get('x-page-locale') === 'zh-CN' ? 'zh' : 'en'
-=======
   const translatedBlogSlugs = await getTranslatedPostSlugs()
->>>>>>> 85b786cf987cc8b56da604c53a8b869eabbc3436
 
   return (
     <div className='flex flex-col bg-[repeating-linear-gradient(45deg,color-mix(in_oklab,var(--border)40%,transparent)0,color-mix(in_oklab,var(--border)40%,transparent)1px,transparent_0,transparent_50%)] bg-size-[12px_12px] bg-fixed'>
@@ -166,7 +161,7 @@ const PagesLayout = async ({ children }: Readonly<{ children: ReactNode }>) => {
           <main className='flex flex-1 flex-col *:scroll-mt-16'>{children}</main>
 
           {/* Footer Section */}
-          <Footer lang={lang} />
+          <Footer />
           <FloatingContact />
         </div>
       </div>

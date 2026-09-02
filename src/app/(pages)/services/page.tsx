@@ -14,13 +14,14 @@ import { absoluteUrl, buildMetadata, createLocalizedAlternates, createWebPageSch
 
 export async function generateMetadata(): Promise<Metadata> {
   const lang = await getRequestLanguage()
+  const copy = servicePageCopy[lang]
   const path = getLocalizedPath('/services', lang)
 
   return buildMetadata({
-    title: 'SEO, Reddit & GEO Services | Meridian',
-    description: 'Explore Meridian services across technical SEO, programmatic SEO, Reddit growth, GEO, and AI-native organic demand.',
+    title: copy.metadata.title,
+    description: copy.metadata.description,
     path,
-    keywords: ['seo services', 'reddit marketing services', 'geo services', 'technical seo agency'],
+    keywords: [...copy.metadata.keywords],
     alternates: createLocalizedAlternates('/services', lang),
     language: lang
   })
@@ -37,8 +38,8 @@ const ServicesPage = async () => {
       {
         ...createWebPageSchema({
           path,
-          title: 'SEO, Reddit & GEO Services | Meridian',
-          description: 'Explore Meridian services across technical SEO, programmatic SEO, Reddit growth, GEO, and AI-native organic demand.',
+          title: copy.metadata.title,
+          description: copy.metadata.description,
           language: lang
         }),
         '@type': 'CollectionPage'

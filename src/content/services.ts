@@ -47,6 +47,12 @@ export const resolveLocalizedText = (value: LocalizedText, lang: ServiceLang) =>
 
 export const servicePageCopy = {
   en: {
+    metadata: {
+      title: 'SEO, Reddit & GEO Services | Meridian',
+      description:
+        'Explore Meridian services across technical SEO, programmatic SEO, Reddit growth, GEO, and AI-native organic demand.',
+      keywords: ['seo services', 'reddit marketing services', 'geo services', 'technical seo agency']
+    },
     english: 'English',
     chinese: '中文',
     home: 'Home',
@@ -84,6 +90,11 @@ export const servicePageCopy = {
     viewPage: 'View page'
   },
   zh: {
+    metadata: {
+      title: 'SEO、Reddit 与 GEO 服务 | Meridian',
+      description: '了解 Meridian 的技术 SEO、程序化 SEO、Reddit 增长、GEO 与 AI 原生自然增长服务。',
+      keywords: ['SEO 服务', 'Reddit 营销服务', 'GEO 服务', '技术 SEO 公司']
+    },
     english: 'English',
     chinese: '中文',
     home: '首页',

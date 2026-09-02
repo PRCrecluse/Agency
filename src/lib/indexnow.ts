@@ -41,10 +41,15 @@ export const buildIndexNowPayload = (urls: string[]) => {
   }
 }
 
-export const submitIndexNowUrls = async (
-  urls: string[],
-  fetchImpl: typeof fetch = fetch
-) => {
+export const submitIndexNowUrls = async (urls: string[], fetchImpl: typeof fetch = fetch) => {
+  if (process.env.VERCEL_ENV && process.env.VERCEL_ENV !== 'production') {
+    return {
+      ok: false,
+      status: 0,
+      body: `IndexNow submission is disabled in the ${process.env.VERCEL_ENV} environment.`
+    }
+  }
+
   const payload = buildIndexNowPayload(urls)
 
   if (payload.urlList.length === 0) {

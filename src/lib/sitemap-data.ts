@@ -22,12 +22,11 @@ export async function getSitemapEntries(): Promise<MetadataRoute.Sitemap> {
   const zhPosts = await getPosts(undefined, 'zh')
   const englishPostSlugs = new Set(posts.map(post => post.slug))
   const zhPostSlugs = new Set(zhPosts.map(post => post.slug))
-  const now = new Date()
 
   const postLastModified = (post: (typeof posts)[number]) =>
-    post.updatedAt ? new Date(post.updatedAt) : post.publishedAt ? new Date(post.publishedAt) : now
+    post.updatedAt ? new Date(post.updatedAt) : post.publishedAt ? new Date(post.publishedAt) : undefined
 
-  const localizedEntries = (path: string, priority: number, changeFrequency: 'weekly' | 'monthly' = 'weekly') => {
+  const localizedEntries = (path: string) => {
     const englishPath = path.replace(/^\/zh(?=\/|$)/, '')
     const chinesePath = `/zh${englishPath}`
 
@@ -41,148 +40,41 @@ export async function getSitemapEntries(): Promise<MetadataRoute.Sitemap> {
 
     return [englishPath, chinesePath].map(localizedPath => ({
       url: absoluteUrl(localizedPath),
-      lastModified: now,
-      changeFrequency,
-      priority,
       alternates
     }))
   }
 
   return [
     {
-      url: absoluteUrl('/'),
-      lastModified: now,
-      changeFrequency: 'weekly',
-      priority: 1
+      url: absoluteUrl('/')
     },
     {
-      url: absoluteUrl('/about'),
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.8
+      url: absoluteUrl('/about')
     },
-<<<<<<< HEAD
+    ...localizedEntries('/blog'),
+    ...localizedEntries('/services'),
+    ...localizedEntries('/services/reddit-services'),
+    ...localizedEntries('/utm-builder'),
+    ...specializedServicePaths.flatMap(path => localizedEntries(path)),
     {
-      url: absoluteUrl('/blog'),
-      lastModified: now,
-      changeFrequency: 'weekly',
-      priority: 0.8,
-      alternates: {
-        languages: {
-          en: absoluteUrl('/blog'),
-          'zh-CN': absoluteUrl('/zh/blog'),
-          'x-default': absoluteUrl('/blog')
-        }
-      }
+      url: absoluteUrl('/zh/seo-prompts')
     },
     {
-      url: absoluteUrl('/zh/blog'),
-      lastModified: now,
-      changeFrequency: 'weekly',
-      priority: 0.8,
-      alternates: {
-        languages: {
-          en: absoluteUrl('/blog'),
-          'zh-CN': absoluteUrl('/zh/blog'),
-          'x-default': absoluteUrl('/blog')
-        }
-      }
+      url: absoluteUrl('/products/goglobal')
     },
     {
-      url: absoluteUrl('/services'),
-      lastModified: now,
-      changeFrequency: 'weekly',
-      priority: 0.9
+      url: absoluteUrl('/terms-conditions')
     },
     {
-      url: absoluteUrl('/seo-prompts'),
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.8
+      url: absoluteUrl('/privacy-policy')
     },
-    {
-      url: absoluteUrl('/products/goglobal'),
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.8
-    },
-    localizedServiceEntry('/zh/services', 0.9),
-    {
-      url: absoluteUrl('/services/reddit-services'),
-      lastModified: now,
-      changeFrequency: 'weekly',
-      priority: 0.8
-    },
-    {
-      url: absoluteUrl('/services/seo-services/on-page-seo'),
-      lastModified: now,
-      changeFrequency: 'weekly',
-      priority: 0.8
-    },
-    {
-      url: absoluteUrl('/services/seo-services/technical-seo'),
-      lastModified: now,
-      changeFrequency: 'weekly',
-      priority: 0.8
-    },
-    {
-      url: absoluteUrl('/services/seo-services/programmatic-seo'),
-      lastModified: now,
-      changeFrequency: 'weekly',
-      priority: 0.8
-    },
-    {
-      url: absoluteUrl('/services/seo-services/link-building'),
-      lastModified: now,
-      changeFrequency: 'weekly',
-      priority: 0.8
-    },
-    {
-      url: absoluteUrl('/services/seo-services/keyword-research'),
-      lastModified: now,
-      changeFrequency: 'weekly',
-      priority: 0.8
-    },
-    {
-      url: absoluteUrl('/services/reddit-services/community-management'),
-      lastModified: now,
-      changeFrequency: 'weekly',
-      priority: 0.8
-    },
-    {
-      url: absoluteUrl('/services/reddit-services/reddit-campaigns'),
-      lastModified: now,
-      changeFrequency: 'weekly',
-      priority: 0.8
-    },
-=======
-    ...localizedEntries('/blog', 0.8),
-    ...localizedEntries('/services', 0.9),
-    ...localizedEntries('/services/reddit-services', 0.8),
-    ...localizedEntries('/utm-builder', 0.6, 'monthly'),
-    ...specializedServicePaths.flatMap(path => localizedEntries(path, 0.8)),
->>>>>>> 85b786cf987cc8b56da604c53a8b869eabbc3436
-    {
-      url: absoluteUrl('/terms-conditions'),
-      lastModified: now,
-      changeFrequency: 'yearly',
-      priority: 0.2
-    },
-    {
-      url: absoluteUrl('/privacy-policy'),
-      lastModified: now,
-      changeFrequency: 'yearly',
-      priority: 0.2
-    },
-    ...serviceSlugs.flatMap(slug => localizedEntries(`/services/${slug}`, 0.7)),
+    ...serviceSlugs.flatMap(slug => localizedEntries(`/services/${slug}`)),
     ...serviceSectionParams
       .filter(({ slug, sectionSlug }) => !specializedServicePathSet.has(`/services/${slug}/${sectionSlug}`))
-      .flatMap(({ slug, sectionSlug }) => localizedEntries(`/services/${slug}/${sectionSlug}`, 0.7)),
+      .flatMap(({ slug, sectionSlug }) => localizedEntries(`/services/${slug}/${sectionSlug}`)),
     ...aboutStories.map(story => ({
       url: absoluteUrl(`/about/stories/${story.slug}`),
-      lastModified: new Date(story.date),
-      changeFrequency: 'monthly' as const,
-      priority: 0.6
+      lastModified: new Date(story.date)
     })),
     ...posts.map(post => {
       const englishPath = `/blog/${post.slug}`
@@ -191,8 +83,6 @@ export async function getSitemapEntries(): Promise<MetadataRoute.Sitemap> {
       return {
         url: absoluteUrl(englishPath),
         lastModified: postLastModified(post),
-        changeFrequency: 'monthly' as const,
-        priority: 0.7,
         alternates: zhPostSlugs.has(post.slug)
           ? {
               languages: {
@@ -207,8 +97,6 @@ export async function getSitemapEntries(): Promise<MetadataRoute.Sitemap> {
     ...zhPosts.map(post => ({
       url: absoluteUrl(`/zh/blog/${post.slug}`),
       lastModified: postLastModified(post),
-      changeFrequency: 'monthly' as const,
-      priority: 0.7,
       alternates: englishPostSlugs.has(post.slug)
         ? {
             languages: {

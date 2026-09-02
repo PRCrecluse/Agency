@@ -1,9 +1,39 @@
 import type { NextConfig } from 'next'
 
+const noindexHeaders = [
+  {
+    key: 'X-Robots-Tag',
+    value: 'noindex, nofollow'
+  }
+]
+
 const nextConfig: NextConfig = {
   basePath: process.env.BASEPATH ?? '',
   reactStrictMode: true,
   pageExtensions: ['js', 'jsx', 'ts', 'tsx'],
+  async headers() {
+    const rules: Awaited<ReturnType<NonNullable<NextConfig['headers']>>> = [
+      {
+        source: '/:path*',
+        has: [
+          {
+            type: 'host',
+            value: '(?<vercelHost>.*\\.vercel\\.app)'
+          }
+        ],
+        headers: noindexHeaders
+      }
+    ]
+
+    if (process.env.VERCEL_ENV !== 'production') {
+      rules.push({
+        source: '/:path*',
+        headers: noindexHeaders
+      })
+    }
+
+    return rules
+  },
   async redirects() {
     return [
       {

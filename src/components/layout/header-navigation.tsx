@@ -35,6 +35,7 @@ type NavigationSection = {
 type NavigationItem = {
   title: string
   href: string
+  localize?: boolean
   icon?: ReactNode
   badge?: ReactNode
   description?: string
@@ -126,12 +127,14 @@ const ListItem = (props: {
   activeSection?: string
   pathname?: string
   activeMatch?: NavigationItem['activeMatch']
+  localize?: NavigationItem['localize']
   lang: 'en' | 'zh'
 }) => {
-  const { title, href, icon, badge, description, splitItems, activeSection, pathname, activeMatch, lang } = props
+  const { title, href, localize, icon, badge, description, splitItems, activeSection, pathname, activeMatch, lang } =
+    props
 
   const isActive = isHrefActive({ href, activeSection, pathname, activeMatch })
-  const localizedHref = toLocalizedHref(href, lang)
+  const localizedHref = localize === false ? href : toLocalizedHref(href, lang)
 
   return (
     <li className={cn({ 'min-h-19.5': description && splitItems })}>
@@ -237,14 +240,11 @@ const HeaderNavigation = ({
   const activeSection = useActiveSection(sectionIds)
 
   useEffect(() => {
-<<<<<<< HEAD
     // eslint-disable-next-line react-hooks/set-state-in-effect
     setOpenDropdown(null)
   }, [pathname, lang])
 
   useEffect(() => {
-=======
->>>>>>> 85b786cf987cc8b56da604c53a8b869eabbc3436
     return () => {
       clearCloseTimeout()
     }
@@ -280,12 +280,7 @@ const HeaderNavigation = ({
         {navigationData.map(navItem => {
           if (navItem.href) {
             const isActive = isHrefActive({ href: navItem.href, activeSection, pathname, activeMatch: navItem.activeMatch })
-<<<<<<< HEAD
-
-            const localizedHref = withQueryLang(navItem.href, lang)
-=======
             const localizedHref = toLocalizedHref(navItem.href, lang)
->>>>>>> 85b786cf987cc8b56da604c53a8b869eabbc3436
 
             return (
               <li key={navItem.title}>
@@ -389,6 +384,7 @@ const HeaderNavigation = ({
                                           activeSection={activeSection}
                                           pathname={pathname}
                                           activeMatch={item.activeMatch}
+                                          localize={item.localize}
                                           lang={lang}
                                         />
                                       ))}
@@ -414,6 +410,7 @@ const HeaderNavigation = ({
                                     activeSection={activeSection}
                                     pathname={pathname}
                                     activeMatch={item.activeMatch}
+                                    localize={item.localize}
                                     lang={lang}
                                   />
                                 ))}
@@ -441,6 +438,7 @@ const HeaderNavigation = ({
                             activeSection={activeSection}
                             pathname={pathname}
                             activeMatch={item.activeMatch}
+                            localize={item.localize}
                             lang={lang}
                           />
                         ))}
@@ -599,7 +597,7 @@ const HeaderNavigationSmallScreen = ({
                                 return (
                                   <Link
                                     key={j}
-                                    href={toLocalizedHref(subItem.href, lang)}
+                                    href={subItem.localize === false ? subItem.href : toLocalizedHref(subItem.href, lang)}
                                     data-active={isActive}
                                     className='hover:bg-accent data-[active=true]:text-primary ml-4.5 flex items-center gap-2 rounded-sm px-3 py-2 text-sm data-[active=true]:font-medium'
                                     onClick={handleLinkClick}
@@ -624,7 +622,7 @@ const HeaderNavigationSmallScreen = ({
                         return (
                           <Link
                             key={item.title}
-                            href={toLocalizedHref(item.href, lang)}
+                            href={item.localize === false ? item.href : toLocalizedHref(item.href, lang)}
                             data-active={isActive}
                             className='hover:bg-accent data-[active=true]:text-primary ml-3 flex items-center gap-2 rounded-sm px-3 py-2 text-sm data-[active=true]:font-medium'
                             onClick={handleLinkClick}

@@ -2,29 +2,17 @@ import type { Metadata } from 'next'
 import { cookies } from 'next/headers'
 
 import UtmBuilder from '@/components/tools/utm-builder'
-<<<<<<< HEAD
-import { buildMetadata } from '@/lib/seo'
-import { UTM_BUILDER_ACCESS_COOKIE, verifyAccessToken } from '@/lib/twitter-monitor/access'
-
-export const dynamic = 'force-dynamic'
-=======
 import { getLocalizedPath } from '@/lib/language'
 import { getRequestLanguage } from '@/lib/request-language'
 import { buildMetadata, createLocalizedAlternates } from '@/lib/seo'
->>>>>>> 85b786cf987cc8b56da604c53a8b869eabbc3436
+import { UTM_BUILDER_ACCESS_COOKIE, verifyAccessToken } from '@/lib/twitter-monitor/access'
+
+export const dynamic = 'force-dynamic'
 
 export async function generateMetadata(): Promise<Metadata> {
   const lang = await getRequestLanguage()
   const path = getLocalizedPath('/utm-builder', lang)
 
-<<<<<<< HEAD
-const UtmBuilderPage = async () => {
-  const cookieStore = await cookies()
-  const accessGranted = Boolean(verifyAccessToken(cookieStore.get(UTM_BUILDER_ACCESS_COOKIE)?.value))
-
-  return <UtmBuilder initialAccessGranted={accessGranted} />
-}
-=======
   return buildMetadata({
     title: lang === 'zh' ? '免费 UTM 链接生成器 | Meridian' : 'Free UTM Builder | Meridian',
     description:
@@ -38,7 +26,12 @@ const UtmBuilderPage = async () => {
   })
 }
 
-const UtmBuilderPage = async () => <UtmBuilder lang={await getRequestLanguage()} />
->>>>>>> 85b786cf987cc8b56da604c53a8b869eabbc3436
+const UtmBuilderPage = async () => {
+  const lang = await getRequestLanguage()
+  const cookieStore = await cookies()
+  const accessGranted = Boolean(verifyAccessToken(cookieStore.get(UTM_BUILDER_ACCESS_COOKIE)?.value))
+
+  return <UtmBuilder initialAccessGranted={accessGranted} lang={lang} />
+}
 
 export default UtmBuilderPage

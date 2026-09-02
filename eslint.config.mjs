@@ -16,6 +16,7 @@ const eslintConfig = defineConfig([
     'dist/',
     'out/**',
     'build/**',
+    '.codex_work/**',
     '.codex-tmp/**',
     '.tmp-seo-audit/**',
     'outputs/**',
