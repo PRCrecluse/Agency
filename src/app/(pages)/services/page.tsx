@@ -8,46 +8,38 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { PrimaryFlowButton } from '@/components/ui/flow-button'
 import SectionSeparator from '@/components/section-separator'
 import { resolveLocalizedText, servicePageCopy, servicePages, type ServiceLang } from '@/content/services'
+import { getLocalizedPath, toLocalizedHref } from '@/lib/language'
+import { getRequestLanguage } from '@/lib/request-language'
 import { absoluteUrl, buildMetadata, createLocalizedAlternates, createWebPageSchema } from '@/lib/seo'
 
-export async function generateMetadata({
-  searchParams
-}: {
-  searchParams?: Promise<{ lang?: string }>
-}): Promise<Metadata> {
-  const resolvedSearchParams = await searchParams
-  const lang = getLang(resolvedSearchParams?.lang)
+export async function generateMetadata(): Promise<Metadata> {
+  const lang = await getRequestLanguage()
+  const path = getLocalizedPath('/services', lang)
 
   return buildMetadata({
     title: 'SEO, Reddit & GEO Services | Meridian',
     description: 'Explore Meridian services across technical SEO, programmatic SEO, Reddit growth, GEO, and AI-native organic demand.',
-    path: lang === 'zh' ? '/zh/services' : '/services',
+    path,
     keywords: ['seo services', 'reddit marketing services', 'geo services', 'technical seo agency'],
-    alternates: createLocalizedAlternates('/services', lang)
+    alternates: createLocalizedAlternates('/services', lang),
+    language: lang
   })
 }
 
-const getLang = (value?: string): ServiceLang => (value?.toLowerCase().startsWith('zh') ? 'zh' : 'en')
-
-const withLang = (path: string, lang: ServiceLang) => `${path}?lang=${lang}`
-
-const ServicesPage = async ({
-  searchParams
-}: {
-  searchParams?: Promise<{ lang?: string }>
-}) => {
-  const resolvedSearchParams = await searchParams
-  const lang = getLang(resolvedSearchParams?.lang)
+const ServicesPage = async () => {
+  const lang: ServiceLang = await getRequestLanguage()
   const copy = servicePageCopy[lang]
+  const path = getLocalizedPath('/services', lang)
 
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
       {
         ...createWebPageSchema({
-          path: '/services',
+          path,
           title: 'SEO, Reddit & GEO Services | Meridian',
-          description: 'Explore Meridian services across technical SEO, programmatic SEO, Reddit growth, GEO, and AI-native organic demand.'
+          description: 'Explore Meridian services across technical SEO, programmatic SEO, Reddit growth, GEO, and AI-native organic demand.',
+          language: lang
         }),
         '@type': 'CollectionPage'
       },
@@ -57,7 +49,7 @@ const ServicesPage = async ({
           '@type': 'ListItem',
           position: index + 1,
           name: resolveLocalizedText(service.title, lang),
-          url: absoluteUrl(`/services/${service.slug}`)
+          url: absoluteUrl(getLocalizedPath(`/services/${service.slug}`, lang))
         }))
       }
     ]
@@ -109,7 +101,7 @@ const ServicesPage = async ({
               </CardContent>
               <CardFooter>
                 <PrimaryFlowButton asChild>
-                  <Link href={withLang(`/services/${service.slug}`, lang)}>
+                  <Link href={toLocalizedHref(`/services/${service.slug}`, lang)}>
                     {copy.viewPage}
                     <ArrowRightIcon />
                   </Link>

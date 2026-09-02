@@ -41,7 +41,8 @@ const SpecializedServicePage = ({ lang, path, copy }: SpecializedServicePageProp
         ...createWebPageSchema({
           path,
           title: copy.metadata.title,
-          description: copy.metadata.description
+          description: copy.metadata.description,
+          language: lang
         })
       },
       {
@@ -313,7 +314,19 @@ const SpecializedServicePage = ({ lang, path, copy }: SpecializedServicePageProp
         description={copy.faq.description}
       />
 
-      <CTASection />
+      <CTASection
+        title={
+          lang === 'zh'
+            ? `准备把「${copy.serviceType}」变成可执行计划了吗？`
+            : `Ready to Turn ${copy.serviceType} Into an Action Plan?`
+        }
+        description={
+          lang === 'zh'
+            ? '预约一次策略沟通，梳理当前机会、优先级和最值得先做的下一步。'
+            : 'Book a strategy call to review your current opportunity, priorities, and the highest-impact next step.'
+        }
+        buttonLabel={copy.hero.primaryCta}
+      />
 
       <script
         type='application/ld+json'

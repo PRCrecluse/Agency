@@ -9,8 +9,6 @@ import { BackgroundRippleEffect } from '@/components/ui/background-ripple-effect
 import { MotionPreset } from '@/components/ui/motion-preset'
 import { PrimaryFlowButton } from '@/components/ui/flow-button'
 
-import TextFlip from '@/components/blocks/hero-section/text-flip'
-
 const HeroSection = () => {
   return (
     <section id='home' className='relative px-4 py-8 max-sm:pb-42 sm:px-6 sm:py-16 lg:px-8 lg:py-24'>
@@ -26,7 +24,7 @@ const HeroSection = () => {
             className='z-10'
           >
             <Badge variant='outline' className='bg-background h-auto text-sm font-normal'>
-              Trusted by 5,000+ growing businesses
+              SEO · Reddit · GEO for SaaS and AI companies
             </Badge>
           </MotionPreset>
 
@@ -39,7 +37,7 @@ const HeroSection = () => {
             component='h1'
             className='z-10 text-center text-3xl font-semibold md:text-4xl lg:text-5xl lg:leading-[1.29167]'
           >
-            Supercharge Your Business&apos;s <TextFlip />
+            AI Growth Agency for SaaS and AI Companies
           </MotionPreset>
 
           <MotionPreset
@@ -51,8 +49,8 @@ const HeroSection = () => {
             component='p'
             className='text-muted-foreground z-10 max-w-156 text-center text-xl'
           >
-            rack every key metric in one clean dashboard - no code, no setup, just real-time insights that help you
-            grow smarter.
+            Meridian combines technical SEO, programmatic SEO, Reddit growth, and GEO to build durable organic demand
+            across search, communities, and AI discovery.
           </MotionPreset>
 
           <MotionPreset
@@ -69,7 +67,7 @@ const HeroSection = () => {
                 target='_blank'
                 rel='noreferrer'
               >
-                Book a call
+                Book a strategy call
                 <ArrowUpRightIcon />
               </Link>
             </PrimaryFlowButton>

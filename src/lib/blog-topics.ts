@@ -46,6 +46,7 @@ export function normalizeBlogTopic(value?: string | null): BlogTopicId | undefin
   }
 
   const normalizedValue = value.trim().toLowerCase()
+
   return BLOG_TOPIC_LOOKUP.get(normalizedValue)?.id
 }
 

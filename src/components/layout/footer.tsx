@@ -1,17 +1,15 @@
 'use client'
 
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 
-import { ArrowRightIcon } from 'lucide-react'
-
-import { Input } from '@/components/ui/input'
 import { Separator } from '@/components/ui/separator'
 
 import Logo from '@/components/logo'
 import TwitterIcon from '@/assets/svg/twitter-icon'
 import YoutubeIcon from '@/assets/svg/youtube-icon'
-import { PrimaryFlowButton } from '@/components/ui/flow-button'
 import SectionSeparator from '@/components/section-separator'
+<<<<<<< HEAD
 import { withQueryLang, type QueryLang } from '@/lib/language'
 
 const footerBrandLogos = [
@@ -75,13 +73,23 @@ const footerCopy = {
 const Footer = ({ lang = 'en' }: { lang?: QueryLang }) => {
   const copy = footerCopy[lang]
   const localizedHref = (href: string) => withQueryLang(href, lang)
+=======
+import { getPathLanguage, toLocalizedHref } from '@/lib/language'
+
+const Footer = () => {
+  const lang = getPathLanguage(usePathname())
+>>>>>>> 85b786cf987cc8b56da604c53a8b869eabbc3436
 
   return (
     <footer>
       <SectionSeparator />
       <div className='mx-auto grid max-w-7xl grid-cols-6 gap-6 px-4 py-8 sm:gap-8 sm:px-6 sm:py-16 md:py-24 lg:px-8'>
         <div className='col-span-full flex flex-col items-start gap-4 lg:col-span-2'>
+<<<<<<< HEAD
           <Link href={localizedHref('/#home')}>
+=======
+          <Link href={toLocalizedHref('/#home', lang)}>
+>>>>>>> 85b786cf987cc8b56da604c53a8b869eabbc3436
             <Logo />
           </Link>
           <p className='text-muted-foreground'>{copy.description}</p>
@@ -100,7 +108,7 @@ const Footer = ({ lang = 'en' }: { lang?: QueryLang }) => {
             </Link>
           </div>
         </div>
-        <div className='col-span-full grid grid-cols-2 gap-6 sm:grid-cols-5 lg:col-span-4 lg:gap-8'>
+        <div className='col-span-full grid grid-cols-2 gap-6 sm:grid-cols-3 lg:col-span-4 lg:gap-8'>
           <div className='flex flex-col gap-5'>
             <div className='text-lg font-medium'>{copy.company}</div>
             <ul className='text-muted-foreground space-y-3'>
@@ -118,6 +126,7 @@ const Footer = ({ lang = 'en' }: { lang?: QueryLang }) => {
                 </Link>
               </li>
               <li>
+<<<<<<< HEAD
                 <Link
                   href={localizedHref('/services')}
                   className='hover:text-foreground transition-colors duration-300'
@@ -128,11 +137,21 @@ const Footer = ({ lang = 'en' }: { lang?: QueryLang }) => {
               <li>
                 <Link href={localizedHref('/blog')} className='hover:text-foreground transition-colors duration-300'>
                   {copy.blog}
+=======
+                <Link href={toLocalizedHref('/services', lang)} className='hover:text-foreground transition-colors duration-300'>
+                  Services
+                </Link>
+              </li>
+              <li>
+                <Link href={toLocalizedHref('/blog', lang)} className='hover:text-foreground transition-colors duration-300'>
+                  Blog
+>>>>>>> 85b786cf987cc8b56da604c53a8b869eabbc3436
                 </Link>
               </li>
             </ul>
           </div>
           <div className='flex flex-col gap-5'>
+<<<<<<< HEAD
             <div className='text-lg font-medium'>{copy.help}</div>
             <ul className='text-muted-foreground space-y-3'>
               <li>
@@ -146,6 +165,13 @@ const Footer = ({ lang = 'en' }: { lang?: QueryLang }) => {
                   className='hover:text-foreground transition-colors duration-300'
                 >
                   {copy.terms}
+=======
+            <div className='text-lg font-medium'>Legal</div>
+            <ul className='text-muted-foreground space-y-3'>
+              <li>
+                <Link href='/terms-conditions' className='hover:text-foreground transition-colors duration-300'>
+                  Terms & Conditions
+>>>>>>> 85b786cf987cc8b56da604c53a8b869eabbc3436
                 </Link>
               </li>
               <li>
@@ -162,11 +188,16 @@ const Footer = ({ lang = 'en' }: { lang?: QueryLang }) => {
             <div className='text-lg font-medium'>{copy.tools}</div>
             <ul className='text-muted-foreground space-y-3'>
               <li>
+<<<<<<< HEAD
                 <Link
                   href={localizedHref('/utm-builder')}
                   className='hover:text-foreground transition-colors duration-300'
                 >
                   {copy.utmBuilder}
+=======
+                <Link href={toLocalizedHref('/utm-builder', lang)} className='hover:text-foreground transition-colors duration-300'>
+                  UTM Builder
+>>>>>>> 85b786cf987cc8b56da604c53a8b869eabbc3436
                 </Link>
               </li>
               <li>
@@ -187,6 +218,7 @@ const Footer = ({ lang = 'en' }: { lang?: QueryLang }) => {
               </li>
             </ul>
           </div>
+<<<<<<< HEAD
           <div className='col-span-full flex flex-col gap-5 sm:col-span-2'>
             <div>
               <p className='mb-3 text-lg font-medium'>{copy.newsletter}</p>
@@ -215,6 +247,8 @@ const Footer = ({ lang = 'en' }: { lang?: QueryLang }) => {
               ))}
             </div>
           </div>
+=======
+>>>>>>> 85b786cf987cc8b56da604c53a8b869eabbc3436
         </div>
       </div>
 
@@ -223,10 +257,17 @@ const Footer = ({ lang = 'en' }: { lang?: QueryLang }) => {
       <div className='mx-auto flex max-w-7xl justify-center px-4 py-6 sm:px-6'>
         <p className='text-muted-foreground text-center text-balance'>
           {`©${new Date().getFullYear()}`}{' '}
+<<<<<<< HEAD
           <Link className='text-foreground font-medium hover:underline' href={localizedHref('/#home')}>
             Meridian
           </Link>{' '}
           {copy.rights}
+=======
+          <Link className='text-foreground font-medium hover:underline' href={toLocalizedHref('/#home', lang)}>
+            Meridian
+          </Link>{' '}
+          All rights reserved.
+>>>>>>> 85b786cf987cc8b56da604c53a8b869eabbc3436
         </p>
       </div>
     </footer>

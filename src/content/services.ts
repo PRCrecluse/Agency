@@ -411,28 +411,6 @@ export const servicePages: ServicePage[] = [
             zh: '让落地页与转化路径匹配投放意图'
           }
         ]
-      },
-      {
-        id: 'measurement',
-        title: { en: 'Add-ons and payment', zh: '加购与付款方式' },
-        description: {
-          en: 'We connect platform activity back to business impact so the program can improve with evidence instead of guesswork.',
-          zh: '我们把平台上的行为数据回连到业务结果，让后续优化建立在证据之上，而不是靠猜测。'
-        },
-        bullets: [
-          {
-            en: 'Weekly performance reviews across engagement and acquisition signals',
-            zh: '每周复盘互动与获客信号'
-          },
-          {
-            en: 'Sentiment monitoring and narrative risk tracking',
-            zh: '监测社区情绪反馈与叙事风险'
-          },
-          {
-            en: 'Iteration roadmap for messaging, placement, and offer changes',
-            zh: '围绕信息表达、投放位置和 offer 调整迭代路线图'
-          }
-        ]
       }
     ],
     outcomes: [

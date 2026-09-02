@@ -3,27 +3,28 @@
 import { useEffect, useRef, useState } from 'react'
 
 import { CheckIcon, ChevronDownIcon, LanguagesIcon } from 'lucide-react'
-import { usePathname, useRouter, useSearchParams } from 'next/navigation'
+import { usePathname, useSearchParams } from 'next/navigation'
 
 import { cn } from '@/lib/utils'
-import type { QueryLang } from '@/lib/language'
-import { getQueryLang, withQueryLang } from '@/lib/language'
+import type { SiteLang } from '@/lib/language'
+import { getLanguageAlternateHref, getPathLanguage } from '@/lib/language'
 
-const languageOptions: { value: QueryLang; label: string; shortLabel: string }[] = [
+const languageOptions: { value: SiteLang; label: string; shortLabel: string }[] = [
   { value: 'en', label: 'English', shortLabel: 'EN' },
   { value: 'zh', label: '中文', shortLabel: '中' }
 ]
 
-const LanguageToggle = () => {
+const LanguageToggle = ({ translatedBlogSlugs }: { translatedBlogSlugs: string[] }) => {
   const pathname = usePathname()
-  const router = useRouter()
   const searchParams = useSearchParams()
   const containerRef = useRef<HTMLDivElement>(null)
   const [hash, setHash] = useState('')
   const [open, setOpen] = useState(false)
   const search = searchParams.toString()
   const currentHref = `${pathname}${search ? `?${search}` : ''}${hash}`
-  const currentLang: QueryLang = pathname.startsWith('/zh/') ? 'zh' : getQueryLang(searchParams.get('lang'))
+  const currentLang = getPathLanguage(pathname)
+  const translatedSlugs = new Set(translatedBlogSlugs)
+  const alternateHref = getLanguageAlternateHref(currentHref, currentLang === 'zh' ? 'en' : 'zh', translatedSlugs)
 
   useEffect(() => {
     const syncHash = () => {
@@ -60,16 +61,20 @@ const LanguageToggle = () => {
     }
   }, [])
 
-  const handleLanguageChange = (nextLang: QueryLang) => {
-    const nextHref = withQueryLang(currentHref, nextLang)
+  const handleLanguageChange = (nextLang: SiteLang) => {
+    const nextHref = getLanguageAlternateHref(currentHref, nextLang, translatedSlugs)
 
     setOpen(false)
 
-    if (nextHref === currentHref) {
+    if (!nextHref || nextHref === currentHref) {
       return
     }
 
-    router.push(nextHref, { scroll: false })
+    window.location.assign(nextHref)
+  }
+
+  if (!alternateHref) {
+    return null
   }
 
   return (

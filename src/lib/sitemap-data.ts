@@ -27,19 +27,26 @@ export async function getSitemapEntries(): Promise<MetadataRoute.Sitemap> {
   const postLastModified = (post: (typeof posts)[number]) =>
     post.updatedAt ? new Date(post.updatedAt) : post.publishedAt ? new Date(post.publishedAt) : now
 
-  const localizedServiceEntry = (path: string, priority: number) => ({
-    url: absoluteUrl(path),
-    lastModified: now,
-    changeFrequency: 'weekly' as const,
-    priority,
-    alternates: {
+  const localizedEntries = (path: string, priority: number, changeFrequency: 'weekly' | 'monthly' = 'weekly') => {
+    const englishPath = path.replace(/^\/zh(?=\/|$)/, '')
+    const chinesePath = `/zh${englishPath}`
+
+    const alternates = {
       languages: {
-        en: absoluteUrl(path.replace(/^\/zh/, '')),
-        'zh-CN': absoluteUrl(path.startsWith('/zh/') ? path : `/zh${path}`),
-        'x-default': absoluteUrl(path.replace(/^\/zh/, ''))
+        en: absoluteUrl(englishPath),
+        'zh-CN': absoluteUrl(chinesePath),
+        'x-default': absoluteUrl(englishPath)
       }
     }
-  })
+
+    return [englishPath, chinesePath].map(localizedPath => ({
+      url: absoluteUrl(localizedPath),
+      lastModified: now,
+      changeFrequency,
+      priority,
+      alternates
+    }))
+  }
 
   return [
     {
@@ -54,6 +61,7 @@ export async function getSitemapEntries(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: 'monthly',
       priority: 0.8
     },
+<<<<<<< HEAD
     {
       url: absoluteUrl('/blog'),
       lastModified: now,
@@ -147,6 +155,13 @@ export async function getSitemapEntries(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: 'weekly',
       priority: 0.8
     },
+=======
+    ...localizedEntries('/blog', 0.8),
+    ...localizedEntries('/services', 0.9),
+    ...localizedEntries('/services/reddit-services', 0.8),
+    ...localizedEntries('/utm-builder', 0.6, 'monthly'),
+    ...specializedServicePaths.flatMap(path => localizedEntries(path, 0.8)),
+>>>>>>> 85b786cf987cc8b56da604c53a8b869eabbc3436
     {
       url: absoluteUrl('/terms-conditions'),
       lastModified: now,
@@ -159,17 +174,10 @@ export async function getSitemapEntries(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: 'yearly',
       priority: 0.2
     },
-    ...serviceSlugs.map(slug => ({
-      url: absoluteUrl(`/services/${slug}`),
-      lastModified: now,
-      changeFrequency: 'weekly' as const,
-      priority: 0.7
-    })),
-    ...serviceSlugs.map(slug => localizedServiceEntry(`/zh/services/${slug}`, 0.7)),
-    ...specializedServicePaths.map(path => localizedServiceEntry(`/zh${path}`, 0.8)),
+    ...serviceSlugs.flatMap(slug => localizedEntries(`/services/${slug}`, 0.7)),
     ...serviceSectionParams
       .filter(({ slug, sectionSlug }) => !specializedServicePathSet.has(`/services/${slug}/${sectionSlug}`))
-      .map(({ slug, sectionSlug }) => localizedServiceEntry(`/zh/services/${slug}/${sectionSlug}`, 0.7)),
+      .flatMap(({ slug, sectionSlug }) => localizedEntries(`/services/${slug}/${sectionSlug}`, 0.7)),
     ...aboutStories.map(story => ({
       url: absoluteUrl(`/about/stories/${story.slug}`),
       lastModified: new Date(story.date),

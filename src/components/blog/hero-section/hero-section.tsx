@@ -36,6 +36,7 @@ const HeroSection = ({
     emailPlaceholder: 'Your email',
     subscribe: 'Subscribe'
   }
+
   return (
     <section id='home' className='relative px-4 py-8 sm:px-6 sm:py-16 lg:px-8 lg:py-24'>
       <BackgroundRippleEffect rows={10} />

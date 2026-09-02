@@ -15,10 +15,11 @@ export const metadata: Metadata = buildMetadata({
   description,
   path: '/zh/blog',
   keywords: ['SaaS SEO', 'AI SaaS SEO', '出海 SEO', 'Reddit 营销', 'GEO'],
+  language: 'zh',
   alternates: {
     canonical: '/zh/blog',
     languages: {
-      'en-US': '/blog',
+      en: '/blog',
       'zh-CN': '/zh/blog',
       'x-default': '/blog'
     }
@@ -28,16 +29,17 @@ export const metadata: Metadata = buildMetadata({
 const BlogPageZh = async () => {
   const posts = await getPosts(undefined, 'zh')
   const featuredPosts = posts.filter(post => post.featured)
+
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
       {
-        ...createWebPageSchema({ path: '/zh/blog', title, description }),
+        ...createWebPageSchema({ path: '/zh/blog', title, description, language: 'zh' }),
         '@type': 'CollectionPage',
         inLanguage: 'zh-CN'
       },
       createOrganizationSchema(),
-      createWebsiteSchema()
+      createWebsiteSchema('zh')
     ]
   }
 

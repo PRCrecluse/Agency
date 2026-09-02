@@ -18,8 +18,8 @@ import { SecondaryFlowButton } from '@/components/ui/flow-button'
 
 import Logo from '@/components/logo'
 
-import type { QueryLang } from '@/lib/language'
-import { withQueryLang } from '@/lib/language'
+import type { SiteLang } from '@/lib/language'
+import { toLocalizedHref } from '@/lib/language'
 import { cn } from '@/lib/utils'
 
 type NavigationSection = {
@@ -74,6 +74,14 @@ const getSectionIdFromHref = (href: string) => {
 
 const getBasePathFromHref = (href: string) => href.split('#')[0]?.split('?')[0] ?? ''
 
+const normalizeLocalizedPath = (value?: string | null) => {
+  if (!value) return ''
+
+  const normalizedPath = value?.replace(/^\/zh(?=\/|$)/, '') ?? ''
+
+  return normalizedPath || '/'
+}
+
 const isHrefActive = ({
   href,
   activeSection,
@@ -86,14 +94,15 @@ const isHrefActive = ({
   activeMatch?: 'exact' | 'prefix'
 }) => {
   const sectionId = getSectionIdFromHref(href)
-  const basePath = getBasePathFromHref(href)
+  const basePath = normalizeLocalizedPath(getBasePathFromHref(href))
+  const currentPathname = normalizeLocalizedPath(pathname)
 
   if (sectionId) {
-    if (basePath && pathname !== basePath) {
+    if (basePath && currentPathname !== basePath) {
       return false
     }
 
-    return activeSection === sectionId || pathname === basePath
+    return activeSection === sectionId || currentPathname === basePath
   }
 
   if (!basePath || !pathname) {
@@ -101,10 +110,10 @@ const isHrefActive = ({
   }
 
   if (activeMatch === 'prefix') {
-    return pathname === basePath || pathname.startsWith(`${basePath}/`)
+    return currentPathname === basePath || currentPathname.startsWith(`${basePath}/`)
   }
 
-  return pathname === basePath
+  return currentPathname === basePath
 }
 
 const ListItem = (props: {
@@ -122,7 +131,7 @@ const ListItem = (props: {
   const { title, href, icon, badge, description, splitItems, activeSection, pathname, activeMatch, lang } = props
 
   const isActive = isHrefActive({ href, activeSection, pathname, activeMatch })
-  const localizedHref = withQueryLang(href, lang)
+  const localizedHref = toLocalizedHref(href, lang)
 
   return (
     <li className={cn({ 'min-h-19.5': description && splitItems })}>
@@ -167,7 +176,7 @@ const HeaderNavigation = ({
   navigationData,
   navigationClassName
 }: {
-  currentLang: QueryLang
+  currentLang: SiteLang
   navigationData: Navigation[]
   navigationClassName?: string
 }) => {
@@ -228,11 +237,14 @@ const HeaderNavigation = ({
   const activeSection = useActiveSection(sectionIds)
 
   useEffect(() => {
+<<<<<<< HEAD
     // eslint-disable-next-line react-hooks/set-state-in-effect
     setOpenDropdown(null)
   }, [pathname, lang])
 
   useEffect(() => {
+=======
+>>>>>>> 85b786cf987cc8b56da604c53a8b869eabbc3436
     return () => {
       clearCloseTimeout()
     }
@@ -268,8 +280,12 @@ const HeaderNavigation = ({
         {navigationData.map(navItem => {
           if (navItem.href) {
             const isActive = isHrefActive({ href: navItem.href, activeSection, pathname, activeMatch: navItem.activeMatch })
+<<<<<<< HEAD
 
             const localizedHref = withQueryLang(navItem.href, lang)
+=======
+            const localizedHref = toLocalizedHref(navItem.href, lang)
+>>>>>>> 85b786cf987cc8b56da604c53a8b869eabbc3436
 
             return (
               <li key={navItem.title}>
@@ -447,7 +463,7 @@ const HeaderNavigationSmallScreen = ({
   triggerClassName,
   screenSize = 1023
 }: {
-  currentLang: QueryLang
+  currentLang: SiteLang
   navigationData: Navigation[]
   triggerClassName?: string
   screenSize?: number
@@ -524,7 +540,7 @@ const HeaderNavigationSmallScreen = ({
               return (
                 <Link
                   key={navItem.title}
-                  href={withQueryLang(navItem.href, lang)}
+                  href={toLocalizedHref(navItem.href, lang)}
                   data-active={isActive}
                   className='hover:bg-accent data-[active=true]:bg-accent flex items-center gap-2 rounded-sm px-3 py-2 text-sm data-[active=true]:font-medium'
                   onClick={handleLinkClick}
@@ -583,7 +599,7 @@ const HeaderNavigationSmallScreen = ({
                                 return (
                                   <Link
                                     key={j}
-                                    href={withQueryLang(subItem.href, lang)}
+                                    href={toLocalizedHref(subItem.href, lang)}
                                     data-active={isActive}
                                     className='hover:bg-accent data-[active=true]:text-primary ml-4.5 flex items-center gap-2 rounded-sm px-3 py-2 text-sm data-[active=true]:font-medium'
                                     onClick={handleLinkClick}
@@ -608,7 +624,7 @@ const HeaderNavigationSmallScreen = ({
                         return (
                           <Link
                             key={item.title}
-                            href={withQueryLang(item.href, lang)}
+                            href={toLocalizedHref(item.href, lang)}
                             data-active={isActive}
                             className='hover:bg-accent data-[active=true]:text-primary ml-3 flex items-center gap-2 rounded-sm px-3 py-2 text-sm data-[active=true]:font-medium'
                             onClick={handleLinkClick}

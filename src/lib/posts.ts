@@ -2,6 +2,7 @@ import fs from 'fs' // Comment this line if using remote fetching
 import path from 'path' // Comment this line if using remote fetching
 
 import matter from 'gray-matter'
+
 import { getBlogTopicLabel, normalizeBlogTopic, type BlogTopicId } from '@/lib/blog-topics'
 
 export type Post = {
@@ -113,6 +114,13 @@ export async function getPosts(limit?: number, locale: PostLocale = 'en'): Promi
 
     return []
   }
+}
+
+export async function getTranslatedPostSlugs() {
+  const [englishPosts, chinesePosts] = await Promise.all([getPosts(undefined, 'en'), getPosts(undefined, 'zh')])
+  const chineseSlugs = new Set(chinesePosts.map(post => post.slug))
+
+  return englishPosts.map(post => post.slug).filter(slug => chineseSlugs.has(slug))
 }
 
 export async function getPostMetadata(filepath: string, locale: PostLocale = 'en'): Promise<PostMetadata> {

@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: '/blog',
     languages: {
-      'en-US': '/blog',
+      en: '/blog',
       'zh-CN': '/zh/blog',
       'x-default': '/blog'
     }
@@ -55,7 +55,11 @@ const BlogPage = async () => {
 
       <BlogSection posts={blogPosts} />
 
-      <CTASection />
+      <CTASection
+        title='Turn Organic Growth Research Into Your Next Move'
+        description='Talk with Meridian about the SEO, Reddit, or AI-discovery opportunity that matters most for your current stage.'
+        buttonLabel='Discuss your growth strategy'
+      />
 
       {/* Add JSON-LD to your page */}
       <script

@@ -46,6 +46,7 @@ function contentAsset(keyword, cluster) {
   if (cluster === 'reddit-ads-guides') return 'Reddit Ads 与 Organic Marketing 内容集群'
   if (cluster === 'reddit-brand-and-geo-guides') return 'Reddit SEO、品牌监测与 AI Search 内容集群'
   if (cluster === 'reddit-native-marketing-guides') return '原生社区营销指南或现有文章支持段落'
+
   return 'Reddit Marketing 指南内容集群'
 }
 
@@ -54,6 +55,7 @@ function priority(row) {
   if (p1.has(row.keyword)) return 'P1'
   if ((row.searchVolume ?? 0) >= 50) return 'P2'
   if ((row.searchVolume ?? 0) > 0) return 'P3'
+
   return '语义支持'
 }
 
@@ -63,12 +65,14 @@ function note(row) {
   if (row.cluster_id === 'reddit-community-management' && (row.searchVolume ?? 0) === 0) return '不单独建页；仅在正文、FAQ 或交付说明中自然覆盖'
   if (row.cluster_id === 'reddit-native-marketing-guides' && (row.searchVolume ?? 0) === 0) return '无可测搜索量；作为语义和用户表达支持，不独立建页'
   if (row.cluster_id === 'reddit-ban-and-compliance-guides') return '内容必须聚焦守规、透明参与和正常申诉，不提供规避检测方法'
+
   return ''
 }
 
 const rows = raw.records.map(record => {
   const data = record.response?.data ?? {}
   const row = { ...record, ...data }
+
   return {
     priority: priority(row),
     keyword: row.keyword,
@@ -86,12 +90,14 @@ const rows = raw.records.map(record => {
   }
 }).sort((a, b) => {
   const order = { P1: 0, P2: 1, P3: 2, '语义支持': 3, '排除/谨慎': 4 }
+
   return order[a.priority] - order[b.priority] || (b.us_monthly_volume || 0) - (a.us_monthly_volume || 0) || a.keyword.localeCompare(b.keyword)
 })
 
 const headers = Object.keys(rows[0])
 const escape = value => `"${String(value).replaceAll('"', '""')}"`
 const csv = [headers.map(escape).join(','), ...rows.map(row => headers.map(header => escape(row[header])).join(','))].join('\n') + '\n'
+
 await fs.writeFile(path.join(root, 'reddit_keyword_master_table_us.csv'), '\uFEFF' + csv)
 
 console.log(`Wrote ${rows.length} rows to reddit_keyword_master_table_us.csv`)

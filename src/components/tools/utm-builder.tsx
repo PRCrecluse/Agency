@@ -2,7 +2,6 @@
 
 import { useMemo, useState, type FormEvent } from 'react'
 
-import { useSearchParams } from 'next/navigation'
 import {
   ArrowUpRightIcon,
   Building2Icon,
@@ -25,6 +24,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { cn } from '@/lib/utils'
+import type { SiteLang } from '@/lib/language'
 
 type FieldKey = 'source' | 'medium' | 'campaign' | 'term' | 'content' | 'id'
 
@@ -205,6 +205,7 @@ function buildUrl(destination: string, fields: Record<FieldKey, string>) {
   }
 }
 
+<<<<<<< HEAD
 interface UtmBuilderProps {
   initialAccessGranted: boolean
 }
@@ -212,6 +213,9 @@ interface UtmBuilderProps {
 const UtmBuilder = ({ initialAccessGranted }: UtmBuilderProps) => {
   const searchParams = useSearchParams()
   const lang = searchParams.get('lang')?.toLowerCase().startsWith('zh') ? 'zh' : 'en'
+=======
+const UtmBuilder = ({ lang }: { lang: SiteLang }) => {
+>>>>>>> 85b786cf987cc8b56da604c53a8b869eabbc3436
   const copy = COPY[lang]
   const [destination, setDestination] = useState('')
   const [fields, setFields] = useState<Record<FieldKey, string>>(EMPTY_FIELDS)

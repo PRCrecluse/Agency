@@ -1,5 +1,7 @@
 import type { Metadata } from 'next'
 
+import { getLanguageTag, getLocalizedPath, type SiteLang } from '@/lib/language'
+
 const PRODUCTION_SITE_URL = 'https://withmeridian.org'
 
 const normalizeSiteUrl = (value: string) => value.trim().replace(/\/+$/, '')
@@ -51,15 +53,14 @@ export const socialProfiles = [
 
 export const absoluteUrl = (path = '/') => new URL(path, `${siteUrl}/`).toString()
 
-export const createLocalizedAlternates = (path: string, language?: string): Metadata['alternates'] => {
+export const createLocalizedAlternates = (path: string, language: SiteLang = 'en'): Metadata['alternates'] => {
   const englishPath = path.replace(/^\/zh(?=\/|$)/, '') || '/'
   const chinesePath = englishPath === '/' ? '/zh' : `/zh${englishPath}`
-  const isChinese = language?.toLowerCase().startsWith('zh')
 
   return {
-    canonical: isChinese ? chinesePath : englishPath,
+    canonical: language === 'zh' ? chinesePath : englishPath,
     languages: {
-      'en-US': englishPath,
+      en: englishPath,
       'zh-CN': chinesePath,
       'x-default': englishPath
     }
@@ -78,13 +79,15 @@ export const buildMetadata = ({
   description,
   path,
   keywords,
-  alternates
+  alternates,
+  language = 'en'
 }: {
   title: string
   description: string
   path: string
   keywords?: string[]
   alternates?: Metadata['alternates']
+  language?: SiteLang
 }): Metadata => ({
   title,
   description,
@@ -98,6 +101,7 @@ export const buildMetadata = ({
     url: absoluteUrl(path),
     type: 'website',
     siteName,
+    locale: language === 'zh' ? 'zh_CN' : 'en_US',
     images: [defaultOgImage]
   },
   twitter: {
@@ -132,23 +136,25 @@ export const createOrganizationSchema = () => ({
   areaServed: 'Worldwide'
 })
 
-export const createWebsiteSchema = () => ({
+export const createWebsiteSchema = (language: SiteLang = 'en') => ({
   '@type': 'WebSite',
   '@id': absoluteUrl('/#website'),
   name: siteName,
   url: siteUrl,
   description: siteDescription,
-  inLanguage: 'en-US'
+  inLanguage: getLanguageTag(language)
 })
 
 export const createWebPageSchema = ({
   path,
   title,
-  description
+  description,
+  language = 'en'
 }: {
   path: string
   title: string
   description: string
+  language?: SiteLang
 }) => ({
   '@type': 'WebPage',
   '@id': absoluteUrl(`${path}#webpage`),
@@ -158,21 +164,23 @@ export const createWebPageSchema = ({
   isPartOf: {
     '@id': absoluteUrl('/#website')
   },
-  inLanguage: 'en-US'
+  inLanguage: getLanguageTag(language)
 })
 
 export const createBreadcrumbSchema = (
   items: Array<{
     name: string
     path: string
-  }>
+  }>,
+  language: SiteLang = 'en'
 ) => ({
   '@type': 'BreadcrumbList',
+  inLanguage: getLanguageTag(language),
   itemListElement: items.map((item, index) => ({
     '@type': 'ListItem',
     position: index + 1,
     name: item.name,
-    item: absoluteUrl(item.path)
+    item: absoluteUrl(getLocalizedPath(item.path, language))
   }))
 })
 

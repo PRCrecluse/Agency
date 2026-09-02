@@ -5,7 +5,7 @@ import { Suspense, useEffect, useState } from 'react'
 import { ArrowUpRightIcon, ExternalLinkIcon } from 'lucide-react'
 
 import Link from 'next/link'
-import { usePathname, useSearchParams } from 'next/navigation'
+import { usePathname } from 'next/navigation'
 
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip'
 import { PrimaryFlowButton } from '@/components/ui/flow-button'
@@ -16,12 +16,12 @@ import { HeaderNavigation, HeaderNavigationSmallScreen, type Navigation } from '
 
 import FlowLogo from '@/assets/svg/flow-logo'
 
-import type { QueryLang } from '@/lib/language'
-import { getQueryLang, withQueryLang } from '@/lib/language'
+import { getPathLanguage, toLocalizedHref } from '@/lib/language'
 import { cn } from '@/lib/utils'
 
 type HeaderProps = {
   navigationData: Navigation[]
+  translatedBlogSlugs: string[]
   className?: string
 }
 
@@ -29,11 +29,10 @@ const DesktopNavigationFallback = () => <div aria-hidden='true' className='hidde
 
 const HeaderActionFallback = ({ className = '' }: { className?: string }) => <div aria-hidden='true' className={className} />
 
-const Header = ({ navigationData, className }: HeaderProps) => {
+const Header = ({ navigationData, translatedBlogSlugs, className }: HeaderProps) => {
   const [isScrolled, setIsScrolled] = useState(false)
   const pathname = usePathname()
-  const searchParams = useSearchParams()
-  const currentLang: QueryLang = pathname.startsWith('/zh/') ? 'zh' : getQueryLang(searchParams.get('lang'))
+  const currentLang = getPathLanguage(pathname)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -60,7 +59,7 @@ const Header = ({ navigationData, className }: HeaderProps) => {
     >
       <div className='flex h-full items-center justify-between gap-4 border-b px-4 sm:px-6 lg:px-8'>
         {/* Logo */}
-        <Link href={withQueryLang('/#home', currentLang)}>
+        <Link href={toLocalizedHref('/#home', currentLang)}>
           <div className='flex items-center gap-3'>
             <FlowLogo className='size-8' />
             <span className='text-xl font-semibold max-[430px]:hidden'>Meridian</span>
@@ -70,6 +69,7 @@ const Header = ({ navigationData, className }: HeaderProps) => {
         {/* Navigation */}
         <Suspense fallback={<DesktopNavigationFallback />}>
           <HeaderNavigation
+            key={`${pathname}:${currentLang}`}
             currentLang={currentLang}
             navigationData={navigationData}
             navigationClassName='[&_[data-slot="navigation-menu-list"]]:gap-1'
@@ -79,7 +79,7 @@ const Header = ({ navigationData, className }: HeaderProps) => {
         {/* Actions */}
         <div className='flex items-center gap-2 sm:gap-4'>
           <Suspense fallback={<HeaderActionFallback className='h-10 w-[93px] rounded-lg border bg-background/80' />}>
-            <LanguageToggle />
+            <LanguageToggle translatedBlogSlugs={translatedBlogSlugs} />
           </Suspense>
           <ModeToggle />
 
