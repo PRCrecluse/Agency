@@ -35,6 +35,14 @@ const sitemapRoutes = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)]
   .map(match => new URL(match[1]).pathname)
   .filter(path => /^\/(?:zh\/)?(?:services|blog|utm-builder)(?:\/|$)/.test(path))
 
+const localizedSitemapRoutes = new Set(
+  [...sitemap.matchAll(/<url>([\s\S]*?)<\/url>/g)]
+    .filter(match => match[1].includes('hreflang='))
+    .map(match => match[1].match(/<loc>([^<]+)<\/loc>/)?.[1])
+    .filter(Boolean)
+    .map(url => new URL(url).pathname)
+)
+
 const routes = [...new Set([...smokeRoutes, ...sitemapRoutes])]
 
 const getTagAttributes = (html, tagPattern) => {
@@ -74,12 +82,19 @@ for (const route of routes) {
   )
 
   const expectedCanonical = canonicalUrl(route)
+  const expectsLanguageAlternates = localizedSitemapRoutes.has(route)
 
   if (htmlLang !== expectedLanguage(route)) fail(`${route}: html lang is ${htmlLang || 'missing'}`)
   if (canonical !== expectedCanonical) fail(`${route}: canonical is ${canonical || 'missing'}`)
-  if (hreflang.en !== canonicalUrl(englishPath(route))) fail(`${route}: English hreflang is missing or incorrect`)
-  if (hreflang['zh-CN'] !== canonicalUrl(chinesePath(route))) fail(`${route}: Chinese hreflang is missing or incorrect`)
-  if (hreflang['x-default'] !== canonicalUrl(englishPath(route))) fail(`${route}: x-default hreflang is missing or incorrect`)
+
+  if (expectsLanguageAlternates) {
+    if (hreflang.en !== canonicalUrl(englishPath(route))) fail(`${route}: English hreflang is missing or incorrect`)
+    if (hreflang['zh-CN'] !== canonicalUrl(chinesePath(route))) fail(`${route}: Chinese hreflang is missing or incorrect`)
+    if (hreflang['x-default'] !== canonicalUrl(englishPath(route))) fail(`${route}: x-default hreflang is missing or incorrect`)
+  } else if (Object.keys(hreflang).some(Boolean)) {
+    fail(`${route}: unexpected hreflang on an unpaired page`)
+  }
+
   if (readAttribute(tags['og:url'], 'content') !== expectedCanonical) fail(`${route}: og:url is missing or incorrect`)
 
   if (readAttribute(tags['og:locale'], 'content') !== (route.startsWith('/zh/') ? 'zh_CN' : 'en_US')) {
