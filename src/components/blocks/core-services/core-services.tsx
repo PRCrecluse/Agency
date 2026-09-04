@@ -32,20 +32,9 @@ const services = [
 
 const CoreServices = () => {
   return (
-    <section aria-labelledby='core-services-title' className='px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20'>
+    <section aria-label='Core services' className='px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20'>
       <div className='mx-auto w-full max-w-7xl'>
-        <div className='mx-auto max-w-3xl space-y-4 text-center'>
-          <p className='text-primary text-sm font-medium tracking-[0.2em] uppercase'>Core services</p>
-          <h2 id='core-services-title' className='text-3xl font-semibold tracking-tight sm:text-4xl'>
-            Three Organic Growth Systems, One Clear Path to Demand
-          </h2>
-          <p className='text-muted-foreground text-base leading-7 sm:text-lg'>
-            Start with the channel closest to your current growth constraint, then connect the work across search,
-            communities, and AI discovery.
-          </p>
-        </div>
-
-        <div className='mt-10 grid gap-5 lg:grid-cols-3'>
+        <div className='grid gap-5 lg:grid-cols-3'>
           {services.map(service => {
             const Icon = service.icon
 
@@ -56,7 +45,7 @@ const CoreServices = () => {
                     <Icon className='size-5' aria-hidden='true' />
                   </div>
                   <div className='space-y-3'>
-                    <h3 className='text-2xl font-semibold'>{service.title}</h3>
+                    <h2 className='text-2xl font-semibold'>{service.title}</h2>
                     <p className='text-muted-foreground text-sm leading-6 sm:text-base'>{service.description}</p>
                   </div>
                   <Link
