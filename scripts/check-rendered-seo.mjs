@@ -100,6 +100,7 @@ try {
   await waitForServer()
   await runCheck('check-language-signals.mjs')
   await runCheck('check-on-page-seo.mjs')
+  await runCheck('check-service-hierarchy.mjs')
   console.log('Rendered SEO checks passed against the local production server.')
 } catch (error) {
   console.error(error instanceof Error ? error.message : String(error))

@@ -18,11 +18,14 @@ import CTASection from '@/components/blocks/cta/cta'
 import FAQ from '@/components/blocks/faq/faq'
 import TrustedBrands from '@/components/blocks/trusted-brands/trusted-brands'
 import SectionSeparator from '@/components/section-separator'
+import ServiceBreadcrumbs from '@/components/services/service-breadcrumbs'
+import ServiceLinksSection from '@/components/services/service-links-section'
 import { Badge } from '@/components/ui/badge'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { PrimaryFlowButton, SecondaryFlowButton } from '@/components/ui/flow-button'
 import type { SpecializedServiceLang, SpecializedServicePageContent } from '@/content/specialized-service-pages'
-import { absoluteUrl, createFAQSchema, createWebPageSchema } from '@/lib/seo'
+import { getServiceBreadcrumbItems } from '@/content/service-navigation'
+import { absoluteUrl, createBreadcrumbSchema, createFAQSchema, createWebPageSchema } from '@/lib/seo'
 
 const moduleIcons = [SearchIcon, Layers3Icon, SparklesIcon, WrenchIcon, FileSearchIcon]
 const processIcons = [TargetIcon, SearchIcon, ListChecksIcon, MessageSquareMoreIcon, SparklesIcon]
@@ -45,6 +48,7 @@ const SpecializedServicePage = ({ lang, path, copy }: SpecializedServicePageProp
           language: lang
         })
       },
+      createBreadcrumbSchema(getServiceBreadcrumbItems(path, lang), lang),
       {
         '@type': 'Service',
         name: copy.hero.title,
@@ -68,6 +72,7 @@ const SpecializedServicePage = ({ lang, path, copy }: SpecializedServicePageProp
         <div className='bg-secondary/16 absolute top-10 -right-28 size-96 rounded-full blur-3xl' />
 
         <div className='relative mx-auto flex w-full max-w-7xl flex-col items-center text-center'>
+          <ServiceBreadcrumbs path={path} lang={lang} className='mb-8 self-start' />
           <Badge variant='outline' className='h-auto px-3 py-1 text-sm font-normal'>
             {copy.hero.badge}
           </Badge>
@@ -267,7 +272,10 @@ const SpecializedServicePage = ({ lang, path, copy }: SpecializedServicePageProp
             <CardContent className='space-y-4'>
               <div className='grid gap-3'>
                 {copy.deliverables.summaryPoints.map(point => (
-                  <div key={point} className='bg-background/80 flex items-start gap-3 rounded-xl border p-4 text-sm leading-6'>
+                  <div
+                    key={point}
+                    className='bg-background/80 flex items-start gap-3 rounded-xl border p-4 text-sm leading-6'
+                  >
                     <CheckCircle2Icon className='text-primary mt-1 size-4 shrink-0' />
                     {point}
                   </div>
@@ -313,6 +321,8 @@ const SpecializedServicePage = ({ lang, path, copy }: SpecializedServicePageProp
         title={copy.faq.title}
         description={copy.faq.description}
       />
+
+      <ServiceLinksSection currentPath={path} lang={lang} />
 
       <CTASection
         title={

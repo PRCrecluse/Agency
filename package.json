@@ -20,6 +20,7 @@
     "seo:lang:check": "node scripts/check-language-signals.mjs",
     "seo:onpage:check": "node scripts/check-on-page-seo.mjs",
     "seo:rendered:check": "node scripts/check-rendered-seo.mjs",
+    "seo:service-tree:check": "node scripts/check-service-hierarchy.mjs",
     "seo:sitemap:check": "node scripts/check-sitemap.mjs",
     "seo:url-policy:check": "node scripts/check-url-policy.mjs"
   },

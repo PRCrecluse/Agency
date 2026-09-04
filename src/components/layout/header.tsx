@@ -16,23 +16,25 @@ import { HeaderNavigation, HeaderNavigationSmallScreen, type Navigation } from '
 
 import FlowLogo from '@/assets/svg/flow-logo'
 
-import { getPathLanguage, toLocalizedHref } from '@/lib/language'
+import { toLocalizedHref, type SiteLang } from '@/lib/language'
 import { cn } from '@/lib/utils'
 
 type HeaderProps = {
   navigationData: Navigation[]
   translatedBlogSlugs: string[]
+  currentLang: SiteLang
   className?: string
 }
 
 const DesktopNavigationFallback = () => <div aria-hidden='true' className='hidden h-10 w-[22rem] lg:block' />
 
-const HeaderActionFallback = ({ className = '' }: { className?: string }) => <div aria-hidden='true' className={className} />
+const HeaderActionFallback = ({ className = '' }: { className?: string }) => (
+  <div aria-hidden='true' className={className} />
+)
 
-const Header = ({ navigationData, translatedBlogSlugs, className }: HeaderProps) => {
+const Header = ({ navigationData, translatedBlogSlugs, currentLang, className }: HeaderProps) => {
   const [isScrolled, setIsScrolled] = useState(false)
   const pathname = usePathname()
-  const currentLang = getPathLanguage(pathname)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -78,8 +80,8 @@ const Header = ({ navigationData, translatedBlogSlugs, className }: HeaderProps)
 
         {/* Actions */}
         <div className='flex items-center gap-2 sm:gap-4'>
-          <Suspense fallback={<HeaderActionFallback className='h-10 w-[93px] rounded-lg border bg-background/80' />}>
-            <LanguageToggle translatedBlogSlugs={translatedBlogSlugs} />
+          <Suspense fallback={<HeaderActionFallback className='bg-background/80 h-10 w-[93px] rounded-lg border' />}>
+            <LanguageToggle translatedBlogSlugs={translatedBlogSlugs} currentLang={currentLang} />
           </Suspense>
           <ModeToggle />
 
@@ -92,7 +94,10 @@ const Header = ({ navigationData, translatedBlogSlugs, className }: HeaderProps)
 
           <Tooltip>
             <TooltipTrigger asChild>
-              <PrimaryFlowButton className='sm:hidden [&_[data-slot=button]]:size-10 [&_[data-slot=button]]:px-0' asChild>
+              <PrimaryFlowButton
+                className='sm:hidden [&_[data-slot=button]]:size-10 [&_[data-slot=button]]:px-0'
+                asChild
+              >
                 <Link href='https://cal.com/team/meridian-growth' target='_blank' rel='noreferrer'>
                   <ExternalLinkIcon />
                   <span className='sr-only'>Book a call</span>

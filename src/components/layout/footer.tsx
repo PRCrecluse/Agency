@@ -1,14 +1,11 @@
-'use client'
-
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
 
 import TwitterIcon from '@/assets/svg/twitter-icon'
 import YoutubeIcon from '@/assets/svg/youtube-icon'
 import Logo from '@/components/logo'
 import SectionSeparator from '@/components/section-separator'
 import { Separator } from '@/components/ui/separator'
-import { getPathLanguage, toLocalizedHref } from '@/lib/language'
+import { toLocalizedHref, type SiteLang } from '@/lib/language'
 
 const footerCopy = {
   en: {
@@ -51,8 +48,7 @@ const footerCopy = {
   }
 } as const
 
-const Footer = () => {
-  const lang = getPathLanguage(usePathname())
+const Footer = ({ lang }: { lang: SiteLang }) => {
   const copy = footerCopy[lang]
   const localizedHref = (href: string) => toLocalizedHref(href, lang)
 
@@ -99,7 +95,10 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link href={localizedHref('/services')} className='hover:text-foreground transition-colors duration-300'>
+                <Link
+                  href={localizedHref('/services')}
+                  className='hover:text-foreground transition-colors duration-300'
+                >
                   {copy.services}
                 </Link>
               </li>

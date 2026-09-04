@@ -7,14 +7,20 @@ import { usePathname, useSearchParams } from 'next/navigation'
 
 import { cn } from '@/lib/utils'
 import type { SiteLang } from '@/lib/language'
-import { getLanguageAlternateHref, getPathLanguage } from '@/lib/language'
+import { getLanguageAlternateHref } from '@/lib/language'
 
 const languageOptions: { value: SiteLang; label: string; shortLabel: string }[] = [
   { value: 'en', label: 'English', shortLabel: 'EN' },
   { value: 'zh', label: '中文', shortLabel: '中' }
 ]
 
-const LanguageToggle = ({ translatedBlogSlugs }: { translatedBlogSlugs: string[] }) => {
+const LanguageToggle = ({
+  translatedBlogSlugs,
+  currentLang
+}: {
+  translatedBlogSlugs: string[]
+  currentLang: SiteLang
+}) => {
   const pathname = usePathname()
   const searchParams = useSearchParams()
   const containerRef = useRef<HTMLDivElement>(null)
@@ -22,7 +28,6 @@ const LanguageToggle = ({ translatedBlogSlugs }: { translatedBlogSlugs: string[]
   const [open, setOpen] = useState(false)
   const search = searchParams.toString()
   const currentHref = `${pathname}${search ? `?${search}` : ''}${hash}`
-  const currentLang = getPathLanguage(pathname)
   const translatedSlugs = new Set(translatedBlogSlugs)
   const alternateHref = getLanguageAlternateHref(currentHref, currentLang === 'zh' ? 'en' : 'zh', translatedSlugs)
 
@@ -84,7 +89,7 @@ const LanguageToggle = ({ translatedBlogSlugs }: { translatedBlogSlugs: string[]
         aria-expanded={open}
         aria-haspopup='menu'
         onClick={() => setOpen(previousOpen => !previousOpen)}
-        className='flex h-10 items-center gap-2 rounded-lg border bg-background/80 px-3 text-sm font-medium backdrop-blur-sm transition-colors hover:bg-background'
+        className='bg-background/80 hover:bg-background flex h-10 items-center gap-2 rounded-lg border px-3 text-sm font-medium backdrop-blur-sm transition-colors'
       >
         <LanguagesIcon className='text-muted-foreground size-4' />
         <span>{languageOptions.find(option => option.value === currentLang)?.shortLabel ?? 'EN'}</span>
@@ -93,7 +98,7 @@ const LanguageToggle = ({ translatedBlogSlugs }: { translatedBlogSlugs: string[]
       </button>
 
       {open ? (
-        <div className='absolute right-0 top-full z-50 mt-2 min-w-36 rounded-xl border bg-background/95 p-1 shadow-lg backdrop-blur-sm'>
+        <div className='bg-background/95 absolute top-full right-0 z-50 mt-2 min-w-36 rounded-xl border p-1 shadow-lg backdrop-blur-sm'>
           {languageOptions.map(option => (
             <button
               key={option.value}
@@ -102,7 +107,9 @@ const LanguageToggle = ({ translatedBlogSlugs }: { translatedBlogSlugs: string[]
               onClick={() => handleLanguageChange(option.value)}
               className={cn(
                 'flex w-full items-center justify-between rounded-lg px-3 py-2 text-sm transition-colors',
-                option.value === currentLang ? 'bg-primary/10 text-foreground' : 'text-muted-foreground hover:bg-accent hover:text-foreground'
+                option.value === currentLang
+                  ? 'bg-primary/10 text-foreground'
+                  : 'text-muted-foreground hover:bg-accent hover:text-foreground'
               )}
             >
               <span>{option.label}</span>

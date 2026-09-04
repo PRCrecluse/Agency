@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 
 import Hero from '@/components/blocks/hero-section/hero-section'
+import CoreServices from '@/components/blocks/core-services/core-services'
 import TrustedBrands from '@/components/blocks/trusted-brands/trusted-brands'
 import Features from '@/components/blocks/features/features'
 import Testimonials from '@/components/blocks/testimonials/testimonials'
@@ -23,9 +24,9 @@ import {
 export const metadata: Metadata = buildMetadata({
   title: 'AI Growth Agency for SaaS Companies | Meridian',
   description:
-    'Meridian helps SaaS and AI companies grow organic demand through technical SEO, programmatic SEO, Reddit strategy, GEO, and AI-native content systems.',
+    'Meridian helps SaaS and AI companies build organic demand through B2B SaaS SEO, Reddit marketing, AI SEO, GEO, and AI-native content systems.',
   path: '/',
-  keywords: ['ai growth agency', 'saas seo', 'reddit growth', 'geo services', 'programmatic seo']
+  keywords: ['ai growth agency', 'b2b saas seo agency', 'reddit marketing services', 'ai seo services', 'geo services']
 })
 
 const jsonLd = {
@@ -37,7 +38,7 @@ const jsonLd = {
       path: '/',
       title: 'AI Growth Agency for SaaS Companies | Meridian',
       description:
-        'Meridian helps SaaS and AI companies grow organic demand through technical SEO, programmatic SEO, Reddit strategy, GEO, and AI-native content systems.'
+        'Meridian helps SaaS and AI companies build organic demand through B2B SaaS SEO, Reddit marketing, AI SEO, GEO, and AI-native content systems.'
     }),
     createFAQSchema(faqItems)
   ]
@@ -47,6 +48,10 @@ const Home = () => {
   return (
     <>
       <Hero />
+
+      <SectionSeparator />
+
+      <CoreServices />
 
       <SectionSeparator />
 
