@@ -169,13 +169,22 @@ const ServiceDetailPage = async ({ params }: { params: Promise<{ slug: string }>
         <div className='mx-auto flex w-full max-w-7xl justify-center'>
           <div className='flex max-w-4xl flex-col items-center gap-6 text-center'>
             <ServiceBreadcrumbs path={path} lang={lang} className='mb-1 self-start' />
+            <Badge variant='outline' className='h-auto px-3 py-1 text-sm font-normal'>
+              {resolveLocalizedText(service.category, lang)}
+            </Badge>
             <h1 className='text-4xl font-semibold tracking-tight sm:text-5xl lg:text-6xl'>
               {resolveLocalizedText(service.title, lang)}
             </h1>
+            <p className='text-muted-foreground max-w-3xl text-lg leading-8 text-pretty'>
+              {resolveLocalizedText(service.description, lang)}
+            </p>
+            <p className='text-muted-foreground max-w-3xl text-sm leading-6 text-pretty sm:text-base'>
+              {resolveLocalizedText(service.intro, lang)}
+            </p>
             <div className='flex flex-wrap gap-4'>
               <PrimaryFlowButton asChild>
                 <Link href='https://cal.com/team/meridian-growth' target='_blank' rel='noreferrer'>
-                  {copy.bookCall}
+                  {service.primaryCta ? resolveLocalizedText(service.primaryCta, lang) : copy.bookCall}
                   <ArrowRightIcon />
                 </Link>
               </PrimaryFlowButton>
