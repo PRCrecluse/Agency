@@ -2,7 +2,6 @@
 
 import { CheckCircle2Icon } from 'lucide-react'
 
-import { Badge } from '@/components/ui/badge'
 import { resolveLocalizedText, type ServiceLang, type ServiceSection } from '@/content/services'
 import type { servicePageCopy } from '@/content/services'
 import { cn } from '@/lib/utils'
@@ -31,11 +30,8 @@ const DeliveryTable = ({ sections, lang, copy, compact = false }: DeliveryTableP
             <tr key={section.id} className='border-t align-top'>
               <td className='px-6 py-5 text-sm font-medium text-muted-foreground'>{String(index + 1).padStart(2, '0')}</td>
               <td className='px-6 py-5'>
-                <div id={section.id} className='scroll-mt-28 space-y-2'>
+                <div id={section.id} className='scroll-mt-28'>
                   <p className='text-base font-semibold'>{resolveLocalizedText(section.title, lang)}</p>
-                  <Badge variant='outline' className='h-auto rounded-md px-3 py-1 text-xs font-normal'>
-                    {section.id}
-                  </Badge>
                 </div>
               </td>
               <td className='px-6 py-5 text-sm leading-6 text-muted-foreground'>{resolveLocalizedText(section.description, lang)}</td>

@@ -9,6 +9,14 @@ export function proxy(request: NextRequest, event: NextFetchEvent) {
     domain: DATAFAST_DOMAIN
   })
 
+  if (request.nextUrl.pathname === '/seo-prompts') {
+    const destination = request.nextUrl.clone()
+
+    destination.pathname = '/zh/seo-prompts'
+
+    return NextResponse.redirect(destination, 308)
+  }
+
   const requestHeaders = new Headers(request.headers)
 
   const isChinesePath =

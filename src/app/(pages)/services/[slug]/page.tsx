@@ -21,14 +21,32 @@ import FAQ from '@/components/blocks/faq/faq'
 import TrustedBrands from '@/components/blocks/trusted-brands/trusted-brands'
 import DeliveryTable from '@/components/services/delivery-table'
 import PackageSwitcher from '@/components/services/package-switcher'
+<<<<<<< HEAD
 import SubServiceCards from '@/components/services/sub-service-cards'
 import GeoMethodologyOverview from '@/components/services/geo-methodology-overview'
+=======
+import ServiceBreadcrumbs from '@/components/services/service-breadcrumbs'
+import ServiceLinksSection from '@/components/services/service-links-section'
+>>>>>>> 1ad43ef976d0576d0d6baf37e6b7382c002638a7
 import { PrimaryFlowButton, SecondaryFlowButton } from '@/components/ui/flow-button'
 import BookingLink from '@/components/analytics/booking-link'
 import SectionSeparator from '@/components/section-separator'
 import { logos } from '@/assets/data/trusted-brands'
-import { getServiceBySlug, resolveLocalizedText, servicePageCopy, serviceSlugs, type ServiceLang } from '@/content/services'
-import { absoluteUrl, buildMetadata, createBreadcrumbSchema, createLocalizedAlternates, createWebPageSchema } from '@/lib/seo'
+import {
+  getServiceBySlug,
+  resolveLocalizedText,
+  servicePageCopy,
+  serviceSlugs,
+  type ServiceLang
+} from '@/content/services'
+import { getServiceBreadcrumbItems } from '@/content/service-navigation'
+import {
+  absoluteUrl,
+  buildMetadata,
+  createBreadcrumbSchema,
+  createLocalizedAlternates,
+  createWebPageSchema
+} from '@/lib/seo'
 import { getLocalizedPath, toLocalizedHref } from '@/lib/language'
 import { getRequestLanguage } from '@/lib/request-language'
 import { cn } from '@/lib/utils'
@@ -78,11 +96,7 @@ export async function generateStaticParams() {
   return serviceSlugs.map(slug => ({ slug }))
 }
 
-export async function generateMetadata({
-  params
-}: {
-  params: Promise<{ slug: string }>
-}): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params
   const lang: ServiceLang = await getRequestLanguage()
   const service = getServiceBySlug(slug)
@@ -105,11 +119,7 @@ export async function generateMetadata({
 
 export const dynamicParams = false
 
-const ServiceDetailPage = async ({
-  params
-}: {
-  params: Promise<{ slug: string }>
-}) => {
+const ServiceDetailPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
   const { slug } = await params
   const lang: ServiceLang = await getRequestLanguage()
   const copy = servicePageCopy[lang]
@@ -144,11 +154,7 @@ const ServiceDetailPage = async ({
           language: lang
         })
       },
-      createBreadcrumbSchema([
-        { name: copy.home, path: '/' },
-        { name: copy.services, path: '/services' },
-        { name: resolveLocalizedText(service.title, lang), path: `/services/${service.slug}` }
-      ], lang),
+      createBreadcrumbSchema(getServiceBreadcrumbItems(path, lang), lang),
       {
         '@type': 'Service',
         name: resolveLocalizedText(service.title, lang),
@@ -168,9 +174,14 @@ const ServiceDetailPage = async ({
 
         <div className='mx-auto flex w-full max-w-7xl justify-center'>
           <div className='flex max-w-4xl flex-col items-center gap-6 text-center'>
+            <ServiceBreadcrumbs path={path} lang={lang} className='mb-1 self-start' />
+            <Badge variant='outline' className='h-auto px-3 py-1 text-sm font-normal'>
+              {resolveLocalizedText(service.category, lang)}
+            </Badge>
             <h1 className='text-4xl font-semibold tracking-tight sm:text-5xl lg:text-6xl'>
               {resolveLocalizedText(service.title, lang)}
             </h1>
+<<<<<<< HEAD
             {service.subServices?.length ? (
               <p className='text-muted-foreground max-w-3xl text-base leading-7 sm:text-lg'>
                 {lang === 'zh'
@@ -189,6 +200,18 @@ const ServiceDetailPage = async ({
                   rel='noreferrer'
                 >
                   {copy.bookCall}
+=======
+            <p className='text-muted-foreground max-w-3xl text-lg leading-8 text-pretty'>
+              {resolveLocalizedText(service.description, lang)}
+            </p>
+            <p className='text-muted-foreground max-w-3xl text-sm leading-6 text-pretty sm:text-base'>
+              {resolveLocalizedText(service.intro, lang)}
+            </p>
+            <div className='flex flex-wrap gap-4'>
+              <PrimaryFlowButton asChild>
+                <Link href='https://cal.com/team/meridian-growth' target='_blank' rel='noreferrer'>
+                  {service.primaryCta ? resolveLocalizedText(service.primaryCta, lang) : copy.bookCall}
+>>>>>>> 1ad43ef976d0576d0d6baf37e6b7382c002638a7
                   <ArrowRightIcon />
                 </BookingLink>
               </PrimaryFlowButton>
@@ -363,7 +386,7 @@ const ServiceDetailPage = async ({
                           </div>
                           <div className='space-y-3'>
                             <Badge variant='outline' className='h-auto px-3 py-1 text-xs font-normal'>
-                              {copy.step} {index + 1} · {section.id}
+                              {copy.tableWorkstream} {String(index + 1).padStart(2, '0')}
                             </Badge>
                             <div className='space-y-2'>
                               <CardTitle className='text-2xl sm:text-[1.75rem]'>
@@ -457,6 +480,8 @@ const ServiceDetailPage = async ({
           </section>
         </>
       ) : null}
+
+      <ServiceLinksSection currentPath={path} lang={lang} />
 
       {hasFaqSection ? (
         <>

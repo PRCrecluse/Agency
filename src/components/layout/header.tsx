@@ -24,6 +24,7 @@ type HeaderProps = {
   lang: SiteLang
   navigationData: Navigation[]
   translatedBlogSlugs: string[]
+  currentLang: SiteLang
   className?: string
 }
 
@@ -33,7 +34,11 @@ const HeaderActionFallback = ({ className = '' }: { className?: string }) => (
   <div aria-hidden='true' className={className} />
 )
 
+<<<<<<< HEAD
 const Header = ({ lang: currentLang, navigationData, translatedBlogSlugs, className }: HeaderProps) => {
+=======
+const Header = ({ navigationData, translatedBlogSlugs, currentLang, className }: HeaderProps) => {
+>>>>>>> 1ad43ef976d0576d0d6baf37e6b7382c002638a7
   const [isScrolled, setIsScrolled] = useState(false)
   const pathname = usePathname()
 
@@ -82,7 +87,11 @@ const Header = ({ lang: currentLang, navigationData, translatedBlogSlugs, classN
         {/* Actions */}
         <div className='flex items-center gap-2 sm:gap-4'>
           <Suspense fallback={<HeaderActionFallback className='bg-background/80 h-10 w-[93px] rounded-lg border' />}>
+<<<<<<< HEAD
             <LanguageToggle lang={currentLang} translatedBlogSlugs={translatedBlogSlugs} />
+=======
+            <LanguageToggle translatedBlogSlugs={translatedBlogSlugs} currentLang={currentLang} />
+>>>>>>> 1ad43ef976d0576d0d6baf37e6b7382c002638a7
           </Suspense>
           <ModeToggle lang={currentLang} />
 
@@ -95,6 +104,7 @@ const Header = ({ lang: currentLang, navigationData, translatedBlogSlugs, classN
 
           <Tooltip>
             <TooltipTrigger asChild>
+<<<<<<< HEAD
               <PrimaryFlowButton className='**:data-[slot=button]:size-10 **:data-[slot=button]:px-0 sm:hidden' asChild>
                 <BookingLink
                   className='size-10! p-0!'
@@ -103,6 +113,13 @@ const Header = ({ lang: currentLang, navigationData, translatedBlogSlugs, classN
                   target='_blank'
                   rel='noreferrer'
                 >
+=======
+              <PrimaryFlowButton
+                className='sm:hidden [&_[data-slot=button]]:size-10 [&_[data-slot=button]]:px-0'
+                asChild
+              >
+                <Link href='https://cal.com/team/meridian-growth' target='_blank' rel='noreferrer'>
+>>>>>>> 1ad43ef976d0576d0d6baf37e6b7382c002638a7
                   <ExternalLinkIcon />
                   <span className='sr-only'>{currentLang === 'zh' ? '预约咨询' : 'Book a call'}</span>
                 </BookingLink>

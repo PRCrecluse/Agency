@@ -8,13 +8,13 @@ import { ThemeProvider } from '@/components/theme-provider'
 import { TooltipProvider } from '@/components/ui/tooltip'
 import { DATAFAST_DOMAIN, DATAFAST_WEBSITE_ID } from '@/lib/analytics/datafast'
 
-import { defaultOgImage, siteDescription, siteKeywords, siteTitle, siteUrl } from '@/lib/seo'
+import { defaultOgImage, isProductionDeployment, siteDescription, siteKeywords, siteTitle, siteUrl } from '@/lib/seo'
 import './globals.css'
 
 export const metadata: Metadata = {
   title: siteTitle,
   description: siteDescription,
-  robots: 'index,follow',
+  robots: isProductionDeployment ? 'index,follow' : 'noindex,nofollow',
   applicationName: 'Meridian',
   keywords: siteKeywords,
   icons: {
@@ -78,6 +78,7 @@ const RootLayout = async ({ children }: Readonly<{ children: ReactNode }>) => {
   const pageLocale = (await headers()).get('x-page-locale') === 'zh-CN' ? 'zh-CN' : 'en'
 
   return (
+<<<<<<< HEAD
     <html
       lang={pageLocale}
       className='flex min-h-full w-full scroll-smooth antialiased'
@@ -88,6 +89,9 @@ const RootLayout = async ({ children }: Readonly<{ children: ReactNode }>) => {
           {`window.datafast=window.datafast||function(){window.datafast.q=window.datafast.q||[];window.datafast.q.push(arguments)}`}
         </Script>
       </head>
+=======
+    <html lang={pageLocale} className='flex min-h-full w-full scroll-smooth antialiased' suppressHydrationWarning>
+>>>>>>> 1ad43ef976d0576d0d6baf37e6b7382c002638a7
       <body className='flex min-h-full w-full flex-auto flex-col'>
         <ThemeProvider attribute='class' enableSystem={false} disableTransitionOnChange>
           <TooltipProvider>{children}</TooltipProvider>

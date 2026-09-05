@@ -320,11 +320,8 @@ const ServiceSectionDetailPage = async ({ params }: { params: Promise<{ slug: st
                           {String(index + 1).padStart(2, '0')}
                         </td>
                         <td className='px-6 py-5'>
-                          <div id={section.id} className='scroll-mt-28 space-y-2'>
+                          <div id={section.id} className='scroll-mt-28'>
                             <p className='text-base font-semibold'>{resolveLocalizedText(section.title, lang)}</p>
-                            <Badge variant='outline' className='h-auto px-3 py-1 text-xs font-normal'>
-                              {section.id}
-                            </Badge>
                           </div>
                         </td>
                         <td className='text-muted-foreground px-6 py-5 text-sm leading-6'>

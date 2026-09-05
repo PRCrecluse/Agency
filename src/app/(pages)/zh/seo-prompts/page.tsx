@@ -15,11 +15,14 @@ const title = '20 个可直接执行的 SEO 实战 Prompt | Meridian'
 const description =
   '免费使用 20 个可直接执行的 SEO Prompt，覆盖关键词研究、内容策略、技术 SEO、电商 SEO、外链与 GSC 数据诊断。'
 
+const canonicalPath = '/zh/seo-prompts'
+
 export const metadata: Metadata = buildMetadata({
   title,
   description,
-  path: '/seo-prompts',
-  keywords: ['SEO Prompt', 'SEO 提示词', 'SEO 实战', '关键词研究 Prompt', '技术 SEO 审计']
+  path: canonicalPath,
+  keywords: ['SEO Prompt', 'SEO 提示词', 'SEO 实战', '关键词研究 Prompt', '技术 SEO 审计'],
+  language: 'zh'
 })
 
 const evidenceRules = [
@@ -33,7 +36,7 @@ const jsonLd = {
   '@context': 'https://schema.org',
   '@graph': [
     {
-      ...createWebPageSchema({ path: '/seo-prompts', title, description }),
+      ...createWebPageSchema({ path: canonicalPath, title, description, language: 'zh' }),
       '@type': 'CollectionPage',
       inLanguage: 'zh-CN',
       mainEntity: {
@@ -44,7 +47,7 @@ const jsonLd = {
           position: index + 1,
           name: prompt.title,
           description: prompt.summary,
-          url: absoluteUrl('/seo-prompts')
+          url: absoluteUrl(canonicalPath)
         }))
       }
     },

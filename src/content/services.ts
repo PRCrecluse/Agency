@@ -33,6 +33,7 @@ export type ServicePage = {
   title: LocalizedText
   description: LocalizedText
   intro: LocalizedText
+  primaryCta?: LocalizedText
   keywords: LocalizedText[]
   highlights: LocalizedText[]
   serviceIncludes?: LocalizedText[]
@@ -50,6 +51,12 @@ export const resolveLocalizedText = (value: LocalizedText, lang: ServiceLang) =>
 
 export const servicePageCopy = {
   en: {
+    metadata: {
+      title: 'SEO, Reddit & GEO Services | Meridian',
+      description:
+        'Explore Meridian services across technical SEO, programmatic SEO, Reddit growth, GEO, and AI-native organic demand.',
+      keywords: ['seo services', 'reddit marketing services', 'geo services', 'technical seo agency']
+    },
     english: 'English',
     chinese: '中文',
     home: 'Home',
@@ -87,6 +94,11 @@ export const servicePageCopy = {
     viewPage: 'View page'
   },
   zh: {
+    metadata: {
+      title: 'SEO、Reddit 与 GEO 服务 | Meridian',
+      description: '了解 Meridian 的技术 SEO、程序化 SEO、Reddit 增长、GEO 与 AI 原生自然增长服务。',
+      keywords: ['SEO 服务', 'Reddit 营销服务', 'GEO 服务', '技术 SEO 公司']
+    },
     english: 'English',
     chinese: '中文',
     home: '首页',
@@ -128,21 +140,22 @@ export const servicePages: ServicePage[] = [
   {
     slug: 'seo-services',
     category: { en: 'SEO Services', zh: 'SEO 服务' },
-    title: { en: 'SEO Services', zh: 'SEO 服务' },
+    title: { en: 'B2B SaaS SEO Services', zh: 'B2B SaaS SEO 服务' },
     description: {
-      en: 'Choose a hands-on SEO growth coaching program or a managed SEO delivery program, with a clear scope for strategy, content, on-page work, technical guidance, authority building, and reporting.',
-      zh: '根据团队执行能力选择 SEO 增长陪跑或 SEO 全包交付；两种方案均明确覆盖策略、内容、页面优化、技术建议、权威建设与复盘。'
+      en: 'Meridian is a B2B SaaS SEO agency connecting keyword strategy, technical SEO, high-intent pages, content, and authority building around qualified organic demand.',
+      zh: 'Meridian 面向 B2B SaaS 与 AI 企业，将关键词策略、技术 SEO、高意图页面、内容和权威建设连接成一套自然增长系统。'
     },
     intro: {
-      en: 'Our SEO service has two clearly scoped delivery models. Growth Coaching gives your internal team strategy, review, training, and execution accountability. Managed Delivery adds a larger monthly production scope and delivered backlink assets, while both models keep the implementation responsibilities transparent.',
-      zh: 'SEO 服务分为两种清晰的交付模式：增长陪跑为内部团队提供策略、审核、培训和执行推进；全包交付则增加更大规模的月度内容、页面优化和外链资产。两种模式都会明确双方的实际执行责任。'
+      en: 'Choose Growth Coaching when your team can execute with expert direction, or Managed Delivery when you need a broader production scope. Both models make priorities, deliverables, implementation responsibilities, and measurement explicit.',
+      zh: '已有执行团队时可选择 SEO 增长陪跑；需要更完整的生产范围时可选择全包交付。两种模式都会明确优先级、交付内容、落地责任和衡量方式。'
     },
+    primaryCta: { en: 'Book an SEO strategy call', zh: '预约 SEO 策略沟通' },
     keywords: [
-      { en: 'seo growth coaching', zh: 'SEO 增长陪跑' },
-      { en: 'managed seo delivery', zh: 'SEO 全包交付' },
-      { en: 'on-page seo', zh: '页面 SEO' },
-      { en: 'technical seo', zh: '技术 SEO' },
-      { en: 'programmatic seo', zh: '程序化 SEO' }
+      { en: 'b2b saas seo agency', zh: 'B2B SaaS SEO 服务' },
+      { en: 'saas seo agency', zh: 'SaaS SEO 服务商' },
+      { en: 'seo services', zh: 'SEO 服务' },
+      { en: 'seo strategy services', zh: 'SEO 策略服务' },
+      { en: 'saas seo consultant', zh: 'SaaS SEO 顾问' }
     ],
     highlights: [
       {
@@ -480,22 +493,28 @@ export const servicePages: ServicePage[] = [
   {
     slug: 'geo-services',
     category: { en: 'GEO Services', zh: 'GEO 服务' },
+<<<<<<< HEAD
     title: { en: 'GEO Services', zh: 'GEO 服务' },
     subServices: geoServices,
+=======
+    title: { en: 'AI SEO & GEO Services', zh: 'AI SEO 与 GEO 服务' },
+>>>>>>> 1ad43ef976d0576d0d6baf37e6b7382c002638a7
     description: {
-      en: 'Build durable visibility in AI discovery with a measured GEO program that combines AI visibility diagnosis, LLM-friendly content, community participation, video publishing, technical guidance, and recurring review.',
-      zh: '通过 AI 可见度诊断、LLM 友好内容、社区运营、视频发布、技术建议与持续复盘，建立更稳定的 AI 搜索发现能力。'
+      en: 'Improve how your brand is understood, retrieved, cited, and recommended across ChatGPT, Perplexity, Gemini, AI Overviews, and other AI search experiences.',
+      zh: '提升品牌在 ChatGPT、Perplexity、Gemini、AI Overviews 及其他 AI 搜索场景中被理解、检索、引用和推荐的机会。'
     },
     intro: {
-      en: 'This GEO program is designed for brands that want to improve how they are recognized, cited, and recommended in AI search experiences. It starts with a visibility baseline, then runs a high-frequency monthly content, community, and video distribution rhythm with clear client-side approval and implementation responsibilities.',
-      zh: '该 GEO 项目面向希望提升品牌在 AI 搜索中被识别、引用和推荐概率的企业。服务从可见度基线开始，再以高频内容、社区和视频分发节奏持续执行，同时明确客户侧的审核、发布与技术实施责任。'
+      en: 'The program starts with an AI visibility baseline, then connects topic strategy, citable content, third-party participation, video distribution, technical access, and recurring measurement into one operating system.',
+      zh: '项目从 AI 可见度基线开始，再把话题策略、可引用内容、第三方参与、视频分发、技术可访问性和持续衡量连接成一套执行系统。'
     },
+    primaryCta: { en: 'Book a GEO strategy call', zh: '预约 GEO 策略沟通' },
     keywords: [
-      { en: 'geo services', zh: 'GEO 服务' },
+      { en: 'ai seo services', zh: 'AI SEO 服务' },
+      { en: 'ai seo agency', zh: 'AI SEO 服务商' },
       { en: 'generative engine optimization', zh: '生成式引擎优化' },
+      { en: 'geo services', zh: 'GEO 服务' },
       { en: 'ai search visibility', zh: 'AI 搜索可见度' },
-      { en: 'llm-friendly content', zh: 'LLM 友好内容' },
-      { en: 'reddit community strategy', zh: 'Reddit 社区策略' }
+      { en: 'llm-friendly content', zh: 'LLM 友好内容' }
     ],
     highlights: [
       { en: '30 keyword and topic groups per month to guide AI-discovery content', zh: '每月 30 组关键词与话题策略，指导 AI 搜索内容布局' },

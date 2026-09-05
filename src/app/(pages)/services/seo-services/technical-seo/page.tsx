@@ -22,14 +22,24 @@ import CTA from '@/components/blocks/cta/cta'
 import FAQ from '@/components/blocks/faq/faq'
 import TrustedBrands from '@/components/blocks/trusted-brands/trusted-brands'
 import SectionSeparator from '@/components/section-separator'
+import ServiceBreadcrumbs from '@/components/services/service-breadcrumbs'
+import ServiceLinksSection from '@/components/services/service-links-section'
 import { Badge } from '@/components/ui/badge'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { PrimaryFlowButton, SecondaryFlowButton } from '@/components/ui/flow-button'
 import BookingLink from '@/components/analytics/booking-link'
 import { technicalSEOCopy } from '@/content/technical-seo'
+import { getServiceBreadcrumbItems } from '@/content/service-navigation'
 import { getLocalizedPath } from '@/lib/language'
 import { getRequestLanguage } from '@/lib/request-language'
-import { absoluteUrl, buildMetadata, createFAQSchema, createLocalizedAlternates, createWebPageSchema } from '@/lib/seo'
+import {
+  absoluteUrl,
+  buildMetadata,
+  createBreadcrumbSchema,
+  createFAQSchema,
+  createLocalizedAlternates,
+  createWebPageSchema
+} from '@/lib/seo'
 
 const path = '/services/seo-services/technical-seo'
 
@@ -68,6 +78,7 @@ const TechnicalSEOPage = async () => {
           language: lang
         })
       },
+      createBreadcrumbSchema(getServiceBreadcrumbItems(path, lang), lang),
       {
         '@type': 'Service',
         name: copy.hero.title,
@@ -91,6 +102,7 @@ const TechnicalSEOPage = async () => {
         <div className='bg-secondary/16 absolute top-10 -right-28 size-96 rounded-full blur-3xl' />
 
         <div className='relative mx-auto flex w-full max-w-7xl flex-col items-center text-center'>
+          <ServiceBreadcrumbs path={path} lang={lang} className='mb-8 self-start' />
           <Badge variant='outline' className='h-auto px-3 py-1 text-sm font-normal'>
             {copy.hero.badge}
           </Badge>
@@ -553,6 +565,7 @@ const TechnicalSEOPage = async () => {
         description={copy.faq.description}
       />
 
+<<<<<<< HEAD
       <CTA
         title={copy.cta.title}
         description={copy.cta.description}
@@ -560,6 +573,11 @@ const TechnicalSEOPage = async () => {
         pageType='service_detail'
         serviceType='technical_seo'
       />
+=======
+      <ServiceLinksSection currentPath={path} lang={lang} />
+
+      <CTA title={copy.cta.title} description={copy.cta.description} buttonLabel={copy.cta.buttonLabel} />
+>>>>>>> 1ad43ef976d0576d0d6baf37e6b7382c002638a7
 
       <script
         type='application/ld+json'

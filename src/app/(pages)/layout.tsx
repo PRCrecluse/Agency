@@ -1,7 +1,5 @@
 import { Suspense, type ReactNode } from 'react'
 
-import { headers } from 'next/headers'
-
 import {
   LayoutDashboardIcon,
   TelescopeIcon,
@@ -25,7 +23,11 @@ import { geoServices } from '@/content/geo-services'
 import { geoMethodologyPath } from '@/content/geo-methodology'
 import type { Navigation } from '@/components/layout/header-navigation'
 import { getTranslatedPostSlugs } from '@/lib/posts'
+<<<<<<< HEAD
 import type { SiteLang } from '@/lib/language'
+=======
+import { getRequestLanguage } from '@/lib/request-language'
+>>>>>>> 1ad43ef976d0576d0d6baf37e6b7382c002638a7
 
 const getNavigationData = (lang: SiteLang): Navigation[] => [
   {
@@ -183,6 +185,7 @@ const getNavigationData = (lang: SiteLang): Navigation[] => [
     contentClassName: 'sm:grid-cols-3',
     items: [
       {
+<<<<<<< HEAD
         title: lang === 'zh' ? '小工具' : 'Free Tools',
         href: '/tools',
         description:
@@ -190,6 +193,13 @@ const getNavigationData = (lang: SiteLang): Navigation[] => [
             ? '集中使用实用的 SEO、营销追踪与社交监测工具。'
             : 'Explore our practical SEO, campaign tracking, and social monitoring tools in one place.',
         icon: <WrenchIcon className='size-4' />
+=======
+        title: 'SEO Prompt Library',
+        href: '/zh/seo-prompts',
+        localize: false,
+        description: 'Copy execution-ready prompts for research, content, technical SEO, and reporting.',
+        icon: <BotIcon className='size-4' />
+>>>>>>> 1ad43ef976d0576d0d6baf37e6b7382c002638a7
       },
       {
         title: lang === 'zh' ? '博客与洞察' : 'Blog & Insights',
@@ -215,8 +225,12 @@ const getNavigationData = (lang: SiteLang): Navigation[] => [
 ]
 
 const PagesLayout = async ({ children }: Readonly<{ children: ReactNode }>) => {
+<<<<<<< HEAD
   const lang = (await headers()).get('x-page-locale') === 'zh-CN' ? 'zh' : 'en'
   const translatedBlogSlugs = await getTranslatedPostSlugs()
+=======
+  const [translatedBlogSlugs, lang] = await Promise.all([getTranslatedPostSlugs(), getRequestLanguage()])
+>>>>>>> 1ad43ef976d0576d0d6baf37e6b7382c002638a7
 
   return (
     <div className='flex flex-col bg-[repeating-linear-gradient(45deg,color-mix(in_oklab,var(--border)40%,transparent)0,color-mix(in_oklab,var(--border)40%,transparent)1px,transparent_0,transparent_50%)] bg-size-[12px_12px] bg-fixed'>
@@ -224,7 +238,11 @@ const PagesLayout = async ({ children }: Readonly<{ children: ReactNode }>) => {
         <div className='bg-background h-full w-full max-w-7xl border-x'>
           {/* Header Section */}
           <Suspense fallback={<div aria-hidden='true' className='h-16 border-b' />}>
+<<<<<<< HEAD
             <Header lang={lang} navigationData={getNavigationData(lang)} translatedBlogSlugs={translatedBlogSlugs} />
+=======
+            <Header navigationData={navigationData} translatedBlogSlugs={translatedBlogSlugs} currentLang={lang} />
+>>>>>>> 1ad43ef976d0576d0d6baf37e6b7382c002638a7
           </Suspense>
 
           {/* Main Content */}

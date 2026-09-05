@@ -3,6 +3,7 @@ import { cookies } from 'next/headers'
 
 import ToolBreadcrumb from '@/components/layout/tool-breadcrumb'
 import UtmBuilder from '@/components/tools/utm-builder'
+<<<<<<< HEAD
 import UtmBuilderGuide from '@/components/tools/utm-builder-guide'
 import { UTM_BUILDER_ACCESS_COOKIE, verifyAccessToken } from '@/lib/twitter-monitor/access'
 
@@ -10,6 +11,14 @@ export const dynamic = 'force-dynamic'
 import { getLocalizedPath } from '@/lib/language'
 import { getRequestLanguage } from '@/lib/request-language'
 import { buildMetadata, createBreadcrumbSchema, createLocalizedAlternates, createWebPageSchema } from '@/lib/seo'
+=======
+import { getLocalizedPath } from '@/lib/language'
+import { getRequestLanguage } from '@/lib/request-language'
+import { buildMetadata, createLocalizedAlternates } from '@/lib/seo'
+import { UTM_BUILDER_ACCESS_COOKIE, verifyAccessToken } from '@/lib/twitter-monitor/access'
+
+export const dynamic = 'force-dynamic'
+>>>>>>> 1ad43ef976d0576d0d6baf37e6b7382c002638a7
 
 export async function generateMetadata(): Promise<Metadata> {
   const lang = await getRequestLanguage()
@@ -44,6 +53,7 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 const UtmBuilderPage = async () => {
+<<<<<<< HEAD
   const cookieStore = await cookies()
   const accessGranted = Boolean(verifyAccessToken(cookieStore.get(UTM_BUILDER_ACCESS_COOKIE)?.value))
   const lang = await getRequestLanguage()
@@ -83,6 +93,13 @@ const UtmBuilderPage = async () => {
       />
     </>
   )
+=======
+  const lang = await getRequestLanguage()
+  const cookieStore = await cookies()
+  const accessGranted = Boolean(verifyAccessToken(cookieStore.get(UTM_BUILDER_ACCESS_COOKIE)?.value))
+
+  return <UtmBuilder initialAccessGranted={accessGranted} lang={lang} />
+>>>>>>> 1ad43ef976d0576d0d6baf37e6b7382c002638a7
 }
 
 export default UtmBuilderPage
