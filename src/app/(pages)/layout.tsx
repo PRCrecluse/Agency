@@ -11,9 +11,11 @@ import {
   SparklesIcon,
   LinkIcon,
   SearchCheckIcon,
-  BotIcon,
   FileSearchIcon,
-  MegaphoneIcon
+  MegaphoneIcon,
+  MessagesSquareIcon,
+  WrenchIcon,
+  AtSignIcon
 } from 'lucide-react'
 
 import Header from '@/components/layout/header'
@@ -109,31 +111,33 @@ const navigationData: Navigation[] = [
     ]
   },
   {
-    title: 'Testimonials',
-    href: '/#testimonials'
-  },
-  {
     title: 'Products',
     dropdownClassName: 'w-[min(30rem,calc(100vw-2rem))]',
     items: [
       {
         title: 'GoGlobal.to',
-        href: '/products/goglobal',
-        description: 'AI-powered Reddit marketing software for research, content workflows, approvals, and execution.',
+        href: 'https://www.goglobal.to',
+        description: 'Reddit Marketing SaaS',
         icon: <MegaphoneIcon className='size-4' />
+      },
+      {
+        title: 'Volumn.ai',
+        href: 'https://volumn.ai',
+        description: 'Twitter (X) Marketing SaaS',
+        icon: <AtSignIcon className='size-4' />
       }
     ]
   },
   {
     title: 'Resources',
-    dropdownClassName: 'w-[min(42rem,calc(100vw-2rem))]',
-    contentClassName: 'sm:grid-cols-2',
+    dropdownClassName: 'w-[min(64rem,calc(100vw-2rem))]',
+    contentClassName: 'sm:grid-cols-3',
     items: [
       {
-        title: 'SEO Prompt Library',
-        href: '/seo-prompts',
-        description: 'Copy execution-ready prompts for research, content, technical SEO, and reporting.',
-        icon: <BotIcon className='size-4' />
+        title: 'Free Tools',
+        href: '/tools',
+        description: 'Explore our practical SEO, campaign tracking, and social monitoring tools in one place.',
+        icon: <WrenchIcon className='size-4' />
       },
       {
         title: 'Blog & Insights',
@@ -141,17 +145,20 @@ const navigationData: Navigation[] = [
         activeMatch: 'prefix',
         description: 'Practical thinking on SaaS SEO, Reddit growth, GEO, and AI-native demand.',
         icon: <FileSearchIcon className='size-4' />
+      },
+      {
+        title: '社群',
+        href: '/community',
+        description: '添加社群小助理，加入出海增长与实战交流社群。',
+        icon: <MessagesSquareIcon className='size-4' />
       }
     ]
   }
 ]
 
 const PagesLayout = async ({ children }: Readonly<{ children: ReactNode }>) => {
-<<<<<<< HEAD
   const lang = (await headers()).get('x-page-locale') === 'zh-CN' ? 'zh' : 'en'
-=======
   const translatedBlogSlugs = await getTranslatedPostSlugs()
->>>>>>> 85b786cf987cc8b56da604c53a8b869eabbc3436
 
   return (
     <div className='flex flex-col bg-[repeating-linear-gradient(45deg,color-mix(in_oklab,var(--border)40%,transparent)0,color-mix(in_oklab,var(--border)40%,transparent)1px,transparent_0,transparent_50%)] bg-size-[12px_12px] bg-fixed'>

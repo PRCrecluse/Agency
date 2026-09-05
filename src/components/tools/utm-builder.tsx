@@ -72,10 +72,10 @@ type Copy = {
 
 const COPY: Record<'en' | 'zh', Copy> = {
   en: {
-    eyebrow: 'Free marketing tool',
-    title: 'Build links you can actually measure.',
+    eyebrow: 'Free GA4 campaign URL builder',
+    title: 'Free UTM Builder for GA4 Campaign URLs',
     description:
-      'Add consistent UTM parameters to any campaign URL and see exactly which channels drive traffic and conversions.',
+      'Generate trackable UTM links for Google Analytics 4. Add consistent campaign parameters, copy your URL, and measure which channels drive traffic and conversions.',
     destination: 'Destination URL',
     destinationHint: 'The page people should land on. Existing query parameters will be preserved.',
     required: 'Required',
@@ -127,9 +127,9 @@ const COPY: Record<'en' | 'zh', Copy> = {
     }
   },
   zh: {
-    eyebrow: '免费营销工具',
-    title: '创建真正可衡量的推广链接。',
-    description: '为任何推广链接添加规范的 UTM 参数，准确识别带来流量与转化的渠道。',
+    eyebrow: '免费的 GA4 广告系列网址构建工具',
+    title: '免费 UTM 链接生成器：创建 GA4 可追踪网址',
+    description: '为推广链接添加规范的 UTM 参数，快速生成可追踪网址，并在 Google Analytics 4 中识别流量与转化来源。',
     destination: '目标网址',
     destinationHint: '用户最终访问的页面，原网址已有参数会自动保留。',
     required: '必填',
@@ -205,17 +205,12 @@ function buildUrl(destination: string, fields: Record<FieldKey, string>) {
   }
 }
 
-<<<<<<< HEAD
 interface UtmBuilderProps {
   initialAccessGranted: boolean
+  lang: SiteLang
 }
 
-const UtmBuilder = ({ initialAccessGranted }: UtmBuilderProps) => {
-  const searchParams = useSearchParams()
-  const lang = searchParams.get('lang')?.toLowerCase().startsWith('zh') ? 'zh' : 'en'
-=======
-const UtmBuilder = ({ lang }: { lang: SiteLang }) => {
->>>>>>> 85b786cf987cc8b56da604c53a8b869eabbc3436
+const UtmBuilder = ({ initialAccessGranted, lang }: UtmBuilderProps) => {
   const copy = COPY[lang]
   const [destination, setDestination] = useState('')
   const [fields, setFields] = useState<Record<FieldKey, string>>(EMPTY_FIELDS)

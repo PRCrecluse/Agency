@@ -61,107 +61,23 @@ export async function getSitemapEntries(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: 'monthly',
       priority: 0.8
     },
-<<<<<<< HEAD
-    {
-      url: absoluteUrl('/blog'),
-      lastModified: now,
-      changeFrequency: 'weekly',
-      priority: 0.8,
-      alternates: {
-        languages: {
-          en: absoluteUrl('/blog'),
-          'zh-CN': absoluteUrl('/zh/blog'),
-          'x-default': absoluteUrl('/blog')
-        }
-      }
-    },
-    {
-      url: absoluteUrl('/zh/blog'),
-      lastModified: now,
-      changeFrequency: 'weekly',
-      priority: 0.8,
-      alternates: {
-        languages: {
-          en: absoluteUrl('/blog'),
-          'zh-CN': absoluteUrl('/zh/blog'),
-          'x-default': absoluteUrl('/blog')
-        }
-      }
-    },
-    {
-      url: absoluteUrl('/services'),
-      lastModified: now,
-      changeFrequency: 'weekly',
-      priority: 0.9
-    },
-    {
-      url: absoluteUrl('/seo-prompts'),
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.8
-    },
-    {
-      url: absoluteUrl('/products/goglobal'),
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.8
-    },
-    localizedServiceEntry('/zh/services', 0.9),
-    {
-      url: absoluteUrl('/services/reddit-services'),
-      lastModified: now,
-      changeFrequency: 'weekly',
-      priority: 0.8
-    },
-    {
-      url: absoluteUrl('/services/seo-services/on-page-seo'),
-      lastModified: now,
-      changeFrequency: 'weekly',
-      priority: 0.8
-    },
-    {
-      url: absoluteUrl('/services/seo-services/technical-seo'),
-      lastModified: now,
-      changeFrequency: 'weekly',
-      priority: 0.8
-    },
-    {
-      url: absoluteUrl('/services/seo-services/programmatic-seo'),
-      lastModified: now,
-      changeFrequency: 'weekly',
-      priority: 0.8
-    },
-    {
-      url: absoluteUrl('/services/seo-services/link-building'),
-      lastModified: now,
-      changeFrequency: 'weekly',
-      priority: 0.8
-    },
-    {
-      url: absoluteUrl('/services/seo-services/keyword-research'),
-      lastModified: now,
-      changeFrequency: 'weekly',
-      priority: 0.8
-    },
-    {
-      url: absoluteUrl('/services/reddit-services/community-management'),
-      lastModified: now,
-      changeFrequency: 'weekly',
-      priority: 0.8
-    },
-    {
-      url: absoluteUrl('/services/reddit-services/reddit-campaigns'),
-      lastModified: now,
-      changeFrequency: 'weekly',
-      priority: 0.8
-    },
-=======
     ...localizedEntries('/blog', 0.8),
     ...localizedEntries('/services', 0.9),
     ...localizedEntries('/services/reddit-services', 0.8),
     ...localizedEntries('/utm-builder', 0.6, 'monthly'),
     ...specializedServicePaths.flatMap(path => localizedEntries(path, 0.8)),
->>>>>>> 85b786cf987cc8b56da604c53a8b869eabbc3436
+    ...['/seo-prompts', '/tools', '/community'].map(pagePath => ({
+      url: absoluteUrl(pagePath),
+      lastModified: now,
+      changeFrequency: 'monthly' as const,
+      priority: 0.8
+    })),
+    {
+      url: absoluteUrl('/seo-course'),
+      lastModified: now,
+      changeFrequency: 'weekly',
+      priority: 0.9
+    },
     {
       url: absoluteUrl('/terms-conditions'),
       lastModified: now,

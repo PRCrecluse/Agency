@@ -64,6 +64,8 @@ type Navigation = {
     }
 )
 
+const isExternalHref = (href: string) => /^(?:[a-z][a-z\d+\-.]*:)?\/\//i.test(href)
+
 const getSectionIdFromHref = (href: string) => {
   if (href.startsWith('/#')) return href.slice(2)
   if (href.startsWith('#')) return href.slice(1)
@@ -132,11 +134,14 @@ const ListItem = (props: {
 
   const isActive = isHrefActive({ href, activeSection, pathname, activeMatch })
   const localizedHref = toLocalizedHref(href, lang)
+  const external = isExternalHref(localizedHref)
 
   return (
     <li className={cn({ 'min-h-19.5': description && splitItems })}>
       <Link
         href={localizedHref}
+        target={external ? '_blank' : undefined}
+        rel={external ? 'noreferrer' : undefined}
         data-active={isActive}
         className={cn(
           'hover:bg-muted focus:bg-muted focus-visible:ring-ring/50 data-[active=true]:bg-muted/50 data-[active=true]:hover:bg-muted data-[active=true]:focus:bg-muted flex items-center gap-1.5 rounded-sm p-2 text-sm transition-all outline-none focus-visible:ring-3 focus-visible:outline-1',
@@ -169,7 +174,8 @@ const ListItem = (props: {
   )
 }
 
-const getSectionItems = (section: NavigationSection) => section.items ?? section.subSections?.flatMap(subSection => subSection.items) ?? []
+const getSectionItems = (section: NavigationSection) =>
+  section.items ?? section.subSections?.flatMap(subSection => subSection.items) ?? []
 
 const HeaderNavigation = ({
   currentLang,
@@ -237,14 +243,11 @@ const HeaderNavigation = ({
   const activeSection = useActiveSection(sectionIds)
 
   useEffect(() => {
-<<<<<<< HEAD
     // eslint-disable-next-line react-hooks/set-state-in-effect
     setOpenDropdown(null)
   }, [pathname, lang])
 
   useEffect(() => {
-=======
->>>>>>> 85b786cf987cc8b56da604c53a8b869eabbc3436
     return () => {
       clearCloseTimeout()
     }
@@ -279,13 +282,14 @@ const HeaderNavigation = ({
       <ul className='flex h-fit flex-wrap items-center gap-6'>
         {navigationData.map(navItem => {
           if (navItem.href) {
-            const isActive = isHrefActive({ href: navItem.href, activeSection, pathname, activeMatch: navItem.activeMatch })
-<<<<<<< HEAD
+            const isActive = isHrefActive({
+              href: navItem.href,
+              activeSection,
+              pathname,
+              activeMatch: navItem.activeMatch
+            })
 
-            const localizedHref = withQueryLang(navItem.href, lang)
-=======
             const localizedHref = toLocalizedHref(navItem.href, lang)
->>>>>>> 85b786cf987cc8b56da604c53a8b869eabbc3436
 
             return (
               <li key={navItem.title}>
@@ -366,7 +370,9 @@ const HeaderNavigation = ({
                               'border-border/70 border-l pl-6': sectionIndex > 0
                             })}
                           >
-                            {section.title ? <div className='text-muted-foreground px-2 text-sm'>{section.title}</div> : null}
+                            {section.title ? (
+                              <div className='text-muted-foreground px-2 text-sm'>{section.title}</div>
+                            ) : null}
                             {section.subSections ? (
                               <div className='grid grid-cols-1 gap-3'>
                                 {section.subSections.map(subSection => (
@@ -535,12 +541,19 @@ const HeaderNavigationSmallScreen = ({
         <div className='space-y-0.5 overflow-y-auto p-2'>
           {navigationData.map((navItem, index) => {
             if (navItem.href) {
-              const isActive = isHrefActive({ href: navItem.href, activeSection, pathname, activeMatch: navItem.activeMatch })
+              const isActive = isHrefActive({
+                href: navItem.href,
+                activeSection,
+                pathname,
+                activeMatch: navItem.activeMatch
+              })
 
               return (
                 <Link
                   key={navItem.title}
                   href={toLocalizedHref(navItem.href, lang)}
+                  target={isExternalHref(navItem.href) ? '_blank' : undefined}
+                  rel={isExternalHref(navItem.href) ? 'noreferrer' : undefined}
                   data-active={isActive}
                   className='hover:bg-accent data-[active=true]:bg-accent flex items-center gap-2 rounded-sm px-3 py-2 text-sm data-[active=true]:font-medium'
                   onClick={handleLinkClick}
@@ -583,34 +596,40 @@ const HeaderNavigationSmallScreen = ({
                           {item.title ? (
                             <div className='text-muted-foreground mb-1 pl-4.5 text-xs font-medium'>{item.title}</div>
                           ) : null}
-                          {(item.subSections ?? [{ title: item.title ?? '', items: item.items ?? [] }]).map((section, k) => (
-                            <div key={`${section.title}-${k}`} className={k > 0 ? 'mt-2' : ''}>
-                              {item.subSections ? (
-                                <div className='text-muted-foreground mb-1 pl-4.5 text-xs font-medium'>{section.title}</div>
-                              ) : null}
-                              {section.items.map((subItem, j) => {
-                                const isActive = isHrefActive({
-                                  href: subItem.href,
-                                  activeSection,
-                                  pathname,
-                                  activeMatch: subItem.activeMatch
-                                })
+                          {(item.subSections ?? [{ title: item.title ?? '', items: item.items ?? [] }]).map(
+                            (section, k) => (
+                              <div key={`${section.title}-${k}`} className={k > 0 ? 'mt-2' : ''}>
+                                {item.subSections ? (
+                                  <div className='text-muted-foreground mb-1 pl-4.5 text-xs font-medium'>
+                                    {section.title}
+                                  </div>
+                                ) : null}
+                                {section.items.map((subItem, j) => {
+                                  const isActive = isHrefActive({
+                                    href: subItem.href,
+                                    activeSection,
+                                    pathname,
+                                    activeMatch: subItem.activeMatch
+                                  })
 
-                                return (
-                                  <Link
-                                    key={j}
-                                    href={toLocalizedHref(subItem.href, lang)}
-                                    data-active={isActive}
-                                    className='hover:bg-accent data-[active=true]:text-primary ml-4.5 flex items-center gap-2 rounded-sm px-3 py-2 text-sm data-[active=true]:font-medium'
-                                    onClick={handleLinkClick}
-                                  >
-                                    {subItem.icon ? subItem.icon : <CircleSmallIcon className='size-4' />}
-                                    {subItem.title}
-                                  </Link>
-                                )
-                              })}
-                            </div>
-                          ))}
+                                  return (
+                                    <Link
+                                      key={j}
+                                      href={toLocalizedHref(subItem.href, lang)}
+                                      target={isExternalHref(subItem.href) ? '_blank' : undefined}
+                                      rel={isExternalHref(subItem.href) ? 'noreferrer' : undefined}
+                                      data-active={isActive}
+                                      className='hover:bg-accent data-[active=true]:text-primary ml-4.5 flex items-center gap-2 rounded-sm px-3 py-2 text-sm data-[active=true]:font-medium'
+                                      onClick={handleLinkClick}
+                                    >
+                                      {subItem.icon ? subItem.icon : <CircleSmallIcon className='size-4' />}
+                                      {subItem.title}
+                                    </Link>
+                                  )
+                                })}
+                              </div>
+                            )
+                          )}
                         </div>
                       ))
                     : navItem.items?.map(item => {
@@ -625,6 +644,8 @@ const HeaderNavigationSmallScreen = ({
                           <Link
                             key={item.title}
                             href={toLocalizedHref(item.href, lang)}
+                            target={isExternalHref(item.href) ? '_blank' : undefined}
+                            rel={isExternalHref(item.href) ? 'noreferrer' : undefined}
                             data-active={isActive}
                             className='hover:bg-accent data-[active=true]:text-primary ml-3 flex items-center gap-2 rounded-sm px-3 py-2 text-sm data-[active=true]:font-medium'
                             onClick={handleLinkClick}

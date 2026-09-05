@@ -2,6 +2,7 @@ import { defineConfig, globalIgnores } from 'eslint/config'
 import nextVitals from 'eslint-config-next/core-web-vitals'
 import nextTs from 'eslint-config-next/typescript'
 import stylistic from '@stylistic/eslint-plugin'
+import importPlugin from 'eslint-plugin-import'
 import prettier from 'eslint-config-prettier/flat'
 
 const eslintConfig = defineConfig([
@@ -17,15 +18,21 @@ const eslintConfig = defineConfig([
     'out/**',
     'build/**',
     '.codex-tmp/**',
+    '.codex_work/**',
+    '.pnpm-store/**',
     '.tmp-seo-audit/**',
+    '.vercel/**',
+    'lingoframe-video-translator/**',
     'outputs/**',
+    'research/**',
     'next-env.d.ts',
     'eslint.config.mjs',
     '**/*.css'
   ]),
   {
     plugins: {
-      '@stylistic': stylistic
+      '@stylistic': stylistic,
+      import: importPlugin
     },
     rules: {
       'react/display-name': 'off',
