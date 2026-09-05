@@ -6,30 +6,32 @@ import Image from 'next/image'
 
 import { MessageCircleMoreIcon, XIcon } from 'lucide-react'
 
+import type { SiteLang } from '@/lib/language'
 import { cn } from '@/lib/utils'
 
-const contactOptions = [
-  {
-    id: 'whatsapp',
-    label: 'WhatsApp',
-    description: 'Scan to chat',
-    imageSrc: '/contacts/whatsappbusiness.jpg',
-    imageAlt: 'WhatsApp contact QR code',
-    width: 1041,
-    height: 1164
-  },
-  {
-    id: 'wechat',
-    label: 'WeChat',
-    description: 'Scan to connect',
-    imageSrc: '/contacts/wechat.jpg',
-    imageAlt: 'WeChat contact QR code',
-    width: 888,
-    height: 1131
-  }
-] as const
+const getContactOptions = (lang: SiteLang) =>
+  [
+    {
+      id: 'whatsapp',
+      label: 'WhatsApp',
+      description: lang === 'zh' ? '扫码聊天' : 'Scan to chat',
+      imageSrc: '/contacts/whatsappbusiness.jpg',
+      imageAlt: lang === 'zh' ? 'WhatsApp 联系二维码' : 'WhatsApp contact QR code',
+      width: 1041,
+      height: 1164
+    },
+    {
+      id: 'wechat',
+      label: lang === 'zh' ? '微信' : 'WeChat',
+      description: lang === 'zh' ? '扫码添加好友' : 'Scan to connect',
+      imageSrc: '/contacts/wechat.jpg',
+      imageAlt: lang === 'zh' ? '微信联系二维码' : 'WeChat contact QR code',
+      width: 888,
+      height: 1131
+    }
+  ] as const
 
-const FloatingContact = () => {
+const FloatingContact = ({ lang = 'en' }: { lang?: SiteLang }) => {
   const [open, setOpen] = useState(false)
   const panelId = useId()
   const containerRef = useRef<HTMLDivElement>(null)
@@ -61,10 +63,7 @@ const FloatingContact = () => {
   }, [open])
 
   return (
-    <div
-      ref={containerRef}
-      className='pointer-events-none fixed right-4 bottom-4 z-50 sm:right-6 sm:bottom-6'
-    >
+    <div ref={containerRef} className='pointer-events-none fixed right-4 bottom-4 z-50 sm:right-6 sm:bottom-6'>
       <div
         id={panelId}
         className={cn(
@@ -76,7 +75,7 @@ const FloatingContact = () => {
       >
         <div className='w-[min(29rem,calc(100vw-1.5rem))] rounded-[30px] border border-white/12 bg-[linear-gradient(180deg,rgba(27,27,30,0.94)_0%,rgba(12,12,14,0.92)_100%)] p-4 shadow-[0_24px_80px_rgba(0,0,0,0.45)] backdrop-blur-xl sm:p-5'>
           <div className='grid grid-cols-2 gap-4'>
-            {contactOptions.map(option => (
+            {getContactOptions(lang).map(option => (
               <div
                 key={option.id}
                 className='rounded-[24px] border border-white/10 bg-white/4 p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]'
@@ -103,11 +102,19 @@ const FloatingContact = () => {
 
       <button
         type='button'
-        aria-label={open ? 'Close contact options' : 'Open contact options'}
+        aria-label={
+          lang === 'zh'
+            ? open
+              ? '关闭联系方式'
+              : '打开联系方式'
+            : open
+              ? 'Close contact options'
+              : 'Open contact options'
+        }
         aria-controls={panelId}
         aria-expanded={open}
         onClick={() => setOpen(current => !current)}
-        className='pointer-events-auto inline-flex size-14 items-center justify-center rounded-full border border-white/20 bg-neutral-950 text-white shadow-[0_10px_32px_rgba(0,0,0,0.35)] transition-transform duration-200 hover:scale-[1.03] hover:bg-neutral-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40 active:scale-95'
+        className='pointer-events-auto inline-flex size-14 items-center justify-center rounded-full border border-white/20 bg-neutral-950 text-white shadow-[0_10px_32px_rgba(0,0,0,0.35)] transition-transform duration-200 hover:scale-[1.03] hover:bg-neutral-900 focus-visible:ring-2 focus-visible:ring-white/40 focus-visible:outline-none active:scale-95'
       >
         {open ? <XIcon className='size-5' /> : <MessageCircleMoreIcon className='size-5' />}
       </button>

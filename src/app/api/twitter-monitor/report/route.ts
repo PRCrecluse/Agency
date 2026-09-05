@@ -1,6 +1,7 @@
 import { NextResponse, type NextRequest } from 'next/server'
 
 import { normalizeEmail, TWITTER_MONITOR_ACCESS_COOKIE, verifyAccessToken } from '@/lib/twitter-monitor/access'
+import { checkRateLimit, getRateLimitHeaders } from '@/lib/rate-limit'
 import { sendTwitterMonitorReport } from '@/lib/twitter-monitor/report-email'
 import { getMonitorSnapshot } from '@/lib/twitter-monitor/store'
 
@@ -12,10 +13,22 @@ export async function POST(request: NextRequest) {
 
   if (!session) return NextResponse.json({ error: 'Complete the access form before using this tool.' }, { status: 401 })
 
+  const rateLimit = checkRateLimit('twitter-monitor-report', session.workspaceId, {
+    limit: 3,
+    windowMs: 60 * 60 * 1000
+  })
+
+  if (!rateLimit.allowed) {
+    return NextResponse.json(
+      { error: 'Too many report requests. Please try again later.' },
+      { status: 429, headers: getRateLimitHeaders(rateLimit) }
+    )
+  }
+
   try {
     const body = (await request.json()) as { email?: string }
     const email = normalizeEmail(body.email ?? session.email)
-    const delivery = await sendTwitterMonitorReport(email, await getMonitorSnapshot())
+    const delivery = await sendTwitterMonitorReport(email, await getMonitorSnapshot(session.workspaceId))
 
     return NextResponse.json({
       sent: true,

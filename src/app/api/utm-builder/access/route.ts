@@ -7,6 +7,7 @@ import {
   UTM_BUILDER_ACCESS_COOKIE,
   type LeadCaptureInput
 } from '@/lib/twitter-monitor/access'
+import { checkRateLimit, getClientRateLimitKey, getRateLimitHeaders } from '@/lib/rate-limit'
 
 export const runtime = 'nodejs'
 export const dynamic = 'force-dynamic'
@@ -19,10 +20,22 @@ const ACCESS_FORM_ERRORS = new Set([
 ])
 
 export async function POST(request: NextRequest) {
+  const rateLimit = checkRateLimit('utm-builder-access', getClientRateLimitKey(request.headers), {
+    limit: 8,
+    windowMs: 10 * 60 * 1000
+  })
+
+  if (!rateLimit.allowed) {
+    return NextResponse.json(
+      { error: 'Too many access attempts. Please try again later.' },
+      { status: 429, headers: getRateLimitHeaders(rateLimit) }
+    )
+  }
+
   try {
     const body = (await request.json()) as Partial<LeadCaptureInput>
 
-    const { lead, storage } = await persistLeadCapture(
+    const { lead, storage, workspaceId } = await persistLeadCapture(
       {
         companyName: body.companyName ?? '',
         website: body.website ?? '',
@@ -34,7 +47,7 @@ export async function POST(request: NextRequest) {
 
     const response = NextResponse.json({ granted: true, storage })
 
-    response.cookies.set(UTM_BUILDER_ACCESS_COOKIE, createAccessToken(lead), accessCookieOptions)
+    response.cookies.set(UTM_BUILDER_ACCESS_COOKIE, createAccessToken(lead, workspaceId), accessCookieOptions)
     response.headers.set('Cache-Control', 'no-store')
 
     return response

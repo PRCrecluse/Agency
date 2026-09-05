@@ -113,7 +113,7 @@ const Footer = ({ lang = 'en' }: { lang?: SiteLang }) => {
                 </Link>
               </li>
               <li>
-                <Link className='hover:text-foreground' href='/tools'>
+                <Link className='hover:text-foreground' href={href('/tools')}>
                   {copy.tools}
                 </Link>
               </li>

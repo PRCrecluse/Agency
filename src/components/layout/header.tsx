@@ -17,10 +17,11 @@ import { HeaderNavigation, HeaderNavigationSmallScreen, type Navigation } from '
 
 import FlowLogo from '@/assets/svg/flow-logo'
 
-import { getPathLanguage, toLocalizedHref } from '@/lib/language'
+import { toLocalizedHref, type SiteLang } from '@/lib/language'
 import { cn } from '@/lib/utils'
 
 type HeaderProps = {
+  lang: SiteLang
   navigationData: Navigation[]
   translatedBlogSlugs: string[]
   className?: string
@@ -28,12 +29,13 @@ type HeaderProps = {
 
 const DesktopNavigationFallback = () => <div aria-hidden='true' className='hidden h-10 w-[22rem] lg:block' />
 
-const HeaderActionFallback = ({ className = '' }: { className?: string }) => <div aria-hidden='true' className={className} />
+const HeaderActionFallback = ({ className = '' }: { className?: string }) => (
+  <div aria-hidden='true' className={className} />
+)
 
-const Header = ({ navigationData, translatedBlogSlugs, className }: HeaderProps) => {
+const Header = ({ lang: currentLang, navigationData, translatedBlogSlugs, className }: HeaderProps) => {
   const [isScrolled, setIsScrolled] = useState(false)
   const pathname = usePathname()
-  const currentLang = getPathLanguage(pathname)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -58,7 +60,7 @@ const Header = ({ navigationData, translatedBlogSlugs, className }: HeaderProps)
         className
       )}
     >
-      <div className='flex h-full items-center justify-between gap-4 border-b px-4 sm:px-6 lg:px-8'>
+      <div className='flex h-full items-center justify-between gap-2 border-b px-4 sm:gap-4 sm:px-6 lg:px-8'>
         {/* Logo */}
         <Link href={toLocalizedHref('/#home', currentLang)}>
           <div className='flex items-center gap-3'>
@@ -79,28 +81,34 @@ const Header = ({ navigationData, translatedBlogSlugs, className }: HeaderProps)
 
         {/* Actions */}
         <div className='flex items-center gap-2 sm:gap-4'>
-          <Suspense fallback={<HeaderActionFallback className='h-10 w-[93px] rounded-lg border bg-background/80' />}>
-            <LanguageToggle translatedBlogSlugs={translatedBlogSlugs} />
+          <Suspense fallback={<HeaderActionFallback className='bg-background/80 h-10 w-[93px] rounded-lg border' />}>
+            <LanguageToggle lang={currentLang} translatedBlogSlugs={translatedBlogSlugs} />
           </Suspense>
-          <ModeToggle />
+          <ModeToggle lang={currentLang} />
 
           <PrimaryFlowButton className='max-sm:hidden' asChild>
-            <BookingLink ctaLocation='header_desktop' target='_blank' rel='noreferrer'>
-              Book a call
+            <BookingLink ctaLocation='header_desktop' language={currentLang} target='_blank' rel='noreferrer'>
+              {currentLang === 'zh' ? '预约咨询' : 'Book a call'}
               <ArrowUpRightIcon />
             </BookingLink>
           </PrimaryFlowButton>
 
           <Tooltip>
             <TooltipTrigger asChild>
-              <PrimaryFlowButton className='sm:hidden [&_[data-slot=button]]:size-10 [&_[data-slot=button]]:px-0' asChild>
-                <BookingLink ctaLocation='header_mobile' target='_blank' rel='noreferrer'>
+              <PrimaryFlowButton className='**:data-[slot=button]:size-10 **:data-[slot=button]:px-0 sm:hidden' asChild>
+                <BookingLink
+                  className='size-10! p-0!'
+                  ctaLocation='header_mobile'
+                  language={currentLang}
+                  target='_blank'
+                  rel='noreferrer'
+                >
                   <ExternalLinkIcon />
-                  <span className='sr-only'>Book a call</span>
+                  <span className='sr-only'>{currentLang === 'zh' ? '预约咨询' : 'Book a call'}</span>
                 </BookingLink>
               </PrimaryFlowButton>
             </TooltipTrigger>
-            <TooltipContent>Book a call</TooltipContent>
+            <TooltipContent>{currentLang === 'zh' ? '预约咨询' : 'Book a call'}</TooltipContent>
           </Tooltip>
 
           <Suspense fallback={<HeaderActionFallback className='inline-flex h-10 w-10 rounded-lg border lg:hidden' />}>

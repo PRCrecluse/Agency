@@ -1,7 +1,7 @@
 export type SiteLang = 'en' | 'zh'
 
 const externalHrefPattern = /^(?:[a-z][a-z\d+\-.]*:)?\/\//i
-const localizablePathPattern = /^\/(?:zh\/)?(?:services|blog|utm-builder)(?:\/|$)/
+const localizablePathPattern = /^\/(?:zh\/)?(?:about|services|blog|tools|utm-builder)(?:\/|$)/
 
 export const getPathLanguage = (pathname: string): SiteLang =>
   pathname === '/zh' || pathname.startsWith('/zh/') ? 'zh' : 'en'
@@ -35,11 +35,7 @@ export const toLocalizedHref = (href: string, lang: SiteLang) => {
   return `${localizedPathname}${serializedQuery ? `?${serializedQuery}` : ''}${hash ? `#${hash}` : ''}`
 }
 
-export const getLanguageAlternateHref = (
-  href: string,
-  lang: SiteLang,
-  translatedBlogSlugs: ReadonlySet<string>
-) => {
+export const getLanguageAlternateHref = (href: string, lang: SiteLang, translatedBlogSlugs: ReadonlySet<string>) => {
   const [pathAndQuery] = href.split('#')
   const [pathname] = pathAndQuery.split('?')
 

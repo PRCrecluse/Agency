@@ -406,7 +406,7 @@ export function TwitterMonitorDashboard({
             className='z-10'
           >
             <Badge variant='outline' className='bg-background h-auto text-sm font-normal'>
-              A focused tool for X campaigns
+              Free Twitter analytics tool
             </Badge>
           </MotionPreset>
 
@@ -419,7 +419,7 @@ export function TwitterMonitorDashboard({
             component='h1'
             className='z-10 max-w-3xl text-center text-3xl font-semibold md:text-4xl lg:text-5xl lg:leading-[1.29167]'
           >
-            Monitor one X post, over time.
+            Free Twitter (X) Post Analytics Tracker
           </MotionPreset>
 
           <MotionPreset
@@ -431,7 +431,7 @@ export function TwitterMonitorDashboard({
             component='p'
             className='text-muted-foreground z-10 max-w-156 text-center text-xl'
           >
-            Choose a post and monitoring window. Incoming real metrics will be stored and kept in one traffic history.
+            Track a public post&apos;s impressions, engagements, link clicks, and engagement rate over a custom monitoring window—without connecting your X account.
           </MotionPreset>
 
           <MotionPreset
@@ -463,12 +463,12 @@ export function TwitterMonitorDashboard({
             transition={{ duration: 0.5 }}
             className='mx-auto mb-12 max-w-3xl space-y-4 text-center sm:mb-16'
           >
-            <p className='text-primary text-sm font-medium uppercase'>X Post Monitor</p>
+            <p className='text-primary text-sm font-medium uppercase'>Twitter analytics dashboard</p>
             <h2 className='text-xl font-semibold sm:text-2xl md:text-3xl lg:text-4xl'>
-              One post. One monitoring window.
+              Track Twitter/X post performance over time
             </h2>
             <p className='text-muted-foreground text-base sm:text-lg lg:text-xl'>
-              Paste the post URL, choose the exact time range, and follow the traffic curve as it develops.
+              Paste a post URL, choose the exact time range and collection frequency, then follow its traffic curve as it develops.
             </p>
           </MotionPreset>
 
@@ -536,6 +536,7 @@ export function TwitterMonitorDashboard({
                           />
                         </div>
                       </div>
+                      <p className='text-muted-foreground -mt-3 text-xs'>Monitoring windows can span up to 30 days.</p>
 
                       <div className='space-y-2'>
                         <Label htmlFor='monitor-frequency'>Collection frequency</Label>
@@ -547,7 +548,6 @@ export function TwitterMonitorDashboard({
                           }
                           className='border-input bg-background focus-visible:border-ring focus-visible:ring-ring/50 h-11 w-full rounded-md border px-3 text-sm outline-none focus-visible:ring-3'
                         >
-                          <option value={5}>Every 5 minutes</option>
                           <option value={15}>Every 15 minutes</option>
                           <option value={30}>Every 30 minutes</option>
                           <option value={60}>Every hour</option>

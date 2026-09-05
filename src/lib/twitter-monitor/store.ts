@@ -1,4 +1,4 @@
-import { mkdir, readFile, rename, writeFile } from 'node:fs/promises'
+import { mkdir, readFile, readdir, rename, writeFile } from 'node:fs/promises'
 import path from 'node:path'
 
 import { connect, type Connection } from '@planetscale/database'
@@ -12,9 +12,9 @@ import type {
 } from '@/lib/twitter-monitor/types'
 
 const DATA_DIRECTORY = process.env.TWITTER_MONITOR_DATA_DIR ?? path.join(process.cwd(), '.data')
-const DATA_FILE = path.join(DATA_DIRECTORY, 'twitter-monitor.json')
+const WORKSPACE_FILE_PREFIX = 'twitter-monitor-workspace-'
 
-let writeQueue: Promise<unknown> = Promise.resolve()
+const writeQueues = new Map<string, Promise<unknown>>()
 let connection: Connection | undefined
 let schemaReady: Promise<void> | undefined
 
@@ -34,6 +34,17 @@ interface RapidApiPostMetrics {
 type JsonRecord = Record<string, unknown>
 
 const RAPIDAPI_TWITTER_HOST = 'twitter-api45.p.rapidapi.com'
+
+const assertWorkspaceId = (workspaceId: string) => {
+  if (!/^[a-zA-Z0-9_-]{12,48}$/.test(workspaceId) || workspaceId === 'primary') {
+    throw new Error('Invalid Twitter monitor workspace')
+  }
+
+  return workspaceId
+}
+
+const getWorkspaceDataFile = (workspaceId: string) =>
+  path.join(DATA_DIRECTORY, `${WORKSPACE_FILE_PREFIX}${assertWorkspaceId(workspaceId)}.json`)
 
 function createEmptyStore(): TwitterMonitorStore {
   return {
@@ -178,6 +189,12 @@ function getPlanetScaleConnection() {
   return connection
 }
 
+function requirePersistentProductionStorage(database: Connection | undefined) {
+  if (!database && process.env.NODE_ENV === 'production') {
+    throw new Error('DATABASE_URL is required for Twitter monitor persistence in production')
+  }
+}
+
 async function ensurePlanetScaleSchema(database: Connection) {
   schemaReady ??= database
     .execute(
@@ -228,40 +245,37 @@ function parseStoredPayload(payload: unknown) {
   }
 }
 
-async function writeJsonStore(store: TwitterMonitorStore) {
+async function writeJsonStore(workspaceId: string, store: TwitterMonitorStore) {
   await mkdir(DATA_DIRECTORY, { recursive: true })
 
-  const temporaryFile = `${DATA_FILE}.${process.pid}.tmp`
+  const dataFile = getWorkspaceDataFile(workspaceId)
+  const temporaryFile = `${dataFile}.${process.pid}.tmp`
 
   await writeFile(temporaryFile, JSON.stringify(store, null, 2), 'utf8')
-  await rename(temporaryFile, DATA_FILE)
+  await rename(temporaryFile, dataFile)
 }
 
-async function readStore(): Promise<TwitterMonitorStore> {
+async function readStore(workspaceId: string): Promise<TwitterMonitorStore> {
+  const safeWorkspaceId = assertWorkspaceId(workspaceId)
   const database = getPlanetScaleConnection()
+
+  requirePersistentProductionStorage(database)
 
   if (database) {
     await ensurePlanetScaleSchema(database)
 
     const result = await database.execute<{ payload: unknown }>(
       'SELECT payload FROM twitter_monitor_state WHERE id = ?',
-      ['primary']
+      [safeWorkspaceId]
     )
 
     if (result.rows[0]) return parseStoredPayload(result.rows[0].payload)
 
-    const initialStore = createEmptyStore()
-
-    await database.execute(
-      'INSERT INTO twitter_monitor_state (id, payload, updated_at) VALUES (?, ?, ?) ON DUPLICATE KEY UPDATE id = id',
-      ['primary', JSON.stringify(initialStore), new Date(initialStore.updatedAt)]
-    )
-
-    return initialStore
+    return createEmptyStore()
   }
 
   try {
-    return parseStoredPayload(await readFile(DATA_FILE, 'utf8'))
+    return parseStoredPayload(await readFile(getWorkspaceDataFile(safeWorkspaceId), 'utf8'))
   } catch (error) {
     const missingFile = (error as NodeJS.ErrnoException).code === 'ENOENT'
 
@@ -271,16 +285,15 @@ async function readStore(): Promise<TwitterMonitorStore> {
 
     if (!missingFile) throw error
 
-    const initialStore = createEmptyStore()
-
-    await writeJsonStore(initialStore)
-
-    return initialStore
+    return createEmptyStore()
   }
 }
 
-async function mutateStore(mutator: (store: TwitterMonitorStore) => void | Promise<void>) {
+async function mutateStore(workspaceId: string, mutator: (store: TwitterMonitorStore) => void | Promise<void>) {
+  const safeWorkspaceId = assertWorkspaceId(workspaceId)
   const database = getPlanetScaleConnection()
+
+  requirePersistentProductionStorage(database)
 
   if (database) {
     await ensurePlanetScaleSchema(database)
@@ -288,7 +301,7 @@ async function mutateStore(mutator: (store: TwitterMonitorStore) => void | Promi
     return database.transaction(async transaction => {
       const result = await transaction.execute<{ payload: unknown }>(
         'SELECT payload FROM twitter_monitor_state WHERE id = ? FOR UPDATE',
-        ['primary']
+        [safeWorkspaceId]
       )
 
       const store = result.rows[0] ? parseStoredPayload(result.rows[0].payload) : createEmptyStore()
@@ -301,26 +314,31 @@ async function mutateStore(mutator: (store: TwitterMonitorStore) => void | Promi
         `INSERT INTO twitter_monitor_state (id, payload, updated_at)
          VALUES (?, ?, ?)
          ON DUPLICATE KEY UPDATE payload = VALUES(payload), updated_at = VALUES(updated_at)`,
-        ['primary', JSON.stringify(store), new Date(store.updatedAt)]
+        [safeWorkspaceId, JSON.stringify(store), new Date(store.updatedAt)]
       )
 
       return store
     })
   }
 
-  const operation = writeQueue.then(async () => {
-    const store = await readStore()
+  const previousWrite = writeQueues.get(safeWorkspaceId) ?? Promise.resolve()
+
+  const operation = previousWrite.then(async () => {
+    const store = await readStore(safeWorkspaceId)
 
     await mutator(store)
     store.updatedAt = new Date().toISOString()
     store.activity = store.activity.slice(0, 20)
     store.points = store.points.slice(-12000)
-    await writeJsonStore(store)
+    await writeJsonStore(safeWorkspaceId, store)
 
     return store
   })
 
-  writeQueue = operation.catch(() => undefined)
+  writeQueues.set(
+    safeWorkspaceId,
+    operation.catch(() => undefined)
+  )
 
   return operation
 }
@@ -335,13 +353,43 @@ function toSnapshot(store: TwitterMonitorStore): TwitterMonitorSnapshot {
   }
 }
 
-export async function getMonitorSnapshot() {
-  return toSnapshot(await readStore())
+async function getWorkspaceIds() {
+  const database = getPlanetScaleConnection()
+
+  requirePersistentProductionStorage(database)
+
+  if (database) {
+    await ensurePlanetScaleSchema(database)
+
+    const result = await database.execute<{ id: string }>(
+      'SELECT id FROM twitter_monitor_state WHERE id <> ? ORDER BY updated_at ASC',
+      ['primary']
+    )
+
+    return result.rows.map(row => row.id).filter(id => /^[a-zA-Z0-9_-]{12,48}$/.test(id))
+  }
+
+  try {
+    const files = await readdir(DATA_DIRECTORY)
+
+    return files
+      .filter(file => file.startsWith(WORKSPACE_FILE_PREFIX) && file.endsWith('.json'))
+      .map(file => file.slice(WORKSPACE_FILE_PREFIX.length, -'.json'.length))
+      .filter(id => /^[a-zA-Z0-9_-]{12,48}$/.test(id) && id !== 'primary')
+  } catch (error) {
+    if ((error as NodeJS.ErrnoException).code === 'ENOENT') return []
+
+    throw error
+  }
 }
 
-export async function collectCampaignMetrics(force = false, campaignIds?: string[]) {
+export async function getMonitorSnapshot(workspaceId: string) {
+  return toSnapshot(await readStore(workspaceId))
+}
+
+export async function collectCampaignMetrics(workspaceId: string, force = false, campaignIds?: string[]) {
   const now = new Date()
-  const snapshot = await getMonitorSnapshot()
+  const snapshot = await getMonitorSnapshot(workspaceId)
 
   const candidates = snapshot.campaigns.filter(campaign => {
     if (campaignIds && !campaignIds.includes(campaign.id)) return false
@@ -374,7 +422,7 @@ export async function collectCampaignMetrics(force = false, campaignIds?: string
 
   let storedCount = 0
 
-  const store = await mutateStore(currentStore => {
+  const store = await mutateStore(workspaceId, currentStore => {
     observations.forEach(observation => {
       const campaign = currentStore.campaigns.find(item => item.id === observation.campaignId)
 
@@ -408,12 +456,44 @@ export async function collectCampaignMetrics(force = false, campaignIds?: string
   return { snapshot: toSnapshot(store), collected: storedCount, errors }
 }
 
-export async function configureTwitterMonitor(input: ConfigureTwitterMonitorInput) {
+export async function collectAllCampaignMetrics() {
+  const workspaceIds = await getWorkspaceIds()
+  const errors: string[] = []
+  let collected = 0
+
+  for (const workspaceId of workspaceIds) {
+    try {
+      const result = await collectCampaignMetrics(workspaceId)
+
+      collected += result.collected
+      errors.push(...result.errors.map(error => `${workspaceId}: ${error}`))
+    } catch (error) {
+      errors.push(`${workspaceId}: ${error instanceof Error ? error.message : 'Unexpected collection error'}`)
+    }
+  }
+
+  return {
+    collected,
+    errors,
+    workspaces: workspaceIds.length,
+    updatedAt: new Date().toISOString()
+  }
+}
+
+export async function configureTwitterMonitor(workspaceId: string, input: ConfigureTwitterMonitorInput) {
   const start = new Date(input.monitorStartAt)
   const end = new Date(input.monitorEndAt)
 
+  if (![15, 30, 60].includes(input.cadenceMinutes)) {
+    throw new Error('Please choose a supported collection frequency')
+  }
+
   if (Number.isNaN(start.getTime()) || Number.isNaN(end.getTime()) || end <= start) {
     throw new Error('The monitoring end time must be later than the start time')
+  }
+
+  if (end.getTime() - start.getTime() > 30 * 24 * 60 * 60 * 1000) {
+    throw new Error('The monitoring window cannot exceed 30 days')
   }
 
   const url = new URL(input.url)
@@ -433,7 +513,7 @@ export async function configureTwitterMonitor(input: ConfigureTwitterMonitorInpu
   const handle = hasAccountStatusPath ? `@${pathParts[0]}` : '@x'
   const now = new Date().toISOString()
 
-  const store = await mutateStore(currentStore => {
+  const store = await mutateStore(workspaceId, currentStore => {
     const previousCampaign = currentStore.campaigns[0]
     const campaignId = previousCampaign?.id ?? 'primary_tweet_monitor'
     const urlChanged = previousCampaign?.url !== input.url.trim()
@@ -468,8 +548,8 @@ export async function configureTwitterMonitor(input: ConfigureTwitterMonitorInpu
   return toSnapshot(store)
 }
 
-export async function toggleCampaign(campaignId: string) {
-  const store = await mutateStore(currentStore => {
+export async function toggleCampaign(workspaceId: string, campaignId: string) {
+  const store = await mutateStore(workspaceId, currentStore => {
     const campaign = currentStore.campaigns.find(item => item.id === campaignId)
 
     if (!campaign) throw new Error('Campaign not found')
@@ -487,8 +567,8 @@ export async function toggleCampaign(campaignId: string) {
   return toSnapshot(store)
 }
 
-export async function ingestMetricPoint(input: IngestPointInput) {
-  const store = await mutateStore(currentStore => {
+export async function ingestMetricPoint(workspaceId: string, input: IngestPointInput) {
+  const store = await mutateStore(workspaceId, currentStore => {
     const campaign = currentStore.campaigns.find(item => item.id === input.campaignId)
 
     if (!campaign) throw new Error('Campaign not found')

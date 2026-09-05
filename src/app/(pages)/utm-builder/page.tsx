@@ -1,14 +1,15 @@
 import type { Metadata } from 'next'
 import { cookies } from 'next/headers'
 
+import ToolBreadcrumb from '@/components/layout/tool-breadcrumb'
 import UtmBuilder from '@/components/tools/utm-builder'
-import UtmBuilderGuide, { utmBuilderGuideCopy } from '@/components/tools/utm-builder-guide'
+import UtmBuilderGuide from '@/components/tools/utm-builder-guide'
 import { UTM_BUILDER_ACCESS_COOKIE, verifyAccessToken } from '@/lib/twitter-monitor/access'
 
 export const dynamic = 'force-dynamic'
 import { getLocalizedPath } from '@/lib/language'
 import { getRequestLanguage } from '@/lib/request-language'
-import { absoluteUrl, buildMetadata, createLocalizedAlternates, createWebPageSchema } from '@/lib/seo'
+import { buildMetadata, createBreadcrumbSchema, createLocalizedAlternates, createWebPageSchema } from '@/lib/seo'
 
 export async function generateMetadata(): Promise<Metadata> {
   const lang = await getRequestLanguage()
@@ -47,7 +48,6 @@ const UtmBuilderPage = async () => {
   const accessGranted = Boolean(verifyAccessToken(cookieStore.get(UTM_BUILDER_ACCESS_COOKIE)?.value))
   const lang = await getRequestLanguage()
   const path = getLocalizedPath('/utm-builder', lang)
-  const guide = utmBuilderGuideCopy[lang]
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -61,34 +61,20 @@ const UtmBuilderPage = async () => {
             : 'Generate clean UTM tracking links and learn campaign parameters, naming conventions, and GA4 reporting.',
         language: lang
       }),
-      {
-        '@type': 'SoftwareApplication',
-        name: lang === 'zh' ? 'Meridian UTM 链接生成器' : 'Meridian UTM Builder',
-        applicationCategory: 'BusinessApplication',
-        operatingSystem: 'Web',
-        url: absoluteUrl(path),
-        offers: {
-          '@type': 'Offer',
-          price: '0',
-          priceCurrency: 'USD'
-        }
-      },
-      {
-        '@type': 'FAQPage',
-        mainEntity: guide.faqs.map(faq => ({
-          '@type': 'Question',
-          name: faq.question,
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: faq.answer
-          }
-        }))
-      }
+      createBreadcrumbSchema(
+        [
+          { name: lang === 'zh' ? '首页' : 'Home', path: '/' },
+          { name: lang === 'zh' ? '免费工具' : 'Free tools', path: '/tools' },
+          { name: lang === 'zh' ? 'UTM 链接生成器' : 'UTM Builder', path: '/utm-builder' }
+        ],
+        lang
+      )
     ]
   }
 
   return (
     <>
+      <ToolBreadcrumb currentLabel={lang === 'zh' ? 'UTM 链接生成器' : 'UTM Builder'} lang={lang} />
       <UtmBuilder lang={lang} initialAccessGranted={accessGranted} />
       <UtmBuilderGuide lang={lang} />
       <script

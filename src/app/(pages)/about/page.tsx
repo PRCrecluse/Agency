@@ -15,118 +15,73 @@ import { Card, CardContent } from '@/components/ui/card'
 import { PrimaryFlowButton, SecondaryFlowButton } from '@/components/ui/flow-button'
 import BookingLink from '@/components/analytics/booking-link'
 import SectionSeparator from '@/components/section-separator'
-import { absoluteUrl, buildMetadata, createOrganizationSchema, createWebPageSchema } from '@/lib/seo'
+import { aboutContent } from '@/content/about'
+import { getLocalizedPath } from '@/lib/language'
+import { getRequestLanguage } from '@/lib/request-language'
+import {
+  absoluteUrl,
+  buildMetadata,
+  createLocalizedAlternates,
+  createOrganizationSchema,
+  createWebPageSchema
+} from '@/lib/seo'
 
-export const metadata: Metadata = buildMetadata({
-  title: 'About Meridian | AI-Native Growth Team',
-  description: 'Meet the founder, specialists, and builder story behind Meridian, GoGlobal.to, and the team’s AI-native growth practice.',
-  path: '/about',
-  keywords: ['about meridian', 'ai growth team', 'seo agency founder', 'reddit growth team']
-})
+export async function generateMetadata(): Promise<Metadata> {
+  const lang = await getRequestLanguage()
+  const copy = aboutContent[lang]
 
-const founderHighlights = [
-  'Founded and shipped 8 products independently',
-  'Driven 1M+ impressions across X/Twitter and Xiaohongshu',
-  'Customers include teams from Alibaba and a16z-backed companies',
-  'Creator of GoGlobal.to — an AI Reddit growth agent',
-  'Built an active builder-community voice with 4,672 Xiaohongshu likes and saves'
-]
-
-const stories = [
-  {
-    date: 'August 24, 2026',
-    eyebrow: 'Growth interview · LinkLoud',
-    title: 'Yiwei recorded a growth interview with LinkLoud co-founder Galen Gao',
-    quote:
-      '“Their first sit-down turned into a relaxed series of conversations about growth, building, and helping founders go global.”',
-    image: '/images/about/stories/yiwei-linkloud-gaoning-interview.jpg',
-    alt: 'Yiwei recording a growth interview with LinkLoud co-founder Galen Gao',
-    label: 'Founder conversations',
-    href: '/about/stories/yiwei-linkloud-gaoning-growth-interview'
-  },
-  {
-    date: 'July 5, 2026',
-    eyebrow: 'Founder, Volumn.ai',
-    title: 'Yiwei joined SparkLab Accelerator and lived alongside fellow founders',
-    quote:
-      '“Yiwei joined SparkLab Accelerator, lived with other founders, and marked a memorable birthday there.”',
-    image: '/images/about/sparklab-birthday.jpg',
-    alt: 'Yiwei celebrating a birthday at SparkLab',
-    label: 'Building in public',
-    href: '/about/stories/yiwei-sparklab-birthday'
-  }
-]
-
-const specialists = [
-  {
-    name: 'Max',
-    role: 'AI Growth Operator',
-    tagline: 'Former Marswave CMO & AI media operator',
-    image: '/images/about/max.jpg',
-    alt: 'Max, AI growth operator',
-    xUrl: 'https://x.com/MaxForAI',
-    bio: 'After leaving a U.S. graduate program to build, Max served as CMO at Marswave and helped grow it from $0 to $3M ARR. His experience spans USD fund research, talent leadership for a well-known model team, AI media operations, and product roles for several million-user products.',
-    highlights: [
-      'Former Marswave CMO; helped drive growth from $0 to $3M ARR',
-      'Brings fund research, AI-media, model-team talent, and product experience',
-      'Runs Max for AI on Xiaohongshu: 40K followers and a 10M-view post'
-    ]
-  },
-  {
-    name: 'Huiling',
-    role: 'Growth Marketing Specialist',
-    tagline: 'A founder-minded growth marketer with a hacker edge',
-    image: '/images/about/huiling.jpg',
-    alt: 'Huiling, growth marketing specialist',
-    bio: 'Huiling applies founder thinking and a hacker edge to growth. She works across the full AI product journey—from early user research and cold-start acquisition to scaling through high-quality KOL and KOC ecosystems—across AI companions, SaaS, and AI hardware.',
-    highlights: [
-      'Took an AI product to $1M ARR in four months',
-      'Covers early research, acquisition, and scaled growth end to end',
-      'Deep experience in SEO, paid acquisition, and KOL/KOC partnerships'
-    ]
-  }
-]
-
-const jsonLd = {
-  '@context': 'https://schema.org',
-  '@graph': [
-    {
-      ...createWebPageSchema({
-        path: '/about',
-        title: 'About Meridian | AI-Native Growth Team',
-        description:
-          'Meet the founder, specialists, and builder story behind Meridian, GoGlobal.to, and the team’s AI-native growth practice.'
-      }),
-      '@type': 'AboutPage'
-    },
-    createOrganizationSchema(),
-    {
-      '@type': 'Person',
-      '@id': absoluteUrl('/about#yiwei'),
-      name: 'Yiwei',
-      alternateName: '怡玮',
-      jobTitle: 'Founder & CEO',
-      worksFor: {
-        '@id': absoluteUrl('/#organization')
-      },
-      sameAs: [
-        'https://x.com/PRCrecluse674',
-        'https://www.xiaohongshu.com/user/profile/5f12e5900000000001000726'
-      ]
-    },
-    ...specialists.map(specialist => ({
-      '@type': 'Person',
-      name: specialist.name,
-      jobTitle: specialist.role,
-      worksFor: {
-        '@id': absoluteUrl('/#organization')
-      },
-      sameAs: specialist.xUrl ? [specialist.xUrl] : undefined
-    }))
-  ]
+  return buildMetadata({
+    title: copy.title,
+    description: copy.description,
+    path: getLocalizedPath('/about', lang),
+    keywords: copy.keywords,
+    alternates: createLocalizedAlternates('/about', lang),
+    language: lang
+  })
 }
 
-const AboutPage = () => {
+const AboutPage = async () => {
+  const lang = await getRequestLanguage()
+  const copy = aboutContent[lang]
+  const { founderHighlights, specialists, stories } = copy
+  const path = getLocalizedPath('/about', lang)
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        ...createWebPageSchema({
+          path,
+          title: copy.title,
+          description: copy.description,
+          language: lang
+        }),
+        '@type': 'AboutPage'
+      },
+      createOrganizationSchema(),
+      {
+        '@type': 'Person',
+        '@id': absoluteUrl('/about#yiwei'),
+        name: 'Yiwei',
+        alternateName: '怡玮',
+        jobTitle: copy.founderRole,
+        worksFor: {
+          '@id': absoluteUrl('/#organization')
+        },
+        sameAs: ['https://x.com/PRCrecluse674', 'https://www.xiaohongshu.com/user/profile/5f12e5900000000001000726']
+      },
+      ...specialists.map(specialist => ({
+        '@type': 'Person',
+        name: specialist.name,
+        jobTitle: specialist.role,
+        worksFor: {
+          '@id': absoluteUrl('/#organization')
+        },
+        sameAs: specialist.xUrl ? [specialist.xUrl] : undefined
+      }))
+    ]
+  }
+
   return (
     <>
       <section className='relative overflow-hidden px-4 py-14 sm:px-6 sm:py-20 lg:px-8 lg:py-24'>
@@ -136,22 +91,22 @@ const AboutPage = () => {
         <div className='relative mx-auto w-full max-w-7xl'>
           <div className='max-w-4xl space-y-7'>
             <Badge variant='outline' className='h-auto px-3 py-1 text-sm font-normal'>
-              About Meridian
+              {copy.eyebrow}
             </Badge>
             <div className='space-y-5'>
               <h1 className='max-w-4xl text-4xl font-semibold tracking-tight sm:text-5xl lg:text-6xl'>
-                A growth partner built by people who ship.
+                {copy.headline}
               </h1>
             </div>
             <div className='flex flex-wrap gap-4'>
               <PrimaryFlowButton asChild>
-                <Link href='/services'>
-                  Explore services
+                <Link href={getLocalizedPath('/services', lang)}>
+                  {copy.exploreServices}
                   <ArrowRightIcon />
                 </Link>
               </PrimaryFlowButton>
               <SecondaryFlowButton asChild>
-                <Link href='#specialists'>Meet the team</Link>
+                <Link href='#specialists'>{copy.meetTeam}</Link>
               </SecondaryFlowButton>
             </div>
           </div>
@@ -165,31 +120,26 @@ const AboutPage = () => {
           <div className='bg-muted/40 relative overflow-hidden rounded-[28px] border p-3'>
             <img
               src='/images/about/founder.jpg'
-              alt='Yiwei (怡玮), founder and CEO'
+              alt={copy.founderAlt}
               className='aspect-square w-full rounded-[20px] object-cover'
             />
             <div className='bg-background/85 absolute right-7 bottom-7 left-7 rounded-2xl border p-4 backdrop-blur-sm'>
-              <p className='text-muted-foreground text-xs font-medium tracking-[0.2em] uppercase'>Founder & CEO</p>
-              <p className='mt-1 text-lg font-semibold'>Yiwei (怡玮)</p>
+              <p className='text-muted-foreground text-xs font-medium tracking-[0.2em] uppercase'>{copy.founderRole}</p>
+              <p className='mt-1 text-lg font-semibold'>{copy.founderName}</p>
             </div>
           </div>
 
           <div className='space-y-7'>
             <div className='space-y-4'>
               <Badge variant='outline' className='h-auto px-3 py-1 text-sm font-normal'>
-                Meet the Founder
+                {copy.founderEyebrow}
               </Badge>
-              <h2 className='text-3xl font-semibold tracking-tight sm:text-4xl'>Yiwei (怡玮)</h2>
-              <p className='text-muted-foreground text-base leading-7 sm:text-lg'>
-                Yiwei is an entrepreneur and serial builder who has launched eight products and driven over one million
-                impressions across X/Twitter and Xiaohongshu. With a hands-on reputation in the overseas product-growth
-                community, Yiwei works with teams from Alibaba and a16z-backed companies.
-              </p>
-              <p className='text-muted-foreground text-base leading-7 sm:text-lg'>
-                Yiwei also founded GoGlobal.to, an AI Reddit marketing agent, applying the same philosophy of
-                AI-powered, safety-first social automation to a second platform. Meridian brings that builder mindset
-                into a focused growth partnership for companies that need a clear route from discovery to demand.
-              </p>
+              <h2 className='text-3xl font-semibold tracking-tight sm:text-4xl'>{copy.founderName}</h2>
+              {copy.founderBio.map(paragraph => (
+                <p key={paragraph} className='text-muted-foreground text-base leading-7 sm:text-lg'>
+                  {paragraph}
+                </p>
+              ))}
             </div>
 
             <div className='grid gap-3 sm:grid-cols-2'>
@@ -204,7 +154,7 @@ const AboutPage = () => {
             <div className='flex flex-wrap gap-3'>
               <SecondaryFlowButton asChild>
                 <Link href='https://x.com/Yiwei_growth' target='_blank' rel='noreferrer'>
-                  Follow on X
+                  {copy.followOnX}
                   <ExternalLinkIcon />
                 </Link>
               </SecondaryFlowButton>
@@ -214,7 +164,7 @@ const AboutPage = () => {
                   target='_blank'
                   rel='noreferrer'
                 >
-                  小红书 Yiwei 怡玮
+                  {copy.xiaohongshu}
                   <ExternalLinkIcon />
                 </Link>
               </SecondaryFlowButton>
@@ -229,15 +179,10 @@ const AboutPage = () => {
         <div className='mx-auto w-full max-w-7xl'>
           <div className='max-w-3xl space-y-4'>
             <Badge variant='outline' className='h-auto px-3 py-1 text-sm font-normal'>
-              Core Specialists
+              {copy.specialistsEyebrow}
             </Badge>
-            <h2 className='text-3xl font-semibold tracking-tight sm:text-4xl'>
-              Operators who turn growth strategy into momentum.
-            </h2>
-            <p className='text-muted-foreground text-base leading-7 sm:text-lg'>
-              Meridian brings senior operators into the work—not just the planning. Meet the specialists behind our AI
-              growth, product marketing, and distribution practice.
-            </p>
+            <h2 className='text-3xl font-semibold tracking-tight sm:text-4xl'>{copy.specialistsTitle}</h2>
+            <p className='text-muted-foreground text-base leading-7 sm:text-lg'>{copy.specialistsDescription}</p>
           </div>
 
           <div className='mt-10 grid gap-6'>
@@ -274,7 +219,7 @@ const AboutPage = () => {
                     {specialist.xUrl && (
                       <SecondaryFlowButton asChild className='mt-6 w-fit'>
                         <Link href={specialist.xUrl} target='_blank' rel='noreferrer'>
-                          Follow {specialist.name} on X
+                          {lang === 'zh' ? `在 X 上关注 ${specialist.name}` : `Follow ${specialist.name} on X`}
                           <ExternalLinkIcon />
                         </Link>
                       </SecondaryFlowButton>
@@ -293,18 +238,19 @@ const AboutPage = () => {
         <div className='mx-auto flex w-full max-w-7xl flex-col gap-10'>
           <div className='max-w-3xl space-y-4'>
             <Badge variant='outline' className='h-auto px-3 py-1 text-sm font-normal'>
-              Team Story
+              {copy.storiesEyebrow}
             </Badge>
-            <h2 className='text-3xl font-semibold tracking-tight sm:text-4xl'>Milestones that shaped the team.</h2>
-            <p className='text-muted-foreground text-base leading-7 sm:text-lg'>
-              The team behind Meridian is built through product launches, public learning, and close collaboration with
-              other founders. These early moments continue to shape how we work with growth-stage brands today.
-            </p>
+            <h2 className='text-3xl font-semibold tracking-tight sm:text-4xl'>{copy.storiesTitle}</h2>
+            <p className='text-muted-foreground text-base leading-7 sm:text-lg'>{copy.storiesDescription}</p>
           </div>
 
           <div className='grid gap-6 lg:grid-cols-2'>
             {stories.map((story, index) => (
-              <Link key={story.title} href={story.href} className='group block focus-visible:outline-none'>
+              <Link
+                key={story.title}
+                href={getLocalizedPath(story.href, lang)}
+                className='group block focus-visible:outline-none'
+              >
                 <article className='bg-card/85 group-focus-visible:ring-ring relative h-full overflow-hidden rounded-[28px] border transition-transform duration-300 group-hover:-translate-y-1 group-focus-visible:ring-2'>
                   <div className='bg-muted relative aspect-[16/10] overflow-hidden'>
                     <img
@@ -334,7 +280,7 @@ const AboutPage = () => {
                         <time>{story.date}</time>
                       </div>
                       <span className='text-primary flex items-center gap-1.5 font-medium'>
-                        Read story
+                        {copy.readStory}
                         <ArrowRightIcon className='size-4 transition-transform duration-300 group-hover:translate-x-1' />
                       </span>
                     </div>
@@ -356,21 +302,19 @@ const AboutPage = () => {
               <div className='bg-primary/10 text-primary flex size-11 items-center justify-center rounded-2xl'>
                 <HeartHandshakeIcon className='size-5' />
               </div>
-              <h2 className='text-3xl font-semibold tracking-tight'>Want a growth partner who understands the work?</h2>
-              <p className='text-muted-foreground text-base leading-7'>
-                We can map your next search, AI-discovery, or community-growth opportunity into a delivery plan that is
-                built for your current stage.
-              </p>
+              <h2 className='text-3xl font-semibold tracking-tight'>{copy.ctaTitle}</h2>
+              <p className='text-muted-foreground text-base leading-7'>{copy.ctaDescription}</p>
             </div>
             <PrimaryFlowButton asChild>
               <BookingLink
                 ctaLocation='closing_card'
                 pageType='about'
                 serviceType='growth_strategy'
+                language={lang}
                 target='_blank'
                 rel='noreferrer'
               >
-                Book a strategy call
+                {copy.bookCall}
                 <ArrowRightIcon />
               </BookingLink>
             </PrimaryFlowButton>

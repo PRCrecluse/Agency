@@ -29,6 +29,7 @@ export type LeadCaptureSource = 'twitter-monitor' | 'utm-builder'
 export interface AccessSession {
   companyName: string
   email: string
+  workspaceId: string
   expiresAt: number
 }
 
@@ -147,6 +148,7 @@ async function writeLeadToNotion(record: LeadCaptureRecord) {
         textBlock(`Website: ${record.website}`),
         textBlock(`Role: ${record.role}`),
         textBlock(`Report email: ${record.email}`),
+        textBlock(`Workspace ID: ${record.id}`),
         textBlock(`Submitted: ${record.createdAt}`),
         textBlock(`Source: ${source.path}`)
       ]
@@ -270,13 +272,18 @@ export async function persistLeadCapture(input: LeadCaptureInput, source: LeadCa
       ? ('planetscale' as const)
       : ('json-file' as const)
 
-  return { lead, storage }
+  return { lead, storage, workspaceId: record.id }
 }
 
-export function createAccessToken(lead: LeadCaptureInput) {
+export function createAccessToken(lead: LeadCaptureInput, workspaceId: string) {
+  if (!/^[a-zA-Z0-9_-]{12,48}$/.test(workspaceId) || workspaceId === 'primary') {
+    throw new Error('Invalid Twitter monitor workspace')
+  }
+
   const session: AccessSession = {
     companyName: lead.companyName,
     email: lead.email,
+    workspaceId,
     expiresAt: Math.floor(Date.now() / 1000) + ACCESS_TTL_SECONDS
   }
 
@@ -299,11 +306,30 @@ export function verifyAccessToken(token: string | undefined): AccessSession | nu
 
     if (expected.length !== supplied.length || !timingSafeEqual(expected, supplied)) return null
 
-    const session = JSON.parse(decode(payload)) as AccessSession
+    const session = JSON.parse(decode(payload)) as Partial<AccessSession>
 
-    if (!session.email || !session.companyName || session.expiresAt <= Math.floor(Date.now() / 1000)) return null
+    if (
+      !session.email ||
+      !session.companyName ||
+      typeof session.expiresAt !== 'number' ||
+      session.expiresAt <= Math.floor(Date.now() / 1000)
+    ) {
+      return null
+    }
 
-    return session
+    const workspaceId =
+      typeof session.workspaceId === 'string' &&
+      session.workspaceId !== 'primary' &&
+      /^[a-zA-Z0-9_-]{12,48}$/.test(session.workspaceId)
+        ? session.workspaceId
+        : `legacy_${createHmac('sha256', getAccessSecret()).update(session.email).digest('hex').slice(0, 24)}`
+
+    return {
+      companyName: session.companyName,
+      email: session.email,
+      workspaceId,
+      expiresAt: session.expiresAt
+    }
   } catch {
     return null
   }

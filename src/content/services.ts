@@ -1,3 +1,5 @@
+import { geoServices } from '@/content/geo-services'
+
 export type ServiceLang = 'en' | 'zh'
 
 export type LocalizedText = {
@@ -41,6 +43,7 @@ export type ServicePage = {
   deliveryPresentation?: 'cards' | 'table'
   faqItems?: ServiceFaqItem[]
   hideOutcomes?: boolean
+  subServices?: ServicePage[]
 }
 
 export const resolveLocalizedText = (value: LocalizedText, lang: ServiceLang) => value[lang]
@@ -478,6 +481,7 @@ export const servicePages: ServicePage[] = [
     slug: 'geo-services',
     category: { en: 'GEO Services', zh: 'GEO 服务' },
     title: { en: 'GEO Services', zh: 'GEO 服务' },
+    subServices: geoServices,
     description: {
       en: 'Build durable visibility in AI discovery with a measured GEO program that combines AI visibility diagnosis, LLM-friendly content, community participation, video publishing, technical guidance, and recurring review.',
       zh: '通过 AI 可见度诊断、LLM 友好内容、社区运营、视频发布、技术建议与持续复盘，建立更稳定的 AI 搜索发现能力。'
@@ -632,6 +636,12 @@ export const getServiceSectionBySlug = (serviceSlug: string, sectionSlug: string
 
 export const getServiceSectionPage = (serviceSlug: string, sectionSlug: string): ServicePage | undefined => {
   const service = getServiceBySlug(serviceSlug)
+  const subService = service?.subServices?.find(item => item.slug === sectionSlug)
+
+  if (subService) {
+    return subService
+  }
+
   const section = getServiceSectionBySlug(serviceSlug, sectionSlug)
 
   if (!service || !section) {
@@ -653,8 +663,8 @@ export const getServiceSectionPage = (serviceSlug: string, sectionSlug: string):
 }
 
 export const serviceSectionParams = servicePages.flatMap(service =>
-  service.sections.map(section => ({
+  [...service.sections.map(section => section.id), ...(service.subServices?.map(item => item.slug) ?? [])].map(sectionSlug => ({
     slug: service.slug,
-    sectionSlug: section.id
+    sectionSlug
   }))
 )

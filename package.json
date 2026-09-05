@@ -9,6 +9,7 @@
     "build": "next build",
     "prestart": "pnpm build",
     "start": "next start",
+    "test": "node --test src/lib/twitter-monitor/access.test.mjs src/lib/twitter-monitor/store.test.mjs src/lib/rate-limit.test.mjs",
     "lint": "eslint",
     "lint:fix": "eslint --fix",
     "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\"",

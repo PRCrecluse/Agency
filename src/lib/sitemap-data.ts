@@ -1,11 +1,13 @@
 import type { MetadataRoute } from 'next'
 
 import { aboutStories } from '@/content/about-stories'
+import { geoMethodologyPath } from '@/content/geo-methodology'
 import { serviceSectionParams, serviceSlugs } from '@/content/services'
 import { getPosts } from '@/lib/posts'
 import { absoluteUrl } from '@/lib/seo'
 
 const specializedServicePaths = [
+  geoMethodologyPath,
   '/services/seo-services/on-page-seo',
   '/services/seo-services/technical-seo',
   '/services/seo-services/programmatic-seo',
@@ -55,18 +57,14 @@ export async function getSitemapEntries(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: 'weekly',
       priority: 1
     },
-    {
-      url: absoluteUrl('/about'),
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.8
-    },
+    ...localizedEntries('/about', 0.8, 'monthly'),
     ...localizedEntries('/blog', 0.8),
     ...localizedEntries('/services', 0.9),
     ...localizedEntries('/services/reddit-services', 0.8),
     ...localizedEntries('/utm-builder', 0.6, 'monthly'),
+    ...localizedEntries('/tools', 0.8, 'monthly'),
     ...specializedServicePaths.flatMap(path => localizedEntries(path, 0.8)),
-    ...['/seo-prompts', '/tools', '/community'].map(pagePath => ({
+    ...['/seo-prompts', '/community', '/twitter-monitor'].map(pagePath => ({
       url: absoluteUrl(pagePath),
       lastModified: now,
       changeFrequency: 'monthly' as const,
@@ -94,12 +92,12 @@ export async function getSitemapEntries(): Promise<MetadataRoute.Sitemap> {
     ...serviceSectionParams
       .filter(({ slug, sectionSlug }) => !specializedServicePathSet.has(`/services/${slug}/${sectionSlug}`))
       .flatMap(({ slug, sectionSlug }) => localizedEntries(`/services/${slug}/${sectionSlug}`, 0.7)),
-    ...aboutStories.map(story => ({
-      url: absoluteUrl(`/about/stories/${story.slug}`),
-      lastModified: new Date(story.date),
-      changeFrequency: 'monthly' as const,
-      priority: 0.6
-    })),
+    ...aboutStories.flatMap(story =>
+      localizedEntries(`/about/stories/${story.slug}`, 0.6, 'monthly').map(entry => ({
+        ...entry,
+        lastModified: new Date(story.date)
+      }))
+    ),
     ...posts.map(post => {
       const englishPath = `/blog/${post.slug}`
       const chinesePath = `/zh/blog/${post.slug}`

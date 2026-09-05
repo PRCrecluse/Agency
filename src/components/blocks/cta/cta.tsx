@@ -8,6 +8,7 @@ import { PrimaryFlowButton } from '@/components/ui/flow-button'
 
 import LogoVector from '@/assets/svg/logo-vector'
 import DottedSheet from '@/assets/svg/dotted-sheet'
+import type { SiteLang } from '@/lib/language'
 
 type CTASectionProps = {
   title: string
@@ -17,6 +18,7 @@ type CTASectionProps = {
   ctaLocation?: string
   pageType?: string
   serviceType?: string
+  language?: SiteLang
 }
 
 const CTASection = ({
@@ -26,7 +28,8 @@ const CTASection = ({
   href,
   ctaLocation = 'section_footer',
   pageType,
-  serviceType
+  serviceType,
+  language
 }: CTASectionProps) => {
   return (
     <section id='cta' className='relative z-1 pt-16 pb-16 sm:pt-32 sm:pb-16 lg:pt-48 lg:pb-24'>
@@ -62,6 +65,7 @@ const CTASection = ({
                   ctaLocation={ctaLocation}
                   pageType={pageType}
                   serviceType={serviceType}
+                  language={language}
                   target='_blank'
                   rel='noreferrer'
                 >

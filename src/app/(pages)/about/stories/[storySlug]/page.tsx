@@ -8,10 +8,11 @@ import SectionSeparator from '@/components/section-separator'
 import { Badge } from '@/components/ui/badge'
 import { Card, CardContent } from '@/components/ui/card'
 import { PrimaryFlowButton, SecondaryFlowButton } from '@/components/ui/flow-button'
-import { aboutStories, type AboutStory } from '@/content/about-stories'
-import { absoluteUrl, buildMetadata } from '@/lib/seo'
-
-const getStory = (slug: string): AboutStory | undefined => aboutStories.find(story => story.slug === slug)
+import { aboutContent } from '@/content/about'
+import { aboutStories, formatStoryDate, getAboutStories } from '@/content/about-stories'
+import { getLanguageTag, getLocalizedPath } from '@/lib/language'
+import { getRequestLanguage } from '@/lib/request-language'
+import { absoluteUrl, buildMetadata, createLocalizedAlternates } from '@/lib/seo'
 
 export const dynamicParams = false
 
@@ -21,24 +22,30 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: Promise<{ storySlug: string }> }): Promise<Metadata> {
   const { storySlug } = await params
-  const story = getStory(storySlug)
+  const lang = await getRequestLanguage()
+  const story = getAboutStories(lang).find(story => story.slug === storySlug)
 
   if (!story) {
     return {}
   }
 
+  const path = getLocalizedPath(`/about/stories/${story.slug}`, lang)
+
   return {
     ...buildMetadata({
       title: `${story.title} | Meridian`,
       description: story.deck,
-      path: `/about/stories/${story.slug}`
+      path,
+      alternates: createLocalizedAlternates(`/about/stories/${story.slug}`, lang),
+      language: lang
     }),
     openGraph: {
       title: `${story.title} | Meridian`,
       description: story.deck,
       type: 'article',
       publishedTime: new Date(story.date).toISOString(),
-      url: absoluteUrl(`/about/stories/${story.slug}`),
+      url: absoluteUrl(path),
+      locale: lang === 'zh' ? 'zh_CN' : 'en_US',
       images: [{ url: absoluteUrl(story.imageOne), alt: story.imageOneAlt }]
     }
   }
@@ -46,11 +53,15 @@ export async function generateMetadata({ params }: { params: Promise<{ storySlug
 
 const StoryDetailPage = async ({ params }: { params: Promise<{ storySlug: string }> }) => {
   const { storySlug } = await params
-  const story = getStory(storySlug)
+  const lang = await getRequestLanguage()
+  const story = getAboutStories(lang).find(story => story.slug === storySlug)
 
   if (!story) {
     notFound()
   }
+
+  const copy = aboutContent[lang]
+  const path = getLocalizedPath(`/about/stories/${story.slug}`, lang)
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -68,7 +79,8 @@ const StoryDetailPage = async ({ params }: { params: Promise<{ storySlug: string
       '@type': 'Organization',
       name: 'Meridian'
     },
-    mainEntityOfPage: absoluteUrl(`/about/stories/${story.slug}`)
+    mainEntityOfPage: absoluteUrl(path),
+    inLanguage: getLanguageTag(lang)
   }
 
   return (
@@ -79,9 +91,9 @@ const StoryDetailPage = async ({ params }: { params: Promise<{ storySlug: string
 
         <div className='relative mx-auto w-full max-w-5xl'>
           <SecondaryFlowButton asChild>
-            <Link href='/about#team-story'>
+            <Link href={`${getLocalizedPath('/about', lang)}#team-story`}>
               <ArrowLeftIcon />
-              Back to Team Story
+              {lang === 'zh' ? '返回团队故事' : 'Back to Team Story'}
             </Link>
           </SecondaryFlowButton>
 
@@ -92,9 +104,9 @@ const StoryDetailPage = async ({ params }: { params: Promise<{ storySlug: string
               </Badge>
               <span className='flex items-center gap-1.5'>
                 <CalendarDaysIcon className='size-3.5' />
-                <time dateTime={new Date(story.date).toISOString()}>{story.date}</time>
+                <time dateTime={new Date(story.date).toISOString()}>{formatStoryDate(story.date, lang)}</time>
               </span>
-              <span>Yiwei · Founder</span>
+              <span>{lang === 'zh' ? '怡玮 · 创始人' : 'Yiwei · Founder'}</span>
             </div>
             <h1 className='text-4xl font-semibold tracking-tight sm:text-5xl lg:text-6xl'>{story.title}</h1>
             <p className='text-muted-foreground max-w-3xl text-lg leading-8 sm:text-xl'>{story.deck}</p>
@@ -137,13 +149,15 @@ const StoryDetailPage = async ({ params }: { params: Promise<{ storySlug: string
               <CardContent className='p-5'>
                 <img
                   src='/images/about/founder.jpg'
-                  alt='Yiwei, founder of Meridian'
+                  alt={copy.founderAlt}
                   className='aspect-square w-full rounded-2xl object-cover'
                 />
-                <p className='mt-5 text-sm font-semibold'>Yiwei (怡玮)</p>
+                <p className='mt-5 text-sm font-semibold'>{copy.founderName}</p>
                 <p className='text-muted-foreground mt-1 text-sm'>{story.authorRole}</p>
                 <p className='text-muted-foreground mt-4 text-sm leading-6'>
-                  A builder and growth operator turning practical founder lessons into focused support for global teams.
+                  {lang === 'zh'
+                    ? '作为产品实践者与增长运营者，将创业中的实战经验转化为对全球团队的切实支持。'
+                    : 'A builder and growth operator turning practical founder lessons into focused support for global teams.'}
                 </p>
               </CardContent>
             </Card>
@@ -151,7 +165,7 @@ const StoryDetailPage = async ({ params }: { params: Promise<{ storySlug: string
             <Card className='bg-card/85 border'>
               <CardContent className='p-5'>
                 <p className='text-muted-foreground text-xs font-medium tracking-[0.18em] uppercase'>
-                  What this shaped
+                  {lang === 'zh' ? '这段经历带来的收获' : 'What this shaped'}
                 </p>
                 <ul className='mt-4 space-y-3'>
                   {story.highlights.map(highlight => (
@@ -174,12 +188,16 @@ const StoryDetailPage = async ({ params }: { params: Promise<{ storySlug: string
           <Card className='bg-card/85 border'>
             <CardContent className='flex min-h-56 flex-col justify-between gap-8 p-6 sm:p-8'>
               <div className='space-y-3'>
-                <p className='text-muted-foreground text-xs font-medium tracking-[0.18em] uppercase'>Team story</p>
-                <h2 className='text-2xl font-semibold tracking-tight'>See the milestones behind Meridian.</h2>
+                <p className='text-muted-foreground text-xs font-medium tracking-[0.18em] uppercase'>
+                  {copy.storiesEyebrow}
+                </p>
+                <h2 className='text-2xl font-semibold tracking-tight'>
+                  {lang === 'zh' ? '了解 Meridian 背后的成长历程。' : 'See the milestones behind Meridian.'}
+                </h2>
               </div>
               <SecondaryFlowButton asChild className='w-fit'>
-                <Link href='/about#team-story'>
-                  Back to About
+                <Link href={`${getLocalizedPath('/about', lang)}#team-story`}>
+                  {lang === 'zh' ? '返回关于我们' : 'Back to About'}
                   <ArrowRightIcon />
                 </Link>
               </SecondaryFlowButton>
@@ -189,12 +207,14 @@ const StoryDetailPage = async ({ params }: { params: Promise<{ storySlug: string
           <Card className='bg-primary/[0.06] border'>
             <CardContent className='flex min-h-56 flex-col justify-between gap-8 p-6 sm:p-8'>
               <div className='space-y-3'>
-                <p className='text-primary text-xs font-medium tracking-[0.18em] uppercase'>Continue reading</p>
+                <p className='text-primary text-xs font-medium tracking-[0.18em] uppercase'>
+                  {lang === 'zh' ? '继续阅读' : 'Continue reading'}
+                </p>
                 <h2 className='text-2xl font-semibold tracking-tight'>{story.nextLabel}</h2>
               </div>
               <PrimaryFlowButton asChild className='w-fit'>
-                <Link href={`/about/stories/${story.nextSlug}`}>
-                  Read the story
+                <Link href={getLocalizedPath(`/about/stories/${story.nextSlug}`, lang)}>
+                  {copy.readStory}
                   <ArrowRightIcon />
                 </Link>
               </PrimaryFlowButton>
@@ -203,11 +223,7 @@ const StoryDetailPage = async ({ params }: { params: Promise<{ storySlug: string
         </div>
       </section>
 
-      <CTA
-        title='Want a growth partner who understands the work?'
-        description='We can map your next search, AI-discovery, or community-growth opportunity into a delivery plan built for your current stage.'
-        buttonLabel='Book a strategy call'
-      />
+      <CTA title={copy.ctaTitle} description={copy.ctaDescription} buttonLabel={copy.bookCall} language={lang} />
 
       <script
         type='application/ld+json'

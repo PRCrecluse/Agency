@@ -1,5 +1,6 @@
 import { NextResponse, type NextRequest } from 'next/server'
 
+import { checkRateLimit, getClientRateLimitKey, getRateLimitHeaders } from '@/lib/rate-limit'
 import { TWITTER_MONITOR_ACCESS_COOKIE, verifyAccessToken } from '@/lib/twitter-monitor/access'
 import {
   collectCampaignMetrics,
@@ -15,13 +16,16 @@ export const dynamic = 'force-dynamic'
 
 const errorResponse = (message: string, status = 400) => NextResponse.json({ error: message }, { status })
 
+const rateLimitResponse = (message: string, result: ReturnType<typeof checkRateLimit>) =>
+  NextResponse.json({ error: message }, { status: 429, headers: getRateLimitHeaders(result) })
+
 export async function GET(request: NextRequest) {
   const session = verifyAccessToken(request.cookies.get(TWITTER_MONITOR_ACCESS_COOKIE)?.value)
 
   if (!session) return errorResponse('Complete the access form before using this tool.', 401)
 
   try {
-    return NextResponse.json(await getMonitorSnapshot())
+    return NextResponse.json(await getMonitorSnapshot(session.workspaceId))
   } catch (error) {
     console.error('Failed to load Twitter monitor snapshot', error)
 
@@ -35,6 +39,7 @@ export async function POST(request: NextRequest) {
       action?: string
       force?: boolean
       campaignId?: string
+      workspaceId?: string
       monitor?: ConfigureTwitterMonitorInput
       point?: IngestPointInput
     }
@@ -50,9 +55,18 @@ export async function POST(request: NextRequest) {
         return errorResponse('Unauthorized.', 401)
       }
 
-      if (!body.point?.campaignId) return errorResponse('A metric point with campaignId is required.')
+      if (!body.workspaceId || !body.point?.campaignId) {
+        return errorResponse('workspaceId and a metric point with campaignId are required.')
+      }
 
-      return NextResponse.json({ snapshot: await ingestMetricPoint(body.point) })
+      const rateLimit = checkRateLimit('twitter-monitor-ingest', getClientRateLimitKey(request.headers), {
+        limit: 120,
+        windowMs: 60 * 1000
+      })
+
+      if (!rateLimit.allowed) return rateLimitResponse('Too many ingestion requests.', rateLimit)
+
+      return NextResponse.json({ snapshot: await ingestMetricPoint(body.workspaceId, body.point) })
     }
 
     const session = verifyAccessToken(request.cookies.get(TWITTER_MONITOR_ACCESS_COOKIE)?.value)
@@ -60,7 +74,15 @@ export async function POST(request: NextRequest) {
     if (!session) return errorResponse('Complete the access form before using this tool.', 401)
 
     if (body.action === 'collect') {
-      return NextResponse.json(await collectCampaignMetrics(body.force ?? false))
+      const rateLimit = checkRateLimit(
+        body.force ? 'twitter-monitor-force-collect' : 'twitter-monitor-poll',
+        session.workspaceId,
+        body.force ? { limit: 4, windowMs: 10 * 60 * 1000 } : { limit: 30, windowMs: 60 * 1000 }
+      )
+
+      if (!rateLimit.allowed) return rateLimitResponse('Too many refresh requests. Please wait a moment.', rateLimit)
+
+      return NextResponse.json(await collectCampaignMetrics(session.workspaceId, body.force ?? false))
     }
 
     if (body.action === 'configure') {
@@ -68,11 +90,20 @@ export async function POST(request: NextRequest) {
         return errorResponse('Tweet URL, start time, and end time are required.')
       }
 
-      const configuredSnapshot = await configureTwitterMonitor(body.monitor)
+      const rateLimit = checkRateLimit('twitter-monitor-configure', session.workspaceId, {
+        limit: 10,
+        windowMs: 10 * 60 * 1000
+      })
+
+      if (!rateLimit.allowed) {
+        return rateLimitResponse('Too many monitor changes. Please try again later.', rateLimit)
+      }
+
+      const configuredSnapshot = await configureTwitterMonitor(session.workspaceId, body.monitor)
       const campaign = configuredSnapshot.campaigns[0]
 
       const collection = campaign
-        ? await collectCampaignMetrics(true, [campaign.id])
+        ? await collectCampaignMetrics(session.workspaceId, true, [campaign.id])
         : { snapshot: configuredSnapshot, collected: 0, errors: [] }
 
       return NextResponse.json(collection)
@@ -81,7 +112,14 @@ export async function POST(request: NextRequest) {
     if (body.action === 'toggle') {
       if (!body.campaignId) return errorResponse('campaignId is required.')
 
-      return NextResponse.json({ snapshot: await toggleCampaign(body.campaignId) })
+      const rateLimit = checkRateLimit('twitter-monitor-toggle', session.workspaceId, {
+        limit: 20,
+        windowMs: 10 * 60 * 1000
+      })
+
+      if (!rateLimit.allowed) return rateLimitResponse('Too many monitor changes. Please try again later.', rateLimit)
+
+      return NextResponse.json({ snapshot: await toggleCampaign(session.workspaceId, body.campaignId) })
     }
 
     return errorResponse('Unsupported action.')

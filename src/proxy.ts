@@ -16,7 +16,10 @@ export function proxy(request: NextRequest, event: NextFetchEvent) {
     request.nextUrl.pathname.startsWith('/zh/') ||
     request.headers.get('x-page-locale') === 'zh-CN'
 
-  if (request.nextUrl.searchParams.has('lang') && /^\/(?:zh\/)?(?:services|utm-builder)(?:\/|$)/.test(request.nextUrl.pathname)) {
+  if (
+    request.nextUrl.searchParams.has('lang') &&
+    /^\/(?:zh\/)?(?:about|services|tools|utm-builder)(?:\/|$)/.test(request.nextUrl.pathname)
+  ) {
     const destination = request.nextUrl.clone()
     const wantsChinese = request.nextUrl.searchParams.get('lang')?.toLowerCase().startsWith('zh')
 
@@ -30,7 +33,7 @@ export function proxy(request: NextRequest, event: NextFetchEvent) {
 
   requestHeaders.set('x-page-locale', isChinesePath ? 'zh-CN' : 'en')
 
-  if (/^\/zh\/(?:services|utm-builder)(?:\/|$)/.test(request.nextUrl.pathname)) {
+  if (/^\/zh\/(?:about|services|tools|utm-builder)(?:\/|$)/.test(request.nextUrl.pathname)) {
     const destination = request.nextUrl.clone()
 
     destination.pathname = request.nextUrl.pathname.replace(/^\/zh/, '')

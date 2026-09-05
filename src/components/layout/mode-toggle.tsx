@@ -4,8 +4,9 @@ import { MoonStarIcon, SunIcon } from 'lucide-react'
 import { useTheme } from 'next-themes'
 
 import { SecondaryFlowButton } from '@/components/ui/flow-button'
+import type { SiteLang } from '@/lib/language'
 
-const ModeToggle = () => {
+const ModeToggle = ({ lang = 'en' }: { lang?: SiteLang }) => {
   const { resolvedTheme, setTheme } = useTheme()
 
   return (
@@ -15,7 +16,7 @@ const ModeToggle = () => {
     >
       <MoonStarIcon className='scale-100 dark:scale-0' />
       <SunIcon className='absolute scale-0 dark:scale-100' />
-      <span className='sr-only'>Toggle theme</span>
+      <span className='sr-only'>{lang === 'zh' ? '切换主题' : 'Toggle theme'}</span>
     </SecondaryFlowButton>
   )
 }

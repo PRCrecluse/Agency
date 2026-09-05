@@ -5,6 +5,7 @@ import { useEffect, type ComponentProps, type MouseEvent } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
+import { getLocalizedPath, getPathLanguage } from '@/lib/language'
 import {
   BOOKING_CLICK_GOAL,
   BOOKING_ACQUISITION_PARAMETERS,
@@ -77,13 +78,14 @@ const BookingLink = ({
   onClick,
   ...props
 }: BookingLinkProps) => {
-  const pathname = usePathname()
+  const requestPathname = usePathname()
+  const resolvedLanguage = language ?? getPathLanguage(requestPathname)
+  const pathname = getLocalizedPath(requestPathname, resolvedLanguage)
   const resolvedPageType = normalizeBookingTrackingValue(pageType ?? inferBookingPageType(pathname))
 
   const resolvedServiceType = normalizeBookingTrackingValue(serviceType ?? inferBookingServiceType(pathname, href))
 
   const resolvedCtaLocation = normalizeBookingTrackingValue(ctaLocation)
-  const resolvedLanguage = language ?? (pathname === '/zh' || pathname.startsWith('/zh/') ? 'zh' : 'en')
 
   useEffect(() => {
     getCurrentPageWithPersistedAttribution()

@@ -21,6 +21,8 @@ import FAQ from '@/components/blocks/faq/faq'
 import TrustedBrands from '@/components/blocks/trusted-brands/trusted-brands'
 import DeliveryTable from '@/components/services/delivery-table'
 import PackageSwitcher from '@/components/services/package-switcher'
+import SubServiceCards from '@/components/services/sub-service-cards'
+import GeoMethodologyOverview from '@/components/services/geo-methodology-overview'
 import { PrimaryFlowButton, SecondaryFlowButton } from '@/components/ui/flow-button'
 import BookingLink from '@/components/analytics/booking-link'
 import SectionSeparator from '@/components/section-separator'
@@ -169,6 +171,13 @@ const ServiceDetailPage = async ({
             <h1 className='text-4xl font-semibold tracking-tight sm:text-5xl lg:text-6xl'>
               {resolveLocalizedText(service.title, lang)}
             </h1>
+            {service.subServices?.length ? (
+              <p className='text-muted-foreground max-w-3xl text-base leading-7 sm:text-lg'>
+                {lang === 'zh'
+                  ? '从研究用户如何提问，到生产有依据的文章，再到持续跟踪 AI 答案中的品牌表现，按你当前的需求选择 GEO 服务。'
+                  : 'From researching buyer questions to producing evidence-backed articles and tracking brand visibility in AI answers, choose the GEO service your team needs next.'}
+              </p>
+            ) : null}
             <div className='flex flex-wrap gap-4'>
               <PrimaryFlowButton asChild>
                 <BookingLink
@@ -186,10 +195,44 @@ const ServiceDetailPage = async ({
               <SecondaryFlowButton asChild>
                 <Link href={toLocalizedHref('/services', lang)}>{copy.allServices}</Link>
               </SecondaryFlowButton>
+              {service.slug === 'geo-services' ? (
+                <SecondaryFlowButton asChild>
+                  <Link href='#methodology'>{lang === 'zh' ? '我们如何做 GEO' : 'How we approach GEO'}</Link>
+                </SecondaryFlowButton>
+              ) : null}
             </div>
           </div>
         </div>
       </section>
+
+      {service.subServices?.length ? (
+        <>
+          <SectionSeparator />
+          <section className='px-4 py-12 sm:px-6 sm:py-16 lg:px-8'>
+            <div className='mx-auto w-full max-w-7xl space-y-8'>
+              <div className='max-w-3xl space-y-3'>
+                <Badge variant='outline'>{lang === 'zh' ? 'GEO 子服务' : 'GEO services'}</Badge>
+                <h2 className='text-3xl font-semibold tracking-tight sm:text-4xl'>
+                  {lang === 'zh' ? '研究、生产、监控，连接每一步' : 'Connect research, production, and monitoring'}
+                </h2>
+                <p className='text-muted-foreground text-base leading-7'>
+                  {lang === 'zh'
+                    ? '先找到值得回答的问题，再把答案变成内容，用监控结果指导下一轮优化。'
+                    : 'Find the questions worth answering, turn those answers into content, and use monitoring insights to guide the next improvements.'}
+                </p>
+              </div>
+              <SubServiceCards services={service.subServices} parentSlug={service.slug} lang={lang} />
+            </div>
+          </section>
+        </>
+      ) : null}
+
+      {service.slug === 'geo-services' ? (
+        <>
+          <SectionSeparator />
+          <GeoMethodologyOverview lang={lang} />
+        </>
+      ) : null}
 
       {showTrustedBrandsSection || showOverviewSection ? (
         <>

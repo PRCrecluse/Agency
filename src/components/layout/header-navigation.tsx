@@ -278,7 +278,11 @@ const HeaderNavigation = ({
   }, [openDropdown])
 
   return (
-    <nav ref={navRef} aria-label='Main' className={cn('relative hidden lg:block', navigationClassName)}>
+    <nav
+      ref={navRef}
+      aria-label={lang === 'zh' ? '主导航' : 'Main'}
+      className={cn('relative hidden lg:block', navigationClassName)}
+    >
       <ul className='flex h-fit flex-wrap items-center gap-6'>
         {navigationData.map(navItem => {
           if (navItem.href) {
@@ -527,7 +531,7 @@ const HeaderNavigationSmallScreen = ({
       <SheetTrigger asChild>
         <SecondaryFlowButton className={cn('inline-flex lg:hidden', triggerClassName)}>
           <MenuIcon />
-          <span className='sr-only'>Menu</span>
+          <span className='sr-only'>{lang === 'zh' ? '菜单' : 'Menu'}</span>
         </SecondaryFlowButton>
       </SheetTrigger>
       <SheetContent side='left' className='w-75 gap-0 p-0'>

@@ -2,6 +2,12 @@ const baseUrl = (process.env.SEO_CHECK_BASE_URL || 'http://127.0.0.1:3000').repl
 const canonicalBaseUrl = (process.env.SEO_CHECK_CANONICAL_URL || 'https://withmeridian.org').replace(/\/$/, '')
 
 const smokeRoutes = [
+  '/about',
+  '/zh/about',
+  '/about/stories/yiwei-linkloud-gaoning-growth-interview',
+  '/zh/about/stories/yiwei-linkloud-gaoning-growth-interview',
+  '/about/stories/yiwei-sparklab-birthday',
+  '/zh/about/stories/yiwei-sparklab-birthday',
   '/services',
   '/zh/services',
   '/services/seo-services',
@@ -12,6 +18,8 @@ const smokeRoutes = [
   '/zh/services/reddit-services',
   '/utm-builder',
   '/zh/utm-builder',
+  '/tools',
+  '/zh/tools',
   '/blog/b2b-ai-saas-b2c-seo-url-strategy',
   '/zh/blog/b2b-ai-saas-b2c-seo-url-strategy'
 ]
@@ -33,7 +41,7 @@ if (sitemap.includes('?lang=')) fail('/sitemap.xml: contains ?lang=')
 
 const sitemapRoutes = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)]
   .map(match => new URL(match[1]).pathname)
-  .filter(path => /^\/(?:zh\/)?(?:services|blog|utm-builder)(?:\/|$)/.test(path))
+  .filter(path => /^\/(?:zh\/)?(?:about|services|blog|tools|utm-builder)(?:\/|$)/.test(path))
 
 const routes = [...new Set([...smokeRoutes, ...sitemapRoutes])]
 
@@ -79,7 +87,8 @@ for (const route of routes) {
   if (canonical !== expectedCanonical) fail(`${route}: canonical is ${canonical || 'missing'}`)
   if (hreflang.en !== canonicalUrl(englishPath(route))) fail(`${route}: English hreflang is missing or incorrect`)
   if (hreflang['zh-CN'] !== canonicalUrl(chinesePath(route))) fail(`${route}: Chinese hreflang is missing or incorrect`)
-  if (hreflang['x-default'] !== canonicalUrl(englishPath(route))) fail(`${route}: x-default hreflang is missing or incorrect`)
+  if (hreflang['x-default'] !== canonicalUrl(englishPath(route)))
+    fail(`${route}: x-default hreflang is missing or incorrect`)
   if (readAttribute(tags['og:url'], 'content') !== expectedCanonical) fail(`${route}: og:url is missing or incorrect`)
 
   if (readAttribute(tags['og:locale'], 'content') !== (route.startsWith('/zh/') ? 'zh_CN' : 'en_US')) {
@@ -91,7 +100,17 @@ for (const route of routes) {
   if (html.includes('?lang=')) fail(`${route}: rendered output still contains ?lang=`)
 }
 
-for (const legacyRoute of ['/services?lang=zh', '/zh/services?lang=en', '/utm-builder?lang=zh']) {
+const legacyRoutes = [
+  '/about?lang=zh',
+  '/zh/about?lang=en',
+  '/tools?lang=zh',
+  '/zh/tools?lang=en',
+  '/services?lang=zh',
+  '/zh/services?lang=en',
+  '/utm-builder?lang=zh'
+]
+
+for (const legacyRoute of legacyRoutes) {
   const response = await fetch(localUrl(legacyRoute), { redirect: 'manual' })
 
   const expectedLocation = legacyRoute.includes('lang=zh')
@@ -115,4 +134,6 @@ if (failures.length) {
   process.exit(1)
 }
 
-console.log(`Language signal check passed for ${routes.length} sitemap/localized routes and 3 legacy redirects.`)
+console.log(
+  `Language signal check passed for ${routes.length} sitemap/localized routes and ${legacyRoutes.length} legacy redirects.`
+)
