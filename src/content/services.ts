@@ -493,12 +493,8 @@ export const servicePages: ServicePage[] = [
   {
     slug: 'geo-services',
     category: { en: 'GEO Services', zh: 'GEO 服务' },
-<<<<<<< HEAD
-    title: { en: 'GEO Services', zh: 'GEO 服务' },
-    subServices: geoServices,
-=======
     title: { en: 'AI SEO & GEO Services', zh: 'AI SEO 与 GEO 服务' },
->>>>>>> 1ad43ef976d0576d0d6baf37e6b7382c002638a7
+    subServices: geoServices,
     description: {
       en: 'Improve how your brand is understood, retrieved, cited, and recommended across ChatGPT, Perplexity, Gemini, AI Overviews, and other AI search experiences.',
       zh: '提升品牌在 ChatGPT、Perplexity、Gemini、AI Overviews 及其他 AI 搜索场景中被理解、检索、引用和推荐的机会。'

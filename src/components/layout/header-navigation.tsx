@@ -136,12 +136,8 @@ const ListItem = (props: {
     props
 
   const isActive = isHrefActive({ href, activeSection, pathname, activeMatch })
-<<<<<<< HEAD
-  const localizedHref = toLocalizedHref(href, lang)
-  const external = isExternalHref(localizedHref)
-=======
   const localizedHref = localize === false ? href : toLocalizedHref(href, lang)
->>>>>>> 1ad43ef976d0576d0d6baf37e6b7382c002638a7
+  const external = isExternalHref(localizedHref)
 
   return (
     <li className={cn({ 'min-h-19.5': description && splitItems })}>
@@ -293,7 +289,6 @@ const HeaderNavigation = ({
       <ul className='flex h-fit flex-wrap items-center gap-6'>
         {navigationData.map(navItem => {
           if (navItem.href) {
-<<<<<<< HEAD
             const isActive = isHrefActive({
               href: navItem.href,
               activeSection,
@@ -301,9 +296,6 @@ const HeaderNavigation = ({
               activeMatch: navItem.activeMatch
             })
 
-=======
-            const isActive = isHrefActive({ href: navItem.href, activeSection, pathname, activeMatch: navItem.activeMatch })
->>>>>>> 1ad43ef976d0576d0d6baf37e6b7382c002638a7
             const localizedHref = toLocalizedHref(navItem.href, lang)
 
             return (
@@ -630,11 +622,10 @@ const HeaderNavigationSmallScreen = ({
                                     activeMatch: subItem.activeMatch
                                   })
 
-<<<<<<< HEAD
                                   return (
                                     <Link
                                       key={j}
-                                      href={toLocalizedHref(subItem.href, lang)}
+                                      href={subItem.localize === false ? subItem.href : toLocalizedHref(subItem.href, lang)}
                                       target={isExternalHref(subItem.href) ? '_blank' : undefined}
                                       rel={isExternalHref(subItem.href) ? 'noreferrer' : undefined}
                                       data-active={isActive}
@@ -649,23 +640,6 @@ const HeaderNavigationSmallScreen = ({
                               </div>
                             )
                           )}
-=======
-                                return (
-                                  <Link
-                                    key={j}
-                                    href={subItem.localize === false ? subItem.href : toLocalizedHref(subItem.href, lang)}
-                                    data-active={isActive}
-                                    className='hover:bg-accent data-[active=true]:text-primary ml-4.5 flex items-center gap-2 rounded-sm px-3 py-2 text-sm data-[active=true]:font-medium'
-                                    onClick={handleLinkClick}
-                                  >
-                                    {subItem.icon ? subItem.icon : <CircleSmallIcon className='size-4' />}
-                                    {subItem.title}
-                                  </Link>
-                                )
-                              })}
-                            </div>
-                          ))}
->>>>>>> 1ad43ef976d0576d0d6baf37e6b7382c002638a7
                         </div>
                       ))
                     : navItem.items?.map(item => {
@@ -679,13 +653,9 @@ const HeaderNavigationSmallScreen = ({
                         return (
                           <Link
                             key={item.title}
-<<<<<<< HEAD
-                            href={toLocalizedHref(item.href, lang)}
+                            href={item.localize === false ? item.href : toLocalizedHref(item.href, lang)}
                             target={isExternalHref(item.href) ? '_blank' : undefined}
                             rel={isExternalHref(item.href) ? 'noreferrer' : undefined}
-=======
-                            href={item.localize === false ? item.href : toLocalizedHref(item.href, lang)}
->>>>>>> 1ad43ef976d0576d0d6baf37e6b7382c002638a7
                             data-active={isActive}
                             className='hover:bg-accent data-[active=true]:text-primary ml-3 flex items-center gap-2 rounded-sm px-3 py-2 text-sm data-[active=true]:font-medium'
                             onClick={handleLinkClick}

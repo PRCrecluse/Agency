@@ -565,19 +565,16 @@ const TechnicalSEOPage = async () => {
         description={copy.faq.description}
       />
 
-<<<<<<< HEAD
+      <ServiceLinksSection currentPath={path} lang={lang} />
+
       <CTA
         title={copy.cta.title}
         description={copy.cta.description}
         buttonLabel={copy.cta.buttonLabel}
         pageType='service_detail'
         serviceType='technical_seo'
+        language={lang}
       />
-=======
-      <ServiceLinksSection currentPath={path} lang={lang} />
-
-      <CTA title={copy.cta.title} description={copy.cta.description} buttonLabel={copy.cta.buttonLabel} />
->>>>>>> 1ad43ef976d0576d0d6baf37e6b7382c002638a7
 
       <script
         type='application/ld+json'

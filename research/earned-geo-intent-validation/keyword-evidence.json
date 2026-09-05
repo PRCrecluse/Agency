@@ -1,0 +1,538 @@
+{
+  "reviewed_at": "2026-09-05",
+  "fresh_api_call": false,
+  "fresh_api_blocker": "RAPIDAPI_KEY is absent from current environment and project .env.local; API marketplace session is signed out.",
+  "interpretation": "Third-party country-level monthly estimates from saved responses. Not Google first-party figures, not Ahrefs official API, not AI prompt volumes. Do not add overlapping keyword volumes or treat missing values as zero.",
+  "records": [
+    {
+      "cluster": "saas-seo",
+      "keyword": "b2b seo agency",
+      "country": "us",
+      "source": "RapidAPI SEO API - keyword-metrics",
+      "source_file": "research/seo-keyword-research/raw_keyword_metrics_us.json",
+      "research_report_date": "2026-08-22",
+      "underlying_metric_as_of": null,
+      "http_status": 200,
+      "raw_metrics": {
+        "keyword": "b2b seo agency",
+        "searchVolume": 4200,
+        "clicks": 0,
+        "cpc": 17,
+        "difficulty": 10,
+        "globalSearchVolume": 11000,
+        "trafficPotential": 1900
+      }
+    },
+    {
+      "cluster": "saas-seo",
+      "keyword": "saas seo agency",
+      "country": "us",
+      "source": "RapidAPI SEO API - keyword-metrics",
+      "source_file": "research/seo-keyword-research/raw_keyword_metrics_us.json",
+      "research_report_date": "2026-08-22",
+      "underlying_metric_as_of": null,
+      "http_status": 200,
+      "raw_metrics": {
+        "keyword": "saas seo agency",
+        "searchVolume": 3600,
+        "clicks": 0,
+        "cpc": 9,
+        "difficulty": 10,
+        "globalSearchVolume": 6600,
+        "trafficPotential": 2100
+      }
+    },
+    {
+      "cluster": "saas-seo",
+      "keyword": "saas seo consultant",
+      "country": "us",
+      "source": "RapidAPI SEO API - keyword-metrics",
+      "source_file": "research/seo-keyword-research/raw_keyword_metrics_us.json",
+      "research_report_date": "2026-08-22",
+      "underlying_metric_as_of": null,
+      "http_status": 200,
+      "raw_metrics": {
+        "keyword": "saas seo consultant",
+        "searchVolume": 900,
+        "clicks": 0,
+        "cpc": 25,
+        "difficulty": 2,
+        "globalSearchVolume": 2100,
+        "trafficPotential": 350
+      }
+    },
+    {
+      "cluster": "technical-secondary",
+      "keyword": "technical seo services",
+      "country": "us",
+      "source": "RapidAPI SEO API - keyword-metrics",
+      "source_file": "research/seo-keyword-research/raw_keyword_metrics_us.json",
+      "research_report_date": "2026-08-22",
+      "underlying_metric_as_of": null,
+      "http_status": 200,
+      "raw_metrics": {
+        "keyword": "technical seo services",
+        "searchVolume": 11000,
+        "clicks": 0,
+        "cpc": 4.5,
+        "difficulty": 19,
+        "globalSearchVolume": 16000,
+        "trafficPotential": 7900
+      }
+    },
+    {
+      "cluster": "technical-secondary",
+      "keyword": "technical seo audit",
+      "country": "us",
+      "source": "RapidAPI SEO API - keyword-metrics",
+      "source_file": "research/seo-keyword-research/raw_keyword_metrics_us.json",
+      "research_report_date": "2026-08-22",
+      "underlying_metric_as_of": null,
+      "http_status": 200,
+      "raw_metrics": {
+        "keyword": "technical seo audit",
+        "searchVolume": 3800,
+        "clicks": 0,
+        "cpc": 6,
+        "difficulty": 77,
+        "globalSearchVolume": 7600,
+        "trafficPotential": 11000
+      }
+    },
+    {
+      "cluster": "technical-secondary",
+      "keyword": "technical seo consultant",
+      "country": "us",
+      "source": "RapidAPI SEO API - keyword-metrics",
+      "source_file": "research/seo-keyword-research/raw_keyword_metrics_us.json",
+      "research_report_date": "2026-08-22",
+      "underlying_metric_as_of": null,
+      "http_status": 200,
+      "raw_metrics": {
+        "keyword": "technical seo consultant",
+        "searchVolume": 1500,
+        "clicks": 0,
+        "cpc": 0.4,
+        "difficulty": 24,
+        "globalSearchVolume": 3700,
+        "trafficPotential": 800
+      }
+    },
+    {
+      "cluster": "saas-seo",
+      "keyword": "saas technical seo",
+      "country": "us",
+      "source": "RapidAPI SEO API - keyword-metrics",
+      "source_file": "research/seo-keyword-research/raw_keyword_metrics_us.json",
+      "research_report_date": "2026-08-22",
+      "underlying_metric_as_of": null,
+      "http_status": 200,
+      "raw_metrics": {
+        "keyword": "saas technical seo",
+        "searchVolume": 400,
+        "clicks": 0,
+        "cpc": 8,
+        "difficulty": 3,
+        "globalSearchVolume": 700,
+        "trafficPotential": 100
+      }
+    },
+    {
+      "cluster": "technical-secondary",
+      "keyword": "programmatic seo agency",
+      "country": "us",
+      "source": "RapidAPI SEO API - keyword-metrics",
+      "source_file": "research/seo-keyword-research/raw_keyword_metrics_us.json",
+      "research_report_date": "2026-08-22",
+      "underlying_metric_as_of": null,
+      "http_status": 200,
+      "raw_metrics": {
+        "keyword": "programmatic seo agency",
+        "searchVolume": 200,
+        "clicks": 0,
+        "cpc": 10,
+        "difficulty": null,
+        "globalSearchVolume": 300,
+        "trafficPotential": null
+      }
+    },
+    {
+      "cluster": "technical-secondary",
+      "keyword": "programmatic seo services",
+      "country": "us",
+      "source": "RapidAPI SEO API - keyword-metrics",
+      "source_file": "research/seo-keyword-research/raw_keyword_metrics_us.json",
+      "research_report_date": "2026-08-22",
+      "underlying_metric_as_of": null,
+      "http_status": 200,
+      "raw_metrics": {
+        "keyword": "programmatic seo services",
+        "searchVolume": 200,
+        "clicks": 0,
+        "cpc": null,
+        "difficulty": null,
+        "globalSearchVolume": 200,
+        "trafficPotential": null
+      }
+    },
+    {
+      "cluster": "ai-search",
+      "keyword": "ai seo services",
+      "country": "us",
+      "source": "RapidAPI SEO API - keyword-metrics",
+      "source_file": "research/seo-keyword-research/raw_keyword_metrics_us.json",
+      "research_report_date": "2026-08-22",
+      "underlying_metric_as_of": null,
+      "http_status": 200,
+      "raw_metrics": {
+        "keyword": "ai seo services",
+        "searchVolume": 4500,
+        "clicks": 0,
+        "cpc": 1.1,
+        "difficulty": 6,
+        "globalSearchVolume": 10000,
+        "trafficPotential": 2100
+      }
+    },
+    {
+      "cluster": "ai-search",
+      "keyword": "ai seo agency",
+      "country": "us",
+      "source": "RapidAPI SEO API - keyword-metrics",
+      "source_file": "research/seo-keyword-research/raw_keyword_metrics_us.json",
+      "research_report_date": "2026-08-22",
+      "underlying_metric_as_of": null,
+      "http_status": 200,
+      "raw_metrics": {
+        "keyword": "ai seo agency",
+        "searchVolume": 3600,
+        "clicks": 0,
+        "cpc": 9,
+        "difficulty": 10,
+        "globalSearchVolume": 10000,
+        "trafficPotential": 1900
+      }
+    },
+    {
+      "cluster": "ai-search",
+      "keyword": "generative engine optimization",
+      "country": "us",
+      "source": "RapidAPI SEO API - keyword-metrics",
+      "source_file": "research/seo-keyword-research/raw_keyword_metrics_us.json",
+      "research_report_date": "2026-08-22",
+      "underlying_metric_as_of": null,
+      "http_status": 200,
+      "raw_metrics": {
+        "keyword": "generative engine optimization",
+        "searchVolume": 8000,
+        "clicks": 0,
+        "cpc": 11,
+        "difficulty": 65,
+        "globalSearchVolume": 27000,
+        "trafficPotential": 2000
+      }
+    },
+    {
+      "cluster": "ai-search",
+      "keyword": "geo services",
+      "country": "us",
+      "source": "RapidAPI SEO API - keyword-metrics",
+      "source_file": "research/seo-keyword-research/raw_keyword_metrics_us.json",
+      "research_report_date": "2026-08-22",
+      "underlying_metric_as_of": null,
+      "http_status": 200,
+      "raw_metrics": {
+        "keyword": "geo services",
+        "searchVolume": 700,
+        "clicks": 381,
+        "cpc": 6,
+        "difficulty": 54,
+        "globalSearchVolume": 1900,
+        "trafficPotential": 9000
+      }
+    },
+    {
+      "cluster": "ai-search",
+      "keyword": "ai search optimization",
+      "country": "us",
+      "source": "RapidAPI SEO API - keyword-metrics",
+      "source_file": "research/seo-keyword-research/raw_keyword_metrics_us.json",
+      "research_report_date": "2026-08-22",
+      "underlying_metric_as_of": null,
+      "http_status": 200,
+      "raw_metrics": {
+        "keyword": "ai search optimization",
+        "searchVolume": 3500,
+        "clicks": 0,
+        "cpc": 0.9,
+        "difficulty": 53,
+        "globalSearchVolume": 6700,
+        "trafficPotential": 13000
+      }
+    },
+    {
+      "cluster": "ai-search",
+      "keyword": "chatgpt seo",
+      "country": "us",
+      "source": "RapidAPI SEO API - keyword-metrics",
+      "source_file": "research/seo-keyword-research/raw_keyword_metrics_us.json",
+      "research_report_date": "2026-08-22",
+      "underlying_metric_as_of": null,
+      "http_status": 200,
+      "raw_metrics": {
+        "keyword": "chatgpt seo",
+        "searchVolume": 800,
+        "clicks": 0,
+        "cpc": 6,
+        "difficulty": 13,
+        "globalSearchVolume": 3800,
+        "trafficPotential": 80
+      }
+    },
+    {
+      "cluster": "ai-search",
+      "keyword": "ai search visibility",
+      "country": "us",
+      "source": "RapidAPI SEO API - keyword-metrics",
+      "source_file": "research/seo-keyword-research/raw_keyword_metrics_us.json",
+      "research_report_date": "2026-08-22",
+      "underlying_metric_as_of": null,
+      "http_status": 200,
+      "raw_metrics": {
+        "keyword": "ai search visibility",
+        "searchVolume": 1400,
+        "clicks": 0,
+        "cpc": 12,
+        "difficulty": 59,
+        "globalSearchVolume": 2800,
+        "trafficPotential": 900
+      }
+    },
+    {
+      "cluster": "ai-search",
+      "keyword": "answer engine optimization",
+      "country": "us",
+      "source": "RapidAPI SEO API - keyword-metrics",
+      "source_file": "research/seo-keyword-research/raw_keyword_metrics_us.json",
+      "research_report_date": "2026-08-22",
+      "underlying_metric_as_of": null,
+      "http_status": 200,
+      "raw_metrics": {
+        "keyword": "answer engine optimization",
+        "searchVolume": 5000,
+        "clicks": 0,
+        "cpc": 6,
+        "difficulty": 40,
+        "globalSearchVolume": 12000,
+        "trafficPotential": 1100
+      }
+    },
+    {
+      "cluster": "reddit-marketing",
+      "keyword": "reddit marketing",
+      "country": "us",
+      "source": "RapidAPI SEO API - keyword-metrics",
+      "source_file": "research/reddit-seo-keyword-research/raw_keyword_metrics_us.json",
+      "research_report_date": "2026-08-25",
+      "underlying_metric_as_of": null,
+      "http_status": 200,
+      "raw_metrics": {
+        "keyword": "reddit marketing",
+        "searchVolume": 800,
+        "clicks": 787,
+        "cpc": 4,
+        "difficulty": 36,
+        "globalSearchVolume": 2100,
+        "trafficPotential": 1000
+      }
+    },
+    {
+      "cluster": "reddit-marketing",
+      "keyword": "reddit marketing agency",
+      "country": "us",
+      "source": "RapidAPI SEO API - keyword-metrics",
+      "source_file": "research/reddit-seo-keyword-research/raw_keyword_metrics_us.json",
+      "research_report_date": "2026-08-25",
+      "underlying_metric_as_of": null,
+      "http_status": 200,
+      "raw_metrics": {
+        "keyword": "reddit marketing agency",
+        "searchVolume": 300,
+        "clicks": 0,
+        "cpc": 3,
+        "difficulty": 11,
+        "globalSearchVolume": 900,
+        "trafficPotential": 100
+      }
+    },
+    {
+      "cluster": "reddit-marketing",
+      "keyword": "reddit marketing services",
+      "country": "us",
+      "source": "RapidAPI SEO API - keyword-metrics",
+      "source_file": "research/reddit-seo-keyword-research/raw_keyword_metrics_us.json",
+      "research_report_date": "2026-08-25",
+      "underlying_metric_as_of": null,
+      "http_status": 200,
+      "raw_metrics": {
+        "keyword": "reddit marketing services",
+        "searchVolume": 200,
+        "clicks": 0,
+        "cpc": 6,
+        "difficulty": 4,
+        "globalSearchVolume": 350,
+        "trafficPotential": 10
+      }
+    },
+    {
+      "cluster": "reddit-marketing",
+      "keyword": "reddit agency",
+      "country": "us",
+      "source": "RapidAPI SEO API - keyword-metrics",
+      "source_file": "research/reddit-seo-keyword-research/raw_keyword_metrics_us.json",
+      "research_report_date": "2026-08-25",
+      "underlying_metric_as_of": null,
+      "http_status": 200,
+      "raw_metrics": {
+        "keyword": "reddit agency",
+        "searchVolume": 150,
+        "clicks": 0,
+        "cpc": 6,
+        "difficulty": 19,
+        "globalSearchVolume": 400,
+        "trafficPotential": 150
+      }
+    },
+    {
+      "cluster": "reddit-marketing",
+      "keyword": "reddit growth service",
+      "country": "us",
+      "source": "RapidAPI SEO API - keyword-metrics",
+      "source_file": "research/reddit-seo-keyword-research/raw_keyword_metrics_us.json",
+      "research_report_date": "2026-08-25",
+      "underlying_metric_as_of": null,
+      "http_status": 200,
+      "raw_metrics": {
+        "keyword": "reddit growth service",
+        "searchVolume": 0,
+        "clicks": 0,
+        "cpc": null,
+        "difficulty": null,
+        "globalSearchVolume": null,
+        "trafficPotential": null
+      }
+    },
+    {
+      "cluster": "reddit-marketing",
+      "keyword": "reddit seo",
+      "country": "us",
+      "source": "RapidAPI SEO API - keyword-metrics",
+      "source_file": "research/reddit-seo-keyword-research/raw_keyword_metrics_us.json",
+      "research_report_date": "2026-08-25",
+      "underlying_metric_as_of": null,
+      "http_status": 200,
+      "raw_metrics": {
+        "keyword": "reddit seo",
+        "searchVolume": 1300,
+        "clicks": 1309,
+        "cpc": 10,
+        "difficulty": 34,
+        "globalSearchVolume": 3000,
+        "trafficPotential": 6600
+      }
+    },
+    {
+      "cluster": "reddit-marketing",
+      "keyword": "reddit b2b marketing",
+      "country": "us",
+      "source": "RapidAPI SEO API - keyword-metrics",
+      "source_file": "research/reddit-seo-keyword-research/raw_keyword_metrics_us.json",
+      "research_report_date": "2026-08-25",
+      "underlying_metric_as_of": null,
+      "http_status": 200,
+      "raw_metrics": {
+        "keyword": "reddit b2b marketing",
+        "searchVolume": 40,
+        "clicks": 0,
+        "cpc": 7,
+        "difficulty": null,
+        "globalSearchVolume": 60,
+        "trafficPotential": null
+      }
+    },
+    {
+      "cluster": "reddit-marketing",
+      "keyword": "reddit saas marketing",
+      "country": "us",
+      "source": "RapidAPI SEO API - keyword-metrics",
+      "source_file": "research/reddit-seo-keyword-research/raw_keyword_metrics_us.json",
+      "research_report_date": "2026-08-25",
+      "underlying_metric_as_of": null,
+      "http_status": 200,
+      "raw_metrics": {
+        "keyword": "reddit saas marketing",
+        "searchVolume": 10,
+        "clicks": 0,
+        "cpc": null,
+        "difficulty": null,
+        "globalSearchVolume": 10,
+        "trafficPotential": null
+      }
+    },
+    {
+      "cluster": "reddit-marketing",
+      "keyword": "reddit community management",
+      "country": "us",
+      "source": "RapidAPI SEO API - keyword-metrics",
+      "source_file": "research/reddit-seo-keyword-research/raw_keyword_metrics_us.json",
+      "research_report_date": "2026-08-25",
+      "underlying_metric_as_of": null,
+      "http_status": 200,
+      "raw_metrics": {
+        "keyword": "reddit community management",
+        "searchVolume": 20,
+        "clicks": 0,
+        "cpc": null,
+        "difficulty": null,
+        "globalSearchVolume": 40,
+        "trafficPotential": null
+      }
+    },
+    {
+      "cluster": "reddit-marketing",
+      "keyword": "reddit organic marketing",
+      "country": "us",
+      "source": "RapidAPI SEO API - keyword-metrics",
+      "source_file": "research/reddit-seo-keyword-research/raw_keyword_metrics_us.json",
+      "research_report_date": "2026-08-25",
+      "underlying_metric_as_of": null,
+      "http_status": 200,
+      "raw_metrics": {
+        "keyword": "reddit organic marketing",
+        "searchVolume": 60,
+        "clicks": 0,
+        "cpc": null,
+        "difficulty": null,
+        "globalSearchVolume": 80,
+        "trafficPotential": null
+      }
+    }
+  ],
+  "pending_keywords": [
+    "geo agency",
+    "generative engine optimization agency",
+    "aeo agency",
+    "answer engine optimization agency",
+    "ai search optimization agency",
+    "best saas seo agencies",
+    "best geo agencies",
+    "seo and geo agency",
+    "reddit marketing agency for saas",
+    "saas growth agency",
+    "ai growth agency",
+    "chinese speaking seo agency",
+    "SEO 出海服务",
+    "SaaS SEO 服务商",
+    "GEO 服务商"
+  ]
+}

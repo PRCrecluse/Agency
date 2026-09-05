@@ -13,6 +13,8 @@ import BookingLink from '@/components/analytics/booking-link'
 import SectionSeparator from '@/components/section-separator'
 import GeoServicePlaybook from '@/components/services/geo-service-playbook'
 import { geoMethodologyPath } from '@/content/geo-methodology'
+import { getServiceBreadcrumbItems } from '@/content/service-navigation'
+import ServiceBreadcrumbs from '@/components/services/service-breadcrumbs'
 import { geoServicePlaybooks } from '@/content/geo-service-playbooks'
 import {
   getServiceBySlug,
@@ -94,7 +96,7 @@ const ServiceSectionDetailPage = async ({ params }: { params: Promise<{ slug: st
         })
       },
       createBreadcrumbSchema(
-        [
+        isSubService ? getServiceBreadcrumbItems(path, lang) : [
           { name: copy.home, path: '/' },
           { name: copy.services, path: '/services' },
           { name: resolveLocalizedText(parentService.title, lang), path: `/services/${slug}` },
@@ -132,25 +134,7 @@ const ServiceSectionDetailPage = async ({ params }: { params: Promise<{ slug: st
         <div className='relative mx-auto flex w-full max-w-7xl justify-center'>
           <div className='flex max-w-4xl flex-col items-center gap-6 text-center'>
             {isSubService ? (
-              <nav aria-label={lang === 'zh' ? '面包屑导航' : 'Breadcrumb'}>
-                <ol className='text-muted-foreground flex flex-wrap items-center justify-center gap-2 text-sm'>
-                  <li>
-                    <Link className='hover:text-foreground' href={toLocalizedHref('/services', lang)}>
-                      {copy.services}
-                    </Link>
-                  </li>
-                  <li aria-hidden='true'>/</li>
-                  <li>
-                    <Link className='hover:text-foreground' href={toLocalizedHref(`/services/${slug}`, lang)}>
-                      {resolveLocalizedText(parentService.title, lang)}
-                    </Link>
-                  </li>
-                  <li aria-hidden='true'>/</li>
-                  <li aria-current='page' className='text-foreground'>
-                    {resolveLocalizedText(service.title, lang)}
-                  </li>
-                </ol>
-              </nav>
+              <ServiceBreadcrumbs path={path} lang={lang} />
             ) : null}
             <h1 className='text-4xl font-semibold tracking-tight sm:text-5xl lg:text-6xl'>
               {resolveLocalizedText(service.title, lang)}
@@ -175,7 +159,10 @@ const ServiceSectionDetailPage = async ({ params }: { params: Promise<{ slug: st
                 </BookingLink>
               </PrimaryFlowButton>
               <SecondaryFlowButton asChild>
-                <Link href={toLocalizedHref(isSubService ? `/services/${slug}` : '/services', lang)}>
+                <Link
+                  href={toLocalizedHref(isSubService ? `/services/${slug}` : '/services', lang)}
+                  data-service-parent-link={isSubService ? true : undefined}
+                >
                   {isSubService ? (lang === 'zh' ? '查看 GEO 服务总览' : 'GEO services overview') : copy.allServices}
                 </Link>
               </SecondaryFlowButton>
@@ -192,6 +179,7 @@ const ServiceSectionDetailPage = async ({ params }: { params: Promise<{ slug: st
                 key={item.slug}
                 href={toLocalizedHref(`/services/${slug}/${item.slug}`, lang)}
                 aria-current={item.slug === sectionSlug ? 'page' : undefined}
+                data-service-link={item.slug !== sectionSlug ? true : undefined}
                 className={cn(
                   'focus-visible:ring-ring rounded-full border px-4 py-2 text-sm font-medium transition-colors focus-visible:ring-2 focus-visible:outline-none',
                   item.slug === sectionSlug ? 'border-primary/30 bg-primary/10 text-primary' : 'hover:bg-muted'

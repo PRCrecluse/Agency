@@ -50,52 +50,8 @@ export async function getSitemapEntries(): Promise<MetadataRoute.Sitemap> {
     {
       url: absoluteUrl('/')
     },
-<<<<<<< HEAD
-    ...localizedEntries('/about', 0.8, 'monthly'),
-    ...localizedEntries('/blog', 0.8),
-    ...localizedEntries('/services', 0.9),
-    ...localizedEntries('/services/reddit-services', 0.8),
-    ...localizedEntries('/utm-builder', 0.6, 'monthly'),
-    ...localizedEntries('/tools', 0.8, 'monthly'),
-    ...specializedServicePaths.flatMap(path => localizedEntries(path, 0.8)),
-    ...['/seo-prompts', '/community', '/twitter-monitor'].map(pagePath => ({
-      url: absoluteUrl(pagePath),
-      lastModified: now,
-      changeFrequency: 'monthly' as const,
-      priority: 0.8
-    })),
-    {
-      url: absoluteUrl('/seo-course'),
-      lastModified: now,
-      changeFrequency: 'weekly',
-      priority: 0.9
-    },
-    {
-      url: absoluteUrl('/terms-conditions'),
-      lastModified: now,
-      changeFrequency: 'yearly',
-      priority: 0.2
-    },
-    {
-      url: absoluteUrl('/privacy-policy'),
-      lastModified: now,
-      changeFrequency: 'yearly',
-      priority: 0.2
-    },
-    ...serviceSlugs.flatMap(slug => localizedEntries(`/services/${slug}`, 0.7)),
-    ...serviceSectionParams
-      .filter(({ slug, sectionSlug }) => !specializedServicePathSet.has(`/services/${slug}/${sectionSlug}`))
-      .flatMap(({ slug, sectionSlug }) => localizedEntries(`/services/${slug}/${sectionSlug}`, 0.7)),
-    ...aboutStories.flatMap(story =>
-      localizedEntries(`/about/stories/${story.slug}`, 0.6, 'monthly').map(entry => ({
-        ...entry,
-        lastModified: new Date(story.date)
-      }))
-    ),
-=======
-    {
-      url: absoluteUrl('/about')
-    },
+    ...localizedEntries('/about'),
+    ...localizedEntries('/tools'),
     ...localizedEntries('/blog'),
     ...localizedEntries('/services'),
     ...localizedEntries('/services/reddit-services'),
@@ -103,9 +59,6 @@ export async function getSitemapEntries(): Promise<MetadataRoute.Sitemap> {
     ...specializedServicePaths.flatMap(path => localizedEntries(path)),
     {
       url: absoluteUrl('/zh/seo-prompts')
-    },
-    {
-      url: absoluteUrl('/products/goglobal')
     },
     {
       url: absoluteUrl('/terms-conditions')
@@ -117,11 +70,12 @@ export async function getSitemapEntries(): Promise<MetadataRoute.Sitemap> {
     ...serviceSectionParams
       .filter(({ slug, sectionSlug }) => !specializedServicePathSet.has(`/services/${slug}/${sectionSlug}`))
       .flatMap(({ slug, sectionSlug }) => localizedEntries(`/services/${slug}/${sectionSlug}`)),
-    ...aboutStories.map(story => ({
-      url: absoluteUrl(`/about/stories/${story.slug}`),
-      lastModified: new Date(story.date)
-    })),
->>>>>>> 1ad43ef976d0576d0d6baf37e6b7382c002638a7
+    ...aboutStories.flatMap(story =>
+      localizedEntries(`/about/stories/${story.slug}`).map(entry => ({
+        ...entry,
+        lastModified: new Date(story.date)
+      }))
+    ),
     ...posts.map(post => {
       const englishPath = `/blog/${post.slug}`
       const chinesePath = `/zh/blog/${post.slug}`

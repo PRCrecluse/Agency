@@ -24,6 +24,7 @@ const SubServiceCards = ({
         <Link
           key={service.slug}
           href={toLocalizedHref(`/services/${parentSlug}/${service.slug}`, lang)}
+          data-service-link
           className='group bg-card/80 hover:border-primary/50 focus-visible:ring-ring flex h-full flex-col gap-5 rounded-2xl border p-6 transition-colors focus-visible:ring-2 focus-visible:outline-none'
         >
           <div className='flex items-center justify-between'>

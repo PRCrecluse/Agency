@@ -1,4 +1,5 @@
 import type { SiteLang } from '@/lib/language'
+import { geoServices } from '@/content/geo-services'
 
 export type ServiceNavigationItem = {
   path: string
@@ -94,7 +95,11 @@ export const serviceNavigationTree: ServiceNavigationFamily[] = [
       en: 'Improve how your brand is recognized, retrieved, cited, and recommended in AI-generated answers.',
       zh: '提升品牌在 AI 生成答案中被识别、检索、引用与推荐的机会。'
     },
-    children: []
+    children: geoServices.map(service => ({
+      path: `/services/geo-services/${service.slug}`,
+      title: service.title,
+      description: service.description
+    }))
   }
 ]
 

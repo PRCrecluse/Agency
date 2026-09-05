@@ -21,13 +21,10 @@ import FAQ from '@/components/blocks/faq/faq'
 import TrustedBrands from '@/components/blocks/trusted-brands/trusted-brands'
 import DeliveryTable from '@/components/services/delivery-table'
 import PackageSwitcher from '@/components/services/package-switcher'
-<<<<<<< HEAD
 import SubServiceCards from '@/components/services/sub-service-cards'
 import GeoMethodologyOverview from '@/components/services/geo-methodology-overview'
-=======
 import ServiceBreadcrumbs from '@/components/services/service-breadcrumbs'
 import ServiceLinksSection from '@/components/services/service-links-section'
->>>>>>> 1ad43ef976d0576d0d6baf37e6b7382c002638a7
 import { PrimaryFlowButton, SecondaryFlowButton } from '@/components/ui/flow-button'
 import BookingLink from '@/components/analytics/booking-link'
 import SectionSeparator from '@/components/section-separator'
@@ -181,14 +178,12 @@ const ServiceDetailPage = async ({ params }: { params: Promise<{ slug: string }>
             <h1 className='text-4xl font-semibold tracking-tight sm:text-5xl lg:text-6xl'>
               {resolveLocalizedText(service.title, lang)}
             </h1>
-<<<<<<< HEAD
-            {service.subServices?.length ? (
-              <p className='text-muted-foreground max-w-3xl text-base leading-7 sm:text-lg'>
-                {lang === 'zh'
-                  ? '从研究用户如何提问，到生产有依据的文章，再到持续跟踪 AI 答案中的品牌表现，按你当前的需求选择 GEO 服务。'
-                  : 'From researching buyer questions to producing evidence-backed articles and tracking brand visibility in AI answers, choose the GEO service your team needs next.'}
-              </p>
-            ) : null}
+            <p className='text-muted-foreground max-w-3xl text-lg leading-8 text-pretty'>
+              {resolveLocalizedText(service.description, lang)}
+            </p>
+            <p className='text-muted-foreground max-w-3xl text-sm leading-6 text-pretty sm:text-base'>
+              {resolveLocalizedText(service.intro, lang)}
+            </p>
             <div className='flex flex-wrap gap-4'>
               <PrimaryFlowButton asChild>
                 <BookingLink
@@ -199,19 +194,7 @@ const ServiceDetailPage = async ({ params }: { params: Promise<{ slug: string }>
                   target='_blank'
                   rel='noreferrer'
                 >
-                  {copy.bookCall}
-=======
-            <p className='text-muted-foreground max-w-3xl text-lg leading-8 text-pretty'>
-              {resolveLocalizedText(service.description, lang)}
-            </p>
-            <p className='text-muted-foreground max-w-3xl text-sm leading-6 text-pretty sm:text-base'>
-              {resolveLocalizedText(service.intro, lang)}
-            </p>
-            <div className='flex flex-wrap gap-4'>
-              <PrimaryFlowButton asChild>
-                <Link href='https://cal.com/team/meridian-growth' target='_blank' rel='noreferrer'>
                   {service.primaryCta ? resolveLocalizedText(service.primaryCta, lang) : copy.bookCall}
->>>>>>> 1ad43ef976d0576d0d6baf37e6b7382c002638a7
                   <ArrowRightIcon />
                 </BookingLink>
               </PrimaryFlowButton>
@@ -481,7 +464,7 @@ const ServiceDetailPage = async ({ params }: { params: Promise<{ slug: string }>
         </>
       ) : null}
 
-      <ServiceLinksSection currentPath={path} lang={lang} />
+      {!service.subServices?.length ? <ServiceLinksSection currentPath={path} lang={lang} /> : null}
 
       {hasFaqSection ? (
         <>

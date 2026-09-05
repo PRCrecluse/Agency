@@ -4,7 +4,7 @@ export const geoServices: ServicePage[] = [
   {
     slug: 'prompt-search',
     category: { en: 'GEO Services', zh: 'GEO 服务' },
-    title: { en: 'Prompt Search', zh: 'Prompt Search' },
+    title: { en: 'Prompt Search', zh: 'Prompt Search 提问研究' },
     description: {
       en: 'Discover the questions buyers ask AI, compare the answers, and turn gaps in brand visibility into a prioritized content plan.',
       zh: '研究目标客户会向 AI 提哪些问题，分析品牌与竞品在答案中的表现，将发现机会转化为内容优先级。'

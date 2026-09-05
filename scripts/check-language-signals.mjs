@@ -94,12 +94,6 @@ for (const route of routes) {
 
   if (htmlLang !== expectedLanguage(route)) fail(`${route}: html lang is ${htmlLang || 'missing'}`)
   if (canonical !== expectedCanonical) fail(`${route}: canonical is ${canonical || 'missing'}`)
-<<<<<<< HEAD
-  if (hreflang.en !== canonicalUrl(englishPath(route))) fail(`${route}: English hreflang is missing or incorrect`)
-  if (hreflang['zh-CN'] !== canonicalUrl(chinesePath(route))) fail(`${route}: Chinese hreflang is missing or incorrect`)
-  if (hreflang['x-default'] !== canonicalUrl(englishPath(route)))
-    fail(`${route}: x-default hreflang is missing or incorrect`)
-=======
 
   if (expectsLanguageAlternates) {
     if (hreflang.en !== canonicalUrl(englishPath(route))) fail(`${route}: English hreflang is missing or incorrect`)
@@ -109,7 +103,6 @@ for (const route of routes) {
     fail(`${route}: unexpected hreflang on an unpaired page`)
   }
 
->>>>>>> 1ad43ef976d0576d0d6baf37e6b7382c002638a7
   if (readAttribute(tags['og:url'], 'content') !== expectedCanonical) fail(`${route}: og:url is missing or incorrect`)
 
   if (readAttribute(tags['og:locale'], 'content') !== (route.startsWith('/zh/') ? 'zh_CN' : 'en_US')) {

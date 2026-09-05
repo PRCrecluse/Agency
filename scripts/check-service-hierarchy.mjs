@@ -31,7 +31,11 @@ const serviceFamilies = [
   {
     path: '/services/geo-services',
     names: { en: 'GEO Services', zh: 'GEO 服务' },
-    children: []
+    children: [
+      { path: '/services/geo-services/prompt-search', names: { en: 'Prompt Search', zh: 'Prompt Search 提问研究' } },
+      { path: '/services/geo-services/article-production', names: { en: 'Article Production', zh: '文章生产' } },
+      { path: '/services/geo-services/geo-monitoring', names: { en: 'GEO Monitoring', zh: 'GEO 监控' } }
+    ]
   }
 ]
 
@@ -192,4 +196,6 @@ if (failures.length) {
   process.exit(1)
 }
 
-console.log('Service hierarchy check passed for the service hub and 20 localized parent/detail pages.')
+const checkedPageCount = 2 * serviceFamilies.reduce((count, family) => count + 1 + family.children.length, 0)
+
+console.log(`Service hierarchy check passed for the service hub and ${checkedPageCount} localized parent/detail pages.`)
